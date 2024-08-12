@@ -6,6 +6,7 @@ markdown: ## Generate Markdown files from LinkML schemas
 	gen-doc -d docs/'State Variables' --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/state-variables.linkml.yaml
 	gen-doc -d docs/'Steady State Hypothesis' --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/steady-state-hypothesis.linkml.yaml
 	gen-doc -d docs/Topology --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/topology.linkml.yaml
+	gen-doc -d docs/AviationObstacle --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/aviationobstacle.linkml.yaml
 	grep -E '^# (Slot|Type): ' -lr --include \*.md docs | xargs -d '\n' rm
 
 .PHONY: protobuf

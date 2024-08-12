@@ -88,3 +88,4 @@ urllib3==2.2.2
 watchdog==4.0.1
 webcolors==24.6.0
 wrapt==1.16.0
+schema-automator
