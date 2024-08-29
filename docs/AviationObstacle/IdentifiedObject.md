@@ -19,6 +19,15 @@ _This is a root class to provide common identification for all classes needing i
  classDiagram
     class IdentifiedObject
     click IdentifiedObject href "../IdentifiedObject"
+      IdentifiedObject <|-- ExtPowerSystemResource
+        click ExtPowerSystemResource href "../ExtPowerSystemResource"
+      IdentifiedObject <|-- ElementResource
+        click ElementResource href "../ElementResource"
+      IdentifiedObject <|-- ExtAssetDeployment
+        click ExtAssetDeployment href "../ExtAssetDeployment"
+      IdentifiedObject <|-- BaseVoltage
+        click BaseVoltage href "../BaseVoltage"
+      
       IdentifiedObject : IdentifiedObject.description
         
       IdentifiedObject : IdentifiedObject.mRID
@@ -31,7 +40,14 @@ _This is a root class to provide common identification for all classes needing i
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **IdentifiedObject**
+    * [ExtPowerSystemResource](ExtPowerSystemResource.md)
+    * [ElementResource](ElementResource.md)
+    * [ExtAssetDeployment](ExtAssetDeployment.md)
+    * [BaseVoltage](BaseVoltage.md)
+
 
 
 ## Attributes
@@ -39,9 +55,9 @@ _This is a root class to provide common identification for all classes needing i
 
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
-| mRID | [cim:IdentifiedObject.mRID](http://iec.ch/TC57/CIM100#IdentifiedObject.mRID) | 1 <br />  string  | Master resource identifier issued by a model authority | direct |
+| mRID | [cim:IdentifiedObject.mRID](http://iec.ch/TC57/CIM100#IdentifiedObject.mRID) | 0..1 <br />  string  | Master resource identifier issued by a model authority | direct |
 | description | [cim:IdentifiedObject.description](http://iec.ch/TC57/CIM100#IdentifiedObject.description) | 0..1 <br />  string  | The description is a free human readable text describing or naming the object | direct |
-| name | [cim:IdentifiedObject.name](http://iec.ch/TC57/CIM100#IdentifiedObject.name) | 1 <br />  string  | The name is any free human readable and possibly non unique text naming the o... | direct |
+| name | [cim:IdentifiedObject.name](http://iec.ch/TC57/CIM100#IdentifiedObject.name) | 0..1 <br />  string  | The name is any free human readable and possibly non unique text naming the o... | direct |
 
 
 
@@ -66,7 +82,7 @@ _This is a root class to provide common identification for all classes needing i
 ### Schema Source
 
 
-* from schema: http://iec.ch/TC57/2020/CPSM-CoreEquipment#
+* from schema: https://ap-no.cim4.eu/AviationObstacle/1.0#
 
 
 
