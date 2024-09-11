@@ -25,6 +25,12 @@ _The part of a segment line between two consecutive points of support._
           ACLineSegmentSpan --> ACLineSegment : ACLineSegmentSpan.ACLineSegment
           click ACLineSegment href "../ACLineSegment"
         
+      ACLineSegmentSpan : asGeoJSON
+        
+      ACLineSegmentSpan : asGML
+        
+      ACLineSegmentSpan : asWKT
+        
       ACLineSegmentSpan : ACLineSegmentSpan.aviationObstacleLightingKind
         
           ACLineSegmentSpan --> AviationObstacleLightingKind : ACLineSegmentSpan.aviationObstacleLightingKind
@@ -60,10 +66,8 @@ _The part of a segment line between two consecutive points of support._
 
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [ExtPowerSystemResource](ExtPowerSystemResource.md)
-        * [PowerSystemResource](PowerSystemResource.md)
-            * **ACLineSegmentSpan**
+* [PowerSystemResource](PowerSystemResource.md) [ [IdentifiedObject](IdentifiedObject.md) [SpatialObject](SpatialObject.md)]
+    * **ACLineSegmentSpan**
 
 
 
@@ -77,11 +81,14 @@ _The part of a segment line between two consecutive points of support._
 | maxWidth | [nc-no:ACLineSegmentSpan.maxWidth](https://ap-no.cim4.eu/AviationObstacle/1.0#ACLineSegmentSpan.maxWidth) | 0..1 <br />  [Length](Length.md)  | Max width of the AC Line Segment Span | direct |
 | maxHeight | [nc-no:ACLineSegmentSpan.maxHeight](https://ap-no.cim4.eu/AviationObstacle/1.0#ACLineSegmentSpan.maxHeight) | 0..1 <br />  [Length](Length.md)  | Max height of the AC Line Segment Span | direct |
 | spanWireLength | [nc-no:ACLineSegmentSpan.spanWireLength](https://ap-no.cim4.eu/AviationObstacle/1.0#ACLineSegmentSpan.spanWireLength) | 0..1 <br />  [Length](Length.md)  | Length of the AC Line Segment Span | direct |
-| ACLineSegment | [nc-no:ACLineSegmentSpan.ACLineSegment](https://ap-no.cim4.eu/AviationObstacle/1.0#ACLineSegmentSpan.ACLineSegment) | 0..n <br />  [ACLineSegment](ACLineSegment.md)  | The associated AC Line Segment | direct |
-| locationMethodKind | [nc-no:PowerSystemResource.locationMethodKind](https://ap-no.cim4.eu/AviationObstacle/1.0#PowerSystemResource.locationMethodKind) | 0..1 <br />  [LocationMethodKind](LocationMethodKind.md)  | Possible methods to derive geographical location | [ExtPowerSystemResource](ExtPowerSystemResource.md) |
+| ACLineSegment | [nc-no:ACLineSegmentSpan.ACLineSegment](https://ap-no.cim4.eu/AviationObstacle/1.0#ACLineSegmentSpan.ACLineSegment) | 0..* <br />  [ACLineSegment](ACLineSegment.md)  | The associated AC Line Segment | direct |
+| locationMethodKind | [nc-no:PowerSystemResource.locationMethodKind](https://ap-no.cim4.eu/AviationObstacle/1.0#PowerSystemResource.locationMethodKind) | 0..1 <br />  [LocationMethodKind](LocationMethodKind.md)  | Possible methods to derive geographical location | [PowerSystemResource](PowerSystemResource.md) |
 | mRID | [cim:IdentifiedObject.mRID](http://iec.ch/TC57/CIM100#IdentifiedObject.mRID) | 0..1 <br />  string  | Master resource identifier issued by a model authority | [IdentifiedObject](IdentifiedObject.md) |
 | description | [cim:IdentifiedObject.description](http://iec.ch/TC57/CIM100#IdentifiedObject.description) | 0..1 <br />  string  | The description is a free human readable text describing or naming the object | [IdentifiedObject](IdentifiedObject.md) |
 | name | [cim:IdentifiedObject.name](http://iec.ch/TC57/CIM100#IdentifiedObject.name) | 0..1 <br />  string  | The name is any free human readable and possibly non unique text naming the o... | [IdentifiedObject](IdentifiedObject.md) |
+| asWKT | [geo:asWKT](http://www.opengis.net/ont/geosparql#asWKT) | 0..1 <br />  string  | Geometric representation of the spatial object in WKT format | [SpatialObject](SpatialObject.md) |
+| asGeoJSON | [geo:asGeoJSON](http://www.opengis.net/ont/geosparql#asGeoJSON) | 0..1 <br />  string  | Geometric representation of the spatial object in GeoJSON format | [SpatialObject](SpatialObject.md) |
+| asGML | [geo:asGML](http://www.opengis.net/ont/geosparql#asGML) | 0..1 <br />  string  | Geometric representation of the spatial object in GML format | [SpatialObject](SpatialObject.md) |
 
 
 
@@ -91,7 +98,6 @@ _The part of a segment line between two consecutive points of support._
 
 | used by | used in | type | used |
 | ---  | --- | --- | --- |
-| [ExtACLineSegment](ExtACLineSegment.md) | ACLineSegmentSpan | range | [ACLineSegmentSpan](ACLineSegmentSpan.md) |
 | [ACLineSegment](ACLineSegment.md) | ACLineSegmentSpan | range | [ACLineSegmentSpan](ACLineSegmentSpan.md) |
 | [ACLineSegmentSpanDeployment](ACLineSegmentSpanDeployment.md) | ACLineSegmentSpan | range | [ACLineSegmentSpan](ACLineSegmentSpan.md) |
 

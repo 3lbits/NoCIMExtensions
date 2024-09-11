@@ -19,8 +19,10 @@ _A power system resource (PSR) can be an item of equipment such as a switch, an 
  classDiagram
     class PowerSystemResource
     click PowerSystemResource href "../PowerSystemResource"
-      ExtPowerSystemResource <|-- PowerSystemResource
-        click ExtPowerSystemResource href "../ExtPowerSystemResource"
+      IdentifiedObject <|-- PowerSystemResource
+        click IdentifiedObject href "../IdentifiedObject"
+      SpatialObject <|-- PowerSystemResource
+        click SpatialObject href "../SpatialObject"
       
 
       PowerSystemResource <|-- Equipment
@@ -29,6 +31,12 @@ _A power system resource (PSR) can be an item of equipment such as a switch, an 
         click ACLineSegmentSpan href "../ACLineSegmentSpan"
       
       
+      PowerSystemResource : asGeoJSON
+        
+      PowerSystemResource : asGML
+        
+      PowerSystemResource : asWKT
+        
       PowerSystemResource : IdentifiedObject.description
         
       PowerSystemResource : PowerSystemResource.locationMethodKind
@@ -48,11 +56,9 @@ _A power system resource (PSR) can be an item of equipment such as a switch, an 
 
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [ExtPowerSystemResource](ExtPowerSystemResource.md)
-        * **PowerSystemResource**
-            * [Equipment](Equipment.md)
-            * [ACLineSegmentSpan](ACLineSegmentSpan.md)
+* **PowerSystemResource** [ [IdentifiedObject](IdentifiedObject.md) [SpatialObject](SpatialObject.md)]
+    * [Equipment](Equipment.md)
+    * [ACLineSegmentSpan](ACLineSegmentSpan.md)
 
 
 
@@ -61,10 +67,13 @@ _A power system resource (PSR) can be an item of equipment such as a switch, an 
 
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
-| locationMethodKind | [nc-no:PowerSystemResource.locationMethodKind](https://ap-no.cim4.eu/AviationObstacle/1.0#PowerSystemResource.locationMethodKind) | 0..1 <br />  [LocationMethodKind](LocationMethodKind.md)  | Possible methods to derive geographical location | [ExtPowerSystemResource](ExtPowerSystemResource.md) |
+| locationMethodKind | [nc-no:PowerSystemResource.locationMethodKind](https://ap-no.cim4.eu/AviationObstacle/1.0#PowerSystemResource.locationMethodKind) | 0..1 <br />  [LocationMethodKind](LocationMethodKind.md)  | Possible methods to derive geographical location | direct |
 | mRID | [cim:IdentifiedObject.mRID](http://iec.ch/TC57/CIM100#IdentifiedObject.mRID) | 0..1 <br />  string  | Master resource identifier issued by a model authority | [IdentifiedObject](IdentifiedObject.md) |
 | description | [cim:IdentifiedObject.description](http://iec.ch/TC57/CIM100#IdentifiedObject.description) | 0..1 <br />  string  | The description is a free human readable text describing or naming the object | [IdentifiedObject](IdentifiedObject.md) |
 | name | [cim:IdentifiedObject.name](http://iec.ch/TC57/CIM100#IdentifiedObject.name) | 0..1 <br />  string  | The name is any free human readable and possibly non unique text naming the o... | [IdentifiedObject](IdentifiedObject.md) |
+| asWKT | [geo:asWKT](http://www.opengis.net/ont/geosparql#asWKT) | 0..1 <br />  string  | Geometric representation of the spatial object in WKT format | [SpatialObject](SpatialObject.md) |
+| asGeoJSON | [geo:asGeoJSON](http://www.opengis.net/ont/geosparql#asGeoJSON) | 0..1 <br />  string  | Geometric representation of the spatial object in GeoJSON format | [SpatialObject](SpatialObject.md) |
+| asGML | [geo:asGML](http://www.opengis.net/ont/geosparql#asGML) | 0..1 <br />  string  | Geometric representation of the spatial object in GML format | [SpatialObject](SpatialObject.md) |
 
 
 

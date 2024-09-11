@@ -43,7 +43,6 @@ _An element of an asset that has no electrical characteristic._
 ## Inheritance
 * [IdentifiedObject](IdentifiedObject.md)
     * **ElementResource**
-        * [LocationResource](LocationResource.md)
 
 
 

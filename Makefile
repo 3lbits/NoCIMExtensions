@@ -1,12 +1,13 @@
 .PHONY: markdown
-markdown: ## Generate Markdown files from LinkML schemas
+markdown: ## Generate Markdown files from LinkML schemas and removes all Slot and Type files
 	gen-doc -d docs/AviationObstacle --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/aviationobstacle.linkml.yaml
 	grep -E '^# (Slot|Type): ' -lr --include \*.md docs | xargs -d '\n' rm
 
-postprocess:
-	python replace_99999.py
-
-all: markdown postprocess
+all:
+	make clean
+	make markdown
+	python replace_star_with_0dotdotstar.py
+	mkdocs serve
 
 .PHONY: protobuf
 protobuf: ## Generate Protobuf files from LinkML schemas

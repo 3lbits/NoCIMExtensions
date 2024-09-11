@@ -1,0 +1,42 @@
+{
+  "IdentifiedObject": {
+    "mRID": "49dc66ba-26fc-47ee-9436-d6e12a9746dd",
+    "description": "Sample AC line segment.",
+    "name": "SampleACLineSegment"
+  },
+  "@type": "Root",
+  "@context": {
+    "cim": "http://iec.ch/TC57/CIM100#",
+    "cims": "http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#",
+    "dc": "http://purl.org/dc/elements/1.1/",
+    "dcat": "http://www.w3.org/ns/dcat#",
+    "dct": "http://purl.org/dc/terms/",
+    "eu": "http://iec.ch/TC57/CIM100-European#",
+    "geo": "http://www.opengis.net/ont/geosparql#",
+    "linkml": "https://w3id.org/linkml/",
+    "nc-no": "https://ap-no.cim4.eu/AviationObstacle/1.0#",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "profcim": "http://iec.ch/TC57/ns/CIM/prof-cim#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "sh": "http://www.w3.org/ns/shacl#",
+    "skos": "http://www.w3.org/2004/02/skos/core#",
+    "this": "https://ap-no.cim4.eu/AviationObstacle/1.0#",
+    "@vocab": "https://ap-no.cim4.eu/AviationObstacle/1.0#",
+    "description": {
+      "@id": "cim:IdentifiedObject.description"
+    },
+    "mRID": {
+      "@id": "cim:IdentifiedObject.mRID"
+    },
+    "name": {
+      "@id": "cim:IdentifiedObject.name"
+    },
+    "IdentifiedObject": {
+      "@id": "IdentifiedObject"
+    },
+    "Root": {
+      "@id": "Root"
+    }
+  }
+}

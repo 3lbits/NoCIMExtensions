@@ -35,3 +35,7 @@ This is using `Makefile` to hide the complexity of running commands manually. Yo
 
 Note that if a new profile has been added, make sure to add it to the list in the `docs/index.md` file.
 
+
+# LinkML commands
+
+- linkml-convert -s personinfo.linkml.yaml data.linkml.yaml -o data.jsonld

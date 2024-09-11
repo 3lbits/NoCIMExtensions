@@ -1,5 +1,5 @@
-site_name: "CPSM & CPSM-NA Profile Documentation"
-repo_url: https://github.com/cimug-org/cpsm-docs
+site_name: "Norwegian CIM Extension"
+repo_url: https://github.com/NoCIMExtensions/docs
 theme:
   palette:
     primary: white
@@ -21,4 +21,4 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
 extra_css:
   - stylesheets/extra.css
-site_url: https://cpsm-docs.ucaiug.io
+site_url: https://NoCIMExtensions.elbits.no

@@ -22,6 +22,12 @@ _An overhead structure is an element of an electric transmission or distribution
       Structure <|-- OverheadStructure
         click Structure href "../Structure"
       
+      OverheadStructure : asGeoJSON
+        
+      OverheadStructure : asGML
+        
+      OverheadStructure : asWKT
+        
       OverheadStructure : OverheadStructure.aviationObstacleLightingKind
         
           OverheadStructure --> AviationObstacleLightingKind : OverheadStructure.aviationObstacleLightingKind
@@ -55,11 +61,9 @@ _An overhead structure is an element of an electric transmission or distribution
 
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [ElementResource](ElementResource.md)
-        * [LocationResource](LocationResource.md)
-            * [Structure](Structure.md)
-                * **OverheadStructure**
+* [LocationResource](LocationResource.md) [ [ElementResource](ElementResource.md) [SpatialObject](SpatialObject.md)]
+    * [Structure](Structure.md)
+        * **OverheadStructure**
 
 
 
@@ -73,6 +77,9 @@ _An overhead structure is an element of an electric transmission or distribution
 | maxHeight | [nc-no:OverheadStructure.maxHeight](https://ap-no.cim4.eu/AviationObstacle/1.0#OverheadStructure.maxHeight) | 0..1 <br />  [Length](Length.md)  | The length of the longest distance from the ground to the highest point on th... | direct |
 | height | [nc-no:Structure.height](https://ap-no.cim4.eu/AviationObstacle/1.0#Structure.height) | 0..1 <br />  [Length](Length.md)  | Visible height of structure above ground level for overhead construction (e | [Structure](Structure.md) |
 | locationMethod | [nc-no:PowerSystemResource.locationMethod](https://ap-no.cim4.eu/AviationObstacle/1.0#PowerSystemResource.locationMethod) | 0..1 <br />  [LocationMethodKind](LocationMethodKind.md)  | Method used to derive geographical location for this entity | [LocationResource](LocationResource.md) |
+| asWKT | [geo:asWKT](http://www.opengis.net/ont/geosparql#asWKT) | 0..1 <br />  string  | Geometric representation of the spatial object in WKT format | [SpatialObject](SpatialObject.md) |
+| asGeoJSON | [geo:asGeoJSON](http://www.opengis.net/ont/geosparql#asGeoJSON) | 0..1 <br />  string  | Geometric representation of the spatial object in GeoJSON format | [SpatialObject](SpatialObject.md) |
+| asGML | [geo:asGML](http://www.opengis.net/ont/geosparql#asGML) | 0..1 <br />  string  | Geometric representation of the spatial object in GML format | [SpatialObject](SpatialObject.md) |
 | mRID | [cim:IdentifiedObject.mRID](http://iec.ch/TC57/CIM100#IdentifiedObject.mRID) | 0..1 <br />  string  | Master resource identifier issued by a model authority | [IdentifiedObject](IdentifiedObject.md) |
 | description | [cim:IdentifiedObject.description](http://iec.ch/TC57/CIM100#IdentifiedObject.description) | 0..1 <br />  string  | The description is a free human readable text describing or naming the object | [IdentifiedObject](IdentifiedObject.md) |
 | name | [cim:IdentifiedObject.name](http://iec.ch/TC57/CIM100#IdentifiedObject.name) | 0..1 <br />  string  | The name is any free human readable and possibly non unique text naming the o... | [IdentifiedObject](IdentifiedObject.md) |

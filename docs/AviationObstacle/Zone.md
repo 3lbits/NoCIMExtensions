@@ -1,15 +1,13 @@
-# LocationResource
+# Zone
 
 
-_A spatial entity. LocationResource serves a similar purpose as PowerSystemResource but for non-electrical entites of interest to electrical utilities._
+_Defines a system base voltage which is referenced._
 
 
 
 
-* __NOTE__: this is an abstract class and should not be instantiated directly
 
-
-**URI**: [nc-no:LocationResource](https://ap-no.cim4.eu/AviationObstacle/1.0#LocationResource)<br />
+**URI**: [nc-no:Zone](https://ap-no.cim4.eu/AviationObstacle/1.0#Zone)<br />
 **Type**: Class
 
 
@@ -17,36 +15,37 @@ _A spatial entity. LocationResource serves a similar purpose as PowerSystemResou
 
 ```mermaid
  classDiagram
-    class LocationResource
-    click LocationResource href "../LocationResource"
-      ElementResource <|-- LocationResource
-        click ElementResource href "../ElementResource"
-      SpatialObject <|-- LocationResource
-        click SpatialObject href "../SpatialObject"
-      
-
-      LocationResource <|-- Structure
-        click Structure href "../Structure"
+    class Zone
+    click Zone href "../Zone"
       LocationResource <|-- Zone
-        click Zone href "../Zone"
+        click LocationResource href "../LocationResource"
       
-      
-      LocationResource : asGeoJSON
+      Zone : asGeoJSON
         
-      LocationResource : asGML
+      Zone : asGML
         
-      LocationResource : asWKT
+      Zone : asWKT
         
-      LocationResource : IdentifiedObject.description
+      Zone : IdentifiedObject.description
         
-      LocationResource : PowerSystemResource.locationMethod
+      Zone : PowerSystemResource.locationMethod
         
-          LocationResource --> LocationMethodKind : PowerSystemResource.locationMethod
+          Zone --> LocationMethodKind : PowerSystemResource.locationMethod
           click LocationMethodKind href "../LocationMethodKind"
         
-      LocationResource : IdentifiedObject.mRID
+      Zone : IdentifiedObject.mRID
         
-      LocationResource : IdentifiedObject.name
+      Zone : IdentifiedObject.name
+        
+      Zone : Zone.state
+        
+          Zone --> ZoneStateKind : Zone.state
+          click ZoneStateKind href "../ZoneStateKind"
+        
+      Zone : Zone.zoneKind
+        
+          Zone --> ZoneKind : Zone.zoneKind
+          click ZoneKind href "../ZoneKind"
         
       
 ```
@@ -56,9 +55,8 @@ _A spatial entity. LocationResource serves a similar purpose as PowerSystemResou
 
 
 ## Inheritance
-* **LocationResource** [ [ElementResource](ElementResource.md) [SpatialObject](SpatialObject.md)]
-    * [Structure](Structure.md)
-    * [Zone](Zone.md)
+* [LocationResource](LocationResource.md) [ [ElementResource](ElementResource.md) [SpatialObject](SpatialObject.md)]
+    * **Zone**
 
 
 
@@ -67,7 +65,9 @@ _A spatial entity. LocationResource serves a similar purpose as PowerSystemResou
 
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
-| locationMethod | [nc-no:PowerSystemResource.locationMethod](https://ap-no.cim4.eu/AviationObstacle/1.0#PowerSystemResource.locationMethod) | 0..1 <br />  [LocationMethodKind](LocationMethodKind.md)  | Method used to derive geographical location for this entity | direct |
+| state | [cim:Zone.state](http://iec.ch/TC57/CIM100#Zone.state) | 0..1 <br />  [ZoneStateKind](ZoneStateKind.md)  | Current state of zone | direct |
+| zoneKind | [cim:Zone.zoneKind](http://iec.ch/TC57/CIM100#Zone.zoneKind) | 0..1 <br />  [ZoneKind](ZoneKind.md)  | Kind of zone | direct |
+| locationMethod | [nc-no:PowerSystemResource.locationMethod](https://ap-no.cim4.eu/AviationObstacle/1.0#PowerSystemResource.locationMethod) | 0..1 <br />  [LocationMethodKind](LocationMethodKind.md)  | Method used to derive geographical location for this entity | [LocationResource](LocationResource.md) |
 | asWKT | [geo:asWKT](http://www.opengis.net/ont/geosparql#asWKT) | 0..1 <br />  string  | Geometric representation of the spatial object in WKT format | [SpatialObject](SpatialObject.md) |
 | asGeoJSON | [geo:asGeoJSON](http://www.opengis.net/ont/geosparql#asGeoJSON) | 0..1 <br />  string  | Geometric representation of the spatial object in GeoJSON format | [SpatialObject](SpatialObject.md) |
 | asGML | [geo:asGML](http://www.opengis.net/ont/geosparql#asGML) | 0..1 <br />  string  | Geometric representation of the spatial object in GML format | [SpatialObject](SpatialObject.md) |
@@ -104,8 +104,8 @@ _A spatial entity. LocationResource serves a similar purpose as PowerSystemResou
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | nc-no:LocationResource |
-| native | this:LocationResource |
+| self | nc-no:Zone |
+| native | this:Zone |
 
 
 

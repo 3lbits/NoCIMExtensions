@@ -19,12 +19,12 @@ _This is a root class to provide common identification for all classes needing i
  classDiagram
     class IdentifiedObject
     click IdentifiedObject href "../IdentifiedObject"
-      IdentifiedObject <|-- ExtPowerSystemResource
-        click ExtPowerSystemResource href "../ExtPowerSystemResource"
+      IdentifiedObject <|-- PowerSystemResource
+        click PowerSystemResource href "../PowerSystemResource"
       IdentifiedObject <|-- ElementResource
         click ElementResource href "../ElementResource"
-      IdentifiedObject <|-- ExtAssetDeployment
-        click ExtAssetDeployment href "../ExtAssetDeployment"
+      IdentifiedObject <|-- AssetDeployment
+        click AssetDeployment href "../AssetDeployment"
       IdentifiedObject <|-- BaseVoltage
         click BaseVoltage href "../BaseVoltage"
       
@@ -43,9 +43,8 @@ _This is a root class to provide common identification for all classes needing i
 
 ## Inheritance
 * **IdentifiedObject**
-    * [ExtPowerSystemResource](ExtPowerSystemResource.md)
     * [ElementResource](ElementResource.md)
-    * [ExtAssetDeployment](ExtAssetDeployment.md)
+    * [AssetDeployment](AssetDeployment.md)
     * [BaseVoltage](BaseVoltage.md)
 
 

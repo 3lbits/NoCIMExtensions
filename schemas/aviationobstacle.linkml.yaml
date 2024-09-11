@@ -20,6 +20,7 @@ prefixes:
   dcat: http://www.w3.org/ns/dcat#
   eu: http://iec.ch/TC57/CIM100-European#
   nc-no: https://ap-no.cim4.eu/AviationObstacle/1.0#
+  geo: http://www.opengis.net/ont/geosparql#
 imports:
 - linkml:types
 default_curi_maps:
@@ -53,12 +54,14 @@ classes:
         range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
-  
-  ExtPowerSystemResource:
-    description: "Extends PowerSystemResource"
-    is_a: IdentifiedObject
+
+  PowerSystemResource:
+    description: "A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated."
+    mixins:
+      - IdentifiedObject
+      - SpatialObject
     abstract: true
-    class_uri: nc-no:PowerSystemResource
+    class_uri: cim:PowerSystemResource
     attributes:
       locationMethodKind:
         description: "Possible methods to derive geographical location."
@@ -66,13 +69,6 @@ classes:
         range: LocationMethodKind
         minimum_cardinality: 0
         maximum_cardinality: 1
-
-  PowerSystemResource:
-    description: "A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated."
-    is_a: ExtPowerSystemResource
-    abstract: true
-    class_uri: cim:PowerSystemResource
-    attributes:
 
   ElementResource:
     description: "An element of an asset that has no electrical characteristic."
@@ -83,7 +79,9 @@ classes:
 
   LocationResource:
     description: "A spatial entity. LocationResource serves a similar purpose as PowerSystemResource but for non-electrical entites of interest to electrical utilities."
-    is_a: ElementResource
+    mixins:
+      - ElementResource
+      - SpatialObject
     abstract: true
     class_uri: nc-no:LocationResource
     attributes:
@@ -115,25 +113,18 @@ classes:
     class_uri: cim:Conductor
     attributes:
 
-  ExtACLineSegment:
-    description: "Extension of cim AC Line Segment"
+  ACLineSegment:
+    description: "A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.For symmetrical, transposed three phase lines, it is sufficient to use attributes of the line segment, which describe impedances and admittances for the entire length of the segment.  Additionally impedances can be computed by using length and associated per length impedances.The BaseVoltage at the two ends of ACLineSegments in a Line shall have the same BaseVoltage.nominalVoltage. However, boundary lines may have slightly different BaseVoltage.nominalVoltages and variation is allowed. Larger voltage difference in general requires use of an equivalent branch."
+    comments: "- Each ACLineSegment is required to have an association to a BaseVoltage. The association to Line is not required.- Using the EquipmentContainer association, an ACLineSegment can only be contained by a Line, but the association to Line is not required."
     is_a: Conductor
-    class_uri: nc-no:ACLineSegment
+    class_uri: cim:ACLineSegment
     attributes:
       ACLineSegmentSpan:
         description: "The associated AC Line Segment"
         slot_uri: nc-no:ACLineSegment.ACLineSegmentSpan
         range: ACLineSegmentSpan
         minimum_cardinality: 0
-        # maximum_cardinality: n # maximum_cardinality not present should mean n-n.
-        maximum_cardinality: 99999 # Temporary fix for the issue with n-n and a python replace script for md files.
-
-  ACLineSegment:
-    description: "A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.For symmetrical, transposed three phase lines, it is sufficient to use attributes of the line segment, which describe impedances and admittances for the entire length of the segment.  Additionally impedances can be computed by using length and associated per length impedances.The BaseVoltage at the two ends of ACLineSegments in a Line shall have the same BaseVoltage.nominalVoltage. However, boundary lines may have slightly different BaseVoltage.nominalVoltages and variation is allowed. Larger voltage difference in general requires use of an equivalent branch."
-    comments: "- Each ACLineSegment is required to have an association to a BaseVoltage. The association to Line is not required.- Using the EquipmentContainer association, an ACLineSegment can only be contained by a Line, but the association to Line is not required."
-    is_a: ExtACLineSegment
-    class_uri: cim:ACLineSegment
-    attributes:
+        multivalued: true
 
   ACLineSegmentSpan:
     description: "The part of a segment line between two consecutive points of support."
@@ -175,14 +166,63 @@ classes:
         slot_uri: nc-no:ACLineSegmentSpan.ACLineSegment
         range: ACLineSegment
         minimum_cardinality: 0
-        # maximum_cardinality: n # maximum_cardinality not present should mean n-n.
-        maximum_cardinality: 99999 # Temporary fix for the issue with n-n and a python replace script for md files.
+        multivalued: true
 
-  ExtAssetDeployment:
+  Structure:
+    description: "Construction holding assets such as conductors, transformers, switchgear, etc."
+    is_a: LocationResource
+    abstract: true
+    class_uri: nc-no:Structure
+    attributes:
+      height:
+        description: "Visible height of structure above ground level for overhead construction (e.g., Pole or Tower) or below ground level for an underground vault, manhole, etc."
+        slot_uri: nc-no:Structure.height
+        range: Length
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  
+  OverheadStructure:
+    description: "An overhead structure is an element of an electric transmission or distribution system that supports the overhead conductors and associated equipment used for the transmission of electricity."
+    is_a: Structure
+    abstract: true
+    class_uri: nc-no:OverheadStructure
+    attributes:
+      aviationObstacleLightingKind:
+        description: "Kind of lighting on the structure."
+        slot_uri: nc-no:OverheadStructure.aviationObstacleLightingKind
+        range: AviationObstacleLightingKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      aviationObstacleMarkingKind:
+        description: "Kind of marking on the structure."
+        slot_uri: nc-no:OverheadStructure.aviationObstacleMarkingKind
+        range: AviationObstacleMarkingKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      maxHeight:
+        description: "The length of the longest distance from the ground to the highest point on the structure. If f.ex. the structure is located in a steep slope, the distance from the top of the structure to the ground may vary."
+        slot_uri: nc-no:OverheadStructure.maxHeight
+        range: Length
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  AssetDeployment:
     description: "Deployment of asset deployment in a power system resource role."
     is_a: IdentifiedObject
-    class_uri: nc-no:AssetDeployment
+    class_uri: cim:AssetDeployment
     attributes:
+      deploymentState:
+        description: "Current deployment state of asset."
+        slot_uri: cim:AssetDeployment.deploymentState
+        range: DeploymentStateKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      BaseVoltage:
+        description: "The associated Base Voltage."
+        slot_uri: cim:AssetDeployment.BaseVoltage
+        range: BaseVoltage
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       # deploymentState:
       #   description: "Current deployment state of asset."
       #   slot_uri: nc-no:AssetDeployment.deploymentState
@@ -226,63 +266,6 @@ classes:
         minimum_cardinality: 0
         maximum_cardinality: 1
 
-  Structure:
-    description: "Construction holding assets such as conductors, transformers, switchgear, etc."
-    is_a: LocationResource
-    abstract: true
-    class_uri: nc-no:Structure
-    attributes:
-      height:
-        description: "Visible height of structure above ground level for overhead construction (e.g., Pole or Tower) or below ground level for an underground vault, manhole, etc."
-        slot_uri: nc-no:Structure.height
-        range: Length
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-  
-  OverheadStructure:
-    description: "An overhead structure is an element of an electric transmission or distribution system that supports the overhead conductors and associated equipment used for the transmission of electricity."
-    is_a: Structure
-    abstract: true
-    class_uri: nc-no:OverheadStructure
-    attributes:
-      aviationObstacleLightingKind:
-        description: "Kind of lighting on the structure."
-        slot_uri: nc-no:OverheadStructure.aviationObstacleLightingKind
-        range: AviationObstacleLightingKind
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-      aviationObstacleMarkingKind:
-        description: "Kind of marking on the structure."
-        slot_uri: nc-no:OverheadStructure.aviationObstacleMarkingKind
-        range: AviationObstacleMarkingKind
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-      maxHeight:
-        description: "The length of the longest distance from the ground to the highest point on the structure. If f.ex. the structure is located in a steep slope, the distance from the top of the structure to the ground may vary."
-        slot_uri: nc-no:OverheadStructure.maxHeight
-        range: Length
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-
-  AssetDeployment:
-    description: "Deployment of asset deployment in a power system resource role."
-    is_a: ExtAssetDeployment
-    # is_a: IdentifiedObject
-    class_uri: cim:AssetDeployment
-    attributes:
-      deploymentState:
-        description: "Current deployment state of asset."
-        slot_uri: cim:AssetDeployment.deploymentState
-        range: DeploymentStateKind
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-      BaseVoltage:
-        description: "The associated Base Voltage."
-        slot_uri: cim:AssetDeployment.BaseVoltage
-        range: BaseVoltage
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-
   ACLineSegmentSpanDeployment:
     description: "Deployment of an ACLineSegmentSpan."
     is_a: AssetDeployment
@@ -318,6 +301,50 @@ classes:
         range: Voltage
         minimum_cardinality: 0
         maximum_cardinality: 1
+
+  Zone:
+    description: "Defines a system base voltage which is referenced."
+    is_a: LocationResource
+    class_uri: nc-no:Zone
+    attributes:
+      state:
+        description: "Current state of zone."
+        slot_uri: cim:Zone.state
+        range: ZoneStateKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      zoneKind:
+        description: "Kind of zone."
+        slot_uri: cim:Zone.zoneKind
+        range: ZoneKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  SpatialObject:
+    description: "Defines a system base voltage which is referenced."
+    class_uri: geo:SpatialObject
+    attributes: 
+      asWKT:
+        description: "Geometric representation of the spatial object in WKT format."
+        slot_uri: geo:asWKT
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+        # type: geo:wktLiteral
+      asGeoJSON:
+        description: "Geometric representation of the spatial object in GeoJSON format."
+        slot_uri: geo:asGeoJSON
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+        # type: geo:geoJSONLiteral
+      asGML:
+        description: "Geometric representation of the spatial object in GML format."
+        slot_uri: geo:asGML
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+        # type: geo:gmlLiteral
 
 enums:
 
@@ -384,18 +411,9 @@ enums:
         meaning:  nc-no:LocationMethodKind.manual
         description: "The power system resource location method is manual."
 
-  # ExtDeploymentStateKind:
-  #   description: "Possible states of asset deployment."
-  #   enum_uri:  https://ap-no.cim4.eu/AviationObstacle/1.0#DeploymentStateKind
-  #   permissible_values:
-  #     notYetRemoved:
-  #       meaning:  nc-no:DeploymentStateKind.notYetRemoved
-  #       description: "Asset in service in deployment notYetRemoved."
-
   DeploymentStateKind:
     description: "Possible states of asset deployment."
     enum_uri:  http://iec.ch/TC57/CIM100#DeploymentStateKind
-    # is_a: ExtDeploymentStateKind
     permissible_values:
       inService:
         meaning:  cim:DeploymentStateKind.inService
@@ -415,6 +433,43 @@ enums:
       notYetRemoved:
         meaning:  nc-no:DeploymentStateKind.notYetRemoved
         description: "Asset in service in deployment notYetRemoved."
+
+  ZoneKind:
+    description: "Kind of zone."
+    enum_uri:  https://ap-no.cim4.eu/AviationObstacle/1.0#ZoneKind
+    permissible_values:
+      electricalNetwork:
+        meaning:  cim:ZoneKind.electricalNetwork
+        description: "The zone kind is electrical network."
+      other:
+        meaning:  cim:ZoneKind.other
+        description: "The zone kind is other."
+      specialRestrictionLand:
+        meaning:  cim:ZoneKind.specialRestrictionLand
+        description: "The zone kind is special restriction land."
+      weatherZone:
+        meaning:  cim:ZoneKind.weatherZone
+        description: "The zone kind is weather zone."
+      substation:
+        meaning:  cim:ZoneKind.substation
+        description: "The zone kind is substation."
+
+  ZoneStateKind:
+    description: Current state of zone."
+    enum_uri:  https://ap-no.cim4.eu/AviationObstacle/1.0#ZoneStateKind
+    permissible_values:
+      registered:
+        meaning:  cim:ZoneStateKind.registered
+        description: "The zone state kind is registered."
+      notYetRegistered:
+        meaning:  cim:ZoneStateKind.notYetRegistered
+        description: "The zone state kind is not yet registered."
+      removed:
+        meaning:  cim:ZoneStateKind.removed
+        description: "The zone state kind is removed."
+      notYetRemoved:
+        meaning:  cim:ZoneStateKind.notYetRemoved
+        description: "The zone state kind is not yet removed."
 
 types:
 

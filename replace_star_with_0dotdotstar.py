@@ -18,6 +18,6 @@ def traverse_and_replace(directory, search_text, replace_text):
 
 if __name__ == "__main__":
     docs_directory = 'docs/'
-    search_text = '..99999'
-    replace_text = '..n'
+    search_text = ' | * '
+    replace_text = ' | 0..* '
     traverse_and_replace(docs_directory, search_text, replace_text)
