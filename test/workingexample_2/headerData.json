@@ -1,0 +1,57 @@
+{
+    "@id": "urn:uuid:f1d9a88d-0ff5-4e4b-9d6a-c353fe8232c3",
+    "@type": "dcat:Dataset",
+    "prov:generatedAtTime": {
+        "@value": "2024-02-06T12:00:00Z",
+        "@type": "xsd:dateTime"
+    },
+    "dcterms:issued": {
+        "@value": "2024-02-06T12:00:00Z",
+        "@type": "xsd:date"
+    },
+    "dcterms:title": "Telemark-120_AO",
+    "dcterms:description": [
+        {
+            "@value": "Telemark-120 Aviation Obstacle",
+            "@language": "no"
+        }
+    ],
+    "dcterms:publisher": {
+        "@id": "urn:uuid:bd53cf0a-2e2f-4230-a591-0233290b5f9b",
+        "dcterms:title": "ElBits"
+    },
+    "dcterms:temporal": {
+        "@type": "dcterms:PeriodOfTime",
+        "dcat:startDate": {
+            "@value": "2024-02-06T12:00:00Z",
+            "@type": "xsd:dateTime"
+        }
+    },
+    "dcterms:rights": "© 2024 Copyright",
+    "dcterms:rightsHolder": "ElBits",
+    "dcterms:license": {
+        "@id": "https://creativecommons.org/licenses/by-nc-sa/4.0/",
+        "dcterms:title": "CC BY-NC-SA 4.0"
+    },
+    "dcterms:accessRights": {
+        "@id": "http://publications.europa.eu/resource/authority/access-right/PUBLIC",
+        "dcterms:title": "PUBLIC"
+    },
+    "dcat:isVersionOf": {
+        "@id": "https://test.model4powersystem.eu/Telemark/"
+    },
+    "dcat:keyword": "NRL",
+    "dcterms:spatial": {
+        "@id": "https://energy.referencedata.eu/Test/Frame/NO-Telemark-MV1"
+    },
+    "dcterms:conformsTo": [
+        {
+            "@id": "https://ap-no.cim4.eu/AviationObstacle/0.9"
+        }
+    ],
+    "dcterms:references": [
+        {
+            "@id": "urn:uuid:dd345794-d73a-4510-b0e3-ee62fbdde482"
+        }
+    ]
+}

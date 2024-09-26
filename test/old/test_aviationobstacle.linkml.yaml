@@ -1,0 +1,37 @@
+id: https://ap-no.cim4.eu/AviationObstacle/1.0#
+name: AviationObstacle
+title: AviationObstacle Vocabulary
+description: >
+  This schema represents the aviation obstacles in the power system
+  and their hierarchical relationships.
+
+prefixes:
+  cim: http://iec.ch/TC57/CIM100#
+  linkml: https://w3id.org/linkml/
+
+default_prefix: cim
+default_range: string
+
+imports:
+  - https://w3id.org/linkml/types
+
+classes:
+  IdentifiedObject:
+    class_uri: cim:IdentifiedObject
+    description: >
+      A general object in the CIM model that has an identifier (mRID),
+      a name, and a description.
+    attributes:
+      mRID:
+        range: string
+        # identifier: true
+        required: true
+        slot_uri: cim:IdentifiedObject.mRID
+        description: "The unique identifier for the object."
+  Container:
+    tree_root: true
+    attributes:
+      IdentifiedObject:
+        multivalued: true
+        inlined_as_list: true
+        range: IdentifiedObject

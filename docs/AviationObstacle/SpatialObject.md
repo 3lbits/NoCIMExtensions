@@ -1,7 +1,7 @@
 # SpatialObject
 
 
-_Defines a system base voltage which is referenced._
+_A spatial object is a physical object that has a location in space. It may have a geometric representation to describe its shape and position._
 
 
 
@@ -17,24 +17,25 @@ _Defines a system base voltage which is referenced._
  classDiagram
     class SpatialObject
     click SpatialObject href "../SpatialObject"
-      SpatialObject <|-- PowerSystemResource
-        click PowerSystemResource href "../PowerSystemResource"
+      SpatialObject <|-- Feature
+        click Feature href "../Feature"
+      SpatialObject <|-- Geometry
+        click Geometry href "../Geometry"
       SpatialObject <|-- LocationResource
         click LocationResource href "../LocationResource"
       
-      SpatialObject : asGeoJSON
-        
-      SpatialObject : asGML
-        
-      SpatialObject : asWKT
-        
       
 ```
 
 
 
 
-<!-- no inheritance hierarchy -->
+
+## Inheritance
+* **SpatialObject**
+    * [Feature](Feature.md)
+    * [Geometry](Geometry.md)
+
 
 
 ## Attributes
@@ -42,9 +43,6 @@ _Defines a system base voltage which is referenced._
 
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
-| asWKT | [geo:asWKT](http://www.opengis.net/ont/geosparql#asWKT) | 0..1 <br />  string  | Geometric representation of the spatial object in WKT format | direct |
-| asGeoJSON | [geo:asGeoJSON](http://www.opengis.net/ont/geosparql#asGeoJSON) | 0..1 <br />  string  | Geometric representation of the spatial object in GeoJSON format | direct |
-| asGML | [geo:asGML](http://www.opengis.net/ont/geosparql#asGML) | 0..1 <br />  string  | Geometric representation of the spatial object in GML format | direct |
 
 
 
@@ -65,7 +63,7 @@ _Defines a system base voltage which is referenced._
 ### Schema Source
 
 
-* from schema: https://ap-no.cim4.eu/AviationObstacle/1.0#
+* from schema: https://ap-no.cim4.eu/AviationObstacle/1.0
 
 
 

@@ -38,7 +38,7 @@ _Kind of zone._
 ### Schema Source
 
 
-* from schema: https://ap-no.cim4.eu/AviationObstacle/1.0#
+* from schema: https://ap-no.cim4.eu/AviationObstacle/1.0
 
 
 

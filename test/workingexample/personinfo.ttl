@@ -1,0 +1,17 @@
+@prefix cim: <http://iec.ch/TC57/CIM100#> .
+@prefix ns1: <https://w3id.org/linkml/examples/personinfo/:> .
+
+[] a <http://iec.ch/TC57/CIM100#@graph> ;
+    ns1:ACLineSegment [ a cim:ACLineSegment ;
+            cim:IdentifiedObject.mRID "ORCID:4567" ;
+            ns1:id "urn:uuid:4567" ],
+        [ a cim:ACLineSegment ;
+            cim:IdentifiedObject.mRID "ORCID:1234" ;
+            ns1:id "urn:uuid:1234" ] ;
+    ns1:ACLineSegmentSpan [ a cim:ACLineSegmentSpan ;
+            cim:IdentifiedObject.mRID "ORCID:1235" ;
+            ns1:id "urn:uuid:1235" ],
+        [ a cim:ACLineSegmentSpan ;
+            cim:IdentifiedObject.mRID "ORCID:4569" ;
+            ns1:id "urn:uuid:4569" ] .
+

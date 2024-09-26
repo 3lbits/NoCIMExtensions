@@ -1,0 +1,44 @@
+{
+  "ACLineSegment": [
+    {
+      "id": "urn:uuid:1234",
+      "mRID": "ORCID:1234"
+    },
+    {
+      "id": "urn:uuid:4567",
+      "mRID": "ORCID:4567"
+    }
+  ],
+  "ACLineSegmentSpan": [
+    {
+      "id": "urn:uuid:1235",
+      "mRID": "ORCID:1235"
+    },
+    {
+      "id": "urn:uuid:4569",
+      "mRID": "ORCID:4569"
+    }
+  ],
+  "@type": "Container",
+  "@context": {
+    "cim": "http://iec.ch/TC57/CIM100#",
+    "linkml": "https://w3id.org/linkml/",
+    "personinfo": "https://w3id.org/linkml/examples/personinfo/",
+    "@vocab": "https://w3id.org/linkml/examples/personinfo/",
+    "id": {
+      "@id": "id"
+    },
+    "mRID": {
+      "@id": "cim:IdentifiedObject.mRID"
+    },
+    "ACLineSegment": {
+      "@id": "cim:ACLineSegment"
+    },
+    "ACLineSegmentSpan": {
+      "@id": "cim:ACLineSegmentSpan"
+    },
+    "Container": {
+      "@id": "Container"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+id: https://w3id.org/linkml/examples/personinfo
+name: personinfo
+prefixes:
+  linkml: https://w3id.org/linkml/
+  cim: http://iec.ch/TC57/CIM100#
+imports:
+  - linkml:types
+default_range: string
+
+classes:
+  ACLineSegment:
+    class_uri: cim:ACLineSegment
+    attributes:
+      id:
+      mRID:
+        slot_uri: cim:IdentifiedObject.mRID
+  ACLineSegmentSpan:
+    class_uri: cim:ACLineSegmentSpan
+    attributes:
+      id:
+      mRID:
+        slot_uri: cim:IdentifiedObject.mRID
+  Container:
+    tree_root: true
+    attributes:
+      ACLineSegment:
+        multivalued: true
+        inlined_as_list: true
+        range: ACLineSegment
+      ACLineSegmentSpan:
+        multivalued: true
+        inlined_as_list: true
+        range: ACLineSegmentSpan

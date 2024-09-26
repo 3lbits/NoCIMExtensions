@@ -1,0 +1,99 @@
+{
+    "@context": {
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "cim": "http://iec.ch/TC57/CIM100#",
+        "dcterms": "http://purl.org/dc/terms/",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "prov": "http://www.w3.org/ns/prov#",
+        "xsd": "http://www.w3.org/2001/XMLSchema#",
+        "eu": "http://iec.ch/TC57/CIM100-European#",
+        "nc-no": "https://ap-no.cim4.eu/AviationObstacle/1.0#",
+        "geo": "http://www.opengis.net/ont/geosparql#"
+    },
+    "@id": "urn:uuid:7a1cc144-557f-46f9-80c9-30fed15c47a7",
+    "@type": "dcat:Dataset",
+    "prov:generatedAtTime": {
+        "@value": "2024-09-26T15:47:30Z",
+        "@type": "xsd:date"
+    },
+    "dcterms:title": "Telemark-120_AO",
+    "dcterms:description": [
+        {
+            "@value": "Telemark-120 Aviation Obstacle",
+            "@language": "en"
+        }
+    ],
+    "dcterms:publisher": {
+        "dcterms:title": "ElBits AS"
+    },
+    "dcterms:temporal": {
+        "@type": "dcterms:PeriodOfTime",
+        "dcat:startDate": {
+            "@value": "2024-09-26T15:47:30Z",
+            "@type": "xsd:dateTime"
+        }
+    },
+    "dcterms:rights": "© 2024 Copyright",
+    "dcterms:rightsHolder": "ElBits AS",
+    "dcterms:license": {
+        "dcterms:title": "CC BY-NC-SA 4.0"
+    },
+    "dcterms:accessRights": {
+        "dcterms:title": "PUBLIC"
+    },
+    "dcterms:isVersionOf": {
+        "@id": "https://test.model4powersystem.eu/Telemark/"
+    },
+    "dcat:keyword": "AO",
+    "dcterms:spatial": {
+        "@id": "https://energy.referencedata.eu/Test/Frame/NO-Telemark-MV1"
+    },
+    "dcterms:conformsTo": [
+        {
+            "@id": "https://ap-no.cim4.eu/AviationObstacle/1.0"
+        }
+    ],
+    "dcterms:references": [
+        {
+            "@id": "urn:uuid:dd345794-d73a-4510-b0e3-ee62fbdde482"
+        }
+    ],
+    "@graph": [
+        {
+            "@id": "urn:uuid:1f521353-04da-47f7-bcc9-17e1aefb7beb",
+            "@type": [
+                "nc-no:OverheadStructure",
+                "geo:Feature"
+            ],
+            "cim:IdentifiedObject.mRID": "1f521353-04da-47f7-bcc9-17e1aefb7beb",
+            "cim:IdentifiedObject.description": "Overhead Structure 2",
+            "cim:IdentifiedObject.name": "OS_2",
+            "nc-no:OverheadStructure.aviationObstacleLightingKind": {
+                "@id": "nc-no:AviationObstacleLightingKind.mediumIntensityTypeB"
+            },
+            "geo:hasGeometry": {
+                "geo:asWKT": "\"POINT (6502691.542169236 972304.9284766684)\"^^geo:wktLiteral ;",
+                "geo:asGeoJSON": "\"{\"type\": \"Point\", \"coordinates\": [8.7007293, 58.414672, 20]}\"^^geo:geoJSONLiteral ;",
+                "geo:asGML": "<gml:Point xmlns:gml=\"http://www.opengis.net/gml/3.2\" srsName=\"urn:x-ogc:def:crs:EPSG::5972\" srsDimension=\"3\"><gml:pos>6474917.288 482515.348, 40.81</gml:pos></gml:Point>\"^^geo:gmlLiteral ;"
+            }
+        },
+        {
+            "@id": "urn:uuid:802a2294-3cc5-4d3a-b2ba-57706abfe8ed",
+            "@type": [
+                "nc-no:ACLineSegmentSpan",
+                "geo:Feature"
+            ],
+            "cim:IdentifiedObject.mRID": "802a2294-3cc5-4d3a-b2ba-57706abfe8ed",
+            "cim:IdentifiedObject.description": "ACLineSegmentSpan 2",
+            "cim:IdentifiedObject.name": "ACLSS_2",
+            "nc-no:ACLineSegmentSpan.ACLineSegment": [
+                {
+                    "@id": "urn:uuid:f8b08d2f-9110-4016-8aca-bdcec9fa02be"
+                },
+                {
+                    "@id": "urn:uuid:5d4f1595-45dc-4f9f-869f-058a8a4a4989"
+                }
+            ]
+        }
+    ]
+}

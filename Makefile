@@ -3,8 +3,18 @@ markdown: ## Generate Markdown files from LinkML schemas and removes all Slot an
 	gen-doc -d docs/AviationObstacle --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/aviationobstacle.linkml.yaml
 	grep -E '^# (Slot|Type): ' -lr --include \*.md docs | xargs -d '\n' rm
 
-#powershell: venv/Scripts/activate
-#git bash: source venv/Scripts/activate
+startup_powershell:
+	venv/Scripts/activate
+
+startup_bash:
+	source venv/Scripts/activate
+
+ao:
+	linkml-convert -s AO_schema.yaml AO.yaml -t ttl -o AO.ttl
+	linkml-convert -s AO_schema.yaml AO.yaml -t json-ld -o AO.jsonld
+	linkml-convert -s AO_schema.yaml AO.yaml -t json -o AO.json
+	linkml-convert -s AO_schema.yaml AO.yaml -t rdf -o AO.rdf
+
 all:
 	make clean
 	make markdown

@@ -43,6 +43,7 @@ _An element of an asset that has no electrical characteristic._
 ## Inheritance
 * [IdentifiedObject](IdentifiedObject.md)
     * **ElementResource**
+        * [LocationResource](LocationResource.md) [ [SpatialObject](SpatialObject.md)]
 
 
 
@@ -74,7 +75,7 @@ _An element of an asset that has no electrical characteristic._
 ### Schema Source
 
 
-* from schema: https://ap-no.cim4.eu/AviationObstacle/1.0#
+* from schema: https://ap-no.cim4.eu/AviationObstacle/1.0
 
 
 

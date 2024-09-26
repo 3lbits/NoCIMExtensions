@@ -1,0 +1,10 @@
+ACLineSegment:
+  - id: urn:uuid:1234
+    mRID: ORCID:1234
+  - id: urn:uuid:4567
+    mRID: ORCID:4567
+ACLineSegmentSpan:
+  - id: urn:uuid:1235
+    mRID: ORCID:1235
+  - id: urn:uuid:4569
+    mRID: ORCID:4569

@@ -1,0 +1,8 @@
+@prefix cim: <http://iec.ch/TC57/CIM100#> .
+
+[] a cim:Container ;
+    cim:IdentifiedObject [ a cim:IdentifiedObject ;
+            cim:IdentifiedObject.mRID "45240dd4-6877-4274-8f29-4fc2f93c6afb" ],
+        [ a cim:IdentifiedObject ;
+            cim:IdentifiedObject.mRID "9d58e5bb-834c-4faa-928c-7da0bb1497d9" ] .
+

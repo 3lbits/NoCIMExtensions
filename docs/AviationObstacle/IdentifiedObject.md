@@ -23,10 +23,8 @@ _This is a root class to provide common identification for all classes needing i
         click PowerSystemResource href "../PowerSystemResource"
       IdentifiedObject <|-- ElementResource
         click ElementResource href "../ElementResource"
-      IdentifiedObject <|-- AssetDeployment
-        click AssetDeployment href "../AssetDeployment"
-      IdentifiedObject <|-- BaseVoltage
-        click BaseVoltage href "../BaseVoltage"
+      IdentifiedObject <|-- ACLineSegmentSpan
+        click ACLineSegmentSpan href "../ACLineSegmentSpan"
       
       IdentifiedObject : IdentifiedObject.description
         
@@ -43,9 +41,9 @@ _This is a root class to provide common identification for all classes needing i
 
 ## Inheritance
 * **IdentifiedObject**
+    * [PowerSystemResource](PowerSystemResource.md) [ [Feature](Feature.md)]
     * [ElementResource](ElementResource.md)
-    * [AssetDeployment](AssetDeployment.md)
-    * [BaseVoltage](BaseVoltage.md)
+    * [ACLineSegmentSpan](ACLineSegmentSpan.md)
 
 
 
@@ -81,7 +79,7 @@ _This is a root class to provide common identification for all classes needing i
 ### Schema Source
 
 
-* from schema: https://ap-no.cim4.eu/AviationObstacle/1.0#
+* from schema: https://ap-no.cim4.eu/AviationObstacle/1.0
 
 
 
