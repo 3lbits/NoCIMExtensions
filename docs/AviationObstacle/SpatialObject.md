@@ -21,8 +21,6 @@ _A spatial object is a physical object that has a location in space. It may have
         click Feature href "../Feature"
       SpatialObject <|-- Geometry
         click Geometry href "../Geometry"
-      SpatialObject <|-- LocationResource
-        click LocationResource href "../LocationResource"
       
       
 ```

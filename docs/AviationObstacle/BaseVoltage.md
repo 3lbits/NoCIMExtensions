@@ -1,15 +1,13 @@
-# ElementResource
+# BaseVoltage
 
 
-_An element of an asset that has no electrical characteristic._
+_Defines a system base voltage which is referenced._
 
 
 
 
-* __NOTE__: this is an abstract class and should not be instantiated directly
 
-
-**URI**: [cim:ElementResource](http://iec.ch/TC57/CIM100#ElementResource)<br />
+**URI**: [cim:BaseVoltage](http://iec.ch/TC57/CIM100#BaseVoltage)<br />
 **Type**: Class
 
 
@@ -17,21 +15,18 @@ _An element of an asset that has no electrical characteristic._
 
 ```mermaid
  classDiagram
-    class ElementResource
-    click ElementResource href "../ElementResource"
-      IdentifiedObject <|-- ElementResource
+    class BaseVoltage
+    click BaseVoltage href "../BaseVoltage"
+      IdentifiedObject <|-- BaseVoltage
         click IdentifiedObject href "../IdentifiedObject"
       
-
-      ElementResource <|-- LocationResource
-        click LocationResource href "../LocationResource"
-      
-      
-      ElementResource : IdentifiedObject.description
+      BaseVoltage : IdentifiedObject.description
         
-      ElementResource : IdentifiedObject.mRID
+      BaseVoltage : IdentifiedObject.mRID
         
-      ElementResource : IdentifiedObject.name
+      BaseVoltage : IdentifiedObject.name
+        
+      BaseVoltage : BaseVoltage.nominalVoltage
         
       
 ```
@@ -42,8 +37,7 @@ _An element of an asset that has no electrical characteristic._
 
 ## Inheritance
 * [IdentifiedObject](IdentifiedObject.md)
-    * **ElementResource**
-        * [LocationResource](LocationResource.md) [ [Feature](Feature.md)]
+    * **BaseVoltage**
 
 
 
@@ -52,12 +46,22 @@ _An element of an asset that has no electrical characteristic._
 
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
+| nominalVoltage | [cim:BaseVoltage.nominalVoltage](http://iec.ch/TC57/CIM100#BaseVoltage.nominalVoltage) | 0..1 <br />  [Voltage](Voltage.md)  | The power system resource's base voltage | direct |
 | mRID | [cim:IdentifiedObject.mRID](http://iec.ch/TC57/CIM100#IdentifiedObject.mRID) | 0..1 <br />  string  | Master resource identifier issued by a model authority | [IdentifiedObject](IdentifiedObject.md) |
 | description | [cim:IdentifiedObject.description](http://iec.ch/TC57/CIM100#IdentifiedObject.description) | 0..1 <br />  string  | The description is a free human readable text describing or naming the object | [IdentifiedObject](IdentifiedObject.md) |
 | name | [cim:IdentifiedObject.name](http://iec.ch/TC57/CIM100#IdentifiedObject.name) | 0..1 <br />  string  | The name is any free human readable and possibly non unique text naming the o... | [IdentifiedObject](IdentifiedObject.md) |
 
 
 
+
+
+## Usages
+
+| used by | used in | type | used |
+| ---  | --- | --- | --- |
+| [AssetDeployment](AssetDeployment.md) | BaseVoltage | range | [BaseVoltage](BaseVoltage.md) |
+| [ACLineSegmentSpanDeployment](ACLineSegmentSpanDeployment.md) | BaseVoltage | range | [BaseVoltage](BaseVoltage.md) |
+| [StructureDeployment](StructureDeployment.md) | BaseVoltage | range | [BaseVoltage](BaseVoltage.md) |
 
 
 
@@ -85,8 +89,8 @@ _An element of an asset that has no electrical characteristic._
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | cim:ElementResource |
-| native | this:ElementResource |
+| self | cim:BaseVoltage |
+| native | this:BaseVoltage |
 
 
 

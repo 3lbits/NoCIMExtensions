@@ -23,8 +23,10 @@ _This is a root class to provide common identification for all classes needing i
         click PowerSystemResource href "../PowerSystemResource"
       IdentifiedObject <|-- ElementResource
         click ElementResource href "../ElementResource"
-      IdentifiedObject <|-- ACLineSegmentSpan
-        click ACLineSegmentSpan href "../ACLineSegmentSpan"
+      IdentifiedObject <|-- AssetDeployment
+        click AssetDeployment href "../AssetDeployment"
+      IdentifiedObject <|-- BaseVoltage
+        click BaseVoltage href "../BaseVoltage"
       
       IdentifiedObject : IdentifiedObject.description
         
@@ -43,7 +45,8 @@ _This is a root class to provide common identification for all classes needing i
 * **IdentifiedObject**
     * [PowerSystemResource](PowerSystemResource.md) [ [Feature](Feature.md)]
     * [ElementResource](ElementResource.md)
-    * [ACLineSegmentSpan](ACLineSegmentSpan.md)
+    * [AssetDeployment](AssetDeployment.md)
+    * [BaseVoltage](BaseVoltage.md)
 
 
 

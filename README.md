@@ -1,5 +1,35 @@
-# CPSM & CPSM-NA Profile Documentation
+# CIM4NoUtility Profile Documentation
 This repo contains LinkML artifacts and documentation for the Common Power System Model (CPSM) and CPSM Network Analysis (NA) profile groups. CPSM and CPSM-NA are two foundational Common Information Model (CIM) profile groups that define the classes, class attributes, and associations from the CIM required to model transmission network models and represent solved state estimation or power flow results.
+
+## To Use this
+
+### Make commands
+
+- ```make all```
+
+  - This recreates the documentation based on the yaml schema files using these commands
+
+  - ```make clean```
+  - ```make markdown```
+  - ```python python/replace_star_with_0dotdotstar.py```
+  - ```mkdocs serve```
+
+- ```make linkmljsonld```
+
+  - This is using linkml to create jsonld based on yaml schema and yaml data files
+
+  - ```python python/replace_oldstring_with_newstring.py $(yamlSchemaFilePath) $(string1) $(string2); \```
+  - ```linkml-convert -s $(yamlSchemaFilePath) $(yamlDataFilePath) -t json-ld -o $(outputFilePathLinkMl); \```
+  - ```python python/replace_oldstring_with_newstring.py $(yamlSchemaFilePath) $(string2) $(string1); \```
+
+- ```make jsonld```
+  
+  - This is using python to create jsonld based on yaml schema and yaml data files
+
+  - ```python python/jsonldFromYamlConverter.py $(yamlSchemaFilePath) $(yamlDataFilePath) $(outputFilePath); \```
+
+  - Example: ```make jsonld yamlSchemaFilePath=schemas/aviationobstacle.linkml.yaml yamlDataFilePath=data/yaml/aviationobstacle.yaml outputFilePath=data/jsonld/aviationobstacle.jsonld```
+
 
 ## Contributing
 To run the site locally use [Python](https://www.python.org/) 3.11+. It will likely be easiest to use a Python virtual environment as shown below to install the dependencies.

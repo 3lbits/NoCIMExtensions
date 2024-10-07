@@ -1,15 +1,13 @@
-# LocationResource
+# Zone
 
 
-_A spatial entity. LocationResource serves a similar purpose as PowerSystemResource but for non-electrical entites of interest to electrical utilities._
+_Defines a system base voltage which is referenced._
 
 
 
 
-* __NOTE__: this is an abstract class and should not be instantiated directly
 
-
-**URI**: [nc-no:LocationResource](https://ap-no.cim4.eu/AviationObstacle/1.0#LocationResource)<br />
+**URI**: [nc-no:Zone](https://ap-no.cim4.eu/AviationObstacle/1.0#Zone)<br />
 **Type**: Class
 
 
@@ -17,35 +15,36 @@ _A spatial entity. LocationResource serves a similar purpose as PowerSystemResou
 
 ```mermaid
  classDiagram
-    class LocationResource
-    click LocationResource href "../LocationResource"
-      Feature <|-- LocationResource
-        click Feature href "../Feature"
-      ElementResource <|-- LocationResource
-        click ElementResource href "../ElementResource"
-      
-
-      LocationResource <|-- Structure
-        click Structure href "../Structure"
+    class Zone
+    click Zone href "../Zone"
       LocationResource <|-- Zone
-        click Zone href "../Zone"
+        click LocationResource href "../LocationResource"
       
-      
-      LocationResource : IdentifiedObject.description
+      Zone : IdentifiedObject.description
         
-      LocationResource : hasGeometry
+      Zone : hasGeometry
         
-          LocationResource --> Geometry : hasGeometry
+          Zone --> Geometry : hasGeometry
           click Geometry href "../Geometry"
         
-      LocationResource : PowerSystemResource.locationMethod
+      Zone : PowerSystemResource.locationMethod
         
-          LocationResource --> LocationMethodKind : PowerSystemResource.locationMethod
+          Zone --> LocationMethodKind : PowerSystemResource.locationMethod
           click LocationMethodKind href "../LocationMethodKind"
         
-      LocationResource : IdentifiedObject.mRID
+      Zone : IdentifiedObject.mRID
         
-      LocationResource : IdentifiedObject.name
+      Zone : IdentifiedObject.name
+        
+      Zone : Zone.state
+        
+          Zone --> ZoneStateKind : Zone.state
+          click ZoneStateKind href "../ZoneStateKind"
+        
+      Zone : Zone.zoneKind
+        
+          Zone --> ZoneKind : Zone.zoneKind
+          click ZoneKind href "../ZoneKind"
         
       
 ```
@@ -57,9 +56,8 @@ _A spatial entity. LocationResource serves a similar purpose as PowerSystemResou
 ## Inheritance
 * [IdentifiedObject](IdentifiedObject.md)
     * [ElementResource](ElementResource.md)
-        * **LocationResource** [ [Feature](Feature.md)]
-            * [Structure](Structure.md)
-            * [Zone](Zone.md)
+        * [LocationResource](LocationResource.md) [ [Feature](Feature.md)]
+            * **Zone**
 
 
 
@@ -68,7 +66,9 @@ _A spatial entity. LocationResource serves a similar purpose as PowerSystemResou
 
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
-| locationMethod | [nc-no:PowerSystemResource.locationMethod](https://ap-no.cim4.eu/AviationObstacle/1.0#PowerSystemResource.locationMethod) | 0..1 <br />  [LocationMethodKind](LocationMethodKind.md)  | Method used to derive geographical location for this entity | direct |
+| state | [cim:Zone.state](http://iec.ch/TC57/CIM100#Zone.state) | 0..1 <br />  [ZoneStateKind](ZoneStateKind.md)  | Current state of zone | direct |
+| zoneKind | [cim:Zone.zoneKind](http://iec.ch/TC57/CIM100#Zone.zoneKind) | 0..1 <br />  [ZoneKind](ZoneKind.md)  | Kind of zone | direct |
+| locationMethod | [nc-no:PowerSystemResource.locationMethod](https://ap-no.cim4.eu/AviationObstacle/1.0#PowerSystemResource.locationMethod) | 0..1 <br />  [LocationMethodKind](LocationMethodKind.md)  | Method used to derive geographical location for this entity | [LocationResource](LocationResource.md) |
 | hasGeometry | [geo:hasGeometry](http://www.opengis.net/ont/geosparql#hasGeometry) | 0..1 <br />  [Geometry](Geometry.md)  | Geometric representation of the spatial object | [Feature](Feature.md) |
 | mRID | [cim:IdentifiedObject.mRID](http://iec.ch/TC57/CIM100#IdentifiedObject.mRID) | 0..1 <br />  string  | Master resource identifier issued by a model authority | [IdentifiedObject](IdentifiedObject.md) |
 | description | [cim:IdentifiedObject.description](http://iec.ch/TC57/CIM100#IdentifiedObject.description) | 0..1 <br />  string  | The description is a free human readable text describing or naming the object | [IdentifiedObject](IdentifiedObject.md) |
@@ -103,8 +103,8 @@ _A spatial entity. LocationResource serves a similar purpose as PowerSystemResou
 
 | Mapping Type | Mapped Value |
 | ---  | ---  |
-| self | nc-no:LocationResource |
-| native | this:LocationResource |
+| self | nc-no:Zone |
+| native | this:Zone |
 
 
 

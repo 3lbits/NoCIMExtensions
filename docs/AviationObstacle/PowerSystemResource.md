@@ -27,8 +27,8 @@ _A power system resource (PSR) can be an item of equipment such as a switch, an 
 
       PowerSystemResource <|-- Equipment
         click Equipment href "../Equipment"
-      PowerSystemResource <|-- OverheadStructure
-        click OverheadStructure href "../OverheadStructure"
+      PowerSystemResource <|-- ACLineSegmentSpan
+        click ACLineSegmentSpan href "../ACLineSegmentSpan"
       
       
       PowerSystemResource : IdentifiedObject.description
@@ -58,7 +58,7 @@ _A power system resource (PSR) can be an item of equipment such as a switch, an 
 * [IdentifiedObject](IdentifiedObject.md)
     * **PowerSystemResource** [ [Feature](Feature.md)]
         * [Equipment](Equipment.md)
-        * [OverheadStructure](OverheadStructure.md)
+        * [ACLineSegmentSpan](ACLineSegmentSpan.md)
 
 
 

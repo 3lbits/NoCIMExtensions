@@ -1,0 +1,12 @@
+graph:
+  IdentifiedObject:
+    - id: urn:uuid:1f521353-04da-47f7-bcc9-17e1aefb7beb
+      type: cim:IdentifiedObject
+      mRID: 1f521353-04da-47f7-bcc9-17e1aefb7beb
+      description: Overhead Structure 2
+      name: OS_2
+    - id: urn:uuid:1f521353-04da-47f7-bcc9-17e1aefb7bec
+      type: cim:IdentifiedObject
+      mRID: 1f521353-04da-47f7-bcc9-17e1aefb7bec
+      description: Overhead Structure 3
+      name: OS_3

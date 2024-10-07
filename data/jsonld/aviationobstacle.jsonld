@@ -10,10 +10,10 @@
         "nc-no": "https://ap-no.cim4.eu/AviationObstacle/1.0#",
         "geo": "http://www.opengis.net/ont/geosparql#"
     },
-    "@id": "urn:uuid:7a1cc144-557f-46f9-80c9-30fed15c47a7",
+    "@id": "urn:uuid:8e8d074c-26f1-422b-a726-c5d1f42f006e",
     "@type": "dcat:Dataset",
     "prov:generatedAtTime": {
-        "@value": "2024-09-26T15:47:30Z",
+        "@value": "2024-10-07T13:20:47Z",
         "@type": "xsd:date"
     },
     "dcterms:title": "Telemark-120_AO",
@@ -29,7 +29,7 @@
     "dcterms:temporal": {
         "@type": "dcterms:PeriodOfTime",
         "dcat:startDate": {
-            "@value": "2024-09-26T15:47:30Z",
+            "@value": "2024-10-07T13:20:47Z",
             "@type": "xsd:dateTime"
         }
     },

@@ -23,6 +23,8 @@ _Defines a system base voltage which is referenced._
 
       Feature <|-- PowerSystemResource
         click PowerSystemResource href "../PowerSystemResource"
+      Feature <|-- LocationResource
+        click LocationResource href "../LocationResource"
       
       
       Feature : hasGeometry

@@ -2,22 +2,22 @@ id: "https://ap-no.cim4.eu/AviationObstacle/1.0"
 name: "AviationObstacle"
 title: "Aviation Obstacle Vocabulary"
 comments: "This profile represents the aviation obstacles of the power system and their hierarchical relationships."
-dcterms:
-  title: "Telemark-120_AO"
-  description: "Telemark-120 Aviation Obstacle"
-  publisher: "ElBits AS"
-  rights: "© 2024 Copyright"
-  rightsHolder: "ElBits AS"
-  license: "CC BY-NC-SA 4.0"
-  accessRights: "PUBLIC"
-  isVersionOf: "https://test.model4powersystem.eu/Telemark/"
-  spatial: "https://energy.referencedata.eu/Test/Frame/NO-Telemark-MV1"
-  conformsTo:
-    - "https://ap-no.cim4.eu/AviationObstacle/1.0"
-  references:
-    - "urn:uuid:dd345794-d73a-4510-b0e3-ee62fbdde482"
-dcat:
-  keyword: "AO"
+#  dcterms:
+#    title: "Telemark-120_AO"
+#    description: "Telemark-120 Aviation Obstacle"
+#    publisher: "ElBits AS"
+#    rights: "© 2024 Copyright"
+#    rightsHolder: "ElBits AS"
+#    license: "CC BY-NC-SA 4.0"
+#    accessRights: "PUBLIC"
+#    isVersionOf: "https://test.model4powersystem.eu/Telemark/"
+#    spatial: "https://energy.referencedata.eu/Test/Frame/NO-Telemark-MV1"
+#    conformsTo:
+#      - "https://ap-no.cim4.eu/AviationObstacle/1.0"
+#    references:
+#      - "urn:uuid:dd345794-d73a-4510-b0e3-ee62fbdde482"
+#  dcat:
+#    keyword: "AO"
 prefixes:
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   linkml: https://w3id.org/linkml/
@@ -51,7 +51,7 @@ classes:
         range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
-        # identifier: false # Can not use. Will fail with LinkML
+        # identifier: True # Can not use. Will fail with LinkML
       description:
         description: "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."
         slot_uri: cim:IdentifiedObject.description
@@ -106,7 +106,7 @@ classes:
         minimum_cardinality: 0
         maximum_cardinality: 1
 
-  PowerSystemResource: # Issue with nc-no?
+  PowerSystemResource:
     description: "A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated."
     is_a: IdentifiedObject
     mixins:
@@ -128,11 +128,11 @@ classes:
     class_uri: cim:ElementResource
     attributes: 
 
-  LocationResource: # Issue with nc-no?
+  LocationResource:
     description: "A spatial entity. LocationResource serves a similar purpose as PowerSystemResource but for non-electrical entites of interest to electrical utilities."
     is_a: ElementResource
     mixins:
-      - SpatialObject
+      - Feature
     abstract: true
     class_uri: nc-no:LocationResource
     attributes:
@@ -164,19 +164,6 @@ classes:
     class_uri: cim:Conductor
     attributes:
 
-  OverheadStructure: # Issue with nc-no?
-    description: "A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.For symmetrical, transposed three phase lines, it is sufficient to use attributes of the line segment, which describe impedances and admittances for the entire length of the segment.  Additionally impedances can be computed by using length and associated per length impedances.The BaseVoltage at the two ends of ACLineSegments in a Line shall have the same BaseVoltage.nominalVoltage. However, boundary lines may have slightly different BaseVoltage.nominalVoltages and variation is allowed. Larger voltage difference in general requires use of an equivalent branch."
-    comments: "- Each ACLineSegment is required to have an association to a BaseVoltage. The association to Line is not required.- Using the EquipmentContainer association, an ACLineSegment can only be contained by a Line, but the association to Line is not required."
-    is_a: PowerSystemResource
-    class_uri: nc-no:OverheadStructure
-    attributes:
-      aviationObstacleLightingKind:
-        description: "Kind of lighting on the structure."
-        slot_uri: nc-no:OverheadStructure.aviationObstacleLightingKind
-        range: AviationObstacleLightingKind
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-
   ACLineSegment:
     description: "A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.For symmetrical, transposed three phase lines, it is sufficient to use attributes of the line segment, which describe impedances and admittances for the entire length of the segment.  Additionally impedances can be computed by using length and associated per length impedances.The BaseVoltage at the two ends of ACLineSegments in a Line shall have the same BaseVoltage.nominalVoltage. However, boundary lines may have slightly different BaseVoltage.nominalVoltages and variation is allowed. Larger voltage difference in general requires use of an equivalent branch."
     comments: "- Each ACLineSegment is required to have an association to a BaseVoltage. The association to Line is not required.- Using the EquipmentContainer association, an ACLineSegment can only be contained by a Line, but the association to Line is not required."
@@ -191,15 +178,197 @@ classes:
         multivalued: true
 
   ACLineSegmentSpan:
-    is_a: IdentifiedObject
+    description: "The part of a segment line between two consecutive points of support."
+    is_a: PowerSystemResource
     class_uri: nc-no:ACLineSegmentSpan
     attributes:
+      aviationObstacleLightingKind:
+        description: "The kind of aviation obstacle lighting associated with the ACLineSegmentSpan."
+        slot_uri: nc-no:ACLineSegmentSpan.aviationObstacleLightingKind
+        range: AviationObstacleLightingKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      aviationObstacleMarkingKind:
+        description: "The kind of aviation obstacle marking associated with the ACLineSegmentSpan."
+        slot_uri: nc-no:ACLineSegmentSpan.aviationObstacleMarkingKind
+        range: AviationObstacleMarkingKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      maxWidth:
+        description: "Max width of the AC Line Segment Span"
+        slot_uri: nc-no:ACLineSegmentSpan.maxWidth
+        range: Length
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      maxHeight:
+        description: "Max height of the AC Line Segment Span"
+        slot_uri: nc-no:ACLineSegmentSpan.maxHeight
+        range: Length
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      spanWireLength:
+        description: "Length of the AC Line Segment Span"
+        slot_uri: nc-no:ACLineSegmentSpan.spanWireLength
+        range: Length
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       ACLineSegment:
         description: "The associated AC Line Segment"
         slot_uri: nc-no:ACLineSegmentSpan.ACLineSegment
         range: ACLineSegment
         minimum_cardinality: 0
         multivalued: true
+
+  Structure:
+    description: "Construction holding assets such as conductors, transformers, switchgear, etc."
+    is_a: LocationResource
+    abstract: true
+    class_uri: nc-no:Structure
+    attributes:
+      height:
+        description: "Visible height of structure above ground level for overhead construction (e.g., Pole or Tower) or below ground level for an underground vault, manhole, etc."
+        slot_uri: nc-no:Structure.height
+        range: Length
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  
+  OverheadStructure:
+    description: "An overhead structure is an element of an electric transmission or distribution system that supports the overhead conductors and associated equipment used for the transmission of electricity."
+    is_a: Structure
+    class_uri: nc-no:OverheadStructure
+    attributes:
+      aviationObstacleLightingKind:
+        description: "Kind of lighting on the structure."
+        slot_uri: nc-no:OverheadStructure.aviationObstacleLightingKind
+        range: AviationObstacleLightingKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      aviationObstacleMarkingKind:
+        description: "Kind of marking on the structure."
+        slot_uri: nc-no:OverheadStructure.aviationObstacleMarkingKind
+        range: AviationObstacleMarkingKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      maxHeight:
+        description: "The length of the longest distance from the ground to the highest point on the structure. If f.ex. the structure is located in a steep slope, the distance from the top of the structure to the ground may vary."
+        slot_uri: nc-no:OverheadStructure.maxHeight
+        range: Length
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  AssetDeployment:
+    description: "Deployment of asset deployment in a power system resource role."
+    is_a: IdentifiedObject
+    class_uri: cim:AssetDeployment
+    attributes:
+      deploymentState:
+        description: "Current deployment state of asset."
+        slot_uri: cim:AssetDeployment.deploymentState
+        range: DeploymentStateKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      BaseVoltage:
+        description: "The associated Base Voltage."
+        slot_uri: cim:AssetDeployment.BaseVoltage
+        range: BaseVoltage
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      # deploymentState:
+      #   description: "Current deployment state of asset."
+      #   slot_uri: nc-no:AssetDeployment.deploymentState
+      #   range: DeploymentStateKind
+      #   minimum_cardinality: 0
+      #   maximum_cardinality: 1
+      inServiceDate:
+        description: "Date and time asset was most recently put in service."
+        slot_uri: nc-no:AssetDeployment.inServiceDate
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      installedDate:
+        description: "Date and time asset was most recently installed."
+        slot_uri: nc-no:AssetDeployment.installedDate
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      notYetInstalledDate:
+        description: "Date and time of asset deployment transition to not yet installed."
+        slot_uri: nc-no:AssetDeployment.notYetInstalledDate
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      notYetRemovedDate:
+        description: "Date and time of asset deployment transition to not yet removed."
+        slot_uri: nc-no:AssetDeployment.notYetRemovedDate
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      outOfServiceDate:
+        description: "Date and time asset was most recently taken out of service."
+        slot_uri: nc-no:AssetDeployment.outOfServiceDate
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      removedDate:
+        description: "Date and time asset was most recently removed."
+        slot_uri: nc-no:AssetDeployment.removedDate
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  ACLineSegmentSpanDeployment:
+    description: "Deployment of an ACLineSegmentSpan."
+    is_a: AssetDeployment
+    class_uri: nc-no:ACLineSegmentSpanDeployment
+    attributes:
+      ACLineSegmentSpan:
+        description: "The associated AC Line Segment Span."
+        slot_uri: nc-no:ACLineSegmentSpanDeployment.ACLineSegmentSpan
+        range: ACLineSegmentSpan
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  StructureDeployment:
+    description: "Deployment of a structure."
+    is_a: AssetDeployment
+    class_uri: nc-no:StructureDeployment
+    attributes:
+      ACLineSegmentSpan:
+        description: "The associated Structure."
+        slot_uri: nc-no:StructureDeployment.Structure
+        range: Structure
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  BaseVoltage:
+    description: "Defines a system base voltage which is referenced."
+    is_a: IdentifiedObject
+    class_uri: cim:BaseVoltage
+    attributes: 
+      nominalVoltage:
+        description: "The power system resource's base voltage.  Shall be a positive value and not zero."
+        slot_uri: cim:BaseVoltage.nominalVoltage
+        range: Voltage
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  Zone:
+    description: "Defines a system base voltage which is referenced."
+    is_a: LocationResource
+    class_uri: nc-no:Zone
+    attributes:
+      state:
+        description: "Current state of zone."
+        slot_uri: cim:Zone.state
+        range: ZoneStateKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      zoneKind:
+        description: "Kind of zone."
+        slot_uri: cim:Zone.zoneKind
+        range: ZoneKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
 
   Container:
     tree_root: true

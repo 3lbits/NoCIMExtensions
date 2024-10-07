@@ -58,11 +58,15 @@ _Geometric representation details._
 | ---  | --- | --- | --- |
 | [Feature](Feature.md) | hasGeometry | range | [Geometry](Geometry.md) |
 | [PowerSystemResource](PowerSystemResource.md) | hasGeometry | range | [Geometry](Geometry.md) |
+| [LocationResource](LocationResource.md) | hasGeometry | range | [Geometry](Geometry.md) |
 | [Equipment](Equipment.md) | hasGeometry | range | [Geometry](Geometry.md) |
 | [ConductingEquipment](ConductingEquipment.md) | hasGeometry | range | [Geometry](Geometry.md) |
 | [Conductor](Conductor.md) | hasGeometry | range | [Geometry](Geometry.md) |
-| [OverheadStructure](OverheadStructure.md) | hasGeometry | range | [Geometry](Geometry.md) |
 | [ACLineSegment](ACLineSegment.md) | hasGeometry | range | [Geometry](Geometry.md) |
+| [ACLineSegmentSpan](ACLineSegmentSpan.md) | hasGeometry | range | [Geometry](Geometry.md) |
+| [Structure](Structure.md) | hasGeometry | range | [Geometry](Geometry.md) |
+| [OverheadStructure](OverheadStructure.md) | hasGeometry | range | [Geometry](Geometry.md) |
+| [Zone](Zone.md) | hasGeometry | range | [Geometry](Geometry.md) |
 
 
 

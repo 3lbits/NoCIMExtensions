@@ -2,22 +2,22 @@ id: "https://ap-no.cim4.eu/AviationObstacle/1.0"
 name: "AviationObstacle"
 title: "Aviation Obstacle Vocabulary"
 comments: "This profile represents the aviation obstacles of the power system and their hierarchical relationships."
-# dcterms:
-#   title: "Telemark-120_AO"
-#   description: "Telemark-120 Aviation Obstacle"
-#   publisher: "ElBits AS"
-#   rights: "© 2024 Copyright"
-#   rightsHolder: "ElBits AS"
-#   license: "CC BY-NC-SA 4.0"
-#   accessRights: "PUBLIC"
-#   isVersionOf: "https://test.model4powersystem.eu/Telemark/"
-#   spatial: "https://energy.referencedata.eu/Test/Frame/NO-Telemark-MV1"
-#   conformsTo:
-#     - "https://ap-no.cim4.eu/AviationObstacle/1.0"
-#   references:
-#     - "urn:uuid:dd345794-d73a-4510-b0e3-ee62fbdde482"
-# dcat:
-#   keyword: "AO"
+#  dcterms:
+#    title: "Telemark-120_AO"
+#    description: "Telemark-120 Aviation Obstacle"
+#    publisher: "ElBits AS"
+#    rights: "© 2024 Copyright"
+#    rightsHolder: "ElBits AS"
+#    license: "CC BY-NC-SA 4.0"
+#    accessRights: "PUBLIC"
+#    isVersionOf: "https://test.model4powersystem.eu/Telemark/"
+#    spatial: "https://energy.referencedata.eu/Test/Frame/NO-Telemark-MV1"
+#    conformsTo:
+#      - "https://ap-no.cim4.eu/AviationObstacle/1.0"
+#    references:
+#      - "urn:uuid:dd345794-d73a-4510-b0e3-ee62fbdde482"
+#  dcat:
+#    keyword: "AO"
 prefixes:
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   linkml: https://w3id.org/linkml/
@@ -28,7 +28,7 @@ prefixes:
   prov: http://www.w3.org/ns/prov#
   xsd: http://www.w3.org/2001/XMLSchema#
   eu: http://iec.ch/TC57/CIM100-European#
-  ncno: https://ap-no.cim4.eu/AviationObstacle/1.0#
+  nc-no: https://ap-no.cim4.eu/AviationObstacle/1.0#
   geo: http://www.opengis.net/ont/geosparql#
 imports:
 - linkml:types
@@ -51,7 +51,7 @@ classes:
         range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
-        # identifier: false # Can not use. Will fail with LinkML
+        # identifier: True # Can not use. Will fail with LinkML
       description:
         description: "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."
         slot_uri: cim:IdentifiedObject.description
@@ -106,7 +106,7 @@ classes:
         minimum_cardinality: 0
         maximum_cardinality: 1
 
-  PowerSystemResource: # Issue with ncno?
+  PowerSystemResource:
     description: "A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated."
     is_a: IdentifiedObject
     mixins:
@@ -116,7 +116,7 @@ classes:
     attributes:
       locationMethodKind:
         description: "Possible methods to derive geographical location."
-        slot_uri: ncno:PowerSystemResource.locationMethodKind
+        slot_uri: nc-no:PowerSystemResource.locationMethodKind
         range: LocationMethodKind
         minimum_cardinality: 0
         maximum_cardinality: 1
@@ -128,17 +128,17 @@ classes:
     class_uri: cim:ElementResource
     attributes: 
 
-  LocationResource: # Issue with ncno?
+  LocationResource:
     description: "A spatial entity. LocationResource serves a similar purpose as PowerSystemResource but for non-electrical entites of interest to electrical utilities."
     is_a: ElementResource
     mixins:
       - SpatialObject
     abstract: true
-    class_uri: ncno:LocationResource
+    class_uri: nc-no:LocationResource
     attributes:
       locationMethod:
         description: "Method used to derive geographical location for this entity."
-        slot_uri: ncno:PowerSystemResource.locationMethod
+        slot_uri: nc-no:PowerSystemResource.locationMethod
         range: LocationMethodKind
         minimum_cardinality: 0
         maximum_cardinality: 1
@@ -164,15 +164,15 @@ classes:
     class_uri: cim:Conductor
     attributes:
 
-  OverheadStructure: # Issue with ncno?
+  OverheadStructure:
     description: "A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.For symmetrical, transposed three phase lines, it is sufficient to use attributes of the line segment, which describe impedances and admittances for the entire length of the segment.  Additionally impedances can be computed by using length and associated per length impedances.The BaseVoltage at the two ends of ACLineSegments in a Line shall have the same BaseVoltage.nominalVoltage. However, boundary lines may have slightly different BaseVoltage.nominalVoltages and variation is allowed. Larger voltage difference in general requires use of an equivalent branch."
     comments: "- Each ACLineSegment is required to have an association to a BaseVoltage. The association to Line is not required.- Using the EquipmentContainer association, an ACLineSegment can only be contained by a Line, but the association to Line is not required."
     is_a: PowerSystemResource
-    class_uri: ncno:OverheadStructure
+    class_uri: nc-no:OverheadStructure
     attributes:
       aviationObstacleLightingKind:
         description: "Kind of lighting on the structure."
-        slot_uri: ncno:OverheadStructure.aviationObstacleLightingKind
+        slot_uri: nc-no:OverheadStructure.aviationObstacleLightingKind
         range: AviationObstacleLightingKind
         minimum_cardinality: 0
         maximum_cardinality: 1
@@ -185,18 +185,18 @@ classes:
     attributes:
       ACLineSegmentSpan:
         description: "The associated AC Line Segment"
-        slot_uri: ncno:ACLineSegment.ACLineSegmentSpan
+        slot_uri: nc-no:ACLineSegment.ACLineSegmentSpan
         range: ACLineSegmentSpan
         minimum_cardinality: 0
         multivalued: true
 
   ACLineSegmentSpan:
     is_a: IdentifiedObject
-    class_uri: ncno:ACLineSegmentSpan
+    class_uri: nc-no:ACLineSegmentSpan
     attributes:
       ACLineSegment:
         description: "The associated AC Line Segment"
-        slot_uri: ncno:ACLineSegmentSpan.ACLineSegment
+        slot_uri: nc-no:ACLineSegmentSpan.ACLineSegment
         range: ACLineSegment
         minimum_cardinality: 0
         multivalued: true
@@ -220,31 +220,31 @@ enums:
     enum_uri:  https://ap-no.cim4.eu/AviationObstacle/1.0#AviationObstacleLightingKind
     permissible_values:
       lit:
-        meaning:  ncno:AviationObstacleLightingKind.lit
+        meaning:  nc-no:AviationObstacleLightingKind.lit
         description: "The aviation obstacle lighting is lit."
       mediumIntensityTypeA:
-        meaning:  ncno:AviationObstacleLightingKind.mediumIntensityTypeA
+        meaning:  nc-no:AviationObstacleLightingKind.mediumIntensityTypeA
         description: "The aviation obstacle lighting is mediumIntensityTypeA."
       mediumIntensityTypeB:
-        meaning:  ncno:AviationObstacleLightingKind.mediumIntensityTypeB
+        meaning:  nc-no:AviationObstacleLightingKind.mediumIntensityTypeB
         description: "The aviation obstacle lighting is mediumIntensityTypeB."
       mediumIntensityTypeC:
-        meaning:  ncno:AviationObstacleLightingKind.mediumIntensityTypeC
+        meaning:  nc-no:AviationObstacleLightingKind.mediumIntensityTypeC
         description: "The aviation obstacle lighting is mediumIntensityTypeC."
       none:
-        meaning:  ncno:AviationObstacleLightingKind.none
+        meaning:  nc-no:AviationObstacleLightingKind.none
         description: "The aviation obstacle lighting is none."
       lowIntensityTypeA:
-        meaning:  ncno:AviationObstacleLightingKind.lowIntensityTypeA
+        meaning:  nc-no:AviationObstacleLightingKind.lowIntensityTypeA
         description: "The aviation obstacle lighting is lowIntensityTypeA."
       lowIntensityTypeB:
-        meaning:  ncno:AviationObstacleLightingKind.lowIntensityTypeB
+        meaning:  nc-no:AviationObstacleLightingKind.lowIntensityTypeB
         description: "The aviation obstacle lighting is lowIntensityTypeB."
       highIntensityTypeA:
-        meaning:  ncno:AviationObstacleLightingKind.highIntensityTypeA
+        meaning:  nc-no:AviationObstacleLightingKind.highIntensityTypeA
         description: "The aviation obstacle lighting is highIntensityTypeA."
       highIntensityTypeB:
-        meaning:  ncno:AviationObstacleLightingKind.highIntensityTypeB
+        meaning:  nc-no:AviationObstacleLightingKind.highIntensityTypeB
         description: "The aviation obstacle lighting is highIntensityTypeB."
 
   AviationObstacleMarkingKind:
@@ -252,13 +252,13 @@ enums:
     enum_uri:  https://ap-no.cim4.eu/AviationObstacle/1.0#AviationObstacleMarkingKind
     permissible_values:
       colourMarking:
-        meaning:  ncno:AviationObstacleMarkingKind.colourMarking
+        meaning:  nc-no:AviationObstacleMarkingKind.colourMarking
         description: "The aviation obstacle marking is colourMarking."
       marker:
-        meaning:  ncno:AviationObstacleMarkingKind.marker
+        meaning:  nc-no:AviationObstacleMarkingKind.marker
         description: "The aviation obstacle marking is marker."
       none:
-        meaning:  ncno:AviationObstacleMarkingKind.none
+        meaning:  nc-no:AviationObstacleMarkingKind.none
         description: "The aviation obstacle marking is none."
 
   LocationMethodKind:
@@ -266,16 +266,16 @@ enums:
     enum_uri:  https://ap-no.cim4.eu/AviationObstacle/1.0#LocationMethodKind
     permissible_values:
       measured:
-        meaning:  ncno:LocationMethodKind.measured
+        meaning:  nc-no:LocationMethodKind.measured
         description: "The power system resource location method is measured."
       calculated:
-        meaning:  ncno:LocationMethodKind.calculated
+        meaning:  nc-no:LocationMethodKind.calculated
         description: "The power system resource location method is calculated."
       estimated:
-        meaning:  ncno:LocationMethodKind.estimated
+        meaning:  nc-no:LocationMethodKind.estimated
         description: "The power system resource location method is estimated."
       manual:
-        meaning:  ncno:LocationMethodKind.manual
+        meaning:  nc-no:LocationMethodKind.manual
         description: "The power system resource location method is manual."
 
   DeploymentStateKind:
@@ -298,7 +298,7 @@ enums:
         meaning:  cim:DeploymentStateKind.removed
         description: "Asset removed from deployment location."
       notYetRemoved:
-        meaning:  ncno:DeploymentStateKind.notYetRemoved
+        meaning:  nc-no:DeploymentStateKind.notYetRemoved
         description: "Asset in service in deployment notYetRemoved."
 
   ZoneKind:

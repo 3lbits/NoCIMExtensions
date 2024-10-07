@@ -143,7 +143,7 @@ def returnType(_class, yamlSchemaDict):
 
 def returnAttribute(_class, attribute, yamlSchemaDict):
     yamlShcemaClassesDict = yamlSchemaDict["classes"]
-    visitedSet = set()
+    visitedSet = set() 
     attributeDict = dfsInheritageAttribute(visitedSet, yamlShcemaClassesDict, _class, attribute)
     return attributeDict
 
@@ -151,6 +151,8 @@ def returnAttribute(_class, attribute, yamlSchemaDict):
 def cimDictHandling(value, _class, yamlSchemaDict):
     innerDict = {}
     for key, value in value.items():
+        if returnAttribute(_class, key, yamlSchemaDict) == None:
+            print(f"Something Wrong in Schema for Class: {_class} and key: {key}")
         if key == "mRID":
             innerDict["@id"] = f"urn:uuid:{value}"
         else:
@@ -287,43 +289,49 @@ def yamlToJsonldConverter(yamlSchemaFilePath, yamlDataFilePath, outputFilePath):
 
     comment_out_yaml_sections(yamlSchemaFilePath, ['dcterms', 'dcat'], True)
     
-    yamlSchemaDict = readYamlSchemaFile(yamlSchemaFilePath)
-    yamlDataDict = readYamlSchemaFile(yamlDataFilePath)
-    graphList = []
-    for _class in yamlDataDict:
-        for object in yamlDataDict[_class]:
-            classDict = {}
-            _count = 0
-            for key, value in object.items():
-                if key == "mRID":
-                    classDict["@id"] = f"urn:uuid:{value}"
-                if _count == 0:
-                    classDict["@type"] = returnType(_class, yamlSchemaDict)
-                
-                if isinstance(value, dict):
-                    innerDict = cimDictHandling(value, _class, yamlSchemaDict)
-                    classDict[returnAttribute(_class, key, yamlSchemaDict)["slot_uri"]] = innerDict
-                elif isinstance(value, list):
-                    innerDict = cimListHandling(value, _class, key, yamlSchemaDict)
-                    classDict[returnAttribute(_class, key, yamlSchemaDict)["slot_uri"]] = innerDict
-                elif isEnum(_class, key, value, yamlSchemaDict)["isEnum"] == True:
-                    classDict[returnAttribute(_class, key, yamlSchemaDict)["slot_uri"]] = {"@id": isEnum(_class, key, value, yamlSchemaDict)["value"]}
-                else:
-                    classDict[returnAttribute(_class, key, yamlSchemaDict)["slot_uri"]] = value
-                _count += 1
-            graphList.append(classDict)
+    try:
+        yamlSchemaDict = readYamlSchemaFile(yamlSchemaFilePath)
+        yamlDataDict = readYamlSchemaFile(yamlDataFilePath)
+        graphList = []
+        for _class in yamlDataDict:
+            for object in yamlDataDict[_class]:
+                classDict = {}
+                _count = 0
+                for key, value in object.items():
+                    if key == "mRID":
+                        classDict["@id"] = f"urn:uuid:{value}"
+                    if _count == 0:
+                        classDict["@type"] = returnType(_class, yamlSchemaDict)
+                    
+                    if isinstance(value, dict):
+                        innerDict = cimDictHandling(value, _class, yamlSchemaDict)
+                        classDict[returnAttribute(_class, key, yamlSchemaDict)["slot_uri"]] = innerDict
+                    elif isinstance(value, list):
+                        innerDict = cimListHandling(value, _class, key, yamlSchemaDict)
+                        classDict[returnAttribute(_class, key, yamlSchemaDict)["slot_uri"]] = innerDict
+                    elif isEnum(_class, key, value, yamlSchemaDict)["isEnum"] == True:
+                        classDict[returnAttribute(_class, key, yamlSchemaDict)["slot_uri"]] = {"@id": isEnum(_class, key, value, yamlSchemaDict)["value"]}
+                    else:
+                        classDict[returnAttribute(_class, key, yamlSchemaDict)["slot_uri"]] = value
+                    _count += 1
+                graphList.append(classDict)
 
-    outputJson = createJsonOutput(graphList, createContext(yamlSchemaDict), yamlSchemaDict)
+        outputJson = createJsonOutput(graphList, createContext(yamlSchemaDict), yamlSchemaDict)
 
-    with open(outputFilePath, "w", encoding="utf-8") as jsonFile:
-        json.dump(outputJson, jsonFile, indent=4, ensure_ascii=False)
+        with open(outputFilePath, "w", encoding="utf-8") as jsonFile:
+            json.dump(outputJson, jsonFile, indent=4, ensure_ascii=False)
 
-    comment_out_yaml_sections(yamlSchemaFilePath, ['dcterms', 'dcat'], False)
+        comment_out_yaml_sections(yamlSchemaFilePath, ['dcterms', 'dcat'], False)
+
+    except Exception as e:
+        # Handling any other exception
+        print(f"An error occurred: {e}")
+        comment_out_yaml_sections(yamlSchemaFilePath, ['dcterms', 'dcat'], False)
 
 # Variables
-# yamlSchemaFilePath = "AO_schema.yaml"
-# yamlDataFilePath = "AO.yaml"
-# outputFilePath = "AO_created_from_code.jsonld"
+# yamlSchemaFilePath = "schemas/aviationobstacle.linkml.yaml"
+# yamlDataFilePath = "data/yaml/aviationobstacle.yaml"
+# outputFilePath = "data/jsonld/aviationobstacle.jsonld"
 
 # yamlToJsonldConverter(yamlSchemaFilePath, yamlDataFilePath, outputFilePath)
 
@@ -342,3 +350,4 @@ if __name__ == "__main__":
 ## It does not support to have a nested enum
 ## It should not use mixins if non attributes from that is used for type
 ## It should use python classes
+## Need to improve the commenting out of yaml sections to handle all type of indentations
