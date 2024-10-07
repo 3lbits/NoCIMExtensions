@@ -344,10 +344,9 @@ if __name__ == "__main__":
 # Missing:
 ## yamlToJsonldConverter - Need to rewrite this
 ## cimDictHandling - Should be able to handle nested dictionaries with recursion
-## returnType - Need to add check for mixin attributes. If they are not used in data @type should only contain one Class Uri
+## returnType - Need to add check for mixin attributes. If they are not used in data @type should only contain one Class Uri: If you have a class that have a mixin in the inheritage and you do not use any of the mixin attributes the mixin should not be included
 ## createJsonOutput - Missing @id for dcterms:publisher, dcterms:license, dcterms:accessRights
 ## missing so if checks overal so some dict lookups will fail. Look to isEnum where i have done all the if checks
 ## It does not support to have a nested enum
-## It should not use mixins if non attributes from that is used for type
 ## It should use python classes
 ## Need to improve the commenting out of yaml sections to handle all type of indentations
