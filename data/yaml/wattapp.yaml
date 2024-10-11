@@ -1,0 +1,30 @@
+Feeder:
+  - mRID: "4e51e598-8948-4c85-b151-f44ffddc5545"
+    description: "Sandefjord business and industry area"
+    name: "Sandefjord_business_and_industry_area"
+    hasGeometry:
+      asGeoJSON: "\"{\"type\": \"Polygon\", \"coordinates\": [[[10.229020984659712, 59.24698254345179],[10.18420614097019, 59.19982925336586],[10.142883363023742, 59.13888033657065],[10.202442484289662, 59.13758660552921],[10.276357875828012, 59.16126409167293],[10.310502518638259, 59.22922084872761],[10.229020984659712, 59.24698254345179]]]}\"^^geo:geoJSONLiteral ;"
+CapacitySchedule:
+  - mRID: "d8ed0711-8a04-4921-8625-aa0ba12b4aae"
+    description: "Sandefjord business and industry area"
+    name: "Sandefjord_business_and_industry_area"
+    interpolationKind: "previous"
+    timeSeriesKind: "forecast"
+    generatedAtTime: "2022-11-07T12:05:43.641Z"
+    percentile: 50
+    actionMethod: "Power System Report"
+    Feeder:
+      - mRID: "4e51e598-8948-4c85-b151-f44ffddc5545"
+CapacityTimePoint:
+  - atTime: "2028-01-01T23:00:00.000Z"
+    maxP: 40.0
+    minP: 0.0
+    maxQ: 0.0
+    minQ: 0.0
+    maxAllocatedP: 0.0
+    minAllocatedP: 0.0
+    maxAllocatedQ: 0.0
+    minAllocatedQ: 0.0
+    CapacitySchedule:
+      - mRID: "d8ed0711-8a04-4921-8625-aa0ba12b4aae"
+

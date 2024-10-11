@@ -124,8 +124,16 @@ def addSetToList(_lsit, _set):
     for item in _set:
         _lsit.append(item)
 
+def checkIfNestedClassIsUsed(object): # Temporary solution
+    isNestedClassUsed = False
+    for key in object:
+        if isinstance(object[key], dict):
+            if "mRID" not in object[key]:
+                isNestedClassUsed = True
+    return isNestedClassUsed
+
 # Need to add check for mixin attributes. If they are not used in data @type should only contain one Class Uri
-def returnType(_class, yamlSchemaDict):
+def returnType(_class, yamlSchemaDict, object):
     yamlShcemaClassesDict = yamlSchemaDict["classes"]
     _class = _class
     visitedSet = set()
@@ -136,7 +144,7 @@ def returnType(_class, yamlSchemaDict):
     typeUriList = []
     for _type in typeList:
         typeUriList.append(getClassUri(_type, yamlSchemaDict))  
-    if len(typeUriList) == 1:
+    if len(typeUriList) == 1 or checkIfNestedClassIsUsed(object) == False:
         return typeUriList[0]
     else:
         return typeUriList
@@ -235,11 +243,12 @@ def createJsonOutput(graphList, context, yamlSchemaDict):
         dcterms_conformsTo["@id"] = object
         jsonOutput["dcterms:conformsTo"].append(dcterms_conformsTo)
 
-    jsonOutput["dcterms:references"] = []
-    for object in yamlSchemaDict["dcterms"]["references"]:
-        dcterms_reference = {}
-        dcterms_reference["@id"] = object
-        jsonOutput["dcterms:references"].append(dcterms_reference)
+    if "dcterms:references" in jsonOutput:
+        jsonOutput["dcterms:references"] = []
+        for object in yamlSchemaDict["dcterms"]["references"]:
+            dcterms_reference = {}
+            dcterms_reference["@id"] = object
+            jsonOutput["dcterms:references"].append(dcterms_reference)
 
     jsonOutput["@graph"] = graphList
 
@@ -288,33 +297,54 @@ def isEnum(initialClass, attribute, value, yamlSchemaDict):
 def yamlToJsonldConverter(yamlSchemaFilePath, yamlDataFilePath, outputFilePath):
 
     comment_out_yaml_sections(yamlSchemaFilePath, ['dcterms', 'dcat'], True)
-    
+    error_class = ""
+    error_key = ""
+    error_value = ""
     try:
         yamlSchemaDict = readYamlSchemaFile(yamlSchemaFilePath)
         yamlDataDict = readYamlSchemaFile(yamlDataFilePath)
         graphList = []
         for _class in yamlDataDict:
-            for object in yamlDataDict[_class]:
-                classDict = {}
-                _count = 0
-                for key, value in object.items():
-                    if key == "mRID":
-                        classDict["@id"] = f"urn:uuid:{value}"
-                    if _count == 0:
-                        classDict["@type"] = returnType(_class, yamlSchemaDict)
+            error_class = _class
+            try:
+                for object in yamlDataDict[_class]:
                     
-                    if isinstance(value, dict):
-                        innerDict = cimDictHandling(value, _class, yamlSchemaDict)
-                        classDict[returnAttribute(_class, key, yamlSchemaDict)["slot_uri"]] = innerDict
-                    elif isinstance(value, list):
-                        innerDict = cimListHandling(value, _class, key, yamlSchemaDict)
-                        classDict[returnAttribute(_class, key, yamlSchemaDict)["slot_uri"]] = innerDict
-                    elif isEnum(_class, key, value, yamlSchemaDict)["isEnum"] == True:
-                        classDict[returnAttribute(_class, key, yamlSchemaDict)["slot_uri"]] = {"@id": isEnum(_class, key, value, yamlSchemaDict)["value"]}
-                    else:
-                        classDict[returnAttribute(_class, key, yamlSchemaDict)["slot_uri"]] = value
-                    _count += 1
-                graphList.append(classDict)
+                    try:
+                        classDict = {}
+                        _count = 0
+                        for key, value in object.items():
+                            error_key = key
+                            error_value = value
+                            try:
+                                if key == "mRID":
+                                    classDict["@id"] = f"urn:uuid:{value}"
+                                if _count == 0:
+                                    classDict["@type"] = returnType(_class, yamlSchemaDict, object)
+                                
+                                if isinstance(value, dict):
+                                    innerDict = cimDictHandling(value, _class, yamlSchemaDict)
+                                    classDict[returnAttribute(_class, key, yamlSchemaDict)["slot_uri"]] = innerDict
+                                elif isinstance(value, list):
+                                    innerDict = cimListHandling(value, _class, key, yamlSchemaDict)
+                                    classDict[returnAttribute(_class, key, yamlSchemaDict)["slot_uri"]] = innerDict
+                                elif isEnum(_class, key, value, yamlSchemaDict)["isEnum"] == True:
+                                    classDict[returnAttribute(_class, key, yamlSchemaDict)["slot_uri"]] = {"@id": isEnum(_class, key, value, yamlSchemaDict)["value"]}
+                                else:
+                                    classDict[returnAttribute(_class, key, yamlSchemaDict)["slot_uri"]] = value
+                                _count += 1
+                            except Exception as e:
+                                print(_class, object, key, value)
+                                print(f"An error occurred4: {e}")
+
+                        graphList.append(classDict)
+
+                    except Exception as e:
+                        print(_class, object)
+                        print(f"An error occurred3: {e}")
+
+            except Exception as e:
+                print(_class)
+                print(f"An error occurred2: {e}")
 
         outputJson = createJsonOutput(graphList, createContext(yamlSchemaDict), yamlSchemaDict)
 
@@ -325,7 +355,8 @@ def yamlToJsonldConverter(yamlSchemaFilePath, yamlDataFilePath, outputFilePath):
 
     except Exception as e:
         # Handling any other exception
-        print(f"An error occurred: {e}")
+        print(error_class, error_key, error_value)
+        print(f"An error occurred1: {e}")
         comment_out_yaml_sections(yamlSchemaFilePath, ['dcterms', 'dcat'], False)
 
 # Variables
@@ -350,3 +381,8 @@ if __name__ == "__main__":
 ## It does not support to have a nested enum
 ## It should use python classes
 ## Need to improve the commenting out of yaml sections to handle all type of indentations
+
+## NEED TO FIX that when you have relation to another class it should use @id
+    ## This is handled by using the mRID key as nested for relations
+## NEED TO FIX that when you have relation to another class it use that also as inheritance which is wrong
+    ## Temporary solution is to check if there is nested class has without mRID

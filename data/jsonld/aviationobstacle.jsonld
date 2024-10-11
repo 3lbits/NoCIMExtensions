@@ -10,10 +10,10 @@
         "nc-no": "https://ap-no.cim4.eu/AviationObstacle/1.0#",
         "geo": "http://www.opengis.net/ont/geosparql#"
     },
-    "@id": "urn:uuid:8e8d074c-26f1-422b-a726-c5d1f42f006e",
+    "@id": "urn:uuid:72da3c89-eae9-4f5a-8588-b3a6ee1b0a28",
     "@type": "dcat:Dataset",
     "prov:generatedAtTime": {
-        "@value": "2024-10-07T13:20:47Z",
+        "@value": "2024-10-11T06:03:04Z",
         "@type": "xsd:date"
     },
     "dcterms:title": "Telemark-120_AO",
@@ -29,7 +29,7 @@
     "dcterms:temporal": {
         "@type": "dcterms:PeriodOfTime",
         "dcat:startDate": {
-            "@value": "2024-10-07T13:20:47Z",
+            "@value": "2024-10-11T06:03:04Z",
             "@type": "xsd:dateTime"
         }
     },
@@ -53,11 +53,6 @@
             "@id": "https://ap-no.cim4.eu/AviationObstacle/1.0"
         }
     ],
-    "dcterms:references": [
-        {
-            "@id": "urn:uuid:dd345794-d73a-4510-b0e3-ee62fbdde482"
-        }
-    ],
     "@graph": [
         {
             "@id": "urn:uuid:1f521353-04da-47f7-bcc9-17e1aefb7beb",
@@ -79,10 +74,7 @@
         },
         {
             "@id": "urn:uuid:802a2294-3cc5-4d3a-b2ba-57706abfe8ed",
-            "@type": [
-                "nc-no:ACLineSegmentSpan",
-                "geo:Feature"
-            ],
+            "@type": "nc-no:ACLineSegmentSpan",
             "cim:IdentifiedObject.mRID": "802a2294-3cc5-4d3a-b2ba-57706abfe8ed",
             "cim:IdentifiedObject.description": "ACLineSegmentSpan 2",
             "cim:IdentifiedObject.name": "ACLSS_2",

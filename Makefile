@@ -72,7 +72,8 @@ jsonld:
 		python python/jsonldFromYamlConverter.py $(yamlSchemaFilePath) $(yamlDataFilePath) $(outputFilePath); \
 	fi
 
-# Example: make jsonld yamlSchemaFilePath=schemas/aviationobstacle.linkml.yaml yamlDataFilePath=data/yaml/aviationobstacle.yaml outputFilePath=data/jsonld/aviationobstacle.jsonld
+# Example1: make jsonld yamlSchemaFilePath=schemas/aviationobstacle.linkml.yaml yamlDataFilePath=data/yaml/aviationobstacle.yaml outputFilePath=data/jsonld/aviationobstacle.jsonld
+# Example2: make jsonld yamlSchemaFilePath=schemas/wattapp.linkml.yaml yamlDataFilePath=data/yaml/wattapp.yaml outputFilePath=data/jsonld/wattapp.jsonld
 
 ###########################################################
 ##@ Help
