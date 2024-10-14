@@ -151,20 +151,30 @@ def returnType(_class, yamlSchemaDict, object):
 
 def returnAttribute(_class, attribute, yamlSchemaDict):
     yamlShcemaClassesDict = yamlSchemaDict["classes"]
-    visitedSet = set() 
+    visitedSet = set()
     attributeDict = dfsInheritageAttribute(visitedSet, yamlShcemaClassesDict, _class, attribute)
     return attributeDict
 
 # Should be able to handle nested dictionaries with recursion
 def cimDictHandling(value, _class, yamlSchemaDict):
     innerDict = {}
-    for key, value in value.items():
-        if returnAttribute(_class, key, yamlSchemaDict) == None:
+    for _key, value in value.items():
+        if returnAttribute(_class, _key, yamlSchemaDict) == None:
             print(f"Something Wrong in Schema for Class: {_class} and key: {key}")
-        if key == "mRID":
+        if _key == "mRID":
             innerDict["@id"] = f"urn:uuid:{value}"
+        elif "value" in value or "type" in value:
+            newValue = {}
+            for key, value in value.items():
+                if key == "value":
+                    newValue["@value"] = value
+                elif key == "type":
+                    newValue["@type"] = value
+                else:
+                    newValue[key] = value
+            innerDict[returnAttribute(_class, _key, yamlSchemaDict)["slot_uri"]] = newValue
         else:
-            innerDict[returnAttribute(_class, key, yamlSchemaDict)["slot_uri"]] = value
+            innerDict[returnAttribute(_class, _key, yamlSchemaDict)["slot_uri"]] = value
     return innerDict
 
 def cimListHandling(values, _class, key, yamlSchemaDict):
@@ -360,9 +370,9 @@ def yamlToJsonldConverter(yamlSchemaFilePath, yamlDataFilePath, outputFilePath):
         comment_out_yaml_sections(yamlSchemaFilePath, ['dcterms', 'dcat'], False)
 
 # Variables
-# yamlSchemaFilePath = "schemas/aviationobstacle.linkml.yaml"
-# yamlDataFilePath = "data/yaml/aviationobstacle.yaml"
-# outputFilePath = "data/jsonld/aviationobstacle.jsonld"
+# yamlSchemaFilePath = "schemas/wattapp.linkml.yaml"
+# yamlDataFilePath = "data/yaml/wattapp.yaml"
+# outputFilePath = "data/jsonld/wattapp.jsonld"
 
 # yamlToJsonldConverter(yamlSchemaFilePath, yamlDataFilePath, outputFilePath)
 
@@ -388,4 +398,4 @@ if __name__ == "__main__":
     ## Temporary solution is to check if there is nested class has without mRID
 
 
-## NEED TO FIX: value and type that should be defined as @value and @type
+## NEED TO FIX: value and type that should be defined as @value and @type --> Fixed
