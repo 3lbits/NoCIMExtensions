@@ -1,19 +1,19 @@
 {
     "@context": {
         "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
-        "cim": "http://iec.ch/TC57/CIM100#",
+        "cim": "https://cim.ucaiug.io/ns#",
         "dcterms": "http://purl.org/dc/terms/",
         "dcat": "http://www.w3.org/ns/dcat#",
         "prov": "http://www.w3.org/ns/prov#",
         "xsd": "http://www.w3.org/2001/XMLSchema#",
-        "eu": "http://iec.ch/TC57/CIM100-European#",
-        "nc-no": "https://ap-no.cim4.eu/AviationObstacle/1.0#",
+        "eu": "https://cim.ucaiug.io/ns/eu#",
+        "nc-no": "http://cim4.eu/ns/nc-no#",
         "geo": "http://www.opengis.net/ont/geosparql#"
     },
-    "@id": "urn:uuid:72da3c89-eae9-4f5a-8588-b3a6ee1b0a28",
+    "@id": "urn:uuid:b24f161f-c005-4e27-9df3-389d257d7cb2",
     "@type": "dcat:Dataset",
     "prov:generatedAtTime": {
-        "@value": "2024-10-11T06:03:04Z",
+        "@value": "2024-10-14T13:25:31Z",
         "@type": "xsd:date"
     },
     "dcterms:title": "Telemark-120_AO",
@@ -29,7 +29,7 @@
     "dcterms:temporal": {
         "@type": "dcterms:PeriodOfTime",
         "dcat:startDate": {
-            "@value": "2024-10-11T06:03:04Z",
+            "@value": "2024-10-14T13:25:31Z",
             "@type": "xsd:dateTime"
         }
     },

@@ -21,15 +21,16 @@ comments: "This profile represents the aviation obstacles of the power system an
 prefixes:
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   linkml: https://w3id.org/linkml/
-  cim: http://iec.ch/TC57/CIM100#
+  cim: https://cim.ucaiug.io/ns#
   this: https://ap-no.cim4.eu/AviationObstacle/1.0#
   dcterms: http://purl.org/dc/terms/
   dcat: http://www.w3.org/ns/dcat#
   prov: http://www.w3.org/ns/prov#
   xsd: http://www.w3.org/2001/XMLSchema#
-  eu: http://iec.ch/TC57/CIM100-European#
-  nc-no: https://ap-no.cim4.eu/AviationObstacle/1.0#
+  eu: https://cim.ucaiug.io/ns/eu#
+  nc-no: http://cim4.eu/ns/nc-no#
   geo: http://www.opengis.net/ont/geosparql#
+
 imports:
 - linkml:types
 default_curi_maps:
