@@ -11,10 +11,10 @@
         "nc": "http://entsoe.eu/ns/nc#",
         "geo": "http://www.opengis.net/ont/geosparql#"
     },
-    "@id": "urn:uuid:f430bad0-d2d5-4cbc-94e3-88bbc6523ae8",
+    "@id": "urn:uuid:a6cb2ed8-4020-4f59-9eb1-084453f04a37",
     "@type": "dcat:Dataset",
     "prov:generatedAtTime": {
-        "@value": "2024-10-11T06:01:40Z",
+        "@value": "2024-10-14T13:14:32Z",
         "@type": "xsd:date"
     },
     "dcterms:title": "DIGIN10-30-WattApp-GL",
@@ -30,7 +30,7 @@
     "dcterms:temporal": {
         "@type": "dcterms:PeriodOfTime",
         "dcat:startDate": {
-            "@value": "2024-10-11T06:01:40Z",
+            "@value": "2024-10-14T13:14:32Z",
             "@type": "xsd:dateTime"
         }
     },
@@ -65,7 +65,10 @@
             "cim:IdentifiedObject.description": "Sandefjord business and industry area",
             "cim:IdentifiedObject.name": "Sandefjord_business_and_industry_area",
             "geo:hasGeometry": {
-                "geo:asGeoJSON": "\"{\"type\": \"Polygon\", \"coordinates\": [[[10.229020984659712, 59.24698254345179],[10.18420614097019, 59.19982925336586],[10.142883363023742, 59.13888033657065],[10.202442484289662, 59.13758660552921],[10.276357875828012, 59.16126409167293],[10.310502518638259, 59.22922084872761],[10.229020984659712, 59.24698254345179]]]}\"^^geo:geoJSONLiteral ;"
+                "geo:asGeoJSON": {
+                    "@value": "{\"type\": \"Polygon\", \"coordinates\": [[[10.229020984659712, 59.24698254345179],[10.18420614097019, 59.19982925336586],[10.142883363023742, 59.13888033657065],[10.202442484289662, 59.13758660552921],[10.276357875828012, 59.16126409167293],[10.310502518638259, 59.22922084872761],[10.229020984659712, 59.24698254345179]]]}",
+                    "@type": "geo:geoJSONLiteral"
+                }
             }
         },
         {

@@ -386,3 +386,6 @@ if __name__ == "__main__":
     ## This is handled by using the mRID key as nested for relations
 ## NEED TO FIX that when you have relation to another class it use that also as inheritance which is wrong
     ## Temporary solution is to check if there is nested class has without mRID
+
+
+## NEED TO FIX: value and type that should be defined as @value and @type
