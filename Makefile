@@ -1,6 +1,7 @@
 .PHONY: markdown
 markdown: ## Generate Markdown files from LinkML schemas and removes all Slot and Type files
 	gen-doc -d docs/AviationObstacle --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/aviationobstacle.linkml.yaml
+	gen-doc -d docs/WattApp --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/wattapp.linkml.yaml
 	grep -E '^# (Slot|Type): ' -lr --include \*.md docs | xargs -d '\n' rm
 
 startup_powershell:

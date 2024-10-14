@@ -246,11 +246,11 @@ classes:
 
   Container:
     tree_root: true
-    IdentifiedOnject:
+    attributes:
       Feeder:
         multivalued: true
         inlined_as_list: true
-        range: IdentifiedOnject
+        range: Feeder
       CapacitySchedule:
         multivalued: true
         inlined_as_list: true
