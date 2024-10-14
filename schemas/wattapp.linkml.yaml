@@ -173,7 +173,7 @@ classes:
     attributes:
       Feeder:
         description: ""
-        slot_uri: nc:CapacitySchedule.Feeder
+        slot_uri: nc-no:CapacitySchedule.Feeder
         range: Feeder
         minimum_cardinality: 0
         maximum_cardinality: 1
