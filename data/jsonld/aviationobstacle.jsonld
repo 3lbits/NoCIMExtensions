@@ -10,10 +10,10 @@
         "nc-no": "http://cim4.eu/ns/nc-no#",
         "geo": "http://www.opengis.net/ont/geosparql#"
     },
-    "@id": "urn:uuid:b24f161f-c005-4e27-9df3-389d257d7cb2",
+    "@id": "urn:uuid:7448a2a1-5fa6-4522-a1cc-697cb3e6f8f5",
     "@type": "dcat:Dataset",
     "prov:generatedAtTime": {
-        "@value": "2024-10-14T13:25:31Z",
+        "@value": "2024-10-14T13:39:22Z",
         "@type": "xsd:date"
     },
     "dcterms:title": "Telemark-120_AO",
@@ -29,7 +29,7 @@
     "dcterms:temporal": {
         "@type": "dcterms:PeriodOfTime",
         "dcat:startDate": {
-            "@value": "2024-10-14T13:25:31Z",
+            "@value": "2024-10-14T13:39:22Z",
             "@type": "xsd:dateTime"
         }
     },
@@ -67,9 +67,18 @@
                 "@id": "nc-no:AviationObstacleLightingKind.mediumIntensityTypeB"
             },
             "geo:hasGeometry": {
-                "geo:asWKT": "\"POINT (6502691.542169236 972304.9284766684)\"^^geo:wktLiteral ;",
-                "geo:asGeoJSON": "\"{\"type\": \"Point\", \"coordinates\": [8.7007293, 58.414672, 20]}\"^^geo:geoJSONLiteral ;",
-                "geo:asGML": "<gml:Point xmlns:gml=\"http://www.opengis.net/gml/3.2\" srsName=\"urn:x-ogc:def:crs:EPSG::5972\" srsDimension=\"3\"><gml:pos>6474917.288 482515.348, 40.81</gml:pos></gml:Point>\"^^geo:gmlLiteral ;"
+                "geo:asWKT": {
+                    "@value": "POINT (6502691.542169236 972304.9284766684)",
+                    "@type": "geo:wktLiteral"
+                },
+                "geo:asGeoJSON": {
+                    "@value": "{\"type\": \"Point\", \"coordinates\": [8.7007293, 58.414672, 20]}",
+                    "@type": "geo:geoJSONLiteral"
+                },
+                "geo:asGML": {
+                    "@value": "<gml:Point xmlns:gml=\"http://www.opengis.net/gml/3.2\" srsName=\"urn:x-ogc:def:crs:EPSG::5972\" srsDimension=\"3\"><gml:pos>6474917.288 482515.348, 40.81</gml:pos></gml:Point>",
+                    "@type": "geo:gmlLiteral"
+                }
             }
         },
         {

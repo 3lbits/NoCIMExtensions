@@ -4,9 +4,15 @@ OverheadStructure:
     name: OS_2
     aviationObstacleLightingKind: mediumIntensityTypeB
     hasGeometry:
-      asWKT: "\"POINT (6502691.542169236 972304.9284766684)\"^^geo:wktLiteral ;"
-      asGeoJSON: "\"{\"type\": \"Point\", \"coordinates\": [8.7007293, 58.414672, 20]}\"^^geo:geoJSONLiteral ;"
-      asGML: "<gml:Point xmlns:gml=\"http://www.opengis.net/gml/3.2\" srsName=\"urn:x-ogc:def:crs:EPSG::5972\" srsDimension=\"3\"><gml:pos>6474917.288 482515.348, 40.81</gml:pos></gml:Point>\"^^geo:gmlLiteral ;"
+      asWKT:
+        value: "POINT (6502691.542169236 972304.9284766684)"
+        type: "geo:wktLiteral"
+      asGeoJSON:
+        value: "{\"type\": \"Point\", \"coordinates\": [8.7007293, 58.414672, 20]}"
+        type: "geo:geoJSONLiteral"
+      asGML:
+        value: "<gml:Point xmlns:gml=\"http://www.opengis.net/gml/3.2\" srsName=\"urn:x-ogc:def:crs:EPSG::5972\" srsDimension=\"3\"><gml:pos>6474917.288 482515.348, 40.81</gml:pos></gml:Point>"
+        type: "geo:gmlLiteral"
 ACLineSegmentSpan:
   - mRID: 802a2294-3cc5-4d3a-b2ba-57706abfe8ed
     description: ACLineSegmentSpan 2
