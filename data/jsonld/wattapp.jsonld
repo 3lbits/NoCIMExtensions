@@ -11,10 +11,10 @@
         "nc": "https://cim4.eu/ns/nc#",
         "geo": "http://www.opengis.net/ont/geosparql#"
     },
-    "@id": "urn:uuid:55de8032-b75f-45fe-aede-8d05d8d351f6",
+    "@id": "urn:uuid:b2566326-b579-48c4-bca3-f5932e8afd2d",
     "@type": "dcat:Dataset",
     "prov:generatedAtTime": {
-        "@value": "2024-10-14T14:16:23Z",
+        "@value": "2024-10-15T06:20:42Z",
         "@type": "xsd:date"
     },
     "dcterms:title": "DIGIN10-30-WattApp-GL",
@@ -30,7 +30,7 @@
     "dcterms:temporal": {
         "@type": "dcterms:PeriodOfTime",
         "dcat:startDate": {
-            "@value": "2024-10-14T14:16:23Z",
+            "@value": "2024-10-15T06:20:42Z",
             "@type": "xsd:dateTime"
         }
     },

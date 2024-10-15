@@ -155,26 +155,35 @@ def returnAttribute(_class, attribute, yamlSchemaDict):
     attributeDict = dfsInheritageAttribute(visitedSet, yamlShcemaClassesDict, _class, attribute)
     return attributeDict
 
+def editSpecialAttributesInDict(_dict, newDict):
+    for key, value in _dict.items():
+        if key == "value":
+            newDict["@value"] = value
+        elif key == "type":
+            newDict["@type"] = value
+        elif key == "mRID":
+            newDict["@id"] = f"urn:uuid:{value}"
+        else:
+            newDict[key] = value
+
 # Should be able to handle nested dictionaries with recursion
 def cimDictHandling(value, _class, yamlSchemaDict):
     innerDict = {}
-    for _key, value in value.items():
-        if returnAttribute(_class, _key, yamlSchemaDict) == None:
+    for key, value in value.items():
+        if returnAttribute(_class, key, yamlSchemaDict) == None:
             print(f"Something Wrong in Schema for Class: {_class} and key: {key}")
-        if _key == "mRID":
+        
+        ######## Should be changed to use a recursive editSpecialAttributesInDict ########
+        if key == "mRID":
             innerDict["@id"] = f"urn:uuid:{value}"
         elif "value" in value or "type" in value:
             newValue = {}
-            for key, value in value.items():
-                if key == "value":
-                    newValue["@value"] = value
-                elif key == "type":
-                    newValue["@type"] = value
-                else:
-                    newValue[key] = value
-            innerDict[returnAttribute(_class, _key, yamlSchemaDict)["slot_uri"]] = newValue
+            editSpecialAttributesInDict(value, newValue)
+            innerDict[returnAttribute(_class, key, yamlSchemaDict)["slot_uri"]] = newValue
+        ##################################################################################
+
         else:
-            innerDict[returnAttribute(_class, _key, yamlSchemaDict)["slot_uri"]] = value
+            innerDict[returnAttribute(_class, key, yamlSchemaDict)["slot_uri"]] = value
     return innerDict
 
 def cimListHandling(values, _class, key, yamlSchemaDict):
