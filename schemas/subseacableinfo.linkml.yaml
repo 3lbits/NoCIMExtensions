@@ -67,9 +67,14 @@ classes:
   
   CableLayer:
     abstract: true
-    is_a: IdentifiedObject # This should not be IdentifiedObject
     class_uri: cim:CableLayer
     attributes: 
+      mRID:
+        description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
+        slot_uri: cim:CableLayer.mRID
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       diameterOverLayer:
         description: "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied."
         slot_uri: cim:CableLayer.diameterOverLayer

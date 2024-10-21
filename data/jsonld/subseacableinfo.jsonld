@@ -13,10 +13,10 @@
         "eu": "http://iec.ch/TC57/CIM100-European#",
         "cim": "http://iec.ch/TC57/CIM-generic#"
     },
-    "@id": "urn:uuid:20ed9ec1-45cc-4bf7-b926-eea1b68e68ac",
+    "@id": "urn:uuid:82993cff-1142-449f-9485-84bde6c9010f",
     "@type": "dcat:Dataset",
     "prov:generatedAtTime": {
-        "@value": "2024-10-21T14:08:47Z",
+        "@value": "2024-10-21T14:13:10Z",
         "@type": "xsd:date"
     },
     "dcterms:title": "Telemark-120_SCI",
@@ -32,7 +32,7 @@
     "dcterms:temporal": {
         "@type": "dcterms:PeriodOfTime",
         "dcat:startDate": {
-            "@value": "2024-10-21T14:08:47Z",
+            "@value": "2024-10-21T14:13:10Z",
             "@type": "xsd:dateTime"
         }
     },
@@ -99,14 +99,14 @@
         {
             "@id": "urn:uuid:ba294795-4f65-4b7a-b764-d3ffaaef5aec",
             "@type": "cim:ScreenLayer",
-            "cim:IdentifiedObject.mRID": "ba294795-4f65-4b7a-b764-d3ffaaef5aec",
+            "cim:CableLayer.mRID": "ba294795-4f65-4b7a-b764-d3ffaaef5aec",
             "cim:CableLayer.diameterOverLayer": 0.0002,
             "cim:CableLayer.layerOrder": 1
         },
         {
             "@id": "urn:uuid:e14b2307-163f-4e17-baaa-835e4c115b32",
             "@type": "cim:NonMetallicSheathLayer",
-            "cim:IdentifiedObject.mRID": "e14b2307-163f-4e17-baaa-835e4c115b32",
+            "cim:CableLayer.mRID": "e14b2307-163f-4e17-baaa-835e4c115b32",
             "cim:CableLayer.diameterOverLayer": 0.0003,
             "cim:CableLayer.layerOrder": 1
         }
