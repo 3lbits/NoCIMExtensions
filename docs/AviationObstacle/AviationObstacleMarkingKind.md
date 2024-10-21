@@ -14,9 +14,9 @@ _The kind of aviation obstacle marking._
 
 | Value | Meaning | Description |
 | --- | --- | --- |
-| colourMarking | [nc-no:AviationObstacleMarkingKind.colourMarking](https://ap-no.cim4.eu/AviationObstacle/1.0#AviationObstacleMarkingKind.colourMarking) | The aviation obstacle marking is colourMarking |
-| marker | [nc-no:AviationObstacleMarkingKind.marker](https://ap-no.cim4.eu/AviationObstacle/1.0#AviationObstacleMarkingKind.marker) | The aviation obstacle marking is marker |
-| none | [nc-no:AviationObstacleMarkingKind.none](https://ap-no.cim4.eu/AviationObstacle/1.0#AviationObstacleMarkingKind.none) | The aviation obstacle marking is none |
+| colourMarking | [nc-no:AviationObstacleMarkingKind.colourMarking](http://cim4.eu/ns/nc-no#AviationObstacleMarkingKind.colourMarking) | The aviation obstacle marking is colourMarking |
+| marker | [nc-no:AviationObstacleMarkingKind.marker](http://cim4.eu/ns/nc-no#AviationObstacleMarkingKind.marker) | The aviation obstacle marking is marker |
+| none | [nc-no:AviationObstacleMarkingKind.none](http://cim4.eu/ns/nc-no#AviationObstacleMarkingKind.none) | The aviation obstacle marking is none |
 
 
 

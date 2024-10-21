@@ -11,10 +11,10 @@
         "nc": "https://cim4.eu/ns/nc#",
         "geo": "http://www.opengis.net/ont/geosparql#"
     },
-    "@id": "urn:uuid:b2566326-b579-48c4-bca3-f5932e8afd2d",
+    "@id": "urn:uuid:a41dd92d-b241-4fcc-893e-e666e26c6ecb",
     "@type": "dcat:Dataset",
     "prov:generatedAtTime": {
-        "@value": "2024-10-15T06:20:42Z",
+        "@value": "2024-10-17T06:55:43Z",
         "@type": "xsd:date"
     },
     "dcterms:title": "DIGIN10-30-WattApp-GL",
@@ -30,7 +30,7 @@
     "dcterms:temporal": {
         "@type": "dcterms:PeriodOfTime",
         "dcat:startDate": {
-            "@value": "2024-10-15T06:20:42Z",
+            "@value": "2024-10-17T06:55:43Z",
             "@type": "xsd:dateTime"
         }
     },
@@ -86,11 +86,9 @@
             "nc:BaseTimeSeries.generatedAtTime": "2022-11-07T12:05:43.641Z",
             "nc:BaseTimeSeries.percentile": 50,
             "nc:BaseTimeSeries.actionMethod": "Power System Report",
-            "nc-no:CapacitySchedule.Feeder": [
-                {
-                    "@id": "urn:uuid:4e51e598-8948-4c85-b151-f44ffddc5545"
-                }
-            ]
+            "nc-no:CapacitySchedule.Feeder": {
+                "@id": "urn:uuid:4e51e598-8948-4c85-b151-f44ffddc5545"
+            }
         },
         {
             "@type": "nc:CapacityTimePoint",
@@ -103,11 +101,9 @@
             "nc:CapacityTimePoint.minAllocatedP": 0.0,
             "nc:CapacityTimePoint.maxAllocatedQ": 0.0,
             "nc:CapacityTimePoint.minAllocatedQ": 0.0,
-            "nc:CapacityTimePoint.CapacitySchedule": [
-                {
-                    "@id": "urn:uuid:d8ed0711-8a04-4921-8625-aa0ba12b4aae"
-                }
-            ]
+            "nc:CapacityTimePoint.CapacitySchedule": {
+                "@id": "urn:uuid:d8ed0711-8a04-4921-8625-aa0ba12b4aae"
+            }
         }
     ]
 }

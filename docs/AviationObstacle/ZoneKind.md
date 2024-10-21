@@ -14,11 +14,11 @@ _Kind of zone._
 
 | Value | Meaning | Description |
 | --- | --- | --- |
-| electricalNetwork | [cim:ZoneKind.electricalNetwork](http://iec.ch/TC57/CIM100#ZoneKind.electricalNetwork) | The zone kind is electrical network |
-| other | [cim:ZoneKind.other](http://iec.ch/TC57/CIM100#ZoneKind.other) | The zone kind is other |
-| specialRestrictionLand | [cim:ZoneKind.specialRestrictionLand](http://iec.ch/TC57/CIM100#ZoneKind.specialRestrictionLand) | The zone kind is special restriction land |
-| weatherZone | [cim:ZoneKind.weatherZone](http://iec.ch/TC57/CIM100#ZoneKind.weatherZone) | The zone kind is weather zone |
-| substation | [cim:ZoneKind.substation](http://iec.ch/TC57/CIM100#ZoneKind.substation) | The zone kind is substation |
+| electricalNetwork | [cim:ZoneKind.electricalNetwork](https://cim.ucaiug.io/ns#ZoneKind.electricalNetwork) | The zone kind is electrical network |
+| other | [cim:ZoneKind.other](https://cim.ucaiug.io/ns#ZoneKind.other) | The zone kind is other |
+| specialRestrictionLand | [cim:ZoneKind.specialRestrictionLand](https://cim.ucaiug.io/ns#ZoneKind.specialRestrictionLand) | The zone kind is special restriction land |
+| weatherZone | [cim:ZoneKind.weatherZone](https://cim.ucaiug.io/ns#ZoneKind.weatherZone) | The zone kind is weather zone |
+| substation | [cim:ZoneKind.substation](https://cim.ucaiug.io/ns#ZoneKind.substation) | The zone kind is substation |
 
 
 

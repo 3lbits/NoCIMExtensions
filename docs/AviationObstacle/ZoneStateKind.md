@@ -14,10 +14,10 @@ _Current state of zone."_
 
 | Value | Meaning | Description |
 | --- | --- | --- |
-| registered | [cim:ZoneStateKind.registered](http://iec.ch/TC57/CIM100#ZoneStateKind.registered) | The zone state kind is registered |
-| notYetRegistered | [cim:ZoneStateKind.notYetRegistered](http://iec.ch/TC57/CIM100#ZoneStateKind.notYetRegistered) | The zone state kind is not yet registered |
-| removed | [cim:ZoneStateKind.removed](http://iec.ch/TC57/CIM100#ZoneStateKind.removed) | The zone state kind is removed |
-| notYetRemoved | [cim:ZoneStateKind.notYetRemoved](http://iec.ch/TC57/CIM100#ZoneStateKind.notYetRemoved) | The zone state kind is not yet removed |
+| registered | [cim:ZoneStateKind.registered](https://cim.ucaiug.io/ns#ZoneStateKind.registered) | The zone state kind is registered |
+| notYetRegistered | [cim:ZoneStateKind.notYetRegistered](https://cim.ucaiug.io/ns#ZoneStateKind.notYetRegistered) | The zone state kind is not yet registered |
+| removed | [cim:ZoneStateKind.removed](https://cim.ucaiug.io/ns#ZoneStateKind.removed) | The zone state kind is removed |
+| notYetRemoved | [cim:ZoneStateKind.notYetRemoved](https://cim.ucaiug.io/ns#ZoneStateKind.notYetRemoved) | The zone state kind is not yet removed |
 
 
 

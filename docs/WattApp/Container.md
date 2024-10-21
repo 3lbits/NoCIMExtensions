@@ -2,7 +2,7 @@
 
 
 
-**URI**: [this:Container](https://ap-no.cim4.eu/AviationObstacle/1.0#Container)<br />
+**URI**: [this:Container](https://ap-no.cim4.eu/WattApp/1.0#Container)<br />
 **Type**: Class
 
 
@@ -41,9 +41,9 @@
 
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
-| Feeder | [this:Feeder](https://ap-no.cim4.eu/AviationObstacle/1.0#Feeder) | 0..* <br />  [Feeder](Feeder.md)  |  | direct |
-| CapacitySchedule | [this:CapacitySchedule](https://ap-no.cim4.eu/AviationObstacle/1.0#CapacitySchedule) | 0..* <br />  [CapacitySchedule](CapacitySchedule.md)  |  | direct |
-| CapacityTimePoint | [this:CapacityTimePoint](https://ap-no.cim4.eu/AviationObstacle/1.0#CapacityTimePoint) | 0..* <br />  [CapacityTimePoint](CapacityTimePoint.md)  |  | direct |
+| Feeder | [this:Feeder](https://ap-no.cim4.eu/WattApp/1.0#Feeder) | 0..* <br />  [Feeder](Feeder.md)  |  | direct |
+| CapacitySchedule | [this:CapacitySchedule](https://ap-no.cim4.eu/WattApp/1.0#CapacitySchedule) | 0..* <br />  [CapacitySchedule](CapacitySchedule.md)  |  | direct |
+| CapacityTimePoint | [this:CapacityTimePoint](https://ap-no.cim4.eu/WattApp/1.0#CapacityTimePoint) | 0..* <br />  [CapacityTimePoint](CapacityTimePoint.md)  |  | direct |
 
 
 

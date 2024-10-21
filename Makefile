@@ -75,6 +75,14 @@ jsonld:
 
 # Example1: make jsonld yamlSchemaFilePath=schemas/aviationobstacle.linkml.yaml yamlDataFilePath=data/yaml/aviationobstacle.yaml outputFilePath=data/jsonld/aviationobstacle.jsonld
 # Example2: make jsonld yamlSchemaFilePath=schemas/wattapp.linkml.yaml yamlDataFilePath=data/yaml/wattapp.yaml outputFilePath=data/jsonld/wattapp.jsonld
+# Example3: make jsonld yamlSchemaFilePath=schemas/subseacableinfo.linkml.yaml yamlDataFilePath=data/yaml/subseacableinfo.yaml outputFilePath=data/jsonld/subseacableinfo.jsonld
+
+
+#### yaml schema to json schema conversion ####
+
+# gen-json-schema schemas/wattapp.linkml.yaml > schemas/wattapp_schema.json
+
+###############################################
 
 ###########################################################
 ##@ Help

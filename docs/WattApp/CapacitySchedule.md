@@ -2,7 +2,7 @@
 
 
 
-**URI**: [nc:CapacitySchedule](http://entsoe.eu/ns/nc#CapacitySchedule)<br />
+**URI**: [nc:CapacitySchedule](https://cim4.eu/ns/nc#CapacitySchedule)<br />
 **Type**: Class
 
 
@@ -62,15 +62,15 @@
 
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
-| Feeder | [nc:CapacitySchedule.Feeder](http://entsoe.eu/ns/nc#CapacitySchedule.Feeder) | 0..1 <br />  [Feeder](Feeder.md)  |  | direct |
-| interpolationKind | [nc:BaseTimeSeries.interpolationKind](http://entsoe.eu/ns/nc#BaseTimeSeries.interpolationKind) | 0..1 <br />  [TimeSeriesInterpolationKind](TimeSeriesInterpolationKind.md)  |  | [BaseTimeSeries](BaseTimeSeries.md) |
-| timeSeriesKind | [nc:BaseTimeSeries.timeSeriesKind](http://entsoe.eu/ns/nc#BaseTimeSeries.timeSeriesKind) | 0..1 <br />  [BaseTimeSeriesKind](BaseTimeSeriesKind.md)  |  | [BaseTimeSeries](BaseTimeSeries.md) |
-| generatedAtTime | [nc:BaseTimeSeries.generatedAtTime](http://entsoe.eu/ns/nc#BaseTimeSeries.generatedAtTime) | 0..1 <br />  [DateTime](DateTime.md)  |  | [BaseTimeSeries](BaseTimeSeries.md) |
-| percentile | [nc:BaseTimeSeries.percentile](http://entsoe.eu/ns/nc#BaseTimeSeries.percentile) | 0..1 <br />  integer  |  | [BaseTimeSeries](BaseTimeSeries.md) |
-| actionMethod | [nc:BaseTimeSeries.actionMethod](http://entsoe.eu/ns/nc#BaseTimeSeries.actionMethod) | 0..1 <br />  string  |  | [BaseTimeSeries](BaseTimeSeries.md) |
-| mRID | [cim:IdentifiedObject.mRID](http://iec.ch/TC57/CIM100#IdentifiedObject.mRID) | 0..1 <br />  string  | Master resource identifier issued by a model authority | [IdentifiedObject](IdentifiedObject.md) |
-| description | [cim:IdentifiedObject.description](http://iec.ch/TC57/CIM100#IdentifiedObject.description) | 0..1 <br />  string  | The description is a free human readable text describing or naming the object | [IdentifiedObject](IdentifiedObject.md) |
-| name | [cim:IdentifiedObject.name](http://iec.ch/TC57/CIM100#IdentifiedObject.name) | 0..1 <br />  string  | The name is any free human readable and possibly non unique text naming the o... | [IdentifiedObject](IdentifiedObject.md) |
+| Feeder | [nc-no:CapacitySchedule.Feeder](http://cim4.eu/ns/nc-no#CapacitySchedule.Feeder) | 0..1 <br />  [Feeder](Feeder.md)  |  | direct |
+| interpolationKind | [nc:BaseTimeSeries.interpolationKind](https://cim4.eu/ns/nc#BaseTimeSeries.interpolationKind) | 0..1 <br />  [TimeSeriesInterpolationKind](TimeSeriesInterpolationKind.md)  |  | [BaseTimeSeries](BaseTimeSeries.md) |
+| timeSeriesKind | [nc:BaseTimeSeries.timeSeriesKind](https://cim4.eu/ns/nc#BaseTimeSeries.timeSeriesKind) | 0..1 <br />  [BaseTimeSeriesKind](BaseTimeSeriesKind.md)  |  | [BaseTimeSeries](BaseTimeSeries.md) |
+| generatedAtTime | [nc:BaseTimeSeries.generatedAtTime](https://cim4.eu/ns/nc#BaseTimeSeries.generatedAtTime) | 0..1 <br />  [DateTime](DateTime.md)  |  | [BaseTimeSeries](BaseTimeSeries.md) |
+| percentile | [nc:BaseTimeSeries.percentile](https://cim4.eu/ns/nc#BaseTimeSeries.percentile) | 0..1 <br />  integer  |  | [BaseTimeSeries](BaseTimeSeries.md) |
+| actionMethod | [nc:BaseTimeSeries.actionMethod](https://cim4.eu/ns/nc#BaseTimeSeries.actionMethod) | 0..1 <br />  string  |  | [BaseTimeSeries](BaseTimeSeries.md) |
+| mRID | [cim:IdentifiedObject.mRID](https://cim.ucaiug.io/ns#IdentifiedObject.mRID) | 0..1 <br />  string  | Master resource identifier issued by a model authority | [IdentifiedObject](IdentifiedObject.md) |
+| description | [cim:IdentifiedObject.description](https://cim.ucaiug.io/ns#IdentifiedObject.description) | 0..1 <br />  string  | The description is a free human readable text describing or naming the object | [IdentifiedObject](IdentifiedObject.md) |
+| name | [cim:IdentifiedObject.name](https://cim.ucaiug.io/ns#IdentifiedObject.name) | 0..1 <br />  string  | The name is any free human readable and possibly non unique text naming the o... | [IdentifiedObject](IdentifiedObject.md) |
 
 
 

@@ -1,6 +1,8 @@
 Feeder:
   - mRID: "4e51e598-8948-4c85-b151-f44ffddc5545"
-    description: "Sandefjord business and industry area"
+    description: #"Sandefjord business and industry area"
+      value: "Sandefjord business and industry area"
+      language: "en"
     name: "Sandefjord_business_and_industry_area"
     hasGeometry:
       asGeoJSON:
@@ -15,8 +17,8 @@ CapacitySchedule:
     generatedAtTime: "2022-11-07T12:05:43.641Z"
     percentile: 50
     actionMethod: "Power System Report"
-    Feeder:
-      - mRID: "4e51e598-8948-4c85-b151-f44ffddc5545"
+    Feeder: # ConductingEquipment level instead
+      mRID: "4e51e598-8948-4c85-b151-f44ffddc5545"
 CapacityTimePoint:
   - atTime: "2028-01-01T23:00:00.000Z"
     maxP: 40.0
@@ -28,5 +30,5 @@ CapacityTimePoint:
     maxAllocatedQ: 0.0
     minAllocatedQ: 0.0
     CapacitySchedule:
-      - mRID: "d8ed0711-8a04-4921-8625-aa0ba12b4aae"
+      mRID: "d8ed0711-8a04-4921-8625-aa0ba12b4aae"
 

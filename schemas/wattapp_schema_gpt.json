@@ -1,0 +1,185 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+      "Feeder": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "mRID": {
+              "type": "string",
+              "description": "Unique identifier for the Feeder"
+            },
+            "description": {
+              "type": "string",
+              "description": "Description of the Feeder"
+            },
+            "name": {
+              "type": "string",
+              "description": "Name of the Feeder"
+            },
+            "hasGeometry": {
+              "type": "object",
+              "properties": {
+                "asGeoJSON": {
+                  "type": "object",
+                  "properties": {
+                    "value": {
+                      "type": "string",
+                      "description": "GeoJSON representation of geometry"
+                    },
+                    "type": {
+                      "type": "string",
+                      "enum": ["geo:geoJSONLiteral"],
+                      "description": "Type of the geometry"
+                    }
+                  },
+                  "required": ["value", "type"]
+                }
+              },
+              "required": ["asGeoJSON"]
+            }
+          },
+          "required": ["mRID", "description", "name", "hasGeometry"]
+        }
+      },
+      "CapacitySchedule": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "mRID": {
+              "type": "string",
+              "description": "Unique identifier for the Capacity Schedule"
+            },
+            "description": {
+              "type": "string",
+              "description": "Description of the Capacity Schedule"
+            },
+            "name": {
+              "type": "string",
+              "description": "Name of the Capacity Schedule"
+            },
+            "interpolationKind": {
+              "type": "string",
+              "description": "Kind of interpolation for the schedule"
+            },
+            "timeSeriesKind": {
+              "type": "string",
+              "description": "Kind of time series"
+            },
+            "generatedAtTime": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Timestamp when the schedule was generated"
+            },
+            "percentile": {
+              "type": "number",
+              "description": "Percentile for the schedule"
+            },
+            "actionMethod": {
+              "type": "string",
+              "description": "Action method for the schedule"
+            },
+            "Feeder": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "mRID": {
+                    "type": "string",
+                    "description": "Reference to the Feeder"
+                  }
+                },
+                "required": ["mRID"]
+              }
+            }
+          },
+          "required": [
+            "mRID",
+            "description",
+            "name",
+            "interpolationKind",
+            "timeSeriesKind",
+            "generatedAtTime",
+            "percentile",
+            "actionMethod",
+            "Feeder"
+          ]
+        }
+      },
+      "CapacityTimePoint": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "atTime": {
+              "type": "string",
+              "format": "date-time",
+              "description": "Timestamp for the capacity time point"
+            },
+            "maxP": {
+              "type": "number",
+              "description": "Maximum active power (P)"
+            },
+            "minP": {
+              "type": "number",
+              "description": "Minimum active power (P)"
+            },
+            "maxQ": {
+              "type": "number",
+              "description": "Maximum reactive power (Q)"
+            },
+            "minQ": {
+              "type": "number",
+              "description": "Minimum reactive power (Q)"
+            },
+            "maxAllocatedP": {
+              "type": "number",
+              "description": "Maximum allocated active power (P)"
+            },
+            "minAllocatedP": {
+              "type": "number",
+              "description": "Minimum allocated active power (P)"
+            },
+            "maxAllocatedQ": {
+              "type": "number",
+              "description": "Maximum allocated reactive power (Q)"
+            },
+            "minAllocatedQ": {
+              "type": "number",
+              "description": "Minimum allocated reactive power (Q)"
+            },
+            "CapacitySchedule": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "mRID": {
+                    "type": "string",
+                    "description": "Reference to the Capacity Schedule"
+                  }
+                },
+                "required": ["mRID"]
+              }
+            }
+          },
+          "required": [
+            "atTime",
+            "maxP",
+            "minP",
+            "maxQ",
+            "minQ",
+            "maxAllocatedP",
+            "minAllocatedP",
+            "maxAllocatedQ",
+            "minAllocatedQ",
+            "CapacitySchedule"
+          ]
+        }
+      }
+    },
+    "required": ["Feeder", "CapacitySchedule", "CapacityTimePoint"]
+  }
+  

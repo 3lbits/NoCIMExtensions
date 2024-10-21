@@ -22,6 +22,9 @@ _Geometric representation details._
       
       Geometry : asGeoJSON
         
+          Geometry --> JsonLDObject : asGeoJSON
+          click JsonLDObject href "../JsonLDObject"
+        
       
 ```
 
@@ -40,7 +43,7 @@ _Geometric representation details._
 
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
-| asGeoJSON | [geo:asGeoJSON](http://www.opengis.net/ont/geosparql#asGeoJSON) | 0..1 <br />  string  | Geometric representation of the spatial object in GeoJSON format | direct |
+| asGeoJSON | [geo:asGeoJSON](http://www.opengis.net/ont/geosparql#asGeoJSON) | 0..1 <br />  [JsonLDObject](JsonLDObject.md)  | Geometric representation of the spatial object in GeoJSON format | direct |
 
 
 
