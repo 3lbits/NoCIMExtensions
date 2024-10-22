@@ -89,3 +89,4 @@ watchdog==4.0.1
 webcolors==24.6.0
 wrapt==1.16.0
 schema-automator
+click==8.1.7

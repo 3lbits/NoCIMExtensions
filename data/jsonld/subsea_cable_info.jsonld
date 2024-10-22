@@ -1,0 +1,114 @@
+{
+    "@context": {
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "sh": "http://www.w3.org/ns/shacl#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "dc": "http://purl.org/dc/elements/1.1/",
+        "profcim": "http://iec.ch/TC57/ns/CIM/prof-cim#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "cims": "http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#",
+        "dct": "http://purl.org/dc/terms/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "eu": "http://iec.ch/TC57/CIM100-European#",
+        "cim": "http://iec.ch/TC57/CIM-generic#"
+    },
+    "@id": "urn:uuid:6d7da793-7dc5-409b-9e1a-0d616f36dd61",
+    "@type": "dcat:Dataset",
+    "prov:generatedAtTime": {
+        "@value": "2024-10-22T04:43:02Z",
+        "@type": "xsd:date"
+    },
+    "dcterms:title": "Telemark-120_SCI",
+    "dcterms:description": [
+        {
+            "@value": "Telemark-120 Subsea Cable Info",
+            "@language": "en"
+        }
+    ],
+    "dcterms:publisher": {
+        "dcterms:title": "ElBits AS"
+    },
+    "dcterms:temporal": {
+        "@type": "dcterms:PeriodOfTime",
+        "dcat:startDate": {
+            "@value": "2024-10-22T04:43:02Z",
+            "@type": "xsd:dateTime"
+        }
+    },
+    "dcterms:rights": "© 2024 Copyright",
+    "dcterms:rightsHolder": "ElBits AS",
+    "dcterms:license": {
+        "dcterms:title": "CC BY-NC-SA 4.0"
+    },
+    "dcterms:accessRights": {
+        "dcterms:title": "PUBLIC"
+    },
+    "dcterms:isVersionOf": {
+        "@id": "https://test.model4powersystem.eu/Telemark/"
+    },
+    "dcat:keyword": "SCI",
+    "dcterms:spatial": {
+        "@id": "https://energy.referencedata.eu/Test/Frame/NO-Telemark-MV1"
+    },
+    "dcterms:conformsTo": [
+        {
+            "@id": "https://ap-no.cim4.eu/AviationObstacle/1.0"
+        }
+    ],
+    "@graph": [
+        {
+            "@id": "urn:uuid:ada98491-2265-4712-8c9c-1cebf5d399b1",
+            "@type": "cim:MultiCoreCableInfo",
+            "cim:CableLayer.mRID": "ada98491-2265-4712-8c9c-1cebf5d399b1",
+            "cim:IdentifiedObject.description": "",
+            "cim:IdentifiedObject.name": "",
+            "cim:ConductingAssetInfo.ratedCurrent": 400.0,
+            "cim:ConductingAssetInfo.ratedFrequency": 60.0,
+            "cim:ConductingAssetInfo.ratedVoltage": 420.0,
+            "cim:ConductorInfo.crossSection": 3.5e-05,
+            "cim:WireInfo.radius": 0.09,
+            "cim:WireInfo.coreRadius": 0.035,
+            "cim:CableInfo.nominalTemperature": 90.0,
+            "cim:CableInfo.Layer": [
+                {
+                    "@id": "urn:uuid:ba294795-4f65-4b7a-b764-d3ffaaef5aec"
+                }
+            ],
+            "cim:MultiCoreCableInfo.capacitance": 9e-10,
+            "cim:MultiCoreCableInfo.inductance": 3.59e-07,
+            "cim:MultiCoreCableInfo.layLength": 4,
+            "cim:MultiCoreCableInfo.BeltedLayer": [
+                {
+                    "@id": "urn:uuid:e14b2307-163f-4e17-baaa-835e4c115b32"
+                }
+            ]
+        },
+        {
+            "@id": "urn:uuid:a96fe01f-27ac-4a63-8c1b-7e028615cadd",
+            "@type": "cim:ProductAssetModel",
+            "cim:IdentifiedObject.mRID": "a96fe01f-27ac-4a63-8c1b-7e028615cadd",
+            "cim:IdentifiedObject.description": "",
+            "cim:IdentifiedObject.name": "",
+            "cim:ProductAssetModel.AssetInfo": [
+                {
+                    "@id": "urn:uuid:ada98491-2265-4712-8c9c-1cebf5d399b1"
+                }
+            ]
+        },
+        {
+            "@id": "urn:uuid:ba294795-4f65-4b7a-b764-d3ffaaef5aec",
+            "@type": "cim:ScreenLayer",
+            "cim:CableLayer.mRID": "ba294795-4f65-4b7a-b764-d3ffaaef5aec",
+            "cim:CableLayer.diameterOverLayer": 0.0002,
+            "cim:CableLayer.layerOrder": 1
+        },
+        {
+            "@id": "urn:uuid:e14b2307-163f-4e17-baaa-835e4c115b32",
+            "@type": "cim:NonMetallicSheathLayer",
+            "cim:CableLayer.mRID": "e14b2307-163f-4e17-baaa-835e4c115b32",
+            "cim:CableLayer.diameterOverLayer": 0.0003,
+            "cim:CableLayer.layerOrder": 1
+        }
+    ]
+}

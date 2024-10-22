@@ -1,9 +1,0 @@
-@prefix cim: <http://iec.ch/TC57/CIM100#> .
-@prefix nc-no: <https://ap-no.cim4.eu/AviationObstacle/1.0#> .
-
-[] a nc-no:Root ;
-    cim:IdentifiedObject [ a nc-no:IdentifiedObject ;
-            cim:IdentifiedObject.description "Sample AC line segment." ;
-            cim:IdentifiedObject.mRID "49dc66ba-26fc-47ee-9436-d6e12a9746dd" ;
-            cim:IdentifiedObject.name "SampleACLineSegment" ] .
-
