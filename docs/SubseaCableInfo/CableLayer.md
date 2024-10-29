@@ -1,100 +1,54 @@
 # CableLayer
 
+_No description available_
 
-* __NOTE__: this is an abstract class and should not be instantiated directly
-
+*__NOTE__: this is an abstract class and should not be instantiated directly
 
 **URI**: [cim:CableLayer](http://iec.ch/TC57/CIM-generic#CableLayer)<br />
 **Type**: Class
 
-
-
-
 ```mermaid
- classDiagram
+classDiagram
     class CableLayer
     click CableLayer href "../CableLayer"
-      CableLayer <|-- InsulationLayer
-        click InsulationLayer href "../InsulationLayer"
-      CableLayer <|-- MetallicSheathLayer
-        click MetallicSheathLayer href "../MetallicSheathLayer"
-      CableLayer <|-- NonMetallicSheathLayer
-        click NonMetallicSheathLayer href "../NonMetallicSheathLayer"
-      CableLayer <|-- ScreenLayer
-        click ScreenLayer href "../ScreenLayer"
-      
-      CableLayer : CableLayer.diameterOverLayer
-        
-      CableLayer : CableLayer.layerOrder
-        
-      CableLayer : CableLayer.mRID
-        
-      
+    style CableLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+
+        CableLayer <|-- InsulationLayer : inherits
+            click CableLayer href "../CableLayer"
+            style CableLayer rx:10,ry:10
+
+        InsulationLayer
+            click InsulationLayer href "../InsulationLayer"
+            style InsulationLayer rx:10,ry:10
+
+
+        CableInfo --> CableLayer : CableInfo.Layer
+
+        CableInfo
+            click CableInfo href "../CableInfo"
+            style CableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+
+        MultiCoreCableInfo --> CableLayer : MultiCoreCableInfo.BeltedLayer
+
+        MultiCoreCableInfo
+            click MultiCoreCableInfo href "../MultiCoreCableInfo"
+            style MultiCoreCableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+
+
+        CableLayer : CableLayer.mRID
+        CableLayer : CableLayer.diameterOverLayer
+        CableLayer : CableLayer.layerOrder
 ```
-
-
-
-
 
 ## Inheritance
 * **CableLayer**
-    * [InsulationLayer](InsulationLayer.md)
-    * [MetallicSheathLayer](MetallicSheathLayer.md)
-    * [NonMetallicSheathLayer](NonMetallicSheathLayer.md)
-    * [ScreenLayer](ScreenLayer.md)
-
-
 
 ## Attributes
-
-
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
-| mRID | [cim:CableLayer.mRID](http://iec.ch/TC57/CIM-generic#CableLayer.mRID) | 0..1 <br />  string  | Master resource identifier issued by a model authority | direct |
-| diameterOverLayer | [cim:CableLayer.diameterOverLayer](http://iec.ch/TC57/CIM-generic#CableLayer.diameterOverLayer) | 0..1 <br />  [Length](Length.md)  | Use either diameter over layer or layer thickness | direct |
-| layerOrder | [cim:CableLayer.layerOrder](http://iec.ch/TC57/CIM-generic#CableLayer.layerOrder) | 0..1 <br />  integer  | Order of the layer outwards from the cable core | direct |
-
-
-
-
-
-## Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [CableInfo](CableInfo.md) | Layer | range | [CableLayer](CableLayer.md) |
-| [MultiCoreCableInfo](MultiCoreCableInfo.md) | BeltedLayer | range | [CableLayer](CableLayer.md) |
-| [MultiCoreCableInfo](MultiCoreCableInfo.md) | Layer | range | [CableLayer](CableLayer.md) |
-
-
-
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-
+| mRID | [cim:CableLayer.mRID](http://iec.ch/TC57/CIM-generic#CableLayer.mRID) | 0..1 | Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements. | direct |
+| diameterOverLayer | [cim:CableLayer.diameterOverLayer](http://iec.ch/TC57/CIM-generic#CableLayer.diameterOverLayer) | 0..1 | Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied. | direct |
+| layerOrder | [cim:CableLayer.layerOrder](http://iec.ch/TC57/CIM-generic#CableLayer.layerOrder) | 0..1 | Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order. | direct |
 
 ### Schema Source
-
-
-* from schema: http://iec.ch/TC57/2007/profile#
-
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cim:CableLayer |
-| native | this:CableLayer |
-
-
-
-
+* from schema: [http://iec.ch/TC57/2007/profile#](http://iec.ch/TC57/2007/profile#)

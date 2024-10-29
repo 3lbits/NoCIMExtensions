@@ -1,23 +1,23 @@
-# ScreenLayer
+# InsulationScreenLayer
 
-_Electrical screen of non-metallic and/or metallic material. A semi conducting (as in somewhat conducting) material is typically used._
+_A screen covering the insulation. Also called Insulation Shield._
 
-**URI**: [cim:ScreenLayer](http://iec.ch/TC57/CIM-generic#ScreenLayer)<br />
+**URI**: [cim:InsulationScreenLayer](http://iec.ch/TC57/CIM-generic#InsulationScreenLayer)<br />
 **Type**: Class
 
 ```mermaid
 classDiagram
-    class ScreenLayer
-    click ScreenLayer href "../ScreenLayer"
-    style ScreenLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    class InsulationScreenLayer
+    click InsulationScreenLayer href "../InsulationScreenLayer"
+    style InsulationScreenLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
-        ScreenLayer <|-- ConductorScreenLayer : inherits
+        ScreenLayer <|-- InsulationScreenLayer : inherits
             click ScreenLayer href "../ScreenLayer"
             style ScreenLayer rx:10,ry:10
 
-        ConductorScreenLayer
-            click ConductorScreenLayer href "../ConductorScreenLayer"
-            style ConductorScreenLayer rx:10,ry:10
+        InsulationScreenLayer
+            click InsulationScreenLayer href "../InsulationScreenLayer"
+            style InsulationScreenLayer rx:10,ry:10
 
         CableLayer <|-- ScreenLayer : inherits
             click CableLayer href "../CableLayer"
@@ -44,7 +44,8 @@ classDiagram
 
 ## Inheritance
 * [CableLayer](CableLayer.md)
-    * **ScreenLayer**
+    * [ScreenLayer](ScreenLayer.md)
+        * **InsulationScreenLayer**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |

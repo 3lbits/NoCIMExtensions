@@ -1,15 +1,15 @@
-# ScreenLayer
+# ConductorScreenLayer
 
-_Electrical screen of non-metallic and/or metallic material. A semi conducting (as in somewhat conducting) material is typically used._
+_A screen covering the conductor. Also called Conductor Shield._
 
-**URI**: [cim:ScreenLayer](http://iec.ch/TC57/CIM-generic#ScreenLayer)<br />
+**URI**: [cim:ConductorScreenLayer](http://iec.ch/TC57/CIM-generic#ConductorScreenLayer)<br />
 **Type**: Class
 
 ```mermaid
 classDiagram
-    class ScreenLayer
-    click ScreenLayer href "../ScreenLayer"
-    style ScreenLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    class ConductorScreenLayer
+    click ConductorScreenLayer href "../ConductorScreenLayer"
+    style ConductorScreenLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         ScreenLayer <|-- ConductorScreenLayer : inherits
             click ScreenLayer href "../ScreenLayer"
@@ -44,7 +44,8 @@ classDiagram
 
 ## Inheritance
 * [CableLayer](CableLayer.md)
-    * **ScreenLayer**
+    * [ScreenLayer](ScreenLayer.md)
+        * **ConductorScreenLayer**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |

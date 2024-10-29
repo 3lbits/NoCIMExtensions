@@ -1,0 +1,1269 @@
+{
+    "$defs": {
+        "AssetSpecification": {
+            "additionalProperties": false,
+            "description": "Specification can be used for various purposes relative to an asset, a logical device (PowerSystemResource), location, etc. Examples include documents supplied by manufacturers such as asset installation instructions, asset maintenance instructions, etc.",
+            "properties": {
+                "AssetInfo": {
+                    "$ref": "#/$defs/AssetInfo"
+                },
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": "string"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name is any free human readable and possibly non unique text naming the object.",
+                    "type": "string"
+                }
+            },
+            "title": "AssetSpecification",
+            "type": "object"
+        },
+        "BindingLayer": {
+            "additionalProperties": false,
+            "description": "Layer applied with the sole purpose of binding different layers/cores of cable together.",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                }
+            },
+            "title": "BindingLayer",
+            "type": "object"
+        },
+        "CableInfo": {
+            "additionalProperties": false,
+            "description": "Cable data.",
+            "properties": {
+                "Layer": {
+                    "items": {
+                        "$ref": "#/$defs/CableLayer"
+                    },
+                    "minItems": 0,
+                    "type": "array"
+                },
+                "coreRadius": {
+                    "description": "(if there is a different core material) Radius of the central core.",
+                    "type": "number"
+                },
+                "crossSection": {
+                    "description": "Area of conducting material cross section",
+                    "type": "number"
+                },
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": "string"
+                },
+                "lossFactorArmour": {
+                    "type": "number"
+                },
+                "lossFactorSheathScreen": {
+                    "type": "number"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "material": {
+                    "$ref": "#/$defs/WireMaterialKind",
+                    "description": "Conductor material."
+                },
+                "name": {
+                    "description": "The name is any free human readable and possibly non unique text naming the object.",
+                    "type": "string"
+                },
+                "nominalTemperature": {
+                    "description": "Maximum nominal design operating temperature.",
+                    "type": "number"
+                },
+                "radius": {
+                    "description": "Outside radius of the wire.",
+                    "type": "number"
+                },
+                "ratedCurrent": {
+                    "description": "Rated current.",
+                    "type": "number"
+                },
+                "ratedFrequency": {
+                    "description": "Rated frequency such as 50Hz or 60Hz",
+                    "type": "number"
+                },
+                "ratedVoltage": {
+                    "description": "Rated voltage.",
+                    "type": "number"
+                }
+            },
+            "title": "CableInfo",
+            "type": "object"
+        },
+        "CableShieldMaterialKind": {
+            "description": "Kind of cable shield material.",
+            "enum": [
+                "aluminum",
+                "copper",
+                "galvanisedSteel",
+                "galvanisedSteelPErod",
+                "lead",
+                "other",
+                "steel"
+            ],
+            "title": "CableShieldMaterialKind",
+            "type": "string"
+        },
+        "ConcentricWireLayer": {
+            "additionalProperties": false,
+            "description": "Concentric wire layer base class.",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "isArmor": {
+                    "description": "Indicates whether this metallic sheath is an armor, which is a covering consisting of a metal tape(s) or wires, generally used to protect the cable from external mechanical effects",
+                    "type": "boolean"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "material": {
+                    "$ref": "#/$defs/CableShieldMaterialKind",
+                    "description": "Material og this metallic sheath layer."
+                }
+            },
+            "title": "ConcentricWireLayer",
+            "type": "object"
+        },
+        "ConductorScreenLayer": {
+            "additionalProperties": false,
+            "description": "A screen covering the conductor. Also called Conductor Shield.",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                }
+            },
+            "title": "ConductorScreenLayer",
+            "type": "object"
+        },
+        "Container": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "BindingLayer": {
+                    "items": {
+                        "$ref": "#/$defs/BindingLayer"
+                    },
+                    "type": "array"
+                },
+                "CableInfo": {
+                    "items": {
+                        "$ref": "#/$defs/CableInfo"
+                    },
+                    "type": "array"
+                },
+                "ConcentricWireLayer": {
+                    "items": {
+                        "$ref": "#/$defs/ConcentricWireLayer"
+                    },
+                    "type": "array"
+                },
+                "ConductorScreenLayer": {
+                    "items": {
+                        "$ref": "#/$defs/ConductorScreenLayer"
+                    },
+                    "type": "array"
+                },
+                "CorrugatedRoundWire": {
+                    "items": {
+                        "$ref": "#/$defs/CorrugatedRoundWire"
+                    },
+                    "type": "array"
+                },
+                "FlatStraps": {
+                    "items": {
+                        "$ref": "#/$defs/FlatStraps"
+                    },
+                    "type": "array"
+                },
+                "GappedTape": {
+                    "items": {
+                        "$ref": "#/$defs/GappedTape"
+                    },
+                    "type": "array"
+                },
+                "InnerSheathLayer": {
+                    "items": {
+                        "$ref": "#/$defs/InnerSheathLayer"
+                    },
+                    "type": "array"
+                },
+                "InsulationLayer": {
+                    "items": {
+                        "$ref": "#/$defs/InsulationLayer"
+                    },
+                    "type": "array"
+                },
+                "InsulationScreenLayer": {
+                    "items": {
+                        "$ref": "#/$defs/InsulationScreenLayer"
+                    },
+                    "type": "array"
+                },
+                "LappedTape": {
+                    "items": {
+                        "$ref": "#/$defs/LappedTape"
+                    },
+                    "type": "array"
+                },
+                "LongitudinallyCorrugatedTape": {
+                    "items": {
+                        "$ref": "#/$defs/LongitudinallyCorrugatedTape"
+                    },
+                    "type": "array"
+                },
+                "Manufacturer": {
+                    "items": {
+                        "$ref": "#/$defs/Manufacturer"
+                    },
+                    "type": "array"
+                },
+                "MetallicSheathLayer": {
+                    "items": {
+                        "$ref": "#/$defs/MetallicSheathLayer"
+                    },
+                    "type": "array"
+                },
+                "MultiCoreCableInfo": {
+                    "items": {
+                        "$ref": "#/$defs/MultiCoreCableInfo"
+                    },
+                    "type": "array"
+                },
+                "NonMetallicSheathLayer": {
+                    "items": {
+                        "$ref": "#/$defs/NonMetallicSheathLayer"
+                    },
+                    "type": "array"
+                },
+                "OverSheathLayer": {
+                    "items": {
+                        "$ref": "#/$defs/OverSheathLayer"
+                    },
+                    "type": "array"
+                },
+                "ProductAssetModel": {
+                    "items": {
+                        "$ref": "#/$defs/ProductAssetModel"
+                    },
+                    "type": "array"
+                },
+                "ResistancePerLengthTemperaturePoint": {
+                    "items": {
+                        "$ref": "#/$defs/ResistancePerLengthTemperaturePoint"
+                    },
+                    "type": "array"
+                },
+                "RoundWire": {
+                    "items": {
+                        "$ref": "#/$defs/RoundWire"
+                    },
+                    "type": "array"
+                },
+                "ScreenLayer": {
+                    "items": {
+                        "$ref": "#/$defs/ScreenLayer"
+                    },
+                    "type": "array"
+                },
+                "SkidWireLayer": {
+                    "items": {
+                        "$ref": "#/$defs/SkidWireLayer"
+                    },
+                    "type": "array"
+                },
+                "SplitConcentric": {
+                    "items": {
+                        "$ref": "#/$defs/SplitConcentric"
+                    },
+                    "type": "array"
+                },
+                "SwellableWaterTapes": {
+                    "items": {
+                        "$ref": "#/$defs/SwellableWaterTapes"
+                    },
+                    "type": "array"
+                },
+                "TapeLayer": {
+                    "items": {
+                        "$ref": "#/$defs/TapeLayer"
+                    },
+                    "type": "array"
+                },
+                "TubularTape": {
+                    "items": {
+                        "$ref": "#/$defs/TubularTape"
+                    },
+                    "type": "array"
+                },
+                "WireBraidInfo": {
+                    "items": {
+                        "$ref": "#/$defs/WireBraidInfo"
+                    },
+                    "type": "array"
+                }
+            },
+            "title": "Container",
+            "type": "object"
+        },
+        "CorrugatedRoundWire": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "isArmor": {
+                    "description": "Indicates whether this metallic sheath is an armor, which is a covering consisting of a metal tape(s) or wires, generally used to protect the cable from external mechanical effects",
+                    "type": "boolean"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "material": {
+                    "$ref": "#/$defs/CableShieldMaterialKind",
+                    "description": "Material og this metallic sheath layer."
+                }
+            },
+            "title": "CorrugatedRoundWire",
+            "type": "object"
+        },
+        "FlatStraps": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "isArmor": {
+                    "description": "Indicates whether this metallic sheath is an armor, which is a covering consisting of a metal tape(s) or wires, generally used to protect the cable from external mechanical effects",
+                    "type": "boolean"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "material": {
+                    "$ref": "#/$defs/CableShieldMaterialKind",
+                    "description": "Material og this metallic sheath layer."
+                }
+            },
+            "title": "FlatStraps",
+            "type": "object"
+        },
+        "GappedTape": {
+            "additionalProperties": false,
+            "description": "Tape shield cable data.",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "isArmor": {
+                    "description": "Indicates whether this metallic sheath is an armor, which is a covering consisting of a metal tape(s) or wires, generally used to protect the cable from external mechanical effects",
+                    "type": "boolean"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "material": {
+                    "$ref": "#/$defs/CableShieldMaterialKind",
+                    "description": "Material og this metallic sheath layer."
+                }
+            },
+            "title": "GappedTape",
+            "type": "object"
+        },
+        "InnerSheathLayer": {
+            "additionalProperties": false,
+            "description": "<b>Non-metallic</b> covering which surrounds the assembly of the cores (and fillers, if any) of a multiconductor cable and over which the protective covering is applied.For example, a bedding layer for an armour or reinforcement.",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                }
+            },
+            "title": "InnerSheathLayer",
+            "type": "object"
+        },
+        "InsulationLayer": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "insulationMaterial": {
+                    "$ref": "#/$defs/WireInsulationKind",
+                    "description": "Insulation material."
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                }
+            },
+            "title": "InsulationLayer",
+            "type": "object"
+        },
+        "InsulationScreenLayer": {
+            "additionalProperties": false,
+            "description": "A screen covering the insulation. Also called Insulation Shield.",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                }
+            },
+            "title": "InsulationScreenLayer",
+            "type": "object"
+        },
+        "LappedTape": {
+            "additionalProperties": false,
+            "description": "Tape shield cable data.",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "isArmor": {
+                    "description": "Indicates whether this metallic sheath is an armor, which is a covering consisting of a metal tape(s) or wires, generally used to protect the cable from external mechanical effects",
+                    "type": "boolean"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "material": {
+                    "$ref": "#/$defs/CableShieldMaterialKind",
+                    "description": "Material og this metallic sheath layer."
+                }
+            },
+            "title": "LappedTape",
+            "type": "object"
+        },
+        "LongitudinallyCorrugatedTape": {
+            "additionalProperties": false,
+            "description": "Tape shield cable data.",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "isArmor": {
+                    "description": "Indicates whether this metallic sheath is an armor, which is a covering consisting of a metal tape(s) or wires, generally used to protect the cable from external mechanical effects",
+                    "type": "boolean"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "material": {
+                    "$ref": "#/$defs/CableShieldMaterialKind",
+                    "description": "Material og this metallic sheath layer."
+                }
+            },
+            "title": "LongitudinallyCorrugatedTape",
+            "type": "object"
+        },
+        "Manufacturer": {
+            "additionalProperties": false,
+            "description": "Organisation that manufactures asset products.",
+            "properties": {
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": "string"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name is any free human readable and possibly non unique text naming the object.",
+                    "type": "string"
+                }
+            },
+            "title": "Manufacturer",
+            "type": "object"
+        },
+        "MetallicSheathLayer": {
+            "additionalProperties": false,
+            "description": "Any metallic sheath (or metal screen), including foils, braids, armours, concentric neutrals and tape shields.",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "isArmor": {
+                    "description": "Indicates whether this metallic sheath is an armor, which is a covering consisting of a metal tape(s) or wires, generally used to protect the cable from external mechanical effects",
+                    "type": "boolean"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "material": {
+                    "$ref": "#/$defs/CableShieldMaterialKind",
+                    "description": "Material og this metallic sheath layer."
+                }
+            },
+            "title": "MetallicSheathLayer",
+            "type": "object"
+        },
+        "MultiCoreCableInfo": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "BeltedLayer": {
+                    "items": {
+                        "$ref": "#/$defs/CableLayer"
+                    },
+                    "minItems": 0,
+                    "type": "array"
+                },
+                "Layer": {
+                    "items": {
+                        "$ref": "#/$defs/CableLayer"
+                    },
+                    "minItems": 0,
+                    "type": "array"
+                },
+                "coreRadius": {
+                    "description": "(if there is a different core material) Radius of the central core.",
+                    "type": "number"
+                },
+                "crossSection": {
+                    "description": "Area of conducting material cross section",
+                    "type": "number"
+                },
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": "string"
+                },
+                "layLength": {
+                    "description": "Longitudinal distance required for core to perform one turn around the diameter of the cable.",
+                    "type": "number"
+                },
+                "lossFactorArmour": {
+                    "type": "number"
+                },
+                "lossFactorSheathScreen": {
+                    "type": "number"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "material": {
+                    "$ref": "#/$defs/WireMaterialKind",
+                    "description": "Conductor material."
+                },
+                "name": {
+                    "description": "The name is any free human readable and possibly non unique text naming the object.",
+                    "type": "string"
+                },
+                "nominalTemperature": {
+                    "description": "Maximum nominal design operating temperature.",
+                    "type": "number"
+                },
+                "radius": {
+                    "description": "Outside radius of the wire.",
+                    "type": "number"
+                },
+                "ratedCurrent": {
+                    "description": "Rated current.",
+                    "type": "number"
+                },
+                "ratedFrequency": {
+                    "description": "Rated frequency such as 50Hz or 60Hz",
+                    "type": "number"
+                },
+                "ratedVoltage": {
+                    "description": "Rated voltage.",
+                    "type": "number"
+                }
+            },
+            "title": "MultiCoreCableInfo",
+            "type": "object"
+        },
+        "NonMetallicSheathLayer": {
+            "additionalProperties": false,
+            "description": "Uniform and continuous tubular non-metallic sheath. This class allows for the representation of any sheaths not properly defined with it's children classes.For example, separation sheaths (inner sheath applied between two metallic coverings of different materials).Note: The term sheath is only used for metallic coverings in North America, whereas the term jacket is used for non-metallic coverings.",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                }
+            },
+            "title": "NonMetallicSheathLayer",
+            "type": "object"
+        },
+        "OverSheathLayer": {
+            "additionalProperties": false,
+            "description": "<b>Non-metallic</b> covering applied over a covering, generally metallic, ensuring the protection of the cable from the outside, such as jackets and servings.",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                }
+            },
+            "title": "OverSheathLayer",
+            "type": "object"
+        },
+        "PerLengthPhaseImpedance": {
+            "additionalProperties": false,
+            "description": "Impedance and admittance parameters per unit length for n-wire unbalanced lines, in matrix form.",
+            "properties": {
+                "ConductorInfo": {
+                    "$ref": "#/$defs/ConductorInfo"
+                },
+                "conductorCount": {
+                    "description": "Number of phase, neutral, and other wires retained. Constrains the number of matrix elements and the phase codes that can be used with this matrix.",
+                    "type": "integer"
+                },
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": "string"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name is any free human readable and possibly non unique text naming the object.",
+                    "type": "string"
+                }
+            },
+            "title": "PerLengthPhaseImpedance",
+            "type": "object"
+        },
+        "PerLengthSequenceImpedance": {
+            "additionalProperties": false,
+            "description": "Sequence impedance and admittance parameters per unit length, for transposed lines of 1, 2, or 3 phases. For 1-phase lines, define x=x0=xself. For 2-phase lines, define x=xs-xm and x0=xs+xm.",
+            "properties": {
+                "ConductorInfo": {
+                    "$ref": "#/$defs/ConductorInfo"
+                },
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": "string"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name is any free human readable and possibly non unique text naming the object.",
+                    "type": "string"
+                },
+                "r": {
+                    "description": "Positive sequence series resistance, per unit of length.",
+                    "type": "number"
+                },
+                "x": {
+                    "description": "Positive sequence series reactance, per unit of length.",
+                    "type": "number"
+                }
+            },
+            "title": "PerLengthSequenceImpedance",
+            "type": "object"
+        },
+        "PhaseImpedanceData": {
+            "additionalProperties": false,
+            "description": "Impedance and conductance matrix element values.The diagonal elements are described by the elements having the same toPhase and fromPhase value and the off diagonal elements have different toPhase and fromPhase values.  The matrix can also be stored in symmetric lower triangular format using the row and column attributes, which map to ACLineSegmentPhase.sequenceNumber.",
+            "properties": {
+                "PhaseImpedance": {
+                    "$ref": "#/$defs/PerLengthPhaseImpedance",
+                    "description": "Conductor phase impedance to which this data belongs."
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "r": {
+                    "description": "Resistance matrix element value, per length of unit.",
+                    "type": "number"
+                },
+                "x": {
+                    "description": "Reactance matrix element value, per length of unit.",
+                    "type": "number"
+                }
+            },
+            "title": "PhaseImpedanceData",
+            "type": "object"
+        },
+        "ProductAssetModel": {
+            "additionalProperties": false,
+            "description": "Asset model by a specific manufacturer.",
+            "properties": {
+                "AssetInfo": {
+                    "$ref": "#/$defs/AssetInfo",
+                    "description": "Asset information (nameplate) for this product asset model."
+                },
+                "Manufacturer": {
+                    "$ref": "#/$defs/Manufacturer",
+                    "description": "Manufacturer of this asset model."
+                },
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": "string"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name is any free human readable and possibly non unique text naming the object.",
+                    "type": "string"
+                }
+            },
+            "title": "ProductAssetModel",
+            "type": "object"
+        },
+        "ResistancePerLengthTemperaturePoint": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "ConductorInfo": {
+                    "$ref": "#/$defs/ConductorInfo",
+                    "description": "Conductor with this (resistance, temperature) pair."
+                },
+                "isAC": {
+                    "type": "boolean"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "resistance": {
+                    "type": "number"
+                },
+                "temperature": {
+                    "type": "number"
+                }
+            },
+            "title": "ResistancePerLengthTemperaturePoint",
+            "type": "object"
+        },
+        "RoundWire": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "isArmor": {
+                    "description": "Indicates whether this metallic sheath is an armor, which is a covering consisting of a metal tape(s) or wires, generally used to protect the cable from external mechanical effects",
+                    "type": "boolean"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "material": {
+                    "$ref": "#/$defs/CableShieldMaterialKind",
+                    "description": "Material og this metallic sheath layer."
+                }
+            },
+            "title": "RoundWire",
+            "type": "object"
+        },
+        "ScreenLayer": {
+            "additionalProperties": false,
+            "description": "Electrical screen of non-metallic and/or metallic material. A semi conducting (as in somewhat conducting) material is typically used.",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                }
+            },
+            "title": "ScreenLayer",
+            "type": "object"
+        },
+        "SkidWireLayer": {
+            "additionalProperties": false,
+            "description": "Layer with wires or assembly of wires, usually D-shaped, applied with a long length of lay over the cores of a pipe-type cable, to provide mechanical protection and to facilitate sliding while the cores are being pulled into the pipe.  Reference: IEC 60050-461",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "isArmor": {
+                    "description": "Indicates whether this metallic sheath is an armor, which is a covering consisting of a metal tape(s) or wires, generally used to protect the cable from external mechanical effects",
+                    "type": "boolean"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "material": {
+                    "$ref": "#/$defs/CableShieldMaterialKind",
+                    "description": "Material og this metallic sheath layer."
+                }
+            },
+            "title": "SkidWireLayer",
+            "type": "object"
+        },
+        "SplitConcentric": {
+            "additionalProperties": false,
+            "description": "Single concentric layer with two conductors separated by each other by insulating material. Reference: IEC 60050-461",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "isArmor": {
+                    "description": "Indicates whether this metallic sheath is an armor, which is a covering consisting of a metal tape(s) or wires, generally used to protect the cable from external mechanical effects",
+                    "type": "boolean"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "material": {
+                    "$ref": "#/$defs/CableShieldMaterialKind",
+                    "description": "Material og this metallic sheath layer."
+                }
+            },
+            "title": "SplitConcentric",
+            "type": "object"
+        },
+        "SwellableWaterTapes": {
+            "additionalProperties": false,
+            "description": "Swellable water tapes (SWTPs) to provide longitudinal and radial water blocking. It can be made of a semi-conducting or a non-conductive material (NCWST).Typically applied between the insulation screen and the shield layers and/or over the shield layer and/or over the shield layer.Note that the Shield and Armor layers may also have a water blocking purpose. In such cases MettalicSheath should be used instead.",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                }
+            },
+            "title": "SwellableWaterTapes",
+            "type": "object"
+        },
+        "TapeLayer": {
+            "additionalProperties": false,
+            "description": "Tape layer base class.",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "isArmor": {
+                    "description": "Indicates whether this metallic sheath is an armor, which is a covering consisting of a metal tape(s) or wires, generally used to protect the cable from external mechanical effects",
+                    "type": "boolean"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "material": {
+                    "$ref": "#/$defs/CableShieldMaterialKind",
+                    "description": "Material og this metallic sheath layer."
+                }
+            },
+            "title": "TapeLayer",
+            "type": "object"
+        },
+        "TubularTape": {
+            "additionalProperties": false,
+            "description": "Tape shield cable data.",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "isArmor": {
+                    "description": "Indicates whether this metallic sheath is an armor, which is a covering consisting of a metal tape(s) or wires, generally used to protect the cable from external mechanical effects",
+                    "type": "boolean"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "material": {
+                    "$ref": "#/$defs/CableShieldMaterialKind",
+                    "description": "Material og this metallic sheath layer."
+                }
+            },
+            "title": "TubularTape",
+            "type": "object"
+        },
+        "WireBraidInfo": {
+            "additionalProperties": false,
+            "description": "Metallic Wires or Braid sheath.",
+            "properties": {
+                "diameterOverLayer": {
+                    "description": "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied.",
+                    "type": "number"
+                },
+                "isArmor": {
+                    "description": "Indicates whether this metallic sheath is an armor, which is a covering consisting of a metal tape(s) or wires, generally used to protect the cable from external mechanical effects",
+                    "type": "boolean"
+                },
+                "layerOrder": {
+                    "description": "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order.",
+                    "type": "integer"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "material": {
+                    "$ref": "#/$defs/CableShieldMaterialKind",
+                    "description": "Material og this metallic sheath layer."
+                }
+            },
+            "title": "WireBraidInfo",
+            "type": "object"
+        },
+        "WireInsulationKind": {
+            "description": "Kind of wire insulation.",
+            "enum": [
+                "asbestosAndVarnishedCambric",
+                "beltedPilc",
+                "butyl",
+                "crosslinkedPolyethylene",
+                "ethylenePropyleneRubber",
+                "highMolecularWeightPolyethylene",
+                "highPressureFluidFilled",
+                "lowCapacitanceRubber",
+                "oilPaper",
+                "other",
+                "ozoneResistantRubber",
+                "rubber",
+                "siliconRubber",
+                "treeResistantHighMolecularWeightPolyethylene",
+                "treeRetardantCrosslinkedPolyethylene",
+                "unbeltedPilc",
+                "varnishedCambricCloth",
+                "varnishedDacronGlass"
+            ],
+            "title": "WireInsulationKind",
+            "type": "string"
+        },
+        "WireMaterialKind": {
+            "description": "Kind of wire material.",
+            "enum": [
+                "aaac",
+                "acsr",
+                "aluminum",
+                "aluminumAlloy",
+                "aluminumAlloySteel",
+                "aluminumSteel",
+                "ccaw",
+                "copper",
+                "other",
+                "steel"
+            ],
+            "title": "WireMaterialKind",
+            "type": "string"
+        }
+    },
+    "$id": "http://iec.ch/TC57/2007/profile#",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "description": "",
+    "metamodel_version": "1.7.0",
+    "properties": {
+        "BindingLayer": {
+            "items": {
+                "$ref": "#/$defs/BindingLayer"
+            },
+            "type": "array"
+        },
+        "CableInfo": {
+            "items": {
+                "$ref": "#/$defs/CableInfo"
+            },
+            "type": "array"
+        },
+        "ConcentricWireLayer": {
+            "items": {
+                "$ref": "#/$defs/ConcentricWireLayer"
+            },
+            "type": "array"
+        },
+        "ConductorScreenLayer": {
+            "items": {
+                "$ref": "#/$defs/ConductorScreenLayer"
+            },
+            "type": "array"
+        },
+        "CorrugatedRoundWire": {
+            "items": {
+                "$ref": "#/$defs/CorrugatedRoundWire"
+            },
+            "type": "array"
+        },
+        "FlatStraps": {
+            "items": {
+                "$ref": "#/$defs/FlatStraps"
+            },
+            "type": "array"
+        },
+        "GappedTape": {
+            "items": {
+                "$ref": "#/$defs/GappedTape"
+            },
+            "type": "array"
+        },
+        "InnerSheathLayer": {
+            "items": {
+                "$ref": "#/$defs/InnerSheathLayer"
+            },
+            "type": "array"
+        },
+        "InsulationLayer": {
+            "items": {
+                "$ref": "#/$defs/InsulationLayer"
+            },
+            "type": "array"
+        },
+        "InsulationScreenLayer": {
+            "items": {
+                "$ref": "#/$defs/InsulationScreenLayer"
+            },
+            "type": "array"
+        },
+        "LappedTape": {
+            "items": {
+                "$ref": "#/$defs/LappedTape"
+            },
+            "type": "array"
+        },
+        "LongitudinallyCorrugatedTape": {
+            "items": {
+                "$ref": "#/$defs/LongitudinallyCorrugatedTape"
+            },
+            "type": "array"
+        },
+        "Manufacturer": {
+            "items": {
+                "$ref": "#/$defs/Manufacturer"
+            },
+            "type": "array"
+        },
+        "MetallicSheathLayer": {
+            "items": {
+                "$ref": "#/$defs/MetallicSheathLayer"
+            },
+            "type": "array"
+        },
+        "MultiCoreCableInfo": {
+            "items": {
+                "$ref": "#/$defs/MultiCoreCableInfo"
+            },
+            "type": "array"
+        },
+        "NonMetallicSheathLayer": {
+            "items": {
+                "$ref": "#/$defs/NonMetallicSheathLayer"
+            },
+            "type": "array"
+        },
+        "OverSheathLayer": {
+            "items": {
+                "$ref": "#/$defs/OverSheathLayer"
+            },
+            "type": "array"
+        },
+        "ProductAssetModel": {
+            "items": {
+                "$ref": "#/$defs/ProductAssetModel"
+            },
+            "type": "array"
+        },
+        "ResistancePerLengthTemperaturePoint": {
+            "items": {
+                "$ref": "#/$defs/ResistancePerLengthTemperaturePoint"
+            },
+            "type": "array"
+        },
+        "RoundWire": {
+            "items": {
+                "$ref": "#/$defs/RoundWire"
+            },
+            "type": "array"
+        },
+        "ScreenLayer": {
+            "items": {
+                "$ref": "#/$defs/ScreenLayer"
+            },
+            "type": "array"
+        },
+        "SkidWireLayer": {
+            "items": {
+                "$ref": "#/$defs/SkidWireLayer"
+            },
+            "type": "array"
+        },
+        "SplitConcentric": {
+            "items": {
+                "$ref": "#/$defs/SplitConcentric"
+            },
+            "type": "array"
+        },
+        "SwellableWaterTapes": {
+            "items": {
+                "$ref": "#/$defs/SwellableWaterTapes"
+            },
+            "type": "array"
+        },
+        "TapeLayer": {
+            "items": {
+                "$ref": "#/$defs/TapeLayer"
+            },
+            "type": "array"
+        },
+        "TubularTape": {
+            "items": {
+                "$ref": "#/$defs/TubularTape"
+            },
+            "type": "array"
+        },
+        "WireBraidInfo": {
+            "items": {
+                "$ref": "#/$defs/WireBraidInfo"
+            },
+            "type": "array"
+        }
+    },
+    "title": "AssetCatalogue",
+    "type": "object",
+    "version": null
+}

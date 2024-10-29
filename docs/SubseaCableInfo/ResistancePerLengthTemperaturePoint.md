@@ -1,84 +1,41 @@
 # ResistancePerLengthTemperaturePoint
 
-
+_No description available_
 
 **URI**: [cim:ResistancePerLengthTemperaturePoint](http://iec.ch/TC57/CIM-generic#ResistancePerLengthTemperaturePoint)<br />
 **Type**: Class
 
-
-
-
 ```mermaid
- classDiagram
+classDiagram
     class ResistancePerLengthTemperaturePoint
     click ResistancePerLengthTemperaturePoint href "../ResistancePerLengthTemperaturePoint"
-      ResistancePerLengthTemperaturePoint : ResistancePerLengthTemperaturePoint.isAC
-        
-      ResistancePerLengthTemperaturePoint : ResistancePerLengthTemperaturePoint.resistance
-        
-      ResistancePerLengthTemperaturePoint : ResistancePerLengthTemperaturePoint.temperature
-        
-      
+    style ResistancePerLengthTemperaturePoint fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+
+        ResistancePerLengthTemperaturePoint --> ConductorInfo : ResistancePerLengthTemperaturePoint.ConductorInfo
+
+        ConductorInfo
+            click ConductorInfo href "../ConductorInfo"
+            style ConductorInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+
+
+        ResistancePerLengthTemperaturePoint : ResistancePerLengthTemperaturePoint.mRID
+        ResistancePerLengthTemperaturePoint : ResistancePerLengthTemperaturePoint.isAC
+        ResistancePerLengthTemperaturePoint : ResistancePerLengthTemperaturePoint.resistance
+        ResistancePerLengthTemperaturePoint : ResistancePerLengthTemperaturePoint.temperature
+        ResistancePerLengthTemperaturePoint : ResistancePerLengthTemperaturePoint.ConductorInfo
 ```
 
-
-
-
-<!-- no inheritance hierarchy -->
-
+## Inheritance
+* **ResistancePerLengthTemperaturePoint**
 
 ## Attributes
-
-
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
-| isAC | [cim:ResistancePerLengthTemperaturePoint.isAC](http://iec.ch/TC57/CIM-generic#ResistancePerLengthTemperaturePoint.isAC) | 0..1 <br />  boolean  |  | direct |
-| resistance | [cim:ResistancePerLengthTemperaturePoint.resistance](http://iec.ch/TC57/CIM-generic#ResistancePerLengthTemperaturePoint.resistance) | 0..1 <br />  [ResistancePerLength](ResistancePerLength.md)  |  | direct |
-| temperature | [cim:ResistancePerLengthTemperaturePoint.temperature](http://iec.ch/TC57/CIM-generic#ResistancePerLengthTemperaturePoint.temperature) | 0..1 <br />  [Temperature](Temperature.md)  |  | direct |
-
-
-
-
-
-## Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [CableInfo](CableInfo.md) | ConductorPerLengthResistance | range | [ResistancePerLengthTemperaturePoint](ResistancePerLengthTemperaturePoint.md) |
-| [ConductorInfo](ConductorInfo.md) | ConductorPerLengthResistance | range | [ResistancePerLengthTemperaturePoint](ResistancePerLengthTemperaturePoint.md) |
-| [MetallicSheathLayer](MetallicSheathLayer.md) | LayerResistance | range | [ResistancePerLengthTemperaturePoint](ResistancePerLengthTemperaturePoint.md) |
-| [MultiCoreCableInfo](MultiCoreCableInfo.md) | ConductorPerLengthResistance | range | [ResistancePerLengthTemperaturePoint](ResistancePerLengthTemperaturePoint.md) |
-| [WireInfo](WireInfo.md) | ConductorPerLengthResistance | range | [ResistancePerLengthTemperaturePoint](ResistancePerLengthTemperaturePoint.md) |
-
-
-
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-
+| mRID | [cim:ResistancePerLengthTemperaturePoint.mRID](http://iec.ch/TC57/CIM-generic#ResistancePerLengthTemperaturePoint.mRID) | 0..1 | Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements. | direct |
+| isAC | [cim:ResistancePerLengthTemperaturePoint.isAC](http://iec.ch/TC57/CIM-generic#ResistancePerLengthTemperaturePoint.isAC) | 0..1 | No description available | direct |
+| resistance | [cim:ResistancePerLengthTemperaturePoint.resistance](http://iec.ch/TC57/CIM-generic#ResistancePerLengthTemperaturePoint.resistance) | 0..1 | No description available | direct |
+| temperature | [cim:ResistancePerLengthTemperaturePoint.temperature](http://iec.ch/TC57/CIM-generic#ResistancePerLengthTemperaturePoint.temperature) | 0..1 | No description available | direct |
+| ConductorInfo | [cim:ResistancePerLengthTemperaturePoint.ConductorInfo](http://iec.ch/TC57/CIM-generic#ResistancePerLengthTemperaturePoint.ConductorInfo) | 0..1 | Conductor with this (resistance, temperature) pair. | direct |
 
 ### Schema Source
-
-
-* from schema: http://iec.ch/TC57/2007/profile#
-
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cim:ResistancePerLengthTemperaturePoint |
-| native | this:ResistancePerLengthTemperaturePoint |
-
-
-
-
+* from schema: [http://iec.ch/TC57/2007/profile#](http://iec.ch/TC57/2007/profile#)

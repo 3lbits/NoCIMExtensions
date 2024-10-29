@@ -1,25 +1,25 @@
-# ScreenLayer
+# SwellableWaterTapes
 
-_Electrical screen of non-metallic and/or metallic material. A semi conducting (as in somewhat conducting) material is typically used._
+_Swellable water tapes (SWTPs) to provide longitudinal and radial water blocking. It can be made of a semi-conducting or a non-conductive material (NCWST).Typically applied between the insulation screen and the shield layers and/or over the shield layer and/or over the shield layer.Note that the Shield and Armor layers may also have a water blocking purpose. In such cases MettalicSheath should be used instead._
 
-**URI**: [cim:ScreenLayer](http://iec.ch/TC57/CIM-generic#ScreenLayer)<br />
+**URI**: [cim:SwellableWaterTapes](http://iec.ch/TC57/CIM-generic#SwellableWaterTapes)<br />
 **Type**: Class
 
 ```mermaid
 classDiagram
-    class ScreenLayer
-    click ScreenLayer href "../ScreenLayer"
-    style ScreenLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    class SwellableWaterTapes
+    click SwellableWaterTapes href "../SwellableWaterTapes"
+    style SwellableWaterTapes fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
-        ScreenLayer <|-- ConductorScreenLayer : inherits
-            click ScreenLayer href "../ScreenLayer"
-            style ScreenLayer rx:10,ry:10
+        NonMetallicSheathLayer <|-- SwellableWaterTapes : inherits
+            click NonMetallicSheathLayer href "../NonMetallicSheathLayer"
+            style NonMetallicSheathLayer rx:10,ry:10
 
-        ConductorScreenLayer
-            click ConductorScreenLayer href "../ConductorScreenLayer"
-            style ConductorScreenLayer rx:10,ry:10
+        SwellableWaterTapes
+            click SwellableWaterTapes href "../SwellableWaterTapes"
+            style SwellableWaterTapes rx:10,ry:10
 
-        CableLayer <|-- ScreenLayer : inherits
+        CableLayer <|-- NonMetallicSheathLayer : inherits
             click CableLayer href "../CableLayer"
             style CableLayer rx:10,ry:10
 
@@ -44,7 +44,8 @@ classDiagram
 
 ## Inheritance
 * [CableLayer](CableLayer.md)
-    * **ScreenLayer**
+    * [NonMetallicSheathLayer](NonMetallicSheathLayer.md)
+        * **SwellableWaterTapes**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |

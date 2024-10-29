@@ -1,25 +1,25 @@
-# ScreenLayer
+# InnerSheathLayer
 
-_Electrical screen of non-metallic and/or metallic material. A semi conducting (as in somewhat conducting) material is typically used._
+_<b>Non-metallic</b> covering which surrounds the assembly of the cores (and fillers, if any) of a multiconductor cable and over which the protective covering is applied.For example, a bedding layer for an armour or reinforcement._
 
-**URI**: [cim:ScreenLayer](http://iec.ch/TC57/CIM-generic#ScreenLayer)<br />
+**URI**: [cim:InnerSheathLayer](http://iec.ch/TC57/CIM-generic#InnerSheathLayer)<br />
 **Type**: Class
 
 ```mermaid
 classDiagram
-    class ScreenLayer
-    click ScreenLayer href "../ScreenLayer"
-    style ScreenLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    class InnerSheathLayer
+    click InnerSheathLayer href "../InnerSheathLayer"
+    style InnerSheathLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
-        ScreenLayer <|-- ConductorScreenLayer : inherits
-            click ScreenLayer href "../ScreenLayer"
-            style ScreenLayer rx:10,ry:10
+        NonMetallicSheathLayer <|-- InnerSheathLayer : inherits
+            click NonMetallicSheathLayer href "../NonMetallicSheathLayer"
+            style NonMetallicSheathLayer rx:10,ry:10
 
-        ConductorScreenLayer
-            click ConductorScreenLayer href "../ConductorScreenLayer"
-            style ConductorScreenLayer rx:10,ry:10
+        InnerSheathLayer
+            click InnerSheathLayer href "../InnerSheathLayer"
+            style InnerSheathLayer rx:10,ry:10
 
-        CableLayer <|-- ScreenLayer : inherits
+        CableLayer <|-- NonMetallicSheathLayer : inherits
             click CableLayer href "../CableLayer"
             style CableLayer rx:10,ry:10
 
@@ -44,7 +44,8 @@ classDiagram
 
 ## Inheritance
 * [CableLayer](CableLayer.md)
-    * **ScreenLayer**
+    * [NonMetallicSheathLayer](NonMetallicSheathLayer.md)
+        * **InnerSheathLayer**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |

@@ -1,25 +1,25 @@
-# ScreenLayer
+# OverSheathLayer
 
-_Electrical screen of non-metallic and/or metallic material. A semi conducting (as in somewhat conducting) material is typically used._
+_<b>Non-metallic</b> covering applied over a covering, generally metallic, ensuring the protection of the cable from the outside, such as jackets and servings._
 
-**URI**: [cim:ScreenLayer](http://iec.ch/TC57/CIM-generic#ScreenLayer)<br />
+**URI**: [cim:OverSheathLayer](http://iec.ch/TC57/CIM-generic#OverSheathLayer)<br />
 **Type**: Class
 
 ```mermaid
 classDiagram
-    class ScreenLayer
-    click ScreenLayer href "../ScreenLayer"
-    style ScreenLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    class OverSheathLayer
+    click OverSheathLayer href "../OverSheathLayer"
+    style OverSheathLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
-        ScreenLayer <|-- ConductorScreenLayer : inherits
-            click ScreenLayer href "../ScreenLayer"
-            style ScreenLayer rx:10,ry:10
+        NonMetallicSheathLayer <|-- OverSheathLayer : inherits
+            click NonMetallicSheathLayer href "../NonMetallicSheathLayer"
+            style NonMetallicSheathLayer rx:10,ry:10
 
-        ConductorScreenLayer
-            click ConductorScreenLayer href "../ConductorScreenLayer"
-            style ConductorScreenLayer rx:10,ry:10
+        OverSheathLayer
+            click OverSheathLayer href "../OverSheathLayer"
+            style OverSheathLayer rx:10,ry:10
 
-        CableLayer <|-- ScreenLayer : inherits
+        CableLayer <|-- NonMetallicSheathLayer : inherits
             click CableLayer href "../CableLayer"
             style CableLayer rx:10,ry:10
 
@@ -44,7 +44,8 @@ classDiagram
 
 ## Inheritance
 * [CableLayer](CableLayer.md)
-    * **ScreenLayer**
+    * [NonMetallicSheathLayer](NonMetallicSheathLayer.md)
+        * **OverSheathLayer**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |

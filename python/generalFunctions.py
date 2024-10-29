@@ -19,6 +19,17 @@ def to_camel_case(snake_str: str):
     components = snake_str.split('_')
     return ''.join(x.title() for x in components)
 
+def remove_all_md_files(directory):
+    for root, dirs, files in os.walk(directory):
+        for file in files:
+            if file.endswith(".md"):
+                file_path = os.path.join(root, file)
+                try:
+                    os.remove(file_path)
+                    print(f"Removed {file_path}")
+                except Exception as e:
+                    print(f"Failed to remove {file_path}: {e}")
+    print("All .md files removed successfully.")
 
 # def is_file_ready(file_path):
 #     """Check if the file is ready by trying to open it."""

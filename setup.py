@@ -1,17 +1,17 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='std',
+    name='standard',
     version='0.1',
     packages=find_packages(),
-    py_modules=['python.std'],  # Update this line to include the path to std.py
+    py_modules=['python.standard'],  # Update this line to include the path to standard.py
     install_requires=[
         'click',
         # Add other dependencies here
     ],
     entry_points='''
         [console_scripts]
-        std=python.std:cli
+        standard=python.standard:main
     ''',
 )
 

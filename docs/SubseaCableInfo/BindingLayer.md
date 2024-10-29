@@ -1,25 +1,25 @@
-# ScreenLayer
+# BindingLayer
 
-_Electrical screen of non-metallic and/or metallic material. A semi conducting (as in somewhat conducting) material is typically used._
+_Layer applied with the sole purpose of binding different layers/cores of cable together._
 
-**URI**: [cim:ScreenLayer](http://iec.ch/TC57/CIM-generic#ScreenLayer)<br />
+**URI**: [cim:BindingLayer](http://iec.ch/TC57/CIM-generic#BindingLayer)<br />
 **Type**: Class
 
 ```mermaid
 classDiagram
-    class ScreenLayer
-    click ScreenLayer href "../ScreenLayer"
-    style ScreenLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    class BindingLayer
+    click BindingLayer href "../BindingLayer"
+    style BindingLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
-        ScreenLayer <|-- ConductorScreenLayer : inherits
-            click ScreenLayer href "../ScreenLayer"
-            style ScreenLayer rx:10,ry:10
+        NonMetallicSheathLayer <|-- BindingLayer : inherits
+            click NonMetallicSheathLayer href "../NonMetallicSheathLayer"
+            style NonMetallicSheathLayer rx:10,ry:10
 
-        ConductorScreenLayer
-            click ConductorScreenLayer href "../ConductorScreenLayer"
-            style ConductorScreenLayer rx:10,ry:10
+        BindingLayer
+            click BindingLayer href "../BindingLayer"
+            style BindingLayer rx:10,ry:10
 
-        CableLayer <|-- ScreenLayer : inherits
+        CableLayer <|-- NonMetallicSheathLayer : inherits
             click CableLayer href "../CableLayer"
             style CableLayer rx:10,ry:10
 
@@ -44,7 +44,8 @@ classDiagram
 
 ## Inheritance
 * [CableLayer](CableLayer.md)
-    * **ScreenLayer**
+    * [NonMetallicSheathLayer](NonMetallicSheathLayer.md)
+        * **BindingLayer**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |

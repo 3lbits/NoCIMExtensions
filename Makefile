@@ -1,7 +1,8 @@
 .PHONY: markdown
 markdown: ## Generate Markdown files from LinkML schemas and removes all Slot and Type files
-	gen-doc -d docs/AviationObstacle --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/aviationobstacle.linkml.yaml
-	gen-doc -d docs/WattApp --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/wattapp.linkml.yaml
+	gen-doc -d docs/AviationObstacle --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/yaml/aviation_obstacle.linkml.yaml
+	gen-doc -d docs/WattApp --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/yaml/watt_app.linkml.yaml
+	gen-doc -d docs/SubseaCableInfo --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/yaml/subsea_cable_info.linkml.yaml
 	grep -E '^# (Slot|Type): ' -lr --include \*.md docs | xargs -d '\n' rm
 
 startup_powershell:
@@ -34,7 +35,7 @@ python: ## Generate Python dataclass files from LinkML schemas
 
 .PHONY: clean
 clean: ## Delete all Markdown files
-	rm docs/AviationObstacle/*.md
+	rm docs/'AviationObstacle'/*.md docs/WattApp/*.md docs/'SubseaCableInfo'/*.md
 
 ########################## Next section: Made by Thomas #################################
 
@@ -59,7 +60,7 @@ linkmljsonld:
 		python python/replace_oldstring_with_newstring.py $(yamlSchemaFilePath) $(string2) $(string1); \
 	fi
 
-# Example: make linkmljsonld yamlSchemaFilePath=schemas/aviationobstacle.linkml.yaml yamlDataFilePath=data/yaml/aviationobstacle.yaml outputFilePath=data/jsonld/aviationobstacle.linkml.jsonld
+# Example: make linkmljsonld yamlSchemaFilePath=schemas/yaml/aviationobstacle.linkml.yaml yamlDataFilePath=data/yaml/aviationobstacle.yaml outputFilePath=data/jsonld/aviationobstacle.linkml.jsonld
 # Clean linkml command: linkml-convert -s test_AO_schema.yaml test_AO.yaml -t json-ld -o test_AO_linkml.jsonld
 
 # Rule to run the jsonld-convert command with a parameter
@@ -73,14 +74,14 @@ jsonld:
 		python python/jsonldFromYamlConverter.py $(yamlSchemaFilePath) $(yamlDataFilePath) $(outputFilePath); \
 	fi
 
-# Example1: make jsonld yamlSchemaFilePath=schemas/aviationobstacle.linkml.yaml yamlDataFilePath=data/yaml/aviationobstacle.yaml outputFilePath=data/jsonld/aviationobstacle.jsonld
-# Example2: make jsonld yamlSchemaFilePath=schemas/wattapp.linkml.yaml yamlDataFilePath=data/yaml/wattapp.yaml outputFilePath=data/jsonld/wattapp.jsonld
-# Example3: make jsonld yamlSchemaFilePath=schemas/subseacableinfo.linkml.yaml yamlDataFilePath=data/yaml/subseacableinfo.yaml outputFilePath=data/jsonld/subseacableinfo.jsonld
+# Example1: make jsonld yamlSchemaFilePath=schemas/yaml/aviationobstacle.linkml.yaml yamlDataFilePath=data/yaml/aviationobstacle.yaml outputFilePath=data/jsonld/aviationobstacle.jsonld
+# Example2: make jsonld yamlSchemaFilePath=schemas/yaml/wattapp.linkml.yaml yamlDataFilePath=data/yaml/wattapp.yaml outputFilePath=data/jsonld/wattapp.jsonld
+# Example3: make jsonld yamlSchemaFilePath=schemas/yaml/subseacableinfo.linkml.yaml yamlDataFilePath=data/yaml/subseacableinfo.yaml outputFilePath=data/jsonld/subseacableinfo.jsonld
 
 
 #### yaml schema to json schema conversion ####
 
-# gen-json-schema schemas/wattapp.linkml.yaml > schemas/wattapp_schema.json
+# gen-json-schema schemas/yaml/wattapp.linkml.yaml > schemas/wattapp_schema.json
 
 ###############################################
 
