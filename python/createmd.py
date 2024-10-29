@@ -444,7 +444,7 @@ class Controller():
         else:
             print("Yaml file is valid")
 
-        General().includedClasses(True) # Setting the containerClassesSet variable globally - Using only classes defined in Container class
+        General().includedClasses(allClasses=True) # Setting the containerClassesSet variable globally - Using only classes defined in Container class
 
         CreateMarkdownFile().create_markdown_files()
 
