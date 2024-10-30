@@ -1,101 +1,51 @@
 # PowerSystemResource
 
-
 _A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated._
 
-
-
-
-* __NOTE__: this is an abstract class and should not be instantiated directly
-
+*__NOTE__: this is an abstract class and should not be instantiated directly
 
 **URI**: [cim:PowerSystemResource](https://cim.ucaiug.io/ns#PowerSystemResource)<br />
 **Type**: Class
 
-
-
-
 ```mermaid
- classDiagram
+classDiagram
     class PowerSystemResource
     click PowerSystemResource href "../PowerSystemResource"
-      Feature <|-- PowerSystemResource
-        click Feature href "../Feature"
-      IdentifiedObject <|-- PowerSystemResource
-        click IdentifiedObject href "../IdentifiedObject"
-      
+    style PowerSystemResource fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
-      PowerSystemResource <|-- ConnectivityNodeContainer
-        click ConnectivityNodeContainer href "../ConnectivityNodeContainer"
-      
-      
-      PowerSystemResource : IdentifiedObject.description
-        
-      PowerSystemResource : hasGeometry
-        
-          PowerSystemResource --> Geometry : hasGeometry
-          click Geometry href "../Geometry"
-        
-      PowerSystemResource : IdentifiedObject.mRID
-        
-      PowerSystemResource : IdentifiedObject.name
-        
-      
+        PowerSystemResource <|-- ConnectivityNodeContainer : inherits
+            click PowerSystemResource href "../PowerSystemResource"
+            style PowerSystemResource rx:10,ry:10
+
+        ConnectivityNodeContainer
+            click ConnectivityNodeContainer href "../ConnectivityNodeContainer"
+            style ConnectivityNodeContainer rx:10,ry:10
+
+        IdentifiedObject <|-- PowerSystemResource : inherits
+            click IdentifiedObject href "../IdentifiedObject"
+            style IdentifiedObject rx:10,ry:10
+
+        Feature <|-- PowerSystemResource : inherits
+            click Feature href "../Feature"
+            style Feature fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
+
+
+
+        IdentifiedObject : IdentifiedObject.mRID
+        IdentifiedObject : IdentifiedObject.description
+        IdentifiedObject : IdentifiedObject.name
 ```
-
-
-
-
 
 ## Inheritance
 * [IdentifiedObject](IdentifiedObject.md)
-    * **PowerSystemResource** [ [Feature](Feature.md)]
-        * [ConnectivityNodeContainer](ConnectivityNodeContainer.md)
-
-
+    * **PowerSystemResource**
 
 ## Attributes
-
-
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
-| hasGeometry | [geo:hasGeometry](http://www.opengis.net/ont/geosparql#hasGeometry) | 0..1 <br />  [Geometry](Geometry.md)  | Geometric representation of the spatial object | [Feature](Feature.md) |
-| mRID | [cim:IdentifiedObject.mRID](https://cim.ucaiug.io/ns#IdentifiedObject.mRID) | 0..1 <br />  string  | Master resource identifier issued by a model authority | [IdentifiedObject](IdentifiedObject.md) |
-| description | [cim:IdentifiedObject.description](https://cim.ucaiug.io/ns#IdentifiedObject.description) | 0..1 <br />  string  | The description is a free human readable text describing or naming the object | [IdentifiedObject](IdentifiedObject.md) |
-| name | [cim:IdentifiedObject.name](https://cim.ucaiug.io/ns#IdentifiedObject.name) | 0..1 <br />  string  | The name is any free human readable and possibly non unique text naming the o... | [IdentifiedObject](IdentifiedObject.md) |
-
-
-
-
-
-
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-
+| mRID | [cim:IdentifiedObject.mRID](https://cim.ucaiug.io/ns#IdentifiedObject.mRID) | 0..1 | Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements. | IdentifiedObject |
+| description | [cim:IdentifiedObject.description](https://cim.ucaiug.io/ns#IdentifiedObject.description) | 0..1 | The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy. | IdentifiedObject |
+| name | [cim:IdentifiedObject.name](https://cim.ucaiug.io/ns#IdentifiedObject.name) | 0..1 | The name is any free human readable and possibly non unique text naming the object. | IdentifiedObject |
 
 ### Schema Source
-
-
-* from schema: https://ap-no.cim4.eu/WattApp/1.0
-
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | cim:PowerSystemResource |
-| native | this:PowerSystemResource |
-
-
-
-
+* from schema: [https://ap-no.cim4.eu/WattApp/1.0](https://ap-no.cim4.eu/WattApp/1.0)

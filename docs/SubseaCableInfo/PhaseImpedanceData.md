@@ -36,4 +36,4 @@ classDiagram
 | PhaseImpedance | [cim:PhaseImpedanceData.PhaseImpedance](http://iec.ch/TC57/CIM-generic#PhaseImpedanceData.PhaseImpedance) | 0..1 | Conductor phase impedance to which this data belongs. | direct |
 
 ### Schema Source
-* from schema: [http://iec.ch/TC57/2007/profile#](http://iec.ch/TC57/2007/profile#)
+* from schema: [http://iec.ch/TC57/2007/profile](http://iec.ch/TC57/2007/profile)

@@ -49,4 +49,4 @@ classDiagram
 | name | [cim:IdentifiedObject.name](http://iec.ch/TC57/CIM-generic#IdentifiedObject.name) | 0..1 | The name is any free human readable and possibly non unique text naming the object. | IdentifiedObject |
 
 ### Schema Source
-* from schema: [http://iec.ch/TC57/2007/profile#](http://iec.ch/TC57/2007/profile#)
+* from schema: [http://iec.ch/TC57/2007/profile](http://iec.ch/TC57/2007/profile)

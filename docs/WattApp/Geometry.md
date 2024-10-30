@@ -1,93 +1,48 @@
 # Geometry
 
-
 _Geometric representation details._
-
-
-
-
 
 **URI**: [geo:Geometry](http://www.opengis.net/ont/geosparql#Geometry)<br />
 **Type**: Class
 
-
-
-
 ```mermaid
- classDiagram
+classDiagram
     class Geometry
     click Geometry href "../Geometry"
-      SpatialObject <|-- Geometry
-        click SpatialObject href "../SpatialObject"
-      
-      Geometry : asGeoJSON
-        
-          Geometry --> JsonLDObject : asGeoJSON
-          click JsonLDObject href "../JsonLDObject"
-        
-      
+    style Geometry fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+
+        SpatialObject <|-- Geometry : inherits
+            click SpatialObject href "../SpatialObject"
+            style SpatialObject rx:10,ry:10
+
+        Geometry
+            click Geometry href "../Geometry"
+            style Geometry rx:10,ry:10
+
+        Geometry --> JsonLDObject : Geometry.asGeoJSON
+
+        JsonLDObject
+            click JsonLDObject href "../JsonLDObject"
+            style JsonLDObject fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+
+        Feature --> Geometry : Feature.hasGeometry
+
+        Feature
+            click Feature href "../Feature"
+            style Feature fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+
+
+        Geometry : asGeoJSON
 ```
-
-
-
-
 
 ## Inheritance
 * [SpatialObject](SpatialObject.md)
     * **Geometry**
 
-
-
 ## Attributes
-
-
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
-| asGeoJSON | [geo:asGeoJSON](http://www.opengis.net/ont/geosparql#asGeoJSON) | 0..1 <br />  [JsonLDObject](JsonLDObject.md)  | Geometric representation of the spatial object in GeoJSON format | direct |
-
-
-
-
-
-## Usages
-
-| used by | used in | type | used |
-| ---  | --- | --- | --- |
-| [Feature](Feature.md) | hasGeometry | range | [Geometry](Geometry.md) |
-| [PowerSystemResource](PowerSystemResource.md) | hasGeometry | range | [Geometry](Geometry.md) |
-| [ConnectivityNodeContainer](ConnectivityNodeContainer.md) | hasGeometry | range | [Geometry](Geometry.md) |
-| [EquipmentContainer](EquipmentContainer.md) | hasGeometry | range | [Geometry](Geometry.md) |
-| [Feeder](Feeder.md) | hasGeometry | range | [Geometry](Geometry.md) |
-
-
-
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-
+| asGeoJSON | [geo:asGeoJSON](http://www.opengis.net/ont/geosparql#asGeoJSON) | 0..1 | Geometric representation of the spatial object in GeoJSON format. | direct |
 
 ### Schema Source
-
-
-* from schema: https://ap-no.cim4.eu/WattApp/1.0
-
-
-
-
-
-## Mappings
-
-| Mapping Type | Mapped Value |
-| ---  | ---  |
-| self | geo:Geometry |
-| native | this:Geometry |
-
-
-
-
+* from schema: [https://ap-no.cim4.eu/WattApp/1.0](https://ap-no.cim4.eu/WattApp/1.0)

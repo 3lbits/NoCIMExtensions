@@ -1,40 +1,20 @@
 # TimeSeriesInterpolationKind
 
+__
 
+**URI**: http://entsoe.eu/ns/nc#TimeSeriesInterpolationKind
 
-**URI**: [TimeSeriesInterpolationKind](TimeSeriesInterpolationKind)<br />
 **Type**: Enumeration
 
 ## Permissible Values
 
 | Value | Meaning | Description |
 | --- | --- | --- |
-| none | [nc:TimeSeriesInterpolationKind.none](https://cim4.eu/ns/nc#TimeSeriesInterpolationKind.none) |  |
-| zero | [nc:TimeSeriesInterpolationKind.zero](https://cim4.eu/ns/nc#TimeSeriesInterpolationKind.zero) |  |
-| previous | [nc:TimeSeriesInterpolationKind.previous](https://cim4.eu/ns/nc#TimeSeriesInterpolationKind.previous) |  |
-| next | [nc:TimeSeriesInterpolationKind.next](https://cim4.eu/ns/nc#TimeSeriesInterpolationKind.next) |  |
-| linear | [nc:TimeSeriesInterpolationKind.linear](https://cim4.eu/ns/nc#TimeSeriesInterpolationKind.linear) |  |
+| none | [nc:TimeSeriesInterpolationKind.none](http://entsoe.eu/ns/nc#TimeSeriesInterpolationKind.none) |  |
+| zero | [nc:TimeSeriesInterpolationKind.zero](http://entsoe.eu/ns/nc#TimeSeriesInterpolationKind.zero) |  |
+| previous | [nc:TimeSeriesInterpolationKind.previous](http://entsoe.eu/ns/nc#TimeSeriesInterpolationKind.previous) |  |
+| next | [nc:TimeSeriesInterpolationKind.next](http://entsoe.eu/ns/nc#TimeSeriesInterpolationKind.next) |  |
+| linear | [nc:TimeSeriesInterpolationKind.linear](http://entsoe.eu/ns/nc#TimeSeriesInterpolationKind.linear) |  |
+## Schema Source
 
-
-
-
-
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ap-no.cim4.eu/WattApp/1.0
-
-
-
-
+from schema: [https://ap-no.cim4.eu/WattApp/1.0](https://ap-no.cim4.eu/WattApp/1.0)

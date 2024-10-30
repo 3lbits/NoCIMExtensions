@@ -113,7 +113,80 @@ class InheritanceData():
             return subClassList
 
 class ClassData():
+
+    def getEnumData(self):
+
+        if "enums" not in yamlDict:
+            return
+
+        enumList = []
+
+        for enum in yamlDict["enums"]:
+            enumName = enum
+            enumDescription = yamlDict["enums"][enum]["description"] if "description" in yamlDict["enums"][enum] else "No description available"
+            enum_uri = yamlDict["enums"][enum]["enum_uri"] if "enum_uri" in yamlDict["enums"][enum] else "No URI available"
+            permissible_values = yamlDict["enums"][enum]["permissible_values"] if "permissible_values" in yamlDict["enums"][enum] else "No permissible values available"
+
+            enumValues = []
+
+            for value in permissible_values:
+                
+                value = value
+                meaning = permissible_values[value]["meaning"] if "meaning" in permissible_values[value] else "No meaning available"
+                description = permissible_values[value]["description"] if "description" in permissible_values[value] else "No description available"
+                enumValues.append({"enum_uri": f"{enum_uri}.{value}", "value": value, "meaning": meaning, "description": description})
+
+            enumList.append({enumName: {"description": enumDescription, "enum_uri": enum_uri, "permissible_values": enumValues}})
+
+        return enumList
     
+    def getIndexData(self):
+        
+        vocabularyDict = {}
+
+        title = yamlDict["title"] if "title" in yamlDict else "No title available"
+        uri = yamlDict["id"] if "id" in yamlDict else "No URI available"
+        name = yamlDict["name"] if "name" in yamlDict else "No name available"
+
+        vocabularyDict["title"] = title
+        vocabularyDict["uri"] = uri
+        vocabularyDict["name"] = name
+
+        classList = []
+        classListOrdered = []
+
+        for _class in yamlDict["classes"]:
+            if _class == "Container":
+                continue
+            classListOrdered.append(_class)
+
+        classListOrdered.sort()
+
+        for _class in classListOrdered:
+            description = yamlDict["classes"][_class]["description"] if "description" in yamlDict["classes"][_class] else "No description available"
+            classList.append({_class: description})
+
+        vocabularyDict["Classes"] = classList
+
+        if "enums" not in yamlDict:
+            return vocabularyDict
+
+        enumList = []
+        enumListOrdered = []
+
+        for enum in yamlDict["enums"]:
+            enumListOrdered.append(enum)
+
+        enumListOrdered.sort()
+
+        for enum in enumListOrdered:
+            description = yamlDict["enums"][enum]["description"] if "description" in yamlDict["enums"][enum] else "No description available"
+            enumList.append({enum: description})
+
+        vocabularyDict["Enums"] = enumList
+
+        return vocabularyDict
+
     def getURL(self, prefix):
         
         prefixes = yamlDict["prefixes"]
@@ -179,10 +252,49 @@ class ClassData():
 
 class CreateMermaid():
 
+    def createMermaidSubMixinString(self, inheritanceList):
+        
+        mixinsList = []
+        
+        for _class in yamlDict["classes"]: # For classes that have themselfs as mixins
+
+            if "mixins" not in yamlDict["classes"][_class] or yamlDict["classes"][_class]["mixins"] == None:
+                continue
+
+            mixins = yamlDict["classes"][_class]["mixins"]
+
+            if globalClass not in mixins:
+                continue
+
+            for mixin in mixins:
+                if mixin not in inheritanceList:
+                    return
+
+                mixinsList.append({_class: mixin})
+
+        return mixinsList
+
+    def createMermaidMixinsString(self, inheritanceList):
+        
+        mixinsList = []
+
+        for _class in inheritanceList:
+
+            if "mixins" not in yamlDict["classes"][_class] or yamlDict["classes"][_class]["mixins"] == None:
+                continue
+
+            mixins = yamlDict["classes"][_class]["mixins"]
+            mixinsList.append({_class: mixins})
+        
+        if len(mixinsList) == 0:
+            return
+
+        return mixinsList
+            
     def createMermaidInheritanceString(self, inheritanceList):
         
         inheritanceMermaidList = []
-
+        
         for value in inheritanceList:
             is_a = ClassData().getIs_a(value)
             if value != is_a:
@@ -211,6 +323,30 @@ class CreateMermaid():
         {key}
             click {key} href "../{key}"
             style {key} rx:10,ry:10
+'''
+        mixinList = CreateMermaid().createMermaidMixinsString(inheritanceList)
+
+        if mixinList != None:
+            for mixin in mixinList:
+                for key in mixin:
+                    for value in mixin[key]:
+                        inheritanceString += f'''
+        {value} <|-- {key} : inherits
+            click {value} href "../{value}"
+            style {value} fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
+'''
+        
+        subMixinList = CreateMermaid().createMermaidSubMixinString(inheritanceList)
+
+        if subMixinList != None:
+            for subMixin in subMixinList:
+                for key in subMixin:
+                    thisClass = subMixin[key]
+                    subClass = key
+                    inheritanceString += f'''
+        {subClass} --|> {thisClass} : inherits
+            click {subClass} href "../{subClass}"
+            style {subClass} fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
 '''
 
         return inheritanceString
@@ -350,6 +486,65 @@ classDiagram
 
 class CreateMarkdownFile():
 
+    def createEnums(self):
+        
+        enumList = ClassData().getEnumData()
+
+        for enum in enumList:
+            for key in enum:
+                
+                description = enum[key]["description"] if "description" in enum[key] else "No description available"
+                uri = enum[key]["enum_uri"] if "enum_uri" in enum[key] else "No URI available"
+                sourceUri = yamlDict["id"].replace('#', '') if "id" in yamlDict else "No URI available"
+
+                with open(f'{docFilePath}{key}.md', 'w') as file:
+                    file.write(f'# {key}\n\n')
+                    file.write(f'_{description}_\n\n')
+                    file.write(f'**URI**: {uri}\n\n')
+                    file.write(f'**Type**: Enumeration\n\n')
+                    file.write(f'## Permissible Values\n\n')
+                    file.write(f'| Value | Meaning | Description |\n')
+                    file.write(f'| --- | --- | --- |\n')
+
+                    for value in enum[key]["permissible_values"]:
+
+                        enumValue = value["value"] if "value" in value else "No value available"
+                        meaning = value["meaning"] if "meaning" in value else "No meaning available"
+                        enumDescription = value["description"] if "description" in value else "No description available"
+                        enum_uri = value["enum_uri"] if "enum_uri" in value else "No URI available"
+                        
+                        file.write(f'| {enumValue} | [{meaning}]({enum_uri}) | {enumDescription} |\n')
+
+                    file.write(f'## Schema Source\n\n')
+                    file.write(f'from schema: [{sourceUri}]({sourceUri})\n')
+
+    def createIndex(self):
+        
+        vocabularyData = ClassData().getIndexData()
+        
+        with open(f'{docFilePath}index.md', 'w') as file:
+
+            file.write(f'# {vocabularyData["title"]}\n\n')
+            file.write(f'**URI**: {vocabularyData["uri"]}\n\n')
+            file.write(f'**Name**: {vocabularyData["name"]}\n\n')
+
+            file.write(f'## Classes\n\n')
+            file.write(f'| Class | Description |\n')
+            file.write(f'| --- | --- |\n')
+
+            for _class in vocabularyData["Classes"]:
+                for key, value in _class.items():
+                    file.write(f'| [{key}]({key}.md) | {value} |\n')
+
+            file.write(f'\n\n## Enumerations\n\n')
+
+            file.write(f'| Enumeration | Description |\n')
+            file.write(f'| --- | --- |\n')
+
+            for enum in vocabularyData["Enums"]:
+                for key, value in enum.items():
+                    file.write(f'| [{key}]({key}.md) | {value} |\n')
+
     def createAttributeTableString(self, inheritanceList, _class):
         _list = inheritanceList
         tableAttribiuteString = ""
@@ -361,10 +556,10 @@ class CreateMarkdownFile():
                 for attribute in attributes:
                     name = attribute
                     slot_uri = attributes[attribute]["slot_uri"] if "slot_uri" in attributes[attribute] else 'No URI available'
-                    prefix = slot_uri.split(":")[0]
-                    nonPrefix = slot_uri.split(":")[1]
+                    prefix = slot_uri.split(":")[0]                    
+                    nonPrefix = slot_uri.split(":")[1] if slot_uri != 'No URI available' else 'No URI available'
                     url = ClassData().getURL(prefix)
-                    _URI = f'[{slot_uri}]({url}{nonPrefix})'
+                    _URI = f'[{slot_uri}]({url}{nonPrefix})' if slot_uri != 'No URI available' else 'No URI available'
                     minimum_cardinality = attributes[attribute]["minimum_cardinality"] if "minimum_cardinality" in attributes[attribute] else None
                     maximum_cardinality = attributes[attribute]["maximum_cardinality"] if "maximum_cardinality" in attributes[attribute] else None
                     multivalued = attributes[attribute]["multivalued"] if "multivalued" in attributes[attribute] else False
@@ -400,7 +595,7 @@ class CreateMarkdownFile():
         abstract = classDataDict["abstract"]
         uri = classDataDict["uri"]
         completeUri = classDataDict["completeUri"]
-        schemaSource = classDataDict["schemaSource"]
+        schemaSource = classDataDict["schemaSource"].replace('#', '')
         with open(f'{docFilePath}{title}.md', 'w') as file:
             file.write(f"# {title}\n\n")
             file.write(f'_{description}_\n\n')
@@ -430,6 +625,7 @@ class CreateMarkdownFile():
 class Controller():
 
     def main(self, schemaName):
+
         yamlSchemaPath = f"schemas/yaml/{schemaName}.linkml.yaml"
         docName = ''.join(word.capitalize() for word in schemaName.split('_'))
 
@@ -447,11 +643,11 @@ class Controller():
         General().includedClasses(allClasses=True) # Setting the containerClassesSet variable globally - Using only classes defined in Container class
 
         CreateMarkdownFile().create_markdown_files()
+        CreateMarkdownFile().createIndex()
+        CreateMarkdownFile().createEnums()
 
 if __name__ == "__main__":
-    schemaName = "subsea_cable_info"
+    schemaName = "watt_app"
     Controller().main(schemaName)
 
-# Missing mixins
-# Missing enums
-# Missing Vocabulary
+# DataType

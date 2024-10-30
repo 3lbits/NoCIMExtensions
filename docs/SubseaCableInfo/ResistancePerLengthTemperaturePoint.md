@@ -38,4 +38,4 @@ classDiagram
 | ConductorInfo | [cim:ResistancePerLengthTemperaturePoint.ConductorInfo](http://iec.ch/TC57/CIM-generic#ResistancePerLengthTemperaturePoint.ConductorInfo) | 0..1 | Conductor with this (resistance, temperature) pair. | direct |
 
 ### Schema Source
-* from schema: [http://iec.ch/TC57/2007/profile#](http://iec.ch/TC57/2007/profile#)
+* from schema: [http://iec.ch/TC57/2007/profile](http://iec.ch/TC57/2007/profile)

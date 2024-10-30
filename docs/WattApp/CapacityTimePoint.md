@@ -1,23 +1,23 @@
-# CapacitySchedule
+# CapacityTimePoint
 
 __
 
-**URI**: [nc:CapacitySchedule](https://cim4.eu/ns/nc#CapacitySchedule)<br />
+**URI**: [nc:CapacityTimePoint](https://cim4.eu/ns/nc#CapacityTimePoint)<br />
 **Type**: Class
 
 ```mermaid
 classDiagram
-    class CapacitySchedule
-    click CapacitySchedule href "../CapacitySchedule"
-    style CapacitySchedule fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    class CapacityTimePoint
+    click CapacityTimePoint href "../CapacityTimePoint"
+    style CapacityTimePoint fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
-        BaseIrregularTimeSeries <|-- CapacitySchedule : inherits
+        BaseIrregularTimeSeries <|-- CapacityTimePoint : inherits
             click BaseIrregularTimeSeries href "../BaseIrregularTimeSeries"
             style BaseIrregularTimeSeries rx:10,ry:10
 
-        CapacitySchedule
-            click CapacitySchedule href "../CapacitySchedule"
-            style CapacitySchedule rx:10,ry:10
+        CapacityTimePoint
+            click CapacityTimePoint href "../CapacityTimePoint"
+            style CapacityTimePoint rx:10,ry:10
 
         BaseTimeSeries <|-- BaseIrregularTimeSeries : inherits
             click BaseTimeSeries href "../BaseTimeSeries"
@@ -27,17 +27,11 @@ classDiagram
             click IdentifiedObject href "../IdentifiedObject"
             style IdentifiedObject rx:10,ry:10
 
-        CapacitySchedule --> Feeder : CapacitySchedule.Feeder
-
-        Feeder
-            click Feeder href "../Feeder"
-            style Feeder fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
-
         CapacityTimePoint --> CapacitySchedule : CapacityTimePoint.CapacitySchedule
 
-        CapacityTimePoint
-            click CapacityTimePoint href "../CapacityTimePoint"
-            style CapacityTimePoint fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+        CapacitySchedule
+            click CapacitySchedule href "../CapacitySchedule"
+            style CapacitySchedule fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         BaseTimeSeries --> TimeSeriesInterpolationKind : BaseTimeSeries.interpolationKind
 
@@ -50,7 +44,16 @@ classDiagram
             click BaseTimeSeriesKind href "../BaseTimeSeriesKind"
             style BaseTimeSeriesKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
 
-        CapacitySchedule : CapacitySchedule.Feeder
+        CapacityTimePoint : CapacityTimePoint.atTime
+        CapacityTimePoint : CapacityTimePoint.maxP
+        CapacityTimePoint : CapacityTimePoint.minP
+        CapacityTimePoint : CapacityTimePoint.maxQ
+        CapacityTimePoint : CapacityTimePoint.minQ
+        CapacityTimePoint : CapacityTimePoint.maxAllocatedP
+        CapacityTimePoint : CapacityTimePoint.minAllocatedP
+        CapacityTimePoint : CapacityTimePoint.maxAllocatedQ
+        CapacityTimePoint : CapacityTimePoint.minAllocatedQ
+        CapacityTimePoint : CapacityTimePoint.CapacitySchedule
         BaseTimeSeries : BaseTimeSeries.interpolationKind
         BaseTimeSeries : BaseTimeSeries.timeSeriesKind
         BaseTimeSeries : BaseTimeSeries.generatedAtTime
@@ -65,12 +68,21 @@ classDiagram
 * [IdentifiedObject](IdentifiedObject.md)
     * [BaseTimeSeries](BaseTimeSeries.md)
         * [BaseIrregularTimeSeries](BaseIrregularTimeSeries.md)
-            * **CapacitySchedule**
+            * **CapacityTimePoint**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
-| Feeder | [nc-no:CapacitySchedule.Feeder](http://cim4.eu/ns/nc-no#CapacitySchedule.Feeder) | 0..1 |  | direct |
+| atTime | [nc:CapacityTimePoint.atTime](https://cim4.eu/ns/nc#CapacityTimePoint.atTime) | 0..1 |  | direct |
+| maxP | [nc:CapacityTimePoint.maxP](https://cim4.eu/ns/nc#CapacityTimePoint.maxP) | 0..1 |  | direct |
+| minP | [nc:CapacityTimePoint.minP](https://cim4.eu/ns/nc#CapacityTimePoint.minP) | 0..1 |  | direct |
+| maxQ | [nc:CapacityTimePoint.maxQ](https://cim4.eu/ns/nc#CapacityTimePoint.maxQ) | 0..1 |  | direct |
+| minQ | [nc:CapacityTimePoint.minQ](https://cim4.eu/ns/nc#CapacityTimePoint.minQ) | 0..1 |  | direct |
+| maxAllocatedP | [nc:CapacityTimePoint.maxAllocatedP](https://cim4.eu/ns/nc#CapacityTimePoint.maxAllocatedP) | 0..1 |  | direct |
+| minAllocatedP | [nc:CapacityTimePoint.minAllocatedP](https://cim4.eu/ns/nc#CapacityTimePoint.minAllocatedP) | 0..1 |  | direct |
+| maxAllocatedQ | [nc:CapacityTimePoint.maxAllocatedQ](https://cim4.eu/ns/nc#CapacityTimePoint.maxAllocatedQ) | 0..1 |  | direct |
+| minAllocatedQ | [nc:CapacityTimePoint.minAllocatedQ](https://cim4.eu/ns/nc#CapacityTimePoint.minAllocatedQ) | 0..1 |  | direct |
+| CapacitySchedule | [nc:CapacityTimePoint.CapacitySchedule](https://cim4.eu/ns/nc#CapacityTimePoint.CapacitySchedule) | 0..1 |  | direct |
 | interpolationKind | [nc:BaseTimeSeries.interpolationKind](https://cim4.eu/ns/nc#BaseTimeSeries.interpolationKind) | 0..1 |  | BaseTimeSeries |
 | timeSeriesKind | [nc:BaseTimeSeries.timeSeriesKind](https://cim4.eu/ns/nc#BaseTimeSeries.timeSeriesKind) | 0..1 |  | BaseTimeSeries |
 | generatedAtTime | [nc:BaseTimeSeries.generatedAtTime](https://cim4.eu/ns/nc#BaseTimeSeries.generatedAtTime) | 0..1 |  | BaseTimeSeries |

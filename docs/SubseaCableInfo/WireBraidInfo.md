@@ -64,4 +64,4 @@ classDiagram
 | layerOrder | [cim:CableLayer.layerOrder](http://iec.ch/TC57/CIM-generic#CableLayer.layerOrder) | 0..1 | Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order. | CableLayer |
 
 ### Schema Source
-* from schema: [http://iec.ch/TC57/2007/profile#](http://iec.ch/TC57/2007/profile#)
+* from schema: [http://iec.ch/TC57/2007/profile](http://iec.ch/TC57/2007/profile)
