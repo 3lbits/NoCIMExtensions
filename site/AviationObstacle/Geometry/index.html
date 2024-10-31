@@ -475,27 +475,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../AviationObstacle/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AviationObstacle
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../AviationObstacleLightingKind/" class="md-nav__link">
         
   
@@ -585,27 +564,6 @@
   
   <span class="md-ellipsis">
     Conductor
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Container/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Container
   </span>
   
 
@@ -767,25 +725,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usages
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Identifier and Mapping Information
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+    <nav class="md-nav" aria-label="Attributes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -799,15 +739,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mappings
-    </span>
-  </a>
   
 </li>
       
@@ -874,6 +805,27 @@
   
   <span class="md-ellipsis">
     LocationResource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OverheadStructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OverheadStructure
   </span>
   
 
@@ -2450,25 +2402,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usages
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Identifier and Mapping Information
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+    <nav class="md-nav" aria-label="Attributes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2482,15 +2416,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mappings
-    </span>
-  </a>
   
 </li>
       
@@ -2516,19 +2441,30 @@
 <p><em>Geometric representation details.</em></p>
 <p><strong>URI</strong>: <a href="http://www.opengis.net/ont/geosparql#Geometry">geo:Geometry</a><br />
 <strong>Type</strong>: Class</p>
-<pre class="mermaid"><code> classDiagram
+<pre class="mermaid"><code>classDiagram
     class Geometry
-    click Geometry href "../Geometry"
-      SpatialObject &lt;|-- Geometry
-        click SpatialObject href "../SpatialObject"
+    click Geometry href "/AviationObstacle/Geometry/"
+    style Geometry fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
-      Geometry : asGeoJSON
+        SpatialObject &lt;|-- Geometry : inherits
+            click SpatialObject href "/AviationObstacle/SpatialObject/"
+            style SpatialObject rx:10,ry:10
 
-      Geometry : asGML
+        Geometry
+            click Geometry href "/AviationObstacle/Geometry/"
+            style Geometry rx:10,ry:10
 
-      Geometry : asWKT
 
-</code></pre>
+        Feature --&gt; Geometry : Feature.hasGeometry
+
+        Feature
+            click Feature href "/AviationObstacle/Feature/"
+            style Feature fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+
+
+        Geometry : asWKT
+        Geometry : asGeoJSON
+        Geometry : asGML</code></pre>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../SpatialObject/">SpatialObject</a><ul>
@@ -2551,129 +2487,30 @@
 <tr>
 <td>asWKT</td>
 <td><a href="http://www.opengis.net/ont/geosparql#asWKT">geo:asWKT</a></td>
-<td>0..1 <br />  string</td>
-<td>Geometric representation of the spatial object in WKT format</td>
+<td>0..1 string</td>
+<td>Geometric representation of the spatial object in WKT format.</td>
 <td>direct</td>
 </tr>
 <tr>
 <td>asGeoJSON</td>
 <td><a href="http://www.opengis.net/ont/geosparql#asGeoJSON">geo:asGeoJSON</a></td>
-<td>0..1 <br />  string</td>
-<td>Geometric representation of the spatial object in GeoJSON format</td>
+<td>0..1 string</td>
+<td>Geometric representation of the spatial object in GeoJSON format.</td>
 <td>direct</td>
 </tr>
 <tr>
 <td>asGML</td>
 <td><a href="http://www.opengis.net/ont/geosparql#asGML">geo:asGML</a></td>
-<td>0..1 <br />  string</td>
-<td>Geometric representation of the spatial object in GML format</td>
+<td>0..1 string</td>
+<td>Geometric representation of the spatial object in GML format.</td>
 <td>direct</td>
 </tr>
 </tbody>
 </table>
-<h2 id="usages">Usages</h2>
-<table>
-<thead>
-<tr>
-<th>used by</th>
-<th>used in</th>
-<th>type</th>
-<th>used</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../Feature/">Feature</a></td>
-<td>hasGeometry</td>
-<td>range</td>
-<td><a href="./">Geometry</a></td>
-</tr>
-<tr>
-<td><a href="../PowerSystemResource/">PowerSystemResource</a></td>
-<td>hasGeometry</td>
-<td>range</td>
-<td><a href="./">Geometry</a></td>
-</tr>
-<tr>
-<td><a href="../LocationResource/">LocationResource</a></td>
-<td>hasGeometry</td>
-<td>range</td>
-<td><a href="./">Geometry</a></td>
-</tr>
-<tr>
-<td><a href="../Equipment/">Equipment</a></td>
-<td>hasGeometry</td>
-<td>range</td>
-<td><a href="./">Geometry</a></td>
-</tr>
-<tr>
-<td><a href="../ConductingEquipment/">ConductingEquipment</a></td>
-<td>hasGeometry</td>
-<td>range</td>
-<td><a href="./">Geometry</a></td>
-</tr>
-<tr>
-<td><a href="../Conductor/">Conductor</a></td>
-<td>hasGeometry</td>
-<td>range</td>
-<td><a href="./">Geometry</a></td>
-</tr>
-<tr>
-<td><a href="../ACLineSegment/">ACLineSegment</a></td>
-<td>hasGeometry</td>
-<td>range</td>
-<td><a href="./">Geometry</a></td>
-</tr>
-<tr>
-<td><a href="../ACLineSegmentSpan/">ACLineSegmentSpan</a></td>
-<td>hasGeometry</td>
-<td>range</td>
-<td><a href="./">Geometry</a></td>
-</tr>
-<tr>
-<td><a href="../Structure/">Structure</a></td>
-<td>hasGeometry</td>
-<td>range</td>
-<td><a href="./">Geometry</a></td>
-</tr>
-<tr>
-<td><a href="OverheadStructure.md">OverheadStructure</a></td>
-<td>hasGeometry</td>
-<td>range</td>
-<td><a href="./">Geometry</a></td>
-</tr>
-<tr>
-<td><a href="../Zone/">Zone</a></td>
-<td>hasGeometry</td>
-<td>range</td>
-<td><a href="./">Geometry</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://ap-no.cim4.eu/AviationObstacle/1.0</li>
+<li>from schema: <a href="https://ap-no.cim4.eu/AviationObstacle/1.0">https://ap-no.cim4.eu/AviationObstacle/1.0</a></li>
 </ul>
-<h2 id="mappings">Mappings</h2>
-<table>
-<thead>
-<tr>
-<th>Mapping Type</th>
-<th>Mapped Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>self</td>
-<td>geo:Geometry</td>
-</tr>
-<tr>
-<td>native</td>
-<td>this:Geometry</td>
-</tr>
-</tbody>
-</table>
 
 
 

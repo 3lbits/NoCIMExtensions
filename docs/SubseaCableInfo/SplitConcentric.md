@@ -8,46 +8,46 @@ _Single concentric layer with two conductors separated by each other by insulati
 ```mermaid
 classDiagram
     class SplitConcentric
-    click SplitConcentric href "../SplitConcentric"
+    click SplitConcentric href "/SubseaCableInfo/SplitConcentric/"
     style SplitConcentric fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         RoundWire <|-- SplitConcentric : inherits
-            click RoundWire href "../RoundWire"
+            click RoundWire href "/SubseaCableInfo/RoundWire/"
             style RoundWire rx:10,ry:10
 
         SplitConcentric
-            click SplitConcentric href "../SplitConcentric"
+            click SplitConcentric href "/SubseaCableInfo/SplitConcentric/"
             style SplitConcentric rx:10,ry:10
 
         ConcentricWireLayer <|-- RoundWire : inherits
-            click ConcentricWireLayer href "../ConcentricWireLayer"
+            click ConcentricWireLayer href "/SubseaCableInfo/ConcentricWireLayer/"
             style ConcentricWireLayer rx:10,ry:10
 
         MetallicSheathLayer <|-- ConcentricWireLayer : inherits
-            click MetallicSheathLayer href "../MetallicSheathLayer"
+            click MetallicSheathLayer href "/SubseaCableInfo/MetallicSheathLayer/"
             style MetallicSheathLayer rx:10,ry:10
 
         CableLayer <|-- MetallicSheathLayer : inherits
-            click CableLayer href "../CableLayer"
+            click CableLayer href "/SubseaCableInfo/CableLayer/"
             style CableLayer rx:10,ry:10
 
 
         CableInfo --> CableLayer : CableInfo.Layer
 
         CableInfo
-            click CableInfo href "../CableInfo"
+            click CableInfo href "/SubseaCableInfo/CableInfo/"
             style CableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         MultiCoreCableInfo --> CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
-            click MultiCoreCableInfo href "../MultiCoreCableInfo"
+            click MultiCoreCableInfo href "/SubseaCableInfo/MultiCoreCableInfo/"
             style MultiCoreCableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         MetallicSheathLayer --> CableShieldMaterialKind : MetallicSheathLayer.material
 
         CableShieldMaterialKind
-            click CableShieldMaterialKind href "../CableShieldMaterialKind"
+            click CableShieldMaterialKind href "/SubseaCableInfo/CableShieldMaterialKind/"
             style CableShieldMaterialKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         MetallicSheathLayer : MetallicSheathLayer.isArmor

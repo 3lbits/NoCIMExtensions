@@ -470,27 +470,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AviationObstacle/AviationObstacle/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AviationObstacle
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../AviationObstacle/AviationObstacleLightingKind/" class="md-nav__link">
         
   
@@ -580,27 +559,6 @@
   
   <span class="md-ellipsis">
     Conductor
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../AviationObstacle/Container/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Container
   </span>
   
 
@@ -769,6 +727,27 @@
   
   <span class="md-ellipsis">
     LocationResource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AviationObstacle/OverheadStructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OverheadStructure
   </span>
   
 
@@ -2464,32 +2443,32 @@
 <strong>Type</strong>: Class</p>
 <pre class="mermaid"><code>classDiagram
     class BindingLayer
-    click BindingLayer href "../BindingLayer"
+    click BindingLayer href "/SubseaCableInfo/BindingLayer/"
     style BindingLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         NonMetallicSheathLayer &lt;|-- BindingLayer : inherits
-            click NonMetallicSheathLayer href "../NonMetallicSheathLayer"
+            click NonMetallicSheathLayer href "/SubseaCableInfo/NonMetallicSheathLayer/"
             style NonMetallicSheathLayer rx:10,ry:10
 
         BindingLayer
-            click BindingLayer href "../BindingLayer"
+            click BindingLayer href "/SubseaCableInfo/BindingLayer/"
             style BindingLayer rx:10,ry:10
 
         CableLayer &lt;|-- NonMetallicSheathLayer : inherits
-            click CableLayer href "../CableLayer"
+            click CableLayer href "/SubseaCableInfo/CableLayer/"
             style CableLayer rx:10,ry:10
 
 
         CableInfo --&gt; CableLayer : CableInfo.Layer
 
         CableInfo
-            click CableInfo href "../CableInfo"
+            click CableInfo href "/SubseaCableInfo/CableInfo/"
             style CableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         MultiCoreCableInfo --&gt; CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
-            click MultiCoreCableInfo href "../MultiCoreCableInfo"
+            click MultiCoreCableInfo href "/SubseaCableInfo/MultiCoreCableInfo/"
             style MultiCoreCableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

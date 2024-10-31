@@ -475,27 +475,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../AviationObstacle/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AviationObstacle
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../AviationObstacleLightingKind/" class="md-nav__link">
         
   
@@ -585,27 +564,6 @@
   
   <span class="md-ellipsis">
     Conductor
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Container/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Container
   </span>
   
 
@@ -746,16 +704,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Identifier and Mapping Information
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+    <nav class="md-nav" aria-label="Attributes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -769,15 +718,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mappings
-    </span>
-  </a>
   
 </li>
       
@@ -865,6 +805,27 @@
   
   <span class="md-ellipsis">
     LocationResource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OverheadStructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OverheadStructure
   </span>
   
 
@@ -2441,16 +2402,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Identifier and Mapping Information
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+    <nav class="md-nav" aria-label="Attributes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2464,15 +2416,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mappings
-    </span>
-  </a>
   
 </li>
       
@@ -2498,25 +2441,35 @@
 <p><em>Defines a system base voltage which is referenced.</em></p>
 <p><strong>URI</strong>: <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><br />
 <strong>Type</strong>: Class</p>
-<pre class="mermaid"><code> classDiagram
+<pre class="mermaid"><code>classDiagram
     class Feature
-    click Feature href "../Feature"
-      SpatialObject &lt;|-- Feature
-        click SpatialObject href "../SpatialObject"
+    click Feature href "/AviationObstacle/Feature/"
+    style Feature fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+
+        SpatialObject &lt;|-- Feature : inherits
+            click SpatialObject href "/AviationObstacle/SpatialObject/"
+            style SpatialObject rx:10,ry:10
+
+        Feature
+            click Feature href "/AviationObstacle/Feature/"
+            style Feature rx:10,ry:10
+
+        PowerSystemResource --|&gt; Feature : inherits
+            click PowerSystemResource href "/AviationObstacle/PowerSystemResource/"
+            style PowerSystemResource fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
+
+        LocationResource --|&gt; Feature : inherits
+            click LocationResource href "/AviationObstacle/LocationResource/"
+            style LocationResource fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
+
+        Feature --&gt; Geometry : Feature.hasGeometry
+
+        Geometry
+            click Geometry href "/AviationObstacle/Geometry/"
+            style Geometry fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 
-      Feature &lt;|-- PowerSystemResource
-        click PowerSystemResource href "../PowerSystemResource"
-      Feature &lt;|-- LocationResource
-        click LocationResource href "../LocationResource"
-
-
-      Feature : hasGeometry
-
-          Feature --&gt; Geometry : hasGeometry
-          click Geometry href "../Geometry"
-
-</code></pre>
+        Feature : hasGeometry</code></pre>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../SpatialObject/">SpatialObject</a><ul>
@@ -2539,36 +2492,16 @@
 <tr>
 <td>hasGeometry</td>
 <td><a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a></td>
-<td>0..1 <br />  <a href="../Geometry/">Geometry</a></td>
-<td>Geometric representation of the spatial object</td>
+<td>0..1 Geometry</td>
+<td>Geometric representation of the spatial object.</td>
 <td>direct</td>
 </tr>
 </tbody>
 </table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://ap-no.cim4.eu/AviationObstacle/1.0</li>
+<li>from schema: <a href="https://ap-no.cim4.eu/AviationObstacle/1.0">https://ap-no.cim4.eu/AviationObstacle/1.0</a></li>
 </ul>
-<h2 id="mappings">Mappings</h2>
-<table>
-<thead>
-<tr>
-<th>Mapping Type</th>
-<th>Mapped Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>self</td>
-<td>geo:Feature</td>
-</tr>
-<tr>
-<td>native</td>
-<td>this:Feature</td>
-</tr>
-</tbody>
-</table>
 
 
 

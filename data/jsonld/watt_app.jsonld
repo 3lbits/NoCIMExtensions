@@ -11,10 +11,10 @@
         "nc": "https://cim4.eu/ns/nc#",
         "geo": "http://www.opengis.net/ont/geosparql#"
     },
-    "@id": "urn:uuid:a41dd92d-b241-4fcc-893e-e666e26c6ecb",
+    "@id": "urn:uuid:7a346092-9dfb-4755-9112-507a0491859b",
     "@type": "dcat:Dataset",
     "prov:generatedAtTime": {
-        "@value": "2024-10-17T06:55:43Z",
+        "@value": "2024-10-31T17:38:25Z",
         "@type": "xsd:date"
     },
     "dcterms:title": "DIGIN10-30-WattApp-GL",
@@ -30,7 +30,7 @@
     "dcterms:temporal": {
         "@type": "dcterms:PeriodOfTime",
         "dcat:startDate": {
-            "@value": "2024-10-17T06:55:43Z",
+            "@value": "2024-10-31T17:38:25Z",
             "@type": "xsd:dateTime"
         }
     },
@@ -62,7 +62,6 @@
                 "geo:Feature"
             ],
             "cim:IdentifiedObject.mRID": "4e51e598-8948-4c85-b151-f44ffddc5545",
-            "cim:IdentifiedObject.description": "Sandefjord business and industry area",
             "cim:IdentifiedObject.name": "Sandefjord_business_and_industry_area",
             "geo:hasGeometry": {
                 "geo:asGeoJSON": {

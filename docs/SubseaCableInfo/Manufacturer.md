@@ -8,26 +8,26 @@ _Organisation that manufactures asset products._
 ```mermaid
 classDiagram
     class Manufacturer
-    click Manufacturer href "../Manufacturer"
+    click Manufacturer href "/SubseaCableInfo/Manufacturer/"
     style Manufacturer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         OrganisationRole <|-- Manufacturer : inherits
-            click OrganisationRole href "../OrganisationRole"
+            click OrganisationRole href "/SubseaCableInfo/OrganisationRole/"
             style OrganisationRole rx:10,ry:10
 
         Manufacturer
-            click Manufacturer href "../Manufacturer"
+            click Manufacturer href "/SubseaCableInfo/Manufacturer/"
             style Manufacturer rx:10,ry:10
 
         IdentifiedObject <|-- OrganisationRole : inherits
-            click IdentifiedObject href "../IdentifiedObject"
+            click IdentifiedObject href "/SubseaCableInfo/IdentifiedObject/"
             style IdentifiedObject rx:10,ry:10
 
 
         ProductAssetModel --> Manufacturer : ProductAssetModel.Manufacturer
 
         ProductAssetModel
-            click ProductAssetModel href "../ProductAssetModel"
+            click ProductAssetModel href "/SubseaCableInfo/ProductAssetModel/"
             style ProductAssetModel fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

@@ -475,27 +475,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../AviationObstacle/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AviationObstacle
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../AviationObstacleLightingKind/" class="md-nav__link">
         
   
@@ -585,27 +564,6 @@
   
   <span class="md-ellipsis">
     Conductor
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Container/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Container
   </span>
   
 
@@ -790,6 +748,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../OverheadStructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OverheadStructure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../PowerSystemResource/" class="md-nav__link">
         
   
@@ -872,16 +851,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Identifier and Mapping Information
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+    <nav class="md-nav" aria-label="Attributes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -895,15 +865,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mappings
-    </span>
-  </a>
   
 </li>
       
@@ -2441,16 +2402,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Identifier and Mapping Information
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+    <nav class="md-nav" aria-label="Attributes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2464,15 +2416,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mappings
-    </span>
-  </a>
   
 </li>
       
@@ -2498,22 +2441,24 @@
 <p><em>A spatial object is a physical object that has a location in space. It may have a geometric representation to describe its shape and position.</em></p>
 <p><strong>URI</strong>: <a href="http://www.opengis.net/ont/geosparql#SpatialObject">geo:SpatialObject</a><br />
 <strong>Type</strong>: Class</p>
-<pre class="mermaid"><code> classDiagram
+<pre class="mermaid"><code>classDiagram
     class SpatialObject
-    click SpatialObject href "../SpatialObject"
-      SpatialObject &lt;|-- Feature
-        click Feature href "../Feature"
-      SpatialObject &lt;|-- Geometry
-        click Geometry href "../Geometry"
+    click SpatialObject href "/AviationObstacle/SpatialObject/"
+    style SpatialObject fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+
+        SpatialObject &lt;|-- Feature : inherits
+            click SpatialObject href "/AviationObstacle/SpatialObject/"
+            style SpatialObject rx:10,ry:10
+
+        Feature
+            click Feature href "/AviationObstacle/Feature/"
+            style Feature rx:10,ry:10
+
 
 </code></pre>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
-<li><strong>SpatialObject</strong><ul>
-<li><a href="../Feature/">Feature</a></li>
-<li><a href="../Geometry/">Geometry</a></li>
-</ul>
-</li>
+<li><strong>SpatialObject</strong></li>
 </ul>
 <h2 id="attributes">Attributes</h2>
 <table>
@@ -2536,30 +2481,10 @@
 </tr>
 </tbody>
 </table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://ap-no.cim4.eu/AviationObstacle/1.0</li>
+<li>from schema: <a href="https://ap-no.cim4.eu/AviationObstacle/1.0">https://ap-no.cim4.eu/AviationObstacle/1.0</a></li>
 </ul>
-<h2 id="mappings">Mappings</h2>
-<table>
-<thead>
-<tr>
-<th>Mapping Type</th>
-<th>Mapped Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>self</td>
-<td>geo:SpatialObject</td>
-</tr>
-<tr>
-<td>native</td>
-<td>this:SpatialObject</td>
-</tr>
-</tbody>
-</table>
 
 
 

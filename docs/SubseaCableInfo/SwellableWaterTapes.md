@@ -8,32 +8,32 @@ _Swellable water tapes (SWTPs) to provide longitudinal and radial water blocking
 ```mermaid
 classDiagram
     class SwellableWaterTapes
-    click SwellableWaterTapes href "../SwellableWaterTapes"
+    click SwellableWaterTapes href "/SubseaCableInfo/SwellableWaterTapes/"
     style SwellableWaterTapes fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         NonMetallicSheathLayer <|-- SwellableWaterTapes : inherits
-            click NonMetallicSheathLayer href "../NonMetallicSheathLayer"
+            click NonMetallicSheathLayer href "/SubseaCableInfo/NonMetallicSheathLayer/"
             style NonMetallicSheathLayer rx:10,ry:10
 
         SwellableWaterTapes
-            click SwellableWaterTapes href "../SwellableWaterTapes"
+            click SwellableWaterTapes href "/SubseaCableInfo/SwellableWaterTapes/"
             style SwellableWaterTapes rx:10,ry:10
 
         CableLayer <|-- NonMetallicSheathLayer : inherits
-            click CableLayer href "../CableLayer"
+            click CableLayer href "/SubseaCableInfo/CableLayer/"
             style CableLayer rx:10,ry:10
 
 
         CableInfo --> CableLayer : CableInfo.Layer
 
         CableInfo
-            click CableInfo href "../CableInfo"
+            click CableInfo href "/SubseaCableInfo/CableInfo/"
             style CableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         MultiCoreCableInfo --> CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
-            click MultiCoreCableInfo href "../MultiCoreCableInfo"
+            click MultiCoreCableInfo href "/SubseaCableInfo/MultiCoreCableInfo/"
             style MultiCoreCableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

@@ -470,27 +470,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AviationObstacle/AviationObstacle/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AviationObstacle
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../AviationObstacle/AviationObstacleLightingKind/" class="md-nav__link">
         
   
@@ -580,27 +559,6 @@
   
   <span class="md-ellipsis">
     Conductor
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../AviationObstacle/Container/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Container
   </span>
   
 
@@ -769,6 +727,27 @@
   
   <span class="md-ellipsis">
     LocationResource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AviationObstacle/OverheadStructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OverheadStructure
   </span>
   
 
@@ -2464,46 +2443,46 @@
 <strong>Type</strong>: Class</p>
 <pre class="mermaid"><code>classDiagram
     class CapacitySchedule
-    click CapacitySchedule href "../CapacitySchedule"
+    click CapacitySchedule href "/WattApp/CapacitySchedule/"
     style CapacitySchedule fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         BaseIrregularTimeSeries &lt;|-- CapacitySchedule : inherits
-            click BaseIrregularTimeSeries href "../BaseIrregularTimeSeries"
+            click BaseIrregularTimeSeries href "/WattApp/BaseIrregularTimeSeries/"
             style BaseIrregularTimeSeries rx:10,ry:10
 
         CapacitySchedule
-            click CapacitySchedule href "../CapacitySchedule"
+            click CapacitySchedule href "/WattApp/CapacitySchedule/"
             style CapacitySchedule rx:10,ry:10
 
         BaseTimeSeries &lt;|-- BaseIrregularTimeSeries : inherits
-            click BaseTimeSeries href "../BaseTimeSeries"
+            click BaseTimeSeries href "/WattApp/BaseTimeSeries/"
             style BaseTimeSeries rx:10,ry:10
 
         IdentifiedObject &lt;|-- BaseTimeSeries : inherits
-            click IdentifiedObject href "../IdentifiedObject"
+            click IdentifiedObject href "/WattApp/IdentifiedObject/"
             style IdentifiedObject rx:10,ry:10
 
         CapacitySchedule --&gt; Feeder : CapacitySchedule.Feeder
 
         Feeder
-            click Feeder href "../Feeder"
+            click Feeder href "/WattApp/Feeder/"
             style Feeder fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         CapacityTimePoint --&gt; CapacitySchedule : CapacityTimePoint.CapacitySchedule
 
         CapacityTimePoint
-            click CapacityTimePoint href "../CapacityTimePoint"
+            click CapacityTimePoint href "/WattApp/CapacityTimePoint/"
             style CapacityTimePoint fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         BaseTimeSeries --&gt; TimeSeriesInterpolationKind : BaseTimeSeries.interpolationKind
 
         TimeSeriesInterpolationKind
-            click TimeSeriesInterpolationKind href "../TimeSeriesInterpolationKind"
+            click TimeSeriesInterpolationKind href "/WattApp/TimeSeriesInterpolationKind/"
             style TimeSeriesInterpolationKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
         BaseTimeSeries --&gt; BaseTimeSeriesKind : BaseTimeSeries.timeSeriesKind
 
         BaseTimeSeriesKind
-            click BaseTimeSeriesKind href "../BaseTimeSeriesKind"
+            click BaseTimeSeriesKind href "/WattApp/BaseTimeSeriesKind/"
             style BaseTimeSeriesKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         CapacitySchedule : CapacitySchedule.Feeder

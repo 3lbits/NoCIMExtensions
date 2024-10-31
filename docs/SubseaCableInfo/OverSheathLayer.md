@@ -8,32 +8,32 @@ _<b>Non-metallic</b> covering applied over a covering, generally metallic, ensur
 ```mermaid
 classDiagram
     class OverSheathLayer
-    click OverSheathLayer href "../OverSheathLayer"
+    click OverSheathLayer href "/SubseaCableInfo/OverSheathLayer/"
     style OverSheathLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         NonMetallicSheathLayer <|-- OverSheathLayer : inherits
-            click NonMetallicSheathLayer href "../NonMetallicSheathLayer"
+            click NonMetallicSheathLayer href "/SubseaCableInfo/NonMetallicSheathLayer/"
             style NonMetallicSheathLayer rx:10,ry:10
 
         OverSheathLayer
-            click OverSheathLayer href "../OverSheathLayer"
+            click OverSheathLayer href "/SubseaCableInfo/OverSheathLayer/"
             style OverSheathLayer rx:10,ry:10
 
         CableLayer <|-- NonMetallicSheathLayer : inherits
-            click CableLayer href "../CableLayer"
+            click CableLayer href "/SubseaCableInfo/CableLayer/"
             style CableLayer rx:10,ry:10
 
 
         CableInfo --> CableLayer : CableInfo.Layer
 
         CableInfo
-            click CableInfo href "../CableInfo"
+            click CableInfo href "/SubseaCableInfo/CableInfo/"
             style CableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         MultiCoreCableInfo --> CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
-            click MultiCoreCableInfo href "../MultiCoreCableInfo"
+            click MultiCoreCableInfo href "/SubseaCableInfo/MultiCoreCableInfo/"
             style MultiCoreCableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

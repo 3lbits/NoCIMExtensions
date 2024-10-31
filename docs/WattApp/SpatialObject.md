@@ -8,15 +8,15 @@ _A spatial object is a physical object that has a location in space. It may have
 ```mermaid
 classDiagram
     class SpatialObject
-    click SpatialObject href "../SpatialObject"
+    click SpatialObject href "/WattApp/SpatialObject/"
     style SpatialObject fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         SpatialObject <|-- Feature : inherits
-            click SpatialObject href "../SpatialObject"
+            click SpatialObject href "/WattApp/SpatialObject/"
             style SpatialObject rx:10,ry:10
 
         Feature
-            click Feature href "../Feature"
+            click Feature href "/WattApp/Feature/"
             style Feature rx:10,ry:10
 
 

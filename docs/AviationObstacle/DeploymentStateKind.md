@@ -1,46 +1,21 @@
 # DeploymentStateKind
 
-
-
-
 _Possible states of asset deployment._
 
+**URI**: http://iec.ch/TC57/CIM100#DeploymentStateKind
 
-
-**URI**: [DeploymentStateKind](DeploymentStateKind)<br />
 **Type**: Enumeration
 
 ## Permissible Values
 
 | Value | Meaning | Description |
 | --- | --- | --- |
-| inService | [cim:DeploymentStateKind.inService](https://cim.ucaiug.io/ns#DeploymentStateKind.inService) | Asset in service in deployment location |
-| installed | [cim:DeploymentStateKind.installed](https://cim.ucaiug.io/ns#DeploymentStateKind.installed) | Asset installed in deployment location |
-| notYetInstalled | [cim:DeploymentStateKind.notYetInstalled](https://cim.ucaiug.io/ns#DeploymentStateKind.notYetInstalled) | Asset not yet installed in deployment location |
-| outOfService | [cim:DeploymentStateKind.outOfService](https://cim.ucaiug.io/ns#DeploymentStateKind.outOfService) | Asset out of service, but in deployment location |
-| removed | [cim:DeploymentStateKind.removed](https://cim.ucaiug.io/ns#DeploymentStateKind.removed) | Asset removed from deployment location |
-| notYetRemoved | [nc-no:DeploymentStateKind.notYetRemoved](http://cim4.eu/ns/nc-no#DeploymentStateKind.notYetRemoved) | Asset in service in deployment notYetRemoved |
+| inService | [cim:DeploymentStateKind.inService](http://iec.ch/TC57/CIM100#DeploymentStateKind.inService) | Asset in service in deployment location. |
+| installed | [cim:DeploymentStateKind.installed](http://iec.ch/TC57/CIM100#DeploymentStateKind.installed) | Asset installed in deployment location. |
+| notYetInstalled | [cim:DeploymentStateKind.notYetInstalled](http://iec.ch/TC57/CIM100#DeploymentStateKind.notYetInstalled) | Asset not yet installed in deployment location. |
+| outOfService | [cim:DeploymentStateKind.outOfService](http://iec.ch/TC57/CIM100#DeploymentStateKind.outOfService) | Asset out of service, but in deployment location. |
+| removed | [cim:DeploymentStateKind.removed](http://iec.ch/TC57/CIM100#DeploymentStateKind.removed) | Asset removed from deployment location. |
+| notYetRemoved | [nc-no:DeploymentStateKind.notYetRemoved](http://iec.ch/TC57/CIM100#DeploymentStateKind.notYetRemoved) | Asset in service in deployment notYetRemoved. |
+## Schema Source
 
-
-
-
-
-
-
-
-## Identifier and Mapping Information
-
-
-
-
-
-
-
-### Schema Source
-
-
-* from schema: https://ap-no.cim4.eu/AviationObstacle/1.0
-
-
-
-
+from schema: [https://ap-no.cim4.eu/AviationObstacle/1.0](https://ap-no.cim4.eu/AviationObstacle/1.0)

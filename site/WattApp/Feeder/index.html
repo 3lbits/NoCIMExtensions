@@ -470,27 +470,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AviationObstacle/AviationObstacle/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AviationObstacle
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../AviationObstacle/AviationObstacleLightingKind/" class="md-nav__link">
         
   
@@ -580,27 +559,6 @@
   
   <span class="md-ellipsis">
     Conductor
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../AviationObstacle/Container/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Container
   </span>
   
 
@@ -769,6 +727,27 @@
   
   <span class="md-ellipsis">
     LocationResource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AviationObstacle/OverheadStructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OverheadStructure
   </span>
   
 
@@ -2464,38 +2443,38 @@
 <strong>Type</strong>: Class</p>
 <pre class="mermaid"><code>classDiagram
     class Feeder
-    click Feeder href "../Feeder"
+    click Feeder href "/WattApp/Feeder/"
     style Feeder fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         EquipmentContainer &lt;|-- Feeder : inherits
-            click EquipmentContainer href "../EquipmentContainer"
+            click EquipmentContainer href "/WattApp/EquipmentContainer/"
             style EquipmentContainer rx:10,ry:10
 
         Feeder
-            click Feeder href "../Feeder"
+            click Feeder href "/WattApp/Feeder/"
             style Feeder rx:10,ry:10
 
         ConnectivityNodeContainer &lt;|-- EquipmentContainer : inherits
-            click ConnectivityNodeContainer href "../ConnectivityNodeContainer"
+            click ConnectivityNodeContainer href "/WattApp/ConnectivityNodeContainer/"
             style ConnectivityNodeContainer rx:10,ry:10
 
         PowerSystemResource &lt;|-- ConnectivityNodeContainer : inherits
-            click PowerSystemResource href "../PowerSystemResource"
+            click PowerSystemResource href "/WattApp/PowerSystemResource/"
             style PowerSystemResource rx:10,ry:10
 
         IdentifiedObject &lt;|-- PowerSystemResource : inherits
-            click IdentifiedObject href "../IdentifiedObject"
+            click IdentifiedObject href "/WattApp/IdentifiedObject/"
             style IdentifiedObject rx:10,ry:10
 
         Feature &lt;|-- PowerSystemResource : inherits
-            click Feature href "../Feature"
+            click Feature href "/WattApp/Feature/"
             style Feature fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 
         CapacitySchedule --&gt; Feeder : CapacitySchedule.Feeder
 
         CapacitySchedule
-            click CapacitySchedule href "../CapacitySchedule"
+            click CapacitySchedule href "/WattApp/CapacitySchedule/"
             style CapacitySchedule fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

@@ -470,27 +470,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AviationObstacle/AviationObstacle/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AviationObstacle
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../AviationObstacle/AviationObstacleLightingKind/" class="md-nav__link">
         
   
@@ -580,27 +559,6 @@
   
   <span class="md-ellipsis">
     Conductor
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../AviationObstacle/Container/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Container
   </span>
   
 
@@ -769,6 +727,27 @@
   
   <span class="md-ellipsis">
     LocationResource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AviationObstacle/OverheadStructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OverheadStructure
   </span>
   
 
@@ -2465,32 +2444,32 @@
 <strong>Type</strong>: Class</p>
 <pre class="mermaid"><code>classDiagram
     class AssetInfo
-    click AssetInfo href "../AssetInfo"
+    click AssetInfo href "/SubseaCableInfo/AssetInfo/"
     style AssetInfo fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         AssetInfo &lt;|-- ConductingAssetInfo : inherits
-            click AssetInfo href "../AssetInfo"
+            click AssetInfo href "/SubseaCableInfo/AssetInfo/"
             style AssetInfo rx:10,ry:10
 
         ConductingAssetInfo
-            click ConductingAssetInfo href "../ConductingAssetInfo"
+            click ConductingAssetInfo href "/SubseaCableInfo/ConductingAssetInfo/"
             style ConductingAssetInfo rx:10,ry:10
 
         IdentifiedObject &lt;|-- AssetInfo : inherits
-            click IdentifiedObject href "../IdentifiedObject"
+            click IdentifiedObject href "/SubseaCableInfo/IdentifiedObject/"
             style IdentifiedObject rx:10,ry:10
 
 
         AssetSpecification --&gt; AssetInfo : AssetSpecification.AssetInfo
 
         AssetSpecification
-            click AssetSpecification href "../AssetSpecification"
+            click AssetSpecification href "/SubseaCableInfo/AssetSpecification/"
             style AssetSpecification fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         ProductAssetModel --&gt; AssetInfo : ProductAssetModel.AssetInfo
 
         ProductAssetModel
-            click ProductAssetModel href "../ProductAssetModel"
+            click ProductAssetModel href "/SubseaCableInfo/ProductAssetModel/"
             style ProductAssetModel fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

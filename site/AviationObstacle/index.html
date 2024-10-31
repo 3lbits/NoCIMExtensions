@@ -533,27 +533,6 @@
   
   
     <li class="md-nav__item">
-      <a href="AviationObstacle/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AviationObstacle
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="AviationObstacleLightingKind/" class="md-nav__link">
         
   
@@ -643,27 +622,6 @@
   
   <span class="md-ellipsis">
     Conductor
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="Container/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Container
   </span>
   
 
@@ -832,6 +790,27 @@
   
   <span class="md-ellipsis">
     LocationResource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="OverheadStructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OverheadStructure
   </span>
   
 
@@ -2429,8 +2408,8 @@
 
 
 <h1 id="aviation-obstacle-vocabulary">Aviation Obstacle Vocabulary</h1>
-<p><strong>URI</strong>: https://ap-no.cim4.eu/AviationObstacle/1.0<br />
-<strong>Name</strong>: AviationObstacle</p>
+<p><strong>URI</strong>: https://ap-no.cim4.eu/AviationObstacle/1.0</p>
+<p><strong>Name</strong>: AviationObstacle</p>
 <h2 id="classes">Classes</h2>
 <table>
 <thead>
@@ -2441,84 +2420,80 @@
 </thead>
 <tbody>
 <tr>
-<td><a href="Container/">Container</a></td>
-<td></td>
+<td><a href="ACLineSegment/">ACLineSegment</a></td>
+<td>A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.For symmetrical, transposed three phase lines, it is sufficient to use attributes of the line segment, which describe impedances and admittances for the entire length of the segment.  Additionally impedances can be computed by using length and associated per length impedances.The BaseVoltage at the two ends of ACLineSegments in a Line shall have the same BaseVoltage.nominalVoltage. However, boundary lines may have slightly different BaseVoltage.nominalVoltages and variation is allowed. Larger voltage difference in general requires use of an equivalent branch.</td>
+</tr>
+<tr>
+<td><a href="ACLineSegmentSpan/">ACLineSegmentSpan</a></td>
+<td>The part of a segment line between two consecutive points of support.</td>
+</tr>
+<tr>
+<td><a href="ACLineSegmentSpanDeployment/">ACLineSegmentSpanDeployment</a></td>
+<td>Deployment of an ACLineSegmentSpan.</td>
+</tr>
+<tr>
+<td><a href="AssetDeployment/">AssetDeployment</a></td>
+<td>Deployment of asset deployment in a power system resource role.</td>
+</tr>
+<tr>
+<td><a href="BaseVoltage/">BaseVoltage</a></td>
+<td>Defines a system base voltage which is referenced.</td>
+</tr>
+<tr>
+<td><a href="ConductingEquipment/">ConductingEquipment</a></td>
+<td>The parts of the AC power system that are designed to carry current or that are conductively connected through terminals.</td>
+</tr>
+<tr>
+<td><a href="Conductor/">Conductor</a></td>
+<td>Combination of conducting material with consistent electrical characteristics, building a single electrical system, used to carry current between points in the power system.</td>
+</tr>
+<tr>
+<td><a href="ElementResource/">ElementResource</a></td>
+<td>An element of an asset that has no electrical characteristic.</td>
+</tr>
+<tr>
+<td><a href="Equipment/">Equipment</a></td>
+<td>The parts of a power system that are physical devices, electronic or mechanical.</td>
+</tr>
+<tr>
+<td><a href="Feature/">Feature</a></td>
+<td>Defines a system base voltage which is referenced.</td>
+</tr>
+<tr>
+<td><a href="Geometry/">Geometry</a></td>
+<td>Geometric representation details.</td>
 </tr>
 <tr>
 <td><a href="IdentifiedObject/">IdentifiedObject</a></td>
-<td>This is a root class to provide common identification for all classes needing...</td>
+<td>This is a root class to provide common identification for all classes needing identification and naming attributes.</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="AssetDeployment/">AssetDeployment</a></td>
-<td>Deployment of asset deployment in a power system resource role</td>
+<td><a href="LocationResource/">LocationResource</a></td>
+<td>A spatial entity. LocationResource serves a similar purpose as PowerSystemResource but for non-electrical entites of interest to electrical utilities.</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ACLineSegmentSpanDeployment/">ACLineSegmentSpanDeployment</a></td>
-<td>Deployment of an ACLineSegmentSpan</td>
+<td><a href="OverheadStructure/">OverheadStructure</a></td>
+<td>An overhead structure is an element of an electric transmission or distribution system that supports the overhead conductors and associated equipment used for the transmission of electricity.</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="StructureDeployment/">StructureDeployment</a></td>
-<td>Deployment of a structure</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="BaseVoltage/">BaseVoltage</a></td>
-<td>Defines a system base voltage which is referenced</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ElementResource/">ElementResource</a></td>
-<td>An element of an asset that has no electrical characteristic</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="LocationResource/">LocationResource</a></td>
-<td>A spatial entity</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Structure/">Structure</a></td>
-<td>Construction holding assets such as conductors, transformers, switchgear, etc</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="OverheadStructure.md">OverheadStructure</a></td>
-<td>An overhead structure is an element of an electric transmission or distributi...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Zone/">Zone</a></td>
-<td>Defines a system base voltage which is referenced</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="PowerSystemResource/">PowerSystemResource</a></td>
-<td>A power system resource (PSR) can be an item of equipment such as a switch, a...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ACLineSegmentSpan/">ACLineSegmentSpan</a></td>
-<td>The part of a segment line between two consecutive points of support</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Equipment/">Equipment</a></td>
-<td>The parts of a power system that are physical devices, electronic or mechanic...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ConductingEquipment/">ConductingEquipment</a></td>
-<td>The parts of the AC power system that are designed to carry current or that a...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Conductor/">Conductor</a></td>
-<td>Combination of conducting material with consistent electrical characteristics...</td>
-</tr>
-<tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="ACLineSegment/">ACLineSegment</a></td>
-<td>A wire or combination of wires, with consistent electrical characteristics, b...</td>
+<td><a href="PowerSystemResource/">PowerSystemResource</a></td>
+<td>A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated.</td>
 </tr>
 <tr>
 <td><a href="SpatialObject/">SpatialObject</a></td>
-<td>A spatial object is a physical object that has a location in space</td>
+<td>A spatial object is a physical object that has a location in space. It may have a geometric representation to describe its shape and position.</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Feature/">Feature</a></td>
-<td>Defines a system base voltage which is referenced</td>
+<td><a href="Structure/">Structure</a></td>
+<td>Construction holding assets such as conductors, transformers, switchgear, etc.</td>
 </tr>
 <tr>
-<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="Geometry/">Geometry</a></td>
-<td>Geometric representation details</td>
+<td><a href="StructureDeployment/">StructureDeployment</a></td>
+<td>Deployment of a structure.</td>
+</tr>
+<tr>
+<td><a href="Zone/">Zone</a></td>
+<td>Defines a system base voltage which is referenced.</td>
 </tr>
 </tbody>
 </table>
@@ -2533,27 +2508,27 @@
 <tbody>
 <tr>
 <td><a href="AviationObstacleLightingKind/">AviationObstacleLightingKind</a></td>
-<td>The kind of aviation obstacle lighting</td>
+<td>The kind of aviation obstacle lighting.</td>
 </tr>
 <tr>
 <td><a href="AviationObstacleMarkingKind/">AviationObstacleMarkingKind</a></td>
-<td>The kind of aviation obstacle marking</td>
+<td>The kind of aviation obstacle marking.</td>
 </tr>
 <tr>
 <td><a href="DeploymentStateKind/">DeploymentStateKind</a></td>
-<td>Possible states of asset deployment</td>
+<td>Possible states of asset deployment.</td>
 </tr>
 <tr>
 <td><a href="LocationMethodKind/">LocationMethodKind</a></td>
-<td>The kind of aviation obstacle marking</td>
+<td>The kind of aviation obstacle marking.</td>
 </tr>
 <tr>
 <td><a href="ZoneKind/">ZoneKind</a></td>
-<td>Kind of zone</td>
+<td>Kind of zone.</td>
 </tr>
 <tr>
 <td><a href="ZoneStateKind/">ZoneStateKind</a></td>
-<td>Current state of zone</td>
+<td>Current state of zone."</td>
 </tr>
 </tbody>
 </table>

@@ -11,7 +11,7 @@
         <link rel="canonical" href="https://NoCIM.elbits.no/AviationObstacle/PowerSystemResource/">
       
       
-        <link rel="prev" href="../LocationResource/">
+        <link rel="prev" href="../OverheadStructure/">
       
       
         <link rel="next" href="../SpatialObject/">
@@ -475,27 +475,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../AviationObstacle/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AviationObstacle
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../AviationObstacleLightingKind/" class="md-nav__link">
         
   
@@ -585,27 +564,6 @@
   
   <span class="md-ellipsis">
     Conductor
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Container/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Container
   </span>
   
 
@@ -787,6 +745,27 @@
                 
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../OverheadStructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OverheadStructure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
     
   
   
@@ -851,16 +830,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Identifier and Mapping Information
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+    <nav class="md-nav" aria-label="Attributes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -874,15 +844,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mappings
-    </span>
-  </a>
   
 </li>
       
@@ -2441,16 +2402,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Identifier and Mapping Information
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+    <nav class="md-nav" aria-label="Attributes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2464,15 +2416,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mappings
-    </span>
-  </a>
   
 </li>
       
@@ -2496,51 +2439,45 @@
 
 <h1 id="powersystemresource">PowerSystemResource</h1>
 <p><em>A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated.</em></p>
-<ul>
-<li><strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</li>
-</ul>
+<p>*<strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</p>
 <p><strong>URI</strong>: <a href="https://cim.ucaiug.io/ns#PowerSystemResource">cim:PowerSystemResource</a><br />
 <strong>Type</strong>: Class</p>
-<pre class="mermaid"><code> classDiagram
+<pre class="mermaid"><code>classDiagram
     class PowerSystemResource
-    click PowerSystemResource href "../PowerSystemResource"
-      Feature &lt;|-- PowerSystemResource
-        click Feature href "../Feature"
-      IdentifiedObject &lt;|-- PowerSystemResource
-        click IdentifiedObject href "../IdentifiedObject"
+    click PowerSystemResource href "/AviationObstacle/PowerSystemResource/"
+    style PowerSystemResource fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+
+        PowerSystemResource &lt;|-- Equipment : inherits
+            click PowerSystemResource href "/AviationObstacle/PowerSystemResource/"
+            style PowerSystemResource rx:10,ry:10
+
+        Equipment
+            click Equipment href "/AviationObstacle/Equipment/"
+            style Equipment rx:10,ry:10
+
+        IdentifiedObject &lt;|-- PowerSystemResource : inherits
+            click IdentifiedObject href "/AviationObstacle/IdentifiedObject/"
+            style IdentifiedObject rx:10,ry:10
+
+        Feature &lt;|-- PowerSystemResource : inherits
+            click Feature href "/AviationObstacle/Feature/"
+            style Feature fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 
-      PowerSystemResource &lt;|-- Equipment
-        click Equipment href "../Equipment"
-      PowerSystemResource &lt;|-- ACLineSegmentSpan
-        click ACLineSegmentSpan href "../ACLineSegmentSpan"
+        PowerSystemResource --&gt; LocationMethodKind : PowerSystemResource.locationMethodKind
 
+        LocationMethodKind
+            click LocationMethodKind href "/AviationObstacle/LocationMethodKind/"
+            style LocationMethodKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
 
-      PowerSystemResource : IdentifiedObject.description
-
-      PowerSystemResource : hasGeometry
-
-          PowerSystemResource --&gt; Geometry : hasGeometry
-          click Geometry href "../Geometry"
-
-      PowerSystemResource : PowerSystemResource.locationMethodKind
-
-          PowerSystemResource --&gt; LocationMethodKind : PowerSystemResource.locationMethodKind
-          click LocationMethodKind href "../LocationMethodKind"
-
-      PowerSystemResource : IdentifiedObject.mRID
-
-      PowerSystemResource : IdentifiedObject.name
-
-</code></pre>
+        PowerSystemResource : PowerSystemResource.locationMethodKind
+        IdentifiedObject : IdentifiedObject.mRID
+        IdentifiedObject : IdentifiedObject.description
+        IdentifiedObject : IdentifiedObject.name</code></pre>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../IdentifiedObject/">IdentifiedObject</a><ul>
-<li><strong>PowerSystemResource</strong> [ <a href="../Feature/">Feature</a>]<ul>
-<li><a href="../Equipment/">Equipment</a></li>
-<li><a href="../ACLineSegmentSpan/">ACLineSegmentSpan</a></li>
-</ul>
-</li>
+<li><strong>PowerSystemResource</strong></li>
 </ul>
 </li>
 </ul>
@@ -2559,64 +2496,37 @@
 <tr>
 <td>locationMethodKind</td>
 <td><a href="http://cim4.eu/ns/nc-no#PowerSystemResource.locationMethodKind">nc-no:PowerSystemResource.locationMethodKind</a></td>
-<td>0..1 <br />  <a href="../LocationMethodKind/">LocationMethodKind</a></td>
-<td>Possible methods to derive geographical location</td>
+<td>0..1 LocationMethodKind</td>
+<td>Possible methods to derive geographical location.</td>
 <td>direct</td>
-</tr>
-<tr>
-<td>hasGeometry</td>
-<td><a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a></td>
-<td>0..1 <br />  <a href="../Geometry/">Geometry</a></td>
-<td>Geometric representation of the spatial object</td>
-<td><a href="../Feature/">Feature</a></td>
 </tr>
 <tr>
 <td>mRID</td>
 <td><a href="https://cim.ucaiug.io/ns#IdentifiedObject.mRID">cim:IdentifiedObject.mRID</a></td>
-<td>0..1 <br />  string</td>
-<td>Master resource identifier issued by a model authority</td>
-<td><a href="../IdentifiedObject/">IdentifiedObject</a></td>
+<td>0..1 string</td>
+<td>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</td>
+<td>IdentifiedObject</td>
 </tr>
 <tr>
 <td>description</td>
 <td><a href="https://cim.ucaiug.io/ns#IdentifiedObject.description">cim:IdentifiedObject.description</a></td>
-<td>0..1 <br />  string</td>
-<td>The description is a free human readable text describing or naming the object</td>
-<td><a href="../IdentifiedObject/">IdentifiedObject</a></td>
+<td>0..1 string</td>
+<td>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</td>
+<td>IdentifiedObject</td>
 </tr>
 <tr>
 <td>name</td>
 <td><a href="https://cim.ucaiug.io/ns#IdentifiedObject.name">cim:IdentifiedObject.name</a></td>
-<td>0..1 <br />  string</td>
-<td>The name is any free human readable and possibly non unique text naming the o...</td>
-<td><a href="../IdentifiedObject/">IdentifiedObject</a></td>
+<td>0..1 string</td>
+<td>The name is any free human readable and possibly non unique text naming the object.</td>
+<td>IdentifiedObject</td>
 </tr>
 </tbody>
 </table>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://ap-no.cim4.eu/AviationObstacle/1.0</li>
+<li>from schema: <a href="https://ap-no.cim4.eu/AviationObstacle/1.0">https://ap-no.cim4.eu/AviationObstacle/1.0</a></li>
 </ul>
-<h2 id="mappings">Mappings</h2>
-<table>
-<thead>
-<tr>
-<th>Mapping Type</th>
-<th>Mapped Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>self</td>
-<td>cim:PowerSystemResource</td>
-</tr>
-<tr>
-<td>native</td>
-<td>this:PowerSystemResource</td>
-</tr>
-</tbody>
-</table>
 
 
 

@@ -8,27 +8,27 @@ _Geometric representation details._
 ```mermaid
 classDiagram
     class Geometry
-    click Geometry href "../Geometry"
+    click Geometry href "/WattApp/Geometry/"
     style Geometry fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         SpatialObject <|-- Geometry : inherits
-            click SpatialObject href "../SpatialObject"
+            click SpatialObject href "/WattApp/SpatialObject/"
             style SpatialObject rx:10,ry:10
 
         Geometry
-            click Geometry href "../Geometry"
+            click Geometry href "/WattApp/Geometry/"
             style Geometry rx:10,ry:10
 
         Geometry --> GeometryObject : Geometry.asGeoJSON
 
         GeometryObject
-            click GeometryObject href "../GeometryObject"
+            click GeometryObject href "/WattApp/GeometryObject/"
             style GeometryObject fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         Feature --> Geometry : Feature.hasGeometry
 
         Feature
-            click Feature href "../Feature"
+            click Feature href "/WattApp/Feature/"
             style Feature fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

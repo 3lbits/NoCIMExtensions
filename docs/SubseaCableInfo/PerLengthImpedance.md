@@ -10,29 +10,29 @@ _Common type for per-length impedance electrical catalogues._
 ```mermaid
 classDiagram
     class PerLengthImpedance
-    click PerLengthImpedance href "../PerLengthImpedance"
+    click PerLengthImpedance href "/SubseaCableInfo/PerLengthImpedance/"
     style PerLengthImpedance fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         PerLengthImpedance <|-- PerLengthPhaseImpedance : inherits
-            click PerLengthImpedance href "../PerLengthImpedance"
+            click PerLengthImpedance href "/SubseaCableInfo/PerLengthImpedance/"
             style PerLengthImpedance rx:10,ry:10
 
         PerLengthPhaseImpedance
-            click PerLengthPhaseImpedance href "../PerLengthPhaseImpedance"
+            click PerLengthPhaseImpedance href "/SubseaCableInfo/PerLengthPhaseImpedance/"
             style PerLengthPhaseImpedance rx:10,ry:10
 
         PerLengthConductorParameter <|-- PerLengthImpedance : inherits
-            click PerLengthConductorParameter href "../PerLengthConductorParameter"
+            click PerLengthConductorParameter href "/SubseaCableInfo/PerLengthConductorParameter/"
             style PerLengthConductorParameter rx:10,ry:10
 
         IdentifiedObject <|-- PerLengthConductorParameter : inherits
-            click IdentifiedObject href "../IdentifiedObject"
+            click IdentifiedObject href "/SubseaCableInfo/IdentifiedObject/"
             style IdentifiedObject rx:10,ry:10
 
         PerLengthConductorParameter --> ConductorInfo : PerLengthConductorParameter.ConductorInfo
 
         ConductorInfo
-            click ConductorInfo href "../ConductorInfo"
+            click ConductorInfo href "/SubseaCableInfo/ConductorInfo/"
             style ConductorInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

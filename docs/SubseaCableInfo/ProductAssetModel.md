@@ -8,26 +8,26 @@ _Asset model by a specific manufacturer._
 ```mermaid
 classDiagram
     class ProductAssetModel
-    click ProductAssetModel href "../ProductAssetModel"
+    click ProductAssetModel href "/SubseaCableInfo/ProductAssetModel/"
     style ProductAssetModel fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         IdentifiedObject <|-- ProductAssetModel : inherits
-            click IdentifiedObject href "../IdentifiedObject"
+            click IdentifiedObject href "/SubseaCableInfo/IdentifiedObject/"
             style IdentifiedObject rx:10,ry:10
 
         ProductAssetModel
-            click ProductAssetModel href "../ProductAssetModel"
+            click ProductAssetModel href "/SubseaCableInfo/ProductAssetModel/"
             style ProductAssetModel rx:10,ry:10
 
         ProductAssetModel --> AssetInfo : ProductAssetModel.AssetInfo
 
         AssetInfo
-            click AssetInfo href "../AssetInfo"
+            click AssetInfo href "/SubseaCableInfo/AssetInfo/"
             style AssetInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
         ProductAssetModel --> Manufacturer : ProductAssetModel.Manufacturer
 
         Manufacturer
-            click Manufacturer href "../Manufacturer"
+            click Manufacturer href "/SubseaCableInfo/Manufacturer/"
             style Manufacturer fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

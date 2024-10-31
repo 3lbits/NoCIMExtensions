@@ -470,27 +470,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../../AviationObstacle/AviationObstacle/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AviationObstacle
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../../AviationObstacle/AviationObstacleLightingKind/" class="md-nav__link">
         
   
@@ -580,27 +559,6 @@
   
   <span class="md-ellipsis">
     Conductor
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../AviationObstacle/Container/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Container
   </span>
   
 
@@ -769,6 +727,27 @@
   
   <span class="md-ellipsis">
     LocationResource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AviationObstacle/OverheadStructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OverheadStructure
   </span>
   
 
@@ -2464,27 +2443,27 @@
 <strong>Type</strong>: Class</p>
 <pre class="mermaid"><code>classDiagram
     class Geometry
-    click Geometry href "../Geometry"
+    click Geometry href "/WattApp/Geometry/"
     style Geometry fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         SpatialObject &lt;|-- Geometry : inherits
-            click SpatialObject href "../SpatialObject"
+            click SpatialObject href "/WattApp/SpatialObject/"
             style SpatialObject rx:10,ry:10
 
         Geometry
-            click Geometry href "../Geometry"
+            click Geometry href "/WattApp/Geometry/"
             style Geometry rx:10,ry:10
 
         Geometry --&gt; GeometryObject : Geometry.asGeoJSON
 
         GeometryObject
-            click GeometryObject href "../GeometryObject"
+            click GeometryObject href "/WattApp/GeometryObject/"
             style GeometryObject fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         Feature --&gt; Geometry : Feature.hasGeometry
 
         Feature
-            click Feature href "../Feature"
+            click Feature href "/WattApp/Feature/"
             style Feature fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

@@ -31,11 +31,6 @@
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://NoCIM.elbits.no/AviationObstacle/AviationObstacle/</loc>
-         <lastmod>2024-10-31</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/AviationObstacleLightingKind/</loc>
          <lastmod>2024-10-31</lastmod>
          <changefreq>daily</changefreq>
@@ -57,11 +52,6 @@
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/Conductor/</loc>
-         <lastmod>2024-10-31</lastmod>
-         <changefreq>daily</changefreq>
-    </url>
-    <url>
-         <loc>https://NoCIM.elbits.no/AviationObstacle/Container/</loc>
          <lastmod>2024-10-31</lastmod>
          <changefreq>daily</changefreq>
     </url>
@@ -102,6 +92,11 @@
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/LocationResource/</loc>
+         <lastmod>2024-10-31</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://NoCIM.elbits.no/AviationObstacle/OverheadStructure/</loc>
          <lastmod>2024-10-31</lastmod>
          <changefreq>daily</changefreq>
     </url>

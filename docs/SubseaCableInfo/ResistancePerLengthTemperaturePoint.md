@@ -8,13 +8,13 @@ _No description available_
 ```mermaid
 classDiagram
     class ResistancePerLengthTemperaturePoint
-    click ResistancePerLengthTemperaturePoint href "../ResistancePerLengthTemperaturePoint"
+    click ResistancePerLengthTemperaturePoint href "/SubseaCableInfo/ResistancePerLengthTemperaturePoint/"
     style ResistancePerLengthTemperaturePoint fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         ResistancePerLengthTemperaturePoint --> ConductorInfo : ResistancePerLengthTemperaturePoint.ConductorInfo
 
         ConductorInfo
-            click ConductorInfo href "../ConductorInfo"
+            click ConductorInfo href "/SubseaCableInfo/ConductorInfo/"
             style ConductorInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

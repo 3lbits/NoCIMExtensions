@@ -452,34 +452,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usages
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Comments
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Identifier and Mapping Information
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+    <nav class="md-nav" aria-label="Attributes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -493,15 +466,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mappings
-    </span>
-  </a>
   
 </li>
       
@@ -568,27 +532,6 @@
   
   <span class="md-ellipsis">
     AssetDeployment
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../AviationObstacle/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    AviationObstacle
   </span>
   
 
@@ -694,27 +637,6 @@
   
   <span class="md-ellipsis">
     Conductor
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../Container/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    Container
   </span>
   
 
@@ -883,6 +805,27 @@
   
   <span class="md-ellipsis">
     LocationResource
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../OverheadStructure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    OverheadStructure
   </span>
   
 
@@ -2459,34 +2402,7 @@
     </span>
   </a>
   
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#usages" class="md-nav__link">
-    <span class="md-ellipsis">
-      Usages
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#comments" class="md-nav__link">
-    <span class="md-ellipsis">
-      Comments
-    </span>
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#identifier-and-mapping-information" class="md-nav__link">
-    <span class="md-ellipsis">
-      Identifier and Mapping Information
-    </span>
-  </a>
-  
-    <nav class="md-nav" aria-label="Identifier and Mapping Information">
+    <nav class="md-nav" aria-label="Attributes">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
@@ -2500,15 +2416,6 @@
         
       </ul>
     </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#mappings" class="md-nav__link">
-    <span class="md-ellipsis">
-      Mappings
-    </span>
-  </a>
   
 </li>
       
@@ -2534,38 +2441,66 @@
 <p><em>A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.For symmetrical, transposed three phase lines, it is sufficient to use attributes of the line segment, which describe impedances and admittances for the entire length of the segment.  Additionally impedances can be computed by using length and associated per length impedances.The BaseVoltage at the two ends of ACLineSegments in a Line shall have the same BaseVoltage.nominalVoltage. However, boundary lines may have slightly different BaseVoltage.nominalVoltages and variation is allowed. Larger voltage difference in general requires use of an equivalent branch.</em></p>
 <p><strong>URI</strong>: <a href="https://cim.ucaiug.io/ns#ACLineSegment">cim:ACLineSegment</a><br />
 <strong>Type</strong>: Class</p>
-<pre class="mermaid"><code> classDiagram
+<pre class="mermaid"><code>classDiagram
     class ACLineSegment
-    click ACLineSegment href "../ACLineSegment"
-      Conductor &lt;|-- ACLineSegment
-        click Conductor href "../Conductor"
+    click ACLineSegment href "/AviationObstacle/ACLineSegment/"
+    style ACLineSegment fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
-      ACLineSegment : ACLineSegment.ACLineSegmentSpan
+        Conductor &lt;|-- ACLineSegment : inherits
+            click Conductor href "/AviationObstacle/Conductor/"
+            style Conductor rx:10,ry:10
 
-          ACLineSegment --&gt; ACLineSegmentSpan : ACLineSegment.ACLineSegmentSpan
-          click ACLineSegmentSpan href "../ACLineSegmentSpan"
+        ACLineSegment
+            click ACLineSegment href "/AviationObstacle/ACLineSegment/"
+            style ACLineSegment rx:10,ry:10
 
-      ACLineSegment : IdentifiedObject.description
+        ConductingEquipment &lt;|-- Conductor : inherits
+            click ConductingEquipment href "/AviationObstacle/ConductingEquipment/"
+            style ConductingEquipment rx:10,ry:10
 
-      ACLineSegment : hasGeometry
+        Equipment &lt;|-- ConductingEquipment : inherits
+            click Equipment href "/AviationObstacle/Equipment/"
+            style Equipment rx:10,ry:10
 
-          ACLineSegment --&gt; Geometry : hasGeometry
-          click Geometry href "../Geometry"
+        PowerSystemResource &lt;|-- Equipment : inherits
+            click PowerSystemResource href "/AviationObstacle/PowerSystemResource/"
+            style PowerSystemResource rx:10,ry:10
 
-      ACLineSegment : PowerSystemResource.locationMethodKind
+        IdentifiedObject &lt;|-- PowerSystemResource : inherits
+            click IdentifiedObject href "/AviationObstacle/IdentifiedObject/"
+            style IdentifiedObject rx:10,ry:10
 
-          ACLineSegment --&gt; LocationMethodKind : PowerSystemResource.locationMethodKind
-          click LocationMethodKind href "../LocationMethodKind"
+        Feature &lt;|-- PowerSystemResource : inherits
+            click Feature href "/AviationObstacle/Feature/"
+            style Feature fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
 
-      ACLineSegment : IdentifiedObject.mRID
+        ACLineSegment --&gt; ACLineSegmentSpan : ACLineSegment.ACLineSegmentSpan
 
-      ACLineSegment : IdentifiedObject.name
+        ACLineSegmentSpan
+            click ACLineSegmentSpan href "/AviationObstacle/ACLineSegmentSpan/"
+            style ACLineSegmentSpan fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
-</code></pre>
+        ACLineSegmentSpan --&gt; ACLineSegment : ACLineSegmentSpan.ACLineSegment
+
+        ACLineSegmentSpan
+            click ACLineSegmentSpan href "/AviationObstacle/ACLineSegmentSpan/"
+            style ACLineSegmentSpan fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+
+        PowerSystemResource --&gt; LocationMethodKind : PowerSystemResource.locationMethodKind
+
+        LocationMethodKind
+            click LocationMethodKind href "/AviationObstacle/LocationMethodKind/"
+            style LocationMethodKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+
+        ACLineSegment : ACLineSegment.ACLineSegmentSpan
+        PowerSystemResource : PowerSystemResource.locationMethodKind
+        IdentifiedObject : IdentifiedObject.mRID
+        IdentifiedObject : IdentifiedObject.description
+        IdentifiedObject : IdentifiedObject.name</code></pre>
 <h2 id="inheritance">Inheritance</h2>
 <ul>
 <li><a href="../IdentifiedObject/">IdentifiedObject</a><ul>
-<li><a href="../PowerSystemResource/">PowerSystemResource</a> [ <a href="../Feature/">Feature</a>]<ul>
+<li><a href="../PowerSystemResource/">PowerSystemResource</a><ul>
 <li><a href="../Equipment/">Equipment</a><ul>
 <li><a href="../ConductingEquipment/">ConductingEquipment</a><ul>
 <li><a href="../Conductor/">Conductor</a><ul>
@@ -2596,98 +2531,44 @@
 <tr>
 <td>ACLineSegmentSpan</td>
 <td><a href="http://cim4.eu/ns/nc-no#ACLineSegment.ACLineSegmentSpan">nc-no:ACLineSegment.ACLineSegmentSpan</a></td>
-<td>0..* <br />  <a href="../ACLineSegmentSpan/">ACLineSegmentSpan</a></td>
+<td>0..* ACLineSegmentSpan</td>
 <td>The associated AC Line Segment</td>
 <td>direct</td>
 </tr>
 <tr>
 <td>locationMethodKind</td>
 <td><a href="http://cim4.eu/ns/nc-no#PowerSystemResource.locationMethodKind">nc-no:PowerSystemResource.locationMethodKind</a></td>
-<td>0..1 <br />  <a href="../LocationMethodKind/">LocationMethodKind</a></td>
-<td>Possible methods to derive geographical location</td>
-<td><a href="../PowerSystemResource/">PowerSystemResource</a></td>
-</tr>
-<tr>
-<td>hasGeometry</td>
-<td><a href="http://www.opengis.net/ont/geosparql#hasGeometry">geo:hasGeometry</a></td>
-<td>0..1 <br />  <a href="../Geometry/">Geometry</a></td>
-<td>Geometric representation of the spatial object</td>
-<td><a href="../Feature/">Feature</a></td>
+<td>0..1 LocationMethodKind</td>
+<td>Possible methods to derive geographical location.</td>
+<td>PowerSystemResource</td>
 </tr>
 <tr>
 <td>mRID</td>
 <td><a href="https://cim.ucaiug.io/ns#IdentifiedObject.mRID">cim:IdentifiedObject.mRID</a></td>
-<td>0..1 <br />  string</td>
-<td>Master resource identifier issued by a model authority</td>
-<td><a href="../IdentifiedObject/">IdentifiedObject</a></td>
+<td>0..1 string</td>
+<td>Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.</td>
+<td>IdentifiedObject</td>
 </tr>
 <tr>
 <td>description</td>
 <td><a href="https://cim.ucaiug.io/ns#IdentifiedObject.description">cim:IdentifiedObject.description</a></td>
-<td>0..1 <br />  string</td>
-<td>The description is a free human readable text describing or naming the object</td>
-<td><a href="../IdentifiedObject/">IdentifiedObject</a></td>
+<td>0..1 string</td>
+<td>The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.</td>
+<td>IdentifiedObject</td>
 </tr>
 <tr>
 <td>name</td>
 <td><a href="https://cim.ucaiug.io/ns#IdentifiedObject.name">cim:IdentifiedObject.name</a></td>
-<td>0..1 <br />  string</td>
-<td>The name is any free human readable and possibly non unique text naming the o...</td>
-<td><a href="../IdentifiedObject/">IdentifiedObject</a></td>
+<td>0..1 string</td>
+<td>The name is any free human readable and possibly non unique text naming the object.</td>
+<td>IdentifiedObject</td>
 </tr>
 </tbody>
 </table>
-<h2 id="usages">Usages</h2>
-<table>
-<thead>
-<tr>
-<th>used by</th>
-<th>used in</th>
-<th>type</th>
-<th>used</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><a href="../ACLineSegmentSpan/">ACLineSegmentSpan</a></td>
-<td>ACLineSegment</td>
-<td>range</td>
-<td><a href="./">ACLineSegment</a></td>
-</tr>
-</tbody>
-</table>
-<h2 id="comments">Comments</h2>
-<ul>
-<li>
-<ul>
-<li>Each ACLineSegment is required to have an association to a BaseVoltage. The association to Line is not required.- Using the EquipmentContainer association, an ACLineSegment can only be contained by a Line, but the association to Line is not required.</li>
-</ul>
-</li>
-</ul>
-<h2 id="identifier-and-mapping-information">Identifier and Mapping Information</h2>
 <h3 id="schema-source">Schema Source</h3>
 <ul>
-<li>from schema: https://ap-no.cim4.eu/AviationObstacle/1.0</li>
+<li>from schema: <a href="https://ap-no.cim4.eu/AviationObstacle/1.0">https://ap-no.cim4.eu/AviationObstacle/1.0</a></li>
 </ul>
-<h2 id="mappings">Mappings</h2>
-<table>
-<thead>
-<tr>
-<th>Mapping Type</th>
-<th>Mapped Value</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>self</td>
-<td>cim:ACLineSegment</td>
-</tr>
-<tr>
-<td>native</td>
-<td>this:ACLineSegment</td>
-</tr>
-</tbody>
-</table>
 
 
 

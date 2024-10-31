@@ -10,58 +10,58 @@ _Common class for rigid and flexible conductors.[IEC 826-14-06]: Conductive part
 ```mermaid
 classDiagram
     class ConductorInfo
-    click ConductorInfo href "../ConductorInfo"
+    click ConductorInfo href "/SubseaCableInfo/ConductorInfo/"
     style ConductorInfo fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         ConductorInfo <|-- WireInfo : inherits
-            click ConductorInfo href "../ConductorInfo"
+            click ConductorInfo href "/SubseaCableInfo/ConductorInfo/"
             style ConductorInfo rx:10,ry:10
 
         WireInfo
-            click WireInfo href "../WireInfo"
+            click WireInfo href "/SubseaCableInfo/WireInfo/"
             style WireInfo rx:10,ry:10
 
         ConductingAssetInfo <|-- ConductorInfo : inherits
-            click ConductingAssetInfo href "../ConductingAssetInfo"
+            click ConductingAssetInfo href "/SubseaCableInfo/ConductingAssetInfo/"
             style ConductingAssetInfo rx:10,ry:10
 
         AssetInfo <|-- ConductingAssetInfo : inherits
-            click AssetInfo href "../AssetInfo"
+            click AssetInfo href "/SubseaCableInfo/AssetInfo/"
             style AssetInfo rx:10,ry:10
 
         IdentifiedObject <|-- AssetInfo : inherits
-            click IdentifiedObject href "../IdentifiedObject"
+            click IdentifiedObject href "/SubseaCableInfo/IdentifiedObject/"
             style IdentifiedObject rx:10,ry:10
 
 
         AssetSpecification --> AssetInfo : AssetSpecification.AssetInfo
 
         AssetSpecification
-            click AssetSpecification href "../AssetSpecification"
+            click AssetSpecification href "/SubseaCableInfo/AssetSpecification/"
             style AssetSpecification fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         PerLengthConductorParameter --> ConductorInfo : PerLengthConductorParameter.ConductorInfo
 
         PerLengthConductorParameter
-            click PerLengthConductorParameter href "../PerLengthConductorParameter"
+            click PerLengthConductorParameter href "/SubseaCableInfo/PerLengthConductorParameter/"
             style PerLengthConductorParameter fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         ProductAssetModel --> AssetInfo : ProductAssetModel.AssetInfo
 
         ProductAssetModel
-            click ProductAssetModel href "../ProductAssetModel"
+            click ProductAssetModel href "/SubseaCableInfo/ProductAssetModel/"
             style ProductAssetModel fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         ResistancePerLengthTemperaturePoint --> ConductorInfo : ResistancePerLengthTemperaturePoint.ConductorInfo
 
         ResistancePerLengthTemperaturePoint
-            click ResistancePerLengthTemperaturePoint href "../ResistancePerLengthTemperaturePoint"
+            click ResistancePerLengthTemperaturePoint href "/SubseaCableInfo/ResistancePerLengthTemperaturePoint/"
             style ResistancePerLengthTemperaturePoint fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         ConductorInfo --> WireMaterialKind : ConductorInfo.material
 
         WireMaterialKind
-            click WireMaterialKind href "../WireMaterialKind"
+            click WireMaterialKind href "/SubseaCableInfo/WireMaterialKind/"
             style WireMaterialKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         ConductorInfo : ConductorInfo.crossSection
