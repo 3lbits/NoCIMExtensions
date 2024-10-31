@@ -8,29 +8,29 @@ _Sequence impedance and admittance parameters per unit length, for transposed li
 ```mermaid
 classDiagram
     class PerLengthSequenceImpedance
-    click PerLengthSequenceImpedance href "../PerLengthSequenceImpedance"
+    click PerLengthSequenceImpedance href "/SubseaCableInfo/PerLengthSequenceImpedance/"
     style PerLengthSequenceImpedance fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         PerLengthImpedance <|-- PerLengthSequenceImpedance : inherits
-            click PerLengthImpedance href "../PerLengthImpedance"
+            click PerLengthImpedance href "/SubseaCableInfo/PerLengthImpedance/"
             style PerLengthImpedance rx:10,ry:10
 
         PerLengthSequenceImpedance
-            click PerLengthSequenceImpedance href "../PerLengthSequenceImpedance"
+            click PerLengthSequenceImpedance href "/SubseaCableInfo/PerLengthSequenceImpedance/"
             style PerLengthSequenceImpedance rx:10,ry:10
 
         PerLengthConductorParameter <|-- PerLengthImpedance : inherits
-            click PerLengthConductorParameter href "../PerLengthConductorParameter"
+            click PerLengthConductorParameter href "/SubseaCableInfo/PerLengthConductorParameter/"
             style PerLengthConductorParameter rx:10,ry:10
 
         IdentifiedObject <|-- PerLengthConductorParameter : inherits
-            click IdentifiedObject href "../IdentifiedObject"
+            click IdentifiedObject href "/SubseaCableInfo/IdentifiedObject/"
             style IdentifiedObject rx:10,ry:10
 
         PerLengthConductorParameter --> ConductorInfo : PerLengthConductorParameter.ConductorInfo
 
         ConductorInfo
-            click ConductorInfo href "../ConductorInfo"
+            click ConductorInfo href "/SubseaCableInfo/ConductorInfo/"
             style ConductorInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

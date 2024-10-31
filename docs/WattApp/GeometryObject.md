@@ -8,14 +8,14 @@ _An object that represents a jsonld compound to support value, type and language
 ```mermaid
 classDiagram
     class GeometryObject
-    click GeometryObject href "../GeometryObject"
+    click GeometryObject href "/WattApp/GeometryObject/"
     style GeometryObject fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 
         Geometry --> GeometryObject : Geometry.asGeoJSON
 
         Geometry
-            click Geometry href "../Geometry"
+            click Geometry href "/WattApp/Geometry/"
             style Geometry fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

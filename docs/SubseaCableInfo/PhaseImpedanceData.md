@@ -8,13 +8,13 @@ _Impedance and conductance matrix element values.The diagonal elements are descr
 ```mermaid
 classDiagram
     class PhaseImpedanceData
-    click PhaseImpedanceData href "../PhaseImpedanceData"
+    click PhaseImpedanceData href "/SubseaCableInfo/PhaseImpedanceData/"
     style PhaseImpedanceData fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         PhaseImpedanceData --> PerLengthPhaseImpedance : PhaseImpedanceData.PhaseImpedance
 
         PerLengthPhaseImpedance
-            click PerLengthPhaseImpedance href "../PerLengthPhaseImpedance"
+            click PerLengthPhaseImpedance href "/SubseaCableInfo/PerLengthPhaseImpedance/"
             style PerLengthPhaseImpedance fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

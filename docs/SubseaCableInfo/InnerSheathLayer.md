@@ -8,32 +8,32 @@ _<b>Non-metallic</b> covering which surrounds the assembly of the cores (and fil
 ```mermaid
 classDiagram
     class InnerSheathLayer
-    click InnerSheathLayer href "../InnerSheathLayer"
+    click InnerSheathLayer href "/SubseaCableInfo/InnerSheathLayer/"
     style InnerSheathLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         NonMetallicSheathLayer <|-- InnerSheathLayer : inherits
-            click NonMetallicSheathLayer href "../NonMetallicSheathLayer"
+            click NonMetallicSheathLayer href "/SubseaCableInfo/NonMetallicSheathLayer/"
             style NonMetallicSheathLayer rx:10,ry:10
 
         InnerSheathLayer
-            click InnerSheathLayer href "../InnerSheathLayer"
+            click InnerSheathLayer href "/SubseaCableInfo/InnerSheathLayer/"
             style InnerSheathLayer rx:10,ry:10
 
         CableLayer <|-- NonMetallicSheathLayer : inherits
-            click CableLayer href "../CableLayer"
+            click CableLayer href "/SubseaCableInfo/CableLayer/"
             style CableLayer rx:10,ry:10
 
 
         CableInfo --> CableLayer : CableInfo.Layer
 
         CableInfo
-            click CableInfo href "../CableInfo"
+            click CableInfo href "/SubseaCableInfo/CableInfo/"
             style CableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         MultiCoreCableInfo --> CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
-            click MultiCoreCableInfo href "../MultiCoreCableInfo"
+            click MultiCoreCableInfo href "/SubseaCableInfo/MultiCoreCableInfo/"
             style MultiCoreCableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

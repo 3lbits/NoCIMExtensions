@@ -10,36 +10,36 @@ _Generic information for conducting asset_
 ```mermaid
 classDiagram
     class ConductingAssetInfo
-    click ConductingAssetInfo href "../ConductingAssetInfo"
+    click ConductingAssetInfo href "/SubseaCableInfo/ConductingAssetInfo/"
     style ConductingAssetInfo fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         ConductingAssetInfo <|-- ConductorInfo : inherits
-            click ConductingAssetInfo href "../ConductingAssetInfo"
+            click ConductingAssetInfo href "/SubseaCableInfo/ConductingAssetInfo/"
             style ConductingAssetInfo rx:10,ry:10
 
         ConductorInfo
-            click ConductorInfo href "../ConductorInfo"
+            click ConductorInfo href "/SubseaCableInfo/ConductorInfo/"
             style ConductorInfo rx:10,ry:10
 
         AssetInfo <|-- ConductingAssetInfo : inherits
-            click AssetInfo href "../AssetInfo"
+            click AssetInfo href "/SubseaCableInfo/AssetInfo/"
             style AssetInfo rx:10,ry:10
 
         IdentifiedObject <|-- AssetInfo : inherits
-            click IdentifiedObject href "../IdentifiedObject"
+            click IdentifiedObject href "/SubseaCableInfo/IdentifiedObject/"
             style IdentifiedObject rx:10,ry:10
 
 
         AssetSpecification --> AssetInfo : AssetSpecification.AssetInfo
 
         AssetSpecification
-            click AssetSpecification href "../AssetSpecification"
+            click AssetSpecification href "/SubseaCableInfo/AssetSpecification/"
             style AssetSpecification fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         ProductAssetModel --> AssetInfo : ProductAssetModel.AssetInfo
 
         ProductAssetModel
-            click ProductAssetModel href "../ProductAssetModel"
+            click ProductAssetModel href "/SubseaCableInfo/ProductAssetModel/"
             style ProductAssetModel fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

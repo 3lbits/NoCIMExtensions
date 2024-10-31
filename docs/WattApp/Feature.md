@@ -8,25 +8,25 @@ _Defines a system base voltage which is referenced._
 ```mermaid
 classDiagram
     class Feature
-    click Feature href "../Feature"
+    click Feature href "/WattApp/Feature/"
     style Feature fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         SpatialObject <|-- Feature : inherits
-            click SpatialObject href "../SpatialObject"
+            click SpatialObject href "/WattApp/SpatialObject/"
             style SpatialObject rx:10,ry:10
 
         Feature
-            click Feature href "../Feature"
+            click Feature href "/WattApp/Feature/"
             style Feature rx:10,ry:10
 
         PowerSystemResource --|> Feature : inherits
-            click PowerSystemResource href "../PowerSystemResource"
+            click PowerSystemResource href "/WattApp/PowerSystemResource/"
             style PowerSystemResource fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         Feature --> Geometry : Feature.hasGeometry
 
         Geometry
-            click Geometry href "../Geometry"
+            click Geometry href "/WattApp/Geometry/"
             style Geometry fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

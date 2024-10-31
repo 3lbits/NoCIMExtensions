@@ -10,15 +10,15 @@ _This is a root class to provide common identification for all classes needing i
 ```mermaid
 classDiagram
     class IdentifiedObject
-    click IdentifiedObject href "../IdentifiedObject"
+    click IdentifiedObject href "/SubseaCableInfo/IdentifiedObject/"
     style IdentifiedObject fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         IdentifiedObject <|-- AssetInfo : inherits
-            click IdentifiedObject href "../IdentifiedObject"
+            click IdentifiedObject href "/SubseaCableInfo/IdentifiedObject/"
             style IdentifiedObject rx:10,ry:10
 
         AssetInfo
-            click AssetInfo href "../AssetInfo"
+            click AssetInfo href "/SubseaCableInfo/AssetInfo/"
             style AssetInfo rx:10,ry:10
 
 

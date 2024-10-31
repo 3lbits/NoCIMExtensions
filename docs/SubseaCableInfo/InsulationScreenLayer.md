@@ -8,32 +8,32 @@ _A screen covering the insulation. Also called Insulation Shield._
 ```mermaid
 classDiagram
     class InsulationScreenLayer
-    click InsulationScreenLayer href "../InsulationScreenLayer"
+    click InsulationScreenLayer href "/SubseaCableInfo/InsulationScreenLayer/"
     style InsulationScreenLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         ScreenLayer <|-- InsulationScreenLayer : inherits
-            click ScreenLayer href "../ScreenLayer"
+            click ScreenLayer href "/SubseaCableInfo/ScreenLayer/"
             style ScreenLayer rx:10,ry:10
 
         InsulationScreenLayer
-            click InsulationScreenLayer href "../InsulationScreenLayer"
+            click InsulationScreenLayer href "/SubseaCableInfo/InsulationScreenLayer/"
             style InsulationScreenLayer rx:10,ry:10
 
         CableLayer <|-- ScreenLayer : inherits
-            click CableLayer href "../CableLayer"
+            click CableLayer href "/SubseaCableInfo/CableLayer/"
             style CableLayer rx:10,ry:10
 
 
         CableInfo --> CableLayer : CableInfo.Layer
 
         CableInfo
-            click CableInfo href "../CableInfo"
+            click CableInfo href "/SubseaCableInfo/CableInfo/"
             style CableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         MultiCoreCableInfo --> CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
-            click MultiCoreCableInfo href "../MultiCoreCableInfo"
+            click MultiCoreCableInfo href "/SubseaCableInfo/MultiCoreCableInfo/"
             style MultiCoreCableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

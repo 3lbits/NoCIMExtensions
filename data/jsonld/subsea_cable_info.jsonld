@@ -13,10 +13,10 @@
         "eu": "http://iec.ch/TC57/CIM100-European#",
         "cim": "http://iec.ch/TC57/CIM-generic#"
     },
-    "@id": "urn:uuid:4a0bbc81-e571-4927-a4bc-7a5b0526bfd3",
+    "@id": "urn:uuid:f4049cec-e881-4e8e-a55b-529502a8a599",
     "@type": "dcat:Dataset",
     "prov:generatedAtTime": {
-        "@value": "2024-10-23T13:16:26Z",
+        "@value": "2024-10-31T17:38:33Z",
         "@type": "xsd:date"
     },
     "dcterms:title": "Telemark-120_SCI",
@@ -32,7 +32,7 @@
     "dcterms:temporal": {
         "@type": "dcterms:PeriodOfTime",
         "dcat:startDate": {
-            "@value": "2024-10-23T13:16:26Z",
+            "@value": "2024-10-31T17:38:33Z",
             "@type": "xsd:dateTime"
         }
     },
@@ -60,7 +60,7 @@
         {
             "@id": "urn:uuid:ada98491-2265-4712-8c9c-1cebf5d399b1",
             "@type": "cim:MultiCoreCableInfo",
-            "cim:CableLayer.mRID": "ada98491-2265-4712-8c9c-1cebf5d399b1",
+            "cim:IdentifiedObject.mRID": "ada98491-2265-4712-8c9c-1cebf5d399b1",
             "cim:IdentifiedObject.description": "",
             "cim:IdentifiedObject.name": "",
             "cim:ConductingAssetInfo.ratedCurrent": 400.0,

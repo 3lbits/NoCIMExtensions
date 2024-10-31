@@ -8,38 +8,38 @@ _Metallic Wires or Braid sheath._
 ```mermaid
 classDiagram
     class WireBraidInfo
-    click WireBraidInfo href "../WireBraidInfo"
+    click WireBraidInfo href "/SubseaCableInfo/WireBraidInfo/"
     style WireBraidInfo fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         MetallicSheathLayer <|-- WireBraidInfo : inherits
-            click MetallicSheathLayer href "../MetallicSheathLayer"
+            click MetallicSheathLayer href "/SubseaCableInfo/MetallicSheathLayer/"
             style MetallicSheathLayer rx:10,ry:10
 
         WireBraidInfo
-            click WireBraidInfo href "../WireBraidInfo"
+            click WireBraidInfo href "/SubseaCableInfo/WireBraidInfo/"
             style WireBraidInfo rx:10,ry:10
 
         CableLayer <|-- MetallicSheathLayer : inherits
-            click CableLayer href "../CableLayer"
+            click CableLayer href "/SubseaCableInfo/CableLayer/"
             style CableLayer rx:10,ry:10
 
 
         CableInfo --> CableLayer : CableInfo.Layer
 
         CableInfo
-            click CableInfo href "../CableInfo"
+            click CableInfo href "/SubseaCableInfo/CableInfo/"
             style CableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         MultiCoreCableInfo --> CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
-            click MultiCoreCableInfo href "../MultiCoreCableInfo"
+            click MultiCoreCableInfo href "/SubseaCableInfo/MultiCoreCableInfo/"
             style MultiCoreCableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         MetallicSheathLayer --> CableShieldMaterialKind : MetallicSheathLayer.material
 
         CableShieldMaterialKind
-            click CableShieldMaterialKind href "../CableShieldMaterialKind"
+            click CableShieldMaterialKind href "/SubseaCableInfo/CableShieldMaterialKind/"
             style CableShieldMaterialKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         MetallicSheathLayer : MetallicSheathLayer.isArmor

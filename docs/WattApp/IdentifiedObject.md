@@ -10,19 +10,19 @@ _This is a root class to provide common identification for all classes needing i
 ```mermaid
 classDiagram
     class IdentifiedObject
-    click IdentifiedObject href "../IdentifiedObject"
+    click IdentifiedObject href "/WattApp/IdentifiedObject/"
     style IdentifiedObject fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "../IdentifiedObject"
+            click IdentifiedObject href "/WattApp/IdentifiedObject/"
             style IdentifiedObject rx:10,ry:10
 
         PowerSystemResource
-            click PowerSystemResource href "../PowerSystemResource"
+            click PowerSystemResource href "/WattApp/PowerSystemResource/"
             style PowerSystemResource rx:10,ry:10
 
         Feature <|-- PowerSystemResource : inherits
-            click Feature href "../Feature"
+            click Feature href "/WattApp/Feature/"
             style Feature fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

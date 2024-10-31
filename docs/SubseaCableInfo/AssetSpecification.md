@@ -8,21 +8,21 @@ _Specification can be used for various purposes relative to an asset, a logical 
 ```mermaid
 classDiagram
     class AssetSpecification
-    click AssetSpecification href "../AssetSpecification"
+    click AssetSpecification href "/SubseaCableInfo/AssetSpecification/"
     style AssetSpecification fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         IdentifiedObject <|-- AssetSpecification : inherits
-            click IdentifiedObject href "../IdentifiedObject"
+            click IdentifiedObject href "/SubseaCableInfo/IdentifiedObject/"
             style IdentifiedObject rx:10,ry:10
 
         AssetSpecification
-            click AssetSpecification href "../AssetSpecification"
+            click AssetSpecification href "/SubseaCableInfo/AssetSpecification/"
             style AssetSpecification rx:10,ry:10
 
         AssetSpecification --> AssetInfo : AssetSpecification.AssetInfo
 
         AssetInfo
-            click AssetInfo href "../AssetInfo"
+            click AssetInfo href "/SubseaCableInfo/AssetInfo/"
             style AssetInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

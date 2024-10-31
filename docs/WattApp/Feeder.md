@@ -8,38 +8,38 @@ _A collection of equipment for organizational purposes, used for grouping distri
 ```mermaid
 classDiagram
     class Feeder
-    click Feeder href "../Feeder"
+    click Feeder href "/WattApp/Feeder/"
     style Feeder fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         EquipmentContainer <|-- Feeder : inherits
-            click EquipmentContainer href "../EquipmentContainer"
+            click EquipmentContainer href "/WattApp/EquipmentContainer/"
             style EquipmentContainer rx:10,ry:10
 
         Feeder
-            click Feeder href "../Feeder"
+            click Feeder href "/WattApp/Feeder/"
             style Feeder rx:10,ry:10
 
         ConnectivityNodeContainer <|-- EquipmentContainer : inherits
-            click ConnectivityNodeContainer href "../ConnectivityNodeContainer"
+            click ConnectivityNodeContainer href "/WattApp/ConnectivityNodeContainer/"
             style ConnectivityNodeContainer rx:10,ry:10
 
         PowerSystemResource <|-- ConnectivityNodeContainer : inherits
-            click PowerSystemResource href "../PowerSystemResource"
+            click PowerSystemResource href "/WattApp/PowerSystemResource/"
             style PowerSystemResource rx:10,ry:10
 
         IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "../IdentifiedObject"
+            click IdentifiedObject href "/WattApp/IdentifiedObject/"
             style IdentifiedObject rx:10,ry:10
 
         Feature <|-- PowerSystemResource : inherits
-            click Feature href "../Feature"
+            click Feature href "/WattApp/Feature/"
             style Feature fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 
         CapacitySchedule --> Feeder : CapacitySchedule.Feeder
 
         CapacitySchedule
-            click CapacitySchedule href "../CapacitySchedule"
+            click CapacitySchedule href "/WattApp/CapacitySchedule/"
             style CapacitySchedule fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

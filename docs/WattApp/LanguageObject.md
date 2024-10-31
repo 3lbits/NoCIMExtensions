@@ -8,7 +8,7 @@ _An object that represents a jsonld compound to support value, type and language
 ```mermaid
 classDiagram
     class LanguageObject
-    click LanguageObject href "../LanguageObject"
+    click LanguageObject href "/WattApp/LanguageObject/"
     style LanguageObject fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

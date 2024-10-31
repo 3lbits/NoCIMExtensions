@@ -8,32 +8,32 @@ _Layer applied with the sole purpose of binding different layers/cores of cable 
 ```mermaid
 classDiagram
     class BindingLayer
-    click BindingLayer href "../BindingLayer"
+    click BindingLayer href "/SubseaCableInfo/BindingLayer/"
     style BindingLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         NonMetallicSheathLayer <|-- BindingLayer : inherits
-            click NonMetallicSheathLayer href "../NonMetallicSheathLayer"
+            click NonMetallicSheathLayer href "/SubseaCableInfo/NonMetallicSheathLayer/"
             style NonMetallicSheathLayer rx:10,ry:10
 
         BindingLayer
-            click BindingLayer href "../BindingLayer"
+            click BindingLayer href "/SubseaCableInfo/BindingLayer/"
             style BindingLayer rx:10,ry:10
 
         CableLayer <|-- NonMetallicSheathLayer : inherits
-            click CableLayer href "../CableLayer"
+            click CableLayer href "/SubseaCableInfo/CableLayer/"
             style CableLayer rx:10,ry:10
 
 
         CableInfo --> CableLayer : CableInfo.Layer
 
         CableInfo
-            click CableInfo href "../CableInfo"
+            click CableInfo href "/SubseaCableInfo/CableInfo/"
             style CableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         MultiCoreCableInfo --> CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
-            click MultiCoreCableInfo href "../MultiCoreCableInfo"
+            click MultiCoreCableInfo href "/SubseaCableInfo/MultiCoreCableInfo/"
             style MultiCoreCableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 

@@ -8,46 +8,46 @@ __
 ```mermaid
 classDiagram
     class CapacitySchedule
-    click CapacitySchedule href "../CapacitySchedule"
+    click CapacitySchedule href "/WattApp/CapacitySchedule/"
     style CapacitySchedule fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         BaseIrregularTimeSeries <|-- CapacitySchedule : inherits
-            click BaseIrregularTimeSeries href "../BaseIrregularTimeSeries"
+            click BaseIrregularTimeSeries href "/WattApp/BaseIrregularTimeSeries/"
             style BaseIrregularTimeSeries rx:10,ry:10
 
         CapacitySchedule
-            click CapacitySchedule href "../CapacitySchedule"
+            click CapacitySchedule href "/WattApp/CapacitySchedule/"
             style CapacitySchedule rx:10,ry:10
 
         BaseTimeSeries <|-- BaseIrregularTimeSeries : inherits
-            click BaseTimeSeries href "../BaseTimeSeries"
+            click BaseTimeSeries href "/WattApp/BaseTimeSeries/"
             style BaseTimeSeries rx:10,ry:10
 
         IdentifiedObject <|-- BaseTimeSeries : inherits
-            click IdentifiedObject href "../IdentifiedObject"
+            click IdentifiedObject href "/WattApp/IdentifiedObject/"
             style IdentifiedObject rx:10,ry:10
 
         CapacitySchedule --> Feeder : CapacitySchedule.Feeder
 
         Feeder
-            click Feeder href "../Feeder"
+            click Feeder href "/WattApp/Feeder/"
             style Feeder fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         CapacityTimePoint --> CapacitySchedule : CapacityTimePoint.CapacitySchedule
 
         CapacityTimePoint
-            click CapacityTimePoint href "../CapacityTimePoint"
+            click CapacityTimePoint href "/WattApp/CapacityTimePoint/"
             style CapacityTimePoint fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         BaseTimeSeries --> TimeSeriesInterpolationKind : BaseTimeSeries.interpolationKind
 
         TimeSeriesInterpolationKind
-            click TimeSeriesInterpolationKind href "../TimeSeriesInterpolationKind"
+            click TimeSeriesInterpolationKind href "/WattApp/TimeSeriesInterpolationKind/"
             style TimeSeriesInterpolationKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
         BaseTimeSeries --> BaseTimeSeriesKind : BaseTimeSeries.timeSeriesKind
 
         BaseTimeSeriesKind
-            click BaseTimeSeriesKind href "../BaseTimeSeriesKind"
+            click BaseTimeSeriesKind href "/WattApp/BaseTimeSeriesKind/"
             style BaseTimeSeriesKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         CapacitySchedule : CapacitySchedule.Feeder

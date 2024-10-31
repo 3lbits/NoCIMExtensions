@@ -314,14 +314,14 @@ class CreateMermaid():
 
                 inheritanceString += f'''
         {value} <|-- {key} : inherits
-            click {value} href "../{value}"
+            click {value} href "/{docName}/{value}/"
             style {value} rx:10,ry:10
 '''
                 
                 if key not in subClassList: # Adding SubClass to the inheritance list
                     inheritanceString += f'''
         {key}
-            click {key} href "../{key}"
+            click {key} href "/{docName}/{key}/"
             style {key} rx:10,ry:10
 '''
         mixinList = CreateMermaid().createMermaidMixinsString(inheritanceList)
@@ -332,7 +332,7 @@ class CreateMermaid():
                     for value in mixin[key]:
                         inheritanceString += f'''
         {value} <|-- {key} : inherits
-            click {value} href "../{value}"
+            click {value} href "/{docName}/{value}/"
             style {value} fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
 '''
         
@@ -345,7 +345,7 @@ class CreateMermaid():
                     subClass = key
                     inheritanceString += f'''
         {subClass} --|> {thisClass} : inherits
-            click {subClass} href "../{subClass}"
+            click {subClass} href "/{docName}/{subClass}/"
             style {subClass} fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
 '''
 
@@ -373,7 +373,7 @@ class CreateMermaid():
                     relationshipString += f"""        {_class} --> {_range} : {_class}.{attribute}
 
         {_range}
-            click {_range} href "../{_range}"
+            click {_range} href "/{docName}/{_range}/"
             style {_range} fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 """
         # Range to class
@@ -398,7 +398,7 @@ class CreateMermaid():
         {_class} --> {_range} : {_class}.{attribute}
 
         {_class}
-            click {_class} href "../{_class}"
+            click {_class} href "/{docName}/{_class}/"
             style {_class} fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 """
 
@@ -432,7 +432,7 @@ class CreateMermaid():
                     enumString += f'''        {_class} --> {_range} : {_class}.{attribute}
 
         {_range}
-            click {_range} href "../{_range}"
+            click {_range} href "/{docName}/{_range}/"
             style {_range} fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
 '''
         return enumString
@@ -474,7 +474,7 @@ class CreateMermaid():
 ```mermaid
 classDiagram
     class {globalClass}
-    click {globalClass} href "../{globalClass}"
+    click {globalClass} href "/{docName}/{globalClass}/"
     style {globalClass} fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 {inheritanceString}
 {relationshipString}
@@ -646,6 +646,8 @@ class CreateMdController():
     def main(self, schemaName):
 
         yamlSchemaPath = f"schemas/yaml/{schemaName}.linkml.yaml"
+        
+        global docName
         docName = ''.join(word.capitalize() for word in schemaName.split('_'))
 
         global docFilePath

@@ -8,40 +8,40 @@ __
 ```mermaid
 classDiagram
     class CapacityTimePoint
-    click CapacityTimePoint href "../CapacityTimePoint"
+    click CapacityTimePoint href "/WattApp/CapacityTimePoint/"
     style CapacityTimePoint fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         BaseIrregularTimeSeries <|-- CapacityTimePoint : inherits
-            click BaseIrregularTimeSeries href "../BaseIrregularTimeSeries"
+            click BaseIrregularTimeSeries href "/WattApp/BaseIrregularTimeSeries/"
             style BaseIrregularTimeSeries rx:10,ry:10
 
         CapacityTimePoint
-            click CapacityTimePoint href "../CapacityTimePoint"
+            click CapacityTimePoint href "/WattApp/CapacityTimePoint/"
             style CapacityTimePoint rx:10,ry:10
 
         BaseTimeSeries <|-- BaseIrregularTimeSeries : inherits
-            click BaseTimeSeries href "../BaseTimeSeries"
+            click BaseTimeSeries href "/WattApp/BaseTimeSeries/"
             style BaseTimeSeries rx:10,ry:10
 
         IdentifiedObject <|-- BaseTimeSeries : inherits
-            click IdentifiedObject href "../IdentifiedObject"
+            click IdentifiedObject href "/WattApp/IdentifiedObject/"
             style IdentifiedObject rx:10,ry:10
 
         CapacityTimePoint --> CapacitySchedule : CapacityTimePoint.CapacitySchedule
 
         CapacitySchedule
-            click CapacitySchedule href "../CapacitySchedule"
+            click CapacitySchedule href "/WattApp/CapacitySchedule/"
             style CapacitySchedule fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         BaseTimeSeries --> TimeSeriesInterpolationKind : BaseTimeSeries.interpolationKind
 
         TimeSeriesInterpolationKind
-            click TimeSeriesInterpolationKind href "../TimeSeriesInterpolationKind"
+            click TimeSeriesInterpolationKind href "/WattApp/TimeSeriesInterpolationKind/"
             style TimeSeriesInterpolationKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
         BaseTimeSeries --> BaseTimeSeriesKind : BaseTimeSeries.timeSeriesKind
 
         BaseTimeSeriesKind
-            click BaseTimeSeriesKind href "../BaseTimeSeriesKind"
+            click BaseTimeSeriesKind href "/WattApp/BaseTimeSeriesKind/"
             style BaseTimeSeriesKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         CapacityTimePoint : CapacityTimePoint.atTime
