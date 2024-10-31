@@ -1,0 +1,356 @@
+id: "https://ap-no.cim4.eu/WattApp/1.0"
+name: "WattApp"
+title: "Watt App Vocabulary"
+comments: "This profile represents the aviation obstacles of the power system and their hierarchical relationships."
+#  dcterms:
+#    title: "DIGIN10-30-WattApp-GL"
+#    description: "Geospartial GridCapacity MAS1"
+#    publisher: "ElBits AS"
+#    rights: "© 2024 Copyright"
+#    rightsHolder: "ElBits AS"
+#    license: "CC BY-NC-SA 4.0"
+#    accessRights: "PUBLIC"
+#    isVersionOf: "https://test.model4powersystem.eu/Telemark/"
+#    spatial: "https://energy.referencedata.eu/Test/Frame/WattApp"
+#    conformsTo:
+#      - "https://ap-no.cim4.eu/WattApp/1.0"
+#  dcat:
+#    keyword: "WattApp"
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  linkml: https://w3id.org/linkml/
+  cim: https://cim.ucaiug.io/ns#
+  this: https://ap-no.cim4.eu/WattApp/1.0#
+  dcterms: http://purl.org/dc/terms/
+  dcat: http://www.w3.org/ns/dcat#
+  prov: http://www.w3.org/ns/prov#
+  xsd: http://www.w3.org/2001/XMLSchema#
+  eu: https://cim.ucaiug.io/ns/eu#
+  nc-no: http://cim4.eu/ns/nc-no#
+  nc: https://cim4.eu/ns/nc#
+  geo: http://www.opengis.net/ont/geosparql#
+
+imports:
+- linkml:types
+default_curi_maps:
+- semweb_context
+default_range: string
+default_prefix: this
+
+classes:
+
+  IdentifiedObject:
+    description: "This is a root class to provide common identification for all classes needing identification and naming attributes."
+    comments: "The attribute IdentifiedObject.mRID is exchanged as rdf:ID."
+    abstract: true
+    class_uri: cim:IdentifiedObject
+    attributes: 
+      mRID:
+        description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
+        slot_uri: cim:IdentifiedObject.mRID
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      description:
+        description: "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."
+        slot_uri: cim:IdentifiedObject.description
+        any_of:
+          - range: LanguageObject
+          - range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      name:
+        description: "The name is any free human readable and possibly non unique text naming the object."
+        slot_uri: cim:IdentifiedObject.name
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  LanguageObject:
+    description: "An object that represents a jsonld compound to support value, type and language."
+    attributes:
+      value:
+        description: "A string representing the GeoJSON object, typically serialized as a string."
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      type:
+        description: "The type of the GeoJSON object, e.g., geo:geoJSONLiteral."
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  SpatialObject:
+    description: "A spatial object is a physical object that has a location in space. It may have a geometric representation to describe its shape and position."
+    class_uri: geo:SpatialObject
+    attributes:
+
+  Feature:
+    description: "Defines a system base voltage which is referenced."
+    is_a: SpatialObject
+    class_uri: geo:Feature
+    attributes: 
+      hasGeometry:
+        description: "Geometric representation of the spatial object."
+        slot_uri: geo:hasGeometry
+        range: Geometry
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  Geometry:
+    description: "Geometric representation details."
+    is_a: SpatialObject
+    class_uri: geo:Geometry
+    attributes:
+      asGeoJSON:
+        description: "Geometric representation of the spatial object in GeoJSON format."
+        slot_uri: geo:asGeoJSON
+        range: GeometryObject
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  GeometryObject:
+    description: "An object that represents a jsonld compound to support value, type and language."
+    attributes:
+      value:
+        description: "A string representing the GeoJSON object, typically serialized as a string."
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      type:
+        description: "The type of the GeoJSON object, e.g., geo:geoJSONLiteral."
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  PowerSystemResource:
+    description: "A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated."
+    is_a: IdentifiedObject
+    mixins:
+      - Feature
+    abstract: true
+    class_uri: cim:PowerSystemResource
+    attributes:
+
+  ConnectivityNodeContainer:
+    description: "A base class for all objects that may contain connectivity nodes or topological nodes."
+    is_a: PowerSystemResource
+    abstract: true
+    class_uri: cim:ConnectivityNodeContainer
+    attributes:
+
+  EquipmentContainer:
+    description: "A modelling construct to provide a root class for containing equipment."
+    is_a: ConnectivityNodeContainer
+    abstract: true
+    class_uri: cim:EquipmentContainer
+    attributes:
+
+  Feeder:
+    description: "A collection of equipment for organizational purposes, used for grouping distribution resources. The organization a feeder does not necessarily reflect connectivity or current operation state."
+    is_a: EquipmentContainer
+    class_uri: cim:Feeder
+    attributes:
+
+  BaseTimeSeries:
+    description: ""
+    is_a: IdentifiedObject
+    class_uri: cim:BaseTimeSeries
+    abstract: true
+    attributes:
+      interpolationKind:
+        description: ""
+        slot_uri: nc:BaseTimeSeries.interpolationKind
+        range: TimeSeriesInterpolationKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      timeSeriesKind:
+        description: ""
+        slot_uri: nc:BaseTimeSeries.timeSeriesKind
+        range: BaseTimeSeriesKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      generatedAtTime:
+        description: ""
+        slot_uri: nc:BaseTimeSeries.generatedAtTime
+        range: DateTime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      percentile:
+        description: ""
+        slot_uri: nc:BaseTimeSeries.percentile
+        range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      actionMethod:
+        description: ""
+        slot_uri: nc:BaseTimeSeries.actionMethod
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  BaseIrregularTimeSeries:
+    description: ""
+    is_a: BaseTimeSeries
+    class_uri: cim:BaseIrregularTimeSeries
+    abstract: true
+    attributes:
+
+  CapacitySchedule:
+    description: ""
+    is_a: BaseIrregularTimeSeries
+    class_uri: nc:CapacitySchedule
+    attributes:
+      Feeder:
+        description: ""
+        slot_uri: nc-no:CapacitySchedule.Feeder
+        range: Feeder
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  CapacityTimePoint:
+    description: ""
+    is_a: BaseIrregularTimeSeries
+    class_uri: nc:CapacityTimePoint
+    attributes:
+      atTime:
+        description: ""
+        slot_uri: nc:CapacityTimePoint.atTime
+        range: DateTime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      maxP:
+        description: ""
+        slot_uri: nc:CapacityTimePoint.maxP
+        range: ActivePower
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      minP:
+        description: ""
+        slot_uri: nc:CapacityTimePoint.minP
+        range: ActivePower
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      maxQ:
+        description: ""
+        slot_uri: nc:CapacityTimePoint.maxQ
+        range: ReactivePower
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      minQ:
+        description: ""
+        slot_uri: nc:CapacityTimePoint.minQ
+        range: ReactivePower
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      maxAllocatedP:
+        description: ""
+        slot_uri: nc:CapacityTimePoint.maxAllocatedP
+        range: ActivePower
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      minAllocatedP:
+        description: ""
+        slot_uri: nc:CapacityTimePoint.minAllocatedP
+        range: ActivePower
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      maxAllocatedQ:
+        description: ""
+        slot_uri: nc:CapacityTimePoint.maxAllocatedQ
+        range: ReactivePower
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      minAllocatedQ:
+        description: ""
+        slot_uri: nc:CapacityTimePoint.minAllocatedQ
+        range: ReactivePower
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      CapacitySchedule:
+        description: ""
+        slot_uri: nc:CapacityTimePoint.CapacitySchedule
+        range: CapacitySchedule
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  Container:
+    tree_root: true
+    attributes:
+      Feeder:
+        multivalued: true
+        inlined_as_list: true
+        range: Feeder
+      CapacitySchedule:
+        multivalued: true
+        inlined_as_list: true
+        range: CapacitySchedule
+      CapacityTimePoint:
+        multivalued: true
+        inlined_as_list: true
+        range: CapacityTimePoint
+
+enums:
+
+  TimeSeriesInterpolationKind:
+    description: ""
+    enum_uri: http://entsoe.eu/ns/nc#TimeSeriesInterpolationKind
+    permissible_values:
+      none:
+        meaning:  nc:TimeSeriesInterpolationKind.none
+        description: ""
+      zero:
+        meaning:  nc:TimeSeriesInterpolationKind.zero
+        description: ""
+      previous:
+        meaning:  nc:TimeSeriesInterpolationKind.previous
+        description: ""
+      next:
+        meaning:  nc:TimeSeriesInterpolationKind.next
+        description: ""
+      linear:
+        meaning:  nc:TimeSeriesInterpolationKind.linear
+        description: ""
+
+  BaseTimeSeriesKind:
+    description: ""
+    enum_uri: http://entsoe.eu/ns/nc#BaseTimeSeriesKind
+    permissible_values:
+      forecast:
+        meaning:  nc:BaseTimeSeriesKind.forecast
+        description: ""
+      hindcast:
+        meaning:  nc:BaseTimeSeriesKind.hindcast
+        description: ""
+      schedule:
+        meaning:  nc:BaseTimeSeriesKind.schedule
+        description: ""
+      actual:
+        meaning:  nc:BaseTimeSeriesKind.actual
+        description: ""
+
+types:
+
+  DateTime:
+    uri: xsd:string
+    base: string
+    description: ""
+    annotations:
+      cim_data_type: true
+      uri: cim:DateTime
+  
+  ActivePower:
+    uri: xsd:float
+    base: float
+    description: ""
+    annotations:
+      cim_data_type: true
+      uri: cim:ActivePower
+
+  ReactivePower:
+    uri: xsd:float
+    base: float
+    description: ""
+    annotations:
+      cim_data_type: true
+      uri: cim:ReactivePower

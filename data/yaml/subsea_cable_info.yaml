@@ -1,0 +1,154 @@
+# CableInfo:
+#   - mRID: "638245d7-588a-4bd1-9e36-ecd42bfd4cee"
+#     description: ""
+#     name: ""
+#     ratedCurrent:
+#     ratedFrequency:
+#     ratedVoltage:
+#     crossSection:
+#     ConductorPerLengthResistance:
+#     radius:
+#     coreRadius:
+#     nominalTemperature:
+#     Layer:
+
+MultiCoreCableInfo:
+  - mRID: "ada98491-2265-4712-8c9c-1cebf5d399b1"
+    description: ""
+    name: ""
+    ratedCurrent: 400.0 # ampere
+    ratedFrequency: 60.0 # hertz
+    ratedVoltage: 220000 # volt
+    crossSection: 0.000035 # meter^2
+    material: copper
+    radius: 0.09 # meter
+    coreRadius: 0.035 # meter
+    nominalTemperature: 90.0 # degree Celsius
+    lossFactorSheathScreen: 0.3
+    lossFactorArmour: 0
+    Layer:
+      - mRID: "ba294795-4f65-4b7a-b764-d3ffaaef5aec"
+      - mRID: "872f511c-bd94-40dc-8c9d-df9fdd13eff4"
+      - mRID: "f4814690-1802-4c96-b019-2d9f88f1fddf"
+      - mRID: "08348942-e5e9-4a29-b681-df0738030021"
+      - mRID: "c0214f91-9bdf-4dbc-8882-250f13518081"
+      - mRID: "d20a1c73-bffb-4e76-82d4-9f2744c895ca"
+      - mRID: "e14b2307-163f-4e17-baaa-835e4c115b32"
+    layLength: 4 # meter
+    BeltedLayer:
+      - mRID: "3cb14161-e007-4ff7-b43b-55b750dcefd8"
+      - mRID: "5ba85a4a-c54e-4f2f-98a0-5bd28ebad8ec"
+      - mRID: "54d5b6e9-7234-482a-9a24-437000ee7030"
+      - mRID: "ef67bcde-5426-4bfa-af5c-d4604547b907"
+
+ResistancePerLengthTemperaturePoint:
+  - mRID: "c8555d03-c598-497f-86df-871ec13ae698"
+    isAC: True
+    resistance: 0.000041 # ohm/m
+    temperature: 20 # degree Celsius
+    ConductorInfo: 
+      mRID: "ada98491-2265-4712-8c9c-1cebf5d399b1"
+  - mRID: "65e7ba29-294a-4f19-8bbe-82398acdcfa3"
+    isAC: True
+    resistance: 0.000046 # ohm/m
+    temperature: 90 # degree Celsius
+    ConductorInfo: 
+      mRID: "ada98491-2265-4712-8c9c-1cebf5d399b1"
+  - mRID: "78d17cc6-7917-494a-a555-f9ebf60f15ac"
+    isAC: False
+    resistance: 0.0000176 # ohm/m
+    temperature: 20 # degree Celsius
+    ConductorInfo: 
+      mRID: "ada98491-2265-4712-8c9c-1cebf5d399b1"
+  - mRID: "6aa76b92-db7e-4c43-be4c-0fb93defbc06"
+    isAC: False
+    resistance: 0.000021 # ohm/m
+    temperature: 90 # degree Celsius
+    ConductorInfo: 
+      mRID: "ada98491-2265-4712-8c9c-1cebf5d399b1"
+
+ProductAssetModel:
+  - mRID: "a96fe01f-27ac-4a63-8c1b-7e028615cadd"
+    description: "3-Core Submarine Export Cable"
+    name: "SubmarineCable"
+    AssetInfo:
+      - mRID: "ada98491-2265-4712-8c9c-1cebf5d399b1"
+    Manufacturer:
+      - mRID: "fb7f4780-b59a-4d3d-b598-81d0bfab9b60"
+
+Manufacturer:
+  - mRID: "fb7f4780-b59a-4d3d-b598-81d0bfab9b60"
+    name: "SomeManufacturer"
+
+ConductorScreenLayer:
+  - mRID: "ba294795-4f65-4b7a-b764-d3ffaaef5aec"
+    diameterOverLayer: 0.0312 # meter
+    layerOrder: 1
+  - mRID: "872f511c-bd94-40dc-8c9d-df9fdd13eff4"
+    diameterOverLayer: 0.0332 # meter
+    layerOrder: 2
+
+InsulationLayer:
+  - mRID: "f4814690-1802-4c96-b019-2d9f88f1fddf"
+    diameterOverLayer: 0.0492 # meter
+    layerOrder: 3
+    insulationMaterial: crosslinkedPolyethylene
+
+InsulationScreenLayer:
+  - mRID: "08348942-e5e9-4a29-b681-df0738030021"
+    diameterOverLayer: 0.0510 # meter
+    layerOrder: 4
+
+SwellableWaterTapes:
+  - mRID: "c0214f91-9bdf-4dbc-8882-250f13518081"
+    diameterOverLayer: 0.0532 # meter
+    layerOrder: 5
+
+TubularTape:
+  - mRID: "d20a1c73-bffb-4e76-82d4-9f2744c895ca"
+    diameterOverLayer: 0.0532 # meter
+    layerOrder: 6
+
+NonMetallicSheathLayer:
+  - mRID: "e14b2307-163f-4e17-baaa-835e4c115b32"
+    diameterOverLayer: 0.0628 # meter
+    layerOrder: 7
+
+BindingLayer:
+  - mRID: "3cb14161-e007-4ff7-b43b-55b750dcefd8"
+    diameterOverLayer: 0.1357 # meter
+    layerOrder: 1
+
+InnerSheathLayer:
+  - mRID: "5ba85a4a-c54e-4f2f-98a0-5bd28ebad8ec"
+    diameterOverLayer: 0.1380 # meter
+    layerOrder: 2
+
+RoundWire:
+  - mRID: "54d5b6e9-7234-482a-9a24-437000ee7030"
+    diameterOverLayer: 0.1500 # meter
+    layerOrder: 3
+    isArmor: True
+    material: steel
+
+OverSheathLayer:
+  - mRID: "ef67bcde-5426-4bfa-af5c-d4604547b907"
+    diameterOverLayer: 0.245 # meter
+    layerOrder: 4
+
+
+# ProductAssetModel:
+#   - mRID: "3ddbdd06-d538-412b-88f1-b9e21f5c5463"
+#     description: ""
+#     name: ""
+#     AssetInfo: "638245d7-588a-4bd1-9e36-ecd42bfd4cee"
+
+# InsulationLayer:
+#   - diameterOverLayer:
+#     layerOrder:
+
+# MetallicSheathLayer:
+#   - diameterOverLayer:
+#     layerOrder:
+#     isArmor:
+#     LayerResistance: # MultiValued

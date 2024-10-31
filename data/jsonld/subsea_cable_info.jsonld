@@ -1,0 +1,269 @@
+{
+    "@context": {
+        "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+        "sh": "http://www.w3.org/ns/shacl#",
+        "skos": "http://www.w3.org/2004/02/skos/core#",
+        "dc": "http://purl.org/dc/elements/1.1/",
+        "profcim": "http://iec.ch/TC57/ns/CIM/prof-cim#",
+        "owl": "http://www.w3.org/2002/07/owl#",
+        "cims": "http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#",
+        "dct": "http://purl.org/dc/terms/",
+        "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+        "dcat": "http://www.w3.org/ns/dcat#",
+        "eu": "http://iec.ch/TC57/CIM100-European#",
+        "cim": "http://iec.ch/TC57/CIM-generic#"
+    },
+    "@id": "urn:uuid:4a0bbc81-e571-4927-a4bc-7a5b0526bfd3",
+    "@type": "dcat:Dataset",
+    "prov:generatedAtTime": {
+        "@value": "2024-10-23T13:16:26Z",
+        "@type": "xsd:date"
+    },
+    "dcterms:title": "Telemark-120_SCI",
+    "dcterms:description": [
+        {
+            "@value": "Telemark-120 Subsea Cable Info",
+            "@language": "en"
+        }
+    ],
+    "dcterms:publisher": {
+        "dcterms:title": "ElBits AS"
+    },
+    "dcterms:temporal": {
+        "@type": "dcterms:PeriodOfTime",
+        "dcat:startDate": {
+            "@value": "2024-10-23T13:16:26Z",
+            "@type": "xsd:dateTime"
+        }
+    },
+    "dcterms:rights": "© 2024 Copyright",
+    "dcterms:rightsHolder": "ElBits AS",
+    "dcterms:license": {
+        "dcterms:title": "CC BY-NC-SA 4.0"
+    },
+    "dcterms:accessRights": {
+        "dcterms:title": "PUBLIC"
+    },
+    "dcterms:isVersionOf": {
+        "@id": "https://test.model4powersystem.eu/Telemark/"
+    },
+    "dcat:keyword": "SCI",
+    "dcterms:spatial": {
+        "@id": "https://energy.referencedata.eu/Test/Frame/NO-Telemark-MV1"
+    },
+    "dcterms:conformsTo": [
+        {
+            "@id": "https://ap-no.cim4.eu/SubseaCableInfo/0.1"
+        }
+    ],
+    "@graph": [
+        {
+            "@id": "urn:uuid:ada98491-2265-4712-8c9c-1cebf5d399b1",
+            "@type": "cim:MultiCoreCableInfo",
+            "cim:CableLayer.mRID": "ada98491-2265-4712-8c9c-1cebf5d399b1",
+            "cim:IdentifiedObject.description": "",
+            "cim:IdentifiedObject.name": "",
+            "cim:ConductingAssetInfo.ratedCurrent": 400.0,
+            "cim:ConductingAssetInfo.ratedFrequency": 60.0,
+            "cim:ConductingAssetInfo.ratedVoltage": 220000,
+            "cim:ConductorInfo.crossSection": 3.5e-05,
+            "cim:ConductorInfo.material": {
+                "@id": "cim:WireMaterialKind.copper"
+            },
+            "cim:WireInfo.radius": 0.09,
+            "cim:WireInfo.coreRadius": 0.035,
+            "cim:CableInfo.nominalTemperature": 90.0,
+            "cim:CableInfo.lossFactorSheathScreen": 0.3,
+            "cim:CableInfo.lossFactorArmour": 0,
+            "cim:CableInfo.Layer": [
+                {
+                    "@id": "urn:uuid:ba294795-4f65-4b7a-b764-d3ffaaef5aec"
+                },
+                {
+                    "@id": "urn:uuid:872f511c-bd94-40dc-8c9d-df9fdd13eff4"
+                },
+                {
+                    "@id": "urn:uuid:f4814690-1802-4c96-b019-2d9f88f1fddf"
+                },
+                {
+                    "@id": "urn:uuid:08348942-e5e9-4a29-b681-df0738030021"
+                },
+                {
+                    "@id": "urn:uuid:c0214f91-9bdf-4dbc-8882-250f13518081"
+                },
+                {
+                    "@id": "urn:uuid:d20a1c73-bffb-4e76-82d4-9f2744c895ca"
+                },
+                {
+                    "@id": "urn:uuid:e14b2307-163f-4e17-baaa-835e4c115b32"
+                }
+            ],
+            "cim:MultiCoreCableInfo.layLength": 4,
+            "cim:MultiCoreCableInfo.BeltedLayer": [
+                {
+                    "@id": "urn:uuid:3cb14161-e007-4ff7-b43b-55b750dcefd8"
+                },
+                {
+                    "@id": "urn:uuid:5ba85a4a-c54e-4f2f-98a0-5bd28ebad8ec"
+                },
+                {
+                    "@id": "urn:uuid:54d5b6e9-7234-482a-9a24-437000ee7030"
+                },
+                {
+                    "@id": "urn:uuid:ef67bcde-5426-4bfa-af5c-d4604547b907"
+                }
+            ]
+        },
+        {
+            "@id": "urn:uuid:c8555d03-c598-497f-86df-871ec13ae698",
+            "@type": "cim:ResistancePerLengthTemperaturePoint",
+            "cim:ResistancePerLengthTemperaturePoint.mRID": "c8555d03-c598-497f-86df-871ec13ae698",
+            "cim:ResistancePerLengthTemperaturePoint.isAC": true,
+            "cim:ResistancePerLengthTemperaturePoint.resistance": 4.1e-05,
+            "cim:ResistancePerLengthTemperaturePoint.temperature": 20,
+            "cim:ResistancePerLengthTemperaturePoint.ConductorInfo": {
+                "@id": "urn:uuid:ada98491-2265-4712-8c9c-1cebf5d399b1"
+            }
+        },
+        {
+            "@id": "urn:uuid:65e7ba29-294a-4f19-8bbe-82398acdcfa3",
+            "@type": "cim:ResistancePerLengthTemperaturePoint",
+            "cim:ResistancePerLengthTemperaturePoint.mRID": "65e7ba29-294a-4f19-8bbe-82398acdcfa3",
+            "cim:ResistancePerLengthTemperaturePoint.isAC": true,
+            "cim:ResistancePerLengthTemperaturePoint.resistance": 4.6e-05,
+            "cim:ResistancePerLengthTemperaturePoint.temperature": 90,
+            "cim:ResistancePerLengthTemperaturePoint.ConductorInfo": {
+                "@id": "urn:uuid:ada98491-2265-4712-8c9c-1cebf5d399b1"
+            }
+        },
+        {
+            "@id": "urn:uuid:78d17cc6-7917-494a-a555-f9ebf60f15ac",
+            "@type": "cim:ResistancePerLengthTemperaturePoint",
+            "cim:ResistancePerLengthTemperaturePoint.mRID": "78d17cc6-7917-494a-a555-f9ebf60f15ac",
+            "cim:ResistancePerLengthTemperaturePoint.isAC": false,
+            "cim:ResistancePerLengthTemperaturePoint.resistance": 1.76e-05,
+            "cim:ResistancePerLengthTemperaturePoint.temperature": 20,
+            "cim:ResistancePerLengthTemperaturePoint.ConductorInfo": {
+                "@id": "urn:uuid:ada98491-2265-4712-8c9c-1cebf5d399b1"
+            }
+        },
+        {
+            "@id": "urn:uuid:6aa76b92-db7e-4c43-be4c-0fb93defbc06",
+            "@type": "cim:ResistancePerLengthTemperaturePoint",
+            "cim:ResistancePerLengthTemperaturePoint.mRID": "6aa76b92-db7e-4c43-be4c-0fb93defbc06",
+            "cim:ResistancePerLengthTemperaturePoint.isAC": false,
+            "cim:ResistancePerLengthTemperaturePoint.resistance": 2.1e-05,
+            "cim:ResistancePerLengthTemperaturePoint.temperature": 90,
+            "cim:ResistancePerLengthTemperaturePoint.ConductorInfo": {
+                "@id": "urn:uuid:ada98491-2265-4712-8c9c-1cebf5d399b1"
+            }
+        },
+        {
+            "@id": "urn:uuid:a96fe01f-27ac-4a63-8c1b-7e028615cadd",
+            "@type": "cim:ProductAssetModel",
+            "cim:IdentifiedObject.mRID": "a96fe01f-27ac-4a63-8c1b-7e028615cadd",
+            "cim:IdentifiedObject.description": "3-Core Submarine Export Cable",
+            "cim:IdentifiedObject.name": "SubmarineCable",
+            "cim:ProductAssetModel.AssetInfo": [
+                {
+                    "@id": "urn:uuid:ada98491-2265-4712-8c9c-1cebf5d399b1"
+                }
+            ],
+            "cim:ProductAssetModel.Manufacturer": [
+                {
+                    "@id": "urn:uuid:fb7f4780-b59a-4d3d-b598-81d0bfab9b60"
+                }
+            ]
+        },
+        {
+            "@id": "urn:uuid:fb7f4780-b59a-4d3d-b598-81d0bfab9b60",
+            "@type": "cim:Manufacturer",
+            "cim:IdentifiedObject.mRID": "fb7f4780-b59a-4d3d-b598-81d0bfab9b60",
+            "cim:IdentifiedObject.name": "SomeManufacturer"
+        },
+        {
+            "@id": "urn:uuid:ba294795-4f65-4b7a-b764-d3ffaaef5aec",
+            "@type": "cim:ConductorScreenLayer",
+            "cim:CableLayer.mRID": "ba294795-4f65-4b7a-b764-d3ffaaef5aec",
+            "cim:CableLayer.diameterOverLayer": 0.0312,
+            "cim:CableLayer.layerOrder": 1
+        },
+        {
+            "@id": "urn:uuid:872f511c-bd94-40dc-8c9d-df9fdd13eff4",
+            "@type": "cim:ConductorScreenLayer",
+            "cim:CableLayer.mRID": "872f511c-bd94-40dc-8c9d-df9fdd13eff4",
+            "cim:CableLayer.diameterOverLayer": 0.0332,
+            "cim:CableLayer.layerOrder": 2
+        },
+        {
+            "@id": "urn:uuid:f4814690-1802-4c96-b019-2d9f88f1fddf",
+            "@type": "cim:InsulationLayer",
+            "cim:CableLayer.mRID": "f4814690-1802-4c96-b019-2d9f88f1fddf",
+            "cim:CableLayer.diameterOverLayer": 0.0492,
+            "cim:CableLayer.layerOrder": 3,
+            "cim:InsulationLayer.insulationMaterial": {
+                "@id": "cim:WireInsulationKind.crosslinkedPolyethylene"
+            }
+        },
+        {
+            "@id": "urn:uuid:08348942-e5e9-4a29-b681-df0738030021",
+            "@type": "cim:InsulationScreenLayer",
+            "cim:CableLayer.mRID": "08348942-e5e9-4a29-b681-df0738030021",
+            "cim:CableLayer.diameterOverLayer": 0.051,
+            "cim:CableLayer.layerOrder": 4
+        },
+        {
+            "@id": "urn:uuid:c0214f91-9bdf-4dbc-8882-250f13518081",
+            "@type": "cim:SwellableWaterTapes",
+            "cim:CableLayer.mRID": "c0214f91-9bdf-4dbc-8882-250f13518081",
+            "cim:CableLayer.diameterOverLayer": 0.0532,
+            "cim:CableLayer.layerOrder": 5
+        },
+        {
+            "@id": "urn:uuid:d20a1c73-bffb-4e76-82d4-9f2744c895ca",
+            "@type": "cim:TubularTape",
+            "cim:CableLayer.mRID": "d20a1c73-bffb-4e76-82d4-9f2744c895ca",
+            "cim:CableLayer.diameterOverLayer": 0.0532,
+            "cim:CableLayer.layerOrder": 6
+        },
+        {
+            "@id": "urn:uuid:e14b2307-163f-4e17-baaa-835e4c115b32",
+            "@type": "cim:NonMetallicSheathLayer",
+            "cim:CableLayer.mRID": "e14b2307-163f-4e17-baaa-835e4c115b32",
+            "cim:CableLayer.diameterOverLayer": 0.0628,
+            "cim:CableLayer.layerOrder": 7
+        },
+        {
+            "@id": "urn:uuid:3cb14161-e007-4ff7-b43b-55b750dcefd8",
+            "@type": "cim:BindingLayer",
+            "cim:CableLayer.mRID": "3cb14161-e007-4ff7-b43b-55b750dcefd8",
+            "cim:CableLayer.diameterOverLayer": 0.1357,
+            "cim:CableLayer.layerOrder": 1
+        },
+        {
+            "@id": "urn:uuid:5ba85a4a-c54e-4f2f-98a0-5bd28ebad8ec",
+            "@type": "cim:InnerSheathLayer",
+            "cim:CableLayer.mRID": "5ba85a4a-c54e-4f2f-98a0-5bd28ebad8ec",
+            "cim:CableLayer.diameterOverLayer": 0.138,
+            "cim:CableLayer.layerOrder": 2
+        },
+        {
+            "@id": "urn:uuid:54d5b6e9-7234-482a-9a24-437000ee7030",
+            "@type": "cim:RoundWire",
+            "cim:CableLayer.mRID": "54d5b6e9-7234-482a-9a24-437000ee7030",
+            "cim:CableLayer.diameterOverLayer": 0.15,
+            "cim:CableLayer.layerOrder": 3,
+            "cim:MetallicSheathLayer.isArmor": true,
+            "cim:MetallicSheathLayer.material": {
+                "@id": "cim:CableShieldMaterialKind.steel"
+            }
+        },
+        {
+            "@id": "urn:uuid:ef67bcde-5426-4bfa-af5c-d4604547b907",
+            "@type": "cim:OverSheathLayer",
+            "cim:CableLayer.mRID": "ef67bcde-5426-4bfa-af5c-d4604547b907",
+            "cim:CableLayer.diameterOverLayer": 0.245,
+            "cim:CableLayer.layerOrder": 4
+        }
+    ]
+}

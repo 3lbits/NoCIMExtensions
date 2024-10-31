@@ -1,0 +1,535 @@
+{
+    "$defs": {
+        "ACLineSegment": {
+            "additionalProperties": false,
+            "description": "A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.For symmetrical, transposed three phase lines, it is sufficient to use attributes of the line segment, which describe impedances and admittances for the entire length of the segment.  Additionally impedances can be computed by using length and associated per length impedances.The BaseVoltage at the two ends of ACLineSegments in a Line shall have the same BaseVoltage.nominalVoltage. However, boundary lines may have slightly different BaseVoltage.nominalVoltages and variation is allowed. Larger voltage difference in general requires use of an equivalent branch.",
+            "properties": {
+                "ACLineSegmentSpan": {
+                    "description": "The associated AC Line Segment",
+                    "items": {
+                        "$ref": "#/$defs/ACLineSegmentSpan"
+                    },
+                    "minItems": 0,
+                    "type": "array"
+                },
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": "string"
+                },
+                "hasGeometry": {
+                    "$ref": "#/$defs/Geometry",
+                    "description": "Geometric representation of the spatial object."
+                },
+                "locationMethodKind": {
+                    "$ref": "#/$defs/LocationMethodKind",
+                    "description": "Possible methods to derive geographical location."
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name is any free human readable and possibly non unique text naming the object.",
+                    "type": "string"
+                }
+            },
+            "title": "ACLineSegment",
+            "type": "object"
+        },
+        "ACLineSegmentSpan": {
+            "additionalProperties": false,
+            "description": "The part of a segment line between two consecutive points of support.",
+            "properties": {
+                "ACLineSegment": {
+                    "description": "The associated AC Line Segment",
+                    "items": {
+                        "$ref": "#/$defs/ACLineSegment"
+                    },
+                    "minItems": 0,
+                    "type": "array"
+                },
+                "aviationObstacleLightingKind": {
+                    "$ref": "#/$defs/AviationObstacleLightingKind",
+                    "description": "The kind of aviation obstacle lighting associated with the ACLineSegmentSpan."
+                },
+                "aviationObstacleMarkingKind": {
+                    "$ref": "#/$defs/AviationObstacleMarkingKind",
+                    "description": "The kind of aviation obstacle marking associated with the ACLineSegmentSpan."
+                },
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": "string"
+                },
+                "hasGeometry": {
+                    "$ref": "#/$defs/Geometry",
+                    "description": "Geometric representation of the spatial object."
+                },
+                "locationMethodKind": {
+                    "$ref": "#/$defs/LocationMethodKind",
+                    "description": "Possible methods to derive geographical location."
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "maxHeight": {
+                    "description": "Max height of the AC Line Segment Span",
+                    "type": "number"
+                },
+                "maxWidth": {
+                    "description": "Max width of the AC Line Segment Span",
+                    "type": "number"
+                },
+                "name": {
+                    "description": "The name is any free human readable and possibly non unique text naming the object.",
+                    "type": "string"
+                },
+                "spanWireLength": {
+                    "description": "Length of the AC Line Segment Span",
+                    "type": "number"
+                }
+            },
+            "title": "ACLineSegmentSpan",
+            "type": "object"
+        },
+        "ACLineSegmentSpanDeployment": {
+            "additionalProperties": false,
+            "description": "Deployment of an ACLineSegmentSpan.",
+            "properties": {
+                "ACLineSegmentSpan": {
+                    "$ref": "#/$defs/ACLineSegmentSpan",
+                    "description": "The associated AC Line Segment Span."
+                },
+                "BaseVoltage": {
+                    "$ref": "#/$defs/BaseVoltage",
+                    "description": "The associated Base Voltage."
+                },
+                "deploymentState": {
+                    "$ref": "#/$defs/DeploymentStateKind",
+                    "description": "Current deployment state of asset."
+                },
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": "string"
+                },
+                "inServiceDate": {
+                    "description": "Date and time asset was most recently put in service.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "installedDate": {
+                    "description": "Date and time asset was most recently installed.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name is any free human readable and possibly non unique text naming the object.",
+                    "type": "string"
+                },
+                "notYetInstalledDate": {
+                    "description": "Date and time of asset deployment transition to not yet installed.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "notYetRemovedDate": {
+                    "description": "Date and time of asset deployment transition to not yet removed.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "outOfServiceDate": {
+                    "description": "Date and time asset was most recently taken out of service.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "removedDate": {
+                    "description": "Date and time asset was most recently removed.",
+                    "format": "date-time",
+                    "type": "string"
+                }
+            },
+            "title": "ACLineSegmentSpanDeployment",
+            "type": "object"
+        },
+        "AssetDeployment": {
+            "additionalProperties": false,
+            "description": "Deployment of asset deployment in a power system resource role.",
+            "properties": {
+                "BaseVoltage": {
+                    "$ref": "#/$defs/BaseVoltage",
+                    "description": "The associated Base Voltage."
+                },
+                "deploymentState": {
+                    "$ref": "#/$defs/DeploymentStateKind",
+                    "description": "Current deployment state of asset."
+                },
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": "string"
+                },
+                "inServiceDate": {
+                    "description": "Date and time asset was most recently put in service.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "installedDate": {
+                    "description": "Date and time asset was most recently installed.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name is any free human readable and possibly non unique text naming the object.",
+                    "type": "string"
+                },
+                "notYetInstalledDate": {
+                    "description": "Date and time of asset deployment transition to not yet installed.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "notYetRemovedDate": {
+                    "description": "Date and time of asset deployment transition to not yet removed.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "outOfServiceDate": {
+                    "description": "Date and time asset was most recently taken out of service.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "removedDate": {
+                    "description": "Date and time asset was most recently removed.",
+                    "format": "date-time",
+                    "type": "string"
+                }
+            },
+            "title": "AssetDeployment",
+            "type": "object"
+        },
+        "AviationObstacleLightingKind": {
+            "description": "The kind of aviation obstacle lighting.",
+            "enum": [
+                "lit",
+                "mediumIntensityTypeA",
+                "mediumIntensityTypeB",
+                "mediumIntensityTypeC",
+                "none",
+                "lowIntensityTypeA",
+                "lowIntensityTypeB",
+                "highIntensityTypeA",
+                "highIntensityTypeB"
+            ],
+            "title": "AviationObstacleLightingKind",
+            "type": "string"
+        },
+        "AviationObstacleMarkingKind": {
+            "description": "The kind of aviation obstacle marking.",
+            "enum": [
+                "colourMarking",
+                "marker",
+                "none"
+            ],
+            "title": "AviationObstacleMarkingKind",
+            "type": "string"
+        },
+        "BaseVoltage": {
+            "additionalProperties": false,
+            "description": "Defines a system base voltage which is referenced.",
+            "properties": {
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": "string"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name is any free human readable and possibly non unique text naming the object.",
+                    "type": "string"
+                },
+                "nominalVoltage": {
+                    "description": "The power system resource's base voltage.  Shall be a positive value and not zero.",
+                    "type": "number"
+                }
+            },
+            "title": "BaseVoltage",
+            "type": "object"
+        },
+        "Container": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "ACLineSegmentSpan": {
+                    "items": {
+                        "$ref": "#/$defs/ACLineSegmentSpan"
+                    },
+                    "type": "array"
+                },
+                "OverheadStructure": {
+                    "items": {
+                        "$ref": "#/$defs/OverheadStructure"
+                    },
+                    "type": "array"
+                }
+            },
+            "title": "Container",
+            "type": "object"
+        },
+        "DeploymentStateKind": {
+            "description": "Possible states of asset deployment.",
+            "enum": [
+                "inService",
+                "installed",
+                "notYetInstalled",
+                "outOfService",
+                "removed",
+                "notYetRemoved"
+            ],
+            "title": "DeploymentStateKind",
+            "type": "string"
+        },
+        "Feature": {
+            "additionalProperties": false,
+            "description": "Defines a system base voltage which is referenced.",
+            "properties": {
+                "hasGeometry": {
+                    "$ref": "#/$defs/Geometry",
+                    "description": "Geometric representation of the spatial object."
+                }
+            },
+            "title": "Feature",
+            "type": "object"
+        },
+        "Geometry": {
+            "additionalProperties": false,
+            "description": "Geometric representation details.",
+            "properties": {
+                "asGML": {
+                    "description": "Geometric representation of the spatial object in GML format.",
+                    "type": "string"
+                },
+                "asGeoJSON": {
+                    "description": "Geometric representation of the spatial object in GeoJSON format.",
+                    "type": "string"
+                },
+                "asWKT": {
+                    "description": "Geometric representation of the spatial object in WKT format.",
+                    "type": "string"
+                }
+            },
+            "title": "Geometry",
+            "type": "object"
+        },
+        "LocationMethodKind": {
+            "description": "The kind of aviation obstacle marking.",
+            "enum": [
+                "measured",
+                "calculated",
+                "estimated",
+                "manual"
+            ],
+            "title": "LocationMethodKind",
+            "type": "string"
+        },
+        "OverheadStructure": {
+            "additionalProperties": false,
+            "description": "An overhead structure is an element of an electric transmission or distribution system that supports the overhead conductors and associated equipment used for the transmission of electricity.",
+            "properties": {
+                "aviationObstacleLightingKind": {
+                    "$ref": "#/$defs/AviationObstacleLightingKind",
+                    "description": "Kind of lighting on the structure."
+                },
+                "aviationObstacleMarkingKind": {
+                    "$ref": "#/$defs/AviationObstacleMarkingKind",
+                    "description": "Kind of marking on the structure."
+                },
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": "string"
+                },
+                "hasGeometry": {
+                    "$ref": "#/$defs/Geometry",
+                    "description": "Geometric representation of the spatial object."
+                },
+                "height": {
+                    "description": "Visible height of structure above ground level for overhead construction (e.g., Pole or Tower) or below ground level for an underground vault, manhole, etc.",
+                    "type": "number"
+                },
+                "locationMethod": {
+                    "$ref": "#/$defs/LocationMethodKind",
+                    "description": "Method used to derive geographical location for this entity."
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "maxHeight": {
+                    "description": "The length of the longest distance from the ground to the highest point on the structure. If f.ex. the structure is located in a steep slope, the distance from the top of the structure to the ground may vary.",
+                    "type": "number"
+                },
+                "name": {
+                    "description": "The name is any free human readable and possibly non unique text naming the object.",
+                    "type": "string"
+                }
+            },
+            "title": "OverheadStructure",
+            "type": "object"
+        },
+        "SpatialObject": {
+            "additionalProperties": false,
+            "description": "A spatial object is a physical object that has a location in space. It may have a geometric representation to describe its shape and position.",
+            "title": "SpatialObject",
+            "type": "object"
+        },
+        "StructureDeployment": {
+            "additionalProperties": false,
+            "description": "Deployment of a structure.",
+            "properties": {
+                "ACLineSegmentSpan": {
+                    "$ref": "#/$defs/Structure",
+                    "description": "The associated Structure."
+                },
+                "BaseVoltage": {
+                    "$ref": "#/$defs/BaseVoltage",
+                    "description": "The associated Base Voltage."
+                },
+                "deploymentState": {
+                    "$ref": "#/$defs/DeploymentStateKind",
+                    "description": "Current deployment state of asset."
+                },
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": "string"
+                },
+                "inServiceDate": {
+                    "description": "Date and time asset was most recently put in service.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "installedDate": {
+                    "description": "Date and time asset was most recently installed.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name is any free human readable and possibly non unique text naming the object.",
+                    "type": "string"
+                },
+                "notYetInstalledDate": {
+                    "description": "Date and time of asset deployment transition to not yet installed.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "notYetRemovedDate": {
+                    "description": "Date and time of asset deployment transition to not yet removed.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "outOfServiceDate": {
+                    "description": "Date and time asset was most recently taken out of service.",
+                    "format": "date-time",
+                    "type": "string"
+                },
+                "removedDate": {
+                    "description": "Date and time asset was most recently removed.",
+                    "format": "date-time",
+                    "type": "string"
+                }
+            },
+            "title": "StructureDeployment",
+            "type": "object"
+        },
+        "Zone": {
+            "additionalProperties": false,
+            "description": "Defines a system base voltage which is referenced.",
+            "properties": {
+                "description": {
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": "string"
+                },
+                "hasGeometry": {
+                    "$ref": "#/$defs/Geometry",
+                    "description": "Geometric representation of the spatial object."
+                },
+                "locationMethod": {
+                    "$ref": "#/$defs/LocationMethodKind",
+                    "description": "Method used to derive geographical location for this entity."
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name is any free human readable and possibly non unique text naming the object.",
+                    "type": "string"
+                },
+                "state": {
+                    "$ref": "#/$defs/ZoneStateKind",
+                    "description": "Current state of zone."
+                },
+                "zoneKind": {
+                    "$ref": "#/$defs/ZoneKind",
+                    "description": "Kind of zone."
+                }
+            },
+            "title": "Zone",
+            "type": "object"
+        },
+        "ZoneKind": {
+            "description": "Kind of zone.",
+            "enum": [
+                "electricalNetwork",
+                "other",
+                "specialRestrictionLand",
+                "weatherZone",
+                "substation"
+            ],
+            "title": "ZoneKind",
+            "type": "string"
+        },
+        "ZoneStateKind": {
+            "description": "Current state of zone.\"",
+            "enum": [
+                "registered",
+                "notYetRegistered",
+                "removed",
+                "notYetRemoved"
+            ],
+            "title": "ZoneStateKind",
+            "type": "string"
+        }
+    },
+    "$id": "https://ap-no.cim4.eu/AviationObstacle/1.0",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "description": "",
+    "metamodel_version": "1.7.0",
+    "properties": {
+        "ACLineSegmentSpan": {
+            "items": {
+                "$ref": "#/$defs/ACLineSegmentSpan"
+            },
+            "type": "array"
+        },
+        "OverheadStructure": {
+            "items": {
+                "$ref": "#/$defs/OverheadStructure"
+            },
+            "type": "array"
+        }
+    },
+    "title": "AviationObstacle",
+    "type": "object",
+    "version": null
+}

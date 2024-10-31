@@ -1,36 +1,89 @@
 .PHONY: markdown
-markdown: ## Generate Markdown files from LinkML schemas
-	gen-doc -d docs/'Core Equipment' --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/core-equipment.linkml.yaml
-	gen-doc -d docs/Operation --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/operation.linkml.yaml
-	gen-doc -d docs/'Short Circuit' --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/short-circuit.linkml.yaml
-	gen-doc -d docs/'State Variables' --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/state-variables.linkml.yaml
-	gen-doc -d docs/'Steady State Hypothesis' --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/steady-state-hypothesis.linkml.yaml
-	gen-doc -d docs/Topology --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/topology.linkml.yaml
+markdown: ## Generate Markdown files from LinkML schemas and removes all Slot and Type files
+	gen-doc -d docs/AviationObstacle --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/yaml/aviation_obstacle.linkml.yaml
+	gen-doc -d docs/WattApp --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/yaml/watt_app.linkml.yaml
+	gen-doc -d docs/SubseaCableInfo --diagram-type mermaid_class_diagram --template-directory _templates/ --use-slot-uris schemas/yaml/subsea_cable_info.linkml.yaml
 	grep -E '^# (Slot|Type): ' -lr --include \*.md docs | xargs -d '\n' rm
+
+startup_powershell:
+	venv/Scripts/activate
+
+startup_bash:
+	source venv/Scripts/activate
+
+ao:
+	linkml-convert -s AO_schema.yaml AO.yaml -t ttl -o AO.ttl
+	linkml-convert -s AO_schema.yaml AO.yaml -t json-ld -o AO.jsonld
+	linkml-convert -s AO_schema.yaml AO.yaml -t json -o AO.json
+	linkml-convert -s AO_schema.yaml AO.yaml -t rdf -o AO.rdf
+
+all:
+	make clean
+	make markdown
+	python python/replace_star_with_0dotdotstar.py
+	mkdocs serve
 
 .PHONY: protobuf
 protobuf: ## Generate Protobuf files from LinkML schemas
 	mkdir -p protobufs
-	gen-proto schemas/core-equipment.linkml.yaml > protobufs/core-equipment.proto
-	gen-proto schemas/operation.linkml.yaml > protobufs/operation.proto
-	gen-proto schemas/short-circuit.linkml.yaml > protobufs/short-circuit.proto
-	gen-proto schemas/state-variables.linkml.yaml > protobufs/state-variables.proto
-	gen-proto schemas/steady-state-hypothesis.linkml.yaml > protobufs/steady-state-hypothesis.proto
-	gen-proto schemas/topology.linkml.yaml > protobufs/topology.proto
+	gen-proto schemas/aviationobstacle.linkml.yaml > protobufs/aviationobstacle.proto
 
 .PHONY: python
 python: ## Generate Python dataclass files from LinkML schemas
 	mkdir -p python
-	gen-python schemas/core-equipment.linkml.yaml > python/core-equipment.py
-	gen-python schemas/operation.linkml.yaml > python/operation.py
-	gen-python schemas/short-circuit.linkml.yaml > python/short-circuit.py
-	gen-python schemas/state-variables.linkml.yaml > python/state-variables.py
-	gen-python schemas/steady-state-hypothesis.linkml.yaml > python/steady-state-hypothesis.py
-	gen-python schemas/topology.linkml.yaml > python/topology.py
+	gen-python schemas/aviationobstacle.linkml.yaml > python/aviationobstacle.py
 
 .PHONY: clean
 clean: ## Delete all Markdown files
-	rm docs/'Core Equipment'/*.md docs/Operation/*.md docs/'Short Circuit'/*.md docs/'State Variables'/*.md docs/'Steady State Hypothesis'/*.md docs/Topology/*.md
+	rm docs/'AviationObstacle'/*.md docs/WattApp/*.md docs/'SubseaCableInfo'/*.md
+
+########################## Next section: Made by Thomas #################################
+
+# Default parameter if none is provided
+yamlDataFilePath ?= data/yaml/aviationobstacle.yaml
+yamlSchemaFilePath ?= schemas/aviationobstacle.linkml.yaml
+outputFilePath ?= data/jsonld/aviationobstacle.jsonld
+outputFilePathLinkMl ?= data/jsonld/aviationobstacle_linkml.jsonld
+string1 ?= nc-no
+string2 ?= ncno
+
+# Rule to run the linkml-convert command with a parameter
+.PHONY: linkmljsonld help
+
+# LinkML conversion target with HELP=1 check
+linkmljsonld:
+	@if [ "$(help)" = "1" ]; then \
+		echo "Usage: make linkmljsonld yamlSchemaFilePath=<Your yaml Schema File Path> yamlDataFilePath=<Your yaml Data File Path> outputFilePathLinkMl=<Your Output File Path>"; \
+	else \
+		python python/replace_oldstring_with_newstring.py $(yamlSchemaFilePath) $(string1) $(string2); \
+		linkml-convert -s $(yamlSchemaFilePath) $(yamlDataFilePath) -t json-ld -o $(outputFilePathLinkMl); \
+		python python/replace_oldstring_with_newstring.py $(yamlSchemaFilePath) $(string2) $(string1); \
+	fi
+
+# Example: make linkmljsonld yamlSchemaFilePath=schemas/yaml/aviationobstacle.linkml.yaml yamlDataFilePath=data/yaml/aviationobstacle.yaml outputFilePath=data/jsonld/aviationobstacle.linkml.jsonld
+# Clean linkml command: linkml-convert -s test_AO_schema.yaml test_AO.yaml -t json-ld -o test_AO_linkml.jsonld
+
+# Rule to run the jsonld-convert command with a parameter
+.PHONY: jsonld
+
+# JSON-LD conversion target with help check
+jsonld:
+	@if [ "$(help)" = "1" ]; then \
+		echo "Usage: make jsonld yamlSchemaFilePath=<Your yaml Schema File Path> yamlDataFilePath=<Your yaml data File Path> outputFilePath=<Your Output File Path>"; \
+	else \
+		python python/jsonldFromYamlConverter.py $(yamlSchemaFilePath) $(yamlDataFilePath) $(outputFilePath); \
+	fi
+
+# Example1: make jsonld yamlSchemaFilePath=schemas/yaml/aviationobstacle.linkml.yaml yamlDataFilePath=data/yaml/aviationobstacle.yaml outputFilePath=data/jsonld/aviationobstacle.jsonld
+# Example2: make jsonld yamlSchemaFilePath=schemas/yaml/wattapp.linkml.yaml yamlDataFilePath=data/yaml/wattapp.yaml outputFilePath=data/jsonld/wattapp.jsonld
+# Example3: make jsonld yamlSchemaFilePath=schemas/yaml/subseacableinfo.linkml.yaml yamlDataFilePath=data/yaml/subseacableinfo.yaml outputFilePath=data/jsonld/subseacableinfo.jsonld
+
+
+#### yaml schema to json schema conversion ####
+
+# gen-json-schema schemas/yaml/wattapp.linkml.yaml > schemas/wattapp_schema.json
+
+###############################################
 
 ###########################################################
 ##@ Help

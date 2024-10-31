@@ -1,0 +1,806 @@
+id: http://iec.ch/TC57/2007/profile#
+name: AssetCatalogue
+title: Asset Catalogue Vocabulary
+#  dcterms:
+#    title: "Telemark-120_SCI"
+#    description: "Telemark-120 Subsea Cable Info"
+#    publisher: "ElBits AS"
+#    rights: "© 2024 Copyright"
+#    rightsHolder: "ElBits AS"
+#    license: "CC BY-NC-SA 4.0"
+#    accessRights: "PUBLIC"
+#    isVersionOf: "https://test.model4powersystem.eu/Telemark/"
+#    spatial: "https://energy.referencedata.eu/Test/Frame/NO-Telemark-MV1"
+#    conformsTo:
+#      - "https://ap-no.cim4.eu/SubseaCableInfo/0.1"
+#    references:
+#      - "urn:uuid:dd345794-d73a-4510-b0e3-ee62fbdde482"
+#  dcat:
+#    keyword: "SCI"
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  linkml: https://w3id.org/linkml/
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  dc: http://purl.org/dc/elements/1.1/
+  profcim: http://iec.ch/TC57/ns/CIM/prof-cim#
+  owl: http://www.w3.org/2002/07/owl#
+  cims: http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#
+  dct: http://purl.org/dc/terms/
+  this: http://iec.ch/TC57/2007/profile#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  dcat: http://www.w3.org/ns/dcat#
+  eu: http://iec.ch/TC57/CIM100-European#
+  cim: http://iec.ch/TC57/CIM-generic#
+imports:
+- linkml:types
+default_curi_maps:
+- semweb_context
+default_range: string
+default_prefix: this
+
+classes:
+  
+  AssetInfo:
+    description: "Set of attributes of an asset, representing typical datasheet information of a physical device that can be instantiated and shared in different data exchange contexts:- as attributes of an asset instance (installed or in stock)- as attributes of an asset model (product by a manufacturer)- as attributes of a type asset (generic type of an asset as used in designs/extension planning)."
+    is_a: IdentifiedObject
+    abstract: true
+    class_uri: cim:AssetInfo
+    attributes: 
+
+  AssetSpecification:
+    description: "Specification can be used for various purposes relative to an asset, a logical device (PowerSystemResource), location, etc. Examples include documents supplied by manufacturers such as asset installation instructions, asset maintenance instructions, etc."
+    is_a: IdentifiedObject
+    class_uri: cim:AssetSpecification
+    attributes: 
+      AssetInfo:
+        slot_uri: cim:AssetSpecification.AssetInfo
+        range: AssetInfo
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  BindingLayer:
+    description: "Layer applied with the sole purpose of binding different layers/cores of cable together."
+    is_a: NonMetallicSheathLayer
+    class_uri: cim:BindingLayer
+    attributes: 
+ 
+  CableInfo:
+    description: "Cable data."
+    is_a: WireInfo
+    class_uri: cim:CableInfo
+    attributes: 
+      lossFactorArmour:
+        slot_uri: cim:CableInfo.lossFactorArmour
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      lossFactorSheathScreen:
+        slot_uri: cim:CableInfo.lossFactorSheathScreen
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      nominalTemperature:
+        description: "Maximum nominal design operating temperature."
+        slot_uri: cim:CableInfo.nominalTemperature
+        range: Temperature
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      Layer:
+        slot_uri: cim:CableInfo.Layer
+        range: CableLayer
+        minimum_cardinality: 0
+        multivalued: true
+  
+  CableLayer:
+    abstract: true
+    class_uri: cim:CableLayer
+    attributes: 
+      mRID:
+        description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
+        slot_uri: cim:CableLayer.mRID
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      diameterOverLayer:
+        description: "Use either diameter over layer or layer thickness.Specification varies by manufacturer and manufacturing process. For extruded layers, the diameter is typically provided. For tapes, the thickness is typically applied."
+        slot_uri: cim:CableLayer.diameterOverLayer
+        range: Length
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      layerOrder:
+        description: "Order of the layer outwards from the cable core.For a multi-core cable, belted layers must have their own order starting from the first belted layer.Intercalated layers (typically tapes, where each tape is both below and above the other tape) must share the same layer order."
+        slot_uri: cim:CableLayer.layerOrder
+        range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  ConcentricWireLayer:
+    description: "Concentric wire layer base class."
+    is_a: MetallicSheathLayer
+    class_uri: cim:ConcentricWireLayer
+    attributes: 
+
+  ConductingAssetInfo:
+    description: "Generic information for conducting asset"
+    is_a: AssetInfo
+    abstract: true
+    class_uri: cim:ConductingAssetInfo
+    attributes: 
+      ratedCurrent:
+        description: "Rated current."
+        slot_uri: cim:ConductingAssetInfo.ratedCurrent
+        range: CurrentFlow
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      ratedFrequency:
+        description: "Rated frequency such as 50Hz or 60Hz"
+        slot_uri: cim:ConductingAssetInfo.ratedFrequency
+        range: Frequency
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      ratedVoltage:
+        description: "Rated voltage."
+        slot_uri: cim:ConductingAssetInfo.ratedVoltage
+        range: Voltage
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  
+  ConductorInfo:
+    description: "Common class for rigid and flexible conductors.[IEC 826-14-06]: Conductive part intended to carry a specified electric current"
+    is_a: ConductingAssetInfo
+    abstract: true
+    class_uri: cim:ConductorInfo
+    attributes: 
+      crossSection:
+        description: "Area of conducting material cross section"
+        slot_uri: cim:ConductorInfo.crossSection
+        range: Area
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      material:
+        description: "Conductor material."
+        slot_uri: cim:ConductorInfo.material
+        range: WireMaterialKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  ConductorScreenLayer:
+    description: "A screen covering the conductor. Also called Conductor Shield."
+    is_a: ScreenLayer
+    class_uri: cim:ConductorScreenLayer
+    attributes: 
+  
+  CorrugatedRoundWire:
+    is_a: RoundWire
+    class_uri: cim:CorrugatedRoundWire
+    attributes: 
+
+  FlatStraps:
+    is_a: ConcentricWireLayer
+    class_uri: cim:FlatStraps
+    attributes: 
+
+  GappedTape:
+    description: "Tape shield cable data."
+    is_a: TapeLayer
+    class_uri: cim:GappedTape
+    attributes: 
+
+  IdentifiedObject:
+    description: "This is a root class to provide common identification for all classes needing identification and naming attributes."
+    abstract: true
+    class_uri: cim:IdentifiedObject
+    attributes: 
+      mRID:
+        description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
+        slot_uri: cim:IdentifiedObject.mRID
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      description:
+        description: "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."
+        slot_uri: cim:IdentifiedObject.description
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      name:
+        description: "The name is any free human readable and possibly non unique text naming the object."
+        slot_uri: cim:IdentifiedObject.name
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  
+  InnerSheathLayer:
+    description: "<b>Non-metallic</b> covering which surrounds the assembly of the cores (and fillers, if any) of a multiconductor cable and over which the protective covering is applied.For example, a bedding layer for an armour or reinforcement."
+    is_a: NonMetallicSheathLayer
+    class_uri: cim:InnerSheathLayer
+    attributes: 
+
+  InsulationLayer:
+    is_a: CableLayer
+    class_uri: cim:InsulationLayer
+    attributes: 
+      insulationMaterial:
+        description: "Insulation material."
+        slot_uri: cim:InsulationLayer.insulationMaterial
+        range: WireInsulationKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  
+  InsulationScreenLayer:
+    description: "A screen covering the insulation. Also called Insulation Shield."
+    is_a: ScreenLayer
+    class_uri: cim:InsulationScreenLayer
+    attributes: 
+
+  LappedTape:
+    description: "Tape shield cable data."
+    is_a: TapeLayer
+    class_uri: cim:LappedTape
+    attributes: 
+
+  LongitudinallyCorrugatedTape:
+    description: "Tape shield cable data."
+    is_a: TapeLayer
+    class_uri: cim:LongitudinallyCorrugatedTape
+    attributes: 
+  
+  Manufacturer:
+    description: "Organisation that manufactures asset products."
+    is_a: OrganisationRole
+    class_uri: cim:Manufacturer
+    attributes: 
+
+  MetallicSheathLayer:
+    description: "Any metallic sheath (or metal screen), including foils, braids, armours, concentric neutrals and tape shields."
+    is_a: CableLayer
+    class_uri: cim:MetallicSheathLayer
+    attributes: 
+      isArmor:
+        description: "Indicates whether this metallic sheath is an armor, which is a covering consisting of a metal tape(s) or wires, generally used to protect the cable from external mechanical effects"
+        slot_uri: cim:MetallicSheathLayer.isArmor
+        range: boolean
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      material:
+        description: "Material og this metallic sheath layer."
+        slot_uri: cim:MetallicSheathLayer.material
+        range: CableShieldMaterialKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  
+  MultiCoreCableInfo:
+    is_a: CableInfo
+    class_uri: cim:MultiCoreCableInfo
+    attributes: 
+      layLength:
+        description: "Longitudinal distance required for core to perform one turn around the diameter of the cable."
+        slot_uri: cim:MultiCoreCableInfo.layLength
+        range: Length
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      BeltedLayer:
+        slot_uri: cim:MultiCoreCableInfo.BeltedLayer
+        range: CableLayer
+        minimum_cardinality: 0
+        multivalued: true
+  
+  NonMetallicSheathLayer:
+    description: "Uniform and continuous tubular non-metallic sheath. This class allows for the representation of any sheaths not properly defined with it's children classes.For example, separation sheaths (inner sheath applied between two metallic coverings of different materials).Note: The term sheath is only used for metallic coverings in North America, whereas the term jacket is used for non-metallic coverings."
+    is_a: CableLayer
+    class_uri: cim:NonMetallicSheathLayer
+    attributes: 
+
+  OrganisationRole:
+    description: "Identifies a way in which an organisation may participate in the utility enterprise (e.g., customer, manufacturer, etc)."
+    is_a: IdentifiedObject
+    abstract: true
+    class_uri: cim:OrganisationRole
+    attributes: 
+
+  OverSheathLayer:
+    description: "<b>Non-metallic</b> covering applied over a covering, generally metallic, ensuring the protection of the cable from the outside, such as jackets and servings."
+    is_a: NonMetallicSheathLayer
+    class_uri: cim:OverSheathLayer
+    attributes: 
+  
+  PerLengthConductorParameter:
+    description: "Common type for per-length electrical catalogues describing line parameters."
+    is_a: IdentifiedObject
+    abstract: true
+    class_uri: cim:PerLengthConductorParameter
+    attributes: 
+      mRID:
+        description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
+        slot_uri: cim:PerLengthConductorParameter.mRID
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      ConductorInfo:
+        slot_uri: cim:PerLengthConductorParameter.ConductorInfo
+        range: ConductorInfo
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  PerLengthImpedance:
+    description: "Common type for per-length impedance electrical catalogues."
+    is_a: PerLengthConductorParameter
+    abstract: true
+    class_uri: cim:PerLengthImpedance
+    attributes: 
+
+  PerLengthPhaseImpedance:
+    description: "Impedance and admittance parameters per unit length for n-wire unbalanced lines, in matrix form."
+    is_a: PerLengthImpedance
+    class_uri: cim:PerLengthPhaseImpedance
+    attributes: 
+      conductorCount:
+        description: "Number of phase, neutral, and other wires retained. Constrains the number of matrix elements and the phase codes that can be used with this matrix."
+        slot_uri: cim:PerLengthPhaseImpedance.conductorCount
+        range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  PerLengthSequenceImpedance:
+    description: "Sequence impedance and admittance parameters per unit length, for transposed lines of 1, 2, or 3 phases. For 1-phase lines, define x=x0=xself. For 2-phase lines, define x=xs-xm and x0=xs+xm."
+    is_a: PerLengthImpedance
+    class_uri: cim:PerLengthSequenceImpedance
+    attributes: 
+      r:
+        description: "Positive sequence series resistance, per unit of length."
+        slot_uri: cim:PerLengthSequenceImpedance.r
+        range: ResistancePerLength
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      x:
+        description: "Positive sequence series reactance, per unit of length."
+        slot_uri: cim:PerLengthSequenceImpedance.x
+        range: ReactancePerLength
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  PhaseImpedanceData:
+    description: "Impedance and conductance matrix element values.The diagonal elements are described by the elements having the same toPhase and fromPhase value and the off diagonal elements have different toPhase and fromPhase values.  The matrix can also be stored in symmetric lower triangular format using the row and column attributes, which map to ACLineSegmentPhase.sequenceNumber."
+    class_uri: cim:PhaseImpedanceData
+    attributes: 
+      mRID:
+        description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
+        slot_uri: cim:PhaseImpedanceData.mRID
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      r:
+        description: "Resistance matrix element value, per length of unit."
+        slot_uri: cim:PhaseImpedanceData.r
+        range: ResistancePerLength
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      x:
+        description: "Reactance matrix element value, per length of unit."
+        slot_uri: cim:PhaseImpedanceData.x
+        range: ReactancePerLength
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      PhaseImpedance:
+        description: "Conductor phase impedance to which this data belongs."
+        slot_uri: cim:PhaseImpedanceData.PhaseImpedance
+        range: PerLengthPhaseImpedance
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  ProductAssetModel:
+    description: "Asset model by a specific manufacturer."
+    is_a: IdentifiedObject
+    class_uri: cim:ProductAssetModel
+    attributes: 
+      AssetInfo:
+        description: "Asset information (nameplate) for this product asset model."
+        slot_uri: cim:ProductAssetModel.AssetInfo
+        range: AssetInfo
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      Manufacturer:
+        description: "Manufacturer of this asset model."
+        slot_uri: cim:ProductAssetModel.Manufacturer
+        range: Manufacturer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  
+  ResistancePerLengthTemperaturePoint:
+    class_uri: cim:ResistancePerLengthTemperaturePoint
+    attributes:
+      mRID:
+        description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
+        slot_uri: cim:ResistancePerLengthTemperaturePoint.mRID
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      isAC:
+        slot_uri: cim:ResistancePerLengthTemperaturePoint.isAC
+        range: boolean
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      resistance:
+        slot_uri: cim:ResistancePerLengthTemperaturePoint.resistance
+        range: ResistancePerLength
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      temperature:
+        slot_uri: cim:ResistancePerLengthTemperaturePoint.temperature
+        range: Temperature
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      ConductorInfo:
+        description: "Conductor with this (resistance, temperature) pair."
+        slot_uri: cim:ResistancePerLengthTemperaturePoint.ConductorInfo
+        range: ConductorInfo
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  
+  RoundWire:
+    is_a: ConcentricWireLayer
+    class_uri: cim:RoundWire
+    attributes: 
+
+  ScreenLayer:
+    description: "Electrical screen of non-metallic and/or metallic material. A semi conducting (as in somewhat conducting) material is typically used."
+    is_a: CableLayer
+    class_uri: cim:ScreenLayer
+    attributes: 
+
+  SkidWireLayer:
+    description: "Layer with wires or assembly of wires, usually D-shaped, applied with a long length of lay over the cores of a pipe-type cable, to provide mechanical protection and to facilitate sliding while the cores are being pulled into the pipe.  Reference: IEC 60050-461"
+    is_a: ConcentricWireLayer
+    class_uri: cim:SkidWireLayer
+    attributes: 
+
+  SplitConcentric:
+    description: "Single concentric layer with two conductors separated by each other by insulating material. Reference: IEC 60050-461"
+    is_a: RoundWire
+    class_uri: cim:SplitConcentric
+    attributes: 
+
+  SwellableWaterTapes:
+    description: "Swellable water tapes (SWTPs) to provide longitudinal and radial water blocking. It can be made of a semi-conducting or a non-conductive material (NCWST).Typically applied between the insulation screen and the shield layers and/or over the shield layer and/or over the shield layer.Note that the Shield and Armor layers may also have a water blocking purpose. In such cases MettalicSheath should be used instead."
+    is_a: NonMetallicSheathLayer
+    class_uri: cim:SwellableWaterTapes
+    attributes: 
+
+  TapeLayer:
+    description: "Tape layer base class."
+    is_a: MetallicSheathLayer
+    class_uri: cim:TapeLayer
+    attributes: 
+
+  TubularTape:
+    description: "Tape shield cable data."
+    is_a: TapeLayer
+    class_uri: cim:TubularTape
+    attributes: 
+
+  WireBraidInfo:
+    description: "Metallic Wires or Braid sheath."
+    is_a: MetallicSheathLayer
+    class_uri: cim:WireBraidInfo
+    attributes: 
+
+  WireInfo:
+    description: "Wire data that can be specified per line segment phase, or for the line segment as a whole in case its phases all have the same wire characteristics."
+    is_a: ConductorInfo
+    abstract: true
+    class_uri: cim:WireInfo
+    attributes: 
+      coreRadius:
+        description: "(if there is a different core material) Radius of the central core."
+        slot_uri: cim:WireInfo.coreRadius
+        range: Length
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      radius:
+        description: "Outside radius of the wire."
+        slot_uri: cim:WireInfo.radius
+        range: Length
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  Container:
+    tree_root: true
+    attributes:
+      CableInfo:
+        multivalued: true
+        inlined_as_list: true
+        range: CableInfo
+      MultiCoreCableInfo:
+        multivalued: true
+        inlined_as_list: true
+        range: MultiCoreCableInfo
+      ProductAssetModel:
+        multivalued: true
+        inlined_as_list: true
+        range: ProductAssetModel
+      Manufacturer:
+        multivalued: true
+        inlined_as_list: true
+        range: Manufacturer
+      InsulationLayer:
+        multivalued: true
+        inlined_as_list: true
+        range: InsulationLayer
+      MetallicSheathLayer:
+        multivalued: true
+        inlined_as_list: true
+        range: MetallicSheathLayer
+      TapeLayer:
+        multivalued: true
+        inlined_as_list: true
+        range: TapeLayer
+      GappedTape:
+        multivalued: true
+        inlined_as_list: true
+        range: GappedTape
+      LappedTape:
+        multivalued: true
+        inlined_as_list: true
+        range: LappedTape
+      TubularTape:
+        multivalued: true
+        inlined_as_list: true
+        range: TubularTape
+      LongitudinallyCorrugatedTape:
+        multivalued: true
+        inlined_as_list: true
+        range: LongitudinallyCorrugatedTape
+      WireBraidInfo:
+        multivalued: true
+        inlined_as_list: true
+        range: WireBraidInfo
+      ConcentricWireLayer:
+        multivalued: true
+        inlined_as_list: true
+        range: ConcentricWireLayer
+      SkidWireLayer:
+        multivalued: true
+        inlined_as_list: true
+        range: SkidWireLayer
+      FlatStraps:
+        multivalued: true
+        inlined_as_list: true
+        range: FlatStraps
+      RoundWire:
+        multivalued: true
+        inlined_as_list: true
+        range: RoundWire
+      CorrugatedRoundWire:
+        multivalued: true
+        inlined_as_list: true
+        range: CorrugatedRoundWire
+      SplitConcentric:
+        multivalued: true
+        inlined_as_list: true
+        range: SplitConcentric
+      ScreenLayer:
+        multivalued: true
+        inlined_as_list: true
+        range: ScreenLayer
+      ConductorScreenLayer:
+        multivalued: true
+        inlined_as_list: true
+        range: ConductorScreenLayer
+      InsulationScreenLayer:
+        multivalued: true
+        inlined_as_list: true
+        range: InsulationScreenLayer
+      NonMetallicSheathLayer:
+        multivalued: true
+        inlined_as_list: true
+        range: NonMetallicSheathLayer
+      InnerSheathLayer:
+        multivalued: true
+        inlined_as_list: true
+        range: InnerSheathLayer
+      OverSheathLayer:
+        multivalued: true
+        inlined_as_list: true
+        range: OverSheathLayer
+      BindingLayer:
+        multivalued: true
+        inlined_as_list: true
+        range: BindingLayer
+      SwellableWaterTapes:
+        multivalued: true
+        inlined_as_list: true
+        range: SwellableWaterTapes
+      ResistancePerLengthTemperaturePoint:
+        multivalued: true
+        inlined_as_list: true
+        range: ResistancePerLengthTemperaturePoint
+
+types:
+
+  CurrentFlow:
+    uri: xsd:float
+    base: float
+    description: "Electrical current with sign convention: positive flow is out of the conducting equipment into the connectivity node. Can be both AC and DC."
+    annotations:
+      cim_data_type: true
+      uri: cim:CurrentFlow
+  
+  Frequency:
+    uri: xsd:float
+    base: float
+    description: "Cycles per second."
+    annotations:
+      cim_data_type: true
+      uri: cim:Frequency
+  
+  Voltage:
+    uri: xsd:float
+    base: float
+    description: "Electrical voltage, can be both AC and DC."
+    annotations:
+      cim_data_type: true
+      uri: cim:Voltage
+  
+  Temperature:
+    uri: xsd:float
+    base: float
+    description: "Value of temperature in degrees Celsius."
+    annotations:
+      cim_data_type: true
+      uri: cim:Temperature
+  
+  Area:
+    uri: xsd:float
+    base: float
+    description: "Area."
+    annotations:
+      cim_data_type: true
+      uri: cim:Area
+  
+  Length:
+    uri: xsd:float
+    base: float
+    description: "Unit of length. It shall be a positive value or zero."
+    annotations:
+      cim_data_type: true
+      uri: cim:Length
+
+  ReactancePerLength:
+    uri: xsd:float
+    base: float
+    description: "Reactance (imaginary part of impedance) per unit of length, at rated frequency."
+    annotations:
+      cim_data_type: true
+      uri: cim:ReactancePerLength
+  
+  ResistancePerLength:
+    uri: xsd:float
+    base: float
+    description: "Resistance (real part of impedance) per unit of length."
+    annotations:
+      cim_data_type: true
+      uri: cim:ResistancePerLength
+
+enums:
+
+  CableShieldMaterialKind:
+    description: "Kind of cable shield material."
+    enum_uri:  http://iec.ch/TC57/CIM-generic#CableShieldMaterialKind
+    permissible_values:
+      aluminum:
+        meaning:  cim:CableShieldMaterialKind.aluminum
+        description: "Aluminum cable shield."
+      copper:
+        meaning:  cim:CableShieldMaterialKind.copper
+        description: "Copper cable shield."
+      galvanisedSteel:
+        meaning:  cim:CableShieldMaterialKind.galvanisedSteel
+        description: "Galvanised steel."
+      galvanisedSteelPErod:
+        meaning:  cim:CableShieldMaterialKind.galvanisedSteelPErod
+        description: "Galvanised steel with polyethylene rods."
+      lead:
+        meaning:  cim:CableShieldMaterialKind.lead
+        description: "Lead cable shield."
+      other:
+        meaning:  cim:CableShieldMaterialKind.other
+        description: "Other kind of cable shield material."
+      steel:
+        meaning:  cim:CableShieldMaterialKind.steel
+        description: "Steel cable shield."
+  
+  WireInsulationKind:
+    description: "Kind of wire insulation."
+    enum_uri:  http://iec.ch/TC57/CIM-generic#WireInsulationKind
+    permissible_values:
+      asbestosAndVarnishedCambric:
+        meaning:  cim:WireInsulationKind.asbestosAndVarnishedCambric
+        description: "Asbestos and varnished cambric wire insulation."
+      beltedPilc:
+        meaning:  cim:WireInsulationKind.beltedPilc
+        description: "Belted pilc wire insulation."
+      butyl:
+        meaning:  cim:WireInsulationKind.butyl
+        description: "Butyl wire insulation."
+      crosslinkedPolyethylene:
+        meaning:  cim:WireInsulationKind.crosslinkedPolyethylene
+        description: "Crosslinked polyethylene wire insulation."
+      ethylenePropyleneRubber:
+        meaning:  cim:WireInsulationKind.ethylenePropyleneRubber
+        description: "Ethylene propylene rubber wire insulation."
+      highMolecularWeightPolyethylene:
+        meaning:  cim:WireInsulationKind.highMolecularWeightPolyethylene
+        description: "High nolecular weight polyethylene wire insulation."
+      highPressureFluidFilled:
+        meaning:  cim:WireInsulationKind.highPressureFluidFilled
+        description: "High pressure fluid filled wire insulation."
+      lowCapacitanceRubber:
+        meaning:  cim:WireInsulationKind.lowCapacitanceRubber
+        description: "Low capacitance rubber wire insulation."
+      oilPaper:
+        meaning:  cim:WireInsulationKind.oilPaper
+        description: "Oil paper wire insulation."
+      other:
+        meaning:  cim:WireInsulationKind.other
+        description: "Other kind of wire insulation."
+      ozoneResistantRubber:
+        meaning:  cim:WireInsulationKind.ozoneResistantRubber
+        description: "Ozone resistant rubber wire insulation."
+      rubber:
+        meaning:  cim:WireInsulationKind.rubber
+        description: "Rubber wire insulation."
+      siliconRubber:
+        meaning:  cim:WireInsulationKind.siliconRubber
+        description: "Silicon rubber wire insulation."
+      treeResistantHighMolecularWeightPolyethylene:
+        meaning:  cim:WireInsulationKind.treeResistantHighMolecularWeightPolyethylene
+        description: "Tree resistant high molecular weight polyethylene wire insulation."
+      treeRetardantCrosslinkedPolyethylene:
+        meaning:  cim:WireInsulationKind.treeRetardantCrosslinkedPolyethylene
+        description: "Tree retardant crosslinked polyethylene wire insulation."
+      unbeltedPilc:
+        meaning:  cim:WireInsulationKind.unbeltedPilc
+        description: "Unbelted pilc wire insulation."
+      varnishedCambricCloth:
+        meaning:  cim:WireInsulationKind.varnishedCambricCloth
+        description: "Varnished cambric cloth wire insulation."
+      varnishedDacronGlass:
+        meaning:  cim:WireInsulationKind.varnishedDacronGlass
+        description: "Varnished dacron glass wire insulation."
+  
+  WireMaterialKind:
+    description: "Kind of wire material."
+    enum_uri:  http://iec.ch/TC57/CIM-generic#WireMaterialKind
+    permissible_values:
+      aaac:
+        meaning:  cim:WireMaterialKind.aaac
+        description: "Aluminum-alloy conductor steel reinforced."
+      acsr:
+        meaning:  cim:WireMaterialKind.acsr
+        description: "Aluminum conductor steel reinforced."
+      aluminum:
+        meaning:  cim:WireMaterialKind.aluminum
+        description: "Aluminum wire."
+      aluminumAlloy:
+        meaning:  cim:WireMaterialKind.aluminumAlloy
+        description: "Aluminum-alloy wire."
+      aluminumAlloySteel:
+        meaning:  cim:WireMaterialKind.aluminumAlloySteel
+        description: "Aluminum-alloy-steel wire."
+      aluminumSteel:
+        meaning:  cim:WireMaterialKind.aluminumSteel
+        description: "Aluminum-steel wire."
+      ccaw:
+        meaning:  cim:WireMaterialKind.ccaw
+        description: "Cooper-Clad Aluminum Wire (CCAW or CCA)"
+      copper:
+        meaning:  cim:WireMaterialKind.copper
+        description: "Copper wire."
+      other:
+        meaning:  cim:WireMaterialKind.other
+        description: "Other wire material."
+      steel:
+        meaning:  cim:WireMaterialKind.steel
+        description: "Steel wire."

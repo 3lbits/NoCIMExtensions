@@ -1,0 +1,303 @@
+{
+    "$defs": {
+        "BaseTimeSeriesKind": {
+            "description": "",
+            "enum": [
+                "forecast",
+                "hindcast",
+                "schedule",
+                "actual"
+            ],
+            "title": "BaseTimeSeriesKind",
+            "type": "string"
+        },
+        "CapacitySchedule": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "Feeder": {
+                    "$ref": "#/$defs/Feeder",
+                    "description": ""
+                },
+                "actionMethod": {
+                    "description": "",
+                    "type": "string"
+                },
+                "description": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/JsonLDObject"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": "string"
+                },
+                "generatedAtTime": {
+                    "description": "",
+                    "type": "string"
+                },
+                "interpolationKind": {
+                    "$ref": "#/$defs/TimeSeriesInterpolationKind",
+                    "description": ""
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name is any free human readable and possibly non unique text naming the object.",
+                    "type": "string"
+                },
+                "percentile": {
+                    "description": "",
+                    "type": "integer"
+                },
+                "timeSeriesKind": {
+                    "$ref": "#/$defs/BaseTimeSeriesKind",
+                    "description": ""
+                }
+            },
+            "title": "CapacitySchedule",
+            "type": "object"
+        },
+        "CapacityTimePoint": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "CapacitySchedule": {
+                    "$ref": "#/$defs/CapacitySchedule",
+                    "description": ""
+                },
+                "actionMethod": {
+                    "description": "",
+                    "type": "string"
+                },
+                "atTime": {
+                    "description": "",
+                    "type": "string"
+                },
+                "description": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/JsonLDObject"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": "string"
+                },
+                "generatedAtTime": {
+                    "description": "",
+                    "type": "string"
+                },
+                "interpolationKind": {
+                    "$ref": "#/$defs/TimeSeriesInterpolationKind",
+                    "description": ""
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "maxAllocatedP": {
+                    "description": "",
+                    "type": "number"
+                },
+                "maxAllocatedQ": {
+                    "description": "",
+                    "type": "number"
+                },
+                "maxP": {
+                    "description": "",
+                    "type": "number"
+                },
+                "maxQ": {
+                    "description": "",
+                    "type": "number"
+                },
+                "minAllocatedP": {
+                    "description": "",
+                    "type": "number"
+                },
+                "minAllocatedQ": {
+                    "description": "",
+                    "type": "number"
+                },
+                "minP": {
+                    "description": "",
+                    "type": "number"
+                },
+                "minQ": {
+                    "description": "",
+                    "type": "number"
+                },
+                "name": {
+                    "description": "The name is any free human readable and possibly non unique text naming the object.",
+                    "type": "string"
+                },
+                "percentile": {
+                    "description": "",
+                    "type": "integer"
+                },
+                "timeSeriesKind": {
+                    "$ref": "#/$defs/BaseTimeSeriesKind",
+                    "description": ""
+                }
+            },
+            "title": "CapacityTimePoint",
+            "type": "object"
+        },
+        "Container": {
+            "additionalProperties": false,
+            "description": "",
+            "properties": {
+                "CapacitySchedule": {
+                    "items": {
+                        "$ref": "#/$defs/CapacitySchedule"
+                    },
+                    "type": "array"
+                },
+                "CapacityTimePoint": {
+                    "items": {
+                        "$ref": "#/$defs/CapacityTimePoint"
+                    },
+                    "type": "array"
+                },
+                "Feeder": {
+                    "items": {
+                        "$ref": "#/$defs/Feeder"
+                    },
+                    "type": "array"
+                }
+            },
+            "title": "Container",
+            "type": "object"
+        },
+        "Feature": {
+            "additionalProperties": false,
+            "description": "Defines a system base voltage which is referenced.",
+            "properties": {
+                "hasGeometry": {
+                    "$ref": "#/$defs/Geometry",
+                    "description": "Geometric representation of the spatial object."
+                }
+            },
+            "title": "Feature",
+            "type": "object"
+        },
+        "Feeder": {
+            "additionalProperties": false,
+            "description": "A collection of equipment for organizational purposes, used for grouping distribution resources. The organization a feeder does not necessarily reflect connectivity or current operation state.",
+            "properties": {
+                "description": {
+                    "anyOf": [
+                        {
+                            "$ref": "#/$defs/JsonLDObject"
+                        },
+                        {
+                            "type": "string"
+                        }
+                    ],
+                    "description": "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy.",
+                    "type": "string"
+                },
+                "hasGeometry": {
+                    "$ref": "#/$defs/Geometry",
+                    "description": "Geometric representation of the spatial object."
+                },
+                "mRID": {
+                    "description": "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.",
+                    "type": "string"
+                },
+                "name": {
+                    "description": "The name is any free human readable and possibly non unique text naming the object.",
+                    "type": "string"
+                }
+            },
+            "title": "Feeder",
+            "type": "object"
+        },
+        "Geometry": {
+            "additionalProperties": false,
+            "description": "Geometric representation details.",
+            "properties": {
+                "asGeoJSON": {
+                    "$ref": "#/$defs/JsonLDObject",
+                    "description": "Geometric representation of the spatial object in GeoJSON format."
+                }
+            },
+            "title": "Geometry",
+            "type": "object"
+        },
+        "JsonLDObject": {
+            "additionalProperties": false,
+            "description": "An object that represents a jsonld compound to support value, type and language.",
+            "properties": {
+                "language": {
+                    "description": "The type of the GeoJSON object, e.g., geo:geoJSONLiteral.",
+                    "type": "string"
+                },
+                "type": {
+                    "description": "The type of the GeoJSON object, e.g., geo:geoJSONLiteral.",
+                    "type": "string"
+                },
+                "value": {
+                    "description": "A string representing the GeoJSON object, typically serialized as a string.",
+                    "type": "string"
+                }
+            },
+            "title": "JsonLDObject",
+            "type": "object"
+        },
+        "SpatialObject": {
+            "additionalProperties": false,
+            "description": "A spatial object is a physical object that has a location in space. It may have a geometric representation to describe its shape and position.",
+            "title": "SpatialObject",
+            "type": "object"
+        },
+        "TimeSeriesInterpolationKind": {
+            "description": "",
+            "enum": [
+                "none",
+                "zero",
+                "previous",
+                "next",
+                "linear"
+            ],
+            "title": "TimeSeriesInterpolationKind",
+            "type": "string"
+        }
+    },
+    "$id": "https://ap-no.cim4.eu/WattApp/1.0",
+    "$schema": "https://json-schema.org/draft/2019-09/schema",
+    "additionalProperties": true,
+    "description": "",
+    "metamodel_version": "1.7.0",
+    "properties": {
+        "CapacitySchedule": {
+            "items": {
+                "$ref": "#/$defs/CapacitySchedule"
+            },
+            "type": "array"
+        },
+        "CapacityTimePoint": {
+            "items": {
+                "$ref": "#/$defs/CapacityTimePoint"
+            },
+            "type": "array"
+        },
+        "Feeder": {
+            "items": {
+                "$ref": "#/$defs/Feeder"
+            },
+            "type": "array"
+        }
+    },
+    "title": "WattApp",
+    "type": "object",
+    "version": null
+}
