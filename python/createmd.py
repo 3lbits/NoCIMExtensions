@@ -641,7 +641,7 @@ class CreateMarkdownFile():
 
             print(f"Markdown file created for {_class}")
 
-class Controller():
+class CreateMdController():
 
     def main(self, schemaName):
 
@@ -667,4 +667,4 @@ class Controller():
 
 if __name__ == "__main__":
     schemaName = "watt_app"
-    Controller().main(schemaName)
+    CreateMdController().main(schemaName)

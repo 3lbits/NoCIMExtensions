@@ -3,7 +3,8 @@ from python.jsonldFromYamlConverter import yamlToJsonldConverter
 from python.generalFunctions import run_bash_command, to_camel_case, remove_all_md_files
 from python.replace_star_with_0dotdotstar import traverse_and_replace
 import uuid
-from python.createmd import Controller
+from python.createmd import CreateMdController
+from python.createOverviewMd import CreaeOverviewMdController
 
 @click.group()
 def main():
@@ -35,7 +36,10 @@ def genDocs(schema: str):
     '''Generate Documentation from yaml schemas using python'''
     click.echo('Generating Documentation using python')
     remove_all_md_files(f"docs/{to_camel_case(schema)}")
-    Controller().main(schema)
+    CreateMdController().main(schema)
+    click.echo('Generating Overview index.md')
+    CreaeOverviewMdController().main()
+    click.echo('Overview index.md Created')
     
 @main.command()
 @click.option('--number', '-n', required=False, default=1, type=int, help='Number of uuids you want')
