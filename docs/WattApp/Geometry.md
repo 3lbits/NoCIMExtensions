@@ -19,11 +19,11 @@ classDiagram
             click Geometry href "../Geometry"
             style Geometry rx:10,ry:10
 
-        Geometry --> JsonLDObject : Geometry.asGeoJSON
+        Geometry --> GeometryObject : Geometry.asGeoJSON
 
-        JsonLDObject
-            click JsonLDObject href "../JsonLDObject"
-            style JsonLDObject fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+        GeometryObject
+            click GeometryObject href "../GeometryObject"
+            style GeometryObject fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
         Feature --> Geometry : Feature.hasGeometry
 
@@ -42,7 +42,7 @@ classDiagram
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
-| asGeoJSON | [geo:asGeoJSON](http://www.opengis.net/ont/geosparql#asGeoJSON) | 0..1 | Geometric representation of the spatial object in GeoJSON format. | direct |
+| asGeoJSON | [geo:asGeoJSON](http://www.opengis.net/ont/geosparql#asGeoJSON) | 0..1 GeometryObject | Geometric representation of the spatial object in GeoJSON format. | direct |
 
 ### Schema Source
 * from schema: [https://ap-no.cim4.eu/WattApp/1.0](https://ap-no.cim4.eu/WattApp/1.0)

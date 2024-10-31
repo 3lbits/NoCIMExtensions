@@ -246,7 +246,7 @@ class ClassData():
             dataDict[_class]["completeUri"] = ClassData().getCompleteUri(classUri) if classUri != None else 'No URI available'
             dataDict[_class]["mermaidString"] = CreateMermaid().createMermaid(inheritanceDict)
             dataDict[_class]["inheritanceString"] = CreateMarkdownFile().createInheritanceString(inheritanceDict)
-            dataDict[_class]["tableString"] = CreateMarkdownFile().createAttributeTableString(inheritanceDict[_class], _class) if _class in inheritanceDict else None
+            dataDict[_class]["tableString"] = CreateMarkdownFile().createAttributeTableString(inheritanceDict) if _class in inheritanceDict else None
             dataDict[_class]["schemaSource"] = yamlDict["id"] if "id" in yamlDict else "Missing id in Schema"
         return dataDict
 
@@ -545,8 +545,8 @@ class CreateMarkdownFile():
                 for key, value in enum.items():
                     file.write(f'| [{key}]({key}.md) | {value} |\n')
 
-    def createAttributeTableString(self, inheritanceList, _class):
-        _list = inheritanceList
+    def createAttributeTableString(self, inheritanceDict):
+        _list = inheritanceDict[globalClass]
         tableAttribiuteString = ""
         for object in _list:
             for key in object:
@@ -562,12 +562,31 @@ class CreateMarkdownFile():
                     _URI = f'[{slot_uri}]({url}{nonPrefix})' if slot_uri != 'No URI available' else 'No URI available'
                     minimum_cardinality = attributes[attribute]["minimum_cardinality"] if "minimum_cardinality" in attributes[attribute] else None
                     maximum_cardinality = attributes[attribute]["maximum_cardinality"] if "maximum_cardinality" in attributes[attribute] else None
+
+                    rangeList = []
+
+                    if "any_of" in attributes[attribute]:
+                        any_of = attributes[attribute]["any_of"]
+                        for _dict in any_of:
+                            value = _dict["range"]
+                            if value in yamlDict["classes"]:
+                                rangeList.append(f'[{value}]({value}.md)')
+                            elif value in yamlDict["enums"]:
+                                rangeList.append(f'[{value}]({value}.md)')
+                            else:
+                                rangeList.append(value)
+                    elif "range" in attributes[attribute]:
+                        rangeList = [attributes[attribute]["range"]]
+
+                    _range = ' or '.join(rangeList)
+                    
                     multivalued = attributes[attribute]["multivalued"] if "multivalued" in attributes[attribute] else False
                     maximum_cardinality = "*" if multivalued == True else maximum_cardinality
                     cardinality = f'{minimum_cardinality}..{maximum_cardinality}' if minimum_cardinality != None and maximum_cardinality != None else 'No cardinality available'
+                    cardninality_and_range = f'''{cardinality} {_range}'''
                     description = attributes[attribute]["description"] if "description" in attributes[attribute] else 'No description available'
-                    inheritance = key if key != _class else 'direct'
-                    tableAttribiuteString += f'| {name} | {_URI} | {cardinality} | {description} | {inheritance} |\n'
+                    inheritance = key if key != globalClass else 'direct'
+                    tableAttribiuteString += f'| {name} | {_URI} | {cardninality_and_range} | {description} | {inheritance} |\n'
 
         return tableAttribiuteString
 
@@ -649,5 +668,3 @@ class Controller():
 if __name__ == "__main__":
     schemaName = "watt_app"
     Controller().main(schemaName)
-
-# DataType

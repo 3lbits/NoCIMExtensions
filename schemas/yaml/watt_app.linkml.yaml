@@ -55,13 +55,27 @@ classes:
         description: "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."
         slot_uri: cim:IdentifiedObject.description
         any_of:
-          - range: JsonLDObject
+          - range: LanguageObject
           - range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
       name:
         description: "The name is any free human readable and possibly non unique text naming the object."
         slot_uri: cim:IdentifiedObject.name
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
+  LanguageObject:
+    description: "An object that represents a jsonld compound to support value, type and language."
+    attributes:
+      value:
+        description: "A string representing the GeoJSON object, typically serialized as a string."
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      type:
+        description: "The type of the GeoJSON object, e.g., geo:geoJSONLiteral."
         range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
@@ -91,11 +105,11 @@ classes:
       asGeoJSON:
         description: "Geometric representation of the spatial object in GeoJSON format."
         slot_uri: geo:asGeoJSON
-        range: JsonLDObject
+        range: GeometryObject
         minimum_cardinality: 0
         maximum_cardinality: 1
 
-  JsonLDObject:
+  GeometryObject:
     description: "An object that represents a jsonld compound to support value, type and language."
     attributes:
       value:
@@ -108,11 +122,6 @@ classes:
         range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
-      language:
-          description: "The type of the GeoJSON object, e.g., geo:geoJSONLiteral."
-          range: string
-          minimum_cardinality: 0
-          maximum_cardinality: 1
 
   PowerSystemResource:
     description: "A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated."
