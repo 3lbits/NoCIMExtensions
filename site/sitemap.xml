@@ -2,442 +2,442 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://NoCIM.elbits.no/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/ACLineSegment/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/ACLineSegmentSpan/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/ACLineSegmentSpanDeployment/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/AssetDeployment/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/AviationObstacleLightingKind/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/AviationObstacleMarkingKind/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/BaseVoltage/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/ConductingEquipment/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/Conductor/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/DeploymentStateKind/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/ElementResource/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/Equipment/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/Feature/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/Geometry/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/IdentifiedObject/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/LocationMethodKind/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/LocationResource/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/OverheadStructure/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/PowerSystemResource/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/SpatialObject/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/Structure/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/StructureDeployment/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/Zone/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/ZoneKind/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/AviationObstacle/ZoneStateKind/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/AssetInfo/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/AssetSpecification/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/BindingLayer/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/CableInfo/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/CableLayer/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/CableShieldMaterialKind/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/ConcentricWireLayer/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/ConductingAssetInfo/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/ConductorInfo/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/ConductorScreenLayer/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/CorrugatedRoundWire/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/FlatStraps/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/GappedTape/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/IdentifiedObject/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/InnerSheathLayer/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/InsulationLayer/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/InsulationScreenLayer/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/LappedTape/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/LongitudinallyCorrugatedTape/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/Manufacturer/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/MetallicSheathLayer/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/MultiCoreCableInfo/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/NonMetallicSheathLayer/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/OrganisationRole/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/OverSheathLayer/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/PerLengthConductorParameter/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/PerLengthImpedance/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/PerLengthPhaseImpedance/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/PerLengthSequenceImpedance/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/PhaseImpedanceData/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/ProductAssetModel/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/ResistancePerLengthTemperaturePoint/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/RoundWire/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/ScreenLayer/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/SkidWireLayer/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/SplitConcentric/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/SwellableWaterTapes/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/TapeLayer/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/TubularTape/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/WireBraidInfo/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/WireInfo/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/WireInsulationKind/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/SubseaCableInfo/WireMaterialKind/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/WattApp/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/WattApp/BaseIrregularTimeSeries/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/WattApp/BaseTimeSeries/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/WattApp/BaseTimeSeriesKind/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/WattApp/CapacitySchedule/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/WattApp/CapacityTimePoint/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/WattApp/ConnectivityNodeContainer/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/WattApp/EquipmentContainer/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/WattApp/Feature/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/WattApp/Feeder/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/WattApp/Geometry/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/WattApp/GeometryObject/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/WattApp/IdentifiedObject/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/WattApp/LanguageObject/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/WattApp/PowerSystemResource/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/WattApp/SpatialObject/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
          <loc>https://NoCIM.elbits.no/WattApp/TimeSeriesInterpolationKind/</loc>
-         <lastmod>2024-10-31</lastmod>
+         <lastmod>2024-11-04</lastmod>
          <changefreq>daily</changefreq>
     </url>
 </urlset>
