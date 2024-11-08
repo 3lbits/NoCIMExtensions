@@ -1,0 +1,13 @@
+:root {
+    --md-primary-fg-color:        #EE0F0F;
+    --md-primary-fg-color--light: #ECB7B7;
+    --md-primary-fg-color--dark:  #90030C;
+  }
+
+/* Override the icon */
+.md-footer-social a[href="https://www.elbits.no"] .md-icon {
+    background-image: url("images/Color.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: transparent; /* Hides the original icon color */
+  }
