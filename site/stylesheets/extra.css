@@ -1,9 +1,7 @@
-.md-grid {
-  max-width: 1600px; 
-}
-
-:root > * {
-    --md-primary-fg-color:        #eeeeee;
-    --md-primary-fg-color--light: #BFBDB9;
-    --md-primary-fg-color--dark:  #494847;
+/* Override the icon */
+.md-footer-social a[href="https://www.elbits.no"] .md-icon {
+    background-image: url("images/Color.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    color: transparent; /* Hides the original icon color */
   }

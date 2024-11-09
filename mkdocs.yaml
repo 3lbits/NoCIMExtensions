@@ -7,6 +7,7 @@ copyright: Copyright &copy; 2024 ElBits AS
 
 theme:
   name: material # Specifies that the material theme is used.
+  custom_dir: overrides
   favicon: images/cim4nologo.svg
   logo: images/cim4nologo.svg
   features: # Enables optional features provided by the material theme.
@@ -28,13 +29,13 @@ theme:
         icon: material/toggle-switch-off-outline
         name: Switch to dark mode
       primary: black # Set primary color for scheme.
-      accent: purple # Set accent color for scheme.
+      accent: red # Set accent color for scheme.
     - scheme: slate # Define color schemes Dark
       toggle: # Configures the dark mode toggle with icons and labels.
         icon: material/toggle-switch
         name: Switch to light mode
       primary: black # Set primary color for scheme.
-      accent: lime # Set accent color for scheme.
+      accent: green # Set accent color for scheme.
 
 extra:
   generator: false
@@ -43,8 +44,6 @@ extra:
       link: https://github.com/3lbits/NoCIMExtensions
     - icon: fontawesome/solid/file
       link: https://github.com/3lbits/CIM4NoUtility/tree/main
-    - icon: fontawesome/brands/github
-      link: https://www.elbits.no
 
 markdown_extensions:
   - pymdownx.betterem
