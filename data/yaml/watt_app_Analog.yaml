@@ -1,0 +1,87 @@
+PowerTransformer:
+  - mRID: "30d5bc7d-e9c0-4358-b2b5-684a1481690a"
+    description: #"Arnavågen"
+      value: "Arnavågen"
+      language: "no"
+    name: "Arnavaagen"
+    hasGeometry:
+      asGeoJSON:
+        value: "{\"type\": \"Point\", \"coordinates\": [5.4534532843780426, 60.4284708834164]}"
+        type: "geo:geoJSONLiteral"
+PowerTransformerEnd:
+  - mRID: "6f16542a-c2ef-4ac9-a30e-1729200fce15"
+    PowerTransformer: 
+      mRID: "30d5bc7d-e9c0-4358-b2b5-684a1481690a"
+    Terminal: 
+      mRID: "f6fce7f7-cb4b-474a-a181-c923242c84e2"
+  - mRID: "9e77d73c-c82d-4ed2-a905-b0ad16468460" # secondary
+    PowerTransformer: 
+      mRID: "30d5bc7d-e9c0-4358-b2b5-684a1481690a"
+    Terminal: 
+      mRID: "c92acc7d-7ba1-407e-9d9b-db9e2b860c54"
+Terminal:
+  - mRID: "f6fce7f7-cb4b-474a-a181-c923242c84e2"
+    ConnectivityNode:
+      mRID: "2d150aeb-6f84-452e-b4b5-cb312cfe08b2"
+  - mRID: "c92acc7d-7ba1-407e-9d9b-db9e2b860c54"
+    ConnectivityNode:
+      mRID: "f99fe912-35f2-4c17-8d0f-885d2a2ba116"
+ConnectivityNode:
+  - mRID: "2d150aeb-6f84-452e-b4b5-cb312cfe08b2"
+  - mRID: "f99fe912-35f2-4c17-8d0f-885d2a2ba116"
+Analog:
+  - mRID: "d9ef88a6-def7-4847-88cf-d03e7cdb76e5"
+    measurementType: "ActivePower"
+    unitSymbol: "W"
+    unitMultiplier: "M"
+    positiveFlowIn: false # true=power is flowing from distribution to regional grid
+    ACDCTerminal: 
+      mRID: "c92acc7d-7ba1-407e-9d9b-db9e2b860c54"
+  - mRID: "2b70deeb-af03-4db0-9c2e-2f341c3ac16a"
+    measurementType: "ActivePower"
+    unitSymbol: "W"
+    unitMultiplier: "M"
+    positiveFlowIn: true # true=power is flowing from distribution to regional grid 
+    ACDCTerminal: 
+      mRID: "c92acc7d-7ba1-407e-9d9b-db9e2b860c54" # secondary 
+AnalogValue:
+  - mRID: "387a7300-b75b-4612-8f75-14d63e9fa81e"
+    value: 10.00
+    timeStamp: "2024-01-12T08:00:00.000Z"
+    Analog:
+      mRID: "d9ef88a6-def7-4847-88cf-d03e7cdb76e5"
+  - mRID: "322376c6-1a40-417f-88bb-d02c57d6620f"
+    value: 8.00
+    timeStamp: "2024-01-12T08:00:00.000Z"
+    Analog:
+      mRID: "2b70deeb-af03-4db0-9c2e-2f341c3ac16a"
+CapacitySchedule:
+  - mRID: "125b57ca-1e34-4c14-a747-1fc3535a2578"
+    description: "Capacity schedule Arnavaagen actual"
+    name: "Capacity_Schedule_Arnavaagen_actual"
+    interpolationKind: "previous"
+    timeSeriesKind: "actual"
+    generatedAtTime: "2024-01-12T08:00:00.000Z"
+    percentile: 50
+    actionMethod: "Power System Report"
+    PowerTransformer: # ConductingEquipment level instead?
+      mRID: "30d5bc7d-e9c0-4358-b2b5-684a1481690a"
+  - mRID: "0bd0b41f-4e08-4139-88e0-adc613748bcd"
+    description: "Capacity schedule Arnavaagen planned"
+    name: "Capacity_Schedule_Arnavaagen_planned"
+    interpolationKind: "previous"
+    timeSeriesKind: "forecast"
+    generatedAtTime: "2024-01-12T08:00:00.000Z"
+    percentile: 50
+    actionMethod: "Power System Report"
+    PowerTransformer: # ConductingEquipment level instead?
+      mRID: "30d5bc7d-e9c0-4358-b2b5-684a1481690a"
+CapacityTimePoint:
+  - atTime: "2024-01-12T08:00:00.000Z"
+    maxP: 10.0 # don't know the convention for this attribute, maxAllocatedP is using load sign convention, i.e. negative number means an import, positive number means an export. This is opposite from the sign convention for Analog (when looking from the Transformer secondary side and to the distribution grid)
+    minP: -8.0
+    maxAllocatedP: 0.0 
+    minAllocatedP: 0.0
+    CapacitySchedule:
+      mRID: "125b57ca-1e34-4c14-a747-1fc3535a2578"
+

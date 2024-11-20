@@ -70,7 +70,7 @@ classes:
     description: "An object that represents a jsonld compound to support value, type and language."
     attributes:
       value:
-        description: "A string."
+        description: "A string representing the GeoJSON object, typically serialized as a string."
         range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
@@ -399,19 +399,13 @@ classes:
     is_a: BaseIrregularTimeSeries
     class_uri: nc:CapacitySchedule
     attributes:
-      Feeder:
+      ConnctivityNode:
         description: ""
-        slot_uri: nc-no:CapacitySchedule.Feeder
-        range: Feeder
+        slot_uri: nc-no:CapacitySchedule.ConnectivityNode
+        range: ConnectivityNode
         minimum_cardinality: 0
         maximum_cardinality: 1
-      PowerTransformer:
-        description: ""
-        slot_uri: nc-no:CapacitySchedule.PowerTransformer
-        range: PowerTransformer
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-
+      
   CapacityTimePoint:
     description: ""
     is_a: BaseIrregularTimeSeries
@@ -501,10 +495,6 @@ classes:
         multivalued: true
         inlined_as_list: true
         range: ConnectivityNode
-      Feeder:
-        multivalued: true
-        inlined_as_list: true
-        range: Feeder
       PowerTransformer:
         multivalued: true
         inlined_as_list: true
@@ -521,6 +511,7 @@ classes:
         multivalued: true
         inlined_as_list: true
         range: Terminal
+      
 
 enums:
 
