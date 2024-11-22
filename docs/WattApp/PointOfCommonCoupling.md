@@ -1,48 +1,30 @@
-# EquipmentContainer
+# PointOfCommonCoupling
 
-_A modelling construct to provide a root class for containing equipment._
+_Point of Common Coupling (PCC) refers to the location where multiple electrical sources or loads are electrically connected and provide a reference point where the voltages and currents from different parts of the system are considered to be common. The PCC is used to support system analysis, control, and monitoring, as it provides a reference for understanding the interactions and power flow between various components within the system. It is also relevant to define the requirement and responsibility between different actors in operating a power system._
 
 *__NOTE__: this is an abstract class and should not be instantiated directly
 
-**URI**: [cim:EquipmentContainer](https://cim.ucaiug.io/ns#EquipmentContainer)<br />
+**URI**: [nc:PointOfCommonCoupling](https://cim4.eu/ns/nc#PointOfCommonCoupling)<br />
 **Type**: Class
 
 ```mermaid
 classDiagram
-    class EquipmentContainer
-    click EquipmentContainer href "/WattApp/EquipmentContainer/"
-    style EquipmentContainer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    class PointOfCommonCoupling
+    click PointOfCommonCoupling href "/WattApp/PointOfCommonCoupling/"
+    style PointOfCommonCoupling fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
-        EquipmentContainer <|-- Feeder : inherits
-            click EquipmentContainer href "/WattApp/EquipmentContainer/"
-            style EquipmentContainer rx:10,ry:10
+        PointOfCommonCoupling <|-- ACPointOfCommonCoupling : inherits
+            click PointOfCommonCoupling href "/WattApp/PointOfCommonCoupling/"
+            style PointOfCommonCoupling rx:10,ry:10
 
-        Feeder
-            click Feeder href "/WattApp/Feeder/"
-            style Feeder rx:10,ry:10
+        ACPointOfCommonCoupling
+            click ACPointOfCommonCoupling href "/WattApp/ACPointOfCommonCoupling/"
+            style ACPointOfCommonCoupling rx:10,ry:10
 
-        ConnectivityNodeContainer <|-- EquipmentContainer : inherits
-            click ConnectivityNodeContainer href "/WattApp/ConnectivityNodeContainer/"
-            style ConnectivityNodeContainer rx:10,ry:10
-
-        PowerSystemResource <|-- ConnectivityNodeContainer : inherits
-            click PowerSystemResource href "/WattApp/PowerSystemResource/"
-            style PowerSystemResource rx:10,ry:10
-
-        IdentifiedObject <|-- PowerSystemResource : inherits
+        IdentifiedObject <|-- PointOfCommonCoupling : inherits
             click IdentifiedObject href "/WattApp/IdentifiedObject/"
             style IdentifiedObject rx:10,ry:10
 
-        Feature <|-- PowerSystemResource : inherits
-            click Feature href "/WattApp/Feature/"
-            style Feature fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
-
-
-        Equipment --> EquipmentContainer : Equipment.EquipmentContainer
-
-        Equipment
-            click Equipment href "/WattApp/Equipment/"
-            style Equipment fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 
         IdentifiedObject : IdentifiedObject.mRID
@@ -52,9 +34,7 @@ classDiagram
 
 ## Inheritance
 * [IdentifiedObject](IdentifiedObject.md)
-    * [PowerSystemResource](PowerSystemResource.md)
-        * [ConnectivityNodeContainer](ConnectivityNodeContainer.md)
-            * **EquipmentContainer**
+    * **PointOfCommonCoupling**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |

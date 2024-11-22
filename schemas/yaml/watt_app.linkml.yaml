@@ -54,6 +54,7 @@ classes:
       description:
         description: "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."
         slot_uri: cim:IdentifiedObject.description
+        range: Any
         any_of:
           - range: LanguageObject
           - range: string
@@ -195,6 +196,12 @@ classes:
     class_uri: cim:TransformerEnd
     abstract: true
     attributes:
+      endNumber:
+        description: "Number for this transformer end, corresponding to the end's order in the power transformer vector group or phase angle clock number.  Highest voltage winding should be 1.  Each end within a power transformer should have a unique subsequent end number.   Note the transformer end number need not match the terminal sequence number."
+        slot_uri: cim:TransformerEnd.endNumber
+        range: Integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       Terminal:
         description: "Terminal of the power transformer to which this transformer end belongs."
         slot_uri: cim:TransformerEnd.Terminal
@@ -207,6 +214,12 @@ classes:
     is_a: TransformerEnd
     class_uri: cim:PowerTransformerEnd
     attributes:
+      ratedU:
+        description: "Rated voltage: phase-phase for three-phase windings, and either phase-phase or phase-neutral for single-phase windings.\n\nA high voltage side, as given by TransformerEnd.endNumber, shall have a ratedU that is greater than or equal to ratedU for the lower voltage sides.\n\nThe attribute shall be a positive value."
+        slot_uri: cim:PowerTransformerEnd.ratedU
+        range: Voltage
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       PowerTransformer:
         description: "The power transformer of this power transformer end."
         slot_uri: cim:PowerTransformerEnd.PowerTransformer
@@ -220,6 +233,12 @@ classes:
     class_uri: cim:ACDCTerminal
     abstract: true
     attributes:
+      sequenceNumber:
+        description: "The orientation of the terminal connections for a multiple terminal conducting equipment.  The sequence numbering starts with 1 and additional terminals should follow in increasing order. The first terminal is the \"starting point\" for a two terminal branch."
+        slot_uri: cim:ACDCTerminal.sequenceNumber
+        range: Integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
 
   Terminal:
     description: "An AC electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes."
@@ -238,6 +257,25 @@ classes:
     is_a: IdentifiedObject
     class_uri: cim:ConnectivityNode
     attributes:
+
+  PointOfCommonCoupling:
+    description: "Point of Common Coupling (PCC) refers to the location where multiple electrical sources or loads are electrically connected and provide a reference point where the voltages and currents from different parts of the system are considered to be common. The PCC is used to support system analysis, control, and monitoring, as it provides a reference for understanding the interactions and power flow between various components within the system. It is also relevant to define the requirement and responsibility between different actors in operating a power system."
+    is_a: IdentifiedObject
+    class_uri: nc:PointOfCommonCoupling
+    abstract: true
+    attributes:
+  
+  ACPointOfCommonCoupling:
+    description: "Point of interconnection of the DC converter station to the adjacent AC system (IEC 60633)."
+    is_a: PointOfCommonCoupling
+    class_uri: nc:ACPointOfCommonCoupling
+    attributes:
+      ConnectivityNode:
+        description: "Connectivity node which is a point of common coupling AC."
+        slot_uri: nc:ACPointOfCommonCoupling.ConnectivityNode
+        range: ConnectivityNode
+        minimum_cardinality: 0
+        maximum_cardinality: 1
 
   Measurement:
     description: "A Measurement represents any measured, calculated or non-measured non-calculated quantity. Any piece of equipment may contain Measurements, e.g. a substation may have temperature measurements and door open indications, a transformer may have oil temperature and tank pressure measurements, a bay may contain a number of power flow measurements and a Breaker may contain a switch status measurement.\nThe PSR - Measurement association is intended to capture this use of Measurement and is included in the naming hierarchy based on EquipmentContainer. The naming hierarchy typically has Measurements as leaves, e.g. Substation-VoltageLevel-Bay-Switch-Measurement.\nSome Measurements represent quantities related to a particular sensor location in the network, e.g. a voltage transformer (VT) or potential transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is not captured in the PSR - Measurement association. Instead it is captured by the Measurement - Terminal association that is used to define the sensing location in the network topology. The location is defined by the connection of the Terminal to ConductingEquipment.\nIf both a Terminal and PSR are associated, and the PSR is of type ConductingEquipment, the associated Terminal should belong to that ConductingEquipment instance.\nWhen the sensor location is needed both Measurement-PSR and Measurement-Terminal are used. The Measurement-Terminal association is never used alone."
@@ -399,19 +437,13 @@ classes:
     is_a: BaseIrregularTimeSeries
     class_uri: nc:CapacitySchedule
     attributes:
-      Feeder:
+      ACPointOfCommonCoupling:
         description: ""
-        slot_uri: nc-no:CapacitySchedule.Feeder
-        range: Feeder
+        slot_uri: nc-no:CapacitySchedule.ACPointOfCommonCoupling
+        range: ACPointOfCommonCoupling
         minimum_cardinality: 0
         maximum_cardinality: 1
-      PowerTransformer:
-        description: ""
-        slot_uri: nc-no:CapacitySchedule.PowerTransformer
-        range: PowerTransformer
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-
+     
   CapacityTimePoint:
     description: ""
     is_a: BaseIrregularTimeSeries
@@ -521,6 +553,10 @@ classes:
         multivalued: true
         inlined_as_list: true
         range: Terminal
+      ACPointOfCommonCoupling:
+        multivalued: true
+        inlined_as_list: true
+        range: ACPointOfCommonCoupling
 
 enums:
 
@@ -825,3 +861,11 @@ types:
     annotations:
       cim_data_type: true
       uri: cim:String
+  
+  Voltage:
+    uri: xsd:float
+    base: float
+    description: ""
+    annotations:
+      cim_data_type: true
+      uri: cim:Voltage

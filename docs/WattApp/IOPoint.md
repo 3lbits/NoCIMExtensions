@@ -1,48 +1,30 @@
-# EquipmentContainer
+# IOPoint
 
-_A modelling construct to provide a root class for containing equipment._
+_The class describe a measurement or control value. The purpose is to enable having attributes and associations common for measurement and control._
 
 *__NOTE__: this is an abstract class and should not be instantiated directly
 
-**URI**: [cim:EquipmentContainer](https://cim.ucaiug.io/ns#EquipmentContainer)<br />
+**URI**: [cim:IOPoint](https://cim.ucaiug.io/ns#IOPoint)<br />
 **Type**: Class
 
 ```mermaid
 classDiagram
-    class EquipmentContainer
-    click EquipmentContainer href "/WattApp/EquipmentContainer/"
-    style EquipmentContainer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    class IOPoint
+    click IOPoint href "/WattApp/IOPoint/"
+    style IOPoint fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
-        EquipmentContainer <|-- Feeder : inherits
-            click EquipmentContainer href "/WattApp/EquipmentContainer/"
-            style EquipmentContainer rx:10,ry:10
+        IOPoint <|-- MeasurementValue : inherits
+            click IOPoint href "/WattApp/IOPoint/"
+            style IOPoint rx:10,ry:10
 
-        Feeder
-            click Feeder href "/WattApp/Feeder/"
-            style Feeder rx:10,ry:10
+        MeasurementValue
+            click MeasurementValue href "/WattApp/MeasurementValue/"
+            style MeasurementValue rx:10,ry:10
 
-        ConnectivityNodeContainer <|-- EquipmentContainer : inherits
-            click ConnectivityNodeContainer href "/WattApp/ConnectivityNodeContainer/"
-            style ConnectivityNodeContainer rx:10,ry:10
-
-        PowerSystemResource <|-- ConnectivityNodeContainer : inherits
-            click PowerSystemResource href "/WattApp/PowerSystemResource/"
-            style PowerSystemResource rx:10,ry:10
-
-        IdentifiedObject <|-- PowerSystemResource : inherits
+        IdentifiedObject <|-- IOPoint : inherits
             click IdentifiedObject href "/WattApp/IdentifiedObject/"
             style IdentifiedObject rx:10,ry:10
 
-        Feature <|-- PowerSystemResource : inherits
-            click Feature href "/WattApp/Feature/"
-            style Feature fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
-
-
-        Equipment --> EquipmentContainer : Equipment.EquipmentContainer
-
-        Equipment
-            click Equipment href "/WattApp/Equipment/"
-            style Equipment fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 
         IdentifiedObject : IdentifiedObject.mRID
@@ -52,9 +34,7 @@ classDiagram
 
 ## Inheritance
 * [IdentifiedObject](IdentifiedObject.md)
-    * [PowerSystemResource](PowerSystemResource.md)
-        * [ConnectivityNodeContainer](ConnectivityNodeContainer.md)
-            * **EquipmentContainer**
+    * **IOPoint**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |

@@ -1,48 +1,36 @@
-# EquipmentContainer
+# ACDCTerminal
 
-_A modelling construct to provide a root class for containing equipment._
+_None_
 
 *__NOTE__: this is an abstract class and should not be instantiated directly
 
-**URI**: [cim:EquipmentContainer](https://cim.ucaiug.io/ns#EquipmentContainer)<br />
+**URI**: [cim:ACDCTerminal](https://cim.ucaiug.io/ns#ACDCTerminal)<br />
 **Type**: Class
 
 ```mermaid
 classDiagram
-    class EquipmentContainer
-    click EquipmentContainer href "/WattApp/EquipmentContainer/"
-    style EquipmentContainer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    class ACDCTerminal
+    click ACDCTerminal href "/WattApp/ACDCTerminal/"
+    style ACDCTerminal fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
-        EquipmentContainer <|-- Feeder : inherits
-            click EquipmentContainer href "/WattApp/EquipmentContainer/"
-            style EquipmentContainer rx:10,ry:10
+        ACDCTerminal <|-- Terminal : inherits
+            click ACDCTerminal href "/WattApp/ACDCTerminal/"
+            style ACDCTerminal rx:10,ry:10
 
-        Feeder
-            click Feeder href "/WattApp/Feeder/"
-            style Feeder rx:10,ry:10
+        Terminal
+            click Terminal href "/WattApp/Terminal/"
+            style Terminal rx:10,ry:10
 
-        ConnectivityNodeContainer <|-- EquipmentContainer : inherits
-            click ConnectivityNodeContainer href "/WattApp/ConnectivityNodeContainer/"
-            style ConnectivityNodeContainer rx:10,ry:10
-
-        PowerSystemResource <|-- ConnectivityNodeContainer : inherits
-            click PowerSystemResource href "/WattApp/PowerSystemResource/"
-            style PowerSystemResource rx:10,ry:10
-
-        IdentifiedObject <|-- PowerSystemResource : inherits
+        IdentifiedObject <|-- ACDCTerminal : inherits
             click IdentifiedObject href "/WattApp/IdentifiedObject/"
             style IdentifiedObject rx:10,ry:10
 
-        Feature <|-- PowerSystemResource : inherits
-            click Feature href "/WattApp/Feature/"
-            style Feature fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
 
+        Measurement --> ACDCTerminal : Measurement.ACDCTerminal
 
-        Equipment --> EquipmentContainer : Equipment.EquipmentContainer
-
-        Equipment
-            click Equipment href "/WattApp/Equipment/"
-            style Equipment fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+        Measurement
+            click Measurement href "/WattApp/Measurement/"
+            style Measurement fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 
         IdentifiedObject : IdentifiedObject.mRID
@@ -52,9 +40,7 @@ classDiagram
 
 ## Inheritance
 * [IdentifiedObject](IdentifiedObject.md)
-    * [PowerSystemResource](PowerSystemResource.md)
-        * [ConnectivityNodeContainer](ConnectivityNodeContainer.md)
-            * **EquipmentContainer**
+    * **ACDCTerminal**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |

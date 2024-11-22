@@ -1,23 +1,23 @@
-# Feeder
+# Substation
 
-_A collection of equipment for organizational purposes, used for grouping distribution resources. The organization a feeder does not necessarily reflect connectivity or current operation state._
+_A collection of equipment for purposes other than generation or utilization, through which electric energy in bulk is passed for the purposes of switching or modifying its characteristics._
 
-**URI**: [cim:Feeder](https://cim.ucaiug.io/ns#Feeder)<br />
+**URI**: [cim:Substation](https://cim.ucaiug.io/ns#Substation)<br />
 **Type**: Class
 
 ```mermaid
 classDiagram
-    class Feeder
-    click Feeder href "/WattApp/Feeder/"
-    style Feeder fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    class Substation
+    click Substation href "/WattApp/Substation/"
+    style Substation fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
 
-        EquipmentContainer <|-- Feeder : inherits
+        EquipmentContainer <|-- Substation : inherits
             click EquipmentContainer href "/WattApp/EquipmentContainer/"
             style EquipmentContainer rx:10,ry:10
 
-        Feeder
-            click Feeder href "/WattApp/Feeder/"
-            style Feeder rx:10,ry:10
+        Substation
+            click Substation href "/WattApp/Substation/"
+            style Substation rx:10,ry:10
 
         ConnectivityNodeContainer <|-- EquipmentContainer : inherits
             click ConnectivityNodeContainer href "/WattApp/ConnectivityNodeContainer/"
@@ -53,7 +53,7 @@ classDiagram
     * [PowerSystemResource](PowerSystemResource.md)
         * [ConnectivityNodeContainer](ConnectivityNodeContainer.md)
             * [EquipmentContainer](EquipmentContainer.md)
-                * **Feeder**
+                * **Substation**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |
