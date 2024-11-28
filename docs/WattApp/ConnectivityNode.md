@@ -20,6 +20,12 @@ classDiagram
             style ConnectivityNode rx:10,ry:10
 
 
+        Terminal --> ConnectivityNode : Terminal.ConnectivityNode
+
+        Terminal
+            click Terminal href "/WattApp/Terminal/"
+            style Terminal fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+
         ACPointOfCommonCoupling --> ConnectivityNode : ACPointOfCommonCoupling.ConnectivityNode
 
         ACPointOfCommonCoupling

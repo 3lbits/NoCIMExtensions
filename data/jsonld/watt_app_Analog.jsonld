@@ -11,10 +11,10 @@
         "nc": "https://cim4.eu/ns/nc#",
         "geo": "http://www.opengis.net/ont/geosparql#"
     },
-    "@id": "urn:uuid:99401ea3-00aa-43d7-a78e-33ef8262f0da",
+    "@id": "urn:uuid:433f2c75-38ee-491c-bc5a-d101b1423d1e",
     "@type": "dcat:Dataset",
     "prov:generatedAtTime": {
-        "@value": "2024-11-21T13:18:40Z",
+        "@value": "2024-11-28T09:53:46Z",
         "@type": "xsd:date"
     },
     "dcterms:title": "Telemark-120_WattApp-GL",
@@ -30,7 +30,7 @@
     "dcterms:temporal": {
         "@type": "dcterms:PeriodOfTime",
         "dcat:startDate": {
-            "@value": "2024-11-21T13:18:40Z",
+            "@value": "2024-11-28T09:53:46Z",
             "@type": "xsd:dateTime"
         }
     },
@@ -183,25 +183,6 @@
             }
         },
         {
-            "@id": "urn:uuid:125b57ca-1e34-4c14-a747-1fc3535a2578",
-            "@type": "nc:CapacitySchedule",
-            "cim:IdentifiedObject.mRID": "125b57ca-1e34-4c14-a747-1fc3535a2578",
-            "cim:IdentifiedObject.description": "Capacity schedule Arnavaagen actual",
-            "cim:IdentifiedObject.name": "Capacity_Schedule_Arnavaagen_actual",
-            "nc:BaseTimeSeries.interpolationKind": {
-                "@id": "nc:TimeSeriesInterpolationKind.previous"
-            },
-            "nc:BaseTimeSeries.timeSeriesKind": {
-                "@id": "nc:BaseTimeSeriesKind.actual"
-            },
-            "nc:BaseTimeSeries.generatedAtTime": "2024-01-12T08:00:00.000Z",
-            "nc:BaseTimeSeries.percentile": 50,
-            "nc:BaseTimeSeries.actionMethod": "Power System Report",
-            "nc-no:CapacitySchedule.ACPointOfCommonCoupling": {
-                "@id": "urn:uuid:ddfce0d7-5643-46ba-b664-5b472690eceb"
-            }
-        },
-        {
             "@id": "urn:uuid:0bd0b41f-4e08-4139-88e0-adc613748bcd",
             "@type": "nc:CapacitySchedule",
             "cim:IdentifiedObject.mRID": "0bd0b41f-4e08-4139-88e0-adc613748bcd",
@@ -222,24 +203,13 @@
         },
         {
             "@type": "nc:CapacityTimePoint",
-            "nc:CapacityTimePoint.atTime": "2024-01-12T08:00:00.000Z",
-            "nc:CapacityTimePoint.maxP": 10.0,
-            "nc:CapacityTimePoint.minP": -8.0,
-            "nc:CapacityTimePoint.maxAllocatedP": 0.0,
-            "nc:CapacityTimePoint.minAllocatedP": 0.0,
-            "nc:CapacityTimePoint.CapacitySchedule": {
-                "@id": "urn:uuid:125b57ca-1e34-4c14-a747-1fc3535a2578"
-            }
-        },
-        {
-            "@type": "nc:CapacityTimePoint",
             "nc:CapacityTimePoint.atTime": "2028-01-12T08:00:00.000Z",
             "nc:CapacityTimePoint.maxP": 10.0,
             "nc:CapacityTimePoint.minP": -8.0,
-            "nc:CapacityTimePoint.maxAllocatedP": 0.0,
-            "nc:CapacityTimePoint.minAllocatedP": 0.0,
+            "nc:CapacityTimePoint.maxAllocatedP": 18.0,
+            "nc:CapacityTimePoint.minAllocatedP": -22.0,
             "nc:CapacityTimePoint.CapacitySchedule": {
-                "@id": "urn:uuid:125b57ca-1e34-4c14-a747-1fc3535a2578"
+                "@id": "urn:uuid:0bd0b41f-4e08-4139-88e0-adc613748bcd"
             }
         }
     ]

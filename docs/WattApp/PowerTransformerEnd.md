@@ -41,7 +41,9 @@ classDiagram
             style Terminal fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
 
 
+        PowerTransformerEnd : PowerTransformerEnd.ratedU
         PowerTransformerEnd : PowerTransformerEnd.PowerTransformer
+        TransformerEnd : TransformerEnd.endNumber
         TransformerEnd : TransformerEnd.Terminal
         IdentifiedObject : IdentifiedObject.mRID
         IdentifiedObject : IdentifiedObject.description
@@ -56,7 +58,13 @@ classDiagram
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
+| ratedU | [cim:PowerTransformerEnd.ratedU](https://cim.ucaiug.io/ns#PowerTransformerEnd.ratedU) | 0..1 Voltage | Rated voltage: phase-phase for three-phase windings, and either phase-phase or phase-neutral for single-phase windings.
+
+A high voltage side, as given by TransformerEnd.endNumber, shall have a ratedU that is greater than or equal to ratedU for the lower voltage sides.
+
+The attribute shall be a positive value. | direct |
 | PowerTransformer | [cim:PowerTransformerEnd.PowerTransformer](https://cim.ucaiug.io/ns#PowerTransformerEnd.PowerTransformer) | 0..1 PowerTransformer | The power transformer of this power transformer end. | direct |
+| endNumber | [cim:TransformerEnd.endNumber](https://cim.ucaiug.io/ns#TransformerEnd.endNumber) | 0..1 Integer | Number for this transformer end, corresponding to the end's order in the power transformer vector group or phase angle clock number.  Highest voltage winding should be 1.  Each end within a power transformer should have a unique subsequent end number.   Note the transformer end number need not match the terminal sequence number. | TransformerEnd |
 | Terminal | [cim:TransformerEnd.Terminal](https://cim.ucaiug.io/ns#TransformerEnd.Terminal) | 0..1 Terminal | Terminal of the power transformer to which this transformer end belongs. | TransformerEnd |
 | mRID | [cim:IdentifiedObject.mRID](https://cim.ucaiug.io/ns#IdentifiedObject.mRID) | 0..1 string | Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements. | IdentifiedObject |
 | description | [cim:IdentifiedObject.description](https://cim.ucaiug.io/ns#IdentifiedObject.description) | 0..1 [LanguageObject](LanguageObject.md) or string | The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy. | IdentifiedObject |

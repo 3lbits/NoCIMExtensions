@@ -71,16 +71,6 @@ AnalogValue:
       mRID: "2b70deeb-af03-4db0-9c2e-2f341c3ac16a"
 
 CapacitySchedule:
-  - mRID: "125b57ca-1e34-4c14-a747-1fc3535a2578"
-    description: "Capacity schedule Arnavaagen actual"
-    name: "Capacity_Schedule_Arnavaagen_actual"
-    interpolationKind: "previous"
-    timeSeriesKind: "actual"
-    generatedAtTime: "2024-01-12T08:00:00.000Z"
-    percentile: 50
-    actionMethod: "Power System Report"
-    ACPointOfCommonCoupling: 
-      mRID: "ddfce0d7-5643-46ba-b664-5b472690eceb"
   - mRID: "0bd0b41f-4e08-4139-88e0-adc613748bcd"
     description: "Capacity schedule Arnavaagen planned"
     name: "Capacity_Schedule_Arnavaagen_planned"
@@ -93,17 +83,10 @@ CapacitySchedule:
       mRID: "ddfce0d7-5643-46ba-b664-5b472690eceb"
 
 CapacityTimePoint:
-  - atTime: "2024-01-12T08:00:00.000Z"
-    maxP: 10.0
-    minP: -8.0
-    maxAllocatedP: 0.0 
-    minAllocatedP: 0.0
-    CapacitySchedule:
-      mRID: "125b57ca-1e34-4c14-a747-1fc3535a2578"
   - atTime: "2028-01-12T08:00:00.000Z"
     maxP: 10.0
     minP: -8.0
-    maxAllocatedP: 0.0 
-    minAllocatedP: 0.0
+    maxAllocatedP: 18.0 
+    minAllocatedP: -22.0
     CapacitySchedule:
-      mRID: "125b57ca-1e34-4c14-a747-1fc3535a2578"
+      mRID: "0bd0b41f-4e08-4139-88e0-adc613748bcd"

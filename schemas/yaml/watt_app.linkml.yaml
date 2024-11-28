@@ -248,7 +248,7 @@ classes:
       ConnectivityNode:
         description: "The connectivity node to which this terminal connects with zero impedance."
         slot_uri: cim:Terminal.ConnectivityNode
-        range: ConnctivityNode
+        range: ConnectivityNode
         minimum_cardinality: 0
         maximum_cardinality: 1
 
