@@ -1,5 +1,6 @@
 /venv/
 /__pycache__/
-/python/__pycache__/
+/cim4CLITool/__pycache__/
 /_test/
 /cim4.egg-info/
+**/__pycache__/
