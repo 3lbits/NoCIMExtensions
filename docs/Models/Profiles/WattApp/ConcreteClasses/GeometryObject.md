@@ -6,17 +6,18 @@ _An object that represents a jsonld compound to support value, type and language
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class GeometryObject
     click GeometryObject href "/Models/Profiles/WattApp/ConcreteClasses/GeometryObject/"
-    style GeometryObject fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style GeometryObject fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         Geometry --> GeometryObject : Geometry.asGeoJSON
 
         Geometry
             click Geometry href "/Models/Profiles/WattApp/ConcreteClasses/Geometry/"
-            style Geometry fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style Geometry fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
 ```

@@ -6,28 +6,29 @@ _Defines a system base voltage which is referenced._
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class Feature
     click Feature href "/Models/Profiles/WattApp/ConcreteClasses/Feature/"
-    style Feature fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style Feature fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         SpatialObject <|-- Feature : inherits
             click SpatialObject href "/Models/Profiles/WattApp/ConcreteClasses/SpatialObject/"
-            style SpatialObject rx:10,ry:10
+            style SpatialObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature
             click Feature href "/Models/Profiles/WattApp/ConcreteClasses/Feature/"
-            style Feature rx:10,ry:10
+            style SpatialObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource --|> Feature : inherits
             click PowerSystemResource href "/Models/Profiles/WattApp/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style PowerSystemResource fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature --> Geometry : Feature.hasGeometry
 
         Geometry
             click Geometry href "/Models/Profiles/WattApp/ConcreteClasses/Geometry/"
-            style Geometry fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style Geometry fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         Feature : hasGeometry

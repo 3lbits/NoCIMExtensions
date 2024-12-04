@@ -6,18 +6,19 @@ _A spatial object is a physical object that has a location in space. It may have
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class SpatialObject
     click SpatialObject href "/Models/Profiles/WattApp/ConcreteClasses/SpatialObject/"
-    style SpatialObject fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style SpatialObject fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         SpatialObject <|-- Feature : inherits
             click SpatialObject href "/Models/Profiles/WattApp/ConcreteClasses/SpatialObject/"
-            style SpatialObject rx:10,ry:10
+            style SpatialObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature
             click Feature href "/Models/Profiles/WattApp/ConcreteClasses/Feature/"
-            style Feature rx:10,ry:10
+            style SpatialObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

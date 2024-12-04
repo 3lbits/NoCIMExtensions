@@ -495,14 +495,14 @@ class CreateMermaid():
                 inheritanceString += f'''
         {value} <|-- {key} : inherits
             click {value} href "{globalLookUpDataDict[value]["absoluteUrlPath"]}"
-            style {value} rx:10,ry:10
+            style {value} fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 '''
                 
                 if key not in subClassList: # Adding SubClass to the inheritance list
                     inheritanceString += f'''
         {key}
             click {key} href "{globalLookUpDataDict[key]["absoluteUrlPath"]}"
-            style {key} rx:10,ry:10
+            style {value} fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 '''
         mixinList = CreateMermaid().createMermaidMixinsString(inheritanceList)
 
@@ -513,7 +513,7 @@ class CreateMermaid():
                         inheritanceString += f'''
         {value} <|-- {key} : inherits
             click {value} href "{globalLookUpDataDict[value]["absoluteUrlPath"]}"
-            style {value} fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style {value} fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 '''
         
         subMixinList = CreateMermaid().createMermaidSubMixinString(inheritanceList)
@@ -526,7 +526,7 @@ class CreateMermaid():
                     inheritanceString += f'''
         {subClass} --|> {thisClass} : inherits
             click {subClass} href "{globalLookUpDataDict[subClass]["absoluteUrlPath"]}"
-            style {subClass} fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style {subClass} fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 '''
 
         return inheritanceString
@@ -554,7 +554,7 @@ class CreateMermaid():
 
         {_range}
             click {_range} href "{globalLookUpDataDict[_range]["absoluteUrlPath"]}"
-            style {_range} fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style {_range} fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 """
         # Range to class
         for _class in classes:
@@ -579,7 +579,7 @@ class CreateMermaid():
 
         {_class}
             click {_class} href "{globalLookUpDataDict[_class]["absoluteUrlPath"]}"
-            style {_class} fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style {_class} fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 """
 
         return relationshipString
@@ -612,7 +612,7 @@ class CreateMermaid():
 
         {_range}
             click {_range} href "{globalLookUpDataDict[_range]["absoluteUrlPath"]}"
-            style {_range} fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style {_range} fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 '''
         return enumString
 
@@ -649,12 +649,14 @@ class CreateMermaid():
         relationshipString = CreateMermaid().createMermaidRelationshipString(inheritanceList) if CreateMermaid().createMermaidRelationshipString(inheritanceList) != None else ""
         enumString = CreateMermaid().createMermaidEnumString(inheritanceList) if CreateMermaid().createMermaidEnumString(inheritanceList) != None else ""
         attributeString = CreateMermaid().createMermaidAttributeString(inheritanceDict[globalClass]) if CreateMermaid().createMermaidAttributeString(inheritanceDict[globalClass]) != None else ""
+        themeString = "%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%" # For controlling the line head fill color
         mermaidString = f'''
 ```mermaid
+{themeString}
 classDiagram
     class {globalClass}
     click {globalClass} href "{globalLookUpDataDict[globalClass]["absoluteUrlPath"]}"
-    style {globalClass} fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style {globalClass} fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 {inheritanceString}
 {relationshipString}
 {enumString}

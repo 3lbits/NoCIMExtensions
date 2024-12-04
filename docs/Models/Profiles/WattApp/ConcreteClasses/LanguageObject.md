@@ -6,10 +6,11 @@ _An object that represents a jsonld compound to support value, type and language
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class LanguageObject
     click LanguageObject href "/Models/Profiles/WattApp/ConcreteClasses/LanguageObject/"
-    style LanguageObject fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style LanguageObject fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

@@ -6,43 +6,44 @@ __
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class CapacityTimePoint
     click CapacityTimePoint href "/Models/Profiles/WattApp/ConcreteClasses/CapacityTimePoint/"
-    style CapacityTimePoint fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style CapacityTimePoint fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseIrregularTimeSeries <|-- CapacityTimePoint : inherits
             click BaseIrregularTimeSeries href "/Models/Profiles/WattApp/AbstractClasses/BaseIrregularTimeSeries/"
-            style BaseIrregularTimeSeries rx:10,ry:10
+            style BaseIrregularTimeSeries fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         CapacityTimePoint
             click CapacityTimePoint href "/Models/Profiles/WattApp/ConcreteClasses/CapacityTimePoint/"
-            style CapacityTimePoint rx:10,ry:10
+            style BaseIrregularTimeSeries fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseTimeSeries <|-- BaseIrregularTimeSeries : inherits
             click BaseTimeSeries href "/Models/Profiles/WattApp/AbstractClasses/BaseTimeSeries/"
-            style BaseTimeSeries rx:10,ry:10
+            style BaseTimeSeries fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- BaseTimeSeries : inherits
             click IdentifiedObject href "/Models/Profiles/WattApp/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         CapacityTimePoint --> CapacitySchedule : CapacityTimePoint.CapacitySchedule
 
         CapacitySchedule
             click CapacitySchedule href "/Models/Profiles/WattApp/ConcreteClasses/CapacitySchedule/"
-            style CapacitySchedule fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style CapacitySchedule fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseTimeSeries --> TimeSeriesInterpolationKind : BaseTimeSeries.interpolationKind
 
         TimeSeriesInterpolationKind
             click TimeSeriesInterpolationKind href "/Models/Profiles/WattApp/Enumerations/TimeSeriesInterpolationKind/"
-            style TimeSeriesInterpolationKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style TimeSeriesInterpolationKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         BaseTimeSeries --> BaseTimeSeriesKind : BaseTimeSeries.timeSeriesKind
 
         BaseTimeSeriesKind
             click BaseTimeSeriesKind href "/Models/Profiles/WattApp/Enumerations/BaseTimeSeriesKind/"
-            style BaseTimeSeriesKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style BaseTimeSeriesKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         CapacityTimePoint : CapacityTimePoint.atTime
         CapacityTimePoint : CapacityTimePoint.maxP

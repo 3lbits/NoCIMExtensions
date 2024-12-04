@@ -8,34 +8,35 @@ _A modelling construct to provide a root class for containing equipment._
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class EquipmentContainer
     click EquipmentContainer href "/Models/Profiles/WattApp/AbstractClasses/EquipmentContainer/"
-    style EquipmentContainer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style EquipmentContainer fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         EquipmentContainer <|-- Feeder : inherits
             click EquipmentContainer href "/Models/Profiles/WattApp/AbstractClasses/EquipmentContainer/"
-            style EquipmentContainer rx:10,ry:10
+            style EquipmentContainer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feeder
             click Feeder href "/Models/Profiles/WattApp/ConcreteClasses/Feeder/"
-            style Feeder rx:10,ry:10
+            style EquipmentContainer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConnectivityNodeContainer <|-- EquipmentContainer : inherits
             click ConnectivityNodeContainer href "/Models/Profiles/WattApp/AbstractClasses/ConnectivityNodeContainer/"
-            style ConnectivityNodeContainer rx:10,ry:10
+            style ConnectivityNodeContainer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- ConnectivityNodeContainer : inherits
             click PowerSystemResource href "/Models/Profiles/WattApp/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource rx:10,ry:10
+            style PowerSystemResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/WattApp/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature <|-- PowerSystemResource : inherits
             click Feature href "/Models/Profiles/WattApp/ConcreteClasses/Feature/"
-            style Feature fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style Feature fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

@@ -10,7 +10,3 @@ To access examples of how to use these profiles, please visit our [GitHub reposi
 
 Profiles:
 
-- [Aviation Obstacle](/Models/Profiles/AviationObstacle/)
-- [SubseaCableInfo](/Models/Profiles/SubseaCableInfo/)
-- [Watt App](/Models/Profiles/WattApp/)
-
