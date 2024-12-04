@@ -6,38 +6,39 @@ _Impedance and admittance parameters per unit length for n-wire unbalanced lines
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class PerLengthPhaseImpedance
     click PerLengthPhaseImpedance href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/PerLengthPhaseImpedance/"
-    style PerLengthPhaseImpedance fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style PerLengthPhaseImpedance fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PerLengthImpedance <|-- PerLengthPhaseImpedance : inherits
             click PerLengthImpedance href "/Models/Profiles/SubseaCableInfo/AbstractClasses/PerLengthImpedance/"
-            style PerLengthImpedance rx:10,ry:10
+            style PerLengthImpedance fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PerLengthPhaseImpedance
             click PerLengthPhaseImpedance href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/PerLengthPhaseImpedance/"
-            style PerLengthPhaseImpedance rx:10,ry:10
+            style PerLengthImpedance fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PerLengthConductorParameter <|-- PerLengthImpedance : inherits
             click PerLengthConductorParameter href "/Models/Profiles/SubseaCableInfo/AbstractClasses/PerLengthConductorParameter/"
-            style PerLengthConductorParameter rx:10,ry:10
+            style PerLengthConductorParameter fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- PerLengthConductorParameter : inherits
             click IdentifiedObject href "/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PerLengthConductorParameter --> ConductorInfo : PerLengthConductorParameter.ConductorInfo
 
         ConductorInfo
             click ConductorInfo href "/Models/Profiles/SubseaCableInfo/AbstractClasses/ConductorInfo/"
-            style ConductorInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style ConductorInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PhaseImpedanceData --> PerLengthPhaseImpedance : PhaseImpedanceData.PhaseImpedance
 
         PhaseImpedanceData
             click PhaseImpedanceData href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/PhaseImpedanceData/"
-            style PhaseImpedanceData fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style PhaseImpedanceData fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         PerLengthPhaseImpedance : PerLengthPhaseImpedance.conductorCount

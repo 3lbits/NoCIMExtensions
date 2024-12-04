@@ -6,56 +6,57 @@ _A wire or combination of wires, with consistent electrical characteristics, bui
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class ACLineSegment
     click ACLineSegment href "/Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegment/"
-    style ACLineSegment fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style ACLineSegment fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Conductor <|-- ACLineSegment : inherits
             click Conductor href "/Models/Profiles/AviationObstacle/AbstractClasses/Conductor/"
-            style Conductor rx:10,ry:10
+            style Conductor fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ACLineSegment
             click ACLineSegment href "/Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegment/"
-            style ACLineSegment rx:10,ry:10
+            style Conductor fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConductingEquipment <|-- Conductor : inherits
             click ConductingEquipment href "/Models/Profiles/AviationObstacle/AbstractClasses/ConductingEquipment/"
-            style ConductingEquipment rx:10,ry:10
+            style ConductingEquipment fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Equipment <|-- ConductingEquipment : inherits
             click Equipment href "/Models/Profiles/AviationObstacle/AbstractClasses/Equipment/"
-            style Equipment rx:10,ry:10
+            style Equipment fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- Equipment : inherits
             click PowerSystemResource href "/Models/Profiles/AviationObstacle/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource rx:10,ry:10
+            style PowerSystemResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature <|-- PowerSystemResource : inherits
             click Feature href "/Models/Profiles/AviationObstacle/ConcreteClasses/Feature/"
-            style Feature fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style Feature fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ACLineSegment --> ACLineSegmentSpan : ACLineSegment.ACLineSegmentSpan
 
         ACLineSegmentSpan
             click ACLineSegmentSpan href "/Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegmentSpan/"
-            style ACLineSegmentSpan fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style ACLineSegmentSpan fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ACLineSegmentSpan --> ACLineSegment : ACLineSegmentSpan.ACLineSegment
 
         ACLineSegmentSpan
             click ACLineSegmentSpan href "/Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegmentSpan/"
-            style ACLineSegmentSpan fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style ACLineSegmentSpan fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource --> LocationMethodKind : PowerSystemResource.locationMethodKind
 
         LocationMethodKind
             click LocationMethodKind href "/Models/Profiles/AviationObstacle/Enumerations/LocationMethodKind/"
-            style LocationMethodKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style LocationMethodKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ACLineSegment : ACLineSegment.ACLineSegmentSpan
         PowerSystemResource : PowerSystemResource.locationMethodKind

@@ -6,24 +6,25 @@ _Specification can be used for various purposes relative to an asset, a logical 
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class AssetSpecification
     click AssetSpecification href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/AssetSpecification/"
-    style AssetSpecification fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style AssetSpecification fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- AssetSpecification : inherits
             click IdentifiedObject href "/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         AssetSpecification
             click AssetSpecification href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/AssetSpecification/"
-            style AssetSpecification rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         AssetSpecification --> AssetInfo : AssetSpecification.AssetInfo
 
         AssetInfo
             click AssetInfo href "/Models/Profiles/SubseaCableInfo/AbstractClasses/AssetInfo/"
-            style AssetInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style AssetInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         AssetSpecification : AssetSpecification.AssetInfo

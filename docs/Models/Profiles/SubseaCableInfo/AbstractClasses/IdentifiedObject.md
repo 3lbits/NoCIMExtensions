@@ -8,18 +8,19 @@ _This is a root class to provide common identification for all classes needing i
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class IdentifiedObject
     click IdentifiedObject href "/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/"
-    style IdentifiedObject fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style IdentifiedObject fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- AssetInfo : inherits
             click IdentifiedObject href "/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         AssetInfo
             click AssetInfo href "/Models/Profiles/SubseaCableInfo/AbstractClasses/AssetInfo/"
-            style AssetInfo rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

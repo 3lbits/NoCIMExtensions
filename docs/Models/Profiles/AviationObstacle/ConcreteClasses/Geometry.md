@@ -6,25 +6,26 @@ _Geometric representation details._
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class Geometry
     click Geometry href "/Models/Profiles/AviationObstacle/ConcreteClasses/Geometry/"
-    style Geometry fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style Geometry fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         SpatialObject <|-- Geometry : inherits
             click SpatialObject href "/Models/Profiles/AviationObstacle/ConcreteClasses/SpatialObject/"
-            style SpatialObject rx:10,ry:10
+            style SpatialObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Geometry
             click Geometry href "/Models/Profiles/AviationObstacle/ConcreteClasses/Geometry/"
-            style Geometry rx:10,ry:10
+            style SpatialObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         Feature --> Geometry : Feature.hasGeometry
 
         Feature
             click Feature href "/Models/Profiles/AviationObstacle/ConcreteClasses/Feature/"
-            style Feature fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style Feature fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         Geometry : asWKT

@@ -8,26 +8,27 @@ _An element of an asset that has no electrical characteristic._
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class ElementResource
     click ElementResource href "/Models/Profiles/AviationObstacle/AbstractClasses/ElementResource/"
-    style ElementResource fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style ElementResource fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ElementResource <|-- LocationResource : inherits
             click ElementResource href "/Models/Profiles/AviationObstacle/AbstractClasses/ElementResource/"
-            style ElementResource rx:10,ry:10
+            style ElementResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         LocationResource
             click LocationResource href "/Models/Profiles/AviationObstacle/AbstractClasses/LocationResource/"
-            style LocationResource rx:10,ry:10
+            style ElementResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- ElementResource : inherits
             click IdentifiedObject href "/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature <|-- LocationResource : inherits
             click Feature href "/Models/Profiles/AviationObstacle/ConcreteClasses/Feature/"
-            style Feature fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style Feature fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

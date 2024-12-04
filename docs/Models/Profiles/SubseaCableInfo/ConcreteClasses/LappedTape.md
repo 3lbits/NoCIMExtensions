@@ -6,45 +6,46 @@ _Tape shield cable data._
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class LappedTape
     click LappedTape href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/LappedTape/"
-    style LappedTape fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style LappedTape fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         TapeLayer <|-- LappedTape : inherits
             click TapeLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/TapeLayer/"
-            style TapeLayer rx:10,ry:10
+            style TapeLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         LappedTape
             click LappedTape href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/LappedTape/"
-            style LappedTape rx:10,ry:10
+            style TapeLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MetallicSheathLayer <|-- TapeLayer : inherits
             click MetallicSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MetallicSheathLayer/"
-            style MetallicSheathLayer rx:10,ry:10
+            style MetallicSheathLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         CableLayer <|-- MetallicSheathLayer : inherits
             click CableLayer href "/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/"
-            style CableLayer rx:10,ry:10
+            style CableLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CableInfo --> CableLayer : CableInfo.Layer
 
         CableInfo
             click CableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/CableInfo/"
-            style CableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style CableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MultiCoreCableInfo --> CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
             click MultiCoreCableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MultiCoreCableInfo/"
-            style MultiCoreCableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style MultiCoreCableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MetallicSheathLayer --> CableShieldMaterialKind : MetallicSheathLayer.material
 
         CableShieldMaterialKind
             click CableShieldMaterialKind href "/Models/Profiles/SubseaCableInfo/Enumerations/CableShieldMaterialKind/"
-            style CableShieldMaterialKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style CableShieldMaterialKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MetallicSheathLayer : MetallicSheathLayer.isArmor
         MetallicSheathLayer : MetallicSheathLayer.material

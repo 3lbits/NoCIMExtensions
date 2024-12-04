@@ -6,29 +6,30 @@ _Asset model by a specific manufacturer._
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class ProductAssetModel
     click ProductAssetModel href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ProductAssetModel/"
-    style ProductAssetModel fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style ProductAssetModel fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- ProductAssetModel : inherits
             click IdentifiedObject href "/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ProductAssetModel
             click ProductAssetModel href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ProductAssetModel/"
-            style ProductAssetModel rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ProductAssetModel --> AssetInfo : ProductAssetModel.AssetInfo
 
         AssetInfo
             click AssetInfo href "/Models/Profiles/SubseaCableInfo/AbstractClasses/AssetInfo/"
-            style AssetInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style AssetInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         ProductAssetModel --> Manufacturer : ProductAssetModel.Manufacturer
 
         Manufacturer
             click Manufacturer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/Manufacturer/"
-            style Manufacturer fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style Manufacturer fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         ProductAssetModel : ProductAssetModel.AssetInfo

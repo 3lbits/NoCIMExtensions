@@ -8,33 +8,34 @@ _A power system resource (PSR) can be an item of equipment such as a switch, an 
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class PowerSystemResource
     click PowerSystemResource href "/Models/Profiles/AviationObstacle/AbstractClasses/PowerSystemResource/"
-    style PowerSystemResource fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style PowerSystemResource fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- Equipment : inherits
             click PowerSystemResource href "/Models/Profiles/AviationObstacle/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource rx:10,ry:10
+            style PowerSystemResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Equipment
             click Equipment href "/Models/Profiles/AviationObstacle/AbstractClasses/Equipment/"
-            style Equipment rx:10,ry:10
+            style PowerSystemResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature <|-- PowerSystemResource : inherits
             click Feature href "/Models/Profiles/AviationObstacle/ConcreteClasses/Feature/"
-            style Feature fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style Feature fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         PowerSystemResource --> LocationMethodKind : PowerSystemResource.locationMethodKind
 
         LocationMethodKind
             click LocationMethodKind href "/Models/Profiles/AviationObstacle/Enumerations/LocationMethodKind/"
-            style LocationMethodKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style LocationMethodKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource : PowerSystemResource.locationMethodKind
         IdentifiedObject : IdentifiedObject.mRID

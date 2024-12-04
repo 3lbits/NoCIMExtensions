@@ -6,34 +6,35 @@ _Deployment of asset deployment in a power system resource role._
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class AssetDeployment
     click AssetDeployment href "/Models/Profiles/AviationObstacle/ConcreteClasses/AssetDeployment/"
-    style AssetDeployment fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style AssetDeployment fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         AssetDeployment <|-- ACLineSegmentSpanDeployment : inherits
             click AssetDeployment href "/Models/Profiles/AviationObstacle/ConcreteClasses/AssetDeployment/"
-            style AssetDeployment rx:10,ry:10
+            style AssetDeployment fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ACLineSegmentSpanDeployment
             click ACLineSegmentSpanDeployment href "/Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegmentSpanDeployment/"
-            style ACLineSegmentSpanDeployment rx:10,ry:10
+            style AssetDeployment fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- AssetDeployment : inherits
             click IdentifiedObject href "/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         AssetDeployment --> BaseVoltage : AssetDeployment.BaseVoltage
 
         BaseVoltage
             click BaseVoltage href "/Models/Profiles/AviationObstacle/ConcreteClasses/BaseVoltage/"
-            style BaseVoltage fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style BaseVoltage fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         AssetDeployment --> DeploymentStateKind : AssetDeployment.deploymentState
 
         DeploymentStateKind
             click DeploymentStateKind href "/Models/Profiles/AviationObstacle/Enumerations/DeploymentStateKind/"
-            style DeploymentStateKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style DeploymentStateKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         AssetDeployment : AssetDeployment.deploymentState
         AssetDeployment : AssetDeployment.BaseVoltage

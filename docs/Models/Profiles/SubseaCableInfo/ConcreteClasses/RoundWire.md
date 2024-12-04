@@ -6,49 +6,50 @@ _No description available_
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class RoundWire
     click RoundWire href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/RoundWire/"
-    style RoundWire fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style RoundWire fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         RoundWire <|-- CorrugatedRoundWire : inherits
             click RoundWire href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/RoundWire/"
-            style RoundWire rx:10,ry:10
+            style RoundWire fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         CorrugatedRoundWire
             click CorrugatedRoundWire href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/CorrugatedRoundWire/"
-            style CorrugatedRoundWire rx:10,ry:10
+            style RoundWire fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConcentricWireLayer <|-- RoundWire : inherits
             click ConcentricWireLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ConcentricWireLayer/"
-            style ConcentricWireLayer rx:10,ry:10
+            style ConcentricWireLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MetallicSheathLayer <|-- ConcentricWireLayer : inherits
             click MetallicSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MetallicSheathLayer/"
-            style MetallicSheathLayer rx:10,ry:10
+            style MetallicSheathLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         CableLayer <|-- MetallicSheathLayer : inherits
             click CableLayer href "/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/"
-            style CableLayer rx:10,ry:10
+            style CableLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CableInfo --> CableLayer : CableInfo.Layer
 
         CableInfo
             click CableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/CableInfo/"
-            style CableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style CableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MultiCoreCableInfo --> CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
             click MultiCoreCableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MultiCoreCableInfo/"
-            style MultiCoreCableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style MultiCoreCableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MetallicSheathLayer --> CableShieldMaterialKind : MetallicSheathLayer.material
 
         CableShieldMaterialKind
             click CableShieldMaterialKind href "/Models/Profiles/SubseaCableInfo/Enumerations/CableShieldMaterialKind/"
-            style CableShieldMaterialKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style CableShieldMaterialKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MetallicSheathLayer : MetallicSheathLayer.isArmor
         MetallicSheathLayer : MetallicSheathLayer.material

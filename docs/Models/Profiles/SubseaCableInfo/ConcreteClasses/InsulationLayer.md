@@ -6,37 +6,38 @@ _No description available_
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class InsulationLayer
     click InsulationLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/InsulationLayer/"
-    style InsulationLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style InsulationLayer fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         CableLayer <|-- InsulationLayer : inherits
             click CableLayer href "/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/"
-            style CableLayer rx:10,ry:10
+            style CableLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         InsulationLayer
             click InsulationLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/InsulationLayer/"
-            style InsulationLayer rx:10,ry:10
+            style CableLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CableInfo --> CableLayer : CableInfo.Layer
 
         CableInfo
             click CableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/CableInfo/"
-            style CableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style CableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MultiCoreCableInfo --> CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
             click MultiCoreCableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MultiCoreCableInfo/"
-            style MultiCoreCableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style MultiCoreCableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         InsulationLayer --> WireInsulationKind : InsulationLayer.insulationMaterial
 
         WireInsulationKind
             click WireInsulationKind href "/Models/Profiles/SubseaCableInfo/Enumerations/WireInsulationKind/"
-            style WireInsulationKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style WireInsulationKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         InsulationLayer : InsulationLayer.insulationMaterial
         CableLayer : CableLayer.mRID

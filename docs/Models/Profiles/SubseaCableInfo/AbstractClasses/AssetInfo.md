@@ -8,35 +8,36 @@ _Set of attributes of an asset, representing typical datasheet information of a 
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class AssetInfo
     click AssetInfo href "/Models/Profiles/SubseaCableInfo/AbstractClasses/AssetInfo/"
-    style AssetInfo fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style AssetInfo fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         AssetInfo <|-- ConductingAssetInfo : inherits
             click AssetInfo href "/Models/Profiles/SubseaCableInfo/AbstractClasses/AssetInfo/"
-            style AssetInfo rx:10,ry:10
+            style AssetInfo fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConductingAssetInfo
             click ConductingAssetInfo href "/Models/Profiles/SubseaCableInfo/AbstractClasses/ConductingAssetInfo/"
-            style ConductingAssetInfo rx:10,ry:10
+            style AssetInfo fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- AssetInfo : inherits
             click IdentifiedObject href "/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         AssetSpecification --> AssetInfo : AssetSpecification.AssetInfo
 
         AssetSpecification
             click AssetSpecification href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/AssetSpecification/"
-            style AssetSpecification fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style AssetSpecification fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ProductAssetModel --> AssetInfo : ProductAssetModel.AssetInfo
 
         ProductAssetModel
             click ProductAssetModel href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ProductAssetModel/"
-            style ProductAssetModel fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style ProductAssetModel fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         IdentifiedObject : IdentifiedObject.mRID

@@ -8,22 +8,23 @@ _Identifies a way in which an organisation may participate in the utility enterp
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class OrganisationRole
     click OrganisationRole href "/Models/Profiles/SubseaCableInfo/AbstractClasses/OrganisationRole/"
-    style OrganisationRole fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style OrganisationRole fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         OrganisationRole <|-- Manufacturer : inherits
             click OrganisationRole href "/Models/Profiles/SubseaCableInfo/AbstractClasses/OrganisationRole/"
-            style OrganisationRole rx:10,ry:10
+            style OrganisationRole fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Manufacturer
             click Manufacturer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/Manufacturer/"
-            style Manufacturer rx:10,ry:10
+            style OrganisationRole fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- OrganisationRole : inherits
             click IdentifiedObject href "/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

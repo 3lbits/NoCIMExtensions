@@ -6,16 +6,17 @@ _No description available_
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class ResistancePerLengthTemperaturePoint
     click ResistancePerLengthTemperaturePoint href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ResistancePerLengthTemperaturePoint/"
-    style ResistancePerLengthTemperaturePoint fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style ResistancePerLengthTemperaturePoint fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ResistancePerLengthTemperaturePoint --> ConductorInfo : ResistancePerLengthTemperaturePoint.ConductorInfo
 
         ConductorInfo
             click ConductorInfo href "/Models/Profiles/SubseaCableInfo/AbstractClasses/ConductorInfo/"
-            style ConductorInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style ConductorInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         ResistancePerLengthTemperaturePoint : ResistancePerLengthTemperaturePoint.mRID

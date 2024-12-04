@@ -8,28 +8,29 @@ _Common type for per-length electrical catalogues describing line parameters._
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class PerLengthConductorParameter
     click PerLengthConductorParameter href "/Models/Profiles/SubseaCableInfo/AbstractClasses/PerLengthConductorParameter/"
-    style PerLengthConductorParameter fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style PerLengthConductorParameter fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PerLengthConductorParameter <|-- PerLengthImpedance : inherits
             click PerLengthConductorParameter href "/Models/Profiles/SubseaCableInfo/AbstractClasses/PerLengthConductorParameter/"
-            style PerLengthConductorParameter rx:10,ry:10
+            style PerLengthConductorParameter fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PerLengthImpedance
             click PerLengthImpedance href "/Models/Profiles/SubseaCableInfo/AbstractClasses/PerLengthImpedance/"
-            style PerLengthImpedance rx:10,ry:10
+            style PerLengthConductorParameter fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- PerLengthConductorParameter : inherits
             click IdentifiedObject href "/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PerLengthConductorParameter --> ConductorInfo : PerLengthConductorParameter.ConductorInfo
 
         ConductorInfo
             click ConductorInfo href "/Models/Profiles/SubseaCableInfo/AbstractClasses/ConductorInfo/"
-            style ConductorInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style ConductorInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         PerLengthConductorParameter : PerLengthConductorParameter.mRID

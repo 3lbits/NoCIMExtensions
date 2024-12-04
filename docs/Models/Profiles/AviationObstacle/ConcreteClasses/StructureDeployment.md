@@ -6,39 +6,40 @@ _Deployment of a structure._
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class StructureDeployment
     click StructureDeployment href "/Models/Profiles/AviationObstacle/ConcreteClasses/StructureDeployment/"
-    style StructureDeployment fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style StructureDeployment fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         AssetDeployment <|-- StructureDeployment : inherits
             click AssetDeployment href "/Models/Profiles/AviationObstacle/ConcreteClasses/AssetDeployment/"
-            style AssetDeployment rx:10,ry:10
+            style AssetDeployment fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         StructureDeployment
             click StructureDeployment href "/Models/Profiles/AviationObstacle/ConcreteClasses/StructureDeployment/"
-            style StructureDeployment rx:10,ry:10
+            style AssetDeployment fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- AssetDeployment : inherits
             click IdentifiedObject href "/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         StructureDeployment --> Structure : StructureDeployment.ACLineSegmentSpan
 
         Structure
             click Structure href "/Models/Profiles/AviationObstacle/AbstractClasses/Structure/"
-            style Structure fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style Structure fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         AssetDeployment --> BaseVoltage : AssetDeployment.BaseVoltage
 
         BaseVoltage
             click BaseVoltage href "/Models/Profiles/AviationObstacle/ConcreteClasses/BaseVoltage/"
-            style BaseVoltage fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style BaseVoltage fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         AssetDeployment --> DeploymentStateKind : AssetDeployment.deploymentState
 
         DeploymentStateKind
             click DeploymentStateKind href "/Models/Profiles/AviationObstacle/Enumerations/DeploymentStateKind/"
-            style DeploymentStateKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style DeploymentStateKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         StructureDeployment : StructureDeployment.Structure
         AssetDeployment : AssetDeployment.deploymentState

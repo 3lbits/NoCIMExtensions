@@ -6,35 +6,36 @@ _<b>Non-metallic</b> covering applied over a covering, generally metallic, ensur
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class OverSheathLayer
     click OverSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/OverSheathLayer/"
-    style OverSheathLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style OverSheathLayer fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         NonMetallicSheathLayer <|-- OverSheathLayer : inherits
             click NonMetallicSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/NonMetallicSheathLayer/"
-            style NonMetallicSheathLayer rx:10,ry:10
+            style NonMetallicSheathLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         OverSheathLayer
             click OverSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/OverSheathLayer/"
-            style OverSheathLayer rx:10,ry:10
+            style NonMetallicSheathLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         CableLayer <|-- NonMetallicSheathLayer : inherits
             click CableLayer href "/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/"
-            style CableLayer rx:10,ry:10
+            style CableLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CableInfo --> CableLayer : CableInfo.Layer
 
         CableInfo
             click CableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/CableInfo/"
-            style CableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style CableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MultiCoreCableInfo --> CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
             click MultiCoreCableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MultiCoreCableInfo/"
-            style MultiCoreCableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style MultiCoreCableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CableLayer : CableLayer.mRID

@@ -6,57 +6,58 @@ _An overhead structure is an element of an electric transmission or distribution
 **Type**: Class
 
 ```mermaid
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class OverheadStructure
     click OverheadStructure href "/Models/Profiles/AviationObstacle/ConcreteClasses/OverheadStructure/"
-    style OverheadStructure fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style OverheadStructure fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Structure <|-- OverheadStructure : inherits
             click Structure href "/Models/Profiles/AviationObstacle/AbstractClasses/Structure/"
-            style Structure rx:10,ry:10
+            style Structure fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         OverheadStructure
             click OverheadStructure href "/Models/Profiles/AviationObstacle/ConcreteClasses/OverheadStructure/"
-            style OverheadStructure rx:10,ry:10
+            style Structure fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         LocationResource <|-- Structure : inherits
             click LocationResource href "/Models/Profiles/AviationObstacle/AbstractClasses/LocationResource/"
-            style LocationResource rx:10,ry:10
+            style LocationResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ElementResource <|-- LocationResource : inherits
             click ElementResource href "/Models/Profiles/AviationObstacle/AbstractClasses/ElementResource/"
-            style ElementResource rx:10,ry:10
+            style ElementResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- ElementResource : inherits
             click IdentifiedObject href "/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature <|-- LocationResource : inherits
             click Feature href "/Models/Profiles/AviationObstacle/ConcreteClasses/Feature/"
-            style Feature fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style Feature fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         StructureDeployment --> Structure : StructureDeployment.ACLineSegmentSpan
 
         StructureDeployment
             click StructureDeployment href "/Models/Profiles/AviationObstacle/ConcreteClasses/StructureDeployment/"
-            style StructureDeployment fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style StructureDeployment fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         OverheadStructure --> AviationObstacleLightingKind : OverheadStructure.aviationObstacleLightingKind
 
         AviationObstacleLightingKind
             click AviationObstacleLightingKind href "/Models/Profiles/AviationObstacle/Enumerations/AviationObstacleLightingKind/"
-            style AviationObstacleLightingKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style AviationObstacleLightingKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         OverheadStructure --> AviationObstacleMarkingKind : OverheadStructure.aviationObstacleMarkingKind
 
         AviationObstacleMarkingKind
             click AviationObstacleMarkingKind href "/Models/Profiles/AviationObstacle/Enumerations/AviationObstacleMarkingKind/"
-            style AviationObstacleMarkingKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style AviationObstacleMarkingKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         LocationResource --> LocationMethodKind : LocationResource.locationMethod
 
         LocationMethodKind
             click LocationMethodKind href "/Models/Profiles/AviationObstacle/Enumerations/LocationMethodKind/"
-            style LocationMethodKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style LocationMethodKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         OverheadStructure : OverheadStructure.aviationObstacleLightingKind
         OverheadStructure : OverheadStructure.aviationObstacleMarkingKind
