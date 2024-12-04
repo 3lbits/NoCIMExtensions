@@ -1,3 +1,0 @@
-# Types
-
-some text

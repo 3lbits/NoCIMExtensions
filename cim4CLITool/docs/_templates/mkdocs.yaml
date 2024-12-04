@@ -1,0 +1,53 @@
+site_name: {{ site_name }}
+
+extra_css:
+  - stylesheets/extra.css
+
+copyright: {{ copyright }}
+
+theme:
+  name: {{ theme_name }} # Specifies that the material theme is used.
+  custom_dir: overrides
+  favicon: {{ theme_favicon }}
+  logo: {{ theme_logo }}
+  features: # Enables optional features provided by the material theme.
+    {{ '' if feature_navigation_tabs else '# ' }}- navigation.tabs # Organizes the top-level navigation into tabs.
+    {{ '' if feature_navigation_expand else '# ' }}- navigation.expand # Allows the navigation to expand automatically as users drill down into sections. This is annoying.
+    {{ '' if feature_navigation_sections else '# ' }}- navigation.sections # Adds grouping sections within navigation.
+    {{ '' if feature_navigation_top else '# ' }}- navigation.top # Positions navigation links at the top of the page.
+    {{ '' if feature_navigation_integrate else '# ' }}- toc.integrate # Integrates the table of contents within the main content area. This is annoying.
+    {{ '' if feature_navigation_footer else '# ' }}- navigation.footer # Adds navigation links to the footer.
+    {{ '' if feature_search_suggest else '# ' }}- search.suggest # Enables search suggestions.
+    {{ '' if feature_search_highlight else '# ' }}- search.highlight # Highlights search terms in results.
+    {{ '' if feature_content_tabs_link else '# ' }}- content.tabs.link # Enables linking directly to tabs in the documentation.
+    {{ '' if feature_content_code_annotation else '# ' }}- content.code.annotation # Adds annotations to code blocks.
+    {{ '' if feature_content_code_copy else '# ' }}- content.code.copy # Adds a copy-to-clipboard button to code blocks.
+  language: {{ language }} # Sets the language.
+  palette: # Defines color schemes and toggling options between light and dark mode.
+    - scheme: default # Define color schemes light
+      toggle: # Configures the dark mode toggle with icons and labels.
+        icon: material/toggle-switch-off-outline
+        name: Switch to dark mode
+      primary: {{ light_mode_color_primary }} # Set primary color for scheme.
+      accent: {{ light_mode_color_accent }} # Set accent color for scheme.
+    - scheme: slate # Define color schemes Dark
+      toggle: # Configures the dark mode toggle with icons and labels.
+        icon: material/toggle-switch
+        name: Switch to light mode
+      primary: {{ dark_mode_color_primary }} # Set primary color for scheme.
+      accent: {{ dark_mode_color_accent }} # Set accent color for scheme.
+
+extra:
+  generator: false
+  social:
+  {% for item in social_links %}
+    - icon: {{ item.icon }}
+      link: {{ item.link }}
+  {% endfor %}
+{{ '' if mermaid else '# ' }}markdown_extensions:
+{{ '' if mermaid else '# ' }}  - pymdownx.betterem
+{{ '' if mermaid else '# ' }}  - pymdownx.superfences:
+{{ '' if mermaid else '# ' }}      custom_fences:
+{{ '' if mermaid else '# ' }}        - name: mermaid
+{{ '' if mermaid else '# ' }}          class: mermaid
+{{ '' if mermaid else '# ' }}          format: !!python/name:pymdownx.superfences.fence_code_format

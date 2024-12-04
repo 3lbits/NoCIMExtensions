@@ -1,7 +1,7 @@
-/* Override the icon */
-.md-footer-social a[href="https://www.elbits.no"] .md-icon {
-    background-image: url("images/Color.svg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    color: transparent; /* Hides the original icon color */
-  }
+.md-footer-poweredbyelbits-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10%;
+  margin-right: 10%;
+}

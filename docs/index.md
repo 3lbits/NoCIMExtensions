@@ -6,6 +6,3 @@ Currently documented here are the following profiles (click on each to learn mor
 
 Profiles:
 
-- [AviationObstacle](./AviationObstacle/index.md)
-- [SubseaCableInfo](./SubseaCableInfo/index.md)
-- [WattApp](./WattApp/index.md)
