@@ -3463,35 +3463,36 @@
 <p><em>Uniform and continuous tubular non-metallic sheath. This class allows for the representation of any sheaths not properly defined with it's children classes.For example, separation sheaths (inner sheath applied between two metallic coverings of different materials).Note: The term sheath is only used for metallic coverings in North America, whereas the term jacket is used for non-metallic coverings.</em></p>
 <p><strong>URI</strong>: <a href="http://iec.ch/TC57/CIM-generic#NonMetallicSheathLayer">cim:NonMetallicSheathLayer</a><br />
 <strong>Type</strong>: Class</p>
-<pre class="mermaid"><code>classDiagram
+<pre class="mermaid"><code>%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+classDiagram
     class NonMetallicSheathLayer
     click NonMetallicSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/NonMetallicSheathLayer/"
-    style NonMetallicSheathLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style NonMetallicSheathLayer fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         NonMetallicSheathLayer &lt;|-- BindingLayer : inherits
             click NonMetallicSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/NonMetallicSheathLayer/"
-            style NonMetallicSheathLayer rx:10,ry:10
+            style NonMetallicSheathLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         BindingLayer
             click BindingLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/BindingLayer/"
-            style BindingLayer rx:10,ry:10
+            style NonMetallicSheathLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         CableLayer &lt;|-- NonMetallicSheathLayer : inherits
             click CableLayer href "/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/"
-            style CableLayer rx:10,ry:10
+            style CableLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CableInfo --&gt; CableLayer : CableInfo.Layer
 
         CableInfo
             click CableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/CableInfo/"
-            style CableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style CableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MultiCoreCableInfo --&gt; CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
             click MultiCoreCableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MultiCoreCableInfo/"
-            style MultiCoreCableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style MultiCoreCableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CableLayer : CableLayer.mRID
@@ -3585,11 +3586,13 @@
   
   
 </div>
-            <div class="md-footer-poweredbyelbits-div">
-                <a class="md-footer-poweredbyelbits-text" href="https://www.elbits.no" target="_blank">
-                    Powered by <img src="images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
-                </a></a>
+
+            <div class="footer-poweredbyelbits">
+                <a href="https://www.elbits.no" target="_blank">
+                    Powered by <img src="/images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
+                </a>
             </div>
+
             
             <div class="md-social">
   

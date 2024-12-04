@@ -3464,37 +3464,38 @@
 <p>*<strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</p>
 <p><strong>URI</strong>: <a href="https://cim.ucaiug.io/ns#Equipment">cim:Equipment</a><br />
 <strong>Type</strong>: Class</p>
-<pre class="mermaid"><code>classDiagram
+<pre class="mermaid"><code>%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+classDiagram
     class Equipment
     click Equipment href "/Models/Profiles/AviationObstacle/AbstractClasses/Equipment/"
-    style Equipment fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style Equipment fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Equipment &lt;|-- ConductingEquipment : inherits
             click Equipment href "/Models/Profiles/AviationObstacle/AbstractClasses/Equipment/"
-            style Equipment rx:10,ry:10
+            style Equipment fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConductingEquipment
             click ConductingEquipment href "/Models/Profiles/AviationObstacle/AbstractClasses/ConductingEquipment/"
-            style ConductingEquipment rx:10,ry:10
+            style Equipment fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource &lt;|-- Equipment : inherits
             click PowerSystemResource href "/Models/Profiles/AviationObstacle/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource rx:10,ry:10
+            style PowerSystemResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject &lt;|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature &lt;|-- PowerSystemResource : inherits
             click Feature href "/Models/Profiles/AviationObstacle/ConcreteClasses/Feature/"
-            style Feature fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style Feature fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         PowerSystemResource --&gt; LocationMethodKind : PowerSystemResource.locationMethodKind
 
         LocationMethodKind
             click LocationMethodKind href "/Models/Profiles/AviationObstacle/Enumerations/LocationMethodKind/"
-            style LocationMethodKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style LocationMethodKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource : PowerSystemResource.locationMethodKind
         IdentifiedObject : IdentifiedObject.mRID
@@ -3598,11 +3599,13 @@
   
   
 </div>
-            <div class="md-footer-poweredbyelbits-div">
-                <a class="md-footer-poweredbyelbits-text" href="https://www.elbits.no" target="_blank">
-                    Powered by <img src="images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
-                </a></a>
+
+            <div class="footer-poweredbyelbits">
+                <a href="https://www.elbits.no" target="_blank">
+                    Powered by <img src="/images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
+                </a>
             </div>
+
             
             <div class="md-social">
   

@@ -3463,45 +3463,46 @@
 <p><em>Layer with wires or assembly of wires, usually D-shaped, applied with a long length of lay over the cores of a pipe-type cable, to provide mechanical protection and to facilitate sliding while the cores are being pulled into the pipe.  Reference: IEC 60050-461</em></p>
 <p><strong>URI</strong>: <a href="http://iec.ch/TC57/CIM-generic#SkidWireLayer">cim:SkidWireLayer</a><br />
 <strong>Type</strong>: Class</p>
-<pre class="mermaid"><code>classDiagram
+<pre class="mermaid"><code>%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+classDiagram
     class SkidWireLayer
     click SkidWireLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/SkidWireLayer/"
-    style SkidWireLayer fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style SkidWireLayer fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConcentricWireLayer &lt;|-- SkidWireLayer : inherits
             click ConcentricWireLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ConcentricWireLayer/"
-            style ConcentricWireLayer rx:10,ry:10
+            style ConcentricWireLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         SkidWireLayer
             click SkidWireLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/SkidWireLayer/"
-            style SkidWireLayer rx:10,ry:10
+            style ConcentricWireLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MetallicSheathLayer &lt;|-- ConcentricWireLayer : inherits
             click MetallicSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MetallicSheathLayer/"
-            style MetallicSheathLayer rx:10,ry:10
+            style MetallicSheathLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         CableLayer &lt;|-- MetallicSheathLayer : inherits
             click CableLayer href "/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/"
-            style CableLayer rx:10,ry:10
+            style CableLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CableInfo --&gt; CableLayer : CableInfo.Layer
 
         CableInfo
             click CableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/CableInfo/"
-            style CableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style CableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MultiCoreCableInfo --&gt; CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
             click MultiCoreCableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MultiCoreCableInfo/"
-            style MultiCoreCableInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style MultiCoreCableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MetallicSheathLayer --&gt; CableShieldMaterialKind : MetallicSheathLayer.material
 
         CableShieldMaterialKind
             click CableShieldMaterialKind href "/Models/Profiles/SubseaCableInfo/Enumerations/CableShieldMaterialKind/"
-            style CableShieldMaterialKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style CableShieldMaterialKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MetallicSheathLayer : MetallicSheathLayer.isArmor
         MetallicSheathLayer : MetallicSheathLayer.material
@@ -3616,11 +3617,13 @@
   
   
 </div>
-            <div class="md-footer-poweredbyelbits-div">
-                <a class="md-footer-poweredbyelbits-text" href="https://www.elbits.no" target="_blank">
-                    Powered by <img src="images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
-                </a></a>
+
+            <div class="footer-poweredbyelbits">
+                <a href="https://www.elbits.no" target="_blank">
+                    Powered by <img src="/images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
+                </a>
             </div>
+
             
             <div class="md-social">
   

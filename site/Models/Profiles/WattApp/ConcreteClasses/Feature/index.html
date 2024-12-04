@@ -3463,28 +3463,29 @@
 <p><em>Defines a system base voltage which is referenced.</em></p>
 <p><strong>URI</strong>: <a href="http://www.opengis.net/ont/geosparql#Feature">geo:Feature</a><br />
 <strong>Type</strong>: Class</p>
-<pre class="mermaid"><code>classDiagram
+<pre class="mermaid"><code>%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+classDiagram
     class Feature
     click Feature href "/Models/Profiles/WattApp/ConcreteClasses/Feature/"
-    style Feature fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style Feature fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         SpatialObject &lt;|-- Feature : inherits
             click SpatialObject href "/Models/Profiles/WattApp/ConcreteClasses/SpatialObject/"
-            style SpatialObject rx:10,ry:10
+            style SpatialObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature
             click Feature href "/Models/Profiles/WattApp/ConcreteClasses/Feature/"
-            style Feature rx:10,ry:10
+            style SpatialObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource --|&gt; Feature : inherits
             click PowerSystemResource href "/Models/Profiles/WattApp/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style PowerSystemResource fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature --&gt; Geometry : Feature.hasGeometry
 
         Geometry
             click Geometry href "/Models/Profiles/WattApp/ConcreteClasses/Geometry/"
-            style Geometry fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style Geometry fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         Feature : hasGeometry</code></pre>
@@ -3562,11 +3563,13 @@
   
   
 </div>
-            <div class="md-footer-poweredbyelbits-div">
-                <a class="md-footer-poweredbyelbits-text" href="https://www.elbits.no" target="_blank">
-                    Powered by <img src="images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
-                </a></a>
+
+            <div class="footer-poweredbyelbits">
+                <a href="https://www.elbits.no" target="_blank">
+                    Powered by <img src="/images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
+                </a>
             </div>
+
             
             <div class="md-social">
   

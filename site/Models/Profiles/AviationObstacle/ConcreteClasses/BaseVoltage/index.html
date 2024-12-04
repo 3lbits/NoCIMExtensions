@@ -3463,25 +3463,26 @@
 <p><em>Defines a system base voltage which is referenced.</em></p>
 <p><strong>URI</strong>: <a href="https://cim.ucaiug.io/ns#BaseVoltage">cim:BaseVoltage</a><br />
 <strong>Type</strong>: Class</p>
-<pre class="mermaid"><code>classDiagram
+<pre class="mermaid"><code>%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+classDiagram
     class BaseVoltage
     click BaseVoltage href "/Models/Profiles/AviationObstacle/ConcreteClasses/BaseVoltage/"
-    style BaseVoltage fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style BaseVoltage fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject &lt;|-- BaseVoltage : inherits
             click IdentifiedObject href "/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseVoltage
             click BaseVoltage href "/Models/Profiles/AviationObstacle/ConcreteClasses/BaseVoltage/"
-            style BaseVoltage rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         AssetDeployment --&gt; BaseVoltage : AssetDeployment.BaseVoltage
 
         AssetDeployment
             click AssetDeployment href "/Models/Profiles/AviationObstacle/ConcreteClasses/AssetDeployment/"
-            style AssetDeployment fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style AssetDeployment fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         BaseVoltage : BaseVoltage.nominalVoltage
@@ -3583,11 +3584,13 @@
   
   
 </div>
-            <div class="md-footer-poweredbyelbits-div">
-                <a class="md-footer-poweredbyelbits-text" href="https://www.elbits.no" target="_blank">
-                    Powered by <img src="images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
-                </a></a>
+
+            <div class="footer-poweredbyelbits">
+                <a href="https://www.elbits.no" target="_blank">
+                    Powered by <img src="/images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
+                </a>
             </div>
+
             
             <div class="md-social">
   

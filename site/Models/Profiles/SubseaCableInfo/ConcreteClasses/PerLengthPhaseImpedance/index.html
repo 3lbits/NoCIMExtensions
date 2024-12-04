@@ -3463,38 +3463,39 @@
 <p><em>Impedance and admittance parameters per unit length for n-wire unbalanced lines, in matrix form.</em></p>
 <p><strong>URI</strong>: <a href="http://iec.ch/TC57/CIM-generic#PerLengthPhaseImpedance">cim:PerLengthPhaseImpedance</a><br />
 <strong>Type</strong>: Class</p>
-<pre class="mermaid"><code>classDiagram
+<pre class="mermaid"><code>%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+classDiagram
     class PerLengthPhaseImpedance
     click PerLengthPhaseImpedance href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/PerLengthPhaseImpedance/"
-    style PerLengthPhaseImpedance fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style PerLengthPhaseImpedance fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PerLengthImpedance &lt;|-- PerLengthPhaseImpedance : inherits
             click PerLengthImpedance href "/Models/Profiles/SubseaCableInfo/AbstractClasses/PerLengthImpedance/"
-            style PerLengthImpedance rx:10,ry:10
+            style PerLengthImpedance fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PerLengthPhaseImpedance
             click PerLengthPhaseImpedance href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/PerLengthPhaseImpedance/"
-            style PerLengthPhaseImpedance rx:10,ry:10
+            style PerLengthImpedance fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PerLengthConductorParameter &lt;|-- PerLengthImpedance : inherits
             click PerLengthConductorParameter href "/Models/Profiles/SubseaCableInfo/AbstractClasses/PerLengthConductorParameter/"
-            style PerLengthConductorParameter rx:10,ry:10
+            style PerLengthConductorParameter fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject &lt;|-- PerLengthConductorParameter : inherits
             click IdentifiedObject href "/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PerLengthConductorParameter --&gt; ConductorInfo : PerLengthConductorParameter.ConductorInfo
 
         ConductorInfo
             click ConductorInfo href "/Models/Profiles/SubseaCableInfo/AbstractClasses/ConductorInfo/"
-            style ConductorInfo fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style ConductorInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PhaseImpedanceData --&gt; PerLengthPhaseImpedance : PhaseImpedanceData.PhaseImpedance
 
         PhaseImpedanceData
             click PhaseImpedanceData href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/PhaseImpedanceData/"
-            style PhaseImpedanceData fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style PhaseImpedanceData fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         PerLengthPhaseImpedance : PerLengthPhaseImpedance.conductorCount
@@ -3618,11 +3619,13 @@
   
   
 </div>
-            <div class="md-footer-poweredbyelbits-div">
-                <a class="md-footer-poweredbyelbits-text" href="https://www.elbits.no" target="_blank">
-                    Powered by <img src="images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
-                </a></a>
+
+            <div class="footer-poweredbyelbits">
+                <a href="https://www.elbits.no" target="_blank">
+                    Powered by <img src="/images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
+                </a>
             </div>
+
             
             <div class="md-social">
   

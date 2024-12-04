@@ -3463,43 +3463,44 @@
 <p>__</p>
 <p><strong>URI</strong>: <a href="https://cim4.eu/ns/nc#CapacityTimePoint">nc:CapacityTimePoint</a><br />
 <strong>Type</strong>: Class</p>
-<pre class="mermaid"><code>classDiagram
+<pre class="mermaid"><code>%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+classDiagram
     class CapacityTimePoint
     click CapacityTimePoint href "/Models/Profiles/WattApp/ConcreteClasses/CapacityTimePoint/"
-    style CapacityTimePoint fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style CapacityTimePoint fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseIrregularTimeSeries &lt;|-- CapacityTimePoint : inherits
             click BaseIrregularTimeSeries href "/Models/Profiles/WattApp/AbstractClasses/BaseIrregularTimeSeries/"
-            style BaseIrregularTimeSeries rx:10,ry:10
+            style BaseIrregularTimeSeries fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         CapacityTimePoint
             click CapacityTimePoint href "/Models/Profiles/WattApp/ConcreteClasses/CapacityTimePoint/"
-            style CapacityTimePoint rx:10,ry:10
+            style BaseIrregularTimeSeries fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseTimeSeries &lt;|-- BaseIrregularTimeSeries : inherits
             click BaseTimeSeries href "/Models/Profiles/WattApp/AbstractClasses/BaseTimeSeries/"
-            style BaseTimeSeries rx:10,ry:10
+            style BaseTimeSeries fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject &lt;|-- BaseTimeSeries : inherits
             click IdentifiedObject href "/Models/Profiles/WattApp/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         CapacityTimePoint --&gt; CapacitySchedule : CapacityTimePoint.CapacitySchedule
 
         CapacitySchedule
             click CapacitySchedule href "/Models/Profiles/WattApp/ConcreteClasses/CapacitySchedule/"
-            style CapacitySchedule fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style CapacitySchedule fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseTimeSeries --&gt; TimeSeriesInterpolationKind : BaseTimeSeries.interpolationKind
 
         TimeSeriesInterpolationKind
             click TimeSeriesInterpolationKind href "/Models/Profiles/WattApp/Enumerations/TimeSeriesInterpolationKind/"
-            style TimeSeriesInterpolationKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style TimeSeriesInterpolationKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         BaseTimeSeries --&gt; BaseTimeSeriesKind : BaseTimeSeries.timeSeriesKind
 
         BaseTimeSeriesKind
             click BaseTimeSeriesKind href "/Models/Profiles/WattApp/Enumerations/BaseTimeSeriesKind/"
-            style BaseTimeSeriesKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style BaseTimeSeriesKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         CapacityTimePoint : CapacityTimePoint.atTime
         CapacityTimePoint : CapacityTimePoint.maxP
@@ -3718,11 +3719,13 @@
   
   
 </div>
-            <div class="md-footer-poweredbyelbits-div">
-                <a class="md-footer-poweredbyelbits-text" href="https://www.elbits.no" target="_blank">
-                    Powered by <img src="images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
-                </a></a>
+
+            <div class="footer-poweredbyelbits">
+                <a href="https://www.elbits.no" target="_blank">
+                    Powered by <img src="/images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
+                </a>
             </div>
+
             
             <div class="md-social">
   

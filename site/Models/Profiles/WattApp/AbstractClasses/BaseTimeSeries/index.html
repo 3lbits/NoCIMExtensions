@@ -3464,34 +3464,35 @@
 <p>*<strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</p>
 <p><strong>URI</strong>: <a href="https://cim.ucaiug.io/ns#BaseTimeSeries">cim:BaseTimeSeries</a><br />
 <strong>Type</strong>: Class</p>
-<pre class="mermaid"><code>classDiagram
+<pre class="mermaid"><code>%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+classDiagram
     class BaseTimeSeries
     click BaseTimeSeries href "/Models/Profiles/WattApp/AbstractClasses/BaseTimeSeries/"
-    style BaseTimeSeries fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style BaseTimeSeries fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseTimeSeries &lt;|-- BaseIrregularTimeSeries : inherits
             click BaseTimeSeries href "/Models/Profiles/WattApp/AbstractClasses/BaseTimeSeries/"
-            style BaseTimeSeries rx:10,ry:10
+            style BaseTimeSeries fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseIrregularTimeSeries
             click BaseIrregularTimeSeries href "/Models/Profiles/WattApp/AbstractClasses/BaseIrregularTimeSeries/"
-            style BaseIrregularTimeSeries rx:10,ry:10
+            style BaseTimeSeries fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject &lt;|-- BaseTimeSeries : inherits
             click IdentifiedObject href "/Models/Profiles/WattApp/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         BaseTimeSeries --&gt; TimeSeriesInterpolationKind : BaseTimeSeries.interpolationKind
 
         TimeSeriesInterpolationKind
             click TimeSeriesInterpolationKind href "/Models/Profiles/WattApp/Enumerations/TimeSeriesInterpolationKind/"
-            style TimeSeriesInterpolationKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style TimeSeriesInterpolationKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         BaseTimeSeries --&gt; BaseTimeSeriesKind : BaseTimeSeries.timeSeriesKind
 
         BaseTimeSeriesKind
             click BaseTimeSeriesKind href "/Models/Profiles/WattApp/Enumerations/BaseTimeSeriesKind/"
-            style BaseTimeSeriesKind fill:#FFCCCB,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style BaseTimeSeriesKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseTimeSeries : BaseTimeSeries.interpolationKind
         BaseTimeSeries : BaseTimeSeries.timeSeriesKind
@@ -3624,11 +3625,13 @@
   
   
 </div>
-            <div class="md-footer-poweredbyelbits-div">
-                <a class="md-footer-poweredbyelbits-text" href="https://www.elbits.no" target="_blank">
-                    Powered by <img src="images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
-                </a></a>
+
+            <div class="footer-poweredbyelbits">
+                <a href="https://www.elbits.no" target="_blank">
+                    Powered by <img src="/images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
+                </a>
             </div>
+
             
             <div class="md-social">
   

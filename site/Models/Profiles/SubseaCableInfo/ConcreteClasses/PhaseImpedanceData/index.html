@@ -3463,16 +3463,17 @@
 <p><em>Impedance and conductance matrix element values.The diagonal elements are described by the elements having the same toPhase and fromPhase value and the off diagonal elements have different toPhase and fromPhase values.  The matrix can also be stored in symmetric lower triangular format using the row and column attributes, which map to ACLineSegmentPhase.sequenceNumber.</em></p>
 <p><strong>URI</strong>: <a href="http://iec.ch/TC57/CIM-generic#PhaseImpedanceData">cim:PhaseImpedanceData</a><br />
 <strong>Type</strong>: Class</p>
-<pre class="mermaid"><code>classDiagram
+<pre class="mermaid"><code>%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+classDiagram
     class PhaseImpedanceData
     click PhaseImpedanceData href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/PhaseImpedanceData/"
-    style PhaseImpedanceData fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style PhaseImpedanceData fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PhaseImpedanceData --&gt; PerLengthPhaseImpedance : PhaseImpedanceData.PhaseImpedance
 
         PerLengthPhaseImpedance
             click PerLengthPhaseImpedance href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/PerLengthPhaseImpedance/"
-            style PerLengthPhaseImpedance fill:#ffff99,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style PerLengthPhaseImpedance fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         PhaseImpedanceData : PhaseImpedanceData.mRID
@@ -3571,11 +3572,13 @@
   
   
 </div>
-            <div class="md-footer-poweredbyelbits-div">
-                <a class="md-footer-poweredbyelbits-text" href="https://www.elbits.no" target="_blank">
-                    Powered by <img src="images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
-                </a></a>
+
+            <div class="footer-poweredbyelbits">
+                <a href="https://www.elbits.no" target="_blank">
+                    Powered by <img src="/images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
+                </a>
             </div>
+
             
             <div class="md-social">
   

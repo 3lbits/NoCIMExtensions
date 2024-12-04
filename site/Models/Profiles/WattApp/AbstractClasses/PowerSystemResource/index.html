@@ -3464,26 +3464,27 @@
 <p>*<strong>NOTE</strong>: this is an abstract class and should not be instantiated directly</p>
 <p><strong>URI</strong>: <a href="https://cim.ucaiug.io/ns#PowerSystemResource">cim:PowerSystemResource</a><br />
 <strong>Type</strong>: Class</p>
-<pre class="mermaid"><code>classDiagram
+<pre class="mermaid"><code>%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+classDiagram
     class PowerSystemResource
     click PowerSystemResource href "/Models/Profiles/WattApp/AbstractClasses/PowerSystemResource/"
-    style PowerSystemResource fill:#9fdf9f,stroke:#333,stroke-width:2px,rx:10,ry:10
+    style PowerSystemResource fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource &lt;|-- ConnectivityNodeContainer : inherits
             click PowerSystemResource href "/Models/Profiles/WattApp/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource rx:10,ry:10
+            style PowerSystemResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConnectivityNodeContainer
             click ConnectivityNodeContainer href "/Models/Profiles/WattApp/AbstractClasses/ConnectivityNodeContainer/"
-            style ConnectivityNodeContainer rx:10,ry:10
+            style PowerSystemResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject &lt;|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/WattApp/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject rx:10,ry:10
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature &lt;|-- PowerSystemResource : inherits
             click Feature href "/Models/Profiles/WattApp/ConcreteClasses/Feature/"
-            style Feature fill:#FFA500,stroke:#333,stroke-width:2px,rx:10,ry:10
+            style Feature fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
 
@@ -3578,11 +3579,13 @@
   
   
 </div>
-            <div class="md-footer-poweredbyelbits-div">
-                <a class="md-footer-poweredbyelbits-text" href="https://www.elbits.no" target="_blank">
-                    Powered by <img src="images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
-                </a></a>
+
+            <div class="footer-poweredbyelbits">
+                <a href="https://www.elbits.no" target="_blank">
+                    Powered by <img src="/images/ElBits_LogoWave_WattApp.svg" alt="ElBits Logo" style="height: 2em; vertical-align: middle; margin-bottom: 0.2em;"> ElBits
+                </a>
             </div>
+
             
             <div class="md-social">
   
