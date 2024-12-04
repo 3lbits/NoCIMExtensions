@@ -296,6 +296,30 @@ class ClassData():
 
         return enumList
     
+    def getTypesData(self):
+
+        if "types" not in globalYamlDict:
+            return
+
+        typesList = []
+
+        for _type in globalYamlDict["types"]:
+            typeName = _type
+            typeDescription = globalYamlDict["types"][_type]["description"] if "description" in globalYamlDict["types"][_type] and globalYamlDict["types"][_type]["description"] != '' else "No description available"
+            type_uri = globalYamlDict["types"][_type]["uri"] if "uri" in globalYamlDict["types"][_type] else "No URI available"
+            type_annotations = globalYamlDict["types"][_type]["annotations"] if "annotations" in globalYamlDict["types"][_type] else None
+
+            if type_annotations != None:
+                type_cim_data_type = globalYamlDict["types"][_type]["annotations"]["cim_data_type"] if "cim_data_type" in globalYamlDict["types"][_type]["annotations"] else False
+                type_annotations_uri = globalYamlDict["types"][_type]["annotations"]["uri"] if "uri" in globalYamlDict["types"][_type]["annotations"] else "No URI available"
+            else:
+                type_cim_data_type = False
+                type_annotations_uri = "No URI available"
+
+            typesList.append({typeName: {"description": typeDescription, "uri": type_uri, "cim_data_type": type_cim_data_type, "annotations_uri": type_annotations_uri}})
+
+        return typesList
+
     def getIndexData(self):
         
         vocabularyDict = {}
@@ -678,6 +702,37 @@ class CreateMarkdownFile():
 
                 print(f'Markdown file created for the enumeration {key}')
 
+    def createTypes(self):
+
+        typesList = ClassData().getTypesData()
+
+        for _type in typesList:
+            for key in _type:
+                
+                description = _type[key]["description"] if "description" in _type[key] else "No description available"
+                uri = _type[key]["uri"] if "uri" in _type[key] else "No URI available"
+                cim_data_type = _type[key]["cim_data_type"] if "cim_data_type" in _type[key] else False
+                annotations_uri = _type[key]["annotations_uri"] if "annotations_uri" in _type[key] else "No URI available"
+                sourceUri = globalYamlDict["id"].replace('#', '') if "id" in globalYamlDict else "No URI available"
+                
+                cim_data_type_text = "This is a CIM data type" if cim_data_type == True else None
+
+                path = os.path.join("docs", "Models", "Profiles", globalDocName, "Types" , f"{key}.md")
+                os.makedirs(os.path.dirname(path), exist_ok=True)
+
+                with open(path, 'w') as file:
+                    file.write(f'# {key}\n\n')
+                    file.write(f'_{description}_\n\n') if description != None else None
+                    file.write(f'*{cim_data_type_text}*\n\n') if cim_data_type_text != None else None
+                    file.write(f'**URI**: {uri}\n\n')
+                    file.write(f'**Type**: Types\n\n')
+                    file.write(f'**Annotation URI**: {annotations_uri}\n\n')
+
+                    file.write(f'## Schema Source\n\n')
+                    file.write(f'from schema: [{sourceUri}]({sourceUri})\n')
+
+                print(f'Markdown file created for the enumeration {key}')
+
     def createIndex(self):
         
         vocabularyData = ClassData().getIndexData()
@@ -838,6 +893,7 @@ class CreateMdController():
             print("Yaml file is valid")
 
         CreateMarkdownFile().createEnums()
+        CreateMarkdownFile().createTypes()
         CreateMarkdownFile().create_markdown_files()
         # CreateMarkdownFile().createIndex()
 

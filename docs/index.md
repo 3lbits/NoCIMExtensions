@@ -9,5 +9,7 @@ Access comprehensive documentation on CIM profiles and their usage, helping you 
 To access examples of how to use these profiles, please visit our [GitHub repository](https://github.com/3lbits/NoCIMExtensions) and navigate to the folder **data**.
 
 Profiles:
+- [Aviation Obstacle](/Models/Profiles/AviationObstacle/)
+- [SubseaCableInfo](/Models/Profiles/SubseaCableInfo/)
+- [Watt App](/Models/Profiles/WattApp/)
 
-- [CoreEquipment](./CoreEquipment/index.md)
