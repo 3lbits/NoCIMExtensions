@@ -2,7 +2,7 @@
 
 Profile Name: AssetCatalogue
 
-No description available
+This profile represents information exchange related to datasheet information. Currently it covers datasheet information for (subsea) cables.
 
 Profiles:
 

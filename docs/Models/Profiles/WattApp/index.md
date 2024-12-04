@@ -2,7 +2,7 @@
 
 Profile Name: WattApp
 
-This profile represents the aviation obstacles of the power system and their hierarchical relationships.
+This profile represents geospatial grid capacity.
 
 Profiles:
 

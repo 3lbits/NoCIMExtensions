@@ -27,9 +27,9 @@ class General():
 class CreateMarkdown():
 
     def create_markdown_file(self):
-        title = f'Overview'
-        description = f'This document provides an overview of the profiles in the Norwegian CIM National Profiles.'
-        ProfileListDescription = f'Currently documented here are the following profiles (click on each to learn more).'
+        title = f'Welcome to CIM for Norway'
+        description = f'Welcome to our website, your go-to resource for all things related to digital information exchange within the (Norwegian) grid sector. Whether you\'re a seasoned professional or new to the field, we aim to make this platform designed to provide you with the latest insights and resources to help you navigate and excel in the utilization of CIM (Common Information Model). \n## What You Can Expect: \n### CIM Profile Documentation \nAccess comprehensive documentation on CIM profiles and their usage, helping you understand and implement these standards effectively.'
+        ProfileListDescription = f'#### Currently documented profiles (click on each to learn more): \nTo access examples of how to use these profiles, please visit our [GitHub repository](https://github.com/3lbits/NoCIMExtensions) and navigate to the folder **data**.'
 
         profileNames = General().getProfileName()
 
