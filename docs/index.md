@@ -10,3 +10,6 @@ To access examples of how to use these profiles, please visit our [GitHub reposi
 
 Profiles:
 
+- [AviationObstacle](./AviationObstacle/index.md)
+- [SubseaCableInfo](./SubseaCableInfo/index.md)
+- [WattApp](./WattApp/index.md)

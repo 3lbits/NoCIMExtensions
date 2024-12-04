@@ -4,7 +4,7 @@ class General():
 
     def getProfileName(self):
         
-        for dirs in os.walk('docs'):
+        for dirs in os.walk('docs/Models/Profiles'):
             docsProfilePaths = dirs[1]
             break
 
