@@ -9,7 +9,7 @@ _An object that represents a jsonld compound to support value, type and language
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class LanguageObject
-    click LanguageObject href "/Models/Profiles/WattApp/ConcreteClasses/LanguageObject/"
+    click LanguageObject href "/Models/Profiles/GridCapacity/ConcreteClasses/LanguageObject/"
     style LanguageObject fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
@@ -26,4 +26,4 @@ classDiagram
 | type | No URI available | 0..1 string | The type of the GeoJSON object, e.g., geo:geoJSONLiteral. | direct |
 
 ### Schema Source
-* from schema: [https://ap-no.cim4.eu/WattApp/1.0](https://ap-no.cim4.eu/WattApp/1.0)
+* from schema: [https://ap-no.cim4.eu/GridCapacity/1.0](https://ap-no.cim4.eu/GridCapacity/1.0)

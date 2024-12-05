@@ -1,57 +1,47 @@
-# CapacitySchedule
+# BaseIrregularTimeSeries
 
 __
 
-**URI**: [nc:CapacitySchedule](https://cim4.eu/ns/nc#CapacitySchedule)<br />
+*__NOTE__: this is an abstract class and should not be instantiated directly
+
+**URI**: [cim:BaseIrregularTimeSeries](https://cim.ucaiug.io/ns#BaseIrregularTimeSeries)<br />
 **Type**: Class
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
-    class CapacitySchedule
-    click CapacitySchedule href "/Models/Profiles/WattApp/ConcreteClasses/CapacitySchedule/"
-    style CapacitySchedule fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    class BaseIrregularTimeSeries
+    click BaseIrregularTimeSeries href "/Models/Profiles/GridCapacity/AbstractClasses/BaseIrregularTimeSeries/"
+    style BaseIrregularTimeSeries fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseIrregularTimeSeries <|-- CapacitySchedule : inherits
-            click BaseIrregularTimeSeries href "/Models/Profiles/WattApp/AbstractClasses/BaseIrregularTimeSeries/"
+            click BaseIrregularTimeSeries href "/Models/Profiles/GridCapacity/AbstractClasses/BaseIrregularTimeSeries/"
             style BaseIrregularTimeSeries fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         CapacitySchedule
-            click CapacitySchedule href "/Models/Profiles/WattApp/ConcreteClasses/CapacitySchedule/"
+            click CapacitySchedule href "/Models/Profiles/GridCapacity/ConcreteClasses/CapacitySchedule/"
             style BaseIrregularTimeSeries fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseTimeSeries <|-- BaseIrregularTimeSeries : inherits
-            click BaseTimeSeries href "/Models/Profiles/WattApp/AbstractClasses/BaseTimeSeries/"
+            click BaseTimeSeries href "/Models/Profiles/GridCapacity/AbstractClasses/BaseTimeSeries/"
             style BaseTimeSeries fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- BaseTimeSeries : inherits
-            click IdentifiedObject href "/Models/Profiles/WattApp/AbstractClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/GridCapacity/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        CapacitySchedule --> Feeder : CapacitySchedule.Feeder
-
-        Feeder
-            click Feeder href "/Models/Profiles/WattApp/ConcreteClasses/Feeder/"
-            style Feeder fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        CapacityTimePoint --> CapacitySchedule : CapacityTimePoint.CapacitySchedule
-
-        CapacityTimePoint
-            click CapacityTimePoint href "/Models/Profiles/WattApp/ConcreteClasses/CapacityTimePoint/"
-            style CapacityTimePoint fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseTimeSeries --> TimeSeriesInterpolationKind : BaseTimeSeries.interpolationKind
 
         TimeSeriesInterpolationKind
-            click TimeSeriesInterpolationKind href "/Models/Profiles/WattApp/Enumerations/TimeSeriesInterpolationKind/"
+            click TimeSeriesInterpolationKind href "/Models/Profiles/GridCapacity/Enumerations/TimeSeriesInterpolationKind/"
             style TimeSeriesInterpolationKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         BaseTimeSeries --> BaseTimeSeriesKind : BaseTimeSeries.timeSeriesKind
 
         BaseTimeSeriesKind
-            click BaseTimeSeriesKind href "/Models/Profiles/WattApp/Enumerations/BaseTimeSeriesKind/"
+            click BaseTimeSeriesKind href "/Models/Profiles/GridCapacity/Enumerations/BaseTimeSeriesKind/"
             style BaseTimeSeriesKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        CapacitySchedule : CapacitySchedule.Feeder
         BaseTimeSeries : BaseTimeSeries.interpolationKind
         BaseTimeSeries : BaseTimeSeries.timeSeriesKind
         BaseTimeSeries : BaseTimeSeries.generatedAtTime
@@ -65,13 +55,11 @@ classDiagram
 ## Inheritance
 * [IdentifiedObject](IdentifiedObject.md)
     * [BaseTimeSeries](BaseTimeSeries.md)
-        * [BaseIrregularTimeSeries](BaseIrregularTimeSeries.md)
-            * **CapacitySchedule**
+        * **BaseIrregularTimeSeries**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
-| Feeder | [nc-no:CapacitySchedule.Feeder](http://cim4.eu/ns/nc-no#CapacitySchedule.Feeder) | 0..1 Feeder |  | direct |
 | interpolationKind | [nc:BaseTimeSeries.interpolationKind](https://cim4.eu/ns/nc#BaseTimeSeries.interpolationKind) | 0..1 TimeSeriesInterpolationKind |  | BaseTimeSeries |
 | timeSeriesKind | [nc:BaseTimeSeries.timeSeriesKind](https://cim4.eu/ns/nc#BaseTimeSeries.timeSeriesKind) | 0..1 BaseTimeSeriesKind |  | BaseTimeSeries |
 | generatedAtTime | [nc:BaseTimeSeries.generatedAtTime](https://cim4.eu/ns/nc#BaseTimeSeries.generatedAtTime) | 0..1 DateTime |  | BaseTimeSeries |
@@ -82,4 +70,4 @@ classDiagram
 | name | [cim:IdentifiedObject.name](https://cim.ucaiug.io/ns#IdentifiedObject.name) | 0..1 string | The name is any free human readable and possibly non unique text naming the object. | IdentifiedObject |
 
 ### Schema Source
-* from schema: [https://ap-no.cim4.eu/WattApp/1.0](https://ap-no.cim4.eu/WattApp/1.0)
+* from schema: [https://ap-no.cim4.eu/GridCapacity/1.0](https://ap-no.cim4.eu/GridCapacity/1.0)

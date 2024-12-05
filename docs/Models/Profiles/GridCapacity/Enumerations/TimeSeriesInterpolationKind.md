@@ -17,4 +17,4 @@ __
 | linear | [nc:TimeSeriesInterpolationKind.linear](http://entsoe.eu/ns/nc#TimeSeriesInterpolationKind.linear) |  |
 ## Schema Source
 
-from schema: [https://ap-no.cim4.eu/WattApp/1.0](https://ap-no.cim4.eu/WattApp/1.0)
+from schema: [https://ap-no.cim4.eu/GridCapacity/1.0](https://ap-no.cim4.eu/GridCapacity/1.0)

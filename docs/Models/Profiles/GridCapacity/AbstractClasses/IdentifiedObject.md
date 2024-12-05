@@ -11,19 +11,19 @@ _This is a root class to provide common identification for all classes needing i
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class IdentifiedObject
-    click IdentifiedObject href "/Models/Profiles/WattApp/AbstractClasses/IdentifiedObject/"
+    click IdentifiedObject href "/Models/Profiles/GridCapacity/AbstractClasses/IdentifiedObject/"
     style IdentifiedObject fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "/Models/Profiles/WattApp/AbstractClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/GridCapacity/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource
-            click PowerSystemResource href "/Models/Profiles/WattApp/AbstractClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/GridCapacity/AbstractClasses/PowerSystemResource/"
             style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature <|-- PowerSystemResource : inherits
-            click Feature href "/Models/Profiles/WattApp/ConcreteClasses/Feature/"
+            click Feature href "/Models/Profiles/GridCapacity/ConcreteClasses/Feature/"
             style Feature fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
@@ -44,4 +44,4 @@ classDiagram
 | name | [cim:IdentifiedObject.name](https://cim.ucaiug.io/ns#IdentifiedObject.name) | 0..1 string | The name is any free human readable and possibly non unique text naming the object. | direct |
 
 ### Schema Source
-* from schema: [https://ap-no.cim4.eu/WattApp/1.0](https://ap-no.cim4.eu/WattApp/1.0)
+* from schema: [https://ap-no.cim4.eu/GridCapacity/1.0](https://ap-no.cim4.eu/GridCapacity/1.0)

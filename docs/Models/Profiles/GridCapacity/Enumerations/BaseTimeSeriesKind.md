@@ -16,4 +16,4 @@ __
 | actual | [nc:BaseTimeSeriesKind.actual](http://entsoe.eu/ns/nc#BaseTimeSeriesKind.actual) |  |
 ## Schema Source
 
-from schema: [https://ap-no.cim4.eu/WattApp/1.0](https://ap-no.cim4.eu/WattApp/1.0)
+from schema: [https://ap-no.cim4.eu/GridCapacity/1.0](https://ap-no.cim4.eu/GridCapacity/1.0)

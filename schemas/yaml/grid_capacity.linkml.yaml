@@ -1,21 +1,21 @@
-id: "https://ap-no.cim4.eu/WattApp/1.0"
-name: "WattApp"
-title: "Watt App Vocabulary"
+id: "https://ap-no.cim4.eu/GridCapacity/1.0"
+name: "GridCapacity"
+title: "Grid Capacity Vocabulary"
 comments: "This profile represents geospatial grid capacity."
 #  dcterms:
 #    title: "DIGIN10-30-WattApp-GL"
-#    description: "Geospartial GridCapacity MAS1"
+#    description: "Geospatial GridCapacity MAS1"
 #    publisher: "ElBits AS"
 #    rights: "© 2024 Copyright"
 #    rightsHolder: "ElBits AS"
 #    license: "CC BY-NC-SA 4.0"
 #    accessRights: "PUBLIC"
 #    isVersionOf: "https://test.model4powersystem.eu/Telemark/"
-#    spatial: "https://energy.referencedata.eu/Test/Frame/WattApp"
+#    spatial: "https://energy.referencedata.eu/Test/Frame/GridCapacity"
 #    conformsTo:
-#      - "https://ap-no.cim4.eu/WattApp/1.0"
+#      - "https://ap-no.cim4.eu/GridCapacity/1.0"
 #  dcat:
-#    keyword: "WattApp"
+#    keyword: "GridCapacity"
 prefixes:
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   linkml: https://w3id.org/linkml/

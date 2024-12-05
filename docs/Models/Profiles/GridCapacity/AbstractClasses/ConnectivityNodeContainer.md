@@ -1,47 +1,39 @@
-# Feeder
+# ConnectivityNodeContainer
 
-_A collection of equipment for organizational purposes, used for grouping distribution resources. The organization a feeder does not necessarily reflect connectivity or current operation state._
+_A base class for all objects that may contain connectivity nodes or topological nodes._
 
-**URI**: [cim:Feeder](https://cim.ucaiug.io/ns#Feeder)<br />
+*__NOTE__: this is an abstract class and should not be instantiated directly
+
+**URI**: [cim:ConnectivityNodeContainer](https://cim.ucaiug.io/ns#ConnectivityNodeContainer)<br />
 **Type**: Class
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
-    class Feeder
-    click Feeder href "/Models/Profiles/WattApp/ConcreteClasses/Feeder/"
-    style Feeder fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        EquipmentContainer <|-- Feeder : inherits
-            click EquipmentContainer href "/Models/Profiles/WattApp/AbstractClasses/EquipmentContainer/"
-            style EquipmentContainer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        Feeder
-            click Feeder href "/Models/Profiles/WattApp/ConcreteClasses/Feeder/"
-            style EquipmentContainer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    class ConnectivityNodeContainer
+    click ConnectivityNodeContainer href "/Models/Profiles/GridCapacity/AbstractClasses/ConnectivityNodeContainer/"
+    style ConnectivityNodeContainer fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConnectivityNodeContainer <|-- EquipmentContainer : inherits
-            click ConnectivityNodeContainer href "/Models/Profiles/WattApp/AbstractClasses/ConnectivityNodeContainer/"
+            click ConnectivityNodeContainer href "/Models/Profiles/GridCapacity/AbstractClasses/ConnectivityNodeContainer/"
+            style ConnectivityNodeContainer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        EquipmentContainer
+            click EquipmentContainer href "/Models/Profiles/GridCapacity/AbstractClasses/EquipmentContainer/"
             style ConnectivityNodeContainer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- ConnectivityNodeContainer : inherits
-            click PowerSystemResource href "/Models/Profiles/WattApp/AbstractClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/GridCapacity/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "/Models/Profiles/WattApp/AbstractClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/GridCapacity/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature <|-- PowerSystemResource : inherits
-            click Feature href "/Models/Profiles/WattApp/ConcreteClasses/Feature/"
+            click Feature href "/Models/Profiles/GridCapacity/ConcreteClasses/Feature/"
             style Feature fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-
-        CapacitySchedule --> Feeder : CapacitySchedule.Feeder
-
-        CapacitySchedule
-            click CapacitySchedule href "/Models/Profiles/WattApp/ConcreteClasses/CapacitySchedule/"
-            style CapacitySchedule fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         IdentifiedObject : IdentifiedObject.mRID
@@ -52,9 +44,7 @@ classDiagram
 ## Inheritance
 * [IdentifiedObject](IdentifiedObject.md)
     * [PowerSystemResource](PowerSystemResource.md)
-        * [ConnectivityNodeContainer](ConnectivityNodeContainer.md)
-            * [EquipmentContainer](EquipmentContainer.md)
-                * **Feeder**
+        * **ConnectivityNodeContainer**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |
@@ -64,4 +54,4 @@ classDiagram
 | name | [cim:IdentifiedObject.name](https://cim.ucaiug.io/ns#IdentifiedObject.name) | 0..1 string | The name is any free human readable and possibly non unique text naming the object. | IdentifiedObject |
 
 ### Schema Source
-* from schema: [https://ap-no.cim4.eu/WattApp/1.0](https://ap-no.cim4.eu/WattApp/1.0)
+* from schema: [https://ap-no.cim4.eu/GridCapacity/1.0](https://ap-no.cim4.eu/GridCapacity/1.0)

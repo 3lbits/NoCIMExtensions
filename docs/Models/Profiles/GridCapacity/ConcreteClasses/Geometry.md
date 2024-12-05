@@ -9,27 +9,27 @@ _Geometric representation details._
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class Geometry
-    click Geometry href "/Models/Profiles/WattApp/ConcreteClasses/Geometry/"
+    click Geometry href "/Models/Profiles/GridCapacity/ConcreteClasses/Geometry/"
     style Geometry fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         SpatialObject <|-- Geometry : inherits
-            click SpatialObject href "/Models/Profiles/WattApp/ConcreteClasses/SpatialObject/"
+            click SpatialObject href "/Models/Profiles/GridCapacity/ConcreteClasses/SpatialObject/"
             style SpatialObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Geometry
-            click Geometry href "/Models/Profiles/WattApp/ConcreteClasses/Geometry/"
+            click Geometry href "/Models/Profiles/GridCapacity/ConcreteClasses/Geometry/"
             style SpatialObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Geometry --> GeometryObject : Geometry.asGeoJSON
 
         GeometryObject
-            click GeometryObject href "/Models/Profiles/WattApp/ConcreteClasses/GeometryObject/"
+            click GeometryObject href "/Models/Profiles/GridCapacity/ConcreteClasses/GeometryObject/"
             style GeometryObject fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature --> Geometry : Feature.hasGeometry
 
         Feature
-            click Feature href "/Models/Profiles/WattApp/ConcreteClasses/Feature/"
+            click Feature href "/Models/Profiles/GridCapacity/ConcreteClasses/Feature/"
             style Feature fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
@@ -46,4 +46,4 @@ classDiagram
 | asGeoJSON | [geo:asGeoJSON](http://www.opengis.net/ont/geosparql#asGeoJSON) | 0..1 GeometryObject | Geometric representation of the spatial object in GeoJSON format. | direct |
 
 ### Schema Source
-* from schema: [https://ap-no.cim4.eu/WattApp/1.0](https://ap-no.cim4.eu/WattApp/1.0)
+* from schema: [https://ap-no.cim4.eu/GridCapacity/1.0](https://ap-no.cim4.eu/GridCapacity/1.0)

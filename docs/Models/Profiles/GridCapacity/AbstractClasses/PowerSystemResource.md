@@ -1,41 +1,33 @@
-# EquipmentContainer
+# PowerSystemResource
 
-_A modelling construct to provide a root class for containing equipment._
+_A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated._
 
 *__NOTE__: this is an abstract class and should not be instantiated directly
 
-**URI**: [cim:EquipmentContainer](https://cim.ucaiug.io/ns#EquipmentContainer)<br />
+**URI**: [cim:PowerSystemResource](https://cim.ucaiug.io/ns#PowerSystemResource)<br />
 **Type**: Class
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
-    class EquipmentContainer
-    click EquipmentContainer href "/Models/Profiles/WattApp/AbstractClasses/EquipmentContainer/"
-    style EquipmentContainer fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        EquipmentContainer <|-- Feeder : inherits
-            click EquipmentContainer href "/Models/Profiles/WattApp/AbstractClasses/EquipmentContainer/"
-            style EquipmentContainer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        Feeder
-            click Feeder href "/Models/Profiles/WattApp/ConcreteClasses/Feeder/"
-            style EquipmentContainer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        ConnectivityNodeContainer <|-- EquipmentContainer : inherits
-            click ConnectivityNodeContainer href "/Models/Profiles/WattApp/AbstractClasses/ConnectivityNodeContainer/"
-            style ConnectivityNodeContainer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    class PowerSystemResource
+    click PowerSystemResource href "/Models/Profiles/GridCapacity/AbstractClasses/PowerSystemResource/"
+    style PowerSystemResource fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- ConnectivityNodeContainer : inherits
-            click PowerSystemResource href "/Models/Profiles/WattApp/AbstractClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/GridCapacity/AbstractClasses/PowerSystemResource/"
+            style PowerSystemResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        ConnectivityNodeContainer
+            click ConnectivityNodeContainer href "/Models/Profiles/GridCapacity/AbstractClasses/ConnectivityNodeContainer/"
             style PowerSystemResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "/Models/Profiles/WattApp/AbstractClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/GridCapacity/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature <|-- PowerSystemResource : inherits
-            click Feature href "/Models/Profiles/WattApp/ConcreteClasses/Feature/"
+            click Feature href "/Models/Profiles/GridCapacity/ConcreteClasses/Feature/"
             style Feature fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
@@ -47,9 +39,7 @@ classDiagram
 
 ## Inheritance
 * [IdentifiedObject](IdentifiedObject.md)
-    * [PowerSystemResource](PowerSystemResource.md)
-        * [ConnectivityNodeContainer](ConnectivityNodeContainer.md)
-            * **EquipmentContainer**
+    * **PowerSystemResource**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |
@@ -59,4 +49,4 @@ classDiagram
 | name | [cim:IdentifiedObject.name](https://cim.ucaiug.io/ns#IdentifiedObject.name) | 0..1 string | The name is any free human readable and possibly non unique text naming the object. | IdentifiedObject |
 
 ### Schema Source
-* from schema: [https://ap-no.cim4.eu/WattApp/1.0](https://ap-no.cim4.eu/WattApp/1.0)
+* from schema: [https://ap-no.cim4.eu/GridCapacity/1.0](https://ap-no.cim4.eu/GridCapacity/1.0)
