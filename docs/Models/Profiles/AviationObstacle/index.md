@@ -37,8 +37,6 @@ Profiles:
     
     - [BaseVoltage](/Models/Profiles/AviationObstacle/ConcreteClasses/BaseVoltage/)
     
-    - [Container](/Models/Profiles/AviationObstacle/ConcreteClasses/Container/)
-    
     - [Feature](/Models/Profiles/AviationObstacle/ConcreteClasses/Feature/)
     
     - [Geometry](/Models/Profiles/AviationObstacle/ConcreteClasses/Geometry/)

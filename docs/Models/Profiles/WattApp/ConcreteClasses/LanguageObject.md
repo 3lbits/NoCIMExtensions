@@ -10,7 +10,7 @@ _An object that represents a jsonld compound to support value, type and language
 classDiagram
     class LanguageObject
     click LanguageObject href "/Models/Profiles/WattApp/ConcreteClasses/LanguageObject/"
-    style LanguageObject fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style LanguageObject fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

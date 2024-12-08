@@ -10,36 +10,32 @@ _Deployment of an ACLineSegmentSpan._
 classDiagram
     class ACLineSegmentSpanDeployment
     click ACLineSegmentSpanDeployment href "/Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegmentSpanDeployment/"
-    style ACLineSegmentSpanDeployment fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+    style ACLineSegmentSpanDeployment fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         AssetDeployment <|-- ACLineSegmentSpanDeployment : inherits
             click AssetDeployment href "/Models/Profiles/AviationObstacle/ConcreteClasses/AssetDeployment/"
-            style AssetDeployment fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        ACLineSegmentSpanDeployment
-            click ACLineSegmentSpanDeployment href "/Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegmentSpanDeployment/"
-            style AssetDeployment fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+            style AssetDeployment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         IdentifiedObject <|-- AssetDeployment : inherits
             click IdentifiedObject href "/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ACLineSegmentSpanDeployment --> ACLineSegmentSpan : ACLineSegmentSpanDeployment.ACLineSegmentSpan
 
         ACLineSegmentSpan
             click ACLineSegmentSpan href "/Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegmentSpan/"
-            style ACLineSegmentSpan fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACLineSegmentSpan fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         AssetDeployment --> BaseVoltage : AssetDeployment.BaseVoltage
 
         BaseVoltage
             click BaseVoltage href "/Models/Profiles/AviationObstacle/ConcreteClasses/BaseVoltage/"
-            style BaseVoltage fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BaseVoltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         AssetDeployment --> DeploymentStateKind : AssetDeployment.deploymentState
 
         DeploymentStateKind
             click DeploymentStateKind href "/Models/Profiles/AviationObstacle/Enumerations/DeploymentStateKind/"
-            style DeploymentStateKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DeploymentStateKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ACLineSegmentSpanDeployment : ACLineSegmentSpanDeployment.ACLineSegmentSpan
         AssetDeployment : AssetDeployment.deploymentState

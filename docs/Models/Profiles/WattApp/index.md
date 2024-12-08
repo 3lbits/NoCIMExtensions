@@ -27,8 +27,6 @@ Profiles:
     
     - [CapacityTimePoint](/Models/Profiles/WattApp/ConcreteClasses/CapacityTimePoint/)
     
-    - [Container](/Models/Profiles/WattApp/ConcreteClasses/Container/)
-    
     - [Feature](/Models/Profiles/WattApp/ConcreteClasses/Feature/)
     
     - [Feeder](/Models/Profiles/WattApp/ConcreteClasses/Feeder/)

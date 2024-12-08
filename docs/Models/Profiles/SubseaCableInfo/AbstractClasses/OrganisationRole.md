@@ -12,19 +12,17 @@ _Identifies a way in which an organisation may participate in the utility enterp
 classDiagram
     class OrganisationRole
     click OrganisationRole href "/Models/Profiles/SubseaCableInfo/AbstractClasses/OrganisationRole/"
-    style OrganisationRole fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style OrganisationRole fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         OrganisationRole <|-- Manufacturer : inherits
-            click OrganisationRole href "/Models/Profiles/SubseaCableInfo/AbstractClasses/OrganisationRole/"
-            style OrganisationRole fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Manufacturer
             click Manufacturer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/Manufacturer/"
-            style OrganisationRole fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+            style Manufacturer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         IdentifiedObject <|-- OrganisationRole : inherits
             click IdentifiedObject href "/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

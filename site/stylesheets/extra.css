@@ -1,7 +1,73 @@
-.footer-poweredbyelbits {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 10%;
-  margin-right: 10%;
+/* General footer styling */
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background-color: black;
+    border-top: 1px black;
+    color: white;
+    font-size: 0.69rem;
+  }
+  
+.footer-logo img {
+    height: 3em;
+    vertical-align: middle;
+    margin-bottom: 0.2em;
+  }
+
+.footer-social__link img {
+    fill: white;
+    max-height: 1rem;
+    vertical-align: middle;
+    margin-bottom: 0.25em;
+    margin-right: 0.1em;
 }
+
+  .footer-item {
+    flex: 1;
+    text-align: center;
+    padding: 0.5rem;
+  }
+  
+  .footer-item.left {
+    text-align: left;
+  }
+  
+  .footer-item.center {
+    text-align: center;
+  }
+  
+  .footer-item.right {
+    text-align: right;
+  }
+  
+  /* Media query for small screens (e.g., phones) */
+  @media (max-width: 600px) {
+    .footer {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-item {
+      text-align: center;
+    }
+
+    .footer-item.left {
+        order: 1;
+        margin-top: 0.25rem;
+        margin-bottom: 0.25rem;
+      }
+ 
+    .footer-item.center {
+      order: 3;
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-item.right {
+        order: 2;
+        margin-top: 0.25rem;
+    }
+
+  }
+  

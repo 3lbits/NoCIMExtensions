@@ -9,7 +9,6 @@ class MkDocsConfig:
 
         config = {
             'site_name': 'CIM for Norway',
-            'copyright': f'Copyright &copy; {current_year} ElBits AS',
             'theme_name': 'material',
             'theme_favicon': 'images/cim4nologo.svg',
             'theme_logo': 'images/cim4nologo.svg',
@@ -29,10 +28,6 @@ class MkDocsConfig:
             'light_mode_color_accent': 'red',
             'dark_mode_color_primary': 'black',
             'dark_mode_color_accent': 'green',
-            'social_links': [
-                {'icon': 'fontawesome/brands/github', 'link': 'https://github.com/3lbits/NoCIMExtensions'},
-                {'icon': 'fontawesome/solid/file', 'link': 'https://github.com/3lbits/CIM4NoUtility/tree/main'}
-            ],
             'mermaid': True,
             'nav': True,
             'profiles': profiles
@@ -44,7 +39,6 @@ class MkDocsConfig:
 
         config = {
             'site_name': 'This is my site',
-            'copyright': f'Copyright &copy; {current_year} MyCompany AS',
             'theme_name': 'material',
             'theme_favicon': 'images/my_logo.svg',
             'theme_logo': 'images/my_logo.svg',

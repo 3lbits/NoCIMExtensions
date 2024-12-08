@@ -10,57 +10,53 @@ _The part of a segment line between two consecutive points of support._
 classDiagram
     class ACLineSegmentSpan
     click ACLineSegmentSpan href "/Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegmentSpan/"
-    style ACLineSegmentSpan fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+    style ACLineSegmentSpan fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         PowerSystemResource <|-- ACLineSegmentSpan : inherits
             click PowerSystemResource href "/Models/Profiles/AviationObstacle/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        ACLineSegmentSpan
-            click ACLineSegmentSpan href "/Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegmentSpan/"
-            style PowerSystemResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature <|-- PowerSystemResource : inherits
             click Feature href "/Models/Profiles/AviationObstacle/ConcreteClasses/Feature/"
-            style Feature fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Feature fill:#F2EBE2,stroke:#333,stroke-width:2px,rx:10,ry:10,color:#8A0303
 
         ACLineSegmentSpan --> ACLineSegment : ACLineSegmentSpan.ACLineSegment
 
         ACLineSegment
             click ACLineSegment href "/Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegment/"
-            style ACLineSegment fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACLineSegment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ACLineSegment --> ACLineSegmentSpan : ACLineSegment.ACLineSegmentSpan
 
         ACLineSegment
             click ACLineSegment href "/Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegment/"
-            style ACLineSegment fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACLineSegment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ACLineSegmentSpanDeployment --> ACLineSegmentSpan : ACLineSegmentSpanDeployment.ACLineSegmentSpan
 
         ACLineSegmentSpanDeployment
             click ACLineSegmentSpanDeployment href "/Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegmentSpanDeployment/"
-            style ACLineSegmentSpanDeployment fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACLineSegmentSpanDeployment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ACLineSegmentSpan --> AviationObstacleLightingKind : ACLineSegmentSpan.aviationObstacleLightingKind
 
         AviationObstacleLightingKind
             click AviationObstacleLightingKind href "/Models/Profiles/AviationObstacle/Enumerations/AviationObstacleLightingKind/"
-            style AviationObstacleLightingKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AviationObstacleLightingKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         ACLineSegmentSpan --> AviationObstacleMarkingKind : ACLineSegmentSpan.aviationObstacleMarkingKind
 
         AviationObstacleMarkingKind
             click AviationObstacleMarkingKind href "/Models/Profiles/AviationObstacle/Enumerations/AviationObstacleMarkingKind/"
-            style AviationObstacleMarkingKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AviationObstacleMarkingKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         PowerSystemResource --> LocationMethodKind : PowerSystemResource.locationMethodKind
 
         LocationMethodKind
             click LocationMethodKind href "/Models/Profiles/AviationObstacle/Enumerations/LocationMethodKind/"
-            style LocationMethodKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style LocationMethodKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ACLineSegmentSpan : ACLineSegmentSpan.aviationObstacleLightingKind
         ACLineSegmentSpan : ACLineSegmentSpan.aviationObstacleMarkingKind

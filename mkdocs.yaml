@@ -1,7 +1,6 @@
 site_name: CIM for Norway
 extra_css:
 - stylesheets/extra.css
-copyright: Copyright &copy; 2024 ElBits AS
 theme:
   name: material
   custom_dir: overrides
@@ -30,13 +29,6 @@ theme:
       name: Switch to light mode
     primary: black
     accent: green
-extra:
-  generator: false
-  social:
-  - icon: fontawesome/brands/github
-    link: https://github.com/3lbits/NoCIMExtensions
-  - icon: fontawesome/solid/file
-    link: https://github.com/3lbits/CIM4NoUtility/tree/main
 markdown_extensions:
 - pymdownx.betterem
 - pymdownx.superfences:
@@ -72,7 +64,6 @@ nav:
         - StructureDeployment: Models/Profiles/AviationObstacle/ConcreteClasses/StructureDeployment.md
         - BaseVoltage: Models/Profiles/AviationObstacle/ConcreteClasses/BaseVoltage.md
         - Zone: Models/Profiles/AviationObstacle/ConcreteClasses/Zone.md
-        - Container: Models/Profiles/AviationObstacle/ConcreteClasses/Container.md
       - Enumerations:
         - AviationObstacleLightingKind: Models/Profiles/AviationObstacle/Enumerations/AviationObstacleLightingKind.md
         - AviationObstacleMarkingKind: Models/Profiles/AviationObstacle/Enumerations/AviationObstacleMarkingKind.md
@@ -127,7 +118,6 @@ nav:
         - TapeLayer: Models/Profiles/SubseaCableInfo/ConcreteClasses/TapeLayer.md
         - TubularTape: Models/Profiles/SubseaCableInfo/ConcreteClasses/TubularTape.md
         - WireBraidInfo: Models/Profiles/SubseaCableInfo/ConcreteClasses/WireBraidInfo.md
-        - Container: Models/Profiles/SubseaCableInfo/ConcreteClasses/Container.md
       - Enumerations:
         - CableShieldMaterialKind: Models/Profiles/SubseaCableInfo/Enumerations/CableShieldMaterialKind.md
         - WireInsulationKind: Models/Profiles/SubseaCableInfo/Enumerations/WireInsulationKind.md
@@ -159,7 +149,6 @@ nav:
         - Feeder: Models/Profiles/WattApp/ConcreteClasses/Feeder.md
         - CapacitySchedule: Models/Profiles/WattApp/ConcreteClasses/CapacitySchedule.md
         - CapacityTimePoint: Models/Profiles/WattApp/ConcreteClasses/CapacityTimePoint.md
-        - Container: Models/Profiles/WattApp/ConcreteClasses/Container.md
       - Enumerations:
         - TimeSeriesInterpolationKind: Models/Profiles/WattApp/Enumerations/TimeSeriesInterpolationKind.md
         - BaseTimeSeriesKind: Models/Profiles/WattApp/Enumerations/BaseTimeSeriesKind.md

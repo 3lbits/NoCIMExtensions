@@ -23,6 +23,7 @@ class mkdocs:
         types = []
 
         for _class in globalYamlDict["classes"]:
+
             if 'abstract' in globalYamlDict["classes"][_class] and globalYamlDict["classes"][_class]['abstract'] == True:
                 abstractClasses.append({'name': _class, 'path': f'{globalLookUpDataDict[_class]["absoluteUrlPath"]}'})
             if 'abstract' in globalYamlDict["classes"][_class] and globalYamlDict["classes"][_class]['abstract'] == False or 'abstract' not in globalYamlDict["classes"][_class]:
@@ -94,21 +95,24 @@ class General():
             
             yamlDict = yaml.safe_load(file)
 
+            if 'classes' in yamlDict:
+                if 'Container' in yamlDict['classes']:
+                    yamlDict['classes'].pop('Container')
+
             return yamlDict
 
     def includedClasses(self, allClasses=False):
         
-        if "attributes" not in globalYamlDict["classes"]["Container"] or globalYamlDict["classes"]["Container"]["attributes"] == None:
-            print("Attributes not found in the Container class")
-            return
+        # Mark Container class is removed from the schema
+
+        # if "attributes" not in globalYamlDict["classes"]["Container"] or globalYamlDict["classes"]["Container"]["attributes"] == None:
+        #     print("Attributes not found in the Container class")
+        #     return
         
         containerClassesSet = set()
 
         if allClasses == True:
             for _class in globalYamlDict["classes"]:
-
-                if _class == "Container":
-                    continue
 
                 containerClassesSet.add(_class)
 
@@ -135,9 +139,11 @@ class General():
             print("Prefixes not found in the yaml file")
             return False
         
-        if "Container" not in globalYamlDict["classes"]:
-            print("Container class not found in the schema")
-            return False
+        # Mark Container class is removed from the schema
+
+        # if "Container" not in globalYamlDict["classes"]:
+        #     print("Container class not found in the schema")
+        #     return False
         
         return True
 
@@ -336,8 +342,6 @@ class ClassData():
         classListOrdered = []
 
         for _class in globalYamlDict["classes"]:
-            if _class == "Container":
-                continue
             classListOrdered.append(_class)
 
         classListOrdered.sort()
@@ -433,6 +437,37 @@ class ClassData():
 
 class CreateMermaid():
 
+    def mermaidStyles(self, value, _type):
+
+        style = None
+
+        if value == None or value == '':
+            print(globalClass, 'something is wrong', value, _type)
+
+        if _type == "inheritance":
+            style = f'style {value} fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white'
+            # returnType = "inheritance"
+        
+        if _type == "mixins":
+            style = f'style {value} fill:#F2EBE2,stroke:#333,stroke-width:2px,rx:10,ry:10,color:#8A0303' #Blood red"
+            # returnType = "mixins"
+        
+        if _type == "relationship":
+            style = f'style {value} fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white'
+            # returnType = "relationship"
+        
+        if _type == "enum":
+            style = f'style {value} fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white'
+            # returnType = "enum"
+        
+        if _type == "thisClass":
+            style = f'style {value} fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white'
+            # returnType = "thisClass"
+
+        return style
+
+
+
     def createMermaidSubMixinString(self, inheritanceList):
         
         mixinsList = []
@@ -489,20 +524,30 @@ class CreateMermaid():
                 subClassList.append(value[1])
 
             for key, value in object.items():
+                
                 if value == None:
                     continue
 
-                inheritanceString += f'''
+                mermaidStyleValue = CreateMermaid().mermaidStyles(value, "inheritance")
+                
+                if value == globalClass:
+
+                    inheritanceString += f'''
+        {value} <|-- {key} : inherits
+'''
+                else:
+                    inheritanceString += f'''     
         {value} <|-- {key} : inherits
             click {value} href "{globalLookUpDataDict[value]["absoluteUrlPath"]}"
-            style {value} fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            {mermaidStyleValue}
 '''
                 
-                if key not in subClassList: # Adding SubClass to the inheritance list
+                if key not in subClassList and key != globalClass: # Adding SubClass to the inheritance list
+                    mermaidStyleKey = CreateMermaid().mermaidStyles(key, "inheritance")
                     inheritanceString += f'''
         {key}
             click {key} href "{globalLookUpDataDict[key]["absoluteUrlPath"]}"
-            style {value} fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            {mermaidStyleKey}
 '''
         mixinList = CreateMermaid().createMermaidMixinsString(inheritanceList)
 
@@ -510,10 +555,11 @@ class CreateMermaid():
             for mixin in mixinList:
                 for key in mixin:
                     for value in mixin[key]:
+                        mermaidStyle = CreateMermaid().mermaidStyles(value, "mixins")
                         inheritanceString += f'''
         {value} <|-- {key} : inherits
             click {value} href "{globalLookUpDataDict[value]["absoluteUrlPath"]}"
-            style {value} fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            {mermaidStyle}
 '''
         
         subMixinList = CreateMermaid().createMermaidSubMixinString(inheritanceList)
@@ -523,10 +569,11 @@ class CreateMermaid():
                 for key in subMixin:
                     thisClass = subMixin[key]
                     subClass = key
+                    mermaidStyle = CreateMermaid().mermaidStyles(subClass, "mixins")
                     inheritanceString += f'''
         {subClass} --|> {thisClass} : inherits
             click {subClass} href "{globalLookUpDataDict[subClass]["absoluteUrlPath"]}"
-            style {subClass} fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            {mermaidStyle}
 '''
 
         return inheritanceString
@@ -549,12 +596,12 @@ class CreateMermaid():
 
                 _range = classes[_class]["attributes"][attribute]["range"]
                 if _range in classes:
-
+                    mermaidStyleClassToRange = CreateMermaid().mermaidStyles(_range, "relationship")
                     relationshipString += f"""        {_class} --> {_range} : {_class}.{attribute}
 
         {_range}
             click {_range} href "{globalLookUpDataDict[_range]["absoluteUrlPath"]}"
-            style {_range} fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            {mermaidStyleClassToRange}
 """
         # Range to class
         for _class in classes:
@@ -569,17 +616,14 @@ class CreateMermaid():
 
                 _range = classes[_class]["attributes"][attribute]["range"]
 
-                if _class == "Container":
-                    continue
-
                 if _range in inheritanceList:
-
+                    mermaidStyleRangeToClass = CreateMermaid().mermaidStyles(_class, "relationship")
                     relationshipString += f"""
         {_class} --> {_range} : {_class}.{attribute}
 
         {_class}
             click {_class} href "{globalLookUpDataDict[_class]["absoluteUrlPath"]}"
-            style {_class} fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            {mermaidStyleRangeToClass}
 """
 
         return relationshipString
@@ -608,11 +652,13 @@ class CreateMermaid():
                 _range = classes[_class]["attributes"][attribute]["range"]
 
                 if _range in enums:
+                    mermaidStyleEnums = CreateMermaid().mermaidStyles(_range, "enum")
+
                     enumString += f'''        {_class} --> {_range} : {_class}.{attribute}
 
         {_range}
             click {_range} href "{globalLookUpDataDict[_range]["absoluteUrlPath"]}"
-            style {_range} fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            {mermaidStyleEnums}
 '''
         return enumString
 
@@ -650,13 +696,14 @@ class CreateMermaid():
         enumString = CreateMermaid().createMermaidEnumString(inheritanceList) if CreateMermaid().createMermaidEnumString(inheritanceList) != None else ""
         attributeString = CreateMermaid().createMermaidAttributeString(inheritanceDict[globalClass]) if CreateMermaid().createMermaidAttributeString(inheritanceDict[globalClass]) != None else ""
         themeString = "%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%" # For controlling the line head fill color
+        mermaidStyleThisClass = CreateMermaid().mermaidStyles(globalClass, "thisClass")
         mermaidString = f'''
 ```mermaid
 {themeString}
 classDiagram
     class {globalClass}
     click {globalClass} href "{globalLookUpDataDict[globalClass]["absoluteUrlPath"]}"
-    style {globalClass} fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    {mermaidStyleThisClass}
 {inheritanceString}
 {relationshipString}
 {enumString}

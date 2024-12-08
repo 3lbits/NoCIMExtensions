@@ -39,8 +39,6 @@ Profiles:
     
     - [ConductorScreenLayer](/Models/Profiles/SubseaCableInfo/ConcreteClasses/ConductorScreenLayer/)
     
-    - [Container](/Models/Profiles/SubseaCableInfo/ConcreteClasses/Container/)
-    
     - [CorrugatedRoundWire](/Models/Profiles/SubseaCableInfo/ConcreteClasses/CorrugatedRoundWire/)
     
     - [FlatStraps](/Models/Profiles/SubseaCableInfo/ConcreteClasses/FlatStraps/)

@@ -10,21 +10,17 @@ _Specification can be used for various purposes relative to an asset, a logical 
 classDiagram
     class AssetSpecification
     click AssetSpecification href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/AssetSpecification/"
-    style AssetSpecification fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+    style AssetSpecification fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         IdentifiedObject <|-- AssetSpecification : inherits
             click IdentifiedObject href "/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        AssetSpecification
-            click AssetSpecification href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/AssetSpecification/"
-            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         AssetSpecification --> AssetInfo : AssetSpecification.AssetInfo
 
         AssetInfo
             click AssetInfo href "/Models/Profiles/SubseaCableInfo/AbstractClasses/AssetInfo/"
-            style AssetInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AssetInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         AssetSpecification : AssetSpecification.AssetInfo

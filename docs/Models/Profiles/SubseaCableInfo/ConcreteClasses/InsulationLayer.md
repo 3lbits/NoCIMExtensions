@@ -10,34 +10,30 @@ _No description available_
 classDiagram
     class InsulationLayer
     click InsulationLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/InsulationLayer/"
-    style InsulationLayer fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+    style InsulationLayer fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         CableLayer <|-- InsulationLayer : inherits
             click CableLayer href "/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/"
-            style CableLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        InsulationLayer
-            click InsulationLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/InsulationLayer/"
-            style CableLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CableLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CableInfo --> CableLayer : CableInfo.Layer
 
         CableInfo
             click CableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/CableInfo/"
-            style CableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CableInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MultiCoreCableInfo --> CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
             click MultiCoreCableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MultiCoreCableInfo/"
-            style MultiCoreCableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MultiCoreCableInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         InsulationLayer --> WireInsulationKind : InsulationLayer.insulationMaterial
 
         WireInsulationKind
             click WireInsulationKind href "/Models/Profiles/SubseaCableInfo/Enumerations/WireInsulationKind/"
-            style WireInsulationKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style WireInsulationKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         InsulationLayer : InsulationLayer.insulationMaterial
         CableLayer : CableLayer.mRID

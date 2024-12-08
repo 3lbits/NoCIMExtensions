@@ -10,27 +10,23 @@ _Geometric representation details._
 classDiagram
     class Geometry
     click Geometry href "/Models/Profiles/WattApp/ConcreteClasses/Geometry/"
-    style Geometry fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+    style Geometry fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         SpatialObject <|-- Geometry : inherits
             click SpatialObject href "/Models/Profiles/WattApp/ConcreteClasses/SpatialObject/"
-            style SpatialObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        Geometry
-            click Geometry href "/Models/Profiles/WattApp/ConcreteClasses/Geometry/"
-            style SpatialObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SpatialObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Geometry --> GeometryObject : Geometry.asGeoJSON
 
         GeometryObject
             click GeometryObject href "/Models/Profiles/WattApp/ConcreteClasses/GeometryObject/"
-            style GeometryObject fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style GeometryObject fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature --> Geometry : Feature.hasGeometry
 
         Feature
             click Feature href "/Models/Profiles/WattApp/ConcreteClasses/Feature/"
-            style Feature fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Feature fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         Geometry : asGeoJSON

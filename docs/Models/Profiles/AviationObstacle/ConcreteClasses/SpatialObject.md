@@ -10,15 +10,13 @@ _A spatial object is a physical object that has a location in space. It may have
 classDiagram
     class SpatialObject
     click SpatialObject href "/Models/Profiles/AviationObstacle/ConcreteClasses/SpatialObject/"
-    style SpatialObject fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style SpatialObject fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         SpatialObject <|-- Feature : inherits
-            click SpatialObject href "/Models/Profiles/AviationObstacle/ConcreteClasses/SpatialObject/"
-            style SpatialObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature
             click Feature href "/Models/Profiles/AviationObstacle/ConcreteClasses/Feature/"
-            style SpatialObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Feature fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

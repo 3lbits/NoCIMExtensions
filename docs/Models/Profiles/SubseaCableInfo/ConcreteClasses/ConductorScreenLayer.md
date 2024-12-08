@@ -10,32 +10,28 @@ _A screen covering the conductor. Also called Conductor Shield._
 classDiagram
     class ConductorScreenLayer
     click ConductorScreenLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ConductorScreenLayer/"
-    style ConductorScreenLayer fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+    style ConductorScreenLayer fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         ScreenLayer <|-- ConductorScreenLayer : inherits
             click ScreenLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ScreenLayer/"
-            style ScreenLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        ConductorScreenLayer
-            click ConductorScreenLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ConductorScreenLayer/"
-            style ScreenLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+            style ScreenLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         CableLayer <|-- ScreenLayer : inherits
             click CableLayer href "/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/"
-            style CableLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CableLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CableInfo --> CableLayer : CableInfo.Layer
 
         CableInfo
             click CableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/CableInfo/"
-            style CableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CableInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MultiCoreCableInfo --> CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
             click MultiCoreCableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MultiCoreCableInfo/"
-            style MultiCoreCableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MultiCoreCableInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CableLayer : CableLayer.mRID

@@ -10,26 +10,22 @@ _Asset model by a specific manufacturer._
 classDiagram
     class ProductAssetModel
     click ProductAssetModel href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ProductAssetModel/"
-    style ProductAssetModel fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+    style ProductAssetModel fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         IdentifiedObject <|-- ProductAssetModel : inherits
             click IdentifiedObject href "/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        ProductAssetModel
-            click ProductAssetModel href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ProductAssetModel/"
-            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ProductAssetModel --> AssetInfo : ProductAssetModel.AssetInfo
 
         AssetInfo
             click AssetInfo href "/Models/Profiles/SubseaCableInfo/AbstractClasses/AssetInfo/"
-            style AssetInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AssetInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         ProductAssetModel --> Manufacturer : ProductAssetModel.Manufacturer
 
         Manufacturer
             click Manufacturer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/Manufacturer/"
-            style Manufacturer fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Manufacturer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         ProductAssetModel : ProductAssetModel.AssetInfo

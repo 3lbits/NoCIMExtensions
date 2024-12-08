@@ -12,44 +12,42 @@ _Construction holding assets such as conductors, transformers, switchgear, etc._
 classDiagram
     class Structure
     click Structure href "/Models/Profiles/AviationObstacle/AbstractClasses/Structure/"
-    style Structure fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style Structure fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Structure <|-- OverheadStructure : inherits
-            click Structure href "/Models/Profiles/AviationObstacle/AbstractClasses/Structure/"
-            style Structure fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         OverheadStructure
             click OverheadStructure href "/Models/Profiles/AviationObstacle/ConcreteClasses/OverheadStructure/"
-            style Structure fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+            style OverheadStructure fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         LocationResource <|-- Structure : inherits
             click LocationResource href "/Models/Profiles/AviationObstacle/AbstractClasses/LocationResource/"
-            style LocationResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+            style LocationResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         ElementResource <|-- LocationResource : inherits
             click ElementResource href "/Models/Profiles/AviationObstacle/AbstractClasses/ElementResource/"
-            style ElementResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+            style ElementResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         IdentifiedObject <|-- ElementResource : inherits
             click IdentifiedObject href "/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature <|-- LocationResource : inherits
             click Feature href "/Models/Profiles/AviationObstacle/ConcreteClasses/Feature/"
-            style Feature fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Feature fill:#F2EBE2,stroke:#333,stroke-width:2px,rx:10,ry:10,color:#8A0303
 
 
         StructureDeployment --> Structure : StructureDeployment.ACLineSegmentSpan
 
         StructureDeployment
             click StructureDeployment href "/Models/Profiles/AviationObstacle/ConcreteClasses/StructureDeployment/"
-            style StructureDeployment fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style StructureDeployment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         LocationResource --> LocationMethodKind : LocationResource.locationMethod
 
         LocationMethodKind
             click LocationMethodKind href "/Models/Profiles/AviationObstacle/Enumerations/LocationMethodKind/"
-            style LocationMethodKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style LocationMethodKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Structure : Structure.height
         LocationResource : PowerSystemResource.locationMethod

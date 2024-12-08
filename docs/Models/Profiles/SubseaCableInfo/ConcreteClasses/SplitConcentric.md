@@ -10,46 +10,42 @@ _Single concentric layer with two conductors separated by each other by insulati
 classDiagram
     class SplitConcentric
     click SplitConcentric href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/SplitConcentric/"
-    style SplitConcentric fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+    style SplitConcentric fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         RoundWire <|-- SplitConcentric : inherits
             click RoundWire href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/RoundWire/"
-            style RoundWire fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        SplitConcentric
-            click SplitConcentric href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/SplitConcentric/"
-            style RoundWire fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+            style RoundWire fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         ConcentricWireLayer <|-- RoundWire : inherits
             click ConcentricWireLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ConcentricWireLayer/"
-            style ConcentricWireLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+            style ConcentricWireLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         MetallicSheathLayer <|-- ConcentricWireLayer : inherits
             click MetallicSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MetallicSheathLayer/"
-            style MetallicSheathLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+            style MetallicSheathLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         CableLayer <|-- MetallicSheathLayer : inherits
             click CableLayer href "/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/"
-            style CableLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CableLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CableInfo --> CableLayer : CableInfo.Layer
 
         CableInfo
             click CableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/CableInfo/"
-            style CableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CableInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MultiCoreCableInfo --> CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
             click MultiCoreCableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MultiCoreCableInfo/"
-            style MultiCoreCableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MultiCoreCableInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MetallicSheathLayer --> CableShieldMaterialKind : MetallicSheathLayer.material
 
         CableShieldMaterialKind
             click CableShieldMaterialKind href "/Models/Profiles/SubseaCableInfo/Enumerations/CableShieldMaterialKind/"
-            style CableShieldMaterialKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CableShieldMaterialKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MetallicSheathLayer : MetallicSheathLayer.isArmor
         MetallicSheathLayer : MetallicSheathLayer.material

@@ -3,8 +3,6 @@ site_name: {{ site_name }}
 extra_css:
   - stylesheets/extra.css
 
-copyright: {{ copyright }}
-
 theme:
   name: {{ theme_name }} # Specifies that the material theme is used.
   custom_dir: overrides
@@ -37,13 +35,6 @@ theme:
       primary: {{ dark_mode_color_primary }} # Set primary color for scheme.
       accent: {{ dark_mode_color_accent }} # Set accent color for scheme.
 
-extra:
-  generator: false
-  social:
-  {% for item in social_links %}
-    - icon: {{ item.icon }}
-      link: {{ item.link }}
-  {% endfor %}
 {{ '' if mermaid else '# ' }}markdown_extensions:
 {{ '' if mermaid else '# ' }}  - pymdownx.betterem
 {{ '' if mermaid else '# ' }}  - pymdownx.superfences:

@@ -36,7 +36,7 @@ def genDocs(schema: str):
     '''Generate Documentation from yaml schemas using python'''
     click.echo('Generating Documentation using python')
     remove_all_md_files(f"docs/{to_camel_case(schema)}")
-    CreateMdController().main(schema)
+    CreateMdController().main(schema, template='elbits')
     click.echo('Generating Overview index.md')
     CreaeOverviewMdController().main()
     click.echo('Overview index.md Created')

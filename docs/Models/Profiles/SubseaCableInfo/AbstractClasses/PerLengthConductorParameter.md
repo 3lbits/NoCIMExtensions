@@ -12,25 +12,23 @@ _Common type for per-length electrical catalogues describing line parameters._
 classDiagram
     class PerLengthConductorParameter
     click PerLengthConductorParameter href "/Models/Profiles/SubseaCableInfo/AbstractClasses/PerLengthConductorParameter/"
-    style PerLengthConductorParameter fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style PerLengthConductorParameter fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PerLengthConductorParameter <|-- PerLengthImpedance : inherits
-            click PerLengthConductorParameter href "/Models/Profiles/SubseaCableInfo/AbstractClasses/PerLengthConductorParameter/"
-            style PerLengthConductorParameter fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PerLengthImpedance
             click PerLengthImpedance href "/Models/Profiles/SubseaCableInfo/AbstractClasses/PerLengthImpedance/"
-            style PerLengthConductorParameter fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+            style PerLengthImpedance fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         IdentifiedObject <|-- PerLengthConductorParameter : inherits
             click IdentifiedObject href "/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PerLengthConductorParameter --> ConductorInfo : PerLengthConductorParameter.ConductorInfo
 
         ConductorInfo
             click ConductorInfo href "/Models/Profiles/SubseaCableInfo/AbstractClasses/ConductorInfo/"
-            style ConductorInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConductorInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         PerLengthConductorParameter : PerLengthConductorParameter.mRID

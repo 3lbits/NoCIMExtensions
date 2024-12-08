@@ -10,32 +10,28 @@ _<b>Non-metallic</b> covering which surrounds the assembly of the cores (and fil
 classDiagram
     class InnerSheathLayer
     click InnerSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/InnerSheathLayer/"
-    style InnerSheathLayer fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+    style InnerSheathLayer fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         NonMetallicSheathLayer <|-- InnerSheathLayer : inherits
             click NonMetallicSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/NonMetallicSheathLayer/"
-            style NonMetallicSheathLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        InnerSheathLayer
-            click InnerSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/InnerSheathLayer/"
-            style NonMetallicSheathLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
+            style NonMetallicSheathLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
         CableLayer <|-- NonMetallicSheathLayer : inherits
             click CableLayer href "/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/"
-            style CableLayer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CableLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CableInfo --> CableLayer : CableInfo.Layer
 
         CableInfo
             click CableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/CableInfo/"
-            style CableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CableInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MultiCoreCableInfo --> CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
             click MultiCoreCableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MultiCoreCableInfo/"
-            style MultiCoreCableInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MultiCoreCableInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CableLayer : CableLayer.mRID
