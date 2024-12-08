@@ -1,6 +1,7 @@
 id: http://iec.ch/TC57/2007/profile#
 name: AssetCatalogue
 title: Asset Catalogue Vocabulary
+comments: "This profile represents information exchange related to datasheet information. Currently it covers datasheet information for (subsea) cables."
 #  dcterms:
 #    title: "Telemark-120_SCI"
 #    description: "Telemark-120 Subsea Cable Info"

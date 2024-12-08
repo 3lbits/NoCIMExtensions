@@ -1,24 +1,158 @@
-site_name: "Norwegian CIM Extension"
-repo_url: https://github.com/3lbits/NoCIMExtensions
-theme:
-  palette:
-    primary: white
-  logo: images/NoCIMlogo.svg
-  favicon: images/NoCIMlogo.svg
-  name: material
-  features:
-    - content.tabs.link
-    - navigation.tabs
-  language: en
-plugins:
-  - search
-markdown_extensions:
-  - pymdownx.betterem
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+site_name: CIM for Norway
 extra_css:
-  - stylesheets/extra.css
-site_url: https://NoCIM.elbits.no
+- stylesheets/extra.css
+theme:
+  name: material
+  custom_dir: overrides
+  favicon: images/cim4nologo.svg
+  logo: images/cim4nologo.svg
+  features:
+  - navigation.tabs
+  - navigation.sections
+  - navigation.top
+  - search.suggest
+  - search.highlight
+  - content.tabs.link
+  - content.code.annotation
+  - content.code.copy
+  language: en
+  palette:
+  - scheme: default
+    toggle:
+      icon: material/toggle-switch-off-outline
+      name: Switch to dark mode
+    primary: black
+    accent: red
+  - scheme: slate
+    toggle:
+      icon: material/toggle-switch
+      name: Switch to light mode
+    primary: black
+    accent: green
+markdown_extensions:
+- pymdownx.betterem
+- pymdownx.superfences:
+    custom_fences:
+    - name: mermaid
+      class: mermaid
+      format: !!python/name:pymdownx.superfences.fence_code_format
+nav:
+- Home: index.md
+- Models:
+  - Profiles:
+    - Overview: Models/Profiles/index.md
+    - AviationObstacle:
+      - Overview: Models/Profiles/AviationObstacle/index.md
+      - Abstract Classes:
+        - IdentifiedObject: Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject.md
+        - PowerSystemResource: Models/Profiles/AviationObstacle/AbstractClasses/PowerSystemResource.md
+        - ElementResource: Models/Profiles/AviationObstacle/AbstractClasses/ElementResource.md
+        - LocationResource: Models/Profiles/AviationObstacle/AbstractClasses/LocationResource.md
+        - Equipment: Models/Profiles/AviationObstacle/AbstractClasses/Equipment.md
+        - ConductingEquipment: Models/Profiles/AviationObstacle/AbstractClasses/ConductingEquipment.md
+        - Conductor: Models/Profiles/AviationObstacle/AbstractClasses/Conductor.md
+        - Structure: Models/Profiles/AviationObstacle/AbstractClasses/Structure.md
+      - Concrete Classes:
+        - SpatialObject: Models/Profiles/AviationObstacle/ConcreteClasses/SpatialObject.md
+        - Feature: Models/Profiles/AviationObstacle/ConcreteClasses/Feature.md
+        - Geometry: Models/Profiles/AviationObstacle/ConcreteClasses/Geometry.md
+        - ACLineSegment: Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegment.md
+        - ACLineSegmentSpan: Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegmentSpan.md
+        - OverheadStructure: Models/Profiles/AviationObstacle/ConcreteClasses/OverheadStructure.md
+        - AssetDeployment: Models/Profiles/AviationObstacle/ConcreteClasses/AssetDeployment.md
+        - ACLineSegmentSpanDeployment: Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegmentSpanDeployment.md
+        - StructureDeployment: Models/Profiles/AviationObstacle/ConcreteClasses/StructureDeployment.md
+        - BaseVoltage: Models/Profiles/AviationObstacle/ConcreteClasses/BaseVoltage.md
+        - Zone: Models/Profiles/AviationObstacle/ConcreteClasses/Zone.md
+      - Enumerations:
+        - AviationObstacleLightingKind: Models/Profiles/AviationObstacle/Enumerations/AviationObstacleLightingKind.md
+        - AviationObstacleMarkingKind: Models/Profiles/AviationObstacle/Enumerations/AviationObstacleMarkingKind.md
+        - LocationMethodKind: Models/Profiles/AviationObstacle/Enumerations/LocationMethodKind.md
+        - DeploymentStateKind: Models/Profiles/AviationObstacle/Enumerations/DeploymentStateKind.md
+        - ZoneKind: Models/Profiles/AviationObstacle/Enumerations/ZoneKind.md
+        - ZoneStateKind: Models/Profiles/AviationObstacle/Enumerations/ZoneStateKind.md
+      - Types:
+        - Length: Models/Profiles/AviationObstacle/Types/Length.md
+        - Voltage: Models/Profiles/AviationObstacle/Types/Voltage.md
+    - GridCapacity:
+      - Overview: Models/Profiles/GridCapacity/index.md
+      - Abstract Classes:
+        - IdentifiedObject: Models/Profiles/GridCapacity/AbstractClasses/IdentifiedObject.md
+        - PowerSystemResource: Models/Profiles/GridCapacity/AbstractClasses/PowerSystemResource.md
+        - ConnectivityNodeContainer: Models/Profiles/GridCapacity/AbstractClasses/ConnectivityNodeContainer.md
+        - EquipmentContainer: Models/Profiles/GridCapacity/AbstractClasses/EquipmentContainer.md
+        - BaseTimeSeries: Models/Profiles/GridCapacity/AbstractClasses/BaseTimeSeries.md
+        - BaseIrregularTimeSeries: Models/Profiles/GridCapacity/AbstractClasses/BaseIrregularTimeSeries.md
+      - Concrete Classes:
+        - LanguageObject: Models/Profiles/GridCapacity/ConcreteClasses/LanguageObject.md
+        - SpatialObject: Models/Profiles/GridCapacity/ConcreteClasses/SpatialObject.md
+        - Feature: Models/Profiles/GridCapacity/ConcreteClasses/Feature.md
+        - Geometry: Models/Profiles/GridCapacity/ConcreteClasses/Geometry.md
+        - GeometryObject: Models/Profiles/GridCapacity/ConcreteClasses/GeometryObject.md
+        - Feeder: Models/Profiles/GridCapacity/ConcreteClasses/Feeder.md
+        - CapacitySchedule: Models/Profiles/GridCapacity/ConcreteClasses/CapacitySchedule.md
+        - CapacityTimePoint: Models/Profiles/GridCapacity/ConcreteClasses/CapacityTimePoint.md
+      - Enumerations:
+        - TimeSeriesInterpolationKind: Models/Profiles/GridCapacity/Enumerations/TimeSeriesInterpolationKind.md
+        - BaseTimeSeriesKind: Models/Profiles/GridCapacity/Enumerations/BaseTimeSeriesKind.md
+      - Types:
+        - DateTime: Models/Profiles/GridCapacity/Types/DateTime.md
+        - ActivePower: Models/Profiles/GridCapacity/Types/ActivePower.md
+        - ReactivePower: Models/Profiles/GridCapacity/Types/ReactivePower.md
+    - SubseaCableInfo:
+      - Overview: Models/Profiles/SubseaCableInfo/index.md
+      - Abstract Classes:
+        - AssetInfo: Models/Profiles/SubseaCableInfo/AbstractClasses/AssetInfo.md
+        - CableLayer: Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer.md
+        - ConductingAssetInfo: Models/Profiles/SubseaCableInfo/AbstractClasses/ConductingAssetInfo.md
+        - ConductorInfo: Models/Profiles/SubseaCableInfo/AbstractClasses/ConductorInfo.md
+        - IdentifiedObject: Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject.md
+        - OrganisationRole: Models/Profiles/SubseaCableInfo/AbstractClasses/OrganisationRole.md
+        - PerLengthConductorParameter: Models/Profiles/SubseaCableInfo/AbstractClasses/PerLengthConductorParameter.md
+        - PerLengthImpedance: Models/Profiles/SubseaCableInfo/AbstractClasses/PerLengthImpedance.md
+        - WireInfo: Models/Profiles/SubseaCableInfo/AbstractClasses/WireInfo.md
+      - Concrete Classes:
+        - AssetSpecification: Models/Profiles/SubseaCableInfo/ConcreteClasses/AssetSpecification.md
+        - BindingLayer: Models/Profiles/SubseaCableInfo/ConcreteClasses/BindingLayer.md
+        - CableInfo: Models/Profiles/SubseaCableInfo/ConcreteClasses/CableInfo.md
+        - ConcentricWireLayer: Models/Profiles/SubseaCableInfo/ConcreteClasses/ConcentricWireLayer.md
+        - ConductorScreenLayer: Models/Profiles/SubseaCableInfo/ConcreteClasses/ConductorScreenLayer.md
+        - CorrugatedRoundWire: Models/Profiles/SubseaCableInfo/ConcreteClasses/CorrugatedRoundWire.md
+        - FlatStraps: Models/Profiles/SubseaCableInfo/ConcreteClasses/FlatStraps.md
+        - GappedTape: Models/Profiles/SubseaCableInfo/ConcreteClasses/GappedTape.md
+        - InnerSheathLayer: Models/Profiles/SubseaCableInfo/ConcreteClasses/InnerSheathLayer.md
+        - InsulationLayer: Models/Profiles/SubseaCableInfo/ConcreteClasses/InsulationLayer.md
+        - InsulationScreenLayer: Models/Profiles/SubseaCableInfo/ConcreteClasses/InsulationScreenLayer.md
+        - LappedTape: Models/Profiles/SubseaCableInfo/ConcreteClasses/LappedTape.md
+        - LongitudinallyCorrugatedTape: Models/Profiles/SubseaCableInfo/ConcreteClasses/LongitudinallyCorrugatedTape.md
+        - Manufacturer: Models/Profiles/SubseaCableInfo/ConcreteClasses/Manufacturer.md
+        - MetallicSheathLayer: Models/Profiles/SubseaCableInfo/ConcreteClasses/MetallicSheathLayer.md
+        - MultiCoreCableInfo: Models/Profiles/SubseaCableInfo/ConcreteClasses/MultiCoreCableInfo.md
+        - NonMetallicSheathLayer: Models/Profiles/SubseaCableInfo/ConcreteClasses/NonMetallicSheathLayer.md
+        - OverSheathLayer: Models/Profiles/SubseaCableInfo/ConcreteClasses/OverSheathLayer.md
+        - PerLengthPhaseImpedance: Models/Profiles/SubseaCableInfo/ConcreteClasses/PerLengthPhaseImpedance.md
+        - PerLengthSequenceImpedance: Models/Profiles/SubseaCableInfo/ConcreteClasses/PerLengthSequenceImpedance.md
+        - PhaseImpedanceData: Models/Profiles/SubseaCableInfo/ConcreteClasses/PhaseImpedanceData.md
+        - ProductAssetModel: Models/Profiles/SubseaCableInfo/ConcreteClasses/ProductAssetModel.md
+        - ResistancePerLengthTemperaturePoint: Models/Profiles/SubseaCableInfo/ConcreteClasses/ResistancePerLengthTemperaturePoint.md
+        - RoundWire: Models/Profiles/SubseaCableInfo/ConcreteClasses/RoundWire.md
+        - ScreenLayer: Models/Profiles/SubseaCableInfo/ConcreteClasses/ScreenLayer.md
+        - SkidWireLayer: Models/Profiles/SubseaCableInfo/ConcreteClasses/SkidWireLayer.md
+        - SplitConcentric: Models/Profiles/SubseaCableInfo/ConcreteClasses/SplitConcentric.md
+        - SwellableWaterTapes: Models/Profiles/SubseaCableInfo/ConcreteClasses/SwellableWaterTapes.md
+        - TapeLayer: Models/Profiles/SubseaCableInfo/ConcreteClasses/TapeLayer.md
+        - TubularTape: Models/Profiles/SubseaCableInfo/ConcreteClasses/TubularTape.md
+        - WireBraidInfo: Models/Profiles/SubseaCableInfo/ConcreteClasses/WireBraidInfo.md
+      - Enumerations:
+        - CableShieldMaterialKind: Models/Profiles/SubseaCableInfo/Enumerations/CableShieldMaterialKind.md
+        - WireInsulationKind: Models/Profiles/SubseaCableInfo/Enumerations/WireInsulationKind.md
+        - WireMaterialKind: Models/Profiles/SubseaCableInfo/Enumerations/WireMaterialKind.md
+      - Types:
+        - CurrentFlow: Models/Profiles/SubseaCableInfo/Types/CurrentFlow.md
+        - Frequency: Models/Profiles/SubseaCableInfo/Types/Frequency.md
+        - Voltage: Models/Profiles/SubseaCableInfo/Types/Voltage.md
+        - Temperature: Models/Profiles/SubseaCableInfo/Types/Temperature.md
+        - Area: Models/Profiles/SubseaCableInfo/Types/Area.md
+        - Length: Models/Profiles/SubseaCableInfo/Types/Length.md
+        - ReactancePerLength: Models/Profiles/SubseaCableInfo/Types/ReactancePerLength.md
+        - ResistancePerLength: Models/Profiles/SubseaCableInfo/Types/ResistancePerLength.md

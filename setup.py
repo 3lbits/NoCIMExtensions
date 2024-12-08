@@ -1,17 +1,17 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='standard',
+    name='cim4',
     version='0.1',
     packages=find_packages(),
-    py_modules=['python.standard'],  # Update this line to include the path to standard.py
+    py_modules=['cim4CLITool.main'],  # Update this line to include the path to main.py
     install_requires=[
         'click',
         # Add other dependencies here
     ],
     entry_points='''
         [console_scripts]
-        standard=python.standard:main
+        cim4=cim4CLITool.main:main
     ''',
 )
 
