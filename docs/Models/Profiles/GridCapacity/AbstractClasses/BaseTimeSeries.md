@@ -11,6 +11,7 @@ __
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class BaseTimeSeries
+<<<<<<< HEAD:docs/Models/Profiles/WattApp/AbstractClasses/BaseTimeSeries.md
     click BaseTimeSeries href "/Models/Profiles/WattApp/AbstractClasses/BaseTimeSeries/"
     style BaseTimeSeries fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
@@ -23,11 +24,28 @@ classDiagram
         IdentifiedObject <|-- BaseTimeSeries : inherits
             click IdentifiedObject href "/Models/Profiles/WattApp/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+=======
+    click BaseTimeSeries href "/Models/Profiles/GridCapacity/AbstractClasses/BaseTimeSeries/"
+    style BaseTimeSeries fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        BaseTimeSeries <|-- BaseIrregularTimeSeries : inherits
+            click BaseTimeSeries href "/Models/Profiles/GridCapacity/AbstractClasses/BaseTimeSeries/"
+            style BaseTimeSeries fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        BaseIrregularTimeSeries
+            click BaseIrregularTimeSeries href "/Models/Profiles/GridCapacity/AbstractClasses/BaseIrregularTimeSeries/"
+            style BaseTimeSeries fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject <|-- BaseTimeSeries : inherits
+            click IdentifiedObject href "/Models/Profiles/GridCapacity/AbstractClasses/IdentifiedObject/"
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+>>>>>>> f7d5d7dc4d970b98fa060adac484ce9c06135a79:docs/Models/Profiles/GridCapacity/AbstractClasses/BaseTimeSeries.md
 
 
         BaseTimeSeries --> TimeSeriesInterpolationKind : BaseTimeSeries.interpolationKind
 
         TimeSeriesInterpolationKind
+<<<<<<< HEAD:docs/Models/Profiles/WattApp/AbstractClasses/BaseTimeSeries.md
             click TimeSeriesInterpolationKind href "/Models/Profiles/WattApp/Enumerations/TimeSeriesInterpolationKind/"
             style TimeSeriesInterpolationKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         BaseTimeSeries --> BaseTimeSeriesKind : BaseTimeSeries.timeSeriesKind
@@ -35,6 +53,15 @@ classDiagram
         BaseTimeSeriesKind
             click BaseTimeSeriesKind href "/Models/Profiles/WattApp/Enumerations/BaseTimeSeriesKind/"
             style BaseTimeSeriesKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+=======
+            click TimeSeriesInterpolationKind href "/Models/Profiles/GridCapacity/Enumerations/TimeSeriesInterpolationKind/"
+            style TimeSeriesInterpolationKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+        BaseTimeSeries --> BaseTimeSeriesKind : BaseTimeSeries.timeSeriesKind
+
+        BaseTimeSeriesKind
+            click BaseTimeSeriesKind href "/Models/Profiles/GridCapacity/Enumerations/BaseTimeSeriesKind/"
+            style BaseTimeSeriesKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+>>>>>>> f7d5d7dc4d970b98fa060adac484ce9c06135a79:docs/Models/Profiles/GridCapacity/AbstractClasses/BaseTimeSeries.md
 
         BaseTimeSeries : BaseTimeSeries.interpolationKind
         BaseTimeSeries : BaseTimeSeries.timeSeriesKind
@@ -63,4 +90,4 @@ classDiagram
 | name | [cim:IdentifiedObject.name](https://cim.ucaiug.io/ns#IdentifiedObject.name) | 0..1 string | The name is any free human readable and possibly non unique text naming the object. | IdentifiedObject |
 
 ### Schema Source
-* from schema: [https://ap-no.cim4.eu/WattApp/1.0](https://ap-no.cim4.eu/WattApp/1.0)
+* from schema: [https://ap-no.cim4.eu/GridCapacity/1.0](https://ap-no.cim4.eu/GridCapacity/1.0)

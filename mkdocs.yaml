@@ -74,6 +74,32 @@ nav:
       - Types:
         - Length: Models/Profiles/AviationObstacle/Types/Length.md
         - Voltage: Models/Profiles/AviationObstacle/Types/Voltage.md
+    - GridCapacity:
+      - Overview: Models/Profiles/GridCapacity/index.md
+      - Abstract Classes:
+        - IdentifiedObject: Models/Profiles/GridCapacity/AbstractClasses/IdentifiedObject.md
+        - PowerSystemResource: Models/Profiles/GridCapacity/AbstractClasses/PowerSystemResource.md
+        - ConnectivityNodeContainer: Models/Profiles/GridCapacity/AbstractClasses/ConnectivityNodeContainer.md
+        - EquipmentContainer: Models/Profiles/GridCapacity/AbstractClasses/EquipmentContainer.md
+        - BaseTimeSeries: Models/Profiles/GridCapacity/AbstractClasses/BaseTimeSeries.md
+        - BaseIrregularTimeSeries: Models/Profiles/GridCapacity/AbstractClasses/BaseIrregularTimeSeries.md
+      - Concrete Classes:
+        - LanguageObject: Models/Profiles/GridCapacity/ConcreteClasses/LanguageObject.md
+        - SpatialObject: Models/Profiles/GridCapacity/ConcreteClasses/SpatialObject.md
+        - Feature: Models/Profiles/GridCapacity/ConcreteClasses/Feature.md
+        - Geometry: Models/Profiles/GridCapacity/ConcreteClasses/Geometry.md
+        - GeometryObject: Models/Profiles/GridCapacity/ConcreteClasses/GeometryObject.md
+        - Feeder: Models/Profiles/GridCapacity/ConcreteClasses/Feeder.md
+        - CapacitySchedule: Models/Profiles/GridCapacity/ConcreteClasses/CapacitySchedule.md
+        - CapacityTimePoint: Models/Profiles/GridCapacity/ConcreteClasses/CapacityTimePoint.md
+        - Container: Models/Profiles/GridCapacity/ConcreteClasses/Container.md
+      - Enumerations:
+        - TimeSeriesInterpolationKind: Models/Profiles/GridCapacity/Enumerations/TimeSeriesInterpolationKind.md
+        - BaseTimeSeriesKind: Models/Profiles/GridCapacity/Enumerations/BaseTimeSeriesKind.md
+      - Types:
+        - DateTime: Models/Profiles/GridCapacity/Types/DateTime.md
+        - ActivePower: Models/Profiles/GridCapacity/Types/ActivePower.md
+        - ReactivePower: Models/Profiles/GridCapacity/Types/ReactivePower.md
     - SubseaCableInfo:
       - Overview: Models/Profiles/SubseaCableInfo/index.md
       - Abstract Classes:

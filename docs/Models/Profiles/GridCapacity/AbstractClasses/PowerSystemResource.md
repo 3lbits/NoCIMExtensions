@@ -11,6 +11,7 @@ _A power system resource (PSR) can be an item of equipment such as a switch, an 
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class PowerSystemResource
+<<<<<<< HEAD:docs/Models/Profiles/WattApp/AbstractClasses/PowerSystemResource.md
     click PowerSystemResource href "/Models/Profiles/WattApp/AbstractClasses/PowerSystemResource/"
     style PowerSystemResource fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
@@ -27,6 +28,26 @@ classDiagram
         Feature <|-- PowerSystemResource : inherits
             click Feature href "/Models/Profiles/WattApp/ConcreteClasses/Feature/"
             style Feature fill:#F2EBE2,stroke:#333,stroke-width:2px,rx:10,ry:10,color:#8A0303
+=======
+    click PowerSystemResource href "/Models/Profiles/GridCapacity/AbstractClasses/PowerSystemResource/"
+    style PowerSystemResource fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        PowerSystemResource <|-- ConnectivityNodeContainer : inherits
+            click PowerSystemResource href "/Models/Profiles/GridCapacity/AbstractClasses/PowerSystemResource/"
+            style PowerSystemResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        ConnectivityNodeContainer
+            click ConnectivityNodeContainer href "/Models/Profiles/GridCapacity/AbstractClasses/ConnectivityNodeContainer/"
+            style PowerSystemResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject <|-- PowerSystemResource : inherits
+            click IdentifiedObject href "/Models/Profiles/GridCapacity/AbstractClasses/IdentifiedObject/"
+            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        Feature <|-- PowerSystemResource : inherits
+            click Feature href "/Models/Profiles/GridCapacity/ConcreteClasses/Feature/"
+            style Feature fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+>>>>>>> f7d5d7dc4d970b98fa060adac484ce9c06135a79:docs/Models/Profiles/GridCapacity/AbstractClasses/PowerSystemResource.md
 
 
 
@@ -47,4 +68,4 @@ classDiagram
 | name | [cim:IdentifiedObject.name](https://cim.ucaiug.io/ns#IdentifiedObject.name) | 0..1 string | The name is any free human readable and possibly non unique text naming the object. | IdentifiedObject |
 
 ### Schema Source
-* from schema: [https://ap-no.cim4.eu/WattApp/1.0](https://ap-no.cim4.eu/WattApp/1.0)
+* from schema: [https://ap-no.cim4.eu/GridCapacity/1.0](https://ap-no.cim4.eu/GridCapacity/1.0)
