@@ -9,13 +9,8 @@ _An object that represents a jsonld compound to support value, type and language
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class LanguageObject
-<<<<<<< HEAD:docs/Models/Profiles/WattApp/ConcreteClasses/LanguageObject.md
-    click LanguageObject href "/Models/Profiles/WattApp/ConcreteClasses/LanguageObject/"
-    style LanguageObject fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-=======
     click LanguageObject href "/Models/Profiles/GridCapacity/ConcreteClasses/LanguageObject/"
-    style LanguageObject fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
->>>>>>> f7d5d7dc4d970b98fa060adac484ce9c06135a79:docs/Models/Profiles/GridCapacity/ConcreteClasses/LanguageObject.md
+    style LanguageObject fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

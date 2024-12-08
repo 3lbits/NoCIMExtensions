@@ -9,69 +9,35 @@ _A collection of equipment for organizational purposes, used for grouping distri
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class Feeder
-<<<<<<< HEAD:docs/Models/Profiles/WattApp/ConcreteClasses/Feeder.md
-    click Feeder href "/Models/Profiles/WattApp/ConcreteClasses/Feeder/"
+    click Feeder href "/Models/Profiles/GridCapacity/ConcreteClasses/Feeder/"
     style Feeder fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         EquipmentContainer <|-- Feeder : inherits
-            click EquipmentContainer href "/Models/Profiles/WattApp/AbstractClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/GridCapacity/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ConnectivityNodeContainer <|-- EquipmentContainer : inherits
-            click ConnectivityNodeContainer href "/Models/Profiles/WattApp/AbstractClasses/ConnectivityNodeContainer/"
+            click ConnectivityNodeContainer href "/Models/Profiles/GridCapacity/AbstractClasses/ConnectivityNodeContainer/"
             style ConnectivityNodeContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- ConnectivityNodeContainer : inherits
-            click PowerSystemResource href "/Models/Profiles/WattApp/AbstractClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/GridCapacity/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "/Models/Profiles/WattApp/AbstractClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/GridCapacity/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature <|-- PowerSystemResource : inherits
-            click Feature href "/Models/Profiles/WattApp/ConcreteClasses/Feature/"
-            style Feature fill:#F2EBE2,stroke:#333,stroke-width:2px,rx:10,ry:10,color:#8A0303
-=======
-    click Feeder href "/Models/Profiles/GridCapacity/ConcreteClasses/Feeder/"
-    style Feeder fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        EquipmentContainer <|-- Feeder : inherits
-            click EquipmentContainer href "/Models/Profiles/GridCapacity/AbstractClasses/EquipmentContainer/"
-            style EquipmentContainer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        Feeder
-            click Feeder href "/Models/Profiles/GridCapacity/ConcreteClasses/Feeder/"
-            style EquipmentContainer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        ConnectivityNodeContainer <|-- EquipmentContainer : inherits
-            click ConnectivityNodeContainer href "/Models/Profiles/GridCapacity/AbstractClasses/ConnectivityNodeContainer/"
-            style ConnectivityNodeContainer fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        PowerSystemResource <|-- ConnectivityNodeContainer : inherits
-            click PowerSystemResource href "/Models/Profiles/GridCapacity/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "/Models/Profiles/GridCapacity/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        Feature <|-- PowerSystemResource : inherits
             click Feature href "/Models/Profiles/GridCapacity/ConcreteClasses/Feature/"
-            style Feature fill:#FF8C00,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
->>>>>>> f7d5d7dc4d970b98fa060adac484ce9c06135a79:docs/Models/Profiles/GridCapacity/ConcreteClasses/Feeder.md
+            style Feature fill:#F2EBE2,stroke:#333,stroke-width:2px,rx:10,ry:10,color:#8A0303
 
 
         CapacitySchedule --> Feeder : CapacitySchedule.Feeder
 
         CapacitySchedule
-<<<<<<< HEAD:docs/Models/Profiles/WattApp/ConcreteClasses/Feeder.md
-            click CapacitySchedule href "/Models/Profiles/WattApp/ConcreteClasses/CapacitySchedule/"
-            style CapacitySchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-=======
             click CapacitySchedule href "/Models/Profiles/GridCapacity/ConcreteClasses/CapacitySchedule/"
-            style CapacitySchedule fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
->>>>>>> f7d5d7dc4d970b98fa060adac484ce9c06135a79:docs/Models/Profiles/GridCapacity/ConcreteClasses/Feeder.md
+            style CapacitySchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         IdentifiedObject : IdentifiedObject.mRID

@@ -11,65 +11,34 @@ __
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class BaseIrregularTimeSeries
-<<<<<<< HEAD:docs/Models/Profiles/WattApp/AbstractClasses/BaseIrregularTimeSeries.md
-    click BaseIrregularTimeSeries href "/Models/Profiles/WattApp/AbstractClasses/BaseIrregularTimeSeries/"
+    click BaseIrregularTimeSeries href "/Models/Profiles/GridCapacity/AbstractClasses/BaseIrregularTimeSeries/"
     style BaseIrregularTimeSeries fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseIrregularTimeSeries <|-- CapacitySchedule : inherits
 
         CapacitySchedule
-            click CapacitySchedule href "/Models/Profiles/WattApp/ConcreteClasses/CapacitySchedule/"
+            click CapacitySchedule href "/Models/Profiles/GridCapacity/ConcreteClasses/CapacitySchedule/"
             style CapacitySchedule fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         BaseTimeSeries <|-- BaseIrregularTimeSeries : inherits
-            click BaseTimeSeries href "/Models/Profiles/WattApp/AbstractClasses/BaseTimeSeries/"
+            click BaseTimeSeries href "/Models/Profiles/GridCapacity/AbstractClasses/BaseTimeSeries/"
             style BaseTimeSeries fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- BaseTimeSeries : inherits
-            click IdentifiedObject href "/Models/Profiles/WattApp/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-=======
-    click BaseIrregularTimeSeries href "/Models/Profiles/GridCapacity/AbstractClasses/BaseIrregularTimeSeries/"
-    style BaseIrregularTimeSeries fill:#006400,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        BaseIrregularTimeSeries <|-- CapacitySchedule : inherits
-            click BaseIrregularTimeSeries href "/Models/Profiles/GridCapacity/AbstractClasses/BaseIrregularTimeSeries/"
-            style BaseIrregularTimeSeries fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        CapacitySchedule
-            click CapacitySchedule href "/Models/Profiles/GridCapacity/ConcreteClasses/CapacitySchedule/"
-            style BaseIrregularTimeSeries fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        BaseTimeSeries <|-- BaseIrregularTimeSeries : inherits
-            click BaseTimeSeries href "/Models/Profiles/GridCapacity/AbstractClasses/BaseTimeSeries/"
-            style BaseTimeSeries fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        IdentifiedObject <|-- BaseTimeSeries : inherits
             click IdentifiedObject href "/Models/Profiles/GridCapacity/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#00008B,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
->>>>>>> f7d5d7dc4d970b98fa060adac484ce9c06135a79:docs/Models/Profiles/GridCapacity/AbstractClasses/BaseIrregularTimeSeries.md
+            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         BaseTimeSeries --> TimeSeriesInterpolationKind : BaseTimeSeries.interpolationKind
 
         TimeSeriesInterpolationKind
-<<<<<<< HEAD:docs/Models/Profiles/WattApp/AbstractClasses/BaseIrregularTimeSeries.md
-            click TimeSeriesInterpolationKind href "/Models/Profiles/WattApp/Enumerations/TimeSeriesInterpolationKind/"
+            click TimeSeriesInterpolationKind href "/Models/Profiles/GridCapacity/Enumerations/TimeSeriesInterpolationKind/"
             style TimeSeriesInterpolationKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         BaseTimeSeries --> BaseTimeSeriesKind : BaseTimeSeries.timeSeriesKind
 
         BaseTimeSeriesKind
-            click BaseTimeSeriesKind href "/Models/Profiles/WattApp/Enumerations/BaseTimeSeriesKind/"
-            style BaseTimeSeriesKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-=======
-            click TimeSeriesInterpolationKind href "/Models/Profiles/GridCapacity/Enumerations/TimeSeriesInterpolationKind/"
-            style TimeSeriesInterpolationKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        BaseTimeSeries --> BaseTimeSeriesKind : BaseTimeSeries.timeSeriesKind
-
-        BaseTimeSeriesKind
             click BaseTimeSeriesKind href "/Models/Profiles/GridCapacity/Enumerations/BaseTimeSeriesKind/"
-            style BaseTimeSeriesKind fill:#FF0000,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
->>>>>>> f7d5d7dc4d970b98fa060adac484ce9c06135a79:docs/Models/Profiles/GridCapacity/AbstractClasses/BaseIrregularTimeSeries.md
+            style BaseTimeSeriesKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseTimeSeries : BaseTimeSeries.interpolationKind
         BaseTimeSeries : BaseTimeSeries.timeSeriesKind

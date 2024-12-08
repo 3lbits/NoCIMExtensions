@@ -4,6 +4,6 @@ Common Information Model (CIM) profiles are standardized data models that define
 
 Profiles:
 
-- [Aviation Obstacle](/Models/Profiles/AviationObstacle/)
+- [AviationObstacle](/Models/Profiles/AviationObstacle/)
+- [GridCapacity](/Models/Profiles/GridCapacity/)
 - [SubseaCableInfo](/Models/Profiles/SubseaCableInfo/)
-- [Watt App](/Models/Profiles/WattApp/)

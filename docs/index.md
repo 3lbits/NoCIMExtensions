@@ -10,6 +10,6 @@ To access examples of how to use these profiles, please visit our [GitHub reposi
 
 Profiles:
 
-- [AviationObstacle](./AviationObstacle/index.md)
-- [GridCapacity](./GridCapacity/index.md)
-- [SubseaCableInfo](./SubseaCableInfo/index.md)
+- [AviationObstacle](/Models/Profiles/AviationObstacle/)
+- [GridCapacity](/Models/Profiles/GridCapacity/)
+- [SubseaCableInfo](/Models/Profiles/SubseaCableInfo/)

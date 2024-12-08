@@ -27,8 +27,6 @@ Profiles:
     
     - [CapacityTimePoint](/Models/Profiles/GridCapacity/ConcreteClasses/CapacityTimePoint/)
     
-    - [Container](/Models/Profiles/GridCapacity/ConcreteClasses/Container/)
-    
     - [Feature](/Models/Profiles/GridCapacity/ConcreteClasses/Feature/)
     
     - [Feeder](/Models/Profiles/GridCapacity/ConcreteClasses/Feeder/)
