@@ -41,7 +41,7 @@ MultiCoreCableInfo:
       - mRID: "54d5b6e9-7234-482a-9a24-437000ee7030"
       - mRID: "ef67bcde-5426-4bfa-af5c-d4604547b907"
 
-ResistancePerLengthTemperaturePoint:
+PerLengthResistance:
   - mRID: "c8555d03-c598-497f-86df-871ec13ae698"
     isAC: True
     resistance: 0.000041 # ohm/m
@@ -65,7 +65,29 @@ ResistancePerLengthTemperaturePoint:
     resistance: 0.000021 # ohm/m
     temperature: 90 # degree Celsius
     ConductorInfo: 
-      mRID: "ada98491-2265-4712-8c9c-1cebf5d399b1"
+      - mRID: "ada98491-2265-4712-8c9c-1cebf5d399b1"
+
+PerLengthSequenceImpedance: 
+  - mRID: "738606ae-b6eb-40db-a710-4ec5e7fb5794"
+    r: 0.00004 # ohm/m
+    x: 0.00012 # ohm/m
+    temperature: 90 # degree Celsius
+  - mRID: "310ffbde-a3fd-4e5a-be5b-b1ff46bfecd1"
+    x: 0.000000359 # H/m
+    bch: 0.00000000000000019 # F/m
+    temperature: 20 # degree Celsius
+    WireAssembly:
+      - mRID: "c722dfb3-7e16-4d5f-8a71-b004974afa8c"
+
+WireAssembly:
+  - mRID: "c722dfb3-7e16-4d5f-8a71-b004974afa8c"
+
+WirePosition:
+  - mRID: "5ece704e-2f17-4249-8e2e-c1b107394355"
+    WireAssembly:
+      - mRID: "c722dfb3-7e16-4d5f-8a71-b004974afa8c"
+    WireInfo:
+      - mRID: "ada98491-2265-4712-8c9c-1cebf5d399b1"
 
 ProductAssetModel:
   - mRID: "a96fe01f-27ac-4a63-8c1b-7e028615cadd"

@@ -318,9 +318,19 @@ classes:
         range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
-      ConductorInfo:
-        slot_uri: cim:PerLengthConductorParameter.ConductorInfo
-        range: ConductorInfo
+      frequency:
+        slot_uri: cim:PerLengthConductorParameter.frequency
+        range: Frequency
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      temperature:
+        slot_uri: cim:PerLengthConductorParameter.temperature
+        range: Temperature
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      WireAssembly:
+        slot_uri: cim:PerLengthConductorParameter.WireAssembly
+        range: WireAssembly
         minimum_cardinality: 0
         maximum_cardinality: 1
 
@@ -360,6 +370,18 @@ classes:
         range: ReactancePerLength
         minimum_cardinality: 0
         maximum_cardinality: 1
+      bch:
+        description: "Positive sequence shunt (charging) susceptance, per unit of length."
+        slot_uri: cim:PerLengthSequenceImpedance.bch
+        range: SusceptancePerLength
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      gch:
+        description: "Positive sequence shunt (charging) conductance, per unit of length."
+        slot_uri: cim:PerLengthSequenceImpedance.gch
+        range: ConductancePerLength
+        minimum_cardinality: 0
+        maximum_cardinality: 1
 
   PhaseImpedanceData:
     description: "Impedance and conductance matrix element values.The diagonal elements are described by the elements having the same toPhase and fromPhase value and the off diagonal elements have different toPhase and fromPhase values.  The matrix can also be stored in symmetric lower triangular format using the row and column attributes, which map to ACLineSegmentPhase.sequenceNumber."
@@ -390,6 +412,52 @@ classes:
         minimum_cardinality: 0
         maximum_cardinality: 1
 
+  WireAssembly:
+    description: "Describes the construction of a multi-conductor wire."
+    is_a: IdentifiedObject
+    class_uri: cim:WireAssembly
+    attributes: 
+  
+  WirePosition:
+    description: "Identification, spacing and configuration of the wires of a conductor with respect to a structure."
+    is_a: IdentifiedObject
+    class_uri: cim:WirePosition
+    attributes:
+      phase:
+        description: "The phase connection of the wire at both ends."
+        slot_uri: cim:WirePosition.phase
+        range: SinglePhaseKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      sequenceNumber:
+        description: "Numbering for wires on a WireSpacingInfo. Neutrals should be numbered last."
+        slot_uri: cim:WirePosition.sequenceNumber
+        range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      xCoord:
+        description: "Signed horizontal distance from the wire at this position to a common reference point."
+        slot_uri: cim:WirePosition.xCoord
+        range: Displacement
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      yCoord:
+        description: "Signed vertical distance from the wire at this position: above ground (positive value) or burial depth below ground (negative value)."
+        slot_uri: cim:WirePosition.yCoord
+        range: Displacement
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      WireAssembly:
+        slot_uri: cim:WirePosition.WireAssembly
+        range: WireAssembly
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      WireInfo:
+        slot_uri: cim:WirePosition.WireInfo
+        range: WireInfo
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
   ProductAssetModel:
     description: "Asset model by a specific manufacturer."
     is_a: IdentifiedObject
@@ -408,33 +476,30 @@ classes:
         minimum_cardinality: 0
         maximum_cardinality: 1
   
-  ResistancePerLengthTemperaturePoint:
-    class_uri: cim:ResistancePerLengthTemperaturePoint
+  PerLengthResistance:
+    description: "Resistance per length"
+    is_a: PerLengthConductorParameter
+    class_uri: cim:PerLengthResistance
     attributes:
       mRID:
         description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
-        slot_uri: cim:ResistancePerLengthTemperaturePoint.mRID
+        slot_uri: cim:PerLengthResistance.mRID
         range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
       isAC:
-        slot_uri: cim:ResistancePerLengthTemperaturePoint.isAC
+        slot_uri: cim:PerLengthResistance.isAC
         range: boolean
         minimum_cardinality: 0
         maximum_cardinality: 1
       resistance:
-        slot_uri: cim:ResistancePerLengthTemperaturePoint.resistance
+        slot_uri: cim:PerLengthResistance.resistance
         range: ResistancePerLength
         minimum_cardinality: 0
         maximum_cardinality: 1
-      temperature:
-        slot_uri: cim:ResistancePerLengthTemperaturePoint.temperature
-        range: Temperature
-        minimum_cardinality: 0
-        maximum_cardinality: 1
       ConductorInfo:
-        description: "Conductor with this (resistance, temperature) pair."
-        slot_uri: cim:ResistancePerLengthTemperaturePoint.ConductorInfo
+        description: "Conductor with this resistance."
+        slot_uri: cim:PerLengthResistance.ConductorInfo
         range: ConductorInfo
         minimum_cardinality: 0
         maximum_cardinality: 1
@@ -612,10 +677,22 @@ classes:
         multivalued: true
         inlined_as_list: true
         range: SwellableWaterTapes
-      ResistancePerLengthTemperaturePoint:
+      PerLengthResistance:
         multivalued: true
         inlined_as_list: true
-        range: ResistancePerLengthTemperaturePoint
+        range: PerLengthResistance
+      PerLengthSequenceImpedance:
+        multivalued: true
+        inlined_as_list: true
+        range: PerLengthSequenceImpedance
+      WireAssembly:
+        multivalued: true
+        inlined_as_list: true
+        range: WireAssembly
+      WirePosition:
+        multivalued: true
+        inlined_as_list: true
+        range: WirePosition
 
 types:
 
@@ -682,6 +759,30 @@ types:
     annotations:
       cim_data_type: true
       uri: cim:ResistancePerLength
+  
+  SusceptancePerLength:
+    uri: xsd:float
+    base: float
+    description: "Imaginary part of admittance per unit of length."
+    annotations:
+      cim_data_type: true
+      uri: cim:SusceptancePerLength
+
+  ConductancePerLength:
+    uri: xsd:float
+    base: float
+    description: "Real part of admittance per unit of length."
+    annotations:
+      cim_data_type: true
+      uri: cim:ConductancePerLength
+  
+  Displacement:
+    uri: xsd:float
+    base: float
+    description: "Unit of displacement relative to a reference position, hence can be negative."
+    annotations:
+      cim_data_type: true
+      uri: cim:Displacement
 
 enums:
 
@@ -804,3 +905,26 @@ enums:
       steel:
         meaning:  cim:WireMaterialKind.steel
         description: "Steel wire."
+
+  SinglePhaseKind:
+    description: "Enumeration of phase identifiers used to designate the specific phase of conducting equipment modelled as individual unbalanced phases. Allows designation of specific phases for transmission and distribution equipment, circuits and loads."
+    enum_uri:  http://iec.ch/TC57/CIM-generic#SinglePhaseKind
+    permissible_values:
+      A:
+        meaning:  cim:SinglePhaseKind.A
+        description: "Phase A."
+      B:
+        meaning:  cim:SinglePhaseKind.B
+        description: "Phase B."
+      C:
+        meaning:  cim:SinglePhaseKind.C
+        description: "Phase C."
+      N:
+        meaning:  cim:SinglePhaseKind.N
+        description: "Neutral."
+      s1:
+        meaning:  cim:SinglePhaseKind.s1
+        description: "Secondary phase 1."
+      s2:
+        meaning:  cim:SinglePhaseKind.s2
+        description: "Secondary phase 2."
