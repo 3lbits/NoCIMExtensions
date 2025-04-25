@@ -171,8 +171,6 @@ nav:
         - SubGeographicalRegion: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/SubGeographicalRegion.md
         - Substation: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/Substation.md
         - VoltageLevel: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/VoltageLevel.md
-      - Enumerations: []
-      - Types: []
     - Telemark-120Equipment:
       - Overview: Models/Profiles/Telemark-120Equipment/index.md
       - Abstract Classes:
