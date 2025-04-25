@@ -9,18 +9,18 @@ _A geographical region of a power system network model._
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class GeographicalRegion
-    click GeographicalRegion href "/Models/Profiles/Telemark-120BoundryModel/ConcreteClasses/GeographicalRegion/"
+    click GeographicalRegion href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/GeographicalRegion/"
     style GeographicalRegion fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- GeographicalRegion : inherits
-            click IdentifiedObject href "/Models/Profiles/Telemark-120BoundryModel/AbstractClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         SubGeographicalRegion --> GeographicalRegion : SubGeographicalRegion.Region
 
         SubGeographicalRegion
-            click SubGeographicalRegion href "/Models/Profiles/Telemark-120BoundryModel/ConcreteClasses/SubGeographicalRegion/"
+            click SubGeographicalRegion href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/SubGeographicalRegion/"
             style SubGeographicalRegion fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
@@ -41,4 +41,4 @@ classDiagram
 | name | [cim:IdentifiedObject.name](https://cim.ucaiug.io/ns#IdentifiedObject.name) | 0..1 string | The name is any free human readable and possibly non unique text naming the object. | IdentifiedObject |
 
 ### Schema Source
-* from schema: [https://ap-no.cim4.eu/BoundryModel/1.0](https://ap-no.cim4.eu/BoundryModel/1.0)
+* from schema: [https://ap-no.cim4.eu/BoundaryModel/1.0](https://ap-no.cim4.eu/BoundaryModel/1.0)

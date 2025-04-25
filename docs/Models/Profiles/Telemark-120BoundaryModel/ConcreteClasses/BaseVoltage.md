@@ -1,29 +1,27 @@
-# PowerSystemResource
+# BaseVoltage
 
-_A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated._
+_Defines a system base voltage which is referenced._
 
-*__NOTE__: this is an abstract class and should not be instantiated directly
-
-**URI**: [cim:PowerSystemResource](https://cim.ucaiug.io/ns#PowerSystemResource)<br />
+**URI**: [cim:BaseVoltage](https://cim.ucaiug.io/ns#BaseVoltage)<br />
 **Type**: Class
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
-    class PowerSystemResource
-    click PowerSystemResource href "/Models/Profiles/Telemark-120BoundryModel/AbstractClasses/PowerSystemResource/"
-    style PowerSystemResource fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        PowerSystemResource <|-- ConnectivityNodeContainer : inherits
-
-        ConnectivityNodeContainer
-            click ConnectivityNodeContainer href "/Models/Profiles/Telemark-120BoundryModel/ConcreteClasses/ConnectivityNodeContainer/"
-            style ConnectivityNodeContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    class BaseVoltage
+    click BaseVoltage href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/BaseVoltage/"
+    style BaseVoltage fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
-        IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "/Models/Profiles/Telemark-120BoundryModel/AbstractClasses/IdentifiedObject/"
+        IdentifiedObject <|-- BaseVoltage : inherits
+            click IdentifiedObject href "/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+
+        VoltageLevel --> BaseVoltage : VoltageLevel.BaseVoltage
+
+        VoltageLevel
+            click VoltageLevel href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/VoltageLevel/"
+            style VoltageLevel fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         IdentifiedObject : IdentifiedObject.mRID
@@ -33,7 +31,7 @@ classDiagram
 
 ## Inheritance
 * [IdentifiedObject](IdentifiedObject.md)
-    * **PowerSystemResource**
+    * **BaseVoltage**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |
@@ -43,4 +41,4 @@ classDiagram
 | name | [cim:IdentifiedObject.name](https://cim.ucaiug.io/ns#IdentifiedObject.name) | 0..1 string | The name is any free human readable and possibly non unique text naming the object. | IdentifiedObject |
 
 ### Schema Source
-* from schema: [https://ap-no.cim4.eu/BoundryModel/1.0](https://ap-no.cim4.eu/BoundryModel/1.0)
+* from schema: [https://ap-no.cim4.eu/BoundaryModel/1.0](https://ap-no.cim4.eu/BoundaryModel/1.0)

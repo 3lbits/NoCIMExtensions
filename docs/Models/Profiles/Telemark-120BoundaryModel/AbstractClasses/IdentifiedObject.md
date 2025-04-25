@@ -11,13 +11,13 @@ _This is a root class to provide common identification for all classes needing i
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class IdentifiedObject
-    click IdentifiedObject href "/Models/Profiles/Telemark-120BoundryModel/AbstractClasses/IdentifiedObject/"
+    click IdentifiedObject href "/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/IdentifiedObject/"
     style IdentifiedObject fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- BaseVoltage : inherits
 
         BaseVoltage
-            click BaseVoltage href "/Models/Profiles/Telemark-120BoundryModel/ConcreteClasses/BaseVoltage/"
+            click BaseVoltage href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/BaseVoltage/"
             style BaseVoltage fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
@@ -38,4 +38,4 @@ classDiagram
 | name | [cim:IdentifiedObject.name](https://cim.ucaiug.io/ns#IdentifiedObject.name) | 0..1 string | The name is any free human readable and possibly non unique text naming the object. | direct |
 
 ### Schema Source
-* from schema: [https://ap-no.cim4.eu/BoundryModel/1.0](https://ap-no.cim4.eu/BoundryModel/1.0)
+* from schema: [https://ap-no.cim4.eu/BoundaryModel/1.0](https://ap-no.cim4.eu/BoundaryModel/1.0)

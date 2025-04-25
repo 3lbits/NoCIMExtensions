@@ -9,23 +9,23 @@ _Connectivity nodes are points where terminals of AC conducting equipment are co
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
     class ConnectivityNode
-    click ConnectivityNode href "/Models/Profiles/Telemark-120BoundryModel/ConcreteClasses/ConnectivityNode/"
+    click ConnectivityNode href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/ConnectivityNode/"
     style ConnectivityNode fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- ConnectivityNode : inherits
-            click IdentifiedObject href "/Models/Profiles/Telemark-120BoundryModel/AbstractClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConnectivityNode --> ConnectivityNodeContainer : ConnectivityNode.ConnectivityNodeContainer
 
         ConnectivityNodeContainer
-            click ConnectivityNodeContainer href "/Models/Profiles/Telemark-120BoundryModel/ConcreteClasses/ConnectivityNodeContainer/"
+            click ConnectivityNodeContainer href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/ConnectivityNodeContainer/"
             style ConnectivityNodeContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         BoundaryPoint --> ConnectivityNode : BoundaryPoint.ConnectivityNode
 
         BoundaryPoint
-            click BoundaryPoint href "/Models/Profiles/Telemark-120BoundryModel/ConcreteClasses/BoundaryPoint/"
+            click BoundaryPoint href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/BoundaryPoint/"
             style BoundaryPoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
@@ -48,4 +48,4 @@ classDiagram
 | name | [cim:IdentifiedObject.name](https://cim.ucaiug.io/ns#IdentifiedObject.name) | 0..1 string | The name is any free human readable and possibly non unique text naming the object. | IdentifiedObject |
 
 ### Schema Source
-* from schema: [https://ap-no.cim4.eu/BoundryModel/1.0](https://ap-no.cim4.eu/BoundryModel/1.0)
+* from schema: [https://ap-no.cim4.eu/BoundaryModel/1.0](https://ap-no.cim4.eu/BoundaryModel/1.0)

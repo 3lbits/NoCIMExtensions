@@ -156,21 +156,21 @@ nav:
         - Length: Models/Profiles/SubseaCableInfo/Types/Length.md
         - ReactancePerLength: Models/Profiles/SubseaCableInfo/Types/ReactancePerLength.md
         - ResistancePerLength: Models/Profiles/SubseaCableInfo/Types/ResistancePerLength.md
-    - Telemark-120BoundryModel:
-      - Overview: Models/Profiles/Telemark-120BoundryModel/index.md
+    - Telemark-120BoundaryModel:
+      - Overview: Models/Profiles/Telemark-120BoundaryModel/index.md
       - Abstract Classes:
-        - IdentifiedObject: Models/Profiles/Telemark-120BoundryModel/AbstractClasses/IdentifiedObject.md
-        - PowerSystemResource: Models/Profiles/Telemark-120BoundryModel/AbstractClasses/PowerSystemResource.md
+        - IdentifiedObject: Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/IdentifiedObject.md
+        - PowerSystemResource: Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/PowerSystemResource.md
       - Concrete Classes:
-        - BaseVoltage: Models/Profiles/Telemark-120BoundryModel/ConcreteClasses/BaseVoltage.md
-        - BoundaryPoint: Models/Profiles/Telemark-120BoundryModel/ConcreteClasses/BoundaryPoint.md
-        - ConnectivityNode: Models/Profiles/Telemark-120BoundryModel/ConcreteClasses/ConnectivityNode.md
-        - ConnectivityNodeContainer: Models/Profiles/Telemark-120BoundryModel/ConcreteClasses/ConnectivityNodeContainer.md
-        - EquipmentContainer: Models/Profiles/Telemark-120BoundryModel/ConcreteClasses/EquipmentContainer.md
-        - GeographicalRegion: Models/Profiles/Telemark-120BoundryModel/ConcreteClasses/GeographicalRegion.md
-        - SubGeographicalRegion: Models/Profiles/Telemark-120BoundryModel/ConcreteClasses/SubGeographicalRegion.md
-        - Substation: Models/Profiles/Telemark-120BoundryModel/ConcreteClasses/Substation.md
-        - VoltageLevel: Models/Profiles/Telemark-120BoundryModel/ConcreteClasses/VoltageLevel.md
+        - BaseVoltage: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/BaseVoltage.md
+        - BoundaryPoint: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/BoundaryPoint.md
+        - ConnectivityNode: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/ConnectivityNode.md
+        - ConnectivityNodeContainer: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/ConnectivityNodeContainer.md
+        - EquipmentContainer: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/EquipmentContainer.md
+        - GeographicalRegion: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/GeographicalRegion.md
+        - SubGeographicalRegion: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/SubGeographicalRegion.md
+        - Substation: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/Substation.md
+        - VoltageLevel: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/VoltageLevel.md
       - Enumerations: []
       - Types: []
     - Telemark-120Equipment:
