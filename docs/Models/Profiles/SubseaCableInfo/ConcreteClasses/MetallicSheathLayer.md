@@ -49,7 +49,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [CableLayer](CableLayer.md)
+* [CableLayer](/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/)
     * **MetallicSheathLayer**
 
 ## Attributes

@@ -46,8 +46,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [LoadGroup](LoadGroup.md)
+* [IdentifiedObject](/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/)
+    * [LoadGroup](/Models/Profiles/Telemark-120Equipment/AbstractClasses/LoadGroup/)
         * **ConformLoadGroup**
 
 ## Attributes

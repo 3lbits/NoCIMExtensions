@@ -53,8 +53,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [CableLayer](CableLayer.md)
-    * [MetallicSheathLayer](MetallicSheathLayer.md)
+* [CableLayer](/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/)
+    * [MetallicSheathLayer](/Models/Profiles/SubseaCableInfo/ConcreteClasses/MetallicSheathLayer/)
         * **TapeLayer**
 
 ## Attributes

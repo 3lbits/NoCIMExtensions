@@ -54,10 +54,10 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [PowerSystemResource](PowerSystemResource.md)
-        * [ConnectivityNodeContainer](ConnectivityNodeContainer.md)
-            * [EquipmentContainer](EquipmentContainer.md)
+* [IdentifiedObject](/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/PowerSystemResource/)
+        * [ConnectivityNodeContainer](/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/ConnectivityNodeContainer/)
+            * [EquipmentContainer](/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/EquipmentContainer/)
                 * **VoltageLevel**
 
 ## Attributes

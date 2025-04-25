@@ -94,13 +94,13 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [PowerSystemResource](PowerSystemResource.md)
-        * [Equipment](Equipment.md)
-            * [ConductingEquipment](ConductingEquipment.md)
-                * [EnergyConnection](EnergyConnection.md)
-                    * [RegulatingCondEq](RegulatingCondEq.md)
-                        * [RotatingMachine](RotatingMachine.md)
+* [IdentifiedObject](/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/Telemark-120Equipment/AbstractClasses/PowerSystemResource/)
+        * [Equipment](/Models/Profiles/Telemark-120Equipment/AbstractClasses/Equipment/)
+            * [ConductingEquipment](/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConductingEquipment/)
+                * [EnergyConnection](/Models/Profiles/Telemark-120Equipment/AbstractClasses/EnergyConnection/)
+                    * [RegulatingCondEq](/Models/Profiles/Telemark-120Equipment/AbstractClasses/RegulatingCondEq/)
+                        * [RotatingMachine](/Models/Profiles/Telemark-120Equipment/AbstractClasses/RotatingMachine/)
                             * **SynchronousMachine**
 
 ## Attributes

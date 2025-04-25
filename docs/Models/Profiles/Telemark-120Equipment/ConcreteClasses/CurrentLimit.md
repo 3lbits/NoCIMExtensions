@@ -41,8 +41,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [OperationalLimit](OperationalLimit.md)
+* [IdentifiedObject](/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/)
+    * [OperationalLimit](/Models/Profiles/Telemark-120Equipment/AbstractClasses/OperationalLimit/)
         * **CurrentLimit**
 
 ## Attributes

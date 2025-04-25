@@ -40,8 +40,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [EnergyArea](EnergyArea.md)
+* [IdentifiedObject](/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/)
+    * [EnergyArea](/Models/Profiles/Telemark-120Equipment/AbstractClasses/EnergyArea/)
         * **LoadArea**
 
 ## Attributes

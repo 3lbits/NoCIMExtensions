@@ -67,11 +67,11 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [PowerSystemResource](PowerSystemResource.md)
-        * [Equipment](Equipment.md)
-            * [ConductingEquipment](ConductingEquipment.md)
-                * [EquivalentEquipment](EquivalentEquipment.md)
+* [IdentifiedObject](/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/Telemark-120Equipment/AbstractClasses/PowerSystemResource/)
+        * [Equipment](/Models/Profiles/Telemark-120Equipment/AbstractClasses/Equipment/)
+            * [ConductingEquipment](/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConductingEquipment/)
+                * [EquivalentEquipment](/Models/Profiles/Telemark-120Equipment/AbstractClasses/EquivalentEquipment/)
                     * **EquivalentInjection**
 
 ## Attributes

@@ -51,9 +51,9 @@ classDiagram
 ```
 
 ## Inheritance
-* [CableLayer](CableLayer.md)
-    * [MetallicSheathLayer](MetallicSheathLayer.md)
-        * [TapeLayer](TapeLayer.md)
+* [CableLayer](/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/)
+    * [MetallicSheathLayer](/Models/Profiles/SubseaCableInfo/ConcreteClasses/MetallicSheathLayer/)
+        * [TapeLayer](/Models/Profiles/SubseaCableInfo/ConcreteClasses/TapeLayer/)
             * **LappedTape**
 
 ## Attributes

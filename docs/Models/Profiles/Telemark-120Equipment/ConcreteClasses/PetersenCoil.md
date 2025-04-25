@@ -61,11 +61,11 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [PowerSystemResource](PowerSystemResource.md)
-        * [Equipment](Equipment.md)
-            * [ConductingEquipment](ConductingEquipment.md)
-                * [EarthFaultCompensator](EarthFaultCompensator.md)
+* [IdentifiedObject](/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/Telemark-120Equipment/AbstractClasses/PowerSystemResource/)
+        * [Equipment](/Models/Profiles/Telemark-120Equipment/AbstractClasses/Equipment/)
+            * [ConductingEquipment](/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConductingEquipment/)
+                * [EarthFaultCompensator](/Models/Profiles/Telemark-120Equipment/AbstractClasses/EarthFaultCompensator/)
                     * **PetersenCoil**
 
 ## Attributes

@@ -66,10 +66,10 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [ElementResource](ElementResource.md)
-        * [LocationResource](LocationResource.md)
-            * [Structure](Structure.md)
+* [IdentifiedObject](/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/)
+    * [ElementResource](/Models/Profiles/AviationObstacle/AbstractClasses/ElementResource/)
+        * [LocationResource](/Models/Profiles/AviationObstacle/AbstractClasses/LocationResource/)
+            * [Structure](/Models/Profiles/AviationObstacle/AbstractClasses/Structure/)
                 * **OverheadStructure**
 
 ## Attributes

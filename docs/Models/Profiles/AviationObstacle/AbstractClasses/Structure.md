@@ -57,9 +57,9 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [ElementResource](ElementResource.md)
-        * [LocationResource](LocationResource.md)
+* [IdentifiedObject](/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/)
+    * [ElementResource](/Models/Profiles/AviationObstacle/AbstractClasses/ElementResource/)
+        * [LocationResource](/Models/Profiles/AviationObstacle/AbstractClasses/LocationResource/)
             * **Structure**
 
 ## Attributes

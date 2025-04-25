@@ -65,8 +65,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [ACDCTerminal](ACDCTerminal.md)
+* [IdentifiedObject](/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/)
+    * [ACDCTerminal](/Models/Profiles/Telemark-120Equipment/AbstractClasses/ACDCTerminal/)
         * **Terminal**
 
 ## Attributes

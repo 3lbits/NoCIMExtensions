@@ -847,9 +847,11 @@ class CreateMarkdownFile():
                         for _dict in any_of:
                             value = _dict["range"]
                             if value in globalYamlDict["classes"]:
-                                rangeList.append(f'[{value}]({value}.md)')
+                                absoluteUrlPath = globalLookUpDataDict[value]["absoluteUrlPath"]
+                                rangeList.append(f'[{value}]({absoluteUrlPath})')
                             elif value in globalYamlDict["enums"]:
-                                rangeList.append(f'[{value}]({value}.md)')
+                                absoluteUrlPath = globalLookUpDataDict[value]["absoluteUrlPath"]
+                                rangeList.append(f'[{value}]({absoluteUrlPath})')
                             else:
                                 rangeList.append(value)
                     elif "range" in attributes[attribute]:
@@ -878,10 +880,13 @@ class CreateMarkdownFile():
 '''
         count = 0
         for key in inheritanceList:
+
             if key == globalClass:
                 inheritanceString += f'{" " * (4 * count)}* **{key}**\n'
             else:
-                inheritanceString += f'{" " * (4 * count)}* [{key}]({key}.md)\n'
+                absoluteUrlPath = globalLookUpDataDict[key]["absoluteUrlPath"]
+                inheritanceString += f'{" " * (4 * count)}* [{key}]({absoluteUrlPath})\n'
+                
             count += 1
         return inheritanceString
 

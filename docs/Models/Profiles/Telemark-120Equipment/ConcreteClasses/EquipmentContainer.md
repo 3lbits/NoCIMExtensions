@@ -57,9 +57,9 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [PowerSystemResource](PowerSystemResource.md)
-        * [ConnectivityNodeContainer](ConnectivityNodeContainer.md)
+* [IdentifiedObject](/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/Telemark-120Equipment/AbstractClasses/PowerSystemResource/)
+        * [ConnectivityNodeContainer](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ConnectivityNodeContainer/)
             * **EquipmentContainer**
 
 ## Attributes

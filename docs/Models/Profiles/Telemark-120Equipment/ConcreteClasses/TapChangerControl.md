@@ -51,9 +51,9 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [PowerSystemResource](PowerSystemResource.md)
-        * [RegulatingControl](RegulatingControl.md)
+* [IdentifiedObject](/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/Telemark-120Equipment/AbstractClasses/PowerSystemResource/)
+        * [RegulatingControl](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/RegulatingControl/)
             * **TapChangerControl**
 
 ## Attributes

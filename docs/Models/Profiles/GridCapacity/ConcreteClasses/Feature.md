@@ -31,7 +31,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [SpatialObject](SpatialObject.md)
+* [SpatialObject](/Models/Profiles/GridCapacity/ConcreteClasses/SpatialObject/)
     * **Feature**
 
 ## Attributes

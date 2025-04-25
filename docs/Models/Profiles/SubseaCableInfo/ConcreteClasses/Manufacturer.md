@@ -34,8 +34,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [OrganisationRole](OrganisationRole.md)
+* [IdentifiedObject](/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/)
+    * [OrganisationRole](/Models/Profiles/SubseaCableInfo/AbstractClasses/OrganisationRole/)
         * **Manufacturer**
 
 ## Attributes

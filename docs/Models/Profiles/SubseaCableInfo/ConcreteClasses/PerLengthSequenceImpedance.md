@@ -41,9 +41,9 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [PerLengthConductorParameter](PerLengthConductorParameter.md)
-        * [PerLengthImpedance](PerLengthImpedance.md)
+* [IdentifiedObject](/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/)
+    * [PerLengthConductorParameter](/Models/Profiles/SubseaCableInfo/AbstractClasses/PerLengthConductorParameter/)
+        * [PerLengthImpedance](/Models/Profiles/SubseaCableInfo/AbstractClasses/PerLengthImpedance/)
             * **PerLengthSequenceImpedance**
 
 ## Attributes

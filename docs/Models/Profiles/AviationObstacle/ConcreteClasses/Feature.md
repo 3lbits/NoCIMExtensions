@@ -35,7 +35,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [SpatialObject](SpatialObject.md)
+* [SpatialObject](/Models/Profiles/AviationObstacle/ConcreteClasses/SpatialObject/)
     * **Feature**
 
 ## Attributes

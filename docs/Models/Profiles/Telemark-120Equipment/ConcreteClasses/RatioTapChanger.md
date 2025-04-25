@@ -52,9 +52,9 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [PowerSystemResource](PowerSystemResource.md)
-        * [TapChanger](TapChanger.md)
+* [IdentifiedObject](/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/Telemark-120Equipment/AbstractClasses/PowerSystemResource/)
+        * [TapChanger](/Models/Profiles/Telemark-120Equipment/AbstractClasses/TapChanger/)
             * **RatioTapChanger**
 
 ## Attributes

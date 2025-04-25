@@ -54,10 +54,10 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [PowerSystemResource](PowerSystemResource.md)
-        * [Equipment](Equipment.md)
-            * [ConductingEquipment](ConductingEquipment.md)
+* [IdentifiedObject](/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/AviationObstacle/AbstractClasses/PowerSystemResource/)
+        * [Equipment](/Models/Profiles/AviationObstacle/AbstractClasses/Equipment/)
+            * [ConductingEquipment](/Models/Profiles/AviationObstacle/AbstractClasses/ConductingEquipment/)
                 * **Conductor**
 
 ## Attributes

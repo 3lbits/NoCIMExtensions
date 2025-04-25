@@ -42,7 +42,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [CableLayer](CableLayer.md)
+* [CableLayer](/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/)
     * **InsulationLayer**
 
 ## Attributes

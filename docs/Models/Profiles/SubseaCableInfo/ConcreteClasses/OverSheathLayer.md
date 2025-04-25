@@ -40,8 +40,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [CableLayer](CableLayer.md)
-    * [NonMetallicSheathLayer](NonMetallicSheathLayer.md)
+* [CableLayer](/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/)
+    * [NonMetallicSheathLayer](/Models/Profiles/SubseaCableInfo/ConcreteClasses/NonMetallicSheathLayer/)
         * **OverSheathLayer**
 
 ## Attributes

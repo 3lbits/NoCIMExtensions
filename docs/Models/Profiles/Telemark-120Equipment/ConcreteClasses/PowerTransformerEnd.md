@@ -58,8 +58,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [TransformerEnd](TransformerEnd.md)
+* [IdentifiedObject](/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/)
+    * [TransformerEnd](/Models/Profiles/Telemark-120Equipment/AbstractClasses/TransformerEnd/)
         * **PowerTransformerEnd**
 
 ## Attributes
