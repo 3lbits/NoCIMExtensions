@@ -29,11 +29,13 @@ class mkdocs:
             if 'abstract' in globalYamlDict["classes"][_class] and globalYamlDict["classes"][_class]['abstract'] == False or 'abstract' not in globalYamlDict["classes"][_class]:
                 concreteClasses.append({'name': _class, 'path': f'{globalLookUpDataDict[_class]["absoluteUrlPath"]}'})
 
-        for enum in globalYamlDict["enums"]:
-            enumerations.append({'name': enum, 'path': f'{globalLookUpDataDict[enum]["absoluteUrlPath"]}'})
+        if "enums" in globalYamlDict and globalYamlDict["enums"] != None:
+            for enum in globalYamlDict["enums"]:
+                enumerations.append({'name': enum, 'path': f'{globalLookUpDataDict[enum]["absoluteUrlPath"]}'})
 
-        for _type in globalYamlDict["types"]:
-            types.append({'name': _type, 'path': f'{globalLookUpDataDict[_type]["absoluteUrlPath"]}'})
+        if "types" in globalYamlDict and globalYamlDict["types"] != None:
+            for _type in globalYamlDict["types"]:
+                types.append({'name': _type, 'path': f'{globalLookUpDataDict[_type]["absoluteUrlPath"]}'})
         
         if len(abstractClasses) > 0:
             abstractClasses.sort(key=lambda x: x['name'])
@@ -177,7 +179,7 @@ class General():
 
             lookUpDataDict[_class] = classData
 
-        if 'enums' in globalYamlDict:
+        if 'enums' in globalYamlDict and globalYamlDict['enums'] != None:
 
             for enumeration in globalYamlDict['enums']:
 
@@ -196,7 +198,7 @@ class General():
 
                 lookUpDataDict[enumeration] = enumerationData
 
-        if 'types' in globalYamlDict:
+        if 'types' in globalYamlDict and globalYamlDict['types'] != None:
 
             for _type in globalYamlDict['types']:
 
@@ -304,7 +306,7 @@ class ClassData():
     
     def getTypesData(self):
 
-        if "types" not in globalYamlDict:
+        if "types" not in globalYamlDict or globalYamlDict["types"] == None:
             return
 
         typesList = []
@@ -632,7 +634,7 @@ class CreateMermaid():
         
         enumString = ""
 
-        if "enums" not in globalYamlDict:
+        if "enums" not in globalYamlDict or globalYamlDict["enums"] == None:
             return
 
         enums = globalYamlDict["enums"]
@@ -716,6 +718,9 @@ class CreateMarkdownFile():
 
     def createEnums(self):
         
+        if "enums" not in globalYamlDict or globalYamlDict["enums"] == None:
+            return
+
         enumList = ClassData().getEnumData()
 
         for enum in enumList:
@@ -752,7 +757,10 @@ class CreateMarkdownFile():
                 print(f'Markdown file created for the enumeration {key}')
 
     def createTypes(self):
-
+        
+        if "types" not in globalYamlDict or globalYamlDict["types"] == None:
+            return
+        
         typesList = ClassData().getTypesData()
 
         for _type in typesList:
@@ -780,7 +788,7 @@ class CreateMarkdownFile():
                     file.write(f'## Schema Source\n\n')
                     file.write(f'from schema: [{sourceUri}]({sourceUri})\n')
 
-                print(f'Markdown file created for the enumeration {key}')
+                print(f'Markdown file created for the type {key}')
 
     def createIndex(self):
         

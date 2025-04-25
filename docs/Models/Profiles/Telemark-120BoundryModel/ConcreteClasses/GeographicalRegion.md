@@ -1,39 +1,27 @@
-# BaseVoltage
+# GeographicalRegion
 
-_Defines a system base voltage which is referenced._
+_A geographical region of a power system network model._
 
-**URI**: [cim:BaseVoltage](https://cim.ucaiug.io/ns#BaseVoltage)<br />
+**URI**: [cim:GeographicalRegion](https://cim.ucaiug.io/ns#GeographicalRegion)<br />
 **Type**: Class
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
-    class BaseVoltage
-    click BaseVoltage href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/BaseVoltage/"
-    style BaseVoltage fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    class GeographicalRegion
+    click GeographicalRegion href "/Models/Profiles/Telemark-120BoundryModel/ConcreteClasses/GeographicalRegion/"
+    style GeographicalRegion fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
-        IdentifiedObject <|-- BaseVoltage : inherits
-            click IdentifiedObject href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/"
+        IdentifiedObject <|-- GeographicalRegion : inherits
+            click IdentifiedObject href "/Models/Profiles/Telemark-120BoundryModel/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
-        ACLineSegment --> BaseVoltage : ACLineSegment.BaseVoltage
+        SubGeographicalRegion --> GeographicalRegion : SubGeographicalRegion.Region
 
-        ACLineSegment
-            click ACLineSegment href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ACLineSegment/"
-            style ACLineSegment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        TransformerEnd --> BaseVoltage : TransformerEnd.BaseVoltage
-
-        TransformerEnd
-            click TransformerEnd href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/TransformerEnd/"
-            style TransformerEnd fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        VoltageLevel --> BaseVoltage : VoltageLevel.BaseVoltage
-
-        VoltageLevel
-            click VoltageLevel href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/VoltageLevel/"
-            style VoltageLevel fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+        SubGeographicalRegion
+            click SubGeographicalRegion href "/Models/Profiles/Telemark-120BoundryModel/ConcreteClasses/SubGeographicalRegion/"
+            style SubGeographicalRegion fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         IdentifiedObject : IdentifiedObject.mRID
@@ -43,7 +31,7 @@ classDiagram
 
 ## Inheritance
 * [IdentifiedObject](IdentifiedObject.md)
-    * **BaseVoltage**
+    * **GeographicalRegion**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |
@@ -53,4 +41,4 @@ classDiagram
 | name | [cim:IdentifiedObject.name](https://cim.ucaiug.io/ns#IdentifiedObject.name) | 0..1 string | The name is any free human readable and possibly non unique text naming the object. | IdentifiedObject |
 
 ### Schema Source
-* from schema: [https://ap-no.cim4.eu/Equipment/1.0](https://ap-no.cim4.eu/Equipment/1.0)
+* from schema: [https://ap-no.cim4.eu/BoundryModel/1.0](https://ap-no.cim4.eu/BoundryModel/1.0)

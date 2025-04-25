@@ -200,7 +200,7 @@ classes:
   ConnectivityNodeContainer:
     description: "A base class for all objects that may contain connectivity nodes or topological nodes."
     is_a: PowerSystemResource
-    class_uri: cim:EquipmentContainer
+    class_uri: cim:ConnectivityNodeContainer
     attributes:
 
   Connector:
@@ -1187,14 +1187,14 @@ classes:
     attributes:
       BaseVoltage:
         description: "Base voltage of this conducting equipment.  Use only when there is no voltage level container used and only one base voltage applies.  For example, not used for transformers."
-        slot_uri: cim:ConductingEquipment.BaseVoltage
+        slot_uri: cim:VoltageLevel.BaseVoltage
         range: BaseVoltage
         minimum_cardinality: 0
         maximum_cardinality: 1
       Substation:
         description: "The substation of the voltage level."
-        slot_uri: cim:ConductingEquipment.BaseVoltage
-        range: BaseVoltage
+        slot_uri: cim:VoltageLevel.Substation
+        range: Substation
         minimum_cardinality: 0
         maximum_cardinality: 1
 
