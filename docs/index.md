@@ -13,3 +13,4 @@ Profiles:
 - [AviationObstacle](/Models/Profiles/AviationObstacle/)
 - [GridCapacity](/Models/Profiles/GridCapacity/)
 - [SubseaCableInfo](/Models/Profiles/SubseaCableInfo/)
+- [Telemark-120Equipment](/Models/Profiles/Telemark-120Equipment/)
