@@ -5624,6 +5624,12 @@ classDiagram
             click EnergyConsumer href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/EnergyConsumer/"
             style EnergyConsumer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        EnergyConnection &lt;|-- RegulatingCondEq : inherits
+
+        RegulatingCondEq
+            click RegulatingCondEq href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/RegulatingCondEq/"
+            style RegulatingCondEq fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
         ConductingEquipment &lt;|-- EnergyConnection : inherits
             click ConductingEquipment href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConductingEquipment/"
             style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white

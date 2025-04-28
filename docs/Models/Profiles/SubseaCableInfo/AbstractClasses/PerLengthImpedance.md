@@ -19,6 +19,12 @@ classDiagram
         PerLengthPhaseImpedance
             click PerLengthPhaseImpedance href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/PerLengthPhaseImpedance/"
             style PerLengthPhaseImpedance fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        PerLengthImpedance <|-- PerLengthSequenceImpedance : inherits
+
+        PerLengthSequenceImpedance
+            click PerLengthSequenceImpedance href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/PerLengthSequenceImpedance/"
+            style PerLengthSequenceImpedance fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PerLengthConductorParameter <|-- PerLengthImpedance : inherits
             click PerLengthConductorParameter href "/Models/Profiles/SubseaCableInfo/AbstractClasses/PerLengthConductorParameter/"

@@ -19,6 +19,36 @@ classDiagram
         Conductor
             click Conductor href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/Conductor/"
             style Conductor fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        ConductingEquipment <|-- Connector : inherits
+
+        Connector
+            click Connector href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/Connector/"
+            style Connector fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        ConductingEquipment <|-- EarthFaultCompensator : inherits
+
+        EarthFaultCompensator
+            click EarthFaultCompensator href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/EarthFaultCompensator/"
+            style EarthFaultCompensator fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        ConductingEquipment <|-- EnergyConnection : inherits
+
+        EnergyConnection
+            click EnergyConnection href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/EnergyConnection/"
+            style EnergyConnection fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        ConductingEquipment <|-- EquivalentEquipment : inherits
+
+        EquivalentEquipment
+            click EquivalentEquipment href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/EquivalentEquipment/"
+            style EquivalentEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        ConductingEquipment <|-- Switch : inherits
+
+        Switch
+            click Switch href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Switch/"
+            style Switch fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- ConductingEquipment : inherits
             click Equipment href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/Equipment/"

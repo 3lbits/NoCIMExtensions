@@ -5623,6 +5623,12 @@ classDiagram
             click Substation href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/Substation/"
             style Substation fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        EquipmentContainer &lt;|-- VoltageLevel : inherits
+
+        VoltageLevel
+            click VoltageLevel href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/VoltageLevel/"
+            style VoltageLevel fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
         ConnectivityNodeContainer &lt;|-- EquipmentContainer : inherits
             click ConnectivityNodeContainer href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/ConnectivityNodeContainer/"
             style ConnectivityNodeContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white

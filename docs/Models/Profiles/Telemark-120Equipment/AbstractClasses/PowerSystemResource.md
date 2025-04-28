@@ -19,6 +19,30 @@ classDiagram
         ConnectivityNodeContainer
             click ConnectivityNodeContainer href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ConnectivityNodeContainer/"
             style ConnectivityNodeContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        PowerSystemResource <|-- ControlArea : inherits
+
+        ControlArea
+            click ControlArea href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ControlArea/"
+            style ControlArea fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        PowerSystemResource <|-- Equipment : inherits
+
+        Equipment
+            click Equipment href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/Equipment/"
+            style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        PowerSystemResource <|-- RegulatingControl : inherits
+
+        RegulatingControl
+            click RegulatingControl href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/RegulatingControl/"
+            style RegulatingControl fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        PowerSystemResource <|-- TapChanger : inherits
+
+        TapChanger
+            click TapChanger href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/TapChanger/"
+            style TapChanger fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/"

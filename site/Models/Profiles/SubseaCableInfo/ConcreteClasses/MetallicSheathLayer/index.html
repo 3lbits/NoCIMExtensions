@@ -5623,6 +5623,18 @@ classDiagram
             click ConcentricWireLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ConcentricWireLayer/"
             style ConcentricWireLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        MetallicSheathLayer &lt;|-- TapeLayer : inherits
+
+        TapeLayer
+            click TapeLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/TapeLayer/"
+            style TapeLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        MetallicSheathLayer &lt;|-- WireBraidInfo : inherits
+
+        WireBraidInfo
+            click WireBraidInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/WireBraidInfo/"
+            style WireBraidInfo fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
         CableLayer &lt;|-- MetallicSheathLayer : inherits
             click CableLayer href "/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/"
             style CableLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white

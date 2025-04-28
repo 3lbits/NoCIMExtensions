@@ -17,6 +17,24 @@ classDiagram
         Bay
             click Bay href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Bay/"
             style Bay fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        EquipmentContainer <|-- Line : inherits
+
+        Line
+            click Line href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Line/"
+            style Line fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        EquipmentContainer <|-- Substation : inherits
+
+        Substation
+            click Substation href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Substation/"
+            style Substation fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        EquipmentContainer <|-- VoltageLevel : inherits
+
+        VoltageLevel
+            click VoltageLevel href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/VoltageLevel/"
+            style VoltageLevel fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ConnectivityNodeContainer <|-- EquipmentContainer : inherits
             click ConnectivityNodeContainer href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ConnectivityNodeContainer/"

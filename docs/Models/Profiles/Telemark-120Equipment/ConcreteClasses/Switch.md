@@ -17,6 +17,18 @@ classDiagram
         Disconnector
             click Disconnector href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Disconnector/"
             style Disconnector fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        Switch <|-- Fuse : inherits
+
+        Fuse
+            click Fuse href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Fuse/"
+            style Fuse fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        Switch <|-- ProtectedSwitch : inherits
+
+        ProtectedSwitch
+            click ProtectedSwitch href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/ProtectedSwitch/"
+            style ProtectedSwitch fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ConductingEquipment <|-- Switch : inherits
             click ConductingEquipment href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConductingEquipment/"

@@ -14,6 +14,12 @@ classDiagram
     click IdentifiedObject href "/Models/Profiles/GridCapacity/AbstractClasses/IdentifiedObject/"
     style IdentifiedObject fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        IdentifiedObject <|-- BaseTimeSeries : inherits
+
+        BaseTimeSeries
+            click BaseTimeSeries href "/Models/Profiles/GridCapacity/AbstractClasses/BaseTimeSeries/"
+            style BaseTimeSeries fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
         IdentifiedObject <|-- PowerSystemResource : inherits
 
         PowerSystemResource

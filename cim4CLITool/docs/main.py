@@ -80,13 +80,25 @@ class mkdocs:
     def createNavigationDict():
         navDict = {
             globalDocName: [
-                {'Overview': f'Models/Profiles/{globalDocName}/index.md'},
-                {"Abstract Classes": []},
-                {"Concrete Classes": []},
-                {"Enumerations": []},
-                {"Types": []}
             ]
         }
+
+        # Overview
+        navDict[globalDocName].append({'Overview': f'Models/Profiles/{globalDocName}/index.md'}),
+
+        # "Abstract Classes"
+        navDict[globalDocName].append({"Abstract Classes": []})
+
+        # "Concrete Classes"
+        navDict[globalDocName].append({"Concrete Classes": []})
+
+        # Add "Enumerations" only if there are enumerations
+        if "enums" in globalYamlDict and globalYamlDict["enums"]:
+            navDict[globalDocName].append({"Enumerations": []})
+
+        # Add "Types" only if there are types
+        if "types" in globalYamlDict and globalYamlDict["types"]:
+            navDict[globalDocName].append({"Types": []})
 
         return navDict
 
@@ -269,12 +281,14 @@ class InheritanceData():
 
             if globalYamlDict["classes"][key]["is_a"] != _class:
                 continue
-
+            
             subClass = key #{key: globalYamlDict["classes"][key]}
 
             subClassList.append(subClass)
 
-            return subClassList
+        subClassList.sort()
+
+        return subClassList
 
 class ClassData():
 
@@ -467,8 +481,6 @@ class CreateMermaid():
             # returnType = "thisClass"
 
         return style
-
-
 
     def createMermaidSubMixinString(self, inheritanceList):
         
@@ -963,6 +975,6 @@ class CreateMdController():
         mkdocs.mkdocs_create_profile_index()
 
 if __name__ == "__main__":
-    schemaName = "watt_app"
+    schemaName = "telemark-120_boundary_model"
     CreateMdController().main(schemaName, 'elbits')
 

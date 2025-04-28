@@ -19,6 +19,12 @@ classDiagram
         RotatingMachine
             click RotatingMachine href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/RotatingMachine/"
             style RotatingMachine fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        RegulatingCondEq <|-- ShuntCompensator : inherits
+
+        ShuntCompensator
+            click ShuntCompensator href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/ShuntCompensator/"
+            style ShuntCompensator fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         EnergyConnection <|-- RegulatingCondEq : inherits
             click EnergyConnection href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/EnergyConnection/"

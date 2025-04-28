@@ -17,6 +17,12 @@ classDiagram
         ConformLoad
             click ConformLoad href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ConformLoad/"
             style ConformLoad fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        EnergyConsumer <|-- StationSupply : inherits
+
+        StationSupply
+            click StationSupply href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/StationSupply/"
+            style StationSupply fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         EnergyConnection <|-- EnergyConsumer : inherits
             click EnergyConnection href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/EnergyConnection/"

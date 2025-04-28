@@ -19,6 +19,12 @@ classDiagram
         Breaker
             click Breaker href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Breaker/"
             style Breaker fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        ProtectedSwitch <|-- LoadBreakSwitch : inherits
+
+        LoadBreakSwitch
+            click LoadBreakSwitch href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/LoadBreakSwitch/"
+            style LoadBreakSwitch fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Switch <|-- ProtectedSwitch : inherits
             click Switch href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Switch/"

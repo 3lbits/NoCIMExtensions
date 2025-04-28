@@ -17,6 +17,12 @@ classDiagram
         ConductorScreenLayer
             click ConductorScreenLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ConductorScreenLayer/"
             style ConductorScreenLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        ScreenLayer <|-- InsulationScreenLayer : inherits
+
+        InsulationScreenLayer
+            click InsulationScreenLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/InsulationScreenLayer/"
+            style InsulationScreenLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         CableLayer <|-- ScreenLayer : inherits
             click CableLayer href "/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/"

@@ -17,6 +17,24 @@ classDiagram
         GappedTape
             click GappedTape href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/GappedTape/"
             style GappedTape fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        TapeLayer <|-- LappedTape : inherits
+
+        LappedTape
+            click LappedTape href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/LappedTape/"
+            style LappedTape fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        TapeLayer <|-- LongitudinallyCorrugatedTape : inherits
+
+        LongitudinallyCorrugatedTape
+            click LongitudinallyCorrugatedTape href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/LongitudinallyCorrugatedTape/"
+            style LongitudinallyCorrugatedTape fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        TapeLayer <|-- TubularTape : inherits
+
+        TubularTape
+            click TubularTape href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/TubularTape/"
+            style TubularTape fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         MetallicSheathLayer <|-- TapeLayer : inherits
             click MetallicSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MetallicSheathLayer/"

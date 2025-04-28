@@ -17,6 +17,12 @@ classDiagram
         ACLineSegmentSpanDeployment
             click ACLineSegmentSpanDeployment href "/Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegmentSpanDeployment/"
             style ACLineSegmentSpanDeployment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        AssetDeployment <|-- StructureDeployment : inherits
+
+        StructureDeployment
+            click StructureDeployment href "/Models/Profiles/AviationObstacle/ConcreteClasses/StructureDeployment/"
+            style StructureDeployment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- AssetDeployment : inherits
             click IdentifiedObject href "/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/"

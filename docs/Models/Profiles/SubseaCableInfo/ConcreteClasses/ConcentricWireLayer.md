@@ -17,6 +17,18 @@ classDiagram
         FlatStraps
             click FlatStraps href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/FlatStraps/"
             style FlatStraps fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        ConcentricWireLayer <|-- RoundWire : inherits
+
+        RoundWire
+            click RoundWire href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/RoundWire/"
+            style RoundWire fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        ConcentricWireLayer <|-- SkidWireLayer : inherits
+
+        SkidWireLayer
+            click SkidWireLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/SkidWireLayer/"
+            style SkidWireLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         MetallicSheathLayer <|-- ConcentricWireLayer : inherits
             click MetallicSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MetallicSheathLayer/"

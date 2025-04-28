@@ -20,6 +20,84 @@ classDiagram
             click ACDCTerminal href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/ACDCTerminal/"
             style ACDCTerminal fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        IdentifiedObject <|-- AssetInfo : inherits
+
+        AssetInfo
+            click AssetInfo href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/AssetInfo/"
+            style AssetInfo fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject <|-- BaseVoltage : inherits
+
+        BaseVoltage
+            click BaseVoltage href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/BaseVoltage/"
+            style BaseVoltage fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject <|-- ConnectivityNode : inherits
+
+        ConnectivityNode
+            click ConnectivityNode href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ConnectivityNode/"
+            style ConnectivityNode fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject <|-- EnergyArea : inherits
+
+        EnergyArea
+            click EnergyArea href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/EnergyArea/"
+            style EnergyArea fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject <|-- GeographicalRegion : inherits
+
+        GeographicalRegion
+            click GeographicalRegion href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/GeographicalRegion/"
+            style GeographicalRegion fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject <|-- LoadGroup : inherits
+
+        LoadGroup
+            click LoadGroup href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/LoadGroup/"
+            style LoadGroup fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject <|-- LoadResponseCharacteristic : inherits
+
+        LoadResponseCharacteristic
+            click LoadResponseCharacteristic href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/LoadResponseCharacteristic/"
+            style LoadResponseCharacteristic fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject <|-- OperationalLimit : inherits
+
+        OperationalLimit
+            click OperationalLimit href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/OperationalLimit/"
+            style OperationalLimit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject <|-- OperationalLimitSet : inherits
+
+        OperationalLimitSet
+            click OperationalLimitSet href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/OperationalLimitSet/"
+            style OperationalLimitSet fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject <|-- OperationalLimitType : inherits
+
+        OperationalLimitType
+            click OperationalLimitType href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/OperationalLimitType/"
+            style OperationalLimitType fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject <|-- PowerSystemResource : inherits
+
+        PowerSystemResource
+            click PowerSystemResource href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/PowerSystemResource/"
+            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject <|-- SubGeographicalRegion : inherits
+
+        SubGeographicalRegion
+            click SubGeographicalRegion href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/SubGeographicalRegion/"
+            style SubGeographicalRegion fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject <|-- TransformerEnd : inherits
+
+        TransformerEnd
+            click TransformerEnd href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/TransformerEnd/"
+            style TransformerEnd fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
 
 
         IdentifiedObject : IdentifiedObject.mRID

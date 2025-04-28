@@ -19,6 +19,12 @@ classDiagram
         Structure
             click Structure href "/Models/Profiles/AviationObstacle/AbstractClasses/Structure/"
             style Structure fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        LocationResource <|-- Zone : inherits
+
+        Zone
+            click Zone href "/Models/Profiles/AviationObstacle/ConcreteClasses/Zone/"
+            style Zone fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ElementResource <|-- LocationResource : inherits
             click ElementResource href "/Models/Profiles/AviationObstacle/AbstractClasses/ElementResource/"

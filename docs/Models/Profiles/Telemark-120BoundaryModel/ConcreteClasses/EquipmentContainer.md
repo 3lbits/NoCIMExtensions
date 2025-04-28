@@ -17,6 +17,12 @@ classDiagram
         Substation
             click Substation href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/Substation/"
             style Substation fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        EquipmentContainer <|-- VoltageLevel : inherits
+
+        VoltageLevel
+            click VoltageLevel href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/VoltageLevel/"
+            style VoltageLevel fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ConnectivityNodeContainer <|-- EquipmentContainer : inherits
             click ConnectivityNodeContainer href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/ConnectivityNodeContainer/"

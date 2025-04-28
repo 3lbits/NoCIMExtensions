@@ -19,6 +19,12 @@ classDiagram
         LoadArea
             click LoadArea href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/LoadArea/"
             style LoadArea fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        EnergyArea <|-- SubLoadArea : inherits
+
+        SubLoadArea
+            click SubLoadArea href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/SubLoadArea/"
+            style SubLoadArea fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- EnergyArea : inherits
             click IdentifiedObject href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/"

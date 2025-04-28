@@ -5618,6 +5618,24 @@ classDiagram
     click IdentifiedObject href "/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/"
     style IdentifiedObject fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        IdentifiedObject &lt;|-- AssetDeployment : inherits
+
+        AssetDeployment
+            click AssetDeployment href "/Models/Profiles/AviationObstacle/ConcreteClasses/AssetDeployment/"
+            style AssetDeployment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject &lt;|-- BaseVoltage : inherits
+
+        BaseVoltage
+            click BaseVoltage href "/Models/Profiles/AviationObstacle/ConcreteClasses/BaseVoltage/"
+            style BaseVoltage fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject &lt;|-- ElementResource : inherits
+
+        ElementResource
+            click ElementResource href "/Models/Profiles/AviationObstacle/AbstractClasses/ElementResource/"
+            style ElementResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
         IdentifiedObject &lt;|-- PowerSystemResource : inherits
 
         PowerSystemResource

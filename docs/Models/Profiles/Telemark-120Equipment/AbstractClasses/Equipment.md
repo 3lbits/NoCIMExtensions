@@ -19,6 +19,18 @@ classDiagram
         ConductingEquipment
             click ConductingEquipment href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConductingEquipment/"
             style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        Equipment <|-- GeneratingUnit : inherits
+
+        GeneratingUnit
+            click GeneratingUnit href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/GeneratingUnit/"
+            style GeneratingUnit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        Equipment <|-- PowerTransformer : inherits
+
+        PowerTransformer
+            click PowerTransformer href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/PowerTransformer/"
+            style PowerTransformer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
             click PowerSystemResource href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/PowerSystemResource/"

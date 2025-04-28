@@ -19,6 +19,12 @@ classDiagram
         CapacitySchedule
             click CapacitySchedule href "/Models/Profiles/GridCapacity/ConcreteClasses/CapacitySchedule/"
             style CapacitySchedule fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        BaseIrregularTimeSeries <|-- CapacityTimePoint : inherits
+
+        CapacityTimePoint
+            click CapacityTimePoint href "/Models/Profiles/GridCapacity/ConcreteClasses/CapacityTimePoint/"
+            style CapacityTimePoint fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         BaseTimeSeries <|-- BaseIrregularTimeSeries : inherits
             click BaseTimeSeries href "/Models/Profiles/GridCapacity/AbstractClasses/BaseTimeSeries/"

@@ -5624,6 +5624,24 @@ classDiagram
             click InsulationLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/InsulationLayer/"
             style InsulationLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        CableLayer &lt;|-- MetallicSheathLayer : inherits
+
+        MetallicSheathLayer
+            click MetallicSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MetallicSheathLayer/"
+            style MetallicSheathLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        CableLayer &lt;|-- NonMetallicSheathLayer : inherits
+
+        NonMetallicSheathLayer
+            click NonMetallicSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/NonMetallicSheathLayer/"
+            style NonMetallicSheathLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        CableLayer &lt;|-- ScreenLayer : inherits
+
+        ScreenLayer
+            click ScreenLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ScreenLayer/"
+            style ScreenLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
 
         CableInfo --&gt; CableLayer : CableInfo.Layer
 

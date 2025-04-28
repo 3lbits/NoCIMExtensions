@@ -20,6 +20,30 @@ classDiagram
             click AssetInfo href "/Models/Profiles/SubseaCableInfo/AbstractClasses/AssetInfo/"
             style AssetInfo fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        IdentifiedObject <|-- AssetSpecification : inherits
+
+        AssetSpecification
+            click AssetSpecification href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/AssetSpecification/"
+            style AssetSpecification fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject <|-- OrganisationRole : inherits
+
+        OrganisationRole
+            click OrganisationRole href "/Models/Profiles/SubseaCableInfo/AbstractClasses/OrganisationRole/"
+            style OrganisationRole fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject <|-- PerLengthConductorParameter : inherits
+
+        PerLengthConductorParameter
+            click PerLengthConductorParameter href "/Models/Profiles/SubseaCableInfo/AbstractClasses/PerLengthConductorParameter/"
+            style PerLengthConductorParameter fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject <|-- ProductAssetModel : inherits
+
+        ProductAssetModel
+            click ProductAssetModel href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ProductAssetModel/"
+            style ProductAssetModel fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
 
 
         IdentifiedObject : IdentifiedObject.mRID

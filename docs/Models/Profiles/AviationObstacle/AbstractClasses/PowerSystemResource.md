@@ -14,6 +14,12 @@ classDiagram
     click PowerSystemResource href "/Models/Profiles/AviationObstacle/AbstractClasses/PowerSystemResource/"
     style PowerSystemResource fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        PowerSystemResource <|-- ACLineSegmentSpan : inherits
+
+        ACLineSegmentSpan
+            click ACLineSegmentSpan href "/Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegmentSpan/"
+            style ACLineSegmentSpan fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
         PowerSystemResource <|-- Equipment : inherits
 
         Equipment
