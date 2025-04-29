@@ -36,6 +36,18 @@ default_prefix: this
 
 classes:
 
+  Bay:
+    description: "A collection of power system resources (within a given substation) including conducting equipment, protection relays, measurements, and telemetry.  A bay typically represents a physical grouping related to modularization of equipment."
+    is_a: EquipmentContainer
+    class_uri: cim:Bay
+    attributes:
+      VoltageLevel:
+        description: "The voltage level containing this bay."
+        slot_uri: cim:Bay.VoltageLevel
+        range: VoltageLevel
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+
   BaseVoltage:
     description: "Defines a system base voltage which is referenced."
     is_a: IdentifiedObject
@@ -118,12 +130,14 @@ classes:
   ConnectivityNodeContainer:
     description: "A base class for all objects that may contain connectivity nodes or topological nodes."
     is_a: PowerSystemResource
+    abstract: true
     class_uri: cim:ConnectivityNodeContainer
     attributes:
 
   EquipmentContainer:
     description: "A modelling construct to provide a root class for containing equipment."
     is_a: ConnectivityNodeContainer
+    abstract: true
     class_uri: cim:EquipmentContainer
     attributes:
 

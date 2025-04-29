@@ -17,7 +17,7 @@ classDiagram
         PowerSystemResource <|-- ConnectivityNodeContainer : inherits
 
         ConnectivityNodeContainer
-            click ConnectivityNodeContainer href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ConnectivityNodeContainer/"
+            click ConnectivityNodeContainer href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConnectivityNodeContainer/"
             style ConnectivityNodeContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- ControlArea : inherits

@@ -32,17 +32,17 @@ classDiagram
             click IdentifiedObject href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        ACLineSegment --> AssetInfo : ACLineSegment.AssetDataSheet
+        ACLineSegment --> AssetInfo : PowerSystemResource.AssetDataSheet
 
         AssetInfo
             click AssetInfo href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/AssetInfo/"
             style AssetInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACLineSegment --> EquipmentContainer : ACLineSegment.EquipmentContainer
+        ACLineSegment --> EquipmentContainer : Equipment.EquipmentContainer
 
         EquipmentContainer
-            click EquipmentContainer href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACLineSegment --> BaseVoltage : ACLineSegment.BaseVoltage
+        ACLineSegment --> BaseVoltage : ConductingEquipment.BaseVoltage
 
         BaseVoltage
             click BaseVoltage href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/BaseVoltage/"
@@ -50,7 +50,7 @@ classDiagram
         Equipment --> EquipmentContainer : Equipment.EquipmentContainer
 
         EquipmentContainer
-            click EquipmentContainer href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitSet --> Equipment : OperationalLimitSet.Equipment

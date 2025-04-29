@@ -3338,6 +3338,48 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Telemark-120BoundaryModel/AbstractClasses/ConnectivityNodeContainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ConnectivityNodeContainer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Telemark-120BoundaryModel/AbstractClasses/EquipmentContainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EquipmentContainer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Telemark-120BoundaryModel/AbstractClasses/IdentifiedObject/" class="md-nav__link">
         
   
@@ -3428,6 +3470,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../../Telemark-120BoundaryModel/ConcreteClasses/Bay/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bay
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../../Telemark-120BoundaryModel/ConcreteClasses/BaseVoltage/" class="md-nav__link">
         
   
@@ -3475,48 +3538,6 @@
   
   <span class="md-ellipsis">
     ConnectivityNode
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Telemark-120BoundaryModel/ConcreteClasses/ConnectivityNodeContainer/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    ConnectivityNodeContainer
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../../../Telemark-120BoundaryModel/ConcreteClasses/EquipmentContainer/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    EquipmentContainer
   </span>
   
 
@@ -3799,6 +3820,27 @@
   
   
     <li class="md-nav__item">
+      <a href="../../AbstractClasses/ConnectivityNodeContainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ConnectivityNodeContainer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../../AbstractClasses/Connector/" class="md-nav__link">
         
   
@@ -3888,6 +3930,27 @@
   
   <span class="md-ellipsis">
     Equipment
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../AbstractClasses/EquipmentContainer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EquipmentContainer
   </span>
   
 
@@ -4374,27 +4437,6 @@
   
   
     <li class="md-nav__item">
-      <a href="../ConnectivityNodeContainer/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    ConnectivityNodeContainer
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
       <a href="../ControlArea/" class="md-nav__link">
         
   
@@ -4463,27 +4505,6 @@
   
   <span class="md-ellipsis">
     EnergyConsumer
-  </span>
-  
-
-      </a>
-    </li>
-  
-
-              
-            
-              
-                
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../EquipmentContainer/" class="md-nav__link">
-        
-  
-  <span class="md-ellipsis">
-    EquipmentContainer
   </span>
   
 
@@ -5617,7 +5638,11 @@ classDiagram
     click PowerTransformer href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/PowerTransformer/"
     style PowerTransformer fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        Equipment &lt;|-- PowerTransformer : inherits
+        ConductingEquipment &lt;|-- PowerTransformer : inherits
+            click ConductingEquipment href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConductingEquipment/"
+            style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        Equipment &lt;|-- ConductingEquipment : inherits
             click Equipment href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/Equipment/"
             style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
@@ -5632,7 +5657,7 @@ classDiagram
         Equipment --&gt; EquipmentContainer : Equipment.EquipmentContainer
 
         EquipmentContainer
-            click EquipmentContainer href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitSet --&gt; Equipment : OperationalLimitSet.Equipment
@@ -5647,6 +5672,12 @@ classDiagram
             click PowerTransformerEnd href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/PowerTransformerEnd/"
             style PowerTransformerEnd fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        Terminal --&gt; ConductingEquipment : Terminal.ConductingEquipment
+
+        Terminal
+            click Terminal href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Terminal/"
+            style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
 
         Equipment : Equipment.aggregate
         Equipment : Equipment.normallyInService
@@ -5660,7 +5691,10 @@ classDiagram
 <li><a href="/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/">IdentifiedObject</a><ul>
 <li><a href="/Models/Profiles/Telemark-120Equipment/AbstractClasses/PowerSystemResource/">PowerSystemResource</a><ul>
 <li><a href="/Models/Profiles/Telemark-120Equipment/AbstractClasses/Equipment/">Equipment</a><ul>
+<li><a href="/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConductingEquipment/">ConductingEquipment</a><ul>
 <li><strong>PowerTransformer</strong></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>

@@ -611,12 +611,15 @@ class CreateMermaid():
                 _range = classes[_class]["attributes"][attribute]["range"]
                 if _range in classes:
                     mermaidStyleClassToRange = CreateMermaid().mermaidStyles(_range, "relationship")
-                    relationshipString += f"""        {_class} --> {_range} : {_class}.{attribute}
+                    relationshipURI = globalYamlDict['classes'][_class]['attributes'][attribute]["slot_uri"]
+                    nonPrefixRelationShipURI = relationshipURI.split(":")[1] if ":" in relationshipURI else relationshipURI
+                    relationshipString += f"""        {_class} --> {_range} : {nonPrefixRelationShipURI}
 
         {_range}
             click {_range} href "{globalLookUpDataDict[_range]["absoluteUrlPath"]}"
             {mermaidStyleClassToRange}
 """
+        
         # Range to class
         for _class in classes:
 

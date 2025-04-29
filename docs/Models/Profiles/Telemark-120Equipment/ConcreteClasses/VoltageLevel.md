@@ -13,11 +13,11 @@ classDiagram
     style VoltageLevel fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         EquipmentContainer <|-- VoltageLevel : inherits
-            click EquipmentContainer href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ConnectivityNodeContainer <|-- EquipmentContainer : inherits
-            click ConnectivityNodeContainer href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ConnectivityNodeContainer/"
+            click ConnectivityNodeContainer href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConnectivityNodeContainer/"
             style ConnectivityNodeContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- ConnectivityNodeContainer : inherits
@@ -75,8 +75,8 @@ classDiagram
 ## Inheritance
 * [IdentifiedObject](/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/)
     * [PowerSystemResource](/Models/Profiles/Telemark-120Equipment/AbstractClasses/PowerSystemResource/)
-        * [ConnectivityNodeContainer](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ConnectivityNodeContainer/)
-            * [EquipmentContainer](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/EquipmentContainer/)
+        * [ConnectivityNodeContainer](/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConnectivityNodeContainer/)
+            * [EquipmentContainer](/Models/Profiles/Telemark-120Equipment/AbstractClasses/EquipmentContainer/)
                 * **VoltageLevel**
 
 ## Attributes

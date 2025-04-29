@@ -19,7 +19,7 @@ classDiagram
         ConnectivityNode --> ConnectivityNodeContainer : ConnectivityNode.ConnectivityNodeContainer
 
         ConnectivityNodeContainer
-            click ConnectivityNodeContainer href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ConnectivityNodeContainer/"
+            click ConnectivityNodeContainer href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConnectivityNodeContainer/"
             style ConnectivityNodeContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Terminal --> ConnectivityNode : Terminal.ConnectivityNode

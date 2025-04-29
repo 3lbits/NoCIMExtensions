@@ -20,7 +20,7 @@ classDiagram
             click PowerSystemResource href "/Models/Profiles/GridCapacity/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#F2EBE2,stroke:#333,stroke-width:2px,rx:10,ry:10,color:#8A0303
 
-        Feature --> Geometry : Feature.hasGeometry
+        Feature --> Geometry : hasGeometry
 
         Geometry
             click Geometry href "/Models/Profiles/GridCapacity/ConcreteClasses/Geometry/"

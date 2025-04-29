@@ -20,7 +20,7 @@ classDiagram
             click IdentifiedObject href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        ConformLoadGroup --> SubLoadArea : ConformLoadGroup.SubLoadArea
+        ConformLoadGroup --> SubLoadArea : LoadGroup.SubLoadArea
 
         SubLoadArea
             click SubLoadArea href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/SubLoadArea/"

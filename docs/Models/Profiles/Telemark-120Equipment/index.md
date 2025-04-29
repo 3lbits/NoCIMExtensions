@@ -14,6 +14,8 @@ Profiles:
     
     - [Conductor](/Models/Profiles/Telemark-120Equipment/AbstractClasses/Conductor/)
     
+    - [ConnectivityNodeContainer](/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConnectivityNodeContainer/)
+    
     - [Connector](/Models/Profiles/Telemark-120Equipment/AbstractClasses/Connector/)
     
     - [EarthFaultCompensator](/Models/Profiles/Telemark-120Equipment/AbstractClasses/EarthFaultCompensator/)
@@ -23,6 +25,8 @@ Profiles:
     - [EnergyConnection](/Models/Profiles/Telemark-120Equipment/AbstractClasses/EnergyConnection/)
     
     - [Equipment](/Models/Profiles/Telemark-120Equipment/AbstractClasses/Equipment/)
+    
+    - [EquipmentContainer](/Models/Profiles/Telemark-120Equipment/AbstractClasses/EquipmentContainer/)
     
     - [EquivalentEquipment](/Models/Profiles/Telemark-120Equipment/AbstractClasses/EquivalentEquipment/)
     
@@ -67,8 +71,6 @@ Profiles:
     
     - [ConnectivityNode](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ConnectivityNode/)
     
-    - [ConnectivityNodeContainer](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ConnectivityNodeContainer/)
-    
     - [ControlArea](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ControlArea/)
     
     - [CurrentLimit](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/CurrentLimit/)
@@ -76,8 +78,6 @@ Profiles:
     - [Disconnector](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Disconnector/)
     
     - [EnergyConsumer](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/EnergyConsumer/)
-    
-    - [EquipmentContainer](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/EquipmentContainer/)
     
     - [EquivalentInjection](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/EquivalentInjection/)
     

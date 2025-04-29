@@ -13,11 +13,11 @@ classDiagram
     style Substation fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         EquipmentContainer <|-- Substation : inherits
-            click EquipmentContainer href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ConnectivityNodeContainer <|-- EquipmentContainer : inherits
-            click ConnectivityNodeContainer href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/ConnectivityNodeContainer/"
+            click ConnectivityNodeContainer href "/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/ConnectivityNodeContainer/"
             style ConnectivityNodeContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- ConnectivityNodeContainer : inherits
@@ -56,8 +56,8 @@ classDiagram
 ## Inheritance
 * [IdentifiedObject](/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/IdentifiedObject/)
     * [PowerSystemResource](/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/PowerSystemResource/)
-        * [ConnectivityNodeContainer](/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/ConnectivityNodeContainer/)
-            * [EquipmentContainer](/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/EquipmentContainer/)
+        * [ConnectivityNodeContainer](/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/ConnectivityNodeContainer/)
+            * [EquipmentContainer](/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/EquipmentContainer/)
                 * **Substation**
 
 ## Attributes

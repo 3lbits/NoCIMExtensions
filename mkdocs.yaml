@@ -159,14 +159,15 @@ nav:
     - Telemark-120BoundaryModel:
       - Overview: Models/Profiles/Telemark-120BoundaryModel/index.md
       - Abstract Classes:
+        - ConnectivityNodeContainer: Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/ConnectivityNodeContainer.md
+        - EquipmentContainer: Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/EquipmentContainer.md
         - IdentifiedObject: Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/IdentifiedObject.md
         - PowerSystemResource: Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/PowerSystemResource.md
       - Concrete Classes:
+        - Bay: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/Bay.md
         - BaseVoltage: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/BaseVoltage.md
         - BoundaryPoint: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/BoundaryPoint.md
         - ConnectivityNode: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/ConnectivityNode.md
-        - ConnectivityNodeContainer: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/ConnectivityNodeContainer.md
-        - EquipmentContainer: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/EquipmentContainer.md
         - GeographicalRegion: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/GeographicalRegion.md
         - SubGeographicalRegion: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/SubGeographicalRegion.md
         - Substation: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/Substation.md
@@ -177,11 +178,13 @@ nav:
         - ACDCTerminal: Models/Profiles/Telemark-120Equipment/AbstractClasses/ACDCTerminal.md
         - ConductingEquipment: Models/Profiles/Telemark-120Equipment/AbstractClasses/ConductingEquipment.md
         - Conductor: Models/Profiles/Telemark-120Equipment/AbstractClasses/Conductor.md
+        - ConnectivityNodeContainer: Models/Profiles/Telemark-120Equipment/AbstractClasses/ConnectivityNodeContainer.md
         - Connector: Models/Profiles/Telemark-120Equipment/AbstractClasses/Connector.md
         - EarthFaultCompensator: Models/Profiles/Telemark-120Equipment/AbstractClasses/EarthFaultCompensator.md
         - EnergyArea: Models/Profiles/Telemark-120Equipment/AbstractClasses/EnergyArea.md
         - EnergyConnection: Models/Profiles/Telemark-120Equipment/AbstractClasses/EnergyConnection.md
         - Equipment: Models/Profiles/Telemark-120Equipment/AbstractClasses/Equipment.md
+        - EquipmentContainer: Models/Profiles/Telemark-120Equipment/AbstractClasses/EquipmentContainer.md
         - EquivalentEquipment: Models/Profiles/Telemark-120Equipment/AbstractClasses/EquivalentEquipment.md
         - IdentifiedObject: Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject.md
         - LoadGroup: Models/Profiles/Telemark-120Equipment/AbstractClasses/LoadGroup.md
@@ -203,12 +206,10 @@ nav:
         - ConformLoad: Models/Profiles/Telemark-120Equipment/ConcreteClasses/ConformLoad.md
         - ConformLoadGroup: Models/Profiles/Telemark-120Equipment/ConcreteClasses/ConformLoadGroup.md
         - ConnectivityNode: Models/Profiles/Telemark-120Equipment/ConcreteClasses/ConnectivityNode.md
-        - ConnectivityNodeContainer: Models/Profiles/Telemark-120Equipment/ConcreteClasses/ConnectivityNodeContainer.md
         - ControlArea: Models/Profiles/Telemark-120Equipment/ConcreteClasses/ControlArea.md
         - CurrentLimit: Models/Profiles/Telemark-120Equipment/ConcreteClasses/CurrentLimit.md
         - Disconnector: Models/Profiles/Telemark-120Equipment/ConcreteClasses/Disconnector.md
         - EnergyConsumer: Models/Profiles/Telemark-120Equipment/ConcreteClasses/EnergyConsumer.md
-        - EquipmentContainer: Models/Profiles/Telemark-120Equipment/ConcreteClasses/EquipmentContainer.md
         - EquivalentInjection: Models/Profiles/Telemark-120Equipment/ConcreteClasses/EquivalentInjection.md
         - Fuse: Models/Profiles/Telemark-120Equipment/ConcreteClasses/Fuse.md
         - GeneratingUnit: Models/Profiles/Telemark-120Equipment/ConcreteClasses/GeneratingUnit.md

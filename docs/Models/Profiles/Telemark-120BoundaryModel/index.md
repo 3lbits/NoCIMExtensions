@@ -8,6 +8,10 @@ Profiles:
 
 - Abstract Classes
     
+    - [ConnectivityNodeContainer](/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/ConnectivityNodeContainer/)
+    
+    - [EquipmentContainer](/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/EquipmentContainer/)
+    
     - [IdentifiedObject](/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/IdentifiedObject/)
     
     - [PowerSystemResource](/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/PowerSystemResource/)
@@ -17,13 +21,11 @@ Profiles:
     
     - [BaseVoltage](/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/BaseVoltage/)
     
+    - [Bay](/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/Bay/)
+    
     - [BoundaryPoint](/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/BoundaryPoint/)
     
     - [ConnectivityNode](/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/ConnectivityNode/)
-    
-    - [ConnectivityNodeContainer](/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/ConnectivityNodeContainer/)
-    
-    - [EquipmentContainer](/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/EquipmentContainer/)
     
     - [GeographicalRegion](/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/GeographicalRegion/)
     

@@ -44,6 +44,12 @@ classDiagram
             click EquivalentEquipment href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/EquivalentEquipment/"
             style EquivalentEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        ConductingEquipment <|-- PowerTransformer : inherits
+
+        PowerTransformer
+            click PowerTransformer href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/PowerTransformer/"
+            style PowerTransformer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
         ConductingEquipment <|-- Switch : inherits
 
         Switch
@@ -65,7 +71,7 @@ classDiagram
         Equipment --> EquipmentContainer : Equipment.EquipmentContainer
 
         EquipmentContainer
-            click EquipmentContainer href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitSet --> Equipment : OperationalLimitSet.Equipment

@@ -12,7 +12,11 @@ classDiagram
     click PowerTransformer href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/PowerTransformer/"
     style PowerTransformer fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
-        Equipment <|-- PowerTransformer : inherits
+        ConductingEquipment <|-- PowerTransformer : inherits
+            click ConductingEquipment href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConductingEquipment/"
+            style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
+        Equipment <|-- ConductingEquipment : inherits
             click Equipment href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/Equipment/"
             style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
@@ -27,7 +31,7 @@ classDiagram
         Equipment --> EquipmentContainer : Equipment.EquipmentContainer
 
         EquipmentContainer
-            click EquipmentContainer href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitSet --> Equipment : OperationalLimitSet.Equipment
@@ -41,6 +45,12 @@ classDiagram
         PowerTransformerEnd
             click PowerTransformerEnd href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/PowerTransformerEnd/"
             style PowerTransformerEnd fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        Terminal --> ConductingEquipment : Terminal.ConductingEquipment
+
+        Terminal
+            click Terminal href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Terminal/"
+            style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         Equipment : Equipment.aggregate
@@ -56,7 +66,8 @@ classDiagram
 * [IdentifiedObject](/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/)
     * [PowerSystemResource](/Models/Profiles/Telemark-120Equipment/AbstractClasses/PowerSystemResource/)
         * [Equipment](/Models/Profiles/Telemark-120Equipment/AbstractClasses/Equipment/)
-            * **PowerTransformer**
+            * [ConductingEquipment](/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConductingEquipment/)
+                * **PowerTransformer**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |
