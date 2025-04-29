@@ -24,7 +24,7 @@ classDiagram
             click LocationResource href "/Models/Profiles/AviationObstacle/AbstractClasses/LocationResource/"
             style LocationResource fill:#F2EBE2,stroke:#333,stroke-width:2px,rx:10,ry:10,color:#8A0303
 
-        Feature --> Geometry : hasGeometry
+        Feature --> Geometry : Feature.hasGeometry
 
         Geometry
             click Geometry href "/Models/Profiles/AviationObstacle/ConcreteClasses/Geometry/"

@@ -38,12 +38,11 @@ classDiagram
         Substation
             click Substation href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Substation/"
             style Substation fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+        PowerSystemResource --> AssetInfo : PowerSystemResource.AssetDataSheet
 
-        ACLineSegment --> EquipmentContainer : ACLineSegment.EquipmentContainer
-
-        ACLineSegment
-            click ACLineSegment href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ACLineSegment/"
-            style ACLineSegment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+        AssetInfo
+            click AssetInfo href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/AssetInfo/"
+            style AssetInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Bay --> VoltageLevel : Bay.VoltageLevel
 
@@ -67,6 +66,7 @@ classDiagram
         VoltageLevel : VoltageLevel.BaseVoltage
         VoltageLevel : VoltageLevel.Substation
         PowerSystemResource : PowerSystemResource.locationMethodKind
+        PowerSystemResource : PowerSystemResource.AssetDataSheet
         IdentifiedObject : IdentifiedObject.mRID
         IdentifiedObject : IdentifiedObject.description
         IdentifiedObject : IdentifiedObject.name
@@ -85,6 +85,7 @@ classDiagram
 | BaseVoltage | [cim:VoltageLevel.BaseVoltage](https://cim.ucaiug.io/ns#VoltageLevel.BaseVoltage) | 0..1 BaseVoltage | Base voltage of this conducting equipment.  Use only when there is no voltage level container used and only one base voltage applies.  For example, not used for transformers. | direct |
 | Substation | [cim:VoltageLevel.Substation](https://cim.ucaiug.io/ns#VoltageLevel.Substation) | 0..1 Substation | The substation of the voltage level. | direct |
 | locationMethodKind | [nc-no:PowerSystemResource.locationMethodKind](http://cim4.eu/ns/nc-no#PowerSystemResource.locationMethodKind) | 0..1 LocationMethodKind | Possible methods to derive geographical location. | PowerSystemResource |
+| AssetDataSheet | [cim:PowerSystemResource.AssetDataSheet](https://cim.ucaiug.io/ns#PowerSystemResource.AssetDataSheet) | 0..1 AssetInfo | Datasheet information for this power system resource. | PowerSystemResource |
 | mRID | [cim:IdentifiedObject.mRID](https://cim.ucaiug.io/ns#IdentifiedObject.mRID) | 0..1 string | Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements. | IdentifiedObject |
 | description | [cim:IdentifiedObject.description](https://cim.ucaiug.io/ns#IdentifiedObject.description) | 0..1 string | The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy. | IdentifiedObject |
 | name | [cim:IdentifiedObject.name](https://cim.ucaiug.io/ns#IdentifiedObject.name) | 0..1 string | The name is any free human readable and possibly non unique text naming the object. | IdentifiedObject |

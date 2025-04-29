@@ -17,11 +17,11 @@ classDiagram
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
-        ACLineSegment --> AssetInfo : ACLineSegment.AssetDataSheet
+        PowerSystemResource --> AssetInfo : PowerSystemResource.AssetDataSheet
 
-        ACLineSegment
-            click ACLineSegment href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ACLineSegment/"
-            style ACLineSegment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+        PowerSystemResource
+            click PowerSystemResource href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/PowerSystemResource/"
+            style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         IdentifiedObject : IdentifiedObject.mRID

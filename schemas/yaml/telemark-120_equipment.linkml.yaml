@@ -84,24 +84,6 @@ classes:
         range: Reactance
         minimum_cardinality: 0
         maximum_cardinality: 1
-      AssetDataSheet:
-        description: "Datasheet information for this power system resource."
-        slot_uri: cim:PowerSystemResource.AssetDataSheet
-        range: AssetInfo
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-      EquipmentContainer:
-        description: "A modelling construct to provide a root class for containing equipment."
-        slot_uri: cim:Equipment.EquipmentContainer
-        range: EquipmentContainer
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-      BaseVoltage:
-        description: "Base voltage of this conducting equipment.  Use only when there is no voltage level container used and only one base voltage applies.  For example, not used for transformers."
-        slot_uri: cim:ConductingEquipment.BaseVoltage
-        range: BaseVoltage
-        minimum_cardinality: 0
-        maximum_cardinality: 1
 
   AssetInfo:
     description: "Set of attributes of an asset, representing typical datasheet information of a physical device that can be instantiated and shared in different data exchange contexts: - as attributes of an asset instance (installed or in stock) - as attributes of an asset model (product by a manufacturer) - as attributes of a type asset (generic type of an asset as used in designs/extension planning)."
@@ -145,6 +127,12 @@ classes:
     abstract: true
     class_uri: cim:ConductingEquipment
     attributes:
+      BaseVoltage:
+        description: "Base voltage of this conducting equipment.  Use only when there is no voltage level container used and only one base voltage applies.  For example, not used for transformers."
+        slot_uri: cim:ConductingEquipment.BaseVoltage
+        range: BaseVoltage
+        minimum_cardinality: 0
+        maximum_cardinality: 1
 
   Conductor:
     description: "Combination of conducting material with consistent electrical characteristics, building a single electrical system, used to carry current between points in the power system."
@@ -807,6 +795,12 @@ classes:
         description: "Possible methods to derive geographical location."
         slot_uri: nc-no:PowerSystemResource.locationMethodKind
         range: LocationMethodKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      AssetDataSheet:
+        description: "Datasheet information for this power system resource."
+        slot_uri: cim:PowerSystemResource.AssetDataSheet
+        range: AssetInfo
         minimum_cardinality: 0
         maximum_cardinality: 1
 

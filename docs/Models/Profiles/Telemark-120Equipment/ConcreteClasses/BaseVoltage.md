@@ -17,11 +17,11 @@ classDiagram
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
-        ACLineSegment --> BaseVoltage : ACLineSegment.BaseVoltage
+        ConductingEquipment --> BaseVoltage : ConductingEquipment.BaseVoltage
 
-        ACLineSegment
-            click ACLineSegment href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ACLineSegment/"
-            style ACLineSegment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+        ConductingEquipment
+            click ConductingEquipment href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConductingEquipment/"
+            style ConductingEquipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         TransformerEnd --> BaseVoltage : TransformerEnd.BaseVoltage
 

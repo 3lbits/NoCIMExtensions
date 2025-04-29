@@ -29,6 +29,11 @@ classDiagram
         TransformerEnd
             click TransformerEnd href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/TransformerEnd/"
             style TransformerEnd fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+        PowerSystemResource --> AssetInfo : PowerSystemResource.AssetDataSheet
+
+        AssetInfo
+            click AssetInfo href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/AssetInfo/"
+            style AssetInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         RatioTapChanger --> TransformerControlMode : RatioTapChanger.tculControlMode
 
@@ -46,6 +51,7 @@ classDiagram
         TapChanger : TapChanger.neutralU
         TapChanger : TapChanger.normalStep
         PowerSystemResource : PowerSystemResource.locationMethodKind
+        PowerSystemResource : PowerSystemResource.AssetDataSheet
         IdentifiedObject : IdentifiedObject.mRID
         IdentifiedObject : IdentifiedObject.description
         IdentifiedObject : IdentifiedObject.name
@@ -70,6 +76,7 @@ classDiagram
 | neutralU | [cim:TapChanger.neutralU](https://cim.ucaiug.io/ns#TapChanger.neutralU) | 0..1 Voltage | Voltage at which the winding operates at the neutral tap setting. It is the voltage at the terminal of the PowerTransformerEnd associated with the tap changer when all tap changers on the transformer are at their neutralStep position.  Normally neutralU of the tap changer is the same as ratedU of the PowerTransformerEnd, but it can differ in special cases such as when the tapping mechanism is separate from the winding more common on lower voltage transformers.This attribute is not relevant for PhaseTapChangerAsymmetrical, PhaseTapChangerSymmetrical and PhaseTapChangerLinear. | TapChanger |
 | normalStep | [cim:TapChanger.normalStep](https://cim.ucaiug.io/ns#TapChanger.normalStep) | 0..1 integer | The tap step position used in normal network operation for this winding. For a Fixed tap changer indicates the current physical tap setting.The attribute shall be equal to or greater than lowStep and equal to or less than highStep. | TapChanger |
 | locationMethodKind | [nc-no:PowerSystemResource.locationMethodKind](http://cim4.eu/ns/nc-no#PowerSystemResource.locationMethodKind) | 0..1 LocationMethodKind | Possible methods to derive geographical location. | PowerSystemResource |
+| AssetDataSheet | [cim:PowerSystemResource.AssetDataSheet](https://cim.ucaiug.io/ns#PowerSystemResource.AssetDataSheet) | 0..1 AssetInfo | Datasheet information for this power system resource. | PowerSystemResource |
 | mRID | [cim:IdentifiedObject.mRID](https://cim.ucaiug.io/ns#IdentifiedObject.mRID) | 0..1 string | Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements. | IdentifiedObject |
 | description | [cim:IdentifiedObject.description](https://cim.ucaiug.io/ns#IdentifiedObject.description) | 0..1 string | The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy. | IdentifiedObject |
 | name | [cim:IdentifiedObject.name](https://cim.ucaiug.io/ns#IdentifiedObject.name) | 0..1 string | The name is any free human readable and possibly non unique text naming the object. | IdentifiedObject |

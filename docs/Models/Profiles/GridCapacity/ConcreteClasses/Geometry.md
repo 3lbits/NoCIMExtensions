@@ -16,7 +16,7 @@ classDiagram
             click SpatialObject href "/Models/Profiles/GridCapacity/ConcreteClasses/SpatialObject/"
             style SpatialObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        Geometry --> GeometryObject : asGeoJSON
+        Geometry --> GeometryObject : Geometry.asGeoJSON
 
         GeometryObject
             click GeometryObject href "/Models/Profiles/GridCapacity/ConcreteClasses/GeometryObject/"

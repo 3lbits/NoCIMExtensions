@@ -20,7 +20,7 @@ classDiagram
             click IdentifiedObject href "/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        StructureDeployment --> Structure : StructureDeployment.Structure
+        StructureDeployment --> Structure : StructureDeployment.ACLineSegmentSpan
 
         Structure
             click Structure href "/Models/Profiles/AviationObstacle/AbstractClasses/Structure/"
