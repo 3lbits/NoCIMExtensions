@@ -19,17 +19,11 @@ Profiles:
 
 - Concrete Classes
     
-    - [BaseVoltage](/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/BaseVoltage/)
-    
     - [Bay](/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/Bay/)
     
     - [BoundaryPoint](/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/BoundaryPoint/)
     
     - [ConnectivityNode](/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/ConnectivityNode/)
-    
-    - [GeographicalRegion](/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/GeographicalRegion/)
-    
-    - [SubGeographicalRegion](/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/SubGeographicalRegion/)
     
     - [Substation](/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/Substation/)
     

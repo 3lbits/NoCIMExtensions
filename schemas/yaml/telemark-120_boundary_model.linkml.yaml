@@ -48,11 +48,11 @@ classes:
         minimum_cardinality: 0
         maximum_cardinality: 1
 
-  BaseVoltage:
-    description: "Defines a system base voltage which is referenced."
-    is_a: IdentifiedObject
-    class_uri: cim:BaseVoltage
-    attributes:
+  # BaseVoltage:
+  #   description: "Defines a system base voltage which is referenced."
+  #   is_a: IdentifiedObject
+  #   class_uri: cim:BaseVoltage
+  #   attributes:
 
   BoundaryPoint:
     description: "Represents a boundary point in the power system."
@@ -141,11 +141,11 @@ classes:
     class_uri: cim:EquipmentContainer
     attributes:
 
-  GeographicalRegion:
-    description: "A geographical region of a power system network model."
-    is_a: IdentifiedObject
-    class_uri: cim:GeographicalRegion
-    attributes:
+  # GeographicalRegion:
+  #   description: "A geographical region of a power system network model."
+  #   is_a: IdentifiedObject
+  #   class_uri: cim:GeographicalRegion
+  #   attributes:
 
   IdentifiedObject:
     description: "This is a root class to provide common identification for all classes needing identification and naming attributes."
@@ -180,17 +180,17 @@ classes:
     class_uri: cim:PowerSystemResource
     attributes:
 
-  SubGeographicalRegion:
-    description: "A subset of a geographical region of a power system network model."
-    is_a: IdentifiedObject
-    class_uri: cim:SubGeographicalRegion
-    attributes: 
-      Region:
-        description: "The geographical region which this sub-geographical region is within."
-        slot_uri: cim:SubGeographicalRegion.Region
-        range: GeographicalRegion
-        minimum_cardinality: 0
-        maximum_cardinality: 1
+  # SubGeographicalRegion:
+  #   description: "A subset of a geographical region of a power system network model."
+  #   is_a: IdentifiedObject
+  #   class_uri: cim:SubGeographicalRegion
+  #   attributes: 
+  #     Region:
+  #       description: "The geographical region which this sub-geographical region is within."
+  #       slot_uri: cim:SubGeographicalRegion.Region
+  #       range: GeographicalRegion
+  #       minimum_cardinality: 0
+  #       maximum_cardinality: 1
 
   Substation:
     description: "A collection of equipment for purposes other than generation or utilization, through which electric energy in bulk is passed for the purposes of switching or modifying its characteristics."

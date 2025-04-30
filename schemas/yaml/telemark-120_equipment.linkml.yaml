@@ -85,17 +85,17 @@ classes:
         minimum_cardinality: 0
         maximum_cardinality: 1
 
-  AssetInfo:
-    description: "Set of attributes of an asset, representing typical datasheet information of a physical device that can be instantiated and shared in different data exchange contexts: - as attributes of an asset instance (installed or in stock) - as attributes of an asset model (product by a manufacturer) - as attributes of a type asset (generic type of an asset as used in designs/extension planning)."
-    is_a: IdentifiedObject
-    class_uri: cim:AssetInfo
-    attributes:
-
-  # BaseVoltage:
-  #   description: "Defines a system base voltage which is referenced."
+  # AssetInfo:
+  #   description: "Set of attributes of an asset, representing typical datasheet information of a physical device that can be instantiated and shared in different data exchange contexts: - as attributes of an asset instance (installed or in stock) - as attributes of an asset model (product by a manufacturer) - as attributes of a type asset (generic type of an asset as used in designs/extension planning)."
   #   is_a: IdentifiedObject
-  #   class_uri: cim:BaseVoltage
+  #   class_uri: cim:AssetInfo
   #   attributes:
+
+  BaseVoltage:
+    description: "Defines a system base voltage which is referenced."
+    is_a: IdentifiedObject
+    class_uri: cim:BaseVoltage
+    attributes:
 
   Bay:
     description: "A collection of power system resources (within a given substation) including conducting equipment, protection relays, measurements, and telemetry.  A bay typically represents a physical grouping related to modularization of equipment."

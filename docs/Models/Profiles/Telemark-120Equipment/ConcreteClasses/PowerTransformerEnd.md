@@ -27,10 +27,9 @@ classDiagram
             style PowerTransformer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         TransformerEnd --> BaseVoltage : TransformerEnd.BaseVoltage
 
-        BaseVoltage : Not defined in profile
-
         BaseVoltage
-            style BaseVoltage fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            click BaseVoltage href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/BaseVoltage/"
+            style BaseVoltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         TransformerEnd --> Terminal : TransformerEnd.Terminal
 
         Terminal

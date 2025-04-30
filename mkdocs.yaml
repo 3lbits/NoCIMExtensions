@@ -165,11 +165,8 @@ nav:
         - PowerSystemResource: Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/PowerSystemResource.md
       - Concrete Classes:
         - Bay: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/Bay.md
-        - BaseVoltage: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/BaseVoltage.md
         - BoundaryPoint: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/BoundaryPoint.md
         - ConnectivityNode: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/ConnectivityNode.md
-        - GeographicalRegion: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/GeographicalRegion.md
-        - SubGeographicalRegion: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/SubGeographicalRegion.md
         - Substation: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/Substation.md
         - VoltageLevel: Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/VoltageLevel.md
     - Telemark-120Equipment:
@@ -199,7 +196,7 @@ nav:
         - TransformerEnd: Models/Profiles/Telemark-120Equipment/AbstractClasses/TransformerEnd.md
       - Concrete Classes:
         - ACLineSegment: Models/Profiles/Telemark-120Equipment/ConcreteClasses/ACLineSegment.md
-        - AssetInfo: Models/Profiles/Telemark-120Equipment/ConcreteClasses/AssetInfo.md
+        - BaseVoltage: Models/Profiles/Telemark-120Equipment/ConcreteClasses/BaseVoltage.md
         - Bay: Models/Profiles/Telemark-120Equipment/ConcreteClasses/Bay.md
         - Breaker: Models/Profiles/Telemark-120Equipment/ConcreteClasses/Breaker.md
         - BusbarSection: Models/Profiles/Telemark-120Equipment/ConcreteClasses/BusbarSection.md

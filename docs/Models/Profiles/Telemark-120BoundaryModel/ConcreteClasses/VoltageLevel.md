@@ -30,9 +30,10 @@ classDiagram
 
         VoltageLevel --> BaseVoltage : VoltageLevel.BaseVoltage
 
+        BaseVoltage : Not defined in profile
+
         BaseVoltage
-            click BaseVoltage href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/BaseVoltage/"
-            style BaseVoltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BaseVoltage fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         VoltageLevel --> Substation : VoltageLevel.Substation
 
         Substation

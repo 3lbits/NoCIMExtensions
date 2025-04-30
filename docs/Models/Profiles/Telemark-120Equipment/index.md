@@ -57,7 +57,7 @@ Profiles:
     
     - [ACLineSegment](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ACLineSegment/)
     
-    - [AssetInfo](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/AssetInfo/)
+    - [BaseVoltage](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/BaseVoltage/)
     
     - [Bay](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Bay/)
     

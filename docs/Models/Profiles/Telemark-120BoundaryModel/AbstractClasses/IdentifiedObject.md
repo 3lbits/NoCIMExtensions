@@ -14,35 +14,17 @@ classDiagram
     click IdentifiedObject href "/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/IdentifiedObject/"
     style IdentifiedObject fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        IdentifiedObject <|-- BaseVoltage : inherits
-
-        BaseVoltage
-            click BaseVoltage href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/BaseVoltage/"
-            style BaseVoltage fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
         IdentifiedObject <|-- ConnectivityNode : inherits
 
         ConnectivityNode
             click ConnectivityNode href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/ConnectivityNode/"
             style ConnectivityNode fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        IdentifiedObject <|-- GeographicalRegion : inherits
-
-        GeographicalRegion
-            click GeographicalRegion href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/GeographicalRegion/"
-            style GeographicalRegion fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
         IdentifiedObject <|-- PowerSystemResource : inherits
 
         PowerSystemResource
             click PowerSystemResource href "/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        IdentifiedObject <|-- SubGeographicalRegion : inherits
-
-        SubGeographicalRegion
-            click SubGeographicalRegion href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/SubGeographicalRegion/"
-            style SubGeographicalRegion fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

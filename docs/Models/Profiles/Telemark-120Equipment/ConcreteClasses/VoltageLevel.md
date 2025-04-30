@@ -30,10 +30,9 @@ classDiagram
 
         VoltageLevel --> BaseVoltage : VoltageLevel.BaseVoltage
 
-        BaseVoltage : Not defined in profile
-
         BaseVoltage
-            style BaseVoltage fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            click BaseVoltage href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/BaseVoltage/"
+            style BaseVoltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         VoltageLevel --> Substation : VoltageLevel.Substation
 
         Substation
@@ -41,9 +40,10 @@ classDiagram
             style Substation fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         PowerSystemResource --> AssetInfo : PowerSystemResource.AssetDataSheet
 
+        AssetInfo : Not defined in profile
+
         AssetInfo
-            click AssetInfo href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/AssetInfo/"
-            style AssetInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AssetInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Bay --> VoltageLevel : Bay.VoltageLevel
 

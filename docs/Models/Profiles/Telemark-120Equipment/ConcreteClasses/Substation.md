@@ -35,9 +35,10 @@ classDiagram
             style SubGeographicalRegion fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         PowerSystemResource --> AssetInfo : PowerSystemResource.AssetDataSheet
 
+        AssetInfo : Not defined in profile
+
         AssetInfo
-            click AssetInfo href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/AssetInfo/"
-            style AssetInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AssetInfo fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConnectivityNode --> ConnectivityNodeContainer : ConnectivityNode.ConnectivityNodeContainer
 

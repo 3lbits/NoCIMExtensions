@@ -30,9 +30,10 @@ classDiagram
 
         Substation --> SubGeographicalRegion : Substation.Region
 
+        SubGeographicalRegion : Not defined in profile
+
         SubGeographicalRegion
-            click SubGeographicalRegion href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/SubGeographicalRegion/"
-            style SubGeographicalRegion fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SubGeographicalRegion fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConnectivityNode --> ConnectivityNodeContainer : ConnectivityNode.ConnectivityNodeContainer
 
