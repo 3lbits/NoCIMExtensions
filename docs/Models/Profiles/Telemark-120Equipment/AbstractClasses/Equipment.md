@@ -51,6 +51,11 @@ classDiagram
             click OperationalLimitSet href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/OperationalLimitSet/"
             style OperationalLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        PowerSystemResource --> LocationMethodKind : PowerSystemResource.locationMethodKind
+
+        LocationMethodKind
+            click LocationMethodKind href "/Models/Profiles/Telemark-120Equipment/Enumerations/LocationMethodKind/"
+            style LocationMethodKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Equipment : Equipment.aggregate
         Equipment : Equipment.normallyInService

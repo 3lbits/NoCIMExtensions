@@ -57,6 +57,11 @@ classDiagram
             click VoltageLevel href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/VoltageLevel/"
             style VoltageLevel fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        PowerSystemResource --> LocationMethodKind : PowerSystemResource.locationMethodKind
+
+        LocationMethodKind
+            click LocationMethodKind href "/Models/Profiles/Telemark-120Equipment/Enumerations/LocationMethodKind/"
+            style LocationMethodKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Substation : Substation.Region
         PowerSystemResource : PowerSystemResource.locationMethodKind

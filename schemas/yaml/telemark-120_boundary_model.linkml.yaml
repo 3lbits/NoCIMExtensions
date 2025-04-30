@@ -56,7 +56,7 @@ classes:
 
   BoundaryPoint:
     description: "Represents a boundary point in the power system."
-    is_a: IdentifiedObject
+    is_a: PowerSystemResource
     class_uri: eu:BoundaryPoint
     attributes: 
       isDirectCurrent:

@@ -26,12 +26,6 @@ classDiagram
             click AssetInfo href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/AssetInfo/"
             style AssetInfo fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        IdentifiedObject <|-- BaseVoltage : inherits
-
-        BaseVoltage
-            click BaseVoltage href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/BaseVoltage/"
-            style BaseVoltage fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
         IdentifiedObject <|-- ConnectivityNode : inherits
 
         ConnectivityNode

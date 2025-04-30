@@ -30,9 +30,10 @@ classDiagram
 
         VoltageLevel --> BaseVoltage : VoltageLevel.BaseVoltage
 
+        BaseVoltage : Not defined in profile
+
         BaseVoltage
-            click BaseVoltage href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/BaseVoltage/"
-            style BaseVoltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BaseVoltage fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         VoltageLevel --> Substation : VoltageLevel.Substation
 
         Substation
@@ -62,6 +63,11 @@ classDiagram
             click Equipment href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/Equipment/"
             style Equipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        PowerSystemResource --> LocationMethodKind : PowerSystemResource.locationMethodKind
+
+        LocationMethodKind
+            click LocationMethodKind href "/Models/Profiles/Telemark-120Equipment/Enumerations/LocationMethodKind/"
+            style LocationMethodKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         VoltageLevel : VoltageLevel.BaseVoltage
         VoltageLevel : VoltageLevel.Substation

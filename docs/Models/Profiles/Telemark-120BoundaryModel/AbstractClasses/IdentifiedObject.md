@@ -20,12 +20,6 @@ classDiagram
             click BaseVoltage href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/BaseVoltage/"
             style BaseVoltage fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        IdentifiedObject <|-- BoundaryPoint : inherits
-
-        BoundaryPoint
-            click BoundaryPoint href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/BoundaryPoint/"
-            style BoundaryPoint fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
         IdentifiedObject <|-- ConnectivityNode : inherits
 
         ConnectivityNode

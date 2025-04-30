@@ -471,6 +471,10 @@ class CreateMermaid():
         if _type == "relationship":
             style = f'style {value} fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white'
             # returnType = "relationship"
+
+        if _type == "missingRelationship":
+            style = f'style {value} fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white'
+            # returnType = "missingRelationship"
         
         if _type == "enum":
             style = f'style {value} fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white'
@@ -597,6 +601,18 @@ class CreateMermaid():
         relationshipString = ""
         classes = globalYamlDict["classes"]
 
+        if "enums" not in globalYamlDict or globalYamlDict["enums"] == None:
+            enums = []
+        else:
+            enums = globalYamlDict["enums"]
+
+        if "types" not in globalYamlDict or globalYamlDict["types"] == None:
+            _types = []
+        else:
+            _types = globalYamlDict["types"]
+
+        baseTypes = ["string", "integer", "boolean", "float", "double", "datetime", "date", "time", "duration"]
+
         # From class to range
         for _class in inheritanceList:
             
@@ -609,6 +625,7 @@ class CreateMermaid():
                     continue
 
                 _range = classes[_class]["attributes"][attribute]["range"]
+
                 if _range in classes:
                     mermaidStyleClassToRange = CreateMermaid().mermaidStyles(_range, "relationship")
 
@@ -620,6 +637,21 @@ class CreateMermaid():
 
         {_range}
             click {_range} href "{globalLookUpDataDict[_range]["absoluteUrlPath"]}"
+            {mermaidStyleClassToRange}
+"""
+                    
+                if _range not in classes and _range not in enums and _range not in _types and _range not in baseTypes:
+
+                    mermaidStyleClassToRange = CreateMermaid().mermaidStyles(_range, "missingRelationship")
+
+                    # print(_class, _range)
+                    globalErrorSet.add(f"WARNING: {_range} is referred to, but not defined in the schema. Please verify its inclusion or correct the reference.")
+
+                    relationshipString += f"""        {_class} --> {_range} : {_class}.{attribute}
+
+        {_range} : Not defined in profile
+
+        {_range}
             {mermaidStyleClassToRange}
 """
         
@@ -949,6 +981,9 @@ class CreateMdController():
 
     def main(self, schemaName, template='default'):
 
+        global globalErrorSet
+        globalErrorSet = set()
+
         yamlSchemaPath = f"schemas/yaml/{schemaName}.linkml.yaml"
         
         global globalDocName
@@ -979,6 +1014,13 @@ class CreateMdController():
 
         mkdocs.mkdocs_config_handler(template)
         mkdocs.mkdocs_create_profile_index()
+        
+        if len(globalErrorSet) > 0:
+            for error in globalErrorSet:
+                if error.startswith("WARNING"):
+                    print(f"\033[93m{error}\033[0m")
+                if error.startswith("ERROR"):
+                    print(f"\033[91m{error}\033[0m")
 
 if __name__ == "__main__":
     schemaName = "telemark-120_boundary_model"

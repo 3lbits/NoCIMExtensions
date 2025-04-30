@@ -12,7 +12,11 @@ classDiagram
     click BoundaryPoint href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/BoundaryPoint/"
     style BoundaryPoint fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
-        IdentifiedObject <|-- BoundaryPoint : inherits
+        PowerSystemResource <|-- BoundaryPoint : inherits
+            click PowerSystemResource href "/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/PowerSystemResource/"
+            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
+        IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
@@ -39,7 +43,8 @@ classDiagram
 
 ## Inheritance
 * [IdentifiedObject](/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/IdentifiedObject/)
-    * **BoundaryPoint**
+    * [PowerSystemResource](/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/PowerSystemResource/)
+        * **BoundaryPoint**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |

@@ -53,7 +53,7 @@ classDiagram
         ConductingEquipment <|-- Switch : inherits
 
         Switch
-            click Switch href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Switch/"
+            click Switch href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/Switch/"
             style Switch fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- ConductingEquipment : inherits
@@ -70,9 +70,10 @@ classDiagram
 
         ConductingEquipment --> BaseVoltage : ConductingEquipment.BaseVoltage
 
+        BaseVoltage : Not defined in profile
+
         BaseVoltage
-            click BaseVoltage href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/BaseVoltage/"
-            style BaseVoltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BaseVoltage fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         Equipment --> EquipmentContainer : Equipment.EquipmentContainer
 
         EquipmentContainer
@@ -96,6 +97,11 @@ classDiagram
             click Terminal href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Terminal/"
             style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        PowerSystemResource --> LocationMethodKind : PowerSystemResource.locationMethodKind
+
+        LocationMethodKind
+            click LocationMethodKind href "/Models/Profiles/Telemark-120Equipment/Enumerations/LocationMethodKind/"
+            style LocationMethodKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConductingEquipment : ConductingEquipment.BaseVoltage
         Equipment : Equipment.aggregate

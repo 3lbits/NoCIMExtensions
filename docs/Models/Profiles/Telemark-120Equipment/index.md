@@ -46,6 +46,8 @@ Profiles:
     
     - [ShuntCompensator](/Models/Profiles/Telemark-120Equipment/AbstractClasses/ShuntCompensator/)
     
+    - [Switch](/Models/Profiles/Telemark-120Equipment/AbstractClasses/Switch/)
+    
     - [TapChanger](/Models/Profiles/Telemark-120Equipment/AbstractClasses/TapChanger/)
     
     - [TransformerEnd](/Models/Profiles/Telemark-120Equipment/AbstractClasses/TransformerEnd/)
@@ -56,8 +58,6 @@ Profiles:
     - [ACLineSegment](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ACLineSegment/)
     
     - [AssetInfo](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/AssetInfo/)
-    
-    - [BaseVoltage](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/BaseVoltage/)
     
     - [Bay](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Bay/)
     
@@ -80,6 +80,8 @@ Profiles:
     - [EnergyConsumer](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/EnergyConsumer/)
     
     - [EquivalentInjection](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/EquivalentInjection/)
+    
+    - [EquivalentNetwork](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/EquivalentNetwork/)
     
     - [Fuse](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Fuse/)
     
@@ -119,8 +121,6 @@ Profiles:
     
     - [Substation](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Substation/)
     
-    - [Switch](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Switch/)
-    
     - [SynchronousMachine](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/SynchronousMachine/)
     
     - [TapChangerControl](/Models/Profiles/Telemark-120Equipment/ConcreteClasses/TapChangerControl/)
@@ -131,6 +131,8 @@ Profiles:
     
 
 - Enumerations
+    
+    - [LocationMethodKind](/Models/Profiles/Telemark-120Equipment/Enumerations/LocationMethodKind/)
     
     - [PhaseCode](/Models/Profiles/Telemark-120Equipment/Enumerations/PhaseCode/)
     
@@ -160,6 +162,8 @@ Profiles:
     - [ReactivePower](/Models/Profiles/Telemark-120Equipment/Types/ReactivePower/)
     
     - [Resistance](/Models/Profiles/Telemark-120Equipment/Types/Resistance/)
+    
+    - [Seconds](/Models/Profiles/Telemark-120Equipment/Types/Seconds/)
     
     - [Susceptance](/Models/Profiles/Telemark-120Equipment/Types/Susceptance/)
     

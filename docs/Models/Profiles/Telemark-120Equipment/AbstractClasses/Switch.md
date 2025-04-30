@@ -1,18 +1,42 @@
-# GeneratingUnit
+# Switch
 
-_A single or set of synchronous machines for converting mechanical power into alternating-current power. For example, individual machines within a set may be defined for scheduling purposes while a single control signal is derived for the set. In this case there would be a GeneratingUnit for each member of the set and an additional GeneratingUnit corresponding to the set._
+_A generic device designed to close, or open, or both, one or more electric circuits.  All switches are two terminal devices including grounding switches. The ACDCTerminal.connected at the two sides of the switch shall not be considered for assessing switch connectivity, i.e. only Switch.open, .normalOpen and .locked are relevant._
 
-**URI**: [cim:GeneratingUnit](https://cim.ucaiug.io/ns#GeneratingUnit)<br />
+*__NOTE__: this is an abstract class and should not be instantiated directly
+
+**URI**: [cim:Switch](https://cim.ucaiug.io/ns#Switch)<br />
 **Type**: Class
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
-    class GeneratingUnit
-    click GeneratingUnit href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/GeneratingUnit/"
-    style GeneratingUnit fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    class Switch
+    click Switch href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/Switch/"
+    style Switch fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        Switch <|-- Disconnector : inherits
+
+        Disconnector
+            click Disconnector href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Disconnector/"
+            style Disconnector fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        Switch <|-- Fuse : inherits
+
+        Fuse
+            click Fuse href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Fuse/"
+            style Fuse fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        Switch <|-- ProtectedSwitch : inherits
+
+        ProtectedSwitch
+            click ProtectedSwitch href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/ProtectedSwitch/"
+            style ProtectedSwitch fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
-        Equipment <|-- GeneratingUnit : inherits
+        ConductingEquipment <|-- Switch : inherits
+            click ConductingEquipment href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConductingEquipment/"
+            style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+     
+        Equipment <|-- ConductingEquipment : inherits
             click Equipment href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/Equipment/"
             style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
@@ -24,6 +48,12 @@ classDiagram
             click IdentifiedObject href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        ConductingEquipment --> BaseVoltage : ConductingEquipment.BaseVoltage
+
+        BaseVoltage : Not defined in profile
+
+        BaseVoltage
+            style BaseVoltage fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         Equipment --> EquipmentContainer : Equipment.EquipmentContainer
 
         EquipmentContainer
@@ -41,11 +71,11 @@ classDiagram
             click OperationalLimitSet href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/OperationalLimitSet/"
             style OperationalLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        RotatingMachine --> GeneratingUnit : RotatingMachine.GeneratingUnit
+        Terminal --> ConductingEquipment : Terminal.ConductingEquipment
 
-        RotatingMachine
-            click RotatingMachine href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/RotatingMachine/"
-            style RotatingMachine fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+        Terminal
+            click Terminal href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Terminal/"
+            style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource --> LocationMethodKind : PowerSystemResource.locationMethodKind
 
@@ -53,16 +83,10 @@ classDiagram
             click LocationMethodKind href "/Models/Profiles/Telemark-120Equipment/Enumerations/LocationMethodKind/"
             style LocationMethodKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        GeneratingUnit : GeneratingUnit.highControlLimit
-        GeneratingUnit : GeneratingUnit.initialP
-        GeneratingUnit : GeneratingUnit.lowControlLimit
-        GeneratingUnit : GeneratingUnit.maxEconomicP
-        GeneratingUnit : GeneratingUnit.maxOperatingP
-        GeneratingUnit : GeneratingUnit.minEconomicP
-        GeneratingUnit : GeneratingUnit.minOperatingP
-        GeneratingUnit : GeneratingUnit.nominalP
-        GeneratingUnit : GeneratingUnit.ratedGrossMaxP
-        GeneratingUnit : GeneratingUnit.ratedNetMaxP
+        Switch : Switch.normalOpen
+        Switch : Switch.ratedCurrent
+        Switch : Switch.retained
+        ConductingEquipment : ConductingEquipment.BaseVoltage
         Equipment : Equipment.aggregate
         Equipment : Equipment.normallyInService
         Equipment : Equipment.EquipmentContainer
@@ -77,21 +101,16 @@ classDiagram
 * [IdentifiedObject](/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/)
     * [PowerSystemResource](/Models/Profiles/Telemark-120Equipment/AbstractClasses/PowerSystemResource/)
         * [Equipment](/Models/Profiles/Telemark-120Equipment/AbstractClasses/Equipment/)
-            * **GeneratingUnit**
+            * [ConductingEquipment](/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConductingEquipment/)
+                * **Switch**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
-| highControlLimit | [cim:GeneratingUnit.highControlLimit](https://cim.ucaiug.io/ns#GeneratingUnit.highControlLimit) | 0..1 ActivePower | High limit for secondary (AGC) control. | direct |
-| initialP | [cim:GeneratingUnit.initialP](https://cim.ucaiug.io/ns#GeneratingUnit.initialP) | 0..1 ActivePower | Default initial active power  which is used to store a powerflow result for the initial active power for this unit in this network configuration. | direct |
-| lowControlLimit | [cim:GeneratingUnit.lowControlLimit](https://cim.ucaiug.io/ns#GeneratingUnit.lowControlLimit) | 0..1 ActivePower | Low limit for secondary (AGC) control. | direct |
-| maxEconomicP | [cim:GeneratingUnit.maxEconomicP](https://cim.ucaiug.io/ns#GeneratingUnit.maxEconomicP) | 0..1 ActivePower | Maximum high economic active power limit, that should not exceed the maximum operating active power limit. | direct |
-| maxOperatingP | [cim:GeneratingUnit.maxOperatingP](https://cim.ucaiug.io/ns#GeneratingUnit.maxOperatingP) | 0..1 ActivePower | This is the maximum operating active power limit the dispatcher can enter for this unit. | direct |
-| minEconomicP | [cim:GeneratingUnit.minEconomicP](https://cim.ucaiug.io/ns#GeneratingUnit.minEconomicP) | 0..1 ActivePower | Low economic active power limit that shall be greater than or equal to the minimum operating active power limit. | direct |
-| minOperatingP | [cim:GeneratingUnit.minOperatingP](https://cim.ucaiug.io/ns#GeneratingUnit.minOperatingP) | 1..1 ActivePower | This is the minimum operating active power limit the dispatcher can enter for this unit. | direct |
-| nominalP | [cim:GeneratingUnit.nominalP](https://cim.ucaiug.io/ns#GeneratingUnit.nominalP) | 0..1 ActivePower | The nominal power of the generating unit.  Used to give precise meaning to percentage based attributes such as the governor speed change droop (governorSCD attribute).The attribute shall be a positive value equal to or less than RotatingMachine.ratedS. | direct |
-| ratedGrossMaxP | [cim:GeneratingUnit.ratedGrossMaxP](https://cim.ucaiug.io/ns#GeneratingUnit.ratedGrossMaxP) | 0..1 ActivePower | The unit's gross rated maximum capacity (book value).The attribute shall be a positive value. | direct |
-| ratedNetMaxP | [cim:GeneratingUnit.ratedNetMaxP](https://cim.ucaiug.io/ns#GeneratingUnit.ratedNetMaxP) | 0..1 ActivePower | The net rated maximum capacity determined by subtracting the auxiliary power used to operate the internal plant machinery from the rated gross maximum capacity.The attribute shall be a positive value. | direct |
+| normalOpen | [cim:Switch.normalOpen](https://cim.ucaiug.io/ns#Switch.normalOpen) | 0..1 boolean | The attribute is used in cases when no Measurement for the status value is present. If the Switch has a status measurement the Discrete.normalValue is expected to match with the Switch.normalOpen. | direct |
+| ratedCurrent | [cim:Switch.ratedCurrent](https://cim.ucaiug.io/ns#Switch.ratedCurrent) | 0..1 CurrentFlow | The maximum continuous current carrying capacity in amps governed by the device material and construction.The attribute shall be a positive value. | direct |
+| retained | [cim:Switch.retained](https://cim.ucaiug.io/ns#Switch.retained) | 0..1 boolean | Branch is retained in the topological solution.  The flow through retained switches will normally be calculated in power flow. | direct |
+| BaseVoltage | [cim:ConductingEquipment.BaseVoltage](https://cim.ucaiug.io/ns#ConductingEquipment.BaseVoltage) | 0..1 BaseVoltage | Base voltage of this conducting equipment.  Use only when there is no voltage level container used and only one base voltage applies.  For example, not used for transformers. | ConductingEquipment |
 | aggregate | [cim:Equipment.aggregate](https://cim.ucaiug.io/ns#Equipment.aggregate) | 0..1 boolean | The aggregate attribute is used to indicate that the object is an aggregate of other objects. The aggregate attribute is used to indicate that the object is an aggregate of other objects. The aggregate attribute is used to indicate that the object is an aggregate of other objects. | Equipment |
 | normallyInService | [cim:Equipment.normallyInService](https://cim.ucaiug.io/ns#Equipment.normallyInService) | 0..1 boolean | The normallyInService attribute is used to indicate that the object is normally in service. The normallyInService attribute is used to indicate that the object is normally in service. The normallyInService attribute is used to indicate that the object is normally in service. | Equipment |
 | EquipmentContainer | [cim:Equipment.EquipmentContainer](https://cim.ucaiug.io/ns#Equipment.EquipmentContainer) | 0..1 EquipmentContainer | Container of this equipment. | Equipment |

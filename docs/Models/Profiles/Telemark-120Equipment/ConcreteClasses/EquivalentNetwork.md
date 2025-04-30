@@ -1,22 +1,18 @@
-# Bay
+# EquivalentNetwork
 
-_A collection of power system resources (within a given substation) including conducting equipment, protection relays, measurements, and telemetry.  A bay typically represents a physical grouping related to modularization of equipment._
+_A class that groups electrical equivalents, including internal nodes, of a network that has been reduced. The ConnectivityNodes contained in the equivalent are intended to reflect internal nodes of the equivalent. The boundary Connectivity nodes where the equivalent connects outside itself are not contained by the equivalent._
 
-**URI**: [cim:Bay](https://cim.ucaiug.io/ns#Bay)<br />
+**URI**: [cim:EquivalentNetwork](https://cim.ucaiug.io/ns#EquivalentNetwork)<br />
 **Type**: Class
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
-    class Bay
-    click Bay href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/Bay/"
-    style Bay fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    class EquivalentNetwork
+    click EquivalentNetwork href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/EquivalentNetwork/"
+    style EquivalentNetwork fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
-        EquipmentContainer <|-- Bay : inherits
-            click EquipmentContainer href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/EquipmentContainer/"
-            style EquipmentContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-     
-        ConnectivityNodeContainer <|-- EquipmentContainer : inherits
+        ConnectivityNodeContainer <|-- EquivalentNetwork : inherits
             click ConnectivityNodeContainer href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConnectivityNodeContainer/"
             style ConnectivityNodeContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
@@ -28,11 +24,6 @@ classDiagram
             click IdentifiedObject href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        Bay --> VoltageLevel : Bay.VoltageLevel
-
-        VoltageLevel
-            click VoltageLevel href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/VoltageLevel/"
-            style VoltageLevel fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         PowerSystemResource --> AssetInfo : PowerSystemResource.AssetDataSheet
 
         AssetInfo
@@ -45,11 +36,11 @@ classDiagram
             click ConnectivityNode href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ConnectivityNode/"
             style ConnectivityNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        Equipment --> EquipmentContainer : Equipment.EquipmentContainer
+        EquivalentEquipment --> EquivalentNetwork : EquivalentEquipment.EquivalentNetwork
 
-        Equipment
-            click Equipment href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/Equipment/"
-            style Equipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+        EquivalentEquipment
+            click EquivalentEquipment href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/EquivalentEquipment/"
+            style EquivalentEquipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource --> LocationMethodKind : PowerSystemResource.locationMethodKind
 
@@ -57,7 +48,6 @@ classDiagram
             click LocationMethodKind href "/Models/Profiles/Telemark-120Equipment/Enumerations/LocationMethodKind/"
             style LocationMethodKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        Bay : Bay.VoltageLevel
         PowerSystemResource : PowerSystemResource.locationMethodKind
         PowerSystemResource : PowerSystemResource.AssetDataSheet
         IdentifiedObject : IdentifiedObject.mRID
@@ -69,13 +59,11 @@ classDiagram
 * [IdentifiedObject](/Models/Profiles/Telemark-120Equipment/AbstractClasses/IdentifiedObject/)
     * [PowerSystemResource](/Models/Profiles/Telemark-120Equipment/AbstractClasses/PowerSystemResource/)
         * [ConnectivityNodeContainer](/Models/Profiles/Telemark-120Equipment/AbstractClasses/ConnectivityNodeContainer/)
-            * [EquipmentContainer](/Models/Profiles/Telemark-120Equipment/AbstractClasses/EquipmentContainer/)
-                * **Bay**
+            * **EquivalentNetwork**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
-| VoltageLevel | [cim:Bay.VoltageLevel](https://cim.ucaiug.io/ns#Bay.VoltageLevel) | 0..1 VoltageLevel | The voltage level containing this bay. | direct |
 | locationMethodKind | [nc-no:PowerSystemResource.locationMethodKind](http://cim4.eu/ns/nc-no#PowerSystemResource.locationMethodKind) | 0..1 LocationMethodKind | Possible methods to derive geographical location. | PowerSystemResource |
 | AssetDataSheet | [cim:PowerSystemResource.AssetDataSheet](https://cim.ucaiug.io/ns#PowerSystemResource.AssetDataSheet) | 0..1 AssetInfo | Datasheet information for this power system resource. | PowerSystemResource |
 | mRID | [cim:IdentifiedObject.mRID](https://cim.ucaiug.io/ns#IdentifiedObject.mRID) | 0..1 string | Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements. | IdentifiedObject |

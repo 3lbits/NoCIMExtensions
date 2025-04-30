@@ -194,12 +194,12 @@ nav:
         - RegulatingCondEq: Models/Profiles/Telemark-120Equipment/AbstractClasses/RegulatingCondEq.md
         - RotatingMachine: Models/Profiles/Telemark-120Equipment/AbstractClasses/RotatingMachine.md
         - ShuntCompensator: Models/Profiles/Telemark-120Equipment/AbstractClasses/ShuntCompensator.md
+        - Switch: Models/Profiles/Telemark-120Equipment/AbstractClasses/Switch.md
         - TapChanger: Models/Profiles/Telemark-120Equipment/AbstractClasses/TapChanger.md
         - TransformerEnd: Models/Profiles/Telemark-120Equipment/AbstractClasses/TransformerEnd.md
       - Concrete Classes:
         - ACLineSegment: Models/Profiles/Telemark-120Equipment/ConcreteClasses/ACLineSegment.md
         - AssetInfo: Models/Profiles/Telemark-120Equipment/ConcreteClasses/AssetInfo.md
-        - BaseVoltage: Models/Profiles/Telemark-120Equipment/ConcreteClasses/BaseVoltage.md
         - Bay: Models/Profiles/Telemark-120Equipment/ConcreteClasses/Bay.md
         - Breaker: Models/Profiles/Telemark-120Equipment/ConcreteClasses/Breaker.md
         - BusbarSection: Models/Profiles/Telemark-120Equipment/ConcreteClasses/BusbarSection.md
@@ -210,6 +210,7 @@ nav:
         - CurrentLimit: Models/Profiles/Telemark-120Equipment/ConcreteClasses/CurrentLimit.md
         - Disconnector: Models/Profiles/Telemark-120Equipment/ConcreteClasses/Disconnector.md
         - EnergyConsumer: Models/Profiles/Telemark-120Equipment/ConcreteClasses/EnergyConsumer.md
+        - EquivalentNetwork: Models/Profiles/Telemark-120Equipment/ConcreteClasses/EquivalentNetwork.md
         - EquivalentInjection: Models/Profiles/Telemark-120Equipment/ConcreteClasses/EquivalentInjection.md
         - Fuse: Models/Profiles/Telemark-120Equipment/ConcreteClasses/Fuse.md
         - GeneratingUnit: Models/Profiles/Telemark-120Equipment/ConcreteClasses/GeneratingUnit.md
@@ -230,12 +231,12 @@ nav:
         - SubGeographicalRegion: Models/Profiles/Telemark-120Equipment/ConcreteClasses/SubGeographicalRegion.md
         - SubLoadArea: Models/Profiles/Telemark-120Equipment/ConcreteClasses/SubLoadArea.md
         - Substation: Models/Profiles/Telemark-120Equipment/ConcreteClasses/Substation.md
-        - Switch: Models/Profiles/Telemark-120Equipment/ConcreteClasses/Switch.md
         - SynchronousMachine: Models/Profiles/Telemark-120Equipment/ConcreteClasses/SynchronousMachine.md
         - TapChangerControl: Models/Profiles/Telemark-120Equipment/ConcreteClasses/TapChangerControl.md
         - Terminal: Models/Profiles/Telemark-120Equipment/ConcreteClasses/Terminal.md
         - VoltageLevel: Models/Profiles/Telemark-120Equipment/ConcreteClasses/VoltageLevel.md
       - Enumerations:
+        - LocationMethodKind: Models/Profiles/Telemark-120Equipment/Enumerations/LocationMethodKind.md
         - PhaseCode: Models/Profiles/Telemark-120Equipment/Enumerations/PhaseCode.md
         - RegulatingControlModeKind: Models/Profiles/Telemark-120Equipment/Enumerations/RegulatingControlModeKind.md
         - SynchronousMachineKind: Models/Profiles/Telemark-120Equipment/Enumerations/SynchronousMachineKind.md
@@ -250,5 +251,6 @@ nav:
         - Reactance: Models/Profiles/Telemark-120Equipment/Types/Reactance.md
         - ReactivePower: Models/Profiles/Telemark-120Equipment/Types/ReactivePower.md
         - Resistance: Models/Profiles/Telemark-120Equipment/Types/Resistance.md
+        - Seconds: Models/Profiles/Telemark-120Equipment/Types/Seconds.md
         - Susceptance: Models/Profiles/Telemark-120Equipment/Types/Susceptance.md
         - Voltage: Models/Profiles/Telemark-120Equipment/Types/Voltage.md

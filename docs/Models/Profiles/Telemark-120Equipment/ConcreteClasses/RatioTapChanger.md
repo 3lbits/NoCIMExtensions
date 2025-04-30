@@ -40,6 +40,11 @@ classDiagram
         TransformerControlMode
             click TransformerControlMode href "/Models/Profiles/Telemark-120Equipment/Enumerations/TransformerControlMode/"
             style TransformerControlMode fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+        PowerSystemResource --> LocationMethodKind : PowerSystemResource.locationMethodKind
+
+        LocationMethodKind
+            click LocationMethodKind href "/Models/Profiles/Telemark-120Equipment/Enumerations/LocationMethodKind/"
+            style LocationMethodKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         RatioTapChanger : RatioTapChanger.stepVoltageIncrement
         RatioTapChanger : RatioTapChanger.tculControlMode

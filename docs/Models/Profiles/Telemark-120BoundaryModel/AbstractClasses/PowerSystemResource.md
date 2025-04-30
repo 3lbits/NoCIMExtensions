@@ -14,6 +14,12 @@ classDiagram
     click PowerSystemResource href "/Models/Profiles/Telemark-120BoundaryModel/AbstractClasses/PowerSystemResource/"
     style PowerSystemResource fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        PowerSystemResource <|-- BoundaryPoint : inherits
+
+        BoundaryPoint
+            click BoundaryPoint href "/Models/Profiles/Telemark-120BoundaryModel/ConcreteClasses/BoundaryPoint/"
+            style BoundaryPoint fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
         PowerSystemResource <|-- ConnectivityNodeContainer : inherits
 
         ConnectivityNodeContainer

@@ -19,6 +19,12 @@ classDiagram
         EquipmentContainer
             click EquipmentContainer href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        ConnectivityNodeContainer <|-- EquivalentNetwork : inherits
+
+        EquivalentNetwork
+            click EquivalentNetwork href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/EquivalentNetwork/"
+            style EquivalentNetwork fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- ConnectivityNodeContainer : inherits
             click PowerSystemResource href "/Models/Profiles/Telemark-120Equipment/AbstractClasses/PowerSystemResource/"
@@ -40,6 +46,11 @@ classDiagram
             click ConnectivityNode href "/Models/Profiles/Telemark-120Equipment/ConcreteClasses/ConnectivityNode/"
             style ConnectivityNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        PowerSystemResource --> LocationMethodKind : PowerSystemResource.locationMethodKind
+
+        LocationMethodKind
+            click LocationMethodKind href "/Models/Profiles/Telemark-120Equipment/Enumerations/LocationMethodKind/"
+            style LocationMethodKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource : PowerSystemResource.locationMethodKind
         PowerSystemResource : PowerSystemResource.AssetDataSheet
