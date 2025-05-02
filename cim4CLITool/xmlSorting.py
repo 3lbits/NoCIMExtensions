@@ -57,7 +57,7 @@ class XmlFormatting:
 
 class ControllerXmlSorting:
 
-    def main(inputFilePath, outputFilePath, print_output=False):
+    def main(inputFilePath, outputFilePath, print_output=False, cim4_formatting=False):
 
         # Read the XML file into a dictionary
         xml_dict = xmltodict.parse(General.readFile(inputFilePath))
@@ -68,19 +68,25 @@ class ControllerXmlSorting:
         # Convert the sorted dictionary back to XML string with pretty formatting
         xmlString = xmltodict.unparse(xml_dict_sorted, pretty=True)
 
-        # Format the XML string for better readability
-        formatted_xml = XmlFormatting.formatXmlString(xmlString)
+        if cim4_formatting == True:
+            # Apply specific formatting for CIM4
+
+            # Format the XML string for better readability
+            output_xml = XmlFormatting.formatXmlString(xmlString)
+
+        else:
+            output_xml = xmlString
 
         # Write the formatted XML string to the output file
-        General.writeFile(outputFilePath, formatted_xml)
+        General.writeFile(outputFilePath, output_xml)
 
         # Optionally print the formatted XML string
         if print_output:
-            print(formatted_xml)
+            print(output_xml)
 
 if __name__ == "__main__":
     # Example usage
     inputFilePath = "data/xml/Telemark-120-LV1_GL.xml"  # Replace with your XML file path
     outputFilePath = "data/xml/Telemark-120-LV1_GL_sorted.xml"  # Replace with your desired output file path
 
-    ControllerXmlSorting.main(inputFilePath, outputFilePath, print_output=True)
+    ControllerXmlSorting.main(inputFilePath, outputFilePath, print_output=True, cim4_formatting=True)

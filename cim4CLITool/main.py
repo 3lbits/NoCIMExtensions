@@ -86,7 +86,9 @@ def gen(schema: str, data: str, output: str, filename: str):
 @click.option('--filename', '-f', required=False, default=None, help='XML file name to use')
 @click.option('--input', '-i', required=False, default=None, help='Input file path to use')
 @click.option('--output', '-o', required=False, default=None, help='Output file path to use')
-def sort(filename: str, input: str, output: str):
+@click.option('--cim4_formatting', '-c', required=False, default=False, is_flag=True, help='Use CIM4 formatting')
+@click.option('--print_output', '-p', required=False, default=False, is_flag=True, help='Print output to console')
+def sort(filename: str, input: str, output: str, cim4_formatting: bool, print_output: bool):
     '''Sort XML file'''
     click.echo('Sorting XML file')
 
@@ -100,7 +102,20 @@ def sort(filename: str, input: str, output: str):
         click.echo('Please provide the filename or input and output file paths')
         return
 
-    ControllerXmlSorting.main(inputFilePath, outputFilePath, print_output=False)
+    if cim4_formatting:
+        click.echo('Using CIM4 formatting')
+        if print_output:
+            click.echo('Printing output to console')
+            ControllerXmlSorting.main(inputFilePath, outputFilePath, print_output=True, cim4_formatting=True)
+        else:
+            ControllerXmlSorting.main(inputFilePath, outputFilePath, print_output=False, cim4_formatting=True)
+    else:
+        if print_output:
+            click.echo('Printing output to console')
+            ControllerXmlSorting.main(inputFilePath, outputFilePath, print_output=True, cim4_formatting=False)
+        else:
+            ControllerXmlSorting.main(inputFilePath, outputFilePath, print_output=False, cim4_formatting=False)
+
     click.echo(f'Sorted XML file {inputFilePath} and saved to {outputFilePath}')
 
 @json.command()
