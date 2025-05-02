@@ -3,6 +3,7 @@ import json
 
 class General:
 
+    @staticmethod
     def readFile(inputFilePath):
         with open(inputFilePath, "r") as file:
             return file.read()
