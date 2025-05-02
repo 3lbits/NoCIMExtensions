@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<rdf:RDF  
+    xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+    xmlns:cim="http://iec.ch/TC57/CIM100#"
+    xmlns:md="http://iec.ch/TC57/61970-552/ModelDescription/1#"
+    xmlns:eu="http://iec.ch/TC57/CIM100-European#"
+    >
+
+    <md:FullModel rdf:about="urn:uuid:9552dc72-0525-4a84-8532-81f160b8fb74">
+        <md:Model.created>2022-03-30T16:26:37.958Z</md:Model.created>
+        <md:Model.scenarioTime>2022-03-30T23:00:00Z</md:Model.scenarioTime>
+        <md:Model.description>DIGIN10 CGMES v3.0 Low Voltage 1 (LV1) Geograpical Location (GL) Model</md:Model.description>
+        <md:Model.modelingAuthoritySet>https://diginenergi.no/DIGIN10/LV1</md:Model.modelingAuthoritySet>
+        <md:Model.profile>http://iec.ch/TC57/ns/CIM/GeographicalLocation-EU/3.0</md:Model.profile>
+        <md:Model.profile>http://iec.ch/TC57/CIM/Geographical/2/0</md:Model.profile>
+        <md:Model.version>1</md:Model.version>
+        <md:Model.DependentOn rdf:resource="urn:uuid:c47d4310-b8ee-480d-9cf3-e53a81630981"/>
+    </md:FullModel>
+
+    <cim:CoordinateSystem rdf:ID="_2be52cd7-b707-4dda-9e14-4a1966e22ff9">
+        <cim:IdentifiedObject.mRID>2be52cd7-b707-4dda-9e14-4a1966e22ff9</cim:IdentifiedObject.mRID>
+        <cim:IdentifiedObject.name>EPSG 4326</cim:IdentifiedObject.name>
+        <cim:CoordinateSystem.crsUrn>urn:ogc:def:crs:EPSG::4326</cim:CoordinateSystem.crsUrn>
+    </cim:CoordinateSystem>
+
+    <cim:PositionPoint rdf:ID="_4c6c0cb6-44d9-4323-a0c9-4f533b524a1c">
+        <cim:PositionPoint.sequenceNumber>1</cim:PositionPoint.sequenceNumber>
+        <cim:PositionPoint.xPosition>8.7007293714585</cim:PositionPoint.xPosition>
+        <cim:PositionPoint.yPosition>58.41467201058505</cim:PositionPoint.yPosition>
+        <cim:PositionPoint.Location rdf:resource="#_990df1b7-bd8c-4989-808f-15b73ae0b1f4"/>
+    </cim:PositionPoint>
+
+    <cim:Location rdf:ID="_a46f1252-f9a1-4469-99b7-a70f1f40a0c5">
+        <cim:IdentifiedObject.mRID>a46f1252-f9a1-4469-99b7-a70f1f40a0c5</cim:IdentifiedObject.mRID>
+        <cim:Location.CoordinateSystem rdf:resource="#_2be52cd7-b707-4dda-9e14-4a1966e22ff9"/>
+        <cim:IdentifiedObject.name>L TELEMARKSTIEN2 CB2</cim:IdentifiedObject.name>
+        <cim:Location.PowerSystemResources rdf:resource="#_4bb21420-ef4f-4af1-979e-863c3f484c51"/>
+    </cim:Location>
+
+</rdf:RDF>

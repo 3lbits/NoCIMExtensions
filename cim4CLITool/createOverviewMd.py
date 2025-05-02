@@ -45,7 +45,7 @@ class CreateMarkdown():
             file.write(f'Profiles:\n\n')
             file.write(f'{profileNamesMdString}')
 
-class CreaeOverviewMdController():
+class CreateOverviewMdController():
 
     def main(self):
         docName = 'index.md'
@@ -56,4 +56,4 @@ class CreaeOverviewMdController():
         CreateMarkdown().create_markdown_file()
 
 if __name__ == "__main__":
-    CreaeOverviewMdController().main()
+    CreateOverviewMdController().main()
