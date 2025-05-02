@@ -75,7 +75,7 @@ def gen(schema: str, data: str, output_file_name: str, file_name: str):
         _data = f'data/yaml/{data}.yaml'
         _output = f'data/jsonld/{output_file_name}.jsonld'
     else:
-        click.echo('Please provide the schema, data and output_file_name file names or the file_name')
+        click.echo('Please provide the schema, data and output_file_name or the file_name')
         return
     
     click.echo(f'Converting {_schema} and {_data} to {_output}')
