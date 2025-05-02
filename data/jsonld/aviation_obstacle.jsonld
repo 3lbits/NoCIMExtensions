@@ -10,10 +10,10 @@
         "nc-no": "http://cim4.eu/ns/nc-no#",
         "geo": "http://www.opengis.net/ont/geosparql#"
     },
-    "@id": "urn:uuid:9d6df168-3662-40ba-b07b-e4403a88fcfd",
+    "@id": "urn:uuid:54cc1c13-6f1c-4db1-abdb-8eb07dc0a321",
     "@type": "dcat:Dataset",
     "prov:generatedAtTime": {
-        "@value": "2024-11-29T15:28:25Z",
+        "@value": "2025-05-02T08:01:34Z",
         "@type": "xsd:date"
     },
     "dcterms:title": "Telemark-120_AO",
@@ -29,7 +29,7 @@
     "dcterms:temporal": {
         "@type": "dcterms:PeriodOfTime",
         "dcat:startDate": {
-            "@value": "2024-11-29T15:28:25Z",
+            "@value": "2025-05-02T08:01:34Z",
             "@type": "xsd:dateTime"
         }
     },
