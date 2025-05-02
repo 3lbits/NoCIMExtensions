@@ -1,10 +1,9 @@
 import click
+import uuid
 from cim4CLITool.jsonldFromYamlConverter import yamlToJsonldConverter
 from cim4CLITool.generalFunctions import run_bash_command, to_camel_case, remove_all_md_files
-from cim4CLITool.replace_star_with_0dotdotstar import traverse_and_replace
-import uuid
 from cim4CLITool.docs.main import CreateMdController
-from cim4CLITool.createOverviewMd import CreaeOverviewMdController
+from cim4CLITool.createOverviewMd import CreateOverviewMdController
 from cim4CLITool.xmlSorting import ControllerXmlSorting
 
 @click.group()
@@ -51,7 +50,7 @@ def gen(schema: str):
     remove_all_md_files(f"docs/{to_camel_case(schema)}")
     CreateMdController().main(schema, template='elbits')
     click.echo('Generating Overview index.md')
-    CreaeOverviewMdController().main()
+    CreateOverviewMdController().main()
     click.echo('Overview index.md Created')
 
 @docs.command()
@@ -62,44 +61,44 @@ def run_local_app():
 @jsonld.command()
 @click.option('--schema', '-s', required=False, default=None, type=str, help='YAML Schema file name to use')
 @click.option('--data', '-d', required=False, default=None, type=str, help='YAML Data file name to use')
-@click.option('--output', '-o', required=False, default=None, type=str, help='Output file name')
-@click.option('--filename', '-f', required=False, default=None, type=str, help='file name, if you provide this all files will have the same name. This should be the same as the yaml schema name and data name')
-def gen(schema: str, data: str, output: str, filename: str):
+@click.option('--output_file_name', '-o', required=False, default=None, type=str, help='Output file name')
+@click.option('--file_name', '-f', required=False, default=None, type=str, help='file name, if you provide this all files will have the same name. This should be the same as the yaml schema name and data name')
+def gen(schema: str, data: str, output_file_name: str, file_name: str):
     '''Convert YAML to JSON-LD'''
     click.echo('Converting YAML to JSON-LD')
-    if filename != None:
-        _schema = f'schemas/yaml/{filename}.linkml.yaml'
-        _data = f'data/yaml/{filename}.yaml'
-        _output = f'data/jsonld/{filename}.jsonld'
-    elif (schema != None and data != None and output != None):
+    if file_name != None:
+        _schema = f'schemas/yaml/{file_name}.linkml.yaml'
+        _data = f'data/yaml/{file_name}.yaml'
+        _output = f'data/jsonld/{file_name}.jsonld'
+    elif (schema != None and data != None and output_file_name != None):
         _schema = f'schemas/yaml/{schema}.linkml.yaml'
         _data = f'data/yaml/{data}.yaml'
-        _output = f'data/jsonld/{output}.jsonld'
+        _output = f'data/jsonld/{output_file_name}.jsonld'
     else:
-        click.echo('Please provide the schema, data and output file names or the filename')
+        click.echo('Please provide the schema, data and output_file_name file names or the file_name')
         return
     
     click.echo(f'Converting {_schema} and {_data} to {_output}')
     yamlToJsonldConverter(_schema, _data, _output)
 
 @xml.command()
-@click.option('--filename', '-f', required=False, default=None, help='XML file name to use')
-@click.option('--input', '-i', required=False, default=None, help='Input file path to use')
-@click.option('--output', '-o', required=False, default=None, help='Output file path to use')
+@click.option('--file_name', '-f', required=False, default=None, help='XML file name to use')
+@click.option('--input_path', '-i', required=False, default=None, help='Input file path to use')
+@click.option('--output_path', '-o', required=False, default=None, help='Output file path to use')
 @click.option('--cim4_formatting', '-c', required=False, default=False, is_flag=True, help='Use CIM4 formatting')
 @click.option('--print_output', '-p', required=False, default=False, is_flag=True, help='Print output to console')
-def sort(filename: str, input: str, output: str, cim4_formatting: bool, print_output: bool):
+def sort(file_name: str, input_path: str, output_path: str, cim4_formatting: bool, print_output: bool):
     '''Sort XML file'''
     click.echo('Sorting XML file')
 
-    if filename != None:
-        inputFilePath = f"data/xml/{filename}.xml"
-        outputFilePath = f"data/xml/{filename}_sorted.xml"
-    elif (input != None and output != None):
-        inputFilePath = input
-        outputFilePath = output
+    if file_name != None:
+        inputFilePath = f"data/xml/{file_name}.xml"
+        outputFilePath = f"data/xml/{file_name}_sorted.xml"
+    elif (input_path != None and output_path != None):
+        inputFilePath = input_path
+        outputFilePath = output_path
     else:
-        click.echo('Please provide the filename or input and output file paths')
+        click.echo('Please provide the file_name or input_path and output_path')
         return
 
     if cim4_formatting:
