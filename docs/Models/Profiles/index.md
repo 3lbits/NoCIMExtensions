@@ -5,7 +5,7 @@ Common Information Model (CIM) profiles are standardized data models that define
 Profiles:
 
 - [AviationObstacle](/Models/Profiles/AviationObstacle/)
+- [BoundaryModel](/Models/Profiles/BoundaryModel/)
+- [Equipment](/Models/Profiles/Equipment/)
 - [GridCapacity](/Models/Profiles/GridCapacity/)
 - [SubseaCableInfo](/Models/Profiles/SubseaCableInfo/)
-- [Telemark-120BoundaryModel](/Models/Profiles/Telemark-120BoundaryModel/)
-- [Telemark-120Equipment](/Models/Profiles/Telemark-120Equipment/)
