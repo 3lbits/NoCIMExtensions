@@ -8,16 +8,19 @@ class General:
         with open(inputFilePath, "r") as file:
             return file.read()
 
+    @staticmethod
     def writeFile(outputFilePath, xmlData):
         with open(outputFilePath, "w") as file:
             file.write(xmlData)
 
 class XmlSorting:
 
+    @staticmethod
     def writeDictIntoXml(outputFilePath, dictData):
         with open(outputFilePath, "w") as file:
             xmltodict.unparse(dictData, output=file, pretty=True)
 
+    @staticmethod
     def sortDictWithPriority(d, priority_keys=("@xmlns", "md:FullModel")):
         if isinstance(d, dict):
             # Separate keys based on priority
@@ -37,6 +40,7 @@ class XmlSorting:
         else:
             return d
 
+    @staticmethod
     def sortDict(xmlDict):
         xmlDictSorted1 = dict(sorted(xmlDict["rdf:RDF"].items()))
         xmlDict["rdf:RDF"] = xmlDictSorted1
@@ -45,6 +49,7 @@ class XmlSorting:
 
 class XmlFormatting:
 
+    @staticmethod
     def formatXmlString(xmlString):
         
         formatted_xml = xmlString.replace("xmlns:", "\n\txmlns:")
@@ -58,6 +63,7 @@ class XmlFormatting:
 
 class ControllerXmlSorting:
 
+    @staticmethod
     def main(inputFilePath, outputFilePath, print_output=False, cim4_formatting=False):
 
         # Read the XML file into a dictionary
