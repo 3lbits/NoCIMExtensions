@@ -1,0 +1,780 @@
+id: http://iec.ch/TC57/2007/profile#
+name: Profile
+title: Profile Vocabulary
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  linkml: https://w3id.org/linkml/
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  dc: http://purl.org/dc/elements/1.1/
+  profcim: http://iec.ch/TC57/ns/CIM/prof-cim#
+  owl: http://www.w3.org/2002/07/owl#
+  cim: http://iec.ch/TC57/CIM100#
+  cims: http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#
+  dct: http://purl.org/dc/terms/
+  this: http://iec.ch/TC57/2007/profile#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  dcat: http://www.w3.org/ns/dcat#
+  eu: http://iec.ch/TC57/CIM100-European#
+imports:
+- linkml:types
+default_curi_maps:
+- semweb_context
+default_range: string
+default_prefix: this
+classes:
+  ACLineSegment:
+    description: "A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.For symmetrical, transposed three phase lines, it is sufficient to use attributes of the line segment, which describe impedances and admittances for the entire length of the segment.  Additionally impedances can be computed by using length and associated per length impedances.The BaseVoltage at the two ends of ACLineSegments in a Line shall have the same BaseVoltage.nominalVoltage. However, boundary lines may have slightly different BaseVoltage.nominalVoltages and variation is allowed. Larger voltage difference in general requires use of an equivalent branch."
+    annotations:
+      ea_guid: "_625BD764-3907-4d65-8497-7FD09708BD8E"
+    is_a: Conductor
+    abstract: true
+    class_uri: cim:ACLineSegment
+    attributes: 
+      b0ch:
+        description: "Zero sequence shunt (charging) susceptance, uniformly distributed, of the entire line section."
+        annotations:
+          ea_guid: "_5EE8B645-9FB5-4985-8930-6CB5CAA29CE2"
+        slot_uri: cim:ACLineSegment.b0ch
+        range: Susceptance
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      bch:
+        description: "Positive sequence shunt (charging) susceptance, uniformly distributed, of the entire line section.  This value represents the full charging over the full length of the line."
+        annotations:
+          ea_guid: "_FFCA602E-D6F0-4fed-BAE6-D02A2C04BB65"
+        slot_uri: cim:ACLineSegment.bch
+        range: Susceptance
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      g0ch:
+        description: "Zero sequence shunt (charging) conductance, uniformly distributed, of the entire line section."
+        annotations:
+          ea_guid: "_59D23066-ADB0-4369-BD9D-95AB3B53376F"
+        slot_uri: cim:ACLineSegment.g0ch
+        range: Conductance
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      gch:
+        description: "Positive sequence shunt (charging) conductance, uniformly distributed, of the entire line section."
+        annotations:
+          ea_guid: "_7780580B-437B-45bf-8C1E-AF5F03086378"
+        slot_uri: cim:ACLineSegment.gch
+        range: Conductance
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      r:
+        description: "Positive sequence series resistance of the entire line section."
+        annotations:
+          ea_guid: "_57B0CDE3-FEB1-4d13-8906-A9C7AF3C5482"
+        slot_uri: cim:ACLineSegment.r
+        range: Resistance
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      r0:
+        description: "Zero sequence series resistance of the entire line section."
+        annotations:
+          ea_guid: "_DDBBA03D-E40D-4200-941D-CFB4E24253A0"
+        slot_uri: cim:ACLineSegment.r0
+        range: Resistance
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      shortCircuitEndTemperature:
+        description: "Maximum permitted temperature at the end of SC for the calculation of minimum short-circuit currents. Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "_5BD9D924-26C6-4f14-AB49-6D3A0C16D6BB"
+        slot_uri: cim:ACLineSegment.shortCircuitEndTemperature
+        range: Temperature
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      x:
+        description: "Positive sequence series reactance of the entire line section."
+        annotations:
+          ea_guid: "_78292BCA-9CCD-4a7a-8E36-7F7CA0D1C0BB"
+        slot_uri: cim:ACLineSegment.x
+        range: Reactance
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      x0:
+        description: "Zero sequence series reactance of the entire line section."
+        annotations:
+          ea_guid: "_14CCC61E-8CFF-4748-BB34-30167D45B278"
+        slot_uri: cim:ACLineSegment.x0
+        range: Reactance
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      ACLineSegmentPhases:
+        description: "The line segment phases which belong to the line segment."
+        annotations:
+          ea_guid: "_445FD290-7977-4f2a-AC68-646609336C93-B"
+        slot_uri: cim:ACLineSegment.ACLineSegmentPhases
+        range: ACLineSegmentPhase
+        minimum_cardinality: 0
+        multivalued: true
+      Clamp:
+        description: "The clamps connected to the line segment."
+        annotations:
+          ea_guid: "_2B7C9922-26A9-4218-8BDD-1098869C8600-A"
+        slot_uri: cim:ACLineSegment.Clamp
+        range: Clamp
+        minimum_cardinality: 0
+        multivalued: true
+      Cut:
+        description: "Cuts applied to the line segment."
+        annotations:
+          ea_guid: "_62963E89-E891-4b03-8000-C14788BD8E57-B"
+        slot_uri: cim:ACLineSegment.Cut
+        range: Cut
+        minimum_cardinality: 0
+        multivalued: true
+      LineFaults:
+        description: "The line faults of the line segment."
+        annotations:
+          ea_guid: "_BBA661BB-92B7-4934-988B-DF65931690EE-B"
+        slot_uri: cim:ACLineSegment.LineFaults
+        range: LineFault
+        minimum_cardinality: 0
+        multivalued: true
+      LineGroundingAction:
+        description: "Ground action involving clamp usage (for the case when the ground is applied along the line segment instead of at its terminals)."
+        annotations:
+          ea_guid: "_1E3F8223-0B92-4d7f-B4A8-4D976F915A99-B"
+        slot_uri: cim:ACLineSegment.LineGroundingAction
+        range: GroundAction
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      LineJumpingAction:
+        description: "Jumper action involving clamp usage (for the case when the jumper is applied along the line segment instead of at its terminals)."
+        annotations:
+          ea_guid: "_9581D491-DFD1-477b-A1F8-56207CB6A28F-B"
+        slot_uri: cim:ACLineSegment.LineJumpingAction
+        range: JumperAction
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      PerLengthImpedance:
+        description: "Per-length impedance of this line segment."
+        annotations:
+          ea_guid: "_741AE432-C721-4a8d-92F4-C8B96FA98A3A-B"
+        slot_uri: cim:ACLineSegment.PerLengthImpedance
+        range: PerLengthImpedance
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      WireSpacingInfo:
+        description: "The wire spacing information that applies to this AC line segment"
+        annotations:
+          ea_guid: "_F29D4402-D392-434d-9E98-8C35F21BD856-A"
+        slot_uri: cim:ACLineSegment.WireSpacingInfo
+        range: WireSpacingInfo
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  ACLineSegmentPhase:
+    description: "Represents a single wire of an alternating current line segment."
+    annotations:
+      ea_guid: "_84627F88-F666-4f07-890A-62622070CD0F"
+    is_a: PowerSystemResource
+    abstract: true
+    class_uri: cim:ACLineSegmentPhase
+    attributes: 
+      sequenceNumber:
+        description: "Number designation for this line segment phase. Each line segment phase within a line segment should have a unique sequence number. This is useful for unbalanced modelling to bind the mathematical model (PhaseImpedanceData of PerLengthPhaseImpedance) with the connectivity model (this class) and the physical model (WirePosition) without tight coupling."
+        annotations:
+          ea_guid: "_ACC3476D-8979-46f3-A071-224D1BF4D7DD"
+        slot_uri: cim:ACLineSegmentPhase.sequenceNumber
+        range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      ACLineSegment:
+        description: "The line segment to which the phase belongs."
+        annotations:
+          ea_guid: "_445FD290-7977-4f2a-AC68-646609336C93-A"
+        slot_uri: cim:ACLineSegmentPhase.ACLineSegment
+        range: ACLineSegment
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      WireInfo:
+        description: "Wire information contributing to this AC line segment phase information."
+        annotations:
+          ea_guid: "_B5F55F86-9C19-4914-99C2-1ACBA0197A2E-A"
+        slot_uri: cim:ACLineSegmentPhase.WireInfo
+        range: WireInfo
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  BaseVoltage:
+    description: "Defines a system base voltage which is referenced."
+    annotations:
+      ea_guid: "_2E70DC9D-AEAE-46cc-B20A-C20A636AE9B0"
+    is_a: IdentifiedObject
+    abstract: true
+    class_uri: cim:BaseVoltage
+    attributes: 
+      nominalVoltage:
+        description: "The power system resource's base voltage.  Shall be a positive value and not zero."
+        annotations:
+          ea_guid: "_D37DA22A-916B-4a33-88AB-B77C229DB882"
+        slot_uri: cim:BaseVoltage.nominalVoltage
+        range: Voltage
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      ConductingEquipment:
+        description: "All conducting equipment with this base voltage.  Use only when there is no voltage level container used and only one base voltage applies.  For example, not used for transformers."
+        annotations:
+          ea_guid: "_B21687D9-2B46-4880-B016-06CCFA215EC3-A"
+        slot_uri: cim:BaseVoltage.ConductingEquipment
+        range: ConductingEquipment
+        minimum_cardinality: 0
+        multivalued: true
+      NetworkAssetDeployment:
+        description: "A network asset deployment at this base voltage level."
+        annotations:
+          ea_guid: "_EEECBAA7-1891-4130-A184-0EB99FA07C16-B"
+        slot_uri: cim:BaseVoltage.NetworkAssetDeployment
+        range: AssetDeployment
+        minimum_cardinality: 0
+        multivalued: true
+      TopologicalNode:
+        description: "The topological nodes at the base voltage."
+        annotations:
+          ea_guid: "_6F37A2BE-FB37-4a6c-8BB1-CFC6690C1867-B"
+        slot_uri: cim:BaseVoltage.TopologicalNode
+        range: TopologicalNode
+        minimum_cardinality: 0
+        multivalued: true
+      TransformerEnds:
+        description: "Transformer ends at the base voltage.  This is essential for PU calculation."
+        annotations:
+          ea_guid: "_DEF1E6AE-B7B9-43bf-9A91-E4BFC453DC4D-B"
+        slot_uri: cim:BaseVoltage.TransformerEnds
+        range: TransformerEnd
+        minimum_cardinality: 0
+        multivalued: true
+      VoltageLevel:
+        description: "The voltage levels having this base voltage."
+        annotations:
+          ea_guid: "_F610FDC8-D98D-4367-99A9-E9CA1C8A8CC5-B"
+        slot_uri: cim:BaseVoltage.VoltageLevel
+        range: VoltageLevel
+        minimum_cardinality: 0
+        multivalued: true
+  ConductingEquipment:
+    description: "The parts of the AC power system that are designed to carry current or that are conductively connected through terminals."
+    annotations:
+      ea_guid: "_7C5F19FB-5253-430c-8E53-BDCF7EBCE4C1"
+    is_a: Equipment
+    abstract: true
+    class_uri: cim:ConductingEquipment
+    attributes: 
+      BaseVoltage:
+        description: "Base voltage of this conducting equipment.  Use only when there is no voltage level container used and only one base voltage applies.  For example, not used for transformers."
+        annotations:
+          ea_guid: "_B21687D9-2B46-4880-B016-06CCFA215EC3-B"
+        slot_uri: cim:ConductingEquipment.BaseVoltage
+        range: BaseVoltage
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      GroundingAction:
+        description: "Action involving grounding operation on this conducting equipment."
+        annotations:
+          ea_guid: "_E49D8003-4EDF-4e58-A61C-0A5F1C6165E1-B"
+        slot_uri: cim:ConductingEquipment.GroundingAction
+        range: GroundAction
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      JumpingAction:
+        description: "Jumper action involving jumping operation on this conducting equipment."
+        annotations:
+          ea_guid: "_4D35C940-C8A8-4a53-846A-929278E1DB57-B"
+        slot_uri: cim:ConductingEquipment.JumpingAction
+        range: JumperAction
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      Outage:
+        description: "The outage that is isolated by the outage isolation equipment."
+        annotations:
+          ea_guid: "_EEA2935F-26F1-463e-890E-676B5DDA189A-B"
+        slot_uri: cim:ConductingEquipment.Outage
+        range: Outage
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      ProtectionEquipments:
+        description: "Protection equipment  used to protect specific conducting equipment."
+        annotations:
+          ea_guid: "_1A223051-2D2E-4ca4-8FF1-9C8D1BDE000B-B"
+        slot_uri: cim:ConductingEquipment.ProtectionEquipments
+        range: ProtectionEquipment
+        minimum_cardinality: 0
+        multivalued: true
+      ProtectiveActionAdjustment:
+        description: "The operating condition to the Conducting Equipment is changed when protective action adjustment is activated. For ShuntCompensator or other conducting equipment that operates on discrete values (integer), the values given in float will be rounded."
+        annotations:
+          ea_guid: "_44AD5B78-D603-43d9-A73C-68DCFE8B9C09-A"
+        slot_uri: cim:ConductingEquipment.ProtectiveActionAdjustment
+        range: ProtectiveActionAdjustment
+        minimum_cardinality: 0
+        multivalued: true
+      SvStatus:
+        description: "The status state variable associated with this conducting equipment."
+        annotations:
+          ea_guid: "_A1BADE18-494C-4d12-B7E2-2C9AF7F526ED-B"
+        slot_uri: cim:ConductingEquipment.SvStatus
+        range: SvStatus
+        minimum_cardinality: 0
+        multivalued: true
+      Terminals:
+        description: "Conducting equipment have terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes."
+        annotations:
+          ea_guid: "_5FEF5186-7804-4dad-8E18-8C5DB7FCE6B2-B"
+        slot_uri: cim:ConductingEquipment.Terminals
+        range: Terminal
+        minimum_cardinality: 0
+        multivalued: true
+  Conductor:
+    description: "Combination of conducting material with consistent electrical characteristics, building a single electrical system, used to carry current between points in the power system."
+    annotations:
+      ea_guid: "_C435D1A4-31AE-46ef-BCF8-7932F0785DA9"
+    is_a: ConductingEquipment
+    abstract: true
+    class_uri: cim:Conductor
+    attributes: 
+      length:
+        description: "Segment length for calculating line section capabilities."
+        annotations:
+          ea_guid: "_3F232A26-A1CA-4477-ADA1-92AC37BFAF1D"
+        slot_uri: cim:Conductor.length
+        range: Length
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  Equipment:
+    description: "The parts of a power system that are physical devices, electronic or mechanical."
+    annotations:
+      ea_guid: "_F8DD8DAC-3545-4660-9CA5-794881CC6591"
+    is_a: PowerSystemResource
+    abstract: true
+    class_uri: cim:Equipment
+    attributes: 
+      aggregate:
+        description: "The aggregate flag provides an alternative way of representing an aggregated (equivalent) element. It is applicable in cases when the dedicated classes for equivalent equipment do not have all of the attributes necessary to represent the required level of detail.  In case the flag is set to �true� the single instance of equipment represents multiple pieces of equipment that have been modelled together as an aggregate equivalent obtained by a network reduction procedure. Examples would be power transformers or synchronous machines operating in parallel modelled as a single aggregate power transformer or aggregate synchronous machine.The attribute is not used for EquivalentBranch, EquivalentShunt and EquivalentInjection."
+        annotations:
+          ea_guid: "_3C000D48-C67D-4cc3-89D6-5F336420B325"
+        slot_uri: cim:Equipment.aggregate
+        range: boolean
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      inService:
+        description: "Specifies the availability of the equipment. True means the equipment is available for topology processing, which determines if the equipment is energized or not. False means that the equipment is treated by network applications as if it is not in the model."
+        annotations:
+          ea_guid: "_84B66A12-0723-4edf-BC0E-5CD2F4034CC3"
+        slot_uri: cim:Equipment.inService
+        range: boolean
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      networkAnalysisEnabled:
+        description: "The equipment is enabled to participate in network analysis.  If unspecified, the value is assumed to be true."
+        annotations:
+          ea_guid: "_0B1D0D20-436A-42a0-AD04-DECFCE5CFCF3"
+        slot_uri: cim:Equipment.networkAnalysisEnabled
+        range: boolean
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      normallyInService:
+        description: "Specifies the availability of the equipment under normal operating conditions. True means the equipment is available for topology processing, which determines if the equipment is energized or not. False means that the equipment is treated by network applications as if it is not in the model."
+        annotations:
+          ea_guid: "_410CEA04-CA77-46d9-A093-019230A2DE17"
+        slot_uri: cim:Equipment.normallyInService
+        range: boolean
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      AdditionalEquipmentContainer:
+        description: "Additional equipment container beyond the primary equipment container.  The equipment is contained in another equipment container, but also grouped with this equipment container."
+        annotations:
+          ea_guid: "_43EA076F-F51B-4617-BC39-6D3939D5CEFD-B"
+        slot_uri: cim:Equipment.AdditionalEquipmentContainer
+        range: EquipmentContainer
+        minimum_cardinality: 0
+        multivalued: true
+      ContingencyEquipment:
+        description: "The contingency equipments in which this equipment participates."
+        annotations:
+          ea_guid: "_90FE687B-C58C-4b05-856E-6D576F7CADBE-B"
+        slot_uri: cim:Equipment.ContingencyEquipment
+        range: ContingencyEquipment
+        minimum_cardinality: 0
+        multivalued: true
+      EqiupmentLimitSeriesComponent:
+        description: "Equipment limit series calculation component to which this equipment contributes."
+        annotations:
+          ea_guid: "_CEFBFF28-402F-45fe-88FA-EF5E6D724964-B"
+        slot_uri: cim:Equipment.EqiupmentLimitSeriesComponent
+        range: EquipmentLimitSeriesComponent
+        minimum_cardinality: 0
+        multivalued: true
+      EquipmentContainer:
+        description: "Container of this equipment."
+        annotations:
+          ea_guid: "_68BA73EF-8533-48ba-964A-DE0F722292D2-B"
+        slot_uri: cim:Equipment.EquipmentContainer
+        range: EquipmentContainer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      Faults:
+        description: "All faults on this equipment."
+        annotations:
+          ea_guid: "_6B3EA616-0934-425c-A898-1D84DADF5261-B"
+        slot_uri: cim:Equipment.Faults
+        range: Fault
+        minimum_cardinality: 0
+        multivalued: true
+      LimitDependencyModel:
+        description: "Limit dependencymodels organized under this equipment as a means for organizing the model in a tree view."
+        annotations:
+          ea_guid: "_CEF63A20-BB9F-4d20-85B7-C4EF0AB5624F-B"
+        slot_uri: cim:Equipment.LimitDependencyModel
+        range: LimitDependency
+        minimum_cardinality: 0
+        multivalued: true
+      OperationalLimitSet:
+        description: "The operational limit sets associated with this equipment."
+        annotations:
+          ea_guid: "_AEB22FF5-0EEF-4e3a-BE8C-07931F2FAE92-B"
+        slot_uri: cim:Equipment.OperationalLimitSet
+        range: OperationalLimitSet
+        minimum_cardinality: 0
+        multivalued: true
+      OperationalRestrictions:
+        description: "All operational restrictions for this equipment."
+        annotations:
+          ea_guid: "_A11D842D-BDDB-42a4-B8FB-43C199D5E3BA-B"
+        slot_uri: cim:Equipment.OperationalRestrictions
+        range: OperationalRestriction
+        minimum_cardinality: 0
+        multivalued: true
+      Outages:
+        description: "All outages in which this equipment is involved."
+        annotations:
+          ea_guid: "_7CB5F824-2EAC-4c6e-B3CE-B2B245253D31-B"
+        slot_uri: cim:Equipment.Outages
+        range: Outage
+        minimum_cardinality: 0
+        multivalued: true
+      PinEquipment:
+        annotations:
+          ea_guid: "_83B2D8C8-5F34-4fbe-A13F-090F6823061D-B"
+        slot_uri: cim:Equipment.PinEquipment
+        range: PinEquipment
+        minimum_cardinality: 0
+        multivalued: true
+      ProtectiveActionEquipment:
+        description: "Protective action is controlling equipment. This can be direct signals from the control center, or emulation of action done by protection equipment."
+        annotations:
+          ea_guid: "_C2B4064B-C361-4230-9F19-21614F4EFABE-B"
+        slot_uri: cim:Equipment.ProtectiveActionEquipment
+        range: ProtectiveActionEquipment
+        minimum_cardinality: 0
+        multivalued: true
+      UsagePoints:
+        description: "All usage points connected to the electrical grid through this equipment."
+        annotations:
+          ea_guid: "_3E4B9C55-FCC6-42ec-B364-27C62004847F-B"
+        slot_uri: cim:Equipment.UsagePoints
+        range: UsagePoint
+        minimum_cardinality: 0
+        multivalued: true
+      WeatherStation:
+        annotations:
+          ea_guid: "_C35B9B9D-C271-4005-801D-B7B44FF8D8C7-A"
+        slot_uri: cim:Equipment.WeatherStation
+        range: WeatherStation
+        minimum_cardinality: 0
+        multivalued: true
+  IdentifiedObject:
+    description: "This is a root class to provide common identification for all classes needing identification and naming attributes."
+    annotations:
+      ea_guid: "_055C5806-E9D8-4a7a-9307-DAF7C31763C7"
+    abstract: true
+    class_uri: cim:IdentifiedObject
+    attributes: 
+      mRID:
+        description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
+        annotations:
+          ea_guid: "_C775F80A-A23D-4f38-AB9D-49D1FA882337"
+        slot_uri: cim:IdentifiedObject.mRID
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      aliasName:
+        description: "The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time."
+        annotations:
+          ea_guid: "_D4F8B75D-CDAD-4440-8092-1425101E5ABC"
+        slot_uri: cim:IdentifiedObject.aliasName
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      description:
+        description: "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."
+        annotations:
+          ea_guid: "_13104BE9-CB1E-4dde-9A52-D7EE95DF7B65"
+        slot_uri: cim:IdentifiedObject.description
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      name:
+        description: "The name is any free human readable and possibly non unique text naming the object."
+        annotations:
+          ea_guid: "_870F033B-EDA6-4a32-A5AD-47DCBBFE2997"
+        slot_uri: cim:IdentifiedObject.name
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      DiagramObjects:
+        description: "The diagram objects that are associated with the domain object."
+        annotations:
+          ea_guid: "_03423B70-34E0-4313-B19B-5FAFFD1F143B-A"
+        slot_uri: cim:IdentifiedObject.DiagramObjects
+        range: DiagramObject
+        minimum_cardinality: 0
+        multivalued: true
+      InstanceSet:
+        description: "Dataset containing the data objects."
+        annotations:
+          ea_guid: "_8740E742-45B5-4b82-8058-EFA19A56A689-A"
+        slot_uri: cim:IdentifiedObject.InstanceSet
+        range: InstanceSet
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      Names:
+        description: "All names of this identified object."
+        annotations:
+          ea_guid: "_203C47E2-30FB-4c8f-ABEA-1661621CC0A7-B"
+        slot_uri: cim:IdentifiedObject.Names
+        range: Name
+        minimum_cardinality: 0
+        multivalued: true
+      PropertiesCIMDataObject:
+        description: "The single CIM data object in the appropriate dataset context."
+        annotations:
+          ea_guid: "_F527D24E-59B1-4748-B31A-660841060493-B"
+        slot_uri: cim:IdentifiedObject.PropertiesCIMDataObject
+        range: ChangeSetMember
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      TargetingCIMDataObject:
+        description: "Data objects registered."
+        annotations:
+          ea_guid: "_950EB9DD-F3F6-405e-81C4-3D00B3ABD338-B"
+        slot_uri: cim:IdentifiedObject.TargetingCIMDataObject
+        range: ChangeSetMember
+        minimum_cardinality: 0
+        multivalued: true
+  PowerSystemResource:
+    description: "A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated."
+    annotations:
+      ea_guid: "_0340C084-3759-40cc-AAF2-386101DE842F"
+    is_a: IdentifiedObject
+    abstract: true
+    class_uri: cim:PowerSystemResource
+    attributes: 
+      AssetDatasheet:
+        description: "Datasheet information for this power system resource."
+        annotations:
+          ea_guid: "_009BA3E8-B2DD-4bef-B118-F700692FC9EA-B"
+        slot_uri: cim:PowerSystemResource.AssetDatasheet
+        range: AssetInfo
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      Assets:
+        description: "All assets represented by this power system resource. For example, multiple conductor assets are electrically modelled as a single AC line segment."
+        annotations:
+          ea_guid: "_9709C87C-3A85-4ce4-BA02-CEBB104E7DB5-B"
+        slot_uri: cim:PowerSystemResource.Assets
+        range: Asset
+        minimum_cardinality: 0
+        multivalued: true
+      Clearances:
+        description: "All clearances applicable to this power system resource."
+        annotations:
+          ea_guid: "_65134A4B-0FD0-4c17-A353-8696C19D36F6-B"
+        slot_uri: cim:PowerSystemResource.Clearances
+        range: ClearanceDocument
+        minimum_cardinality: 0
+        multivalued: true
+      ConfigurationEvent:
+        description: "All configuration events created for this Power System resource."
+        annotations:
+          ea_guid: "_26DFEBF9-D038-4c7e-96A1-F4832AC44307-A"
+        slot_uri: cim:PowerSystemResource.ConfigurationEvent
+        range: ConfigurationEvent
+        minimum_cardinality: 0
+        multivalued: true
+      Controls:
+        description: "The controller outputs used to actually govern a regulating device, e.g. the magnetization of a synchronous machine or capacitor bank breaker actuator."
+        annotations:
+          ea_guid: "_A1BE05F6-8AA3-4c36-B00D-9A3BC3D8B4D3-A"
+        slot_uri: cim:PowerSystemResource.Controls
+        range: Control
+        minimum_cardinality: 0
+        multivalued: true
+      GenericAction:
+        description: "The generic action that is performed on the power system resource"
+        annotations:
+          ea_guid: "_7F56BF7C-C7AA-432b-8454-59AE37E0C7F8-B"
+        slot_uri: cim:PowerSystemResource.GenericAction
+        range: GenericAction
+        minimum_cardinality: 0
+        multivalued: true
+      Location:
+        description: "Location of this power system resource."
+        annotations:
+          ea_guid: "_9F4B30FA-0A66-4ce4-9A00-413B0DB058C7-B"
+        slot_uri: cim:PowerSystemResource.Location
+        range: Location
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      Measurements:
+        description: "The measurements associated with this power system resource."
+        annotations:
+          ea_guid: "_78186A65-461E-4479-9917-94B5C4F2F9F6-A"
+        slot_uri: cim:PowerSystemResource.Measurements
+        range: Measurement
+        minimum_cardinality: 0
+        multivalued: true
+      OperatingShare:
+        description: "The operating shares of this power system resource."
+        annotations:
+          ea_guid: "_343B3487-FA8E-4906-A8F1-4D6E3B27F4AF-B"
+        slot_uri: cim:PowerSystemResource.OperatingShare
+        range: OperatingShare
+        minimum_cardinality: 0
+        multivalued: true
+      OperationalTags:
+        description: "All operational tags placed on this power system resource."
+        annotations:
+          ea_guid: "_AB49BFBC-0F00-4bf2-95B2-BCBAD3CA1BA5-B"
+        slot_uri: cim:PowerSystemResource.OperationalTags
+        range: OperationalTag
+        minimum_cardinality: 0
+        multivalued: true
+      PSREvents:
+        description: "All events associated with this power system resource."
+        annotations:
+          ea_guid: "_8A1816B8-B53E-4ace-9651-A32675F78437-B"
+        slot_uri: cim:PowerSystemResource.PSREvents
+        range: PSREvent
+        minimum_cardinality: 0
+        multivalued: true
+      PSRType:
+        description: "Custom classification for this power system resource."
+        annotations:
+          ea_guid: "_739158B5-6CE8-473f-87FF-1CDA17078612-A"
+        slot_uri: cim:PowerSystemResource.PSRType
+        range: PSRType
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      ReportingGroup:
+        description: "Reporting groups to which this power system resource belongs."
+        annotations:
+          ea_guid: "_62E3FEEC-F7FE-4ee8-88DC-231AEF7F6DE3-B"
+        slot_uri: cim:PowerSystemResource.ReportingGroup
+        range: ReportingGroup
+        minimum_cardinality: 0
+        multivalued: true
+      VerificationAction:
+        description: "The verification action that is performed on the power system resource"
+        annotations:
+          ea_guid: "_4F85BB5D-133B-4060-B422-86E5B9320EE2-B"
+        slot_uri: cim:PowerSystemResource.VerificationAction
+        range: VerificationAction
+        minimum_cardinality: 0
+        multivalued: true
+types:
+  Susceptance:
+    uri: xsd:float
+    base: float
+    description: "Imaginary part of admittance."
+    annotations:
+      ea_guid: "_F246F97E-529D-4ec3-9F06-BAF4AFD0829B"
+      cim_data_type: true
+      uri: cim:Susceptance
+  Length:
+    uri: xsd:float
+    base: float
+    description: "Unit of length. It shall be a positive value or zero."
+    annotations:
+      ea_guid: "_06F9A3F0-3AE3-4ad1-88F8-06C207238C3B"
+      cim_data_type: true
+      uri: cim:Length
+  Reactance:
+    uri: xsd:float
+    base: float
+    description: "Reactance (imaginary part of impedance), at rated frequency."
+    annotations:
+      ea_guid: "_F1C90FB4-B7BE-4528-A974-E36BBEAB8616"
+      cim_data_type: true
+      uri: cim:Reactance
+  Temperature:
+    uri: xsd:float
+    base: float
+    description: "Value of temperature in degrees Celsius."
+    annotations:
+      ea_guid: "_2C614F42-FED1-4705-82C8-57771A0466CE"
+      cim_data_type: true
+      uri: cim:Temperature
+  Voltage:
+    uri: xsd:float
+    base: float
+    description: "Electrical voltage, can be both AC and DC."
+    annotations:
+      ea_guid: "_233C330A-11B8-4705-879C-5497380F1D82"
+      cim_data_type: true
+      uri: cim:Voltage
+  Conductance:
+    uri: xsd:float
+    base: float
+    description: "Factor by which voltage must be multiplied to give corresponding power lost from a circuit. Real part of admittance."
+    annotations:
+      ea_guid: "_CCE4615A-C403-4c96-8122-26904C128276"
+      cim_data_type: true
+      uri: cim:Conductance
+  Resistance:
+    uri: xsd:float
+    base: float
+    description: "Resistance (real part of impedance)."
+    annotations:
+      ea_guid: "_EDB281E6-BBB4-438d-953B-7D746CAF55B5"
+      cim_data_type: true
+      uri: cim:Resistance
+enums:
+  SinglePhaseKind:
+    description: "Enumeration of single phase identifiers. Allows designation of single phases for both transmission and distribution equipment, circuits and loads."
+    annotations:
+      ea_guid: "_0AD52D65-4270-45c1-9AF4-29C53A398AE3"
+    enum_uri:  http://iec.ch/TC57/CIM100#SinglePhaseKind
+    permissible_values:
+      A:
+        meaning:  cim:SinglePhaseKind.A
+        description: "Phase A."
+        annotations:
+          ea_guid: "_C02D22F4-5CA2-437e-9F27-95F4BFC8B870"
+      B:
+        meaning:  cim:SinglePhaseKind.B
+        description: "Phase B."
+        annotations:
+          ea_guid: "_321F86C8-F9F3-4a29-B0C8-BE4329CC578A"
+      C:
+        meaning:  cim:SinglePhaseKind.C
+        description: "Phase C."
+        annotations:
+          ea_guid: "_75A291F3-4B98-4d53-ADC8-6A8C31AEBF8D"
+      N:
+        meaning:  cim:SinglePhaseKind.N
+        description: "Neutral."
+        annotations:
+          ea_guid: "_544E8D1F-5B68-4435-8096-1BA22C0AC0BA"
+      s1:
+        meaning:  cim:SinglePhaseKind.s1
+        description: "Secondary phase 1."
+        annotations:
+          ea_guid: "_DFA995B4-25EF-448a-973F-A013ADC35EA7"
+      s2:
+        meaning:  cim:SinglePhaseKind.s2
+        description: "Secondary phase 2."
+        annotations:
+          ea_guid: "_B1ED33EE-4FE9-48c2-A80B-25B1A8576E26"
