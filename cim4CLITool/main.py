@@ -5,6 +5,7 @@ from cim4CLITool.generalFunctions import run_bash_command, to_camel_case, remove
 from cim4CLITool.docs.main import CreateMdController
 from cim4CLITool.createOverviewMd import CreateOverviewMdController
 from cim4CLITool.xmlSorting import ControllerXmlSorting
+from cim4CLITool.yaml_to_json import ControllerYamlToJson
 
 @click.group()
 def main():
@@ -122,6 +123,41 @@ def sort(file_name: str, input_path: str, output_path: str, cim4_formatting: boo
 def schema(schema: str):
     '''Create Json Schema from Yaml Schema (LinkML)'''
     run_bash_command(f"gen-json-schema schemas/yaml/{schema}.linkml.yaml > schemas/json/{schema}_schema.json", "Create Json Schema from Yaml Schema")
+
+@json.command()
+@click.option('--file_name', '-f', required=False, default=None, help='Yaml data file name to use')
+@click.option('--input_path', '-i', required=False, default=None, help='Input file path to use')
+@click.option('--output_path', '-o', required=False, default=None, help='Output file path to use')
+@click.option('--indentation', '-in', required=False, default=False, is_flag=True, help='Json Indentation')
+@click.option('--print_output', '-p', required=False, default=False, is_flag=True, help='Print output to console')
+def yaml_to_json(file_name: str, input_path: str, output_path: str, indentation: bool, print_output: bool):
+    '''Convert Yaml to Json'''
+    click.echo('Converting Yaml to Json')
+    if file_name != None:
+        inputFilePath = f"data/yaml/{file_name}.yaml"
+        outputFilePath = f"data/json/{file_name}.json"
+    elif (input_path != None and output_path != None):
+        inputFilePath = input_path
+        outputFilePath = output_path
+    else:
+        click.echo('Please provide the file_name or input_path and output_path')
+        return
+
+    if indentation:
+        click.echo('Using indentation')
+        if print_output:
+            click.echo('Printing output to console')
+            ControllerYamlToJson.yaml_to_json(inputFilePath, outputFilePath, pretty_print=True, print_json=True)
+        else:
+            ControllerYamlToJson.yaml_to_json(inputFilePath, outputFilePath, pretty_print=True, print_json=False)
+    else:
+        if print_output:
+            click.echo('Printing output to console')
+            ControllerYamlToJson.yaml_to_json(inputFilePath, outputFilePath, pretty_print=False, print_json=True)
+        else:
+            ControllerYamlToJson.yaml_to_json(inputFilePath, outputFilePath, pretty_print=False, print_json=False)
+    
+    click.echo(f'Converted {inputFilePath} to {outputFilePath}')
 
 if __name__ == '__main__':
     main()
