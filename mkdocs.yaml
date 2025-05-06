@@ -45,6 +45,9 @@ nav:
       - Overview: Models/Profiles/AviationObstacle/index.md
       - Abstract Classes:
         - IdentifiedObject: Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject.md
+        - SpatialObject: Models/Profiles/AviationObstacle/AbstractClasses/SpatialObject.md
+        - Feature: Models/Profiles/AviationObstacle/AbstractClasses/Feature.md
+        - Geometry: Models/Profiles/AviationObstacle/AbstractClasses/Geometry.md
         - PowerSystemResource: Models/Profiles/AviationObstacle/AbstractClasses/PowerSystemResource.md
         - ElementResource: Models/Profiles/AviationObstacle/AbstractClasses/ElementResource.md
         - LocationResource: Models/Profiles/AviationObstacle/AbstractClasses/LocationResource.md
@@ -53,9 +56,6 @@ nav:
         - Conductor: Models/Profiles/AviationObstacle/AbstractClasses/Conductor.md
         - Structure: Models/Profiles/AviationObstacle/AbstractClasses/Structure.md
       - Concrete Classes:
-        - SpatialObject: Models/Profiles/AviationObstacle/ConcreteClasses/SpatialObject.md
-        - Feature: Models/Profiles/AviationObstacle/ConcreteClasses/Feature.md
-        - Geometry: Models/Profiles/AviationObstacle/ConcreteClasses/Geometry.md
         - ACLineSegment: Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegment.md
         - ACLineSegmentSpan: Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegmentSpan.md
         - OverheadStructure: Models/Profiles/AviationObstacle/ConcreteClasses/OverheadStructure.md
@@ -173,17 +173,15 @@ nav:
       - Overview: Models/Profiles/GridCapacity/index.md
       - Abstract Classes:
         - IdentifiedObject: Models/Profiles/GridCapacity/AbstractClasses/IdentifiedObject.md
+        - SpatialObject: Models/Profiles/GridCapacity/AbstractClasses/SpatialObject.md
+        - Feature: Models/Profiles/GridCapacity/AbstractClasses/Feature.md
+        - Geometry: Models/Profiles/GridCapacity/AbstractClasses/Geometry.md
         - PowerSystemResource: Models/Profiles/GridCapacity/AbstractClasses/PowerSystemResource.md
         - ConnectivityNodeContainer: Models/Profiles/GridCapacity/AbstractClasses/ConnectivityNodeContainer.md
         - EquipmentContainer: Models/Profiles/GridCapacity/AbstractClasses/EquipmentContainer.md
         - BaseTimeSeries: Models/Profiles/GridCapacity/AbstractClasses/BaseTimeSeries.md
         - BaseIrregularTimeSeries: Models/Profiles/GridCapacity/AbstractClasses/BaseIrregularTimeSeries.md
       - Concrete Classes:
-        - LanguageObject: Models/Profiles/GridCapacity/ConcreteClasses/LanguageObject.md
-        - SpatialObject: Models/Profiles/GridCapacity/ConcreteClasses/SpatialObject.md
-        - Feature: Models/Profiles/GridCapacity/ConcreteClasses/Feature.md
-        - Geometry: Models/Profiles/GridCapacity/ConcreteClasses/Geometry.md
-        - GeometryObject: Models/Profiles/GridCapacity/ConcreteClasses/GeometryObject.md
         - Feeder: Models/Profiles/GridCapacity/ConcreteClasses/Feeder.md
         - CapacitySchedule: Models/Profiles/GridCapacity/ConcreteClasses/CapacitySchedule.md
         - CapacityTimePoint: Models/Profiles/GridCapacity/ConcreteClasses/CapacityTimePoint.md

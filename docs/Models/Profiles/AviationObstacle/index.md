@@ -16,11 +16,17 @@ Profiles:
     
     - [Equipment](/Models/Profiles/AviationObstacle/AbstractClasses/Equipment/)
     
+    - [Feature](/Models/Profiles/AviationObstacle/AbstractClasses/Feature/)
+    
+    - [Geometry](/Models/Profiles/AviationObstacle/AbstractClasses/Geometry/)
+    
     - [IdentifiedObject](/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/)
     
     - [LocationResource](/Models/Profiles/AviationObstacle/AbstractClasses/LocationResource/)
     
     - [PowerSystemResource](/Models/Profiles/AviationObstacle/AbstractClasses/PowerSystemResource/)
+    
+    - [SpatialObject](/Models/Profiles/AviationObstacle/AbstractClasses/SpatialObject/)
     
     - [Structure](/Models/Profiles/AviationObstacle/AbstractClasses/Structure/)
     
@@ -37,13 +43,7 @@ Profiles:
     
     - [BaseVoltage](/Models/Profiles/AviationObstacle/ConcreteClasses/BaseVoltage/)
     
-    - [Feature](/Models/Profiles/AviationObstacle/ConcreteClasses/Feature/)
-    
-    - [Geometry](/Models/Profiles/AviationObstacle/ConcreteClasses/Geometry/)
-    
     - [OverheadStructure](/Models/Profiles/AviationObstacle/ConcreteClasses/OverheadStructure/)
-    
-    - [SpatialObject](/Models/Profiles/AviationObstacle/ConcreteClasses/SpatialObject/)
     
     - [StructureDeployment](/Models/Profiles/AviationObstacle/ConcreteClasses/StructureDeployment/)
     
