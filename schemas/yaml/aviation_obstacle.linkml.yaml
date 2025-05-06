@@ -68,11 +68,13 @@ classes:
 
   SpatialObject:
     description: "A spatial object is a physical object that has a location in space. It may have a geometric representation to describe its shape and position."
+    abstract: true
     class_uri: geo:SpatialObject
     attributes:
 
   Feature:
     description: "Defines a system base voltage which is referenced."
+    abstract: true
     is_a: SpatialObject
     class_uri: geo:Feature
     attributes: 
@@ -85,6 +87,7 @@ classes:
 
   Geometry:
     description: "Geometric representation details."
+    abstract: true
     is_a: SpatialObject
     class_uri: geo:Geometry
     attributes:

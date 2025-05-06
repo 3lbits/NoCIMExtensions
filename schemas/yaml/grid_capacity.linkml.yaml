@@ -68,6 +68,7 @@ classes:
 
   LanguageObject:
     description: "An object that represents a jsonld compound to support value, type and language."
+    abstract: true
     attributes:
       value:
         description: "A string representing the GeoJSON object, typically serialized as a string."
@@ -76,6 +77,11 @@ classes:
         maximum_cardinality: 1
       type:
         description: "The type of the GeoJSON object, e.g., geo:geoJSONLiteral."
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      language:
+        description: "The language of the text, e.g., 'en' for English."
         range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
@@ -99,26 +105,25 @@ classes:
 
   Geometry:
     description: "Geometric representation details."
+    abstract: true
     is_a: SpatialObject
     class_uri: geo:Geometry
     attributes:
-      asGeoJSON:
-        description: "Geometric representation of the spatial object in GeoJSON format."
-        slot_uri: geo:asGeoJSON
-        range: GeometryObject
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-
-  GeometryObject:
-    description: "An object that represents a jsonld compound to support value, type and language."
-    attributes:
-      value:
-        description: "A string representing the GeoJSON object, typically serialized as a string."
+      asWKT:
+        description: "Geometric representation of the spatial object in WKT format."
+        slot_uri: geo:asWKT
         range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
-      type:
-        description: "The type of the GeoJSON object, e.g., geo:geoJSONLiteral."
+      asGeoJSON:
+        description: "Geometric representation of the spatial object in GeoJSON format."
+        slot_uri: geo:asGeoJSON
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      asGML:
+        description: "Geometric representation of the spatial object in GML format."
+        slot_uri: geo:asGML
         range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
