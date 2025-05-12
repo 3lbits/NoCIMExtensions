@@ -40,8 +40,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [CableLayer](CableLayer.md)
-    * [ScreenLayer](ScreenLayer.md)
+* [CableLayer](/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/)
+    * [ScreenLayer](/Models/Profiles/SubseaCableInfo/ConcreteClasses/ScreenLayer/)
         * **InsulationScreenLayer**
 
 ## Attributes

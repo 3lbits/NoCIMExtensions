@@ -33,7 +33,7 @@ classDiagram
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature <|-- PowerSystemResource : inherits
-            click Feature href "/Models/Profiles/AviationObstacle/ConcreteClasses/Feature/"
+            click Feature href "/Models/Profiles/AviationObstacle/AbstractClasses/Feature/"
             style Feature fill:#F2EBE2,stroke:#333,stroke-width:2px,rx:10,ry:10,color:#8A0303
 
 
@@ -50,9 +50,9 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [PowerSystemResource](PowerSystemResource.md)
-        * [Equipment](Equipment.md)
+* [IdentifiedObject](/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/AviationObstacle/AbstractClasses/PowerSystemResource/)
+        * [Equipment](/Models/Profiles/AviationObstacle/AbstractClasses/Equipment/)
             * **ConductingEquipment**
 
 ## Attributes

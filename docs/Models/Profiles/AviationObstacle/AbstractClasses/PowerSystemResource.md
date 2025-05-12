@@ -14,6 +14,12 @@ classDiagram
     click PowerSystemResource href "/Models/Profiles/AviationObstacle/AbstractClasses/PowerSystemResource/"
     style PowerSystemResource fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        PowerSystemResource <|-- ACLineSegmentSpan : inherits
+
+        ACLineSegmentSpan
+            click ACLineSegmentSpan href "/Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegmentSpan/"
+            style ACLineSegmentSpan fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
         PowerSystemResource <|-- Equipment : inherits
 
         Equipment
@@ -25,7 +31,7 @@ classDiagram
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature <|-- PowerSystemResource : inherits
-            click Feature href "/Models/Profiles/AviationObstacle/ConcreteClasses/Feature/"
+            click Feature href "/Models/Profiles/AviationObstacle/AbstractClasses/Feature/"
             style Feature fill:#F2EBE2,stroke:#333,stroke-width:2px,rx:10,ry:10,color:#8A0303
 
 
@@ -42,7 +48,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
+* [IdentifiedObject](/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/)
     * **PowerSystemResource**
 
 ## Attributes

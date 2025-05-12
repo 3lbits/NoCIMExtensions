@@ -54,9 +54,10 @@ classes:
       description:
         description: "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."
         slot_uri: cim:IdentifiedObject.description
-        any_of:
-          - range: LanguageObject
-          - range: string
+        range: string
+        # any_of:
+        #   - range: LanguageObject
+        #   - range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
       name:
@@ -66,27 +67,35 @@ classes:
         minimum_cardinality: 0
         maximum_cardinality: 1
 
-  LanguageObject:
-    description: "An object that represents a jsonld compound to support value, type and language."
-    attributes:
-      value:
-        description: "A string representing the GeoJSON object, typically serialized as a string."
-        range: string
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-      type:
-        description: "The type of the GeoJSON object, e.g., geo:geoJSONLiteral."
-        range: string
-        minimum_cardinality: 0
-        maximum_cardinality: 1
+  # LanguageObject:
+  #   description: "An object that represents a jsonld compound to support value, type and language."
+  #   abstract: true
+  #   attributes:
+  #     value:
+  #       description: "A string representing the GeoJSON object, typically serialized as a string."
+  #       range: string
+  #       minimum_cardinality: 0
+  #       maximum_cardinality: 1
+  #     type:
+  #       description: "The type of the GeoJSON object, e.g., geo:geoJSONLiteral."
+  #       range: string
+  #       minimum_cardinality: 0
+  #       maximum_cardinality: 1
+  #     language:
+  #       description: "The language of the text, e.g., 'en' for English."
+  #       range: string
+  #       minimum_cardinality: 0
+  #       maximum_cardinality: 1
 
   SpatialObject:
     description: "A spatial object is a physical object that has a location in space. It may have a geometric representation to describe its shape and position."
+    abstract: true
     class_uri: geo:SpatialObject
     attributes:
 
   Feature:
     description: "Defines a system base voltage which is referenced."
+    abstract: true
     is_a: SpatialObject
     class_uri: geo:Feature
     attributes: 
@@ -99,26 +108,25 @@ classes:
 
   Geometry:
     description: "Geometric representation details."
+    abstract: true
     is_a: SpatialObject
     class_uri: geo:Geometry
     attributes:
-      asGeoJSON:
-        description: "Geometric representation of the spatial object in GeoJSON format."
-        slot_uri: geo:asGeoJSON
-        range: GeometryObject
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-
-  GeometryObject:
-    description: "An object that represents a jsonld compound to support value, type and language."
-    attributes:
-      value:
-        description: "A string representing the GeoJSON object, typically serialized as a string."
+      asWKT:
+        description: "Geometric representation of the spatial object in WKT format."
+        slot_uri: geo:asWKT
         range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
-      type:
-        description: "The type of the GeoJSON object, e.g., geo:geoJSONLiteral."
+      asGeoJSON:
+        description: "Geometric representation of the spatial object in GeoJSON format."
+        slot_uri: geo:asGeoJSON
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      asGML:
+        description: "Geometric representation of the spatial object in GML format."
+        slot_uri: geo:asGML
         range: string
         minimum_cardinality: 0
         maximum_cardinality: 1

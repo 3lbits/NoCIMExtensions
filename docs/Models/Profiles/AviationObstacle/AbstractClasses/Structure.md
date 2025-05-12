@@ -33,7 +33,7 @@ classDiagram
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature <|-- LocationResource : inherits
-            click Feature href "/Models/Profiles/AviationObstacle/ConcreteClasses/Feature/"
+            click Feature href "/Models/Profiles/AviationObstacle/AbstractClasses/Feature/"
             style Feature fill:#F2EBE2,stroke:#333,stroke-width:2px,rx:10,ry:10,color:#8A0303
 
 
@@ -57,9 +57,9 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [ElementResource](ElementResource.md)
-        * [LocationResource](LocationResource.md)
+* [IdentifiedObject](/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/)
+    * [ElementResource](/Models/Profiles/AviationObstacle/AbstractClasses/ElementResource/)
+        * [LocationResource](/Models/Profiles/AviationObstacle/AbstractClasses/LocationResource/)
             * **Structure**
 
 ## Attributes

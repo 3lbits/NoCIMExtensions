@@ -14,6 +14,24 @@ classDiagram
     click IdentifiedObject href "/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/"
     style IdentifiedObject fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        IdentifiedObject <|-- AssetDeployment : inherits
+
+        AssetDeployment
+            click AssetDeployment href "/Models/Profiles/AviationObstacle/ConcreteClasses/AssetDeployment/"
+            style AssetDeployment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject <|-- BaseVoltage : inherits
+
+        BaseVoltage
+            click BaseVoltage href "/Models/Profiles/AviationObstacle/ConcreteClasses/BaseVoltage/"
+            style BaseVoltage fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        IdentifiedObject <|-- ElementResource : inherits
+
+        ElementResource
+            click ElementResource href "/Models/Profiles/AviationObstacle/AbstractClasses/ElementResource/"
+            style ElementResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
         IdentifiedObject <|-- PowerSystemResource : inherits
 
         PowerSystemResource
@@ -21,7 +39,7 @@ classDiagram
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature <|-- PowerSystemResource : inherits
-            click Feature href "/Models/Profiles/AviationObstacle/ConcreteClasses/Feature/"
+            click Feature href "/Models/Profiles/AviationObstacle/AbstractClasses/Feature/"
             style Feature fill:#F2EBE2,stroke:#333,stroke-width:2px,rx:10,ry:10,color:#8A0303
 
 

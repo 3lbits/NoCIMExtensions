@@ -74,9 +74,9 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [AssetInfo](AssetInfo.md)
-        * [ConductingAssetInfo](ConductingAssetInfo.md)
+* [IdentifiedObject](/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/)
+    * [AssetInfo](/Models/Profiles/SubseaCableInfo/AbstractClasses/AssetInfo/)
+        * [ConductingAssetInfo](/Models/Profiles/SubseaCableInfo/AbstractClasses/ConductingAssetInfo/)
             * **ConductorInfo**
 
 ## Attributes

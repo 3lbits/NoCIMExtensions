@@ -52,8 +52,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [AssetDeployment](AssetDeployment.md)
+* [IdentifiedObject](/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/)
+    * [AssetDeployment](/Models/Profiles/AviationObstacle/ConcreteClasses/AssetDeployment/)
         * **StructureDeployment**
 
 ## Attributes

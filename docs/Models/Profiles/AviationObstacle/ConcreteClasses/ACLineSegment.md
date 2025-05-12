@@ -33,7 +33,7 @@ classDiagram
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature <|-- PowerSystemResource : inherits
-            click Feature href "/Models/Profiles/AviationObstacle/ConcreteClasses/Feature/"
+            click Feature href "/Models/Profiles/AviationObstacle/AbstractClasses/Feature/"
             style Feature fill:#F2EBE2,stroke:#333,stroke-width:2px,rx:10,ry:10,color:#8A0303
 
         ACLineSegment --> ACLineSegmentSpan : ACLineSegment.ACLineSegmentSpan
@@ -62,11 +62,11 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [PowerSystemResource](PowerSystemResource.md)
-        * [Equipment](Equipment.md)
-            * [ConductingEquipment](ConductingEquipment.md)
-                * [Conductor](Conductor.md)
+* [IdentifiedObject](/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/AviationObstacle/AbstractClasses/PowerSystemResource/)
+        * [Equipment](/Models/Profiles/AviationObstacle/AbstractClasses/Equipment/)
+            * [ConductingEquipment](/Models/Profiles/AviationObstacle/AbstractClasses/ConductingEquipment/)
+                * [Conductor](/Models/Profiles/AviationObstacle/AbstractClasses/Conductor/)
                     * **ACLineSegment**
 
 ## Attributes

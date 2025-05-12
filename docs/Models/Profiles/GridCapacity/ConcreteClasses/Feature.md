@@ -23,7 +23,7 @@ classDiagram
         Feature --> Geometry : Feature.hasGeometry
 
         Geometry
-            click Geometry href "/Models/Profiles/GridCapacity/ConcreteClasses/Geometry/"
+            click Geometry href "/Models/Profiles/GridCapacity/AbstractClasses/Geometry/"
             style Geometry fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
@@ -31,7 +31,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [SpatialObject](SpatialObject.md)
+* [SpatialObject](/Models/Profiles/GridCapacity/ConcreteClasses/SpatialObject/)
     * **Feature**
 
 ## Attributes

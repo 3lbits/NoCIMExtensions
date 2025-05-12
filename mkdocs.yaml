@@ -45,6 +45,9 @@ nav:
       - Overview: Models/Profiles/AviationObstacle/index.md
       - Abstract Classes:
         - IdentifiedObject: Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject.md
+        - SpatialObject: Models/Profiles/AviationObstacle/AbstractClasses/SpatialObject.md
+        - Feature: Models/Profiles/AviationObstacle/AbstractClasses/Feature.md
+        - Geometry: Models/Profiles/AviationObstacle/AbstractClasses/Geometry.md
         - PowerSystemResource: Models/Profiles/AviationObstacle/AbstractClasses/PowerSystemResource.md
         - ElementResource: Models/Profiles/AviationObstacle/AbstractClasses/ElementResource.md
         - LocationResource: Models/Profiles/AviationObstacle/AbstractClasses/LocationResource.md
@@ -53,9 +56,6 @@ nav:
         - Conductor: Models/Profiles/AviationObstacle/AbstractClasses/Conductor.md
         - Structure: Models/Profiles/AviationObstacle/AbstractClasses/Structure.md
       - Concrete Classes:
-        - SpatialObject: Models/Profiles/AviationObstacle/ConcreteClasses/SpatialObject.md
-        - Feature: Models/Profiles/AviationObstacle/ConcreteClasses/Feature.md
-        - Geometry: Models/Profiles/AviationObstacle/ConcreteClasses/Geometry.md
         - ACLineSegment: Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegment.md
         - ACLineSegmentSpan: Models/Profiles/AviationObstacle/ConcreteClasses/ACLineSegmentSpan.md
         - OverheadStructure: Models/Profiles/AviationObstacle/ConcreteClasses/OverheadStructure.md
@@ -74,21 +74,114 @@ nav:
       - Types:
         - Length: Models/Profiles/AviationObstacle/Types/Length.md
         - Voltage: Models/Profiles/AviationObstacle/Types/Voltage.md
+    - BoundaryModel:
+      - Overview: Models/Profiles/BoundaryModel/index.md
+      - Abstract Classes:
+        - ConnectivityNodeContainer: Models/Profiles/BoundaryModel/AbstractClasses/ConnectivityNodeContainer.md
+        - EquipmentContainer: Models/Profiles/BoundaryModel/AbstractClasses/EquipmentContainer.md
+        - IdentifiedObject: Models/Profiles/BoundaryModel/AbstractClasses/IdentifiedObject.md
+        - PowerSystemResource: Models/Profiles/BoundaryModel/AbstractClasses/PowerSystemResource.md
+      - Concrete Classes:
+        - Bay: Models/Profiles/BoundaryModel/ConcreteClasses/Bay.md
+        - BoundaryPoint: Models/Profiles/BoundaryModel/ConcreteClasses/BoundaryPoint.md
+        - ConnectivityNode: Models/Profiles/BoundaryModel/ConcreteClasses/ConnectivityNode.md
+        - Substation: Models/Profiles/BoundaryModel/ConcreteClasses/Substation.md
+        - VoltageLevel: Models/Profiles/BoundaryModel/ConcreteClasses/VoltageLevel.md
+    - Equipment:
+      - Overview: Models/Profiles/Equipment/index.md
+      - Abstract Classes:
+        - ACDCTerminal: Models/Profiles/Equipment/AbstractClasses/ACDCTerminal.md
+        - ConductingEquipment: Models/Profiles/Equipment/AbstractClasses/ConductingEquipment.md
+        - Conductor: Models/Profiles/Equipment/AbstractClasses/Conductor.md
+        - ConnectivityNodeContainer: Models/Profiles/Equipment/AbstractClasses/ConnectivityNodeContainer.md
+        - Connector: Models/Profiles/Equipment/AbstractClasses/Connector.md
+        - EarthFaultCompensator: Models/Profiles/Equipment/AbstractClasses/EarthFaultCompensator.md
+        - EnergyArea: Models/Profiles/Equipment/AbstractClasses/EnergyArea.md
+        - EnergyConnection: Models/Profiles/Equipment/AbstractClasses/EnergyConnection.md
+        - Equipment: Models/Profiles/Equipment/AbstractClasses/Equipment.md
+        - EquipmentContainer: Models/Profiles/Equipment/AbstractClasses/EquipmentContainer.md
+        - EquivalentEquipment: Models/Profiles/Equipment/AbstractClasses/EquivalentEquipment.md
+        - IdentifiedObject: Models/Profiles/Equipment/AbstractClasses/IdentifiedObject.md
+        - LoadGroup: Models/Profiles/Equipment/AbstractClasses/LoadGroup.md
+        - OperationalLimit: Models/Profiles/Equipment/AbstractClasses/OperationalLimit.md
+        - ProtectedSwitch: Models/Profiles/Equipment/AbstractClasses/ProtectedSwitch.md
+        - PowerSystemResource: Models/Profiles/Equipment/AbstractClasses/PowerSystemResource.md
+        - RegulatingCondEq: Models/Profiles/Equipment/AbstractClasses/RegulatingCondEq.md
+        - RotatingMachine: Models/Profiles/Equipment/AbstractClasses/RotatingMachine.md
+        - ShuntCompensator: Models/Profiles/Equipment/AbstractClasses/ShuntCompensator.md
+        - Switch: Models/Profiles/Equipment/AbstractClasses/Switch.md
+        - TapChanger: Models/Profiles/Equipment/AbstractClasses/TapChanger.md
+        - TransformerEnd: Models/Profiles/Equipment/AbstractClasses/TransformerEnd.md
+      - Concrete Classes:
+        - ACLineSegment: Models/Profiles/Equipment/ConcreteClasses/ACLineSegment.md
+        - BaseVoltage: Models/Profiles/Equipment/ConcreteClasses/BaseVoltage.md
+        - Bay: Models/Profiles/Equipment/ConcreteClasses/Bay.md
+        - Breaker: Models/Profiles/Equipment/ConcreteClasses/Breaker.md
+        - BusbarSection: Models/Profiles/Equipment/ConcreteClasses/BusbarSection.md
+        - ConformLoad: Models/Profiles/Equipment/ConcreteClasses/ConformLoad.md
+        - ConformLoadGroup: Models/Profiles/Equipment/ConcreteClasses/ConformLoadGroup.md
+        - ConnectivityNode: Models/Profiles/Equipment/ConcreteClasses/ConnectivityNode.md
+        - ControlArea: Models/Profiles/Equipment/ConcreteClasses/ControlArea.md
+        - CurrentLimit: Models/Profiles/Equipment/ConcreteClasses/CurrentLimit.md
+        - Disconnector: Models/Profiles/Equipment/ConcreteClasses/Disconnector.md
+        - EnergyConsumer: Models/Profiles/Equipment/ConcreteClasses/EnergyConsumer.md
+        - EquivalentNetwork: Models/Profiles/Equipment/ConcreteClasses/EquivalentNetwork.md
+        - EquivalentInjection: Models/Profiles/Equipment/ConcreteClasses/EquivalentInjection.md
+        - Fuse: Models/Profiles/Equipment/ConcreteClasses/Fuse.md
+        - GeneratingUnit: Models/Profiles/Equipment/ConcreteClasses/GeneratingUnit.md
+        - GeographicalRegion: Models/Profiles/Equipment/ConcreteClasses/GeographicalRegion.md
+        - Line: Models/Profiles/Equipment/ConcreteClasses/Line.md
+        - LinearShuntCompensator: Models/Profiles/Equipment/ConcreteClasses/LinearShuntCompensator.md
+        - LoadBreakSwitch: Models/Profiles/Equipment/ConcreteClasses/LoadBreakSwitch.md
+        - LoadArea: Models/Profiles/Equipment/ConcreteClasses/LoadArea.md
+        - LoadResponseCharacteristic: Models/Profiles/Equipment/ConcreteClasses/LoadResponseCharacteristic.md
+        - OperationalLimitSet: Models/Profiles/Equipment/ConcreteClasses/OperationalLimitSet.md
+        - OperationalLimitType: Models/Profiles/Equipment/ConcreteClasses/OperationalLimitType.md
+        - PetersenCoil: Models/Profiles/Equipment/ConcreteClasses/PetersenCoil.md
+        - PowerTransformer: Models/Profiles/Equipment/ConcreteClasses/PowerTransformer.md
+        - PowerTransformerEnd: Models/Profiles/Equipment/ConcreteClasses/PowerTransformerEnd.md
+        - RatioTapChanger: Models/Profiles/Equipment/ConcreteClasses/RatioTapChanger.md
+        - RegulatingControl: Models/Profiles/Equipment/ConcreteClasses/RegulatingControl.md
+        - StationSupply: Models/Profiles/Equipment/ConcreteClasses/StationSupply.md
+        - SubGeographicalRegion: Models/Profiles/Equipment/ConcreteClasses/SubGeographicalRegion.md
+        - SubLoadArea: Models/Profiles/Equipment/ConcreteClasses/SubLoadArea.md
+        - Substation: Models/Profiles/Equipment/ConcreteClasses/Substation.md
+        - SynchronousMachine: Models/Profiles/Equipment/ConcreteClasses/SynchronousMachine.md
+        - TapChangerControl: Models/Profiles/Equipment/ConcreteClasses/TapChangerControl.md
+        - Terminal: Models/Profiles/Equipment/ConcreteClasses/Terminal.md
+        - VoltageLevel: Models/Profiles/Equipment/ConcreteClasses/VoltageLevel.md
+      - Enumerations:
+        - LocationMethodKind: Models/Profiles/Equipment/Enumerations/LocationMethodKind.md
+        - PhaseCode: Models/Profiles/Equipment/Enumerations/PhaseCode.md
+        - RegulatingControlModeKind: Models/Profiles/Equipment/Enumerations/RegulatingControlModeKind.md
+        - SynchronousMachineKind: Models/Profiles/Equipment/Enumerations/SynchronousMachineKind.md
+        - TransformerControlMode: Models/Profiles/Equipment/Enumerations/TransformerControlMode.md
+      - Types:
+        - ActivePower: Models/Profiles/Equipment/Types/ActivePower.md
+        - ApparentPower: Models/Profiles/Equipment/Types/ApparentPower.md
+        - Conductance: Models/Profiles/Equipment/Types/Conductance.md
+        - CurrentFlow: Models/Profiles/Equipment/Types/CurrentFlow.md
+        - Length: Models/Profiles/Equipment/Types/Length.md
+        - PerCent: Models/Profiles/Equipment/Types/PerCent.md
+        - Reactance: Models/Profiles/Equipment/Types/Reactance.md
+        - ReactivePower: Models/Profiles/Equipment/Types/ReactivePower.md
+        - Resistance: Models/Profiles/Equipment/Types/Resistance.md
+        - Seconds: Models/Profiles/Equipment/Types/Seconds.md
+        - Susceptance: Models/Profiles/Equipment/Types/Susceptance.md
+        - Voltage: Models/Profiles/Equipment/Types/Voltage.md
     - GridCapacity:
       - Overview: Models/Profiles/GridCapacity/index.md
       - Abstract Classes:
         - IdentifiedObject: Models/Profiles/GridCapacity/AbstractClasses/IdentifiedObject.md
+        - SpatialObject: Models/Profiles/GridCapacity/AbstractClasses/SpatialObject.md
+        - Feature: Models/Profiles/GridCapacity/AbstractClasses/Feature.md
+        - Geometry: Models/Profiles/GridCapacity/AbstractClasses/Geometry.md
         - PowerSystemResource: Models/Profiles/GridCapacity/AbstractClasses/PowerSystemResource.md
         - ConnectivityNodeContainer: Models/Profiles/GridCapacity/AbstractClasses/ConnectivityNodeContainer.md
         - EquipmentContainer: Models/Profiles/GridCapacity/AbstractClasses/EquipmentContainer.md
         - BaseTimeSeries: Models/Profiles/GridCapacity/AbstractClasses/BaseTimeSeries.md
         - BaseIrregularTimeSeries: Models/Profiles/GridCapacity/AbstractClasses/BaseIrregularTimeSeries.md
       - Concrete Classes:
-        - LanguageObject: Models/Profiles/GridCapacity/ConcreteClasses/LanguageObject.md
-        - SpatialObject: Models/Profiles/GridCapacity/ConcreteClasses/SpatialObject.md
-        - Feature: Models/Profiles/GridCapacity/ConcreteClasses/Feature.md
-        - Geometry: Models/Profiles/GridCapacity/ConcreteClasses/Geometry.md
-        - GeometryObject: Models/Profiles/GridCapacity/ConcreteClasses/GeometryObject.md
         - Feeder: Models/Profiles/GridCapacity/ConcreteClasses/Feeder.md
         - CapacitySchedule: Models/Profiles/GridCapacity/ConcreteClasses/CapacitySchedule.md
         - CapacityTimePoint: Models/Profiles/GridCapacity/ConcreteClasses/CapacityTimePoint.md

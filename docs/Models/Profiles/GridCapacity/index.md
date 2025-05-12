@@ -16,9 +16,15 @@ Profiles:
     
     - [EquipmentContainer](/Models/Profiles/GridCapacity/AbstractClasses/EquipmentContainer/)
     
+    - [Feature](/Models/Profiles/GridCapacity/AbstractClasses/Feature/)
+    
+    - [Geometry](/Models/Profiles/GridCapacity/AbstractClasses/Geometry/)
+    
     - [IdentifiedObject](/Models/Profiles/GridCapacity/AbstractClasses/IdentifiedObject/)
     
     - [PowerSystemResource](/Models/Profiles/GridCapacity/AbstractClasses/PowerSystemResource/)
+    
+    - [SpatialObject](/Models/Profiles/GridCapacity/AbstractClasses/SpatialObject/)
     
 
 - Concrete Classes
@@ -27,17 +33,7 @@ Profiles:
     
     - [CapacityTimePoint](/Models/Profiles/GridCapacity/ConcreteClasses/CapacityTimePoint/)
     
-    - [Feature](/Models/Profiles/GridCapacity/ConcreteClasses/Feature/)
-    
     - [Feeder](/Models/Profiles/GridCapacity/ConcreteClasses/Feeder/)
-    
-    - [Geometry](/Models/Profiles/GridCapacity/ConcreteClasses/Geometry/)
-    
-    - [GeometryObject](/Models/Profiles/GridCapacity/ConcreteClasses/GeometryObject/)
-    
-    - [LanguageObject](/Models/Profiles/GridCapacity/ConcreteClasses/LanguageObject/)
-    
-    - [SpatialObject](/Models/Profiles/GridCapacity/ConcreteClasses/SpatialObject/)
     
 
 - Enumerations

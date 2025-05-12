@@ -29,11 +29,13 @@ class mkdocs:
             if 'abstract' in globalYamlDict["classes"][_class] and globalYamlDict["classes"][_class]['abstract'] == False or 'abstract' not in globalYamlDict["classes"][_class]:
                 concreteClasses.append({'name': _class, 'path': f'{globalLookUpDataDict[_class]["absoluteUrlPath"]}'})
 
-        for enum in globalYamlDict["enums"]:
-            enumerations.append({'name': enum, 'path': f'{globalLookUpDataDict[enum]["absoluteUrlPath"]}'})
+        if "enums" in globalYamlDict and globalYamlDict["enums"] != None:
+            for enum in globalYamlDict["enums"]:
+                enumerations.append({'name': enum, 'path': f'{globalLookUpDataDict[enum]["absoluteUrlPath"]}'})
 
-        for _type in globalYamlDict["types"]:
-            types.append({'name': _type, 'path': f'{globalLookUpDataDict[_type]["absoluteUrlPath"]}'})
+        if "types" in globalYamlDict and globalYamlDict["types"] != None:
+            for _type in globalYamlDict["types"]:
+                types.append({'name': _type, 'path': f'{globalLookUpDataDict[_type]["absoluteUrlPath"]}'})
         
         if len(abstractClasses) > 0:
             abstractClasses.sort(key=lambda x: x['name'])
@@ -78,13 +80,25 @@ class mkdocs:
     def createNavigationDict():
         navDict = {
             globalDocName: [
-                {'Overview': f'Models/Profiles/{globalDocName}/index.md'},
-                {"Abstract Classes": []},
-                {"Concrete Classes": []},
-                {"Enumerations": []},
-                {"Types": []}
             ]
         }
+
+        # Overview
+        navDict[globalDocName].append({'Overview': f'Models/Profiles/{globalDocName}/index.md'}),
+
+        # "Abstract Classes"
+        navDict[globalDocName].append({"Abstract Classes": []})
+
+        # "Concrete Classes"
+        navDict[globalDocName].append({"Concrete Classes": []})
+
+        # Add "Enumerations" only if there are enumerations
+        if "enums" in globalYamlDict and globalYamlDict["enums"]:
+            navDict[globalDocName].append({"Enumerations": []})
+
+        # Add "Types" only if there are types
+        if "types" in globalYamlDict and globalYamlDict["types"]:
+            navDict[globalDocName].append({"Types": []})
 
         return navDict
 
@@ -177,7 +191,7 @@ class General():
 
             lookUpDataDict[_class] = classData
 
-        if 'enums' in globalYamlDict:
+        if 'enums' in globalYamlDict and globalYamlDict['enums'] != None:
 
             for enumeration in globalYamlDict['enums']:
 
@@ -196,7 +210,7 @@ class General():
 
                 lookUpDataDict[enumeration] = enumerationData
 
-        if 'types' in globalYamlDict:
+        if 'types' in globalYamlDict and globalYamlDict['types'] != None:
 
             for _type in globalYamlDict['types']:
 
@@ -267,12 +281,14 @@ class InheritanceData():
 
             if globalYamlDict["classes"][key]["is_a"] != _class:
                 continue
-
+            
             subClass = key #{key: globalYamlDict["classes"][key]}
 
             subClassList.append(subClass)
 
-            return subClassList
+        subClassList.sort()
+
+        return subClassList
 
 class ClassData():
 
@@ -304,7 +320,7 @@ class ClassData():
     
     def getTypesData(self):
 
-        if "types" not in globalYamlDict:
+        if "types" not in globalYamlDict or globalYamlDict["types"] == None:
             return
 
         typesList = []
@@ -455,6 +471,10 @@ class CreateMermaid():
         if _type == "relationship":
             style = f'style {value} fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white'
             # returnType = "relationship"
+
+        if _type == "missingRelationship":
+            style = f'style {value} fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white'
+            # returnType = "missingRelationship"
         
         if _type == "enum":
             style = f'style {value} fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white'
@@ -465,8 +485,6 @@ class CreateMermaid():
             # returnType = "thisClass"
 
         return style
-
-
 
     def createMermaidSubMixinString(self, inheritanceList):
         
@@ -583,6 +601,18 @@ class CreateMermaid():
         relationshipString = ""
         classes = globalYamlDict["classes"]
 
+        if "enums" not in globalYamlDict or globalYamlDict["enums"] == None:
+            enums = []
+        else:
+            enums = globalYamlDict["enums"]
+
+        if "types" not in globalYamlDict or globalYamlDict["types"] == None:
+            _types = []
+        else:
+            _types = globalYamlDict["types"]
+
+        baseTypes = ["string", "integer", "boolean", "float", "double", "datetime", "date", "time", "duration"]
+
         # From class to range
         for _class in inheritanceList:
             
@@ -595,14 +625,36 @@ class CreateMermaid():
                     continue
 
                 _range = classes[_class]["attributes"][attribute]["range"]
+
                 if _range in classes:
                     mermaidStyleClassToRange = CreateMermaid().mermaidStyles(_range, "relationship")
+
+                    # Now it needs the attributes to be located at the correct class. If this is not the case the next 2 lines can be used in stead and {_class}.{attribute} should be replaced by {nonPrefixRelationShipURI}
+                    # relationshipURI = globalYamlDict['classes'][_class]['attributes'][attribute]["slot_uri"]
+                    # nonPrefixRelationShipURI = relationshipURI.split(":")[1] if ":" in relationshipURI else relationshipURI
+
                     relationshipString += f"""        {_class} --> {_range} : {_class}.{attribute}
 
         {_range}
             click {_range} href "{globalLookUpDataDict[_range]["absoluteUrlPath"]}"
             {mermaidStyleClassToRange}
 """
+                    
+                if _range not in classes and _range not in enums and _range not in _types and _range not in baseTypes:
+
+                    mermaidStyleClassToRange = CreateMermaid().mermaidStyles(_range, "missingRelationship")
+
+                    # print(_class, _range)
+                    globalErrorSet.add(f"WARNING: {_range} is referred to, but not defined in the schema. Please verify its inclusion or correct the reference.")
+
+                    relationshipString += f"""        {_class} --> {_range} : {_class}.{attribute}
+
+        {_range} : Not defined in profile
+
+        {_range}
+            {mermaidStyleClassToRange}
+"""
+        
         # Range to class
         for _class in classes:
 
@@ -632,7 +684,7 @@ class CreateMermaid():
         
         enumString = ""
 
-        if "enums" not in globalYamlDict:
+        if "enums" not in globalYamlDict or globalYamlDict["enums"] == None:
             return
 
         enums = globalYamlDict["enums"]
@@ -716,6 +768,9 @@ class CreateMarkdownFile():
 
     def createEnums(self):
         
+        if "enums" not in globalYamlDict or globalYamlDict["enums"] == None:
+            return
+
         enumList = ClassData().getEnumData()
 
         for enum in enumList:
@@ -752,7 +807,10 @@ class CreateMarkdownFile():
                 print(f'Markdown file created for the enumeration {key}')
 
     def createTypes(self):
-
+        
+        if "types" not in globalYamlDict or globalYamlDict["types"] == None:
+            return
+        
         typesList = ClassData().getTypesData()
 
         for _type in typesList:
@@ -780,7 +838,7 @@ class CreateMarkdownFile():
                     file.write(f'## Schema Source\n\n')
                     file.write(f'from schema: [{sourceUri}]({sourceUri})\n')
 
-                print(f'Markdown file created for the enumeration {key}')
+                print(f'Markdown file created for the type {key}')
 
     def createIndex(self):
         
@@ -839,9 +897,11 @@ class CreateMarkdownFile():
                         for _dict in any_of:
                             value = _dict["range"]
                             if value in globalYamlDict["classes"]:
-                                rangeList.append(f'[{value}]({value}.md)')
+                                absoluteUrlPath = globalLookUpDataDict[value]["absoluteUrlPath"]
+                                rangeList.append(f'[{value}]({absoluteUrlPath})')
                             elif value in globalYamlDict["enums"]:
-                                rangeList.append(f'[{value}]({value}.md)')
+                                absoluteUrlPath = globalLookUpDataDict[value]["absoluteUrlPath"]
+                                rangeList.append(f'[{value}]({absoluteUrlPath})')
                             else:
                                 rangeList.append(value)
                     elif "range" in attributes[attribute]:
@@ -870,10 +930,13 @@ class CreateMarkdownFile():
 '''
         count = 0
         for key in inheritanceList:
+
             if key == globalClass:
                 inheritanceString += f'{" " * (4 * count)}* **{key}**\n'
             else:
-                inheritanceString += f'{" " * (4 * count)}* [{key}]({key}.md)\n'
+                absoluteUrlPath = globalLookUpDataDict[key]["absoluteUrlPath"]
+                inheritanceString += f'{" " * (4 * count)}* [{key}]({absoluteUrlPath})\n'
+                
             count += 1
         return inheritanceString
 
@@ -918,6 +981,9 @@ class CreateMdController():
 
     def main(self, schemaName, template='default'):
 
+        global globalErrorSet
+        globalErrorSet = set()
+
         yamlSchemaPath = f"schemas/yaml/{schemaName}.linkml.yaml"
         
         global globalDocName
@@ -948,8 +1014,15 @@ class CreateMdController():
 
         mkdocs.mkdocs_config_handler(template)
         mkdocs.mkdocs_create_profile_index()
+        
+        if len(globalErrorSet) > 0:
+            for error in globalErrorSet:
+                if error.startswith("WARNING"):
+                    print(f"\033[93m{error}\033[0m")
+                if error.startswith("ERROR"):
+                    print(f"\033[91m{error}\033[0m")
 
 if __name__ == "__main__":
-    schemaName = "watt_app"
+    schemaName = "telemark-120_boundary_model"
     CreateMdController().main(schemaName, 'elbits')
 

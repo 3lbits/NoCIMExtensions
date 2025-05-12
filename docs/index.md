@@ -11,5 +11,7 @@ To access examples of how to use these profiles, please visit our [GitHub reposi
 Profiles:
 
 - [AviationObstacle](/Models/Profiles/AviationObstacle/)
+- [BoundaryModel](/Models/Profiles/BoundaryModel/)
+- [Equipment](/Models/Profiles/Equipment/)
 - [GridCapacity](/Models/Profiles/GridCapacity/)
 - [SubseaCableInfo](/Models/Profiles/SubseaCableInfo/)

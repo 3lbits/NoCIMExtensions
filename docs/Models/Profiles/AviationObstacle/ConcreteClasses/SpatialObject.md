@@ -18,6 +18,12 @@ classDiagram
             click Feature href "/Models/Profiles/AviationObstacle/ConcreteClasses/Feature/"
             style Feature fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        SpatialObject <|-- Geometry : inherits
+
+        Geometry
+            click Geometry href "/Models/Profiles/AviationObstacle/ConcreteClasses/Geometry/"
+            style Geometry fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
 
 
 ```

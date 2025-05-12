@@ -17,6 +17,12 @@ classDiagram
         CorrugatedRoundWire
             click CorrugatedRoundWire href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/CorrugatedRoundWire/"
             style CorrugatedRoundWire fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        RoundWire <|-- SplitConcentric : inherits
+
+        SplitConcentric
+            click SplitConcentric href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/SplitConcentric/"
+            style SplitConcentric fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ConcentricWireLayer <|-- RoundWire : inherits
             click ConcentricWireLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ConcentricWireLayer/"
@@ -57,9 +63,9 @@ classDiagram
 ```
 
 ## Inheritance
-* [CableLayer](CableLayer.md)
-    * [MetallicSheathLayer](MetallicSheathLayer.md)
-        * [ConcentricWireLayer](ConcentricWireLayer.md)
+* [CableLayer](/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/)
+    * [MetallicSheathLayer](/Models/Profiles/SubseaCableInfo/ConcreteClasses/MetallicSheathLayer/)
+        * [ConcentricWireLayer](/Models/Profiles/SubseaCableInfo/ConcreteClasses/ConcentricWireLayer/)
             * **RoundWire**
 
 ## Attributes

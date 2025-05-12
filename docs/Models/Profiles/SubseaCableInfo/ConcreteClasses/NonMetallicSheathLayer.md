@@ -17,6 +17,24 @@ classDiagram
         BindingLayer
             click BindingLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/BindingLayer/"
             style BindingLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        NonMetallicSheathLayer <|-- InnerSheathLayer : inherits
+
+        InnerSheathLayer
+            click InnerSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/InnerSheathLayer/"
+            style InnerSheathLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        NonMetallicSheathLayer <|-- OverSheathLayer : inherits
+
+        OverSheathLayer
+            click OverSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/OverSheathLayer/"
+            style OverSheathLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
+        NonMetallicSheathLayer <|-- SwellableWaterTapes : inherits
+
+        SwellableWaterTapes
+            click SwellableWaterTapes href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/SwellableWaterTapes/"
+            style SwellableWaterTapes fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         CableLayer <|-- NonMetallicSheathLayer : inherits
             click CableLayer href "/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/"
@@ -42,7 +60,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [CableLayer](CableLayer.md)
+* [CableLayer](/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/)
     * **NonMetallicSheathLayer**
 
 ## Attributes

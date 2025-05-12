@@ -96,12 +96,12 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](IdentifiedObject.md)
-    * [AssetInfo](AssetInfo.md)
-        * [ConductingAssetInfo](ConductingAssetInfo.md)
-            * [ConductorInfo](ConductorInfo.md)
-                * [WireInfo](WireInfo.md)
-                    * [CableInfo](CableInfo.md)
+* [IdentifiedObject](/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/)
+    * [AssetInfo](/Models/Profiles/SubseaCableInfo/AbstractClasses/AssetInfo/)
+        * [ConductingAssetInfo](/Models/Profiles/SubseaCableInfo/AbstractClasses/ConductingAssetInfo/)
+            * [ConductorInfo](/Models/Profiles/SubseaCableInfo/AbstractClasses/ConductorInfo/)
+                * [WireInfo](/Models/Profiles/SubseaCableInfo/AbstractClasses/WireInfo/)
+                    * [CableInfo](/Models/Profiles/SubseaCableInfo/ConcreteClasses/CableInfo/)
                         * **MultiCoreCableInfo**
 
 ## Attributes

@@ -51,9 +51,9 @@ classDiagram
 ```
 
 ## Inheritance
-* [CableLayer](CableLayer.md)
-    * [MetallicSheathLayer](MetallicSheathLayer.md)
-        * [ConcentricWireLayer](ConcentricWireLayer.md)
+* [CableLayer](/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/)
+    * [MetallicSheathLayer](/Models/Profiles/SubseaCableInfo/ConcreteClasses/MetallicSheathLayer/)
+        * [ConcentricWireLayer](/Models/Profiles/SubseaCableInfo/ConcreteClasses/ConcentricWireLayer/)
             * **SkidWireLayer**
 
 ## Attributes
