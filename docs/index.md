@@ -14,4 +14,5 @@ Profiles:
 - [BoundaryModel](/Models/Profiles/BoundaryModel/)
 - [Equipment](/Models/Profiles/Equipment/)
 - [GridCapacity](/Models/Profiles/GridCapacity/)
+- [Outage](/Models/Profiles/Outage/)
 - [SubseaCableInfo](/Models/Profiles/SubseaCableInfo/)

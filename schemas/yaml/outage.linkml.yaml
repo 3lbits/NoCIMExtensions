@@ -1,0 +1,1452 @@
+id: http://iec.ch/TC57/2007/profile#
+name: Profile
+title: Profile Vocabulary
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  linkml: https://w3id.org/linkml/
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  dc: http://purl.org/dc/elements/1.1/
+  profcim: http://iec.ch/TC57/ns/CIM/prof-cim#
+  owl: http://www.w3.org/2002/07/owl#
+  cim: http://iec.ch/TC57/CIM100#
+  cims: http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#
+  dct: http://purl.org/dc/terms/
+  this: http://iec.ch/TC57/2007/profile#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  dcat: http://www.w3.org/ns/dcat#
+  eu: http://iec.ch/TC57/CIM100-European#
+imports:
+- linkml:types
+default_curi_maps:
+- semweb_context
+default_range: string
+default_prefix: this
+classes:
+  Document:
+    description: "Parent class for different groupings of information collected and managed as a part of a business process. It will frequently contain references to other objects, such as assets, people and power system resources."
+    annotations:
+      ea_guid: "_EF39687B-42C9-4204-972C-0F1A9520DC31"
+    is_a: IdentifiedObject
+    abstract: true
+    class_uri: cim:Document
+    attributes: 
+      authorName:
+        description: "Name of the author of this document."
+        annotations:
+          ea_guid: "_3CAF8786-CCB2-4aac-9223-4099DBF0A5AF"
+        slot_uri: cim:Document.authorName
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      comment:
+        description: "Free text comment."
+        annotations:
+          ea_guid: "_A754AC3E-62CC-4559-8275-82B3391ACEC4"
+        slot_uri: cim:Document.comment
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      createdDateTime:
+        description: "Date and time that this document was created."
+        annotations:
+          ea_guid: "_2AADF13C-3746-4a53-9569-4D4F32C28CF4"
+        slot_uri: cim:Document.createdDateTime
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      lastModifiedDateTime:
+        description: "Date and time this document was last modified. Documents may potentially be modified many times during their lifetime."
+        annotations:
+          ea_guid: "_779D509D-F4F0-4279-8E0D-CA2FC2B461C9"
+        slot_uri: cim:Document.lastModifiedDateTime
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      revisionNumber:
+        description: "Revision number for this document."
+        annotations:
+          ea_guid: "_BB9A66A5-1F53-423b-B1D7-328BB2D64C84"
+        slot_uri: cim:Document.revisionNumber
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      subject:
+        description: "Document subject."
+        annotations:
+          ea_guid: "_9876F55E-396A-4b45-969E-5EF24A46DAB0"
+        slot_uri: cim:Document.subject
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      title:
+        description: "Document title."
+        annotations:
+          ea_guid: "_D5DB91DF-E1E6-4d77-A2D8-D070A03B9422"
+        slot_uri: cim:Document.title
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      type:
+        description: "Utility-specific classification of this document, according to its corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.)."
+        annotations:
+          ea_guid: "_6A6BC1C9-8818-43ca-BFB0-A1A43EFAAD20"
+        slot_uri: cim:Document.type
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      status:
+        description: "Status of subject matter (e.g., Agreement, Work) this document represents. For status of the document itself, use 'docStatus' attribute."
+        annotations:
+          ea_guid: "_6F277455-3C17-4593-9FB7-F7059BD2EAB6"
+        slot_uri: cim:Document.status
+        range: Status
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  IOPoint:
+    description: "The class describe a measurement or control value. The purpose is to enable having attributes and associations common for measurement and control."
+    annotations:
+      ea_guid: "_538879CD-D8B6-4eff-B980-FE6510E2699A"
+    is_a: IdentifiedObject
+    abstract: true
+    class_uri: cim:IOPoint
+    attributes: 
+  IdentifiedObject:
+    description: "This is a root class to provide common identification for all classes needing identification and naming attributes."
+    annotations:
+      ea_guid: "_055C5806-E9D8-4a7a-9307-DAF7C31763C7"
+    abstract: true
+    class_uri: cim:IdentifiedObject
+    attributes: 
+      mRID:
+        description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
+        annotations:
+          ea_guid: "_C775F80A-A23D-4f38-AB9D-49D1FA882337"
+        slot_uri: cim:IdentifiedObject.mRID
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      aliasName:
+        description: "The aliasName is free text human readable name of the object alternative to IdentifiedObject.name. It may be non unique and may not correlate to a naming hierarchy.The attribute aliasName is retained because of backwards compatibility between CIM relases. It is however recommended to replace aliasName with the Name class as aliasName is planned for retirement at a future time."
+        annotations:
+          ea_guid: "_D4F8B75D-CDAD-4440-8092-1425101E5ABC"
+        slot_uri: cim:IdentifiedObject.aliasName
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      description:
+        description: "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."
+        annotations:
+          ea_guid: "_13104BE9-CB1E-4dde-9A52-D7EE95DF7B65"
+        slot_uri: cim:IdentifiedObject.description
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      name:
+        description: "The name is any free human readable and possibly non unique text naming the object."
+        annotations:
+          ea_guid: "_870F033B-EDA6-4a32-A5AD-47DCBBFE2997"
+        slot_uri: cim:IdentifiedObject.name
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  Measurement:
+    description: "A Measurement represents any measured, calculated or non-measured non-calculated quantity. Any piece of equipment may contain Measurements, e.g. a substation may have temperature measurements and door open indications, a transformer may have oil temperature and tank pressure measurements, a bay may contain a number of power flow measurements and a Breaker may contain a switch status measurement.The PSR - Measurement association is intended to capture this use of Measurement and is included in the naming hierarchy based on EquipmentContainer. The naming hierarchy typically has Measurements as leaves, e.g. Substation-VoltageLevel-Bay-Switch-Measurement.Some Measurements represent quantities related to a particular sensor location in the network, e.g. a voltage transformer (VT) or potential transformer (PT) at a busbar or a current transformer (CT) at the bar between a breaker and an isolator. The sensing position is not captured in the PSR - Measurement association. Instead it is captured by the Measurement - Terminal association that is used to define the sensing location in the network topology. The location is defined by the connection of the Terminal to ConductingEquipment.If both a Terminal and PSR are associated, and the PSR is of type ConductingEquipment, the associated Terminal should belong to that ConductingEquipment instance.When the sensor location is needed both Measurement-PSR and Measurement-Terminal are used. The Measurement-Terminal association is never used alone."
+    annotations:
+      ea_guid: "_AB1758FA-3A4D-478f-BE4F-ADC8E2F886CC"
+    is_a: IdentifiedObject
+    abstract: true
+    class_uri: cim:Measurement
+    attributes: 
+      measurementType:
+        description: "Specifies the type of measurement.  For example, this specifies if the measurement represents an indoor temperature, outdoor temperature, bus voltage, line flow, etc.When the measurementType is set to Specialization, the type of Measurement is defined in more detail by the specialized class which inherits from Measurement."
+        annotations:
+          ea_guid: "_A0E1519B-5C0C-40ba-8596-0A94D2FE4BAB"
+        slot_uri: cim:Measurement.measurementType
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      phases:
+        description: "Indicates to which phases the measurement applies and avoids the need to use 'measurementType' to also encode phase information (which would explode the types). The phase information in Measurement, along with 'measurementType' and 'phases' uniquely defines a Measurement for a device, based on normal network phase. Their meaning will not change when the computed energizing phasing is changed due to jumpers or other reasons.If the attribute is missing three phases (ABC) shall be assumed."
+        annotations:
+          ea_guid: "_752AF06E-692D-4889-820C-2CBDA746E822"
+        slot_uri: cim:Measurement.phases
+        range: PhaseCode
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      unitMultiplier:
+        description: "The unit multiplier of the measured quantity."
+        annotations:
+          ea_guid: "_E6B15F9B-D6F8-412c-B662-FC9D1902C7ED"
+        slot_uri: cim:Measurement.unitMultiplier
+        range: UnitMultiplier
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      unitSymbol:
+        description: "The unit of measure of the measured quantity."
+        annotations:
+          ea_guid: "_257F4465-5F67-4dca-91CB-2D2F6F040283"
+        slot_uri: cim:Measurement.unitSymbol
+        range: UnitSymbol
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      PowerSystemResource:
+        description: "The power system resource that contains the measurement."
+        annotations:
+          ea_guid: "_78186A65-461E-4479-9917-94B5C4F2F9F6-B"
+        slot_uri: cim:Measurement.PowerSystemResource
+        range: PowerSystemResource
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  MeasurementValue:
+    description: "The current state for a measurement. A state value is an instance of a measurement from a specific source. Measurements can be associated with many state values, each representing a different source for the measurement."
+    annotations:
+      ea_guid: "_E6D7B57A-456A-43b5-838B-3CFB466EE4C4"
+    is_a: IOPoint
+    abstract: true
+    class_uri: cim:MeasurementValue
+    attributes: 
+      sensorAccuracy:
+        description: "The limit, expressed as a percentage of the sensor maximum, that errors will not exceed when the sensor is used under  reference conditions."
+        annotations:
+          ea_guid: "_6473AC26-9C48-4a1c-9FE5-BA7CE555F4DD"
+        slot_uri: cim:MeasurementValue.sensorAccuracy
+        range: PerCent
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      timeStamp:
+        description: "The time when the value was last updated."
+        annotations:
+          ea_guid: "_DB94617E-83D2-4cd4-A38F-64B0524D28DF"
+        slot_uri: cim:MeasurementValue.timeStamp
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  Outage:
+    description: "Document describing details of an active or planned outage in a part of the electrical network.A non-planned outage may be created upon:- a breaker trip,- a fault indicator status change,- a meter event indicating customer outage,- a reception of one or more customer trouble calls, or- an operator command, reflecting information obtained from the field crew.Outage restoration may be performed using a switching plan which complements the outage information with detailed switching activities, including the relationship to the crew and work.A planned outage may be created upon:- a request for service, maintenance or construction work in the field, or- an operator-defined outage for what-if/contingency network analysis."
+    annotations:
+      ea_guid: "_F40E2EAD-3BCA-4a17-A41E-A74212822DAA"
+    is_a: Document
+    abstract: true
+    class_uri: cim:Outage
+    attributes: 
+      communityDescriptor:
+        description: "a name to denote the community - this could be a name or a code of some kind."
+        annotations:
+          ea_guid: "_8C38F9E5-6C87-4c4f-9880-51186D05090F"
+        slot_uri: cim:Outage.communityDescriptor
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      customersRestored:
+        description: "number of customers that have been restored in the area."
+        annotations:
+          ea_guid: "_96EC7A1B-7F86-4742-A6DE-DAB1E3BA1ED2"
+        slot_uri: cim:Outage.customersRestored
+        range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      metersAffected:
+        description: "The updated number of meters affected by the outage as reported by the OMS within the utility.  It is assumed this number will be updated repeatedly until the full outage is resolved."
+        annotations:
+          ea_guid: "_5793A622-95C4-41c3-B43A-075FBD01DCC4"
+        slot_uri: cim:Outage.metersAffected
+        range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      originalCustomersServed:
+        description: "the total number of customers that are served in the area (both outaged and not outaged)."
+        annotations:
+          ea_guid: "_81471418-91EA-4a7a-BF26-04C830755313"
+        slot_uri: cim:Outage.originalCustomersServed
+        range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      originalMetersAffected:
+        description: "The original number of meters that were affected as reported by the OMS within the utility. That is, this is the total number of meters that were out at the beginning of the outage."
+        annotations:
+          ea_guid: "_831EAA33-59E8-45c6-A7E0-AD1E0F65E806"
+        slot_uri: cim:Outage.originalMetersAffected
+        range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      outageKind:
+        description: "Defines if the outage has been verified or is only estimated"
+        annotations:
+          ea_guid: "_4EEF77FC-63B4-44f5-9831-FB5BBDD0FD98"
+        slot_uri: cim:Outage.outageKind
+        range: OutageStatusKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      statusKind:
+        description: "defines the status of the crew as in dispatched or arrived, etc."
+        annotations:
+          ea_guid: "_CEB45334-9B67-4ff2-AC41-C15BAC571F12"
+        slot_uri: cim:Outage.statusKind
+        range: CrewStatusKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      utilityDisclaimer:
+        description: "This contains an disclaimers the utility would like to place on the data provided to any stakeholder.  This may be different for different stakeholders.  This should possibly be an attribute under the Organization class but it is placed here for now."
+        annotations:
+          ea_guid: "_B8DD462E-CD50-45dd-B640-C2E9C0D7A292"
+        slot_uri: cim:Outage.utilityDisclaimer
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      actualPeriod:
+        description: "Actual outage period; end of the period corresponds to the actual restoration time."
+        annotations:
+          ea_guid: "_0AD368D5-C6D0-47a8-B938-051F2AC57B2C"
+        slot_uri: cim:Outage.actualPeriod
+        range: DateTimeInterval
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      Equipments:
+        description: "All equipments associated with this outage."
+        annotations:
+          ea_guid: "_7CB5F824-2EAC-4c6e-B3CE-B2B245253D31-A"
+        slot_uri: cim:Outage.Equipments
+        range: Equipment
+        minimum_cardinality: 0
+        multivalued: true
+  PlannedOutage:
+    annotations:
+      ea_guid: "_0BCDD7D7-E6DF-41ea-BE54-19C927ADCFF9"
+    is_a: Outage
+    abstract: true
+    class_uri: cim:PlannedOutage
+    attributes: 
+      reason:
+        description: "The reason for the planned outage."
+        annotations:
+          ea_guid: "_D3D3D4BC-E73E-4ed6-92E8-F8B34CB83F0D"
+        slot_uri: cim:PlannedOutage.reason
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  StringMeasurement:
+    description: "StringMeasurement represents a measurement with values of type string."
+    annotations:
+      ea_guid: "_3EC705BA-D494-4102-AD0B-8CD7A9EECE3B"
+    is_a: Measurement
+    abstract: true
+    class_uri: cim:StringMeasurement
+    attributes: 
+  StringMeasurementValue:
+    description: "StringMeasurementValue represents a measurement value of type string."
+    annotations:
+      ea_guid: "_76C03FC7-3DB4-46ec-977E-7C00BF90B881"
+    is_a: MeasurementValue
+    abstract: true
+    class_uri: cim:StringMeasurementValue
+    attributes: 
+      value:
+        description: "The value to supervise."
+        annotations:
+          ea_guid: "_CD179EE2-08E0-422c-8DC7-22CC8ADDDE71"
+        slot_uri: cim:StringMeasurementValue.value
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      StringMeasurement:
+        description: "Measurement to which this value is connected."
+        annotations:
+          ea_guid: "_05328E98-5B4F-4f0b-B2C2-BDCB0EF11D35-A"
+        slot_uri: cim:StringMeasurementValue.StringMeasurement
+        range: StringMeasurement
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  UnplannedOutage:
+    description: "Document describing the consequence of an unplanned outage in a part of the electrical network. For the purposes of this model, an unplanned outage refers to a state where energy is not delivered; such as, customers out of service, a street light is not served, etc.A unplanned outage may be created upon:- impacts the SAIDI calculation- a breaker trip,- a fault indicator status change,- a meter event indicating customer outage,- a reception of one or more customer trouble calls, or- an operator command, reflecting information obtained from the field crew.Outage restoration may be performed using a switching plan which complements the outage information with detailed switching activities, including the relationship to the crew and work."
+    annotations:
+      ea_guid: "_7E6D39E3-90B7-419f-9A40-A63CEA976DE4"
+    is_a: Outage
+    abstract: true
+    class_uri: cim:UnplannedOutage
+    attributes: 
+      cause:
+        description: "The cause of this outage.  This is the cause that is used to present to external entities.  That is, the cause is weather, equipment failure, etc.Note: At present, this is a free string text; it could be replaced with an enumeration in the future."
+        annotations:
+          ea_guid: "_9A9D6ECC-E71D-4ffe-B0E0-189ABDD9F9D7"
+        slot_uri: cim:UnplannedOutage.cause
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      causeKind:
+        description: "The possible cause that could be associated with this unplanned outage."
+        annotations:
+          ea_guid: "_E7CB3D63-CEE5-4a8e-BBB0-0CF9B08C9FCD"
+        slot_uri: cim:UnplannedOutage.causeKind
+        range: OutageCauseKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      reportedStartTime:
+        description: "The earliest start time of the Outage - as reported by some system or individual"
+        annotations:
+          ea_guid: "_8EE3C1F7-19A7-462a-AC66-2051A65D4775"
+        slot_uri: cim:UnplannedOutage.reportedStartTime
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+types:
+  PerCent:
+    uri: xsd:float
+    base: float
+    description: "Percentage on a defined base.   For example, specify as 100 to indicate at the defined base."
+    annotations:
+      ea_guid: "_8345A4E0-E4BB-45d6-894B-983BB43C4B4F"
+      cim_data_type: true
+      uri: cim:PerCent
+enums:
+  CrewStatusKind:
+    description: "Defines the current status of the Crew - assigned, arrived, etc."
+    annotations:
+      ea_guid: "_0256250A-25A5-444f-A3E8-EF37291A12FB"
+    enum_uri:  http://iec.ch/TC57/CIM100#CrewStatusKind
+    permissible_values:
+      arrived:
+        meaning:  cim:CrewStatusKind.arrived
+        description: "the crew is on site at the outage location"
+        annotations:
+          ea_guid: "_8CC94FC5-1D69-4967-8619-2B2060A069BE"
+      assigned:
+        meaning:  cim:CrewStatusKind.assigned
+        description: "the crew has been assigned to work on a task"
+        annotations:
+          ea_guid: "_53E018DA-D710-4f09-BF9F-00002BD6B676"
+      awaitingCrewAssignment:
+        meaning:  cim:CrewStatusKind.awaitingCrewAssignment
+        description: "Indicates that the work is awaiting one or more crews to be assigned"
+        annotations:
+          ea_guid: "_35D2334A-1728-4adb-9359-A7F3D7DA9C47"
+      enroute:
+        meaning:  cim:CrewStatusKind.enroute
+        description: "the crew has been dispatched to work on an outage"
+        annotations:
+          ea_guid: "_A558BDCD-994E-4835-AB38-81DC1080F516"
+      fieldComplete:
+        meaning:  cim:CrewStatusKind.fieldComplete
+        description: "the crew has corrected the outage in the field.  The equipment or other devices may not be energized at this time."
+        annotations:
+          ea_guid: "_DF4869BC-D3EB-4613-A89B-0282E5289E20"
+  OutageCauseKind:
+    description: "This enumeration describes the primary cause of the outage - planned, unplanned, etc."
+    annotations:
+      ea_guid: "_288135CD-0CCB-48d9-906B-2E3998575562"
+    enum_uri:  http://iec.ch/TC57/CIM100#OutageCauseKind
+    permissible_values:
+      animal:
+        meaning:  cim:OutageCauseKind.animal
+        description: "This outage was caused by an animal is was unplanned.  As such it is treated as a forced outage and is probably classified as trouble with a Trouble Ticket as well as a work/service order.  The primary difference between this and an unplanned outage is the reason for the outage.  If an animal caused this and perished as a result, the utility may have other actions that are required to be taken by the EPA or other groups with whom the utility has an agreement."
+        annotations:
+          ea_guid: "_6A838872-9EF8-4d63-9C8E-1843DE84D1CC"
+      lightingStrike:
+        meaning:  cim:OutageCauseKind.lightingStrike
+        description: "Outage is caused by a lighting strike"
+        annotations:
+          ea_guid: "_815AEFC6-65C1-4542-B332-A7624897CE80"
+      lineDown:
+        meaning:  cim:OutageCauseKind.lineDown
+        description: "The outage is caused by a line down"
+        annotations:
+          ea_guid: "_C5493BB6-87C3-4a7b-A960-1193D6B9D548"
+      poleDown:
+        meaning:  cim:OutageCauseKind.poleDown
+        description: "The outage is caused by a pole down"
+        annotations:
+          ea_guid: "_8A6D9D6D-1EA9-4ba2-8DFA-33AA85571B0B"
+      treeDown:
+        meaning:  cim:OutageCauseKind.treeDown
+        description: "The outage is caused by a tree down"
+        annotations:
+          ea_guid: "_1F2D83D5-38A8-4925-BE4C-D2D741C089E3"
+  OutageStatusKind:
+    description: "This defines if the outage have been predicted or confirmed"
+    annotations:
+      ea_guid: "_EEA30D3B-F1FD-4289-BD60-81C91AEB7886"
+    enum_uri:  http://iec.ch/TC57/CIM100#OutageStatusKind
+    permissible_values:
+      closed:
+        meaning:  cim:OutageStatusKind.closed
+        description: "The outage has been fully restored, the crews have been released and the outage is shown as closed"
+        annotations:
+          ea_guid: "_7AD31E5D-F74F-4d20-883B-8F37F3F9674A"
+      confirmed:
+        meaning:  cim:OutageStatusKind.confirmed
+        description: "the outage has been verified"
+        annotations:
+          ea_guid: "_C25C7C45-AC9E-492c-AC84-68A1C56F7730"
+      partiallyRestored:
+        meaning:  cim:OutageStatusKind.partiallyRestored
+        description: "Some of the usage points affected by the outage have been restored but other usage points are still out of power."
+        annotations:
+          ea_guid: "_DABA1CC0-3186-47a9-A1CB-3567E15739F3"
+      predicted:
+        meaning:  cim:OutageStatusKind.predicted
+        description: "the outage may not be real since it has not been verified - it is only thought to be an outage."
+        annotations:
+          ea_guid: "_4BB374BE-D703-4f05-8B67-209BC2BD3CA6"
+      restored:
+        meaning:  cim:OutageStatusKind.restored
+        description: "All usage points associated with the outage have been restored"
+        annotations:
+          ea_guid: "_CF0793F6-AC4F-4c31-BF02-A8CB5561A60C"
+  PhaseCode:
+    description: "An unordered enumeration of phase identifiers.  Allows designation of phases for both transmission and distribution equipment, circuits and loads.   The enumeration, by itself, does not describe how the phases are connected together or connected to ground.  Ground is not explicitly denoted as a phase.Residential and small commercial loads are often served from single-phase, or split-phase, secondary circuits. For the example of s12N, phases 1 and 2 refer to hot wires that are 180 degrees out of phase, while N refers to the neutral wire. Through single-phase transformer connections, these secondary circuits may be served from one or two of the primary phases A, B, and C. For three-phase loads, use the A, B, C phase codes instead of s12N.The integer values are from IEC 61968-9 to support revenue metering applications."
+    annotations:
+      ea_guid: "_3687AEED-A1B1-4557-899E-5985D184FCE9"
+    enum_uri:  http://iec.ch/TC57/CIM100#PhaseCode
+    permissible_values:
+      A:
+        meaning:  cim:PhaseCode.A
+        description: "Phase A."
+        annotations:
+          ea_guid: "_EA5174F8-A73C-4f4b-96AA-54EAFB16BC9F"
+      AB:
+        meaning:  cim:PhaseCode.AB
+        description: "Phases A and B."
+        annotations:
+          ea_guid: "_77216F5E-3863-424c-91CD-4597AE97B61E"
+      ABC:
+        meaning:  cim:PhaseCode.ABC
+        description: "Phases A, B, and C."
+        annotations:
+          ea_guid: "_5A6F7D82-6A2C-4eb3-90BC-8F77AAD9D50F"
+      ABCN:
+        meaning:  cim:PhaseCode.ABCN
+        description: "Phases A, B, C, and N."
+        annotations:
+          ea_guid: "_8E38EE25-FD5C-4b01-938C-008998EDA526"
+      ABN:
+        meaning:  cim:PhaseCode.ABN
+        description: "Phases A, B, and neutral."
+        annotations:
+          ea_guid: "_C5F9ED62-CB15-4c15-98DB-6593686F63E2"
+      AC:
+        meaning:  cim:PhaseCode.AC
+        description: "Phases A and C."
+        annotations:
+          ea_guid: "_598C4480-5C39-4889-8BD1-D1D2BCEB4DEA"
+      ACN:
+        meaning:  cim:PhaseCode.ACN
+        description: "Phases A, C and neutral."
+        annotations:
+          ea_guid: "_0396E7F5-6112-49e7-A7C8-7B7FA0214AA7"
+      AN:
+        meaning:  cim:PhaseCode.AN
+        description: "Phases A and neutral."
+        annotations:
+          ea_guid: "_9B41A289-EDF6-4728-AABE-B11D2E617549"
+      B:
+        meaning:  cim:PhaseCode.B
+        description: "Phase B."
+        annotations:
+          ea_guid: "_DF516C67-D4FE-4a6b-9FE7-54E54036C7CA"
+      BC:
+        meaning:  cim:PhaseCode.BC
+        description: "Phases B and C."
+        annotations:
+          ea_guid: "_8124AC36-FD4D-4b64-A414-6F9B8D350469"
+      BCN:
+        meaning:  cim:PhaseCode.BCN
+        description: "Phases B, C, and neutral."
+        annotations:
+          ea_guid: "_F494A423-E865-4c3d-8C83-180728F30A66"
+      BN:
+        meaning:  cim:PhaseCode.BN
+        description: "Phases B and neutral."
+        annotations:
+          ea_guid: "_2780D899-5467-4920-8DAA-117051620D3A"
+      C:
+        meaning:  cim:PhaseCode.C
+        description: "Phase C."
+        annotations:
+          ea_guid: "_8E5E8952-BD3F-4b06-A218-7A1EE85598D0"
+      CN:
+        meaning:  cim:PhaseCode.CN
+        description: "Phases C and neutral."
+        annotations:
+          ea_guid: "_DEB66611-AEAD-4b57-8CBD-65D1931709CE"
+      N:
+        meaning:  cim:PhaseCode.N
+        description: "Neutral phase."
+        annotations:
+          ea_guid: "_177D92A8-237D-4ec7-99BF-6BBE2AA2CE9E"
+      X:
+        meaning:  cim:PhaseCode.X
+        description: "Unknown non-neutral phase."
+        annotations:
+          ea_guid: "_18C21147-5A05-4e89-857C-07DED480CDD7"
+      XN:
+        meaning:  cim:PhaseCode.XN
+        description: "Unknown non-neutral phase plus neutral."
+        annotations:
+          ea_guid: "_C97339FF-B1B1-4b27-9F89-F1224B83DFCD"
+      XY:
+        meaning:  cim:PhaseCode.XY
+        description: "Two unknown non-neutral phases."
+        annotations:
+          ea_guid: "_88204DE0-8923-4886-8C42-955E3147E39B"
+      XYN:
+        meaning:  cim:PhaseCode.XYN
+        description: "Two unknown non-neutral phases plus neutral."
+        annotations:
+          ea_guid: "_BE6C0B89-4F67-41fa-B56D-1195F07B82E0"
+      none:
+        meaning:  cim:PhaseCode.none
+        description: "No phases specified."
+        annotations:
+          ea_guid: "_39811306-A5CF-49f9-9D71-313B1B5BC519"
+      s1:
+        meaning:  cim:PhaseCode.s1
+        description: "Secondary phase 1."
+        annotations:
+          ea_guid: "_50FB82A9-B3F5-4a7b-AF43-2EC84E06D953"
+      s12:
+        meaning:  cim:PhaseCode.s12
+        description: "Secondary phase 1 and 2."
+        annotations:
+          ea_guid: "_939E2E11-8FE6-4d66-A048-8F990F9BEBF6"
+      s12N:
+        meaning:  cim:PhaseCode.s12N
+        description: "Secondary phases 1, 2, and neutral."
+        annotations:
+          ea_guid: "_2E31EA79-AFF2-45bf-82E3-DD2DD070FDB6"
+      s1N:
+        meaning:  cim:PhaseCode.s1N
+        description: "Secondary phase 1 and neutral."
+        annotations:
+          ea_guid: "_7CBBF307-75C0-4255-B181-0BB16E0B4A23"
+      s2:
+        meaning:  cim:PhaseCode.s2
+        description: "Secondary phase 2."
+        annotations:
+          ea_guid: "_DD0F804D-9672-4043-8B7A-9937AC0C3BAB"
+      s2N:
+        meaning:  cim:PhaseCode.s2N
+        description: "Secondary phase 2 and neutral."
+        annotations:
+          ea_guid: "_16119B57-3431-4045-A8EB-1618E844A397"
+  UnitMultiplier:
+    description: "The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type.For example, if a unit symbol is m2Pers and the multiplier is k, then the value is k(m**2/s), and the multiplier applies to the entire final value, not to any individual part of the value. This can be conceptualized by substituting a derived unit symbol for the unit type. If one imagines that the symbol � represents the derived unit m2Pers, then applying the multiplier k can be conceptualized simply as k�.For example, the SI unit for mass is kg and not g.  If the unit symbol is defined as kg, then the multiplier is applied to kg as a whole and does not replace the k in front of the g. In this case, the multiplier of m would be used with the unit symbol of kg to represent one gram.  As a text string, this violates the instructions in IEC 80000-1. However, because the unit symbol in CIM is treated as a derived unit instead of as an SI unit, it makes more sense to conceptualize the kg as if it were replaced by one of the proposed replacements for the SI mass symbol. If one imagines that the kg were replaced by a symbol �, then it is easier to conceptualize the multiplier m as creating the proper unit m�, and not the forbidden unit mkg."
+    annotations:
+      ea_guid: "_DC62CC93-2E3F-4b9c-9C81-C84C30A6C67D"
+    enum_uri:  http://iec.ch/TC57/CIM100#UnitMultiplier
+    permissible_values:
+      E:
+        meaning:  cim:UnitMultiplier.E
+        description: "Exa 10**18."
+        annotations:
+          ea_guid: "_EADD578E-ADB6-4afc-989D-DCF868A74262"
+      G:
+        meaning:  cim:UnitMultiplier.G
+        description: "Giga 10**9."
+        annotations:
+          ea_guid: "_351B5D79-6203-48e5-9D9E-ECD7FB7CA8A6"
+      M:
+        meaning:  cim:UnitMultiplier.M
+        description: "Mega 10**6."
+        annotations:
+          ea_guid: "_F956FDD6-8C6E-427d-A51A-22A1D75BE1C3"
+      P:
+        meaning:  cim:UnitMultiplier.P
+        description: "Peta 10**15."
+        annotations:
+          ea_guid: "_F9AB8FD6-E2CB-4696-BDCE-16836A065FD4"
+      T:
+        meaning:  cim:UnitMultiplier.T
+        description: "Tera 10**12."
+        annotations:
+          ea_guid: "_F5185FB9-24E6-47c6-BB4D-259FDF678329"
+      Y:
+        meaning:  cim:UnitMultiplier.Y
+        description: "Yotta 10**24."
+        annotations:
+          ea_guid: "_B128FAC5-FF4E-48ae-BE52-0FF516C25214"
+      Z:
+        meaning:  cim:UnitMultiplier.Z
+        description: "Zetta 10**21."
+        annotations:
+          ea_guid: "_FCD1EF70-ACFA-4653-AEC4-086E460EA46C"
+      a:
+        meaning:  cim:UnitMultiplier.a
+        description: "Atto 10**-18."
+        annotations:
+          ea_guid: "_BBFD0505-6323-496c-95F7-818D6498EA5A"
+      c:
+        meaning:  cim:UnitMultiplier.c
+        description: "Centi 10**-2."
+        annotations:
+          ea_guid: "_1219082C-9AED-439c-B862-8CA874195BA0"
+      d:
+        meaning:  cim:UnitMultiplier.d
+        description: "Deci 10**-1."
+        annotations:
+          ea_guid: "_4E630955-DF5D-403d-A377-7ED5FF85978D"
+      da:
+        meaning:  cim:UnitMultiplier.da
+        description: "Deca 10**1."
+        annotations:
+          ea_guid: "_EF522AAA-193D-4781-BDBD-4817C84E8558"
+      f:
+        meaning:  cim:UnitMultiplier.f
+        description: "Femto 10**-15."
+        annotations:
+          ea_guid: "_099282D3-03AC-4193-AB3D-71ABF7D63497"
+      h:
+        meaning:  cim:UnitMultiplier.h
+        description: "Hecto 10**2."
+        annotations:
+          ea_guid: "_A5B3106F-3B4E-4e44-A883-09DAE8804156"
+      k:
+        meaning:  cim:UnitMultiplier.k
+        description: "Kilo 10**3."
+        annotations:
+          ea_guid: "_C868627C-3B72-4bc8-879D-E177E9059A22"
+      m:
+        meaning:  cim:UnitMultiplier.m
+        description: "Milli 10**-3."
+        annotations:
+          ea_guid: "_E7A60C22-3D12-49c5-8F18-870B1A39A1AA"
+      micro:
+        meaning:  cim:UnitMultiplier.micro
+        description: "Micro 10**-6."
+        annotations:
+          ea_guid: "_FF8E9CD6-A459-47ab-A71E-E69857742CE1"
+      n:
+        meaning:  cim:UnitMultiplier.n
+        description: "Nano 10**-9."
+        annotations:
+          ea_guid: "_EA61DA27-05DF-41c7-B459-F1194928062C"
+      none:
+        meaning:  cim:UnitMultiplier.none
+        description: "No multiplier or equivalently multiply by 1."
+        annotations:
+          ea_guid: "_C352D73C-B9DC-4e7d-B1DB-5BE6D4BAE868"
+      p:
+        meaning:  cim:UnitMultiplier.p
+        description: "Pico 10**-12."
+        annotations:
+          ea_guid: "_90F83546-DD55-4cf8-9E01-DD8F69D74A8D"
+      y:
+        meaning:  cim:UnitMultiplier.y
+        description: "Yocto 10**-24."
+        annotations:
+          ea_guid: "_9AC37B70-6AC3-46ed-B408-8C4885FE483B"
+      z:
+        meaning:  cim:UnitMultiplier.z
+        description: "Zepto 10**-21."
+        annotations:
+          ea_guid: "_78644DE9-99FB-4811-B5D9-B23A0DB2728D"
+  UnitSymbol:
+    description: "The derived units defined for usage in the CIM. In some cases, the derived unit is equal to an SI unit. Whenever possible, the standard derived symbol is used instead of the formula for the derived unit. For example, the unit symbol Farad is defined as F instead of CPerV. In cases where a standard symbol does not exist for a derived unit, the formula for the unit is used as the unit symbol. For example, density does not have a standard symbol and so it is represented as kgPerm3. With the exception of the kg, which is an SI unit, the unit symbols do not contain multipliers and therefore represent the base derived unit to which a multiplier can be applied as a whole.Every unit symbol is treated as an unparseable text as if it were a single-letter symbol. The meaning of each unit symbol is defined by the accompanying descriptive text and not by the text contents of the unit symbol.To allow the widest possible range of serializations without requiring special character handling, several substitutions are made which deviate from the format described in IEC 80000-1. The division symbol / is replaced by the letters Per. Exponents are written in plain text after the unit as m3 instead of being formatted as m with a superscript of 3  or introducing a symbol as in m^3. The degree symbol � is replaced with the letters deg. Any clarification of the meaning for a substitution is included in the description for the unit symbol.Non-SI units are included in list of unit symbols to allow sources of data to be correctly labelled with their non-SI units (for example, a GPS sensor that is reporting numbers that represent feet instead of meters). This allows software to use the unit symbol information correctly convert and scale the raw data of those sources into SI-based units.The integer values are used for harmonization with IEC 61850."
+    annotations:
+      ea_guid: "_80012160-A038-43b5-BA6F-9862E525518C"
+    enum_uri:  http://iec.ch/TC57/CIM100#UnitSymbol
+    permissible_values:
+      A:
+        meaning:  cim:UnitSymbol.A
+        description: "Current in amperes."
+        annotations:
+          ea_guid: "_EA92BC2E-3B95-470e-A50B-8BB500136F86"
+      A2:
+        meaning:  cim:UnitSymbol.A2
+        description: "Amperes squared (A�)."
+        annotations:
+          ea_guid: "_D45ED57B-D0FD-4496-A516-CD82E8DCD2C0"
+      A2h:
+        meaning:  cim:UnitSymbol.A2h
+        description: "Ampere-squared hour, ampere-squared hour."
+        annotations:
+          ea_guid: "_0A2E81E6-2C43-43dd-A6CB-8915611FB6F2"
+      A2s:
+        meaning:  cim:UnitSymbol.A2s
+        description: "Ampere squared time in square amperes (A�s)."
+        annotations:
+          ea_guid: "_856A3A12-D5A5-4d1c-AC5F-2C618DE8BDB7"
+      APerA:
+        meaning:  cim:UnitSymbol.APerA
+        description: "Current, ratio of amperages.   Note: Users may need to supply a prefix such as �m� to show rates such as �mA/A�."
+        annotations:
+          ea_guid: "_84D9395E-1931-48aa-974A-43B3C1895E8F"
+      APerm:
+        meaning:  cim:UnitSymbol.APerm
+        description: "A/m, magnetic field strength, amperes per metre."
+        annotations:
+          ea_guid: "_27499686-8D79-40b7-9E0E-44D9212938E7"
+      Ah:
+        meaning:  cim:UnitSymbol.Ah
+        description: "Ampere-hours, ampere-hours."
+        annotations:
+          ea_guid: "_4E2BC900-EA78-4b89-9479-A12680EC133B"
+      As:
+        meaning:  cim:UnitSymbol.As
+        description: "Ampere seconds (A�s)."
+        annotations:
+          ea_guid: "_3FBD0254-1CEA-4fd9-9A11-EA68D8AD96D2"
+      Bq:
+        meaning:  cim:UnitSymbol.Bq
+        description: "Radioactivity in becquerels (1/s)."
+        annotations:
+          ea_guid: "_6A58DADF-F9D2-4be4-BA67-51992495709D"
+      Btu:
+        meaning:  cim:UnitSymbol.Btu
+        description: "Energy, British Thermal Units."
+        annotations:
+          ea_guid: "_2C7C1B15-F2F1-463e-926B-90C565D92696"
+      C:
+        meaning:  cim:UnitSymbol.C
+        description: "Electric charge in coulombs (A�s)."
+        annotations:
+          ea_guid: "_EC257654-B700-4c74-A3E0-FA2B685C13D5"
+      CPerkg:
+        meaning:  cim:UnitSymbol.CPerkg
+        description: "Exposure (x rays), coulombs per kilogram."
+        annotations:
+          ea_guid: "_16EEBE18-1F4A-433c-AEDB-8542AAC26A6A"
+      CPerm2:
+        meaning:  cim:UnitSymbol.CPerm2
+        description: "Surface charge density, coulombs per square metre."
+        annotations:
+          ea_guid: "_78F3FB2B-9D65-4d98-BE54-D640D628ABB5"
+      CPerm3:
+        meaning:  cim:UnitSymbol.CPerm3
+        description: "Electric charge density, coulombs per cubic metre."
+        annotations:
+          ea_guid: "_C372C81F-C15D-42a4-8CD7-42D8F243F69F"
+      F:
+        meaning:  cim:UnitSymbol.F
+        description: "Electric capacitance in farads (C/V)."
+        annotations:
+          ea_guid: "_9D72A1D6-75D9-4e00-B3B4-42D7DD0990FE"
+      FPerm:
+        meaning:  cim:UnitSymbol.FPerm
+        description: "Permittivity, farads per metre."
+        annotations:
+          ea_guid: "_EBCAD9B1-5855-460c-BE72-4577117C7A0B"
+      G:
+        meaning:  cim:UnitSymbol.G
+        description: "Magnetic flux density, gausses (1 G = 10-4 T)."
+        annotations:
+          ea_guid: "_AD411764-B9AE-4720-B402-AE5C70F66A92"
+      Gy:
+        meaning:  cim:UnitSymbol.Gy
+        description: "Absorbed dose in grays (J/kg)."
+        annotations:
+          ea_guid: "_60C8424D-7177-444c-BEF0-8E6AC1D1077B"
+      GyPers:
+        meaning:  cim:UnitSymbol.GyPers
+        description: "Absorbed dose rate, grays per second."
+        annotations:
+          ea_guid: "_6C97FDC2-E63A-40ee-AF9E-361A9E4ADC3D"
+      H:
+        meaning:  cim:UnitSymbol.H
+        description: "Electric inductance in henrys (Wb/A)."
+        annotations:
+          ea_guid: "_AE11FF61-9894-434b-AF7E-E30B3D6A4124"
+      HPerm:
+        meaning:  cim:UnitSymbol.HPerm
+        description: "Permeability, henrys per metre."
+        annotations:
+          ea_guid: "_6CF0793D-A3E0-4f8f-863F-9C1032665065"
+      Hz:
+        meaning:  cim:UnitSymbol.Hz
+        description: "Frequency in hertz (1/s)."
+        annotations:
+          ea_guid: "_8E14F483-DBE2-46c3-9308-1DF800CD2FF2"
+      HzPerHz:
+        meaning:  cim:UnitSymbol.HzPerHz
+        description: "Frequency, rate of frequency change.   Note: Users may need to supply a prefix such as �m� to show rates such as �mHz/Hz�."
+        annotations:
+          ea_guid: "_12B11EAF-4BB5-4d5c-A2BB-D78A02327104"
+      HzPers:
+        meaning:  cim:UnitSymbol.HzPers
+        description: "Rate of change of frequency in hertz per second."
+        annotations:
+          ea_guid: "_98C8F3E1-139E-482e-8C78-EF21E8A15A38"
+      J:
+        meaning:  cim:UnitSymbol.J
+        description: "Energy in joules (N�m = C�V = W�s)."
+        annotations:
+          ea_guid: "_97A3FB98-8A5D-4b95-8473-5D3EDE289822"
+      JPerK:
+        meaning:  cim:UnitSymbol.JPerK
+        description: "Heat capacity in joules/kelvin."
+        annotations:
+          ea_guid: "_0A532BE2-CF36-4726-A14D-1EC97FD37B6D"
+      JPerkg:
+        meaning:  cim:UnitSymbol.JPerkg
+        description: "Specific energy, Joules / kg."
+        annotations:
+          ea_guid: "_05214191-21C9-4b98-A8E5-CD63EAD7FB35"
+      JPerkgK:
+        meaning:  cim:UnitSymbol.JPerkgK
+        description: "Specific heat capacity, specific entropy, joules per kilogram Kelvin."
+        annotations:
+          ea_guid: "_5C1D5E18-724F-4348-A871-610428006C41"
+      JPerm2:
+        meaning:  cim:UnitSymbol.JPerm2
+        description: "Insulation energy density, joules per square metre or watt second per square metre."
+        annotations:
+          ea_guid: "_1484901D-B114-4df8-8FBD-892ED2DDC36D"
+      JPerm3:
+        meaning:  cim:UnitSymbol.JPerm3
+        description: "Energy density, joules per cubic metre."
+        annotations:
+          ea_guid: "_643ABAE5-C491-445d-B0DA-FDD3381A7871"
+      JPermol:
+        meaning:  cim:UnitSymbol.JPermol
+        description: "Molar energy, joules per mole."
+        annotations:
+          ea_guid: "_082C9B4F-A2B0-48b3-A976-4551C7B0B9D5"
+      JPermolK:
+        meaning:  cim:UnitSymbol.JPermolK
+        description: "Molar entropy, molar heat capacity, joules per mole kelvin."
+        annotations:
+          ea_guid: "_C86FC880-4592-4126-ACD6-C0CFE6151C19"
+      JPers:
+        meaning:  cim:UnitSymbol.JPers
+        description: "Energy rate in joules per second (J/s)."
+        annotations:
+          ea_guid: "_8D0EFD06-CE71-454a-AF72-A37FF1988C0E"
+      K:
+        meaning:  cim:UnitSymbol.K
+        description: "Temperature in kelvins."
+        annotations:
+          ea_guid: "_1E8C279F-B121-451f-B8D7-7B9F1EF080DF"
+      KPers:
+        meaning:  cim:UnitSymbol.KPers
+        description: "Temperature change rate in kelvins per second."
+        annotations:
+          ea_guid: "_4AA28097-6E2C-4e6f-A7DE-F0813968DFAE"
+      M:
+        meaning:  cim:UnitSymbol.M
+        description: "Length, nautical miles (1 M = 1852 m)."
+        annotations:
+          ea_guid: "_95D59B4E-F7D2-4202-AEE3-BBE1602128E2"
+      Mx:
+        meaning:  cim:UnitSymbol.Mx
+        description: "Magnetic flux, maxwells (1 Mx = 10-8 Wb)."
+        annotations:
+          ea_guid: "_9D86ACE7-4F18-419a-B862-85D2D7165A51"
+      N:
+        meaning:  cim:UnitSymbol.N
+        description: "Force in newtons (kg�m/s�)."
+        annotations:
+          ea_guid: "_68AA121A-1847-446b-A6B2-F7180AC83772"
+      NPerm:
+        meaning:  cim:UnitSymbol.NPerm
+        description: "Surface tension, newton per metre."
+        annotations:
+          ea_guid: "_05284484-23B5-4903-9FD7-2E7CF0E166B5"
+      Nm:
+        meaning:  cim:UnitSymbol.Nm
+        description: "Moment of force, newton metres."
+        annotations:
+          ea_guid: "_62F46160-46EA-47c2-9E8D-DC44F5BCFEA7"
+      Oe:
+        meaning:  cim:UnitSymbol.Oe
+        description: "Magnetic field in oersteds, (1 Oe = (103/4p) A/m)."
+        annotations:
+          ea_guid: "_79B7C736-028D-4eab-9A0D-DEE3E6A963F8"
+      Pa:
+        meaning:  cim:UnitSymbol.Pa
+        description: "Pressure in pascals (N/m�). Note: the absolute or relative measurement of pressure is implied with this entry. See below for more explicit forms."
+        annotations:
+          ea_guid: "_BD782A7D-D539-4f4f-BAAF-44DFDC18CE40"
+      PaPers:
+        meaning:  cim:UnitSymbol.PaPers
+        description: "Pressure change rate in pascals per second."
+        annotations:
+          ea_guid: "_468B93E2-D504-4668-B698-6C438CC555FF"
+      Pas:
+        meaning:  cim:UnitSymbol.Pas
+        description: "Dynamic viscosity, pascal seconds."
+        annotations:
+          ea_guid: "_2B45021A-F7A2-4f33-B105-918CA01B627D"
+      Q:
+        meaning:  cim:UnitSymbol.Q
+        description: "Quantity power, Q."
+        annotations:
+          ea_guid: "_67586835-9551-42fb-ABF8-3F4CFA5032F2"
+      Qh:
+        meaning:  cim:UnitSymbol.Qh
+        description: "Quantity energy, Qh."
+        annotations:
+          ea_guid: "_8908E051-4BDB-42f6-A2FB-126358F6952F"
+      S:
+        meaning:  cim:UnitSymbol.S
+        description: "Conductance in siemens."
+        annotations:
+          ea_guid: "_C593555B-266C-4ac6-8F80-E91F045DFA89"
+      SPerm:
+        meaning:  cim:UnitSymbol.SPerm
+        description: "Conductance per length (F/m)."
+        annotations:
+          ea_guid: "_A1442E6B-3261-4ae2-B466-2788281713C6"
+      Sv:
+        meaning:  cim:UnitSymbol.Sv
+        description: "Dose equivalent in sieverts (J/kg)."
+        annotations:
+          ea_guid: "_C408842C-136F-455f-B998-6A661EEA20AF"
+      T:
+        meaning:  cim:UnitSymbol.T
+        description: "Magnetic flux density in teslas (Wb/m2)."
+        annotations:
+          ea_guid: "_12E9D418-34B0-4978-8012-CEBBB3154B37"
+      V:
+        meaning:  cim:UnitSymbol.V
+        description: "Electric potential in volts (W/A)."
+        annotations:
+          ea_guid: "_0A273035-181C-482c-9526-6673DE4AF59F"
+      V2:
+        meaning:  cim:UnitSymbol.V2
+        description: "Volt squared (W�/A�)."
+        annotations:
+          ea_guid: "_BADD342F-47DF-44a9-A9A2-C2923A48DBAB"
+      V2h:
+        meaning:  cim:UnitSymbol.V2h
+        description: "Volt-squared hour, volt-squared-hours."
+        annotations:
+          ea_guid: "_AC926E85-C4E0-4512-84B1-8DFEC4D0C8E5"
+      VA:
+        meaning:  cim:UnitSymbol.VA
+        description: "Apparent power in volt amperes. See also real power and reactive power."
+        annotations:
+          ea_guid: "_D3EB929D-C57F-40a8-86DC-2F5CAACB6A71"
+      VAh:
+        meaning:  cim:UnitSymbol.VAh
+        description: "Apparent energy in volt ampere hours."
+        annotations:
+          ea_guid: "_B65C6290-E53E-4bee-B674-A2E166EB4D77"
+      VAr:
+        meaning:  cim:UnitSymbol.VAr
+        description: "Reactive power in volt amperes reactive. The �reactive� or �imaginary� component of electrical power (VIsin(phi)). (See also real power and apparent power).Note: Different meter designs use different methods to arrive at their results. Some meters may compute reactive power as an arithmetic value, while others compute the value vectorially. The data consumer should determine the method in use and the suitability of the measurement for the intended purpose."
+        annotations:
+          ea_guid: "_F38DF57D-7E97-4af9-984E-40820470C5EC"
+      VArh:
+        meaning:  cim:UnitSymbol.VArh
+        description: "Reactive energy in volt ampere reactive hours."
+        annotations:
+          ea_guid: "_DD5193A4-8564-4426-8FA1-98F3A50327FA"
+      VPerHz:
+        meaning:  cim:UnitSymbol.VPerHz
+        description: "Magnetic flux in volt per hertz."
+        annotations:
+          ea_guid: "_18DE9C0C-CE23-4b20-8779-CEEB07E6BD9E"
+      VPerV:
+        meaning:  cim:UnitSymbol.VPerV
+        description: "Voltage, ratio of voltages.  Note: Users may need to supply a prefix such as �m� to show rates such as �mV/V�."
+        annotations:
+          ea_guid: "_E32A4356-EE83-4a56-A630-882387CC00C8"
+      VPerVA:
+        meaning:  cim:UnitSymbol.VPerVA
+        description: "Power factor, PF, the ratio of the active power to the apparent power.  Note: The sign convention used for power factor will differ between IEC meters and EEI (ANSI) meters. It is assumed that the data consumers understand the type of meter being used and agree on the sign convention in use at any given utility."
+        annotations:
+          ea_guid: "_F5914562-B809-455b-98A8-CECAA59EE125"
+      VPerVAr:
+        meaning:  cim:UnitSymbol.VPerVAr
+        description: "Power factor, PF, the ratio of the active power to the apparent power. Note: The sign convention used for power factor will differ between IEC meters and EEI (ANSI) meters. It is assumed that the data consumers understand the type of meter being used and agree on the sign convention in use at any given utility."
+        annotations:
+          ea_guid: "_F205CACD-712B-46f0-B7D7-170EEF3B59A3"
+      VPerm:
+        meaning:  cim:UnitSymbol.VPerm
+        description: "Electric field strength, volts per metre."
+        annotations:
+          ea_guid: "_72E72CF2-2E55-4c96-B72F-D2D0C602ED65"
+      Vh:
+        meaning:  cim:UnitSymbol.Vh
+        description: "Volt-hour, Volt hours."
+        annotations:
+          ea_guid: "_133A1DDB-6E5C-4edc-8788-0FEADD99F7AF"
+      Vs:
+        meaning:  cim:UnitSymbol.Vs
+        description: "Volt seconds (Ws/A)."
+        annotations:
+          ea_guid: "_4ADBB794-4439-4590-B83E-30CC81BB588F"
+      W:
+        meaning:  cim:UnitSymbol.W
+        description: "Real power in watts (J/s). Electrical power may have real and reactive components. The real portion of electrical power (I&#178;R or VIcos(phi)), is expressed in Watts. See also apparent power and reactive power."
+        annotations:
+          ea_guid: "_41B0F1BC-E69B-4ca1-A565-ECBC27B49095"
+      WPerA:
+        meaning:  cim:UnitSymbol.WPerA
+        description: "Active power per current flow, watts per Ampere."
+        annotations:
+          ea_guid: "_BD554F27-BD42-42e8-A102-327C8B95F611"
+      WPerW:
+        meaning:  cim:UnitSymbol.WPerW
+        description: "Signal Strength, ratio of power.   Note: Users may need to supply a prefix such as �m� to show rates such as �mW/W�."
+        annotations:
+          ea_guid: "_07C055AF-FF95-4a33-AFA4-CC2E9E87038C"
+      WPerm2:
+        meaning:  cim:UnitSymbol.WPerm2
+        description: "Heat flux density, irradiance, watts per square metre."
+        annotations:
+          ea_guid: "_74F16DEB-1187-4180-82E7-C9730606F991"
+      WPerm2sr:
+        meaning:  cim:UnitSymbol.WPerm2sr
+        description: "Radiance, watts per square metre steradian."
+        annotations:
+          ea_guid: "_09253D8A-34A7-49be-88AF-87147A5EAB64"
+      WPermK:
+        meaning:  cim:UnitSymbol.WPermK
+        description: "Thermal conductivity in watt/metres kelvin."
+        annotations:
+          ea_guid: "_6A7D3263-4D03-4d39-B90C-38C100BD95FF"
+      WPers:
+        meaning:  cim:UnitSymbol.WPers
+        description: "Ramp rate in watts per second."
+        annotations:
+          ea_guid: "_35FB6E73-2730-4ae7-A67E-58DC67D68D70"
+      WPersr:
+        meaning:  cim:UnitSymbol.WPersr
+        description: "Radiant intensity, watts per steradian."
+        annotations:
+          ea_guid: "_9A57C4F9-ECB2-4273-8741-9A36085DA221"
+      Wb:
+        meaning:  cim:UnitSymbol.Wb
+        description: "Magnetic flux in webers (V�s)."
+        annotations:
+          ea_guid: "_6F7B9EE5-AFA0-4cbc-B2A9-E3942BD3772F"
+      Wh:
+        meaning:  cim:UnitSymbol.Wh
+        description: "Real energy in watt hours."
+        annotations:
+          ea_guid: "_D0065D4C-31BE-42b1-9588-806157D3000D"
+      anglemin:
+        meaning:  cim:UnitSymbol.anglemin
+        description: "Plane angle, minutes."
+        annotations:
+          ea_guid: "_79557E1F-CC74-431a-8A0D-6BD70094B0B2"
+      anglesec:
+        meaning:  cim:UnitSymbol.anglesec
+        description: "Plane angle, seconds."
+        annotations:
+          ea_guid: "_9C734EB4-BFFF-482e-95B2-B7446E3D8FFB"
+      bar:
+        meaning:  cim:UnitSymbol.bar
+        description: "Pressure in bars, (1 bar = 100 kPa)."
+        annotations:
+          ea_guid: "_9516CB35-2CC3-4b7a-8BBA-BB329514810B"
+      cd:
+        meaning:  cim:UnitSymbol.cd
+        description: "Luminous intensity in candelas."
+        annotations:
+          ea_guid: "_E12E81A8-81B6-4286-B477-2A91F984C4FC"
+      charPers:
+        meaning:  cim:UnitSymbol.charPers
+        description: "Data rate (baud) in characters per second."
+        annotations:
+          ea_guid: "_28E0BFBE-2F7A-43d1-BB99-DCCBF7ADC265"
+      character:
+        meaning:  cim:UnitSymbol.character
+        description: "Number of characters."
+        annotations:
+          ea_guid: "_8187AD67-24E6-4cc1-931D-FC0964171586"
+      cosPhi:
+        meaning:  cim:UnitSymbol.cosPhi
+        description: "Power factor, dimensionless.Note 1: This definition of power factor only holds for balanced systems. See the alternative definition under code 153.Note 2�: Beware of differing sign conventions in use between the IEC and EEI. It is assumed that the data consumer understands the type of meter in use and the sign convention in use by the utility."
+        annotations:
+          ea_guid: "_3FF3E24E-53F5-45ae-8408-47C453D360C2"
+      count:
+        meaning:  cim:UnitSymbol.count
+        description: "Amount of substance, Counter value."
+        annotations:
+          ea_guid: "_45989859-38C4-4d11-A5CF-7DD5EFB0E7F7"
+      d:
+        meaning:  cim:UnitSymbol.d
+        description: "Time in days, day = 24 h = 86400 s."
+        annotations:
+          ea_guid: "_5A45829C-D0A2-45cc-A862-689B13D34708"
+      dB:
+        meaning:  cim:UnitSymbol.dB
+        description: "Sound pressure level in decibels. Note:  multiplier �d� is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "_5FEFCFB2-EFE9-4969-8832-5AB856D1D9BC"
+      dBm:
+        meaning:  cim:UnitSymbol.dBm
+        description: "Power level (logarithmic ratio of signal strength , Bel-mW), normalized to 1mW. Note:  multiplier �d� is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "_D3D3EFF1-D398-4bbf-B71E-947636027C51"
+      deg:
+        meaning:  cim:UnitSymbol.deg
+        description: "Plane angle in degrees."
+        annotations:
+          ea_guid: "_4FEE2708-57BD-4ab8-BF2C-504B62A5358F"
+      degC:
+        meaning:  cim:UnitSymbol.degC
+        description: "Relative temperature in degrees Celsius.In the SI unit system the symbol is �C. Electric charge is measured in coulomb that has the unit symbol C. To distinguish degree Celsius from coulomb the symbol used in the UML is degC. The reason for not using �C is that the special character � is difficult to manage in software."
+        annotations:
+          ea_guid: "_9266DB6A-744E-4939-896F-B84E928D14EE"
+      ft3:
+        meaning:  cim:UnitSymbol.ft3
+        description: "Volume, cubic feet."
+        annotations:
+          ea_guid: "_CF1F601E-EF72-4b25-A464-82800437A9B1"
+      gPerg:
+        meaning:  cim:UnitSymbol.gPerg
+        description: "Concentration, The ratio of the mass of a solute divided by the mass of  the solution. Note: Users may need use a prefix such a ��� to express a quantity such as ��g/g�."
+        annotations:
+          ea_guid: "_E7AD0FC3-F546-4d24-AB93-27B09C22F271"
+      gal:
+        meaning:  cim:UnitSymbol.gal
+        description: "Volume in gallons, US gallon (1 gal = 231 in3 = 128 fl ounce)."
+        annotations:
+          ea_guid: "_A1611ECE-DA95-4e1c-A2AD-AF799F5994BB"
+      h:
+        meaning:  cim:UnitSymbol.h
+        description: "Time in hours, hour = 60 min = 3600 s."
+        annotations:
+          ea_guid: "_38CFF289-C542-4313-987C-62BAAB914148"
+      ha:
+        meaning:  cim:UnitSymbol.ha
+        description: "Area, hectares."
+        annotations:
+          ea_guid: "_A0047B54-799B-4a83-BC4B-B34DE2214F66"
+      kat:
+        meaning:  cim:UnitSymbol.kat
+        description: "Catalytic activity, katal = mol / s."
+        annotations:
+          ea_guid: "_92141CD6-2C4A-4ecb-A300-08FC15945FFF"
+      katPerm3:
+        meaning:  cim:UnitSymbol.katPerm3
+        description: "Catalytic activity concentration, katals per cubic metre."
+        annotations:
+          ea_guid: "_2AA4DD24-932C-4726-9E04-2A190E13D25D"
+      kg:
+        meaning:  cim:UnitSymbol.kg
+        description: "Mass in kilograms.  Note: multiplier �k� is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "_E8CD3F4B-2301-4f19-BBDF-6D20CD945743"
+      kgPerJ:
+        meaning:  cim:UnitSymbol.kgPerJ
+        description: "Weight per energy in kilograms per joule (kg/J). Note: multiplier �k� is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "_9740266F-DE31-4a0a-B60E-5B341A44FDB3"
+      kgPerm3:
+        meaning:  cim:UnitSymbol.kgPerm3
+        description: "Density in kilogram/cubic metres (kg/m�). Note: multiplier �k� is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "_BDA99721-EF6C-465b-A531-083BB5A339E7"
+      kgm:
+        meaning:  cim:UnitSymbol.kgm
+        description: "Moment of mass in kilogram metres (kg�m) (first moment of mass). Note: multiplier �k� is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "_7EF2DD04-E97D-43d0-8EF5-A0C71B65B30F"
+      kgm2:
+        meaning:  cim:UnitSymbol.kgm2
+        description: "Moment of mass in kilogram square metres (kg�m�) (Second moment of mass, commonly called the moment of inertia). Note: multiplier �k� is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "_D18A5CA3-5F86-4f15-AF52-313ED1C0FCA9"
+      kn:
+        meaning:  cim:UnitSymbol.kn
+        description: "Speed, knots (1 kn = 1852/3600) m/s."
+        annotations:
+          ea_guid: "_76B3AB3B-A772-48a3-87A9-CC2655C20055"
+      l:
+        meaning:  cim:UnitSymbol.l
+        description: "Volume in litres, litre = dm3 = m3/1000."
+        annotations:
+          ea_guid: "_3D491A25-7CCF-4251-9579-D569948EE574"
+      lPerh:
+        meaning:  cim:UnitSymbol.lPerh
+        description: "Volumetric flow rate, litres per hour."
+        annotations:
+          ea_guid: "_2611249E-07C4-481b-96AF-3912056F7A39"
+      lPerl:
+        meaning:  cim:UnitSymbol.lPerl
+        description: "Concentration, The ratio of the volume of a solute divided by the volume of  the solution. Note: Users may need use a prefix such a ��� to express a quantity such as ��L/L�."
+        annotations:
+          ea_guid: "_3C51034A-1DF4-4f24-9021-DEFB86D27C69"
+      lPers:
+        meaning:  cim:UnitSymbol.lPers
+        description: "Volumetric flow rate in litres per second."
+        annotations:
+          ea_guid: "_FEA615F0-27A6-43e5-AB75-C6C2954D09CC"
+      lm:
+        meaning:  cim:UnitSymbol.lm
+        description: "Luminous flux in lumens (cd�sr)."
+        annotations:
+          ea_guid: "_593D68AB-754E-46e4-8BB0-56BE19944355"
+      lx:
+        meaning:  cim:UnitSymbol.lx
+        description: "Illuminance in lux (lm/m�)."
+        annotations:
+          ea_guid: "_234076FB-B88A-4249-9CFF-8F30847685B6"
+      m:
+        meaning:  cim:UnitSymbol.m
+        description: "Length in metres."
+        annotations:
+          ea_guid: "_5D4DDF01-7840-42a2-9106-C5CA5D41D1F2"
+      m2:
+        meaning:  cim:UnitSymbol.m2
+        description: "Area in square metres (m�)."
+        annotations:
+          ea_guid: "_A675331A-7D99-4e64-910D-A537BB8CEAAA"
+      m2Pers:
+        meaning:  cim:UnitSymbol.m2Pers
+        description: "Viscosity in square metres / second (m�/s)."
+        annotations:
+          ea_guid: "_4C077318-15E4-40e9-81AF-94A22098B3AA"
+      m3:
+        meaning:  cim:UnitSymbol.m3
+        description: "Volume in cubic metres (m�)."
+        annotations:
+          ea_guid: "_ACC84E95-39F4-4acf-A99C-F0F50B37A605"
+      m3Compensated:
+        meaning:  cim:UnitSymbol.m3Compensated
+        description: "Volume, cubic metres, with the value compensated for weather effects."
+        annotations:
+          ea_guid: "_232385E4-F5BB-4699-A93F-10C49C822329"
+      m3Perh:
+        meaning:  cim:UnitSymbol.m3Perh
+        description: "Volumetric flow rate, cubic metres per hour."
+        annotations:
+          ea_guid: "_D3CF2309-7272-4d0c-9977-D83D3FDA4054"
+      m3Perkg:
+        meaning:  cim:UnitSymbol.m3Perkg
+        description: "Specific volume, cubic metres per kilogram, v."
+        annotations:
+          ea_guid: "_0E1D3CF6-01AC-4cd4-BBCE-19D25E34BE91"
+      m3Pers:
+        meaning:  cim:UnitSymbol.m3Pers
+        description: "Volumetric flow rate in cubic metres per second (m�/s)."
+        annotations:
+          ea_guid: "_49157E6B-5DF9-4c4a-91DF-A99100A9959A"
+      m3Uncompensated:
+        meaning:  cim:UnitSymbol.m3Uncompensated
+        description: "Volume, cubic metres, with the value uncompensated for weather effects."
+        annotations:
+          ea_guid: "_EAA81876-9511-48ce-9CC1-8E744D558E43"
+      mPerm3:
+        meaning:  cim:UnitSymbol.mPerm3
+        description: "Fuel efficiency in metres per cubic metres (m/m�)."
+        annotations:
+          ea_guid: "_B76349C8-69F4-433e-A6F4-9A709F4BAEE3"
+      mPers:
+        meaning:  cim:UnitSymbol.mPers
+        description: "Velocity in metres per second (m/s)."
+        annotations:
+          ea_guid: "_AA6472CE-DFB5-446a-A9E7-52A5CE50CEF8"
+      mPers2:
+        meaning:  cim:UnitSymbol.mPers2
+        description: "Acceleration in metres per second squared (m/s�)."
+        annotations:
+          ea_guid: "_57C47608-7060-4960-B368-B53B6FDE195C"
+      min:
+        meaning:  cim:UnitSymbol.min
+        description: "Time in minutes, minute  = 60 s."
+        annotations:
+          ea_guid: "_5E4420E6-9C1E-4e9c-ABE3-CDDD28FEF17F"
+      mmHg:
+        meaning:  cim:UnitSymbol.mmHg
+        description: "Pressure, millimetres of mercury (1 mmHg is approximately 133.3 Pa)."
+        annotations:
+          ea_guid: "_A3459B23-0BDB-4e8f-822B-1D0EDD223D18"
+      mol:
+        meaning:  cim:UnitSymbol.mol
+        description: "Amount of substance in moles."
+        annotations:
+          ea_guid: "_AE67CF4C-C8D9-446d-AF20-8BFC19C17C18"
+      molPerkg:
+        meaning:  cim:UnitSymbol.molPerkg
+        description: "Concentration, Molality, the amount of solute in moles and the amount of solvent in kilograms."
+        annotations:
+          ea_guid: "_6D617CFF-CBD4-4c43-B8DF-7356CB496160"
+      molPerm3:
+        meaning:  cim:UnitSymbol.molPerm3
+        description: "Concentration, The amount of substance concentration, (c), the amount of solvent in moles divided by the volume of solution in m�."
+        annotations:
+          ea_guid: "_6E337AE9-1E58-41d7-A865-080C8E7E029B"
+      molPermol:
+        meaning:  cim:UnitSymbol.molPermol
+        description: "Concentration, Molar fraction, the ratio of the molar amount of a solute divided by the molar amount of the solution."
+        annotations:
+          ea_guid: "_9723639D-4BA1-4756-952E-605DBFAF2057"
+      none:
+        meaning:  cim:UnitSymbol.none
+        description: "Dimension less quantity, e.g. count, per unit, etc."
+        annotations:
+          ea_guid: "_F14E9D40-A805-4840-B04C-34CD7BD279CC"
+      ohm:
+        meaning:  cim:UnitSymbol.ohm
+        description: "Electric resistance in ohms (V/A)."
+        annotations:
+          ea_guid: "_1DD847A9-4242-4c5d-98D6-8BF40A3F14C2"
+      ohmPerm:
+        meaning:  cim:UnitSymbol.ohmPerm
+        description: "Electric resistance per length in ohms per metre ((V/A)/m)."
+        annotations:
+          ea_guid: "_2BDD18E5-7E62-4f66-AF25-21B7AB95AA3A"
+      ohmm:
+        meaning:  cim:UnitSymbol.ohmm
+        description: "Resistivity, ohm metres, (rho)."
+        annotations:
+          ea_guid: "_D0950984-9A0E-482a-9DE1-16F420DAE9CC"
+      onePerHz:
+        meaning:  cim:UnitSymbol.onePerHz
+        description: "Reciprocal of frequency (1/Hz)."
+        annotations:
+          ea_guid: "_46A68760-C92B-49b5-9BED-F01BFEDAD997"
+      onePerm:
+        meaning:  cim:UnitSymbol.onePerm
+        description: "Wavenumber, reciprocal metres,  (1/m)."
+        annotations:
+          ea_guid: "_B8367965-284B-4e08-8567-055B00DAEDBA"
+      ppm:
+        meaning:  cim:UnitSymbol.ppm
+        description: "Concentration in parts per million."
+        annotations:
+          ea_guid: "_EAC82D26-6F54-4556-90EE-430E28882551"
+      rad:
+        meaning:  cim:UnitSymbol.rad
+        description: "Plane angle in radians (m/m)."
+        annotations:
+          ea_guid: "_90D4CFED-C041-47b2-9BD3-B4F34BA5FD95"
+      radPers:
+        meaning:  cim:UnitSymbol.radPers
+        description: "Angular velocity in radians per second (rad/s)."
+        annotations:
+          ea_guid: "_D02F038B-E180-44e1-94C9-0EF927B2FF01"
+      radPers2:
+        meaning:  cim:UnitSymbol.radPers2
+        description: "Angular acceleration, radians per second squared."
+        annotations:
+          ea_guid: "_2C2CD44E-2697-496e-8976-75216FBF43F4"
+      rev:
+        meaning:  cim:UnitSymbol.rev
+        description: "Amount of rotation, revolutions."
+        annotations:
+          ea_guid: "_67CE50F0-C29B-444d-AC79-8A344CFCD3D8"
+      rotPers:
+        meaning:  cim:UnitSymbol.rotPers
+        description: "Rotations per second (1/s). See also Hz (1/s)."
+        annotations:
+          ea_guid: "_B1F4EE35-083B-4d1f-A153-F7C65D67770D"
+      s:
+        meaning:  cim:UnitSymbol.s
+        description: "Time in seconds."
+        annotations:
+          ea_guid: "_D53EB49C-18D1-430f-BBB5-C7ED93CCFC2B"
+      sPers:
+        meaning:  cim:UnitSymbol.sPers
+        description: "Time, Ratio of time.  Note: Users may need to supply a prefix such as �&#181;� to show rates such as �&#181;s/s�."
+        annotations:
+          ea_guid: "_6536A446-4A67-45c0-A68E-517D8F75A6CF"
+      sr:
+        meaning:  cim:UnitSymbol.sr
+        description: "Solid angle in steradians (m2/m2)."
+        annotations:
+          ea_guid: "_EDB8BF68-BB72-4cac-9576-DCC78C57DBB1"
+      therm:
+        meaning:  cim:UnitSymbol.therm
+        description: "Energy, therms."
+        annotations:
+          ea_guid: "_D9814FF0-29BF-4ccd-8F0F-0203764EDD8E"
+      tonne:
+        meaning:  cim:UnitSymbol.tonne
+        description: "Mass in tons, �tonne� or �metric  ton� (1000 kg = 1 Mg)."
+        annotations:
+          ea_guid: "_13E05807-8D00-40c0-8826-9D508FD4E0DE"

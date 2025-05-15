@@ -192,6 +192,29 @@ nav:
         - DateTime: Models/Profiles/GridCapacity/Types/DateTime.md
         - ActivePower: Models/Profiles/GridCapacity/Types/ActivePower.md
         - ReactivePower: Models/Profiles/GridCapacity/Types/ReactivePower.md
+    - Outage:
+      - Overview: Models/Profiles/Outage/index.md
+      - Abstract Classes:
+        - Document: Models/Profiles/Outage/AbstractClasses/Document.md
+        - IOPoint: Models/Profiles/Outage/AbstractClasses/IOPoint.md
+        - IdentifiedObject: Models/Profiles/Outage/AbstractClasses/IdentifiedObject.md
+        - Measurement: Models/Profiles/Outage/AbstractClasses/Measurement.md
+        - MeasurementValue: Models/Profiles/Outage/AbstractClasses/MeasurementValue.md
+        - Outage: Models/Profiles/Outage/AbstractClasses/Outage.md
+        - PlannedOutage: Models/Profiles/Outage/AbstractClasses/PlannedOutage.md
+        - StringMeasurement: Models/Profiles/Outage/AbstractClasses/StringMeasurement.md
+        - StringMeasurementValue: Models/Profiles/Outage/AbstractClasses/StringMeasurementValue.md
+        - UnplannedOutage: Models/Profiles/Outage/AbstractClasses/UnplannedOutage.md
+      - Concrete Classes: []
+      - Enumerations:
+        - CrewStatusKind: Models/Profiles/Outage/Enumerations/CrewStatusKind.md
+        - OutageCauseKind: Models/Profiles/Outage/Enumerations/OutageCauseKind.md
+        - OutageStatusKind: Models/Profiles/Outage/Enumerations/OutageStatusKind.md
+        - PhaseCode: Models/Profiles/Outage/Enumerations/PhaseCode.md
+        - UnitMultiplier: Models/Profiles/Outage/Enumerations/UnitMultiplier.md
+        - UnitSymbol: Models/Profiles/Outage/Enumerations/UnitSymbol.md
+      - Types:
+        - PerCent: Models/Profiles/Outage/Types/PerCent.md
     - SubseaCableInfo:
       - Overview: Models/Profiles/SubseaCableInfo/index.md
       - Abstract Classes:
