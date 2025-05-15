@@ -1,24 +1,20 @@
-# PlannedOutage
+# SwitchingPlan
 
-_No description available_
+_A sequence of grouped or atomic steps intended to:- de-energise equipment or part of the network for safe work, and/or- bring back in service previously de-energised equipment or part of the network._
 
 *__NOTE__: this is an abstract class and should not be instantiated directly
 
-**URI**: [cim:PlannedOutage](http://iec.ch/TC57/CIM100#PlannedOutage)<br />
+**URI**: [cim:SwitchingPlan](http://iec.ch/TC57/CIM100#SwitchingPlan)<br />
 **Type**: Class
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
-    class PlannedOutage
-    click PlannedOutage href "/Models/Profiles/Outage/AbstractClasses/PlannedOutage/"
-    style PlannedOutage fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    class SwitchingPlan
+    click SwitchingPlan href "/Models/Profiles/Outage/AbstractClasses/SwitchingPlan/"
+    style SwitchingPlan fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
-        Outage <|-- PlannedOutage : inherits
-            click Outage href "/Models/Profiles/Outage/AbstractClasses/Outage/"
-            style Outage fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-     
-        Document <|-- Outage : inherits
+        Document <|-- SwitchingPlan : inherits
             click Document href "/Models/Profiles/Outage/AbstractClasses/Document/"
             style Document fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
@@ -26,11 +22,11 @@ classDiagram
             click IdentifiedObject href "/Models/Profiles/Outage/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        PlannedOutage --> OutagePlan : PlannedOutage.OutagePlan
+        SwitchingPlan --> Outage : SwitchingPlan.Outage
 
-        OutagePlan
-            click OutagePlan href "/Models/Profiles/Outage/AbstractClasses/OutagePlan/"
-            style OutagePlan fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+        Outage
+            click Outage href "/Models/Profiles/Outage/AbstractClasses/Outage/"
+            style Outage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ActivityRecord --> Document : ActivityRecord.Document
 
@@ -38,27 +34,18 @@ classDiagram
             click ActivityRecord href "/Models/Profiles/Outage/AbstractClasses/ActivityRecord/"
             style ActivityRecord fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        Incident --> Outage : Incident.Outage
+        OutagePlan --> SwitchingPlan : OutagePlan.SwitchingPlan
 
-        Incident
-            click Incident href "/Models/Profiles/Outage/AbstractClasses/Incident/"
-            style Incident fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        SwitchingPlan --> Outage : SwitchingPlan.Outage
-
-        SwitchingPlan
-            click SwitchingPlan href "/Models/Profiles/Outage/AbstractClasses/SwitchingPlan/"
-            style SwitchingPlan fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+        OutagePlan
+            click OutagePlan href "/Models/Profiles/Outage/AbstractClasses/OutagePlan/"
+            style OutagePlan fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
-        PlannedOutage : PlannedOutage.reason
-        PlannedOutage : PlannedOutage.OutagePlan
-        Outage : Outage.communityDescriptor
-        Outage : Outage.customersRestored
-        Outage : Outage.metersAffected
-        Outage : Outage.originalCustomersServed
-        Outage : Outage.originalMetersAffected
-        Outage : Outage.utilityDisclaimer
+        SwitchingPlan : SwitchingPlan.approvedDateTime
+        SwitchingPlan : SwitchingPlan.cancelledDateTime
+        SwitchingPlan : SwitchingPlan.purpose
+        SwitchingPlan : SwitchingPlan.rank
+        SwitchingPlan : SwitchingPlan.Outage
         Document : Document.authorName
         Document : Document.comment
         Document : Document.createdDateTime
@@ -76,20 +63,16 @@ classDiagram
 ## Inheritance
 * [IdentifiedObject](/Models/Profiles/Outage/AbstractClasses/IdentifiedObject/)
     * [Document](/Models/Profiles/Outage/AbstractClasses/Document/)
-        * [Outage](/Models/Profiles/Outage/AbstractClasses/Outage/)
-            * **PlannedOutage**
+        * **SwitchingPlan**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
-| reason | [cim:PlannedOutage.reason](http://iec.ch/TC57/CIM100#PlannedOutage.reason) | 0..1 string | The reason for the planned outage. | direct |
-| OutagePlan | [cim:PlannedOutage.OutagePlan](http://iec.ch/TC57/CIM100#PlannedOutage.OutagePlan) | 0..1 OutagePlan | Outage plan for executing a planned outage. | direct |
-| communityDescriptor | [cim:Outage.communityDescriptor](http://iec.ch/TC57/CIM100#Outage.communityDescriptor) | 0..1 string | a name to denote the community - this could be a name or a code of some kind. | Outage |
-| customersRestored | [cim:Outage.customersRestored](http://iec.ch/TC57/CIM100#Outage.customersRestored) | 0..1 integer | number of customers that have been restored in the area. | Outage |
-| metersAffected | [cim:Outage.metersAffected](http://iec.ch/TC57/CIM100#Outage.metersAffected) | 0..1 integer | The updated number of meters affected by the outage as reported by the OMS within the utility.  It is assumed this number will be updated repeatedly until the full outage is resolved. | Outage |
-| originalCustomersServed | [cim:Outage.originalCustomersServed](http://iec.ch/TC57/CIM100#Outage.originalCustomersServed) | 0..1 integer | the total number of customers that are served in the area (both outaged and not outaged). | Outage |
-| originalMetersAffected | [cim:Outage.originalMetersAffected](http://iec.ch/TC57/CIM100#Outage.originalMetersAffected) | 0..1 integer | The original number of meters that were affected as reported by the OMS within the utility. That is, this is the total number of meters that were out at the beginning of the outage. | Outage |
-| utilityDisclaimer | [cim:Outage.utilityDisclaimer](http://iec.ch/TC57/CIM100#Outage.utilityDisclaimer) | 0..1 string | This contains an disclaimers the utility would like to place on the data provided to any stakeholder.  This may be different for different stakeholders.  This should possibly be an attribute under the Organization class but it is placed here for now. | Outage |
+| approvedDateTime | [cim:SwitchingPlan.approvedDateTime](http://iec.ch/TC57/CIM100#SwitchingPlan.approvedDateTime) | 0..1 datetime | The date and time the switching plan was approved | direct |
+| cancelledDateTime | [cim:SwitchingPlan.cancelledDateTime](http://iec.ch/TC57/CIM100#SwitchingPlan.cancelledDateTime) | 0..1 datetime | Date and Time the switching plan was cancelled. | direct |
+| purpose | [cim:SwitchingPlan.purpose](http://iec.ch/TC57/CIM100#SwitchingPlan.purpose) | 0..1 string | Purpose of  this plan, such as whether it is to move the state from normal to some abnormal condition, or to restore the normal state after an abnormal condition, or to perform some kind of optimisation such as correction of overload, voltage control, etc. | direct |
+| rank | [cim:SwitchingPlan.rank](http://iec.ch/TC57/CIM100#SwitchingPlan.rank) | 0..1 integer | Ranking in comparison to other switching plans. | direct |
+| Outage | [cim:SwitchingPlan.Outage](http://iec.ch/TC57/CIM100#SwitchingPlan.Outage) | 0..1 Outage | Outage that will be activated or eliminated when this switching plan gets executed. | direct |
 | authorName | [cim:Document.authorName](http://iec.ch/TC57/CIM100#Document.authorName) | 0..1 string | Name of the author of this document. | Document |
 | comment | [cim:Document.comment](http://iec.ch/TC57/CIM100#Document.comment) | 0..1 string | Free text comment. | Document |
 | createdDateTime | [cim:Document.createdDateTime](http://iec.ch/TC57/CIM100#Document.createdDateTime) | 0..1 datetime | Date and time that this document was created. | Document |

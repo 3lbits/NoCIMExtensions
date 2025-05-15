@@ -8,23 +8,27 @@ Profiles:
 
 - Abstract Classes
     
-    - [Document](/Models/Profiles/Outage/AbstractClasses/Document/)
+    - [ActivityRecord](/Models/Profiles/Outage/AbstractClasses/ActivityRecord/)
     
-    - [IOPoint](/Models/Profiles/Outage/AbstractClasses/IOPoint/)
+    - [CustomerNotification](/Models/Profiles/Outage/AbstractClasses/CustomerNotification/)
+    
+    - [Document](/Models/Profiles/Outage/AbstractClasses/Document/)
     
     - [IdentifiedObject](/Models/Profiles/Outage/AbstractClasses/IdentifiedObject/)
     
-    - [Measurement](/Models/Profiles/Outage/AbstractClasses/Measurement/)
-    
-    - [MeasurementValue](/Models/Profiles/Outage/AbstractClasses/MeasurementValue/)
+    - [Incident](/Models/Profiles/Outage/AbstractClasses/Incident/)
     
     - [Outage](/Models/Profiles/Outage/AbstractClasses/Outage/)
     
+    - [OutagePlan](/Models/Profiles/Outage/AbstractClasses/OutagePlan/)
+    
+    - [PSREvent](/Models/Profiles/Outage/AbstractClasses/PSREvent/)
+    
     - [PlannedOutage](/Models/Profiles/Outage/AbstractClasses/PlannedOutage/)
     
-    - [StringMeasurement](/Models/Profiles/Outage/AbstractClasses/StringMeasurement/)
+    - [SwitchingEvent](/Models/Profiles/Outage/AbstractClasses/SwitchingEvent/)
     
-    - [StringMeasurementValue](/Models/Profiles/Outage/AbstractClasses/StringMeasurementValue/)
+    - [SwitchingPlan](/Models/Profiles/Outage/AbstractClasses/SwitchingPlan/)
     
     - [UnplannedOutage](/Models/Profiles/Outage/AbstractClasses/UnplannedOutage/)
     
@@ -36,18 +40,12 @@ Profiles:
     
     - [CrewStatusKind](/Models/Profiles/Outage/Enumerations/CrewStatusKind/)
     
+    - [NotificationTriggerKind](/Models/Profiles/Outage/Enumerations/NotificationTriggerKind/)
+    
     - [OutageCauseKind](/Models/Profiles/Outage/Enumerations/OutageCauseKind/)
     
     - [OutageStatusKind](/Models/Profiles/Outage/Enumerations/OutageStatusKind/)
     
-    - [PhaseCode](/Models/Profiles/Outage/Enumerations/PhaseCode/)
-    
-    - [UnitMultiplier](/Models/Profiles/Outage/Enumerations/UnitMultiplier/)
-    
-    - [UnitSymbol](/Models/Profiles/Outage/Enumerations/UnitSymbol/)
-    
 
 - Types
-    
-    - [PerCent](/Models/Profiles/Outage/Types/PerCent/)
     

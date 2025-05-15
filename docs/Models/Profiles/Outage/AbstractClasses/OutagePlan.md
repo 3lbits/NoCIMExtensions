@@ -1,24 +1,20 @@
-# PlannedOutage
+# OutagePlan
 
-_No description available_
+_Document containing the definition of planned outages of equipment and/or usage points. It will reference switching plans that are used to execute the planned outage._
 
 *__NOTE__: this is an abstract class and should not be instantiated directly
 
-**URI**: [cim:PlannedOutage](http://iec.ch/TC57/CIM100#PlannedOutage)<br />
+**URI**: [cim:OutagePlan](http://iec.ch/TC57/CIM100#OutagePlan)<br />
 **Type**: Class
 
 ```mermaid
 %%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
 classDiagram
-    class PlannedOutage
-    click PlannedOutage href "/Models/Profiles/Outage/AbstractClasses/PlannedOutage/"
-    style PlannedOutage fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    class OutagePlan
+    click OutagePlan href "/Models/Profiles/Outage/AbstractClasses/OutagePlan/"
+    style OutagePlan fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
-        Outage <|-- PlannedOutage : inherits
-            click Outage href "/Models/Profiles/Outage/AbstractClasses/Outage/"
-            style Outage fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-     
-        Document <|-- Outage : inherits
+        Document <|-- OutagePlan : inherits
             click Document href "/Models/Profiles/Outage/AbstractClasses/Document/"
             style Document fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
@@ -26,11 +22,17 @@ classDiagram
             click IdentifiedObject href "/Models/Profiles/Outage/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        PlannedOutage --> OutagePlan : PlannedOutage.OutagePlan
+        OutagePlan --> DateTimeInterval : OutagePlan.plannedPeriod
 
-        OutagePlan
-            click OutagePlan href "/Models/Profiles/Outage/AbstractClasses/OutagePlan/"
-            style OutagePlan fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+        DateTimeInterval : Not defined in profile
+
+        DateTimeInterval
+            style DateTimeInterval fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+        OutagePlan --> SwitchingPlan : OutagePlan.SwitchingPlan
+
+        SwitchingPlan
+            click SwitchingPlan href "/Models/Profiles/Outage/AbstractClasses/SwitchingPlan/"
+            style SwitchingPlan fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ActivityRecord --> Document : ActivityRecord.Document
 
@@ -38,27 +40,18 @@ classDiagram
             click ActivityRecord href "/Models/Profiles/Outage/AbstractClasses/ActivityRecord/"
             style ActivityRecord fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        Incident --> Outage : Incident.Outage
+        PlannedOutage --> OutagePlan : PlannedOutage.OutagePlan
 
-        Incident
-            click Incident href "/Models/Profiles/Outage/AbstractClasses/Incident/"
-            style Incident fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        SwitchingPlan --> Outage : SwitchingPlan.Outage
-
-        SwitchingPlan
-            click SwitchingPlan href "/Models/Profiles/Outage/AbstractClasses/SwitchingPlan/"
-            style SwitchingPlan fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+        PlannedOutage
+            click PlannedOutage href "/Models/Profiles/Outage/AbstractClasses/PlannedOutage/"
+            style PlannedOutage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
-        PlannedOutage : PlannedOutage.reason
-        PlannedOutage : PlannedOutage.OutagePlan
-        Outage : Outage.communityDescriptor
-        Outage : Outage.customersRestored
-        Outage : Outage.metersAffected
-        Outage : Outage.originalCustomersServed
-        Outage : Outage.originalMetersAffected
-        Outage : Outage.utilityDisclaimer
+        OutagePlan : OutagePlan.approvedDateTime
+        OutagePlan : OutagePlan.cancelledDateTime
+        OutagePlan : OutagePlan.purpose
+        OutagePlan : OutagePlan.plannedPeriod
+        OutagePlan : OutagePlan.SwitchingPlan
         Document : Document.authorName
         Document : Document.comment
         Document : Document.createdDateTime
@@ -76,20 +69,16 @@ classDiagram
 ## Inheritance
 * [IdentifiedObject](/Models/Profiles/Outage/AbstractClasses/IdentifiedObject/)
     * [Document](/Models/Profiles/Outage/AbstractClasses/Document/)
-        * [Outage](/Models/Profiles/Outage/AbstractClasses/Outage/)
-            * **PlannedOutage**
+        * **OutagePlan**
 
 ## Attributes
 | Name | URI | Cardinality and Range | Description | Inheritance |
 | ---  | --- | --- | --- | --- |
-| reason | [cim:PlannedOutage.reason](http://iec.ch/TC57/CIM100#PlannedOutage.reason) | 0..1 string | The reason for the planned outage. | direct |
-| OutagePlan | [cim:PlannedOutage.OutagePlan](http://iec.ch/TC57/CIM100#PlannedOutage.OutagePlan) | 0..1 OutagePlan | Outage plan for executing a planned outage. | direct |
-| communityDescriptor | [cim:Outage.communityDescriptor](http://iec.ch/TC57/CIM100#Outage.communityDescriptor) | 0..1 string | a name to denote the community - this could be a name or a code of some kind. | Outage |
-| customersRestored | [cim:Outage.customersRestored](http://iec.ch/TC57/CIM100#Outage.customersRestored) | 0..1 integer | number of customers that have been restored in the area. | Outage |
-| metersAffected | [cim:Outage.metersAffected](http://iec.ch/TC57/CIM100#Outage.metersAffected) | 0..1 integer | The updated number of meters affected by the outage as reported by the OMS within the utility.  It is assumed this number will be updated repeatedly until the full outage is resolved. | Outage |
-| originalCustomersServed | [cim:Outage.originalCustomersServed](http://iec.ch/TC57/CIM100#Outage.originalCustomersServed) | 0..1 integer | the total number of customers that are served in the area (both outaged and not outaged). | Outage |
-| originalMetersAffected | [cim:Outage.originalMetersAffected](http://iec.ch/TC57/CIM100#Outage.originalMetersAffected) | 0..1 integer | The original number of meters that were affected as reported by the OMS within the utility. That is, this is the total number of meters that were out at the beginning of the outage. | Outage |
-| utilityDisclaimer | [cim:Outage.utilityDisclaimer](http://iec.ch/TC57/CIM100#Outage.utilityDisclaimer) | 0..1 string | This contains an disclaimers the utility would like to place on the data provided to any stakeholder.  This may be different for different stakeholders.  This should possibly be an attribute under the Organization class but it is placed here for now. | Outage |
+| approvedDateTime | [cim:OutagePlan.approvedDateTime](http://iec.ch/TC57/CIM100#OutagePlan.approvedDateTime) | 0..1 datetime | The date and time the outage plan was approved | direct |
+| cancelledDateTime | [cim:OutagePlan.cancelledDateTime](http://iec.ch/TC57/CIM100#OutagePlan.cancelledDateTime) | 0..1 datetime | Date and Time the planned outage was canceled. | direct |
+| purpose | [cim:OutagePlan.purpose](http://iec.ch/TC57/CIM100#OutagePlan.purpose) | 0..1 string | Purpose of  this outage plan, such as whether it is to replace equipment or perform maintenance or repairs or to reconfigure network topology. | direct |
+| plannedPeriod | [cim:OutagePlan.plannedPeriod](http://iec.ch/TC57/CIM100#OutagePlan.plannedPeriod) | 0..1 DateTimeInterval | planned start and end time of the planned outage. | direct |
+| SwitchingPlan | [cim:OutagePlan.SwitchingPlan](http://iec.ch/TC57/CIM100#OutagePlan.SwitchingPlan) | 0..1 SwitchingPlan | The swiching plan that is associated with the outage plan. | direct |
 | authorName | [cim:Document.authorName](http://iec.ch/TC57/CIM100#Document.authorName) | 0..1 string | Name of the author of this document. | Document |
 | comment | [cim:Document.comment](http://iec.ch/TC57/CIM100#Document.comment) | 0..1 string | Free text comment. | Document |
 | createdDateTime | [cim:Document.createdDateTime](http://iec.ch/TC57/CIM100#Document.createdDateTime) | 0..1 datetime | Date and time that this document was created. | Document |

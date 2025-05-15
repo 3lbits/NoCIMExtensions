@@ -195,26 +195,24 @@ nav:
     - Outage:
       - Overview: Models/Profiles/Outage/index.md
       - Abstract Classes:
+        - ActivityRecord: Models/Profiles/Outage/AbstractClasses/ActivityRecord.md
+        - CustomerNotification: Models/Profiles/Outage/AbstractClasses/CustomerNotification.md
         - Document: Models/Profiles/Outage/AbstractClasses/Document.md
-        - IOPoint: Models/Profiles/Outage/AbstractClasses/IOPoint.md
         - IdentifiedObject: Models/Profiles/Outage/AbstractClasses/IdentifiedObject.md
-        - Measurement: Models/Profiles/Outage/AbstractClasses/Measurement.md
-        - MeasurementValue: Models/Profiles/Outage/AbstractClasses/MeasurementValue.md
+        - Incident: Models/Profiles/Outage/AbstractClasses/Incident.md
         - Outage: Models/Profiles/Outage/AbstractClasses/Outage.md
+        - OutagePlan: Models/Profiles/Outage/AbstractClasses/OutagePlan.md
+        - PSREvent: Models/Profiles/Outage/AbstractClasses/PSREvent.md
         - PlannedOutage: Models/Profiles/Outage/AbstractClasses/PlannedOutage.md
-        - StringMeasurement: Models/Profiles/Outage/AbstractClasses/StringMeasurement.md
-        - StringMeasurementValue: Models/Profiles/Outage/AbstractClasses/StringMeasurementValue.md
+        - SwitchingEvent: Models/Profiles/Outage/AbstractClasses/SwitchingEvent.md
+        - SwitchingPlan: Models/Profiles/Outage/AbstractClasses/SwitchingPlan.md
         - UnplannedOutage: Models/Profiles/Outage/AbstractClasses/UnplannedOutage.md
       - Concrete Classes: []
       - Enumerations:
         - CrewStatusKind: Models/Profiles/Outage/Enumerations/CrewStatusKind.md
+        - NotificationTriggerKind: Models/Profiles/Outage/Enumerations/NotificationTriggerKind.md
         - OutageCauseKind: Models/Profiles/Outage/Enumerations/OutageCauseKind.md
         - OutageStatusKind: Models/Profiles/Outage/Enumerations/OutageStatusKind.md
-        - PhaseCode: Models/Profiles/Outage/Enumerations/PhaseCode.md
-        - UnitMultiplier: Models/Profiles/Outage/Enumerations/UnitMultiplier.md
-        - UnitSymbol: Models/Profiles/Outage/Enumerations/UnitSymbol.md
-      - Types:
-        - PerCent: Models/Profiles/Outage/Types/PerCent.md
     - SubseaCableInfo:
       - Overview: Models/Profiles/SubseaCableInfo/index.md
       - Abstract Classes:

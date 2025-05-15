@@ -14,23 +14,17 @@ classDiagram
     click IdentifiedObject href "/Models/Profiles/Outage/AbstractClasses/IdentifiedObject/"
     style IdentifiedObject fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
+        IdentifiedObject <|-- ActivityRecord : inherits
+
+        ActivityRecord
+            click ActivityRecord href "/Models/Profiles/Outage/AbstractClasses/ActivityRecord/"
+            style ActivityRecord fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+
         IdentifiedObject <|-- Document : inherits
 
         Document
             click Document href "/Models/Profiles/Outage/AbstractClasses/Document/"
             style Document fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        IdentifiedObject <|-- IOPoint : inherits
-
-        IOPoint
-            click IOPoint href "/Models/Profiles/Outage/AbstractClasses/IOPoint/"
-            style IOPoint fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-
-        IdentifiedObject <|-- Measurement : inherits
-
-        Measurement
-            click Measurement href "/Models/Profiles/Outage/AbstractClasses/Measurement/"
-            style Measurement fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
 
