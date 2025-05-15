@@ -1,5 +1,5 @@
 import xmltodict
-import json
+import re
 
 class General:
 
@@ -61,6 +61,12 @@ class XmlFormatting:
 
         return formatted_xml
 
+    @staticmethod
+    def self_closing_tag(xmlString):
+        # Replace self-closing tags with a newline
+        formatted_xml = re.sub(r'rdf:resource="([^"]*)"></[^>]*>', r'rdf:resource="\1"/>', xmlString)
+        return formatted_xml
+
 class ControllerXmlSorting:
 
     @staticmethod
@@ -83,6 +89,9 @@ class ControllerXmlSorting:
 
         else:
             output_xml = xmlString
+
+        # Apply self-closing tag formatting
+        output_xml = XmlFormatting.self_closing_tag(output_xml)
 
         # Write the formatted XML string to the output file
         General.writeFile(outputFilePath, output_xml)
