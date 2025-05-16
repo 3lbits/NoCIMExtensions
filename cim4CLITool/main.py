@@ -95,6 +95,8 @@ def sort(file_name: str, input_path: str, output_path: str, cim4_formatting: boo
 
     if bulk:
 
+        click.echo('Bulk sorting XML files')
+
         if input_path is None or not os.path.exists(input_path):
             click.echo('Input path does not exist. Please provide a valid input_path for bulk sorting.')
             return
@@ -115,6 +117,8 @@ def sort(file_name: str, input_path: str, output_path: str, cim4_formatting: boo
         click.echo(f'Sorted all XML files in {input_path} and saved to {output_path}')
         return
 
+    click.echo('Sorting single XML file')
+
     if file_name != None:
         inputFilePath = f"data/xml/{file_name}.xml"
         outputFilePath = f"data/xml/{file_name}_sorted.xml"
@@ -122,7 +126,7 @@ def sort(file_name: str, input_path: str, output_path: str, cim4_formatting: boo
         inputFilePath = input_path
         outputFilePath = output_path
     else:
-        click.echo('Please provide the file_name or input_path or input_path and output_path')
+        click.echo('Please provide the file_name or input_path and output_path')
         return
 
     ControllerXmlSorting.sort_single_files(inputFilePath, outputFilePath, print_output=print_output, cim4_formatting=cim4_formatting)
