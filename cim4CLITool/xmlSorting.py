@@ -1,5 +1,6 @@
 import xmltodict
 import re
+import os
 
 class General:
 
@@ -70,7 +71,7 @@ class XmlFormatting:
 class ControllerXmlSorting:
 
     @staticmethod
-    def main(inputFilePath, outputFilePath, print_output=False, cim4_formatting=False):
+    def sort_single_files(inputFilePath, outputFilePath, print_output=False, cim4_formatting=False):
 
         # Read the XML file into a dictionary
         xml_dict = xmltodict.parse(General.readFile(inputFilePath))
@@ -100,9 +101,28 @@ class ControllerXmlSorting:
         if print_output:
             print(output_xml)
 
+    @staticmethod
+    def sort_multiple_files(input_folder_path, output_folder_path, print_output=False, cim4_formatting=False):
+        # List all XML files in the input directory
+        xml_files = [f for f in os.listdir(input_folder_path) if f.endswith('.xml')]
+
+        os.makedirs(output_folder_path, exist_ok=True)
+
+        for xml_file in xml_files:
+            input_path = os.path.join(input_folder_path, xml_file)
+            # os.makedirs(output_folder_path, exist_ok=True)
+            output_path = os.path.join(output_folder_path, f"sorted_{xml_file}")
+            ControllerXmlSorting.sort_single_files(input_path, output_path, print_output, cim4_formatting)
+
 if __name__ == "__main__":
     # Example usage
-    inputFilePath = "data/xml/Telemark-120-LV1_GL.xml"  # Replace with your XML file path
-    outputFilePath = "data/xml/Telemark-120-LV1_GL_sorted.xml"  # Replace with your desired output file path
+    # inputFilePath = "data/xml/Telemark-120-LV1_GL.xml"  # Replace with your XML file path
+    # outputFilePath = "data/xml/Telemark-120-LV1_GL_sorted.xml"  # Replace with your desired output file path
 
-    ControllerXmlSorting.main(inputFilePath, outputFilePath, print_output=True, cim4_formatting=True)
+    # ControllerXmlSorting.main(inputFilePath, outputFilePath, print_output=True, cim4_formatting=True)
+
+    input_folder_path = "data/xml/"  # Replace with your XML file path
+    output_folder_path = "data/xml/something_sorted"  # Replace with your desired output file path
+
+    # List all XML files in the input directory
+    ControllerXmlSorting.sort_multiple_files(input_folder_path, output_folder_path, print_output=False, cim4_formatting=False)
