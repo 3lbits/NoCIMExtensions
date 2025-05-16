@@ -5,6 +5,7 @@ from cim4CLITool.generalFunctions import run_bash_command, to_camel_case, remove
 from cim4CLITool.docs.main import CreateMdController
 from cim4CLITool.createOverviewMd import CreateOverviewMdController
 from cim4CLITool.xmlSorting import ControllerXmlSorting
+import os
 
 @click.group()
 def main():
@@ -87,9 +88,32 @@ def gen(schema: str, data: str, output_file_name: str, file_name: str):
 @click.option('--output_path', '-o', required=False, default=None, help='Output file path to use')
 @click.option('--cim4_formatting', '-c', required=False, default=False, is_flag=True, help='Use CIM4 formatting')
 @click.option('--print_output', '-p', required=False, default=False, is_flag=True, help='Print output to console')
-def sort(file_name: str, input_path: str, output_path: str, cim4_formatting: bool, print_output: bool):
-    '''Sort XML file'''
+@click.option('--bulk', '-b', required=False, default=False, is_flag=True, help='Sort all XML files in the input folder')
+def sort(file_name: str, input_path: str, output_path: str, cim4_formatting: bool, print_output: bool, bulk: bool):
+    '''Sort XML file/files'''
     click.echo('Sorting XML file')
+
+    if bulk:
+
+        if input_path is None or not os.path.exists(input_path):
+            click.echo('Input path does not exist. Please provide a valid input_path for bulk sorting.')
+            return
+        
+        if output_path is not None and not os.path.exists(output_path):
+            click.echo(f'Warning: Output path "{output_path}" does not exist.')
+            proceed = click.confirm('Do you want to proceed anyway?', default=False)
+            if not proceed:
+                click.echo('Operation cancelled by user.')
+                return
+
+        if output_path is None:
+            click.echo('output_path not provided. Using input_path as output_path.')
+            output_path = input_path
+
+        click.echo('Sorting all XML files in the input folder')
+        ControllerXmlSorting.sort_multiple_files(input_path, output_path, print_output=print_output, cim4_formatting=cim4_formatting)
+        click.echo(f'Sorted all XML files in {input_path} and saved to {output_path}')
+        return
 
     if file_name != None:
         inputFilePath = f"data/xml/{file_name}.xml"
@@ -98,22 +122,10 @@ def sort(file_name: str, input_path: str, output_path: str, cim4_formatting: boo
         inputFilePath = input_path
         outputFilePath = output_path
     else:
-        click.echo('Please provide the file_name or input_path and output_path')
+        click.echo('Please provide the file_name or input_path or input_path and output_path')
         return
 
-    if cim4_formatting:
-        click.echo('Using CIM4 formatting')
-        if print_output:
-            click.echo('Printing output to console')
-            ControllerXmlSorting.main(inputFilePath, outputFilePath, print_output=True, cim4_formatting=True)
-        else:
-            ControllerXmlSorting.main(inputFilePath, outputFilePath, print_output=False, cim4_formatting=True)
-    else:
-        if print_output:
-            click.echo('Printing output to console')
-            ControllerXmlSorting.main(inputFilePath, outputFilePath, print_output=True, cim4_formatting=False)
-        else:
-            ControllerXmlSorting.main(inputFilePath, outputFilePath, print_output=False, cim4_formatting=False)
+    ControllerXmlSorting.sort_single_files(inputFilePath, outputFilePath, print_output=print_output, cim4_formatting=cim4_formatting)
 
     click.echo(f'Sorted XML file {inputFilePath} and saved to {outputFilePath}')
 
