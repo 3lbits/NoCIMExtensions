@@ -106,9 +106,11 @@ class ControllerXmlSorting:
         # List all XML files in the input directory
         xml_files = [f for f in os.listdir(input_folder_path) if f.endswith('.xml')]
 
+        os.makedirs(output_folder_path, exist_ok=True)
+
         for xml_file in xml_files:
             input_path = os.path.join(input_folder_path, xml_file)
-            os.makedirs(output_folder_path, exist_ok=True)
+            # os.makedirs(output_folder_path, exist_ok=True)
             output_path = os.path.join(output_folder_path, f"sorted_{xml_file}")
             ControllerXmlSorting.sort_single_files(input_path, output_path, print_output, cim4_formatting)
 
