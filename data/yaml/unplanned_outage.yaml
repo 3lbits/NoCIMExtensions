@@ -1,0 +1,94 @@
+#Overview:
+# UnplannedOutage
+#   Equipment
+#   UsagePoint
+#     CustomerAgreement
+#       Customer
+# Incident
+#   UnplannedOutage
+# CustomerNotification
+#   Incident
+#   Customer
+
+UnplannedOutage: 
+  - mRID: "efae214c-c0ed-4ffe-ab6f-18e016f10aac"
+    description: "Unplanned Outage"
+    customersRestored: 50
+    metersAffected: 70
+    originalCustomersServed: 150
+    originalMetersAffected: 180
+    outageKind: "closed"
+    statusKind: "fieldComplete"
+    utilityDisclaimer: "The outage was caused by a storm."
+    actualPeriod:
+      end: "2023-10-01T00:38:00Z"
+      start: "2023-10-01T00:00:00Z"
+    cause: "Tree"
+    reportedStartTime: "2023-10-01T00:01:00Z"
+    EnergizedUsagePoint:
+      - mRID: "ab9eba1c-28e2-41e6-9d90-97b484581582" #Telemarkstien 2 400 Volt UsagePoint 1 from Telemark-120-LV1_CU 
+    Equipment:
+      - mRID: "eba80fde-c5f8-49fc-8465-0329fdeefda9" #Telemarkstien2 400 Volt Conform Load 1 from Telemark-120-LV1_EQ
+      - mRID: "46bce40c-71c2-4d19-b63f-78a69c460b0e" #400V Telemarkstien 2 ACLineSegment 2
+      - mRID: "76335f11-64c3-474d-92fd-7ab11ed607e4" #Telemarkstien2 400 Volt Fuse 2
+    
+UsagePoint:
+  - mRID: "ab9eba1c-28e2-41e6-9d90-97b484581582"
+    CustomerAgreement: "d6ac3b65-8908-49a8-bd0f-16d39d2a34bc"
+
+CustomerAgreement:
+  - mRID: "d6ac3b65-8908-49a8-bd0f-16d39d2a34bc"
+    Customer:
+      mRID: "f9509f6c-9ce5-46e6-ae5f-2bc861460e77"
+
+Incident:
+  - mRID: "b323b976-626c-4c34-b280-cf502cc98e6f"
+    name: "powerOut"
+    cause: "Tree"
+    UnplannedOutage:
+      mRID: "efae214c-c0ed-4ffe-ab6f-18e016f10aac"
+  - mRID: "bbf593f4-2ccb-4663-b820-12b0e8fd10e8"
+    name: "powerRestored"
+    cause: "Tree"
+    UnplannedOutage:
+      mRID: "efae214c-c0ed-4ffe-ab6f-18e016f10aac"
+
+CustomerNotification:
+  - mRID: "e8216cbd-6510-4983-977d-c4b269f34fa2"
+    contactType: "SMS"
+    contactValue: "+4712345678"
+    triggerKind: "powerOut"
+    Incident:
+      mRID: "b323b976-626c-4c34-b280-cf502cc98e6f"
+    Customer:
+      mRID: "f9509f6c-9ce5-46e6-ae5f-2bc861460e77"
+  - mRID: "b8ce9b20-c9e8-4a6d-89a9-ef2b28940c7b"
+    contactType: "SMS"
+    contactValue: "+4712345678"
+    triggerKind: "powerOut"
+    Incident:
+      mRID: "b323b976-626c-4c34-b280-cf502cc98e6f"
+    Customer:
+      mRID: "ace5a8c8-45a0-4a19-934f-9c38c2baa976"
+  - mRID: "f43826c7-7137-45ed-b69a-2dcad82bda44"
+    contactType: "SMS"
+    contactValue: "+4712345678"
+    triggerKind: "powerRestored"
+    Incident:
+      mRID: "bbf593f4-2ccb-4663-b820-12b0e8fd10e8"
+    Customer:
+      mRID: "f9509f6c-9ce5-46e6-ae5f-2bc861460e77"
+  - mRID: "7cc34f0e-e66a-41a3-8964-c21faef0559f" 
+    contactType: "SMS"
+    contactValue: "+4787654321"
+    triggerKind: "powerRestored"
+    Incident:
+      mRID: "bbf593f4-2ccb-4663-b820-12b0e8fd10e8"
+    Customer:
+      mRID: "ace5a8c8-45a0-4a19-934f-9c38c2baa976"
+
+Customer: 
+  - mRID: "f9509f6c-9ce5-46e6-ae5f-2bc861460e77"
+  - mRID: "ace5a8c8-45a0-4a19-934f-9c38c2baa976" #might be wrong to include two customers as only one UsagePoint is defined to have been affected and UML states only one customer per UsagePoint
+    
+
