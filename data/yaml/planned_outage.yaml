@@ -1,0 +1,66 @@
+#Overview:
+# PlannedOutage
+#   Equipment
+#   OutagePlan
+#     SwitchingPlan
+# SwitchAction
+#   PlannedOutage
+#   SwitchingPlan
+#   Switch
+ 
+ 
+PlannedOutage:
+  - mRID: "27174c30-a4b8-45c6-ad73-f3ee783450ec"
+    reason: "Maintenance"
+    OutagePlan:
+      mRID: "0de47e26-72dd-495a-a1f3-0e3453aa0bdc"
+    Equipment:
+      - mRID: "5bd4c12d-99d5-49d7-87fb-a346067c697e" #Telemarkstien2 400 Volt Fuse 19
+      - mRID: "9b24ac8f-043c-4087-ac3b-a695c464f93d" #Telemarkstien2 400 Volt Fuse 18
+
+OutagePlan:
+  - mRID: "0de47e26-72dd-495a-a1f3-0e3453aa0bdc"
+    purpose: "Maintenance"
+    plannedPeriod: 
+      end: "2025-05-19T23:59:59Z"
+      start: "2025-05-17T00:00:00Z"
+    approvedDateTime: "2025-05-01T11:00:00Z" 
+    SwitchingPlan:
+      mRID: "618a7581-cebd-4da2-bbd0-1e77309100c3"
+
+SwitchingPlan:
+  - mRID: "618a7581-cebd-4da2-bbd0-1e77309100c3"
+    purpose: "open normally closed switch"
+    rank: 1
+    approvedDateTime: "2025-05-01T11:02:00Z"
+    plannedPeriod: 
+      end: "2025-05-17T06:35:00Z"
+      start: "2025-05-17T06:15:00Z"
+
+SwitchAction:
+  - mRID: "fe055277-4383-436d-83b4-ef55d8d8238b"
+    plannedDateTime: "2025-05-17T06:30:00Z"
+    issuedDateTime: "2025-05-17T06:32:00Z"
+    executedDateTime: "2025-05-17T08:00:00Z"
+    kind: "open"
+    phases: "ABCN"
+    OperatedSwitch:
+      mRID: "9b24ac8f-043c-4087-ac3b-a695c464f93d" #Telemarkstien2 400 Volt Fuse 18
+    SwitchingPlan:
+      mRID: "618a7581-cebd-4da2-bbd0-1e77309100c3"
+    PlannedOutage:
+      mRID: "27174c30-a4b8-45c6-ad73-f3ee783450ec"
+  - mRID: "fe055277-4383-436d-83b4-ef55d8d8238b"
+    plannedDateTime: "2025-05-17T06:30:00Z"
+    issuedDateTime: "2025-05-17T06:32:00Z"
+    executedDateTime: "2025-05-17T08:00:00Z"
+    kind: "open"
+    phases: "ABCN"
+    OperatedSwitch:
+      mRID: "5bd4c12d-99d5-49d7-87fb-a346067c697e" #Telemarkstien2 400 Volt Fuse 19
+    SwitchingPlan:
+      mRID: "0dbfa596-2e1c-477d-b537-804c34751fb9"
+    PlannedOutage:
+      mRID: "27174c30-a4b8-45c6-ad73-f3ee783450ec"
+
+
