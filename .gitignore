@@ -6,3 +6,4 @@
 /_test/
 /cim4.egg-info/
 **/__pycache__/
+/cim_tool_project/.*
