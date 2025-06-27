@@ -24,7 +24,7 @@ This tool leverages LinkML YAML schemas and YAML data files as input.
     - Set any project name you prefer
     - Do not include any copyrights
     - Set your preferences as needed
-    - For the model, browse to `<ThisRepository>/models/` and select the `.eap` file
+    - For the Intial Schema Import, browse to `<ThisRepository>/models/` and select the `.eap` file
     - Click **Finish** to create an empty CIMTool project
 4. **Add an OWL file to your project**
     - Go to `New > General > File`

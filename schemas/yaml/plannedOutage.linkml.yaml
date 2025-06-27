@@ -1,0 +1,549 @@
+id: http://iec.ch/TC57/2007/profile#
+name: Profile
+title: Profile Vocabulary
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  linkml: https://w3id.org/linkml/
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  dc: http://purl.org/dc/elements/1.1/
+  profcim: http://iec.ch/TC57/ns/CIM/prof-cim#
+  owl: http://www.w3.org/2002/07/owl#
+  cims: http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#
+  dct: http://purl.org/dc/terms/
+  this: http://iec.ch/TC57/2007/profile#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  dcat: http://www.w3.org/ns/dcat#
+  eu: http://iec.ch/TC57/CIM100-European#
+  cim: http://iec.ch/TC57/CIM-generic#
+imports:
+- linkml:types
+default_curi_maps:
+- semweb_context
+default_range: string
+default_prefix: this
+classes:
+      end:
+        description: "End date and time of this interval.  The end date and time where the interval is defined up to, but excluded."
+        annotations:
+          ea_guid: "_55C5DBB1-2BC7-4ff6-9AE1-5D9BD2F9C376"
+        slot_uri: cim:DateTimeInterval.end
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      start:
+        description: "Start date and time of this interval.  The start date and time is included in the defined interval."
+        annotations:
+          ea_guid: "_6B83DB52-1642-4a44-8CCC-C20165ABEF2D"
+        slot_uri: cim:DateTimeInterval.start
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  Document:
+    description: "Parent class for different groupings of information collected and managed as a part of a business process. It will frequently contain references to other objects, such as assets, people and power system resources."
+    annotations:
+      ea_guid: "_EF39687B-42C9-4204-972C-0F1A9520DC31"
+    is_a: IdentifiedObject
+    abstract: true
+    class_uri: cim:Document
+    attributes: 
+  IdentifiedObject:
+    description: "This is a root class to provide common identification for all classes needing identification and naming attributes."
+    annotations:
+      ea_guid: "_2E7314DD-0167-4239-9496-93283E6DAA33"
+    abstract: true
+    class_uri: cim:IdentifiedObject
+    attributes: 
+      mRID:
+        description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
+        annotations:
+          ea_guid: "_5F2EC550-2969-48a1-8300-94D6EDEB80B8"
+        slot_uri: cim:IdentifiedObject.mRID
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      description:
+        description: "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."
+        annotations:
+          ea_guid: "_45D43BC9-3318-49f1-911C-8CE4BEFD840C"
+        slot_uri: cim:IdentifiedObject.description
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      name:
+        description: "The name is any free human readable and possibly non unique text naming the object."
+        annotations:
+          ea_guid: "_C928603C-2624-4566-92E6-D44710C53AEE"
+        slot_uri: cim:IdentifiedObject.name
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  Outage:
+    description: "Document describing details of an active or planned outage in a part of the electrical network.A non-planned outage may be created upon:- a breaker trip,- a fault indicator status change,- a meter event indicating customer outage,- a reception of one or more customer trouble calls, or- an operator command, reflecting information obtained from the field crew.Outage restoration may be performed using a switching plan which complements the outage information with detailed switching activities, including the relationship to the crew and work.A planned outage may be created upon:- a request for service, maintenance or construction work in the field, or- an operator-defined outage for what-if/contingency network analysis."
+    annotations:
+      ea_guid: "_09AE35F0-E7A0-46d3-BDB2-C3A38F16A10B"
+    is_a: Document
+    abstract: true
+    class_uri: cim:Outage
+    attributes: 
+      customersRestored:
+        description: "number of customers that have been restored in the area."
+        annotations:
+          ea_guid: "_96EC7A1B-7F86-4742-A6DE-DAB1E3BA1ED2"
+        slot_uri: cim:Outage.customersRestored
+        range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      metersAffected:
+        description: "The updated number of meters affected by the outage as reported by the OMS within the utility.  It is assumed this number will be updated repeatedly until the full outage is resolved."
+        annotations:
+          ea_guid: "_5793A622-95C4-41c3-B43A-075FBD01DCC4"
+        slot_uri: cim:Outage.metersAffected
+        range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      originalCustomersServed:
+        description: "the total number of customers that are served in the area (both outaged and not outaged)."
+        annotations:
+          ea_guid: "_81471418-91EA-4a7a-BF26-04C830755313"
+        slot_uri: cim:Outage.originalCustomersServed
+        range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      originalMetersAffected:
+        description: "The original number of meters that were affected as reported by the OMS within the utility. That is, this is the total number of meters that were out at the beginning of the outage."
+        annotations:
+          ea_guid: "_831EAA33-59E8-45c6-A7E0-AD1E0F65E806"
+        slot_uri: cim:Outage.originalMetersAffected
+        range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      utilityDisclaimer:
+        description: "This contains an disclaimers the utility would like to place on the data provided to any stakeholder.  This may be different for different stakeholders.  This should possibly be an attribute under the Organization class but it is placed here for now."
+        annotations:
+          ea_guid: "_B8DD462E-CD50-45dd-B640-C2E9C0D7A292"
+        slot_uri: cim:Outage.utilityDisclaimer
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      actualPeriod:
+        description: "Actual outage period; end of the period corresponds to the actual restoration time."
+        annotations:
+          ea_guid: "_0AD368D5-C6D0-47a8-B938-051F2AC57B2C"
+        slot_uri: cim:Outage.actualPeriod
+        range: DateTimeInterval
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      DeEnergizedUsagePoint:
+        description: "all deenergized useage points associated with the outage."
+        annotations:
+          ea_guid: "_97DDAF6C-65B2-463f-8202-046CC1702F4C-A"
+        slot_uri: cim:Outage.DeEnergizedUsagePoint
+        range: UsagePoint
+        minimum_cardinality: 0
+        multivalued: true
+      EnergizedUsagePoint:
+        description: "All energized usage points associated with this outage."
+        annotations:
+          ea_guid: "_13D27FCF-5727-416e-9B7E-FCE3388F7C11-A"
+        slot_uri: cim:Outage.EnergizedUsagePoint
+        range: UsagePoint
+        minimum_cardinality: 0
+        multivalued: true
+      Equipments:
+        description: "All equipments associated with this outage."
+        annotations:
+          ea_guid: "_7CB5F824-2EAC-4c6e-B3CE-B2B245253D31-A"
+        slot_uri: cim:Outage.Equipments
+        range: Equipment
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  OutagePlan:
+    description: "Document containing the definition of planned outages of equipment and/or usage points. It will reference switching plans that are used to execute the planned outage."
+    annotations:
+      ea_guid: "_ACA48F97-FA05-4c4d-94AA-226E14FA7E5C"
+    is_a: Document
+    class_uri: cim:OutagePlan
+    attributes: 
+      approvedDateTime:
+        description: "The date and time the outage plan was approved"
+        annotations:
+          ea_guid: "_97729C42-A9A2-495e-9ED3-60F05F77EB55"
+        slot_uri: cim:OutagePlan.approvedDateTime
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      purpose:
+        description: "Purpose of  this outage plan, such as whether it is to replace equipment or perform maintenance or repairs or to reconfigure network topology."
+        annotations:
+          ea_guid: "_529D7F19-8F50-4a43-A14F-12D99A20C4E7"
+        slot_uri: cim:OutagePlan.purpose
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      plannedPeriod:
+        description: "planned start and end time of the planned outage."
+        annotations:
+          ea_guid: "_5FA03C41-4627-4d3a-B71B-75B8A5497E8E"
+        slot_uri: cim:OutagePlan.plannedPeriod
+        range: DateTimeInterval
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      SwitchingPlan:
+        description: "The swiching plan that is associated with the outage plan."
+        annotations:
+          ea_guid: "_205E346A-7AC3-4f63-9926-D90B3687F39B-B"
+        slot_uri: cim:OutagePlan.SwitchingPlan
+        range: SwitchingPlan
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  PlannedOutage:
+    annotations:
+      ea_guid: "_0BCDD7D7-E6DF-41ea-BE54-19C927ADCFF9"
+    is_a: Outage
+    class_uri: cim:PlannedOutage
+    attributes: 
+      reason:
+        description: "The reason for the planned outage."
+        annotations:
+          ea_guid: "_D3D3D4BC-E73E-4ed6-92E8-F8B34CB83F0D"
+        slot_uri: cim:PlannedOutage.reason
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      OutagePlan:
+        description: "Outage plan for executing a planned outage."
+        annotations:
+          ea_guid: "_D5052A16-C1AA-4cfa-B0E4-1C79BE08873C-B"
+        slot_uri: cim:PlannedOutage.OutagePlan
+        range: OutagePlan
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  SwitchAction:
+    description: "Action on switch as a switching step."
+    annotations:
+      ea_guid: "_4B8F56B0-FE35-4aa4-BB8B-DD756F9898AA"
+    is_a: SwitchingAction
+    class_uri: cim:SwitchAction
+    attributes: 
+      OperatedSwitch:
+        description: "Switch that is the object of this switch action."
+        annotations:
+          ea_guid: "_FE121092-F0C3-453d-81C5-4E473EC5F7A5-A"
+        slot_uri: cim:SwitchAction.OperatedSwitch
+        range: Switch
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      PlannedOutage:
+        description: "Planned outage for whose scope this switch action applies."
+        annotations:
+          ea_guid: "_7DAECB14-3133-4fec-91BB-CBC4E6C8147D-B"
+        slot_uri: cim:SwitchAction.PlannedOutage
+        range: PlannedOutage
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  SwitchingAction:
+    description: "Atomic switching action."
+    annotations:
+      ea_guid: "_71CB75D5-6E45-4438-90A2-B15C918B1BB3"
+    is_a: IdentifiedObject
+    abstract: true
+    class_uri: cim:SwitchingAction
+    attributes: 
+      executedDateTime:
+        description: "Actual date and time of this switching step."
+        annotations:
+          ea_guid: "_58C40B93-BF37-447f-B1D4-432EFB3E149A"
+        slot_uri: cim:SwitchingAction.executedDateTime
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      issuedDateTime:
+        description: "Date and time when the crew was given the instruction to execute the action; not applicable if the action is performed by operator remote control."
+        annotations:
+          ea_guid: "_A84B8EC5-9192-4165-B659-B7586A377D0F"
+        slot_uri: cim:SwitchingAction.issuedDateTime
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      plannedDateTime:
+        description: "Planned date and time of this switching step."
+        annotations:
+          ea_guid: "_D13229D6-80A4-4bfa-94B0-A8E0295D18AD"
+        slot_uri: cim:SwitchingAction.plannedDateTime
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      SwitchingPlan:
+        description: "The switching plan that is associated with the switching actions."
+        annotations:
+          ea_guid: "_342466CF-F77D-455b-AE6E-601403A7AC6D-A"
+        slot_uri: cim:SwitchingAction.SwitchingPlan
+        range: SwitchingPlan
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  SwitchingPlan:
+    description: "A sequence of grouped or atomic steps intended to:- de-energise equipment or part of the network for safe work, and/or- bring back in service previously de-energised equipment or part of the network."
+    annotations:
+      ea_guid: "_94D8F29A-7F14-475a-A47C-4A7A44FDC831"
+    is_a: Document
+    class_uri: cim:SwitchingPlan
+    attributes: 
+      approvedDateTime:
+        description: "The date and time the switching plan was approved"
+        annotations:
+          ea_guid: "_F6C5D9C3-6B86-4667-B16A-A96D45F764D3"
+        slot_uri: cim:SwitchingPlan.approvedDateTime
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      purpose:
+        description: "Purpose of  this plan, such as whether it is to move the state from normal to some abnormal condition, or to restore the normal state after an abnormal condition, or to perform some kind of optimisation such as correction of overload, voltage control, etc."
+        annotations:
+          ea_guid: "_1FDFFB30-E37C-4c09-9813-A53FBB508F22"
+        slot_uri: cim:SwitchingPlan.purpose
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      rank:
+        description: "Ranking in comparison to other switching plans."
+        annotations:
+          ea_guid: "_6BBFA369-C2F2-49fb-A2F1-085E8B077A87"
+        slot_uri: cim:SwitchingPlan.rank
+        range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      plannedPeriod:
+        description: "the planned start and end times for the switching plan."
+        annotations:
+          ea_guid: "_1F964C14-A51B-47aa-9AF9-8840741E6592"
+        slot_uri: cim:SwitchingPlan.plannedPeriod
+        range: DateTimeInterval
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+types:
+enums:
+  CrewStatusKind:
+    description: "Defines the current status of the Crew - assigned, arrived, etc."
+    annotations:
+      ea_guid: "_0256250A-25A5-444f-A3E8-EF37291A12FB"
+    enum_uri:  http://iec.ch/TC57/CIM-generic#CrewStatusKind
+    permissible_values:
+      arrived:
+        meaning:  cim:CrewStatusKind.arrived
+        description: "the crew is on site at the outage location"
+        annotations:
+          ea_guid: "_8CC94FC5-1D69-4967-8619-2B2060A069BE"
+      assigned:
+        meaning:  cim:CrewStatusKind.assigned
+        description: "the crew has been assigned to work on a task"
+        annotations:
+          ea_guid: "_53E018DA-D710-4f09-BF9F-00002BD6B676"
+      awaitingCrewAssignment:
+        meaning:  cim:CrewStatusKind.awaitingCrewAssignment
+        description: "Indicates that the work is awaiting one or more crews to be assigned"
+        annotations:
+          ea_guid: "_35D2334A-1728-4adb-9359-A7F3D7DA9C47"
+      enroute:
+        meaning:  cim:CrewStatusKind.enroute
+        description: "the crew has been dispatched to work on an outage"
+        annotations:
+          ea_guid: "_A558BDCD-994E-4835-AB38-81DC1080F516"
+      fieldComplete:
+        meaning:  cim:CrewStatusKind.fieldComplete
+        description: "the crew has corrected the outage in the field.  The equipment or other devices may not be energized at this time."
+        annotations:
+          ea_guid: "_DF4869BC-D3EB-4613-A89B-0282E5289E20"
+  OutageStatusKind:
+    description: "This defines if the outage have been predicted or confirmed"
+    annotations:
+      ea_guid: "_EEA30D3B-F1FD-4289-BD60-81C91AEB7886"
+    enum_uri:  http://iec.ch/TC57/CIM-generic#OutageStatusKind
+    permissible_values:
+      closed:
+        meaning:  cim:OutageStatusKind.closed
+        description: "The outage has been fully restored, the crews have been released and the outage is shown as closed"
+        annotations:
+          ea_guid: "_7AD31E5D-F74F-4d20-883B-8F37F3F9674A"
+      confirmed:
+        meaning:  cim:OutageStatusKind.confirmed
+        description: "the outage has been verified"
+        annotations:
+          ea_guid: "_C25C7C45-AC9E-492c-AC84-68A1C56F7730"
+      partiallyRestored:
+        meaning:  cim:OutageStatusKind.partiallyRestored
+        description: "Some of the usage points affected by the outage have been restored but other usage points are still out of power."
+        annotations:
+          ea_guid: "_DABA1CC0-3186-47a9-A1CB-3567E15739F3"
+      predicted:
+        meaning:  cim:OutageStatusKind.predicted
+        description: "the outage may not be real since it has not been verified - it is only thought to be an outage."
+        annotations:
+          ea_guid: "_4BB374BE-D703-4f05-8B67-209BC2BD3CA6"
+      restored:
+        meaning:  cim:OutageStatusKind.restored
+        description: "All usage points associated with the outage have been restored"
+        annotations:
+          ea_guid: "_CF0793F6-AC4F-4c31-BF02-A8CB5561A60C"
+  PhaseCode:
+    description: "An unordered enumeration of phase identifiers.  Allows designation of phases for both transmission and distribution equipment, circuits and loads.   The enumeration, by itself, does not describe how the phases are connected together or connected to ground.  Ground is not explicitly denoted as a phase.Residential and small commercial loads are often served from single-phase, or split-phase, secondary circuits. For the example of s12N, phases 1 and 2 refer to hot wires that are 180 degrees out of phase, while N refers to the neutral wire. Through single-phase transformer connections, these secondary circuits may be served from one or two of the primary phases A, B, and C. For three-phase loads, use the A, B, C phase codes instead of s12N.The integer values are from IEC 61968-9 to support revenue metering applications."
+    annotations:
+      ea_guid: "_A5C0021F-4AEA-43f1-B29D-979FE8392EBF"
+    enum_uri:  http://iec.ch/TC57/CIM-generic#PhaseCode
+    permissible_values:
+      A:
+        meaning:  cim:PhaseCode.A
+        description: "Phase A."
+        annotations:
+          ea_guid: "_07D7D8F2-0975-44c2-8661-44460C1E4CAA"
+      AB:
+        meaning:  cim:PhaseCode.AB
+        description: "Phases A and B."
+        annotations:
+          ea_guid: "_77216F5E-3863-424c-91CD-4597AE97B61E"
+      ABC:
+        meaning:  cim:PhaseCode.ABC
+        description: "Phases A, B, and C."
+        annotations:
+          ea_guid: "_475598C8-A6F5-4be7-9F16-BCD259A0AA58"
+      ABCN:
+        meaning:  cim:PhaseCode.ABCN
+        description: "Phases A, B, C, and N."
+        annotations:
+          ea_guid: "_B2FC03DD-78B7-45a1-A30C-588C21F51A7B"
+      ABN:
+        meaning:  cim:PhaseCode.ABN
+        description: "Phases A, B, and neutral."
+        annotations:
+          ea_guid: "_4946A140-7C01-4d15-A9BE-0539FB0BD1F6"
+      AC:
+        meaning:  cim:PhaseCode.AC
+        description: "Phases A and C."
+        annotations:
+          ea_guid: "_E207A30B-23AA-4c07-B57E-BEF999B25296"
+      ACN:
+        meaning:  cim:PhaseCode.ACN
+        description: "Phases A, C and neutral."
+        annotations:
+          ea_guid: "_C8FCFEA8-1BBD-4c35-BE0E-1FADACB9F939"
+      AN:
+        meaning:  cim:PhaseCode.AN
+        description: "Phases A and neutral."
+        annotations:
+          ea_guid: "_A29CFF28-AB29-4353-8452-5A532727A86B"
+      B:
+        meaning:  cim:PhaseCode.B
+        description: "Phase B."
+        annotations:
+          ea_guid: "_39E477EA-CC70-4a3f-971B-7AB01DBD6B0B"
+      BC:
+        meaning:  cim:PhaseCode.BC
+        description: "Phases B and C."
+        annotations:
+          ea_guid: "_D55E05CE-4E62-4827-9D03-53E796BC5B0B"
+      BCN:
+        meaning:  cim:PhaseCode.BCN
+        description: "Phases B, C, and neutral."
+        annotations:
+          ea_guid: "_01A6054A-0E52-40da-B568-F6D18B4294D1"
+      BN:
+        meaning:  cim:PhaseCode.BN
+        description: "Phases B and neutral."
+        annotations:
+          ea_guid: "_41158A2C-899D-4d5a-AC5B-2235D0D48D3A"
+      C:
+        meaning:  cim:PhaseCode.C
+        description: "Phase C."
+        annotations:
+          ea_guid: "_40160952-E1D5-403a-B366-4CAA92A8992E"
+      CN:
+        meaning:  cim:PhaseCode.CN
+        description: "Phases C and neutral."
+        annotations:
+          ea_guid: "_E486D1CC-0106-4d66-AFD5-2CD857117DD5"
+      N:
+        meaning:  cim:PhaseCode.N
+        description: "Neutral phase."
+        annotations:
+          ea_guid: "_EE7E4B34-68BA-4751-8F05-5A274EF06597"
+      X:
+        meaning:  cim:PhaseCode.X
+        description: "Unknown non-neutral phase."
+        annotations:
+          ea_guid: "_94708EF6-2719-4e29-A8D3-C47605C5F8D8"
+      XN:
+        meaning:  cim:PhaseCode.XN
+        description: "Unknown non-neutral phase plus neutral."
+        annotations:
+          ea_guid: "_C78A2DCB-DE0E-4b62-891B-AF9064E517F8"
+      XY:
+        meaning:  cim:PhaseCode.XY
+        description: "Two unknown non-neutral phases."
+        annotations:
+          ea_guid: "_1E3D6AB8-D3E8-48f4-BCCC-BF37D42CD93B"
+      XYN:
+        meaning:  cim:PhaseCode.XYN
+        description: "Two unknown non-neutral phases plus neutral."
+        annotations:
+          ea_guid: "_2617681F-2E4F-4c0c-9065-EF03459DAE32"
+      none:
+        meaning:  cim:PhaseCode.none
+        description: "No phases specified."
+        annotations:
+          ea_guid: "_C15C66A7-867F-440e-AA42-009EB4F4DEFF"
+      s1:
+        meaning:  cim:PhaseCode.s1
+        description: "Secondary phase 1."
+        annotations:
+          ea_guid: "_26769EC4-E661-4062-9AF6-311B6DBF3C17"
+      s12:
+        meaning:  cim:PhaseCode.s12
+        description: "Secondary phase 1 and 2."
+        annotations:
+          ea_guid: "_C0EECD20-FF52-461f-A46F-FEF1FABFFDDC"
+      s12N:
+        meaning:  cim:PhaseCode.s12N
+        description: "Secondary phases 1, 2, and neutral."
+        annotations:
+          ea_guid: "_4D193FA7-B46A-44ee-93C3-7CB6659D7443"
+      s1N:
+        meaning:  cim:PhaseCode.s1N
+        description: "Secondary phase 1 and neutral."
+        annotations:
+          ea_guid: "_7CBBF307-75C0-4255-B181-0BB16E0B4A23"
+      s2:
+        meaning:  cim:PhaseCode.s2
+        description: "Secondary phase 2."
+        annotations:
+          ea_guid: "_11D186D6-1217-4060-A820-11E9B0B04A63"
+      s2N:
+        meaning:  cim:PhaseCode.s2N
+        description: "Secondary phase 2 and neutral."
+        annotations:
+          ea_guid: "_6685161C-56A0-4bbd-998C-7DD2C9D52089"
+  SwitchActionKind:
+    description: "Kind of action on switch."
+    annotations:
+      ea_guid: "_4B2B08CF-4F3C-4dba-871B-CC48F7241111"
+    enum_uri:  http://iec.ch/TC57/CIM-generic#SwitchActionKind
+    permissible_values:
+      close:
+        meaning:  cim:SwitchActionKind.close
+        description: "Close the switch."
+        annotations:
+          ea_guid: "_3492915F-C6CA-4315-ADC6-B3CBF8240948"
+      disableReclosing:
+        meaning:  cim:SwitchActionKind.disableReclosing
+        description: "Disable (automatic) switch reclosing."
+        annotations:
+          ea_guid: "_E5F6008A-56A0-4f1f-BB3E-86D94F6A360D"
+      enableReclosing:
+        meaning:  cim:SwitchActionKind.enableReclosing
+        description: "Enable (automatic) switch reclosing."
+        annotations:
+          ea_guid: "_86E39986-025E-400b-B435-93EB055DCD20"
+      open:
+        meaning:  cim:SwitchActionKind.open
+        description: "Open the switch."
+        annotations:
+          ea_guid: "_6A4C2BE8-9771-457b-9011-D9023B75840F"
