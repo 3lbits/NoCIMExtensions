@@ -1,0 +1,331 @@
+id: http://iec.ch/TC57/2007/profile#
+name: Profile
+title: Profile Vocabulary
+prefixes:
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+  linkml: https://w3id.org/linkml/
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  dc: http://purl.org/dc/elements/1.1/
+  profcim: http://iec.ch/TC57/ns/CIM/prof-cim#
+  owl: http://www.w3.org/2002/07/owl#
+  cims: http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#
+  dct: http://purl.org/dc/terms/
+  this: http://iec.ch/TC57/2007/profile#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  dcat: http://www.w3.org/ns/dcat#
+  eu: http://iec.ch/TC57/CIM100-European#
+  cim: http://iec.ch/TC57/CIM-generic#
+imports:
+- linkml:types
+default_curi_maps:
+- semweb_context
+default_range: string
+default_prefix: this
+classes:
+  Agreement:
+    description: "Formal agreement between two parties defining the terms and conditions for a set of services. The specifics of the services are, in turn, defined via one or more service agreements."
+    annotations:
+      ea_guid: "_17B1479C-FC7D-4621-AF7F-BBA624EE6037"
+    is_a: Document
+    abstract: true
+    class_uri: cim:Agreement
+    attributes: 
+  CustomerAgreement:
+    description: "Agreement between the customer and the service supplier to pay for service at a specific service location. It records certain billing information about the type of service provided at the service location and is used during charge creation to determine the type of service."
+    annotations:
+      ea_guid: "_5245DDE2-E142-46d1-B59C-512F29575A88"
+    is_a: Agreement
+    class_uri: cim:CustomerAgreement
+    attributes: 
+      Customer:
+        description: "Customer for this agreement."
+        annotations:
+          ea_guid: "_12619422-3644-40fc-AA40-CC129C2C199A-B"
+        slot_uri: cim:CustomerAgreement.Customer
+        range: Customer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  CustomerNotification:
+    description: "Conditions for notifying the customer about the changes in the status of their service (e.g., outage restore, estimated restoration time, tariff or service level change, etc.)"
+    annotations:
+      ea_guid: "_DD7A6789-1AF7-48d8-BEA1-E65E8AFCA371"
+    class_uri: cim:CustomerNotification
+    attributes: 
+      contactType:
+        description: "Type of contact (e.g., phone, email, etc.)."
+        annotations:
+          ea_guid: "_88B92073-B229-40ae-A4ED-B9C6B5D11AEF"
+        slot_uri: cim:CustomerNotification.contactType
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      contactValue:
+        description: "Value of contact type (e.g., phone number, email address, etc.)."
+        annotations:
+          ea_guid: "_48BFCAF6-872E-48a0-9BC4-571637693AA3"
+        slot_uri: cim:CustomerNotification.contactValue
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      trigger:
+        description: "Trigger for this notification."
+        annotations:
+          ea_guid: "_040F4A28-FA7C-4127-A0F0-71E7C8D0B9A5"
+        slot_uri: cim:CustomerNotification.trigger
+        range: NotificationTriggerKind
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      Customer:
+        description: "Customer requiring this notification."
+        annotations:
+          ea_guid: "_9979122D-C134-46ef-ACBB-9812051756B2-A"
+        slot_uri: cim:CustomerNotification.Customer
+        range: Customer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      Incident:
+        description: "Incident as a subject of this customer notification."
+        annotations:
+          ea_guid: "_F292A647-3328-43e1-AA6F-08A42730AF41-B"
+        slot_uri: cim:CustomerNotification.Incident
+        range: Incident
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  Document:
+    description: "Parent class for different groupings of information collected and managed as a part of a business process. It will frequently contain references to other objects, such as assets, people and power system resources."
+    annotations:
+      ea_guid: "_EF39687B-42C9-4204-972C-0F1A9520DC31"
+    is_a: IdentifiedObject
+    abstract: true
+    class_uri: cim:Document
+    attributes: 
+  IdentifiedObject:
+    description: "This is a root class to provide common identification for all classes needing identification and naming attributes."
+    annotations:
+      ea_guid: "_2E7314DD-0167-4239-9496-93283E6DAA33"
+    abstract: true
+    class_uri: cim:IdentifiedObject
+    attributes: 
+      mRID:
+        description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
+        annotations:
+          ea_guid: "_5F2EC550-2969-48a1-8300-94D6EDEB80B8"
+        slot_uri: cim:IdentifiedObject.mRID
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      description:
+        description: "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."
+        annotations:
+          ea_guid: "_45D43BC9-3318-49f1-911C-8CE4BEFD840C"
+        slot_uri: cim:IdentifiedObject.description
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      name:
+        description: "The name is any free human readable and possibly non unique text naming the object."
+        annotations:
+          ea_guid: "_C928603C-2624-4566-92E6-D44710C53AEE"
+        slot_uri: cim:IdentifiedObject.name
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  Incident:
+    description: "Description of a problem in the field that may be reported in a trouble ticket or come from another source. It may have to do with an outage."
+    annotations:
+      ea_guid: "_0ED91420-F3BF-47ae-B626-192C9A40CC1A"
+    is_a: Document
+    class_uri: cim:Incident
+    attributes: 
+      cause:
+        description: "Cause of this incident."
+        annotations:
+          ea_guid: "_D9CF34B1-42FB-4ecd-82C0-C3E1215408E9"
+        slot_uri: cim:Incident.cause
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      UnplannedOutage:
+        description: "The unplanned outage that may be associated with the incidents."
+        annotations:
+          ea_guid: "_F41F931E-15E0-43ea-9BBE-8F6DB650B1D9-A"
+        slot_uri: cim:Incident.UnplannedOutage
+        range: UnplannedOutage
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  OrganisationRole:
+    description: "Identifies a way in which an organisation may participate in the utility enterprise (e.g., customer, manufacturer, etc)."
+    annotations:
+      ea_guid: "_45CAE682-80BF-4905-BB64-4E4935827618"
+    is_a: IdentifiedObject
+    abstract: true
+    class_uri: cim:OrganisationRole
+    attributes: 
+  Outage:
+    description: "Document describing details of an active or planned outage in a part of the electrical network.A non-planned outage may be created upon:- a breaker trip,- a fault indicator status change,- a meter event indicating customer outage,- a reception of one or more customer trouble calls, or- an operator command, reflecting information obtained from the field crew.Outage restoration may be performed using a switching plan which complements the outage information with detailed switching activities, including the relationship to the crew and work.A planned outage may be created upon:- a request for service, maintenance or construction work in the field, or- an operator-defined outage for what-if/contingency network analysis."
+    annotations:
+      ea_guid: "_09AE35F0-E7A0-46d3-BDB2-C3A38F16A10B"
+    is_a: Document
+    abstract: true
+    class_uri: cim:Outage
+    attributes: 
+      customersRestored:
+        description: "number of customers that have been restored in the area."
+        annotations:
+          ea_guid: "_96EC7A1B-7F86-4742-A6DE-DAB1E3BA1ED2"
+        slot_uri: cim:Outage.customersRestored
+        range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      metersAffected:
+        description: "The updated number of meters affected by the outage as reported by the OMS within the utility.  It is assumed this number will be updated repeatedly until the full outage is resolved."
+        annotations:
+          ea_guid: "_5793A622-95C4-41c3-B43A-075FBD01DCC4"
+        slot_uri: cim:Outage.metersAffected
+        range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      originalCustomersServed:
+        description: "the total number of customers that are served in the area (both outaged and not outaged)."
+        annotations:
+          ea_guid: "_81471418-91EA-4a7a-BF26-04C830755313"
+        slot_uri: cim:Outage.originalCustomersServed
+        range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      originalMetersAffected:
+        description: "The original number of meters that were affected as reported by the OMS within the utility. That is, this is the total number of meters that were out at the beginning of the outage."
+        annotations:
+          ea_guid: "_831EAA33-59E8-45c6-A7E0-AD1E0F65E806"
+        slot_uri: cim:Outage.originalMetersAffected
+        range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      utilityDisclaimer:
+        description: "This contains an disclaimers the utility would like to place on the data provided to any stakeholder.  This may be different for different stakeholders.  This should possibly be an attribute under the Organization class but it is placed here for now."
+        annotations:
+          ea_guid: "_B8DD462E-CD50-45dd-B640-C2E9C0D7A292"
+        slot_uri: cim:Outage.utilityDisclaimer
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      actualPeriod:
+        description: "Actual outage period; end of the period corresponds to the actual restoration time."
+        annotations:
+          ea_guid: "_0AD368D5-C6D0-47a8-B938-051F2AC57B2C"
+        slot_uri: cim:Outage.actualPeriod
+        range: DateTimeInterval
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      DeEnergizedUsagePoint:
+        description: "all deenergized useage points associated with the outage."
+        annotations:
+          ea_guid: "_97DDAF6C-65B2-463f-8202-046CC1702F4C-A"
+        slot_uri: cim:Outage.DeEnergizedUsagePoint
+        range: UsagePoint
+        minimum_cardinality: 0
+        multivalued: true
+      EnergizedUsagePoint:
+        description: "All energized usage points associated with this outage."
+        annotations:
+          ea_guid: "_13D27FCF-5727-416e-9B7E-FCE3388F7C11-A"
+        slot_uri: cim:Outage.EnergizedUsagePoint
+        range: UsagePoint
+        minimum_cardinality: 0
+        multivalued: true
+      Equipments:
+        description: "All equipments associated with this outage."
+        annotations:
+          ea_guid: "_7CB5F824-2EAC-4c6e-B3CE-B2B245253D31-A"
+        slot_uri: cim:Outage.Equipments
+        range: Equipment
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  UnplannedOutage:
+    description: "Document describing the consequence of an unplanned outage in a part of the electrical network. For the purposes of this model, an unplanned outage refers to a state where energy is not delivered; such as, customers out of service, a street light is not served, etc.A unplanned outage may be created upon:- impacts the SAIDI calculation- a breaker trip,- a fault indicator status change,- a meter event indicating customer outage,- a reception of one or more customer trouble calls, or- an operator command, reflecting information obtained from the field crew.Outage restoration may be performed using a switching plan which complements the outage information with detailed switching activities, including the relationship to the crew and work."
+    annotations:
+      ea_guid: "_7E6D39E3-90B7-419f-9A40-A63CEA976DE4"
+    is_a: Outage
+    class_uri: cim:UnplannedOutage
+    attributes: 
+      cause:
+        description: "The cause of this outage.  This is the cause that is used to present to external entities.  That is, the cause is weather, equipment failure, etc.Note: At present, this is a free string text; it could be replaced with an enumeration in the future."
+        annotations:
+          ea_guid: "_9A9D6ECC-E71D-4ffe-B0E0-189ABDD9F9D7"
+        slot_uri: cim:UnplannedOutage.cause
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      reportedStartTime:
+        description: "The earliest start time of the Outage - as reported by some system or individual"
+        annotations:
+          ea_guid: "_5BE443C8-30B8-4ef2-879A-03370215004A"
+        slot_uri: cim:UnplannedOutage.reportedStartTime
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+types:
+enums:
+  CrewStatusKind:
+    description: "Defines the current status of the Crew - assigned, arrived, etc."
+    annotations:
+      ea_guid: "_0256250A-25A5-444f-A3E8-EF37291A12FB"
+    enum_uri:  http://iec.ch/TC57/CIM-generic#CrewStatusKind
+    permissible_values:
+      arrived:
+        meaning:  cim:CrewStatusKind.arrived
+        description: "the crew is on site at the outage location"
+        annotations:
+          ea_guid: "_8CC94FC5-1D69-4967-8619-2B2060A069BE"
+      assigned:
+        meaning:  cim:CrewStatusKind.assigned
+        description: "the crew has been assigned to work on a task"
+        annotations:
+          ea_guid: "_53E018DA-D710-4f09-BF9F-00002BD6B676"
+      awaitingCrewAssignment:
+        meaning:  cim:CrewStatusKind.awaitingCrewAssignment
+        description: "Indicates that the work is awaiting one or more crews to be assigned"
+        annotations:
+          ea_guid: "_35D2334A-1728-4adb-9359-A7F3D7DA9C47"
+      enroute:
+        meaning:  cim:CrewStatusKind.enroute
+        description: "the crew has been dispatched to work on an outage"
+        annotations:
+          ea_guid: "_A558BDCD-994E-4835-AB38-81DC1080F516"
+      fieldComplete:
+        meaning:  cim:CrewStatusKind.fieldComplete
+        description: "the crew has corrected the outage in the field.  The equipment or other devices may not be energized at this time."
+        annotations:
+          ea_guid: "_DF4869BC-D3EB-4613-A89B-0282E5289E20"
+  OutageStatusKind:
+    description: "This defines if the outage have been predicted or confirmed"
+    annotations:
+      ea_guid: "_EEA30D3B-F1FD-4289-BD60-81C91AEB7886"
+    enum_uri:  http://iec.ch/TC57/CIM-generic#OutageStatusKind
+    permissible_values:
+      closed:
+        meaning:  cim:OutageStatusKind.closed
+        description: "The outage has been fully restored, the crews have been released and the outage is shown as closed"
+        annotations:
+          ea_guid: "_7AD31E5D-F74F-4d20-883B-8F37F3F9674A"
+      confirmed:
+        meaning:  cim:OutageStatusKind.confirmed
+        description: "the outage has been verified"
+        annotations:
+          ea_guid: "_C25C7C45-AC9E-492c-AC84-68A1C56F7730"
+      partiallyRestored:
+        meaning:  cim:OutageStatusKind.partiallyRestored
+        description: "Some of the usage points affected by the outage have been restored but other usage points are still out of power."
+        annotations:
+          ea_guid: "_DABA1CC0-3186-47a9-A1CB-3567E15739F3"
+      predicted:
+        meaning:  cim:OutageStatusKind.predicted
+        description: "the outage may not be real since it has not been verified - it is only thought to be an outage."
+        annotations:
+          ea_guid: "_4BB374BE-D703-4f05-8B67-209BC2BD3CA6"
+      restored:
+        meaning:  cim:OutageStatusKind.restored
+        description: "All usage points associated with the outage have been restored"
+        annotations:
+          ea_guid: "_CF0793F6-AC4F-4c31-BF02-A8CB5561A60C"
