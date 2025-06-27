@@ -219,11 +219,35 @@ classes:
         range: OutagePlan
         minimum_cardinality: 0
         maximum_cardinality: 1
+  SwitchAction:
+    description: "Action on switch as a switching step."
+    annotations:
+      ea_guid: "_4B8F56B0-FE35-4aa4-BB8B-DD756F9898AA"
+    is_a: SwitchingAction
+    class_uri: cim:SwitchAction
+    attributes: 
+      OperatedSwitch:
+        description: "Switch that is the object of this switch action."
+        annotations:
+          ea_guid: "_FE121092-F0C3-453d-81C5-4E473EC5F7A5-A"
+        slot_uri: cim:SwitchAction.OperatedSwitch
+        range: Switch
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      PlannedOutage:
+        description: "Planned outage for whose scope this switch action applies."
+        annotations:
+          ea_guid: "_7DAECB14-3133-4fec-91BB-CBC4E6C8147D-B"
+        slot_uri: cim:SwitchAction.PlannedOutage
+        range: PlannedOutage
+        minimum_cardinality: 0
+        maximum_cardinality: 1
   SwitchingAction:
     description: "Atomic switching action."
     annotations:
       ea_guid: "_71CB75D5-6E45-4438-90A2-B15C918B1BB3"
     is_a: IdentifiedObject
+    abstract: true
     class_uri: cim:SwitchingAction
     attributes: 
       executedDateTime:
@@ -497,3 +521,29 @@ enums:
         description: "Secondary phase 2 and neutral."
         annotations:
           ea_guid: "_6685161C-56A0-4bbd-998C-7DD2C9D52089"
+  SwitchActionKind:
+    description: "Kind of action on switch."
+    annotations:
+      ea_guid: "_4B2B08CF-4F3C-4dba-871B-CC48F7241111"
+    enum_uri:  http://iec.ch/TC57/CIM-generic#SwitchActionKind
+    permissible_values:
+      close:
+        meaning:  cim:SwitchActionKind.close
+        description: "Close the switch."
+        annotations:
+          ea_guid: "_3492915F-C6CA-4315-ADC6-B3CBF8240948"
+      disableReclosing:
+        meaning:  cim:SwitchActionKind.disableReclosing
+        description: "Disable (automatic) switch reclosing."
+        annotations:
+          ea_guid: "_E5F6008A-56A0-4f1f-BB3E-86D94F6A360D"
+      enableReclosing:
+        meaning:  cim:SwitchActionKind.enableReclosing
+        description: "Enable (automatic) switch reclosing."
+        annotations:
+          ea_guid: "_86E39986-025E-400b-B435-93EB055DCD20"
+      open:
+        meaning:  cim:SwitchActionKind.open
+        description: "Open the switch."
+        annotations:
+          ea_guid: "_6A4C2BE8-9771-457b-9011-D9023B75840F"

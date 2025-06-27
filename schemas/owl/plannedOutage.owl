@@ -9,6 +9,55 @@
     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
   xml:base="http://iec.ch/TC57/2007/profile" > 
+  <rdf:Description rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f57">
+    <rdf:first rdf:resource="#PlannedOutage"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f59">
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f5a">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f5b"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM-generic#SwitchAction.OperatedSwitch"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f5b">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#byreference"/>
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#description"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>OperatedSwitch</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM-generic#Switch"/>
+    <owl:unionOf rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f59"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f5d">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f5e"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM-generic#SwitchAction.PlannedOutage"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f5e">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#byreference"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>PlannedOutage</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM-generic#Outage"/>
+    <owl:unionOf rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f57"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f5f">
+    <rdf:first rdf:resource="#SwitchActionKind"/>
+    <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f60">
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+    <owl:allValuesFrom rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f61"/>
+    <owl:onProperty rdf:resource="http://iec.ch/TC57/CIM-generic#SwitchAction.kind"/>
+  </rdf:Description>
+  <rdf:Description rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f61">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#attribute"/>
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#enumeration"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:label>kind</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM-generic#SwitchActionKind"/>
+    <owl:unionOf rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f5f"/>
+  </rdf:Description>
   <rdf:Description rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f72">
     <rdf:first rdf:resource="#SwitchingPlan"/>
     <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
@@ -477,8 +526,22 @@
     <rdfs:subClassOf rdf:resource="#Outage"/>
     <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM-generic#PlannedOutage"/>
   </rdf:Description>
-  <rdf:Description rdf:about="#SwitchingAction">
+  <rdf:Description rdf:about="#SwitchAction">
     <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#concrete"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f5a"/>
+    <rdfs:subClassOf rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f5d"/>
+    <rdfs:subClassOf rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f60"/>
+    <rdfs:subClassOf rdf:resource="#SwitchingAction"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM-generic#SwitchAction"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SwitchActionKind">
+    <uml:hasStereotype rdf:resource="http://langdale.com.au/2005/UML#enumeration"/>
+    <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+    <rdfs:subClassOf rdf:resource="#SwitchActionKind"/>
+    <rdfs:subClassOf rdf:resource="http://iec.ch/TC57/CIM-generic#SwitchActionKind"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="#SwitchingAction">
     <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
     <rdfs:subClassOf rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f8a"/>
     <rdfs:subClassOf rdf:nodeID="Xd2X12982c0eXa3X197a619d25dXa3X-7f92"/>
