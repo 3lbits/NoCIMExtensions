@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+  {{ super() }}
+  <!-- ElevenLabs ConvAI Widget - positioned after footer -->
+  {{ config.extra.elevenlabs_widget }}
+{% endblock %}
+
+{% block footer %}
+  {{ super() }}
+  
+{% endblock %}
