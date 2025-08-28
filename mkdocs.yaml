@@ -1,6 +1,12 @@
 site_name: CIM for Norway
 extra_css:
 - stylesheets/extra.css
+extra_javascript:
+  - https://unpkg.com/@elevenlabs/convai-widget-embed
+
+extra:
+  # This will be available in all templates
+  elevenlabs_widget: '<elevenlabs-convai agent-id="agent_9901k3qybvkte7wszs3qqw58rx9n"></elevenlabs-convai>'
 theme:
   name: material
   custom_dir: overrides
