@@ -1,0 +1,199 @@
+PlannedOutage:
+  - mRID: "71a4e8f0-3c92-4b1d-a5e7-9f8d6c2b0e14"
+    createdDateTime: "2026-04-01T08:00:00Z"
+    lastModifiedDateTime: "2026-04-10T11:45:00Z"
+    # reason: "Maintenance"
+    # metersAffected: 95
+    # originalMetersAffected: 105
+    # customersRestored: 10
+    # originalCustomersServed: 95
+    outageKind: "partiallyRestored"
+    # utilityDisclaimer: "Planned maintenance work. Restoration on schedule."
+    actualPeriod:
+      start: "2026-04-15T06:00:00Z"
+    estimatedPeriod:
+      start: "2026-04-15T06:00:00Z"
+      end: "2026-04-15T14:00:00Z"
+    # OutagePlan:
+    #   - mRID: "82b5f901-4da3-5c2e-b6f8-0a9e7d3c1f25"
+    DeEnergizedUsagePoint:
+      - mRID: "93c6a012-5eb4-6d3f-c709-1baf8e4d2036"
+      - mRID: "a4d7b123-6fc5-7e40-d81a-2cb09f5e3147"
+    EnergizedUsagePoint:
+      - mRID: "e752dc1e-598a-4138-97ec-11ee1fb5c494"
+
+# OutagePlan:
+#   - mRID: "82b5f901-4da3-5c2e-b6f8-0a9e7d3c1f25"
+#     createdDateTime: "2026-04-01T08:00:00Z"
+#     lastModifiedDateTime: "2026-04-08T15:20:00Z"
+#     approvedDateTime: "2026-04-08T15:20:00Z"
+#     purpose: "Replacement of aging distribution transformer T-114"
+#     plannedPeriod:
+#       start: "2026-04-15T06:00:00Z"
+#       end: "2026-04-15T14:00:00Z"
+
+UsagePoint:
+  - mRID: "93c6a012-5eb4-6d3f-c709-1baf8e4d2036"
+    UsagePointLocation:
+      - mRID: "f92c0678-be1a-c395-2d6f-71a5e4ad869c"
+    CustomerAgreement:
+      - mRID: "0a3d1789-cf2b-d4a6-3e70-82b6f5be97ad"
+  - mRID: "a4d7b123-6fc5-7e40-d81a-2cb09f5e3147"
+    UsagePointLocation:
+      - mRID: "1b4e289a-d03c-e5b7-4f81-93c7a6cf08be"
+    CustomerAgreement:
+      - mRID: "2c5f39ab-e14d-f6c8-5092-a4d8b7d019cf"
+  - mRID: "e752dc1e-598a-4138-97ec-11ee1fb5c494"
+    UsagePointLocation:
+      - mRID: "b1f0667a-0574-4ddc-ac97-460ba732cca2"
+    CustomerAgreement:
+      - mRID: "a0bd256a-e43a-4475-9ffc-0014b58c378b"
+    
+
+UsagePointLocation:
+  - mRID: "f92c0678-be1a-c395-2d6f-71a5e4ad869c"
+    mainAddress:
+      postalCode: "0286"
+      streetDetail:
+        name: "StreetName"
+        number: "18"
+      townDetail:
+        stateOrProvince: "Oslo"
+    CoordinateSystem:
+      - mRID: "0857679d-6eb1-4a64-ba27-48c72265e889"
+  - mRID: "1b4e289a-d03c-e5b7-4f81-93c7a6cf08be"
+    mainAddress:
+      postalCode: "0262"
+      streetDetail:
+        name: "AnotherStreetName"
+        number: "7"
+        floorIdentification: "3"
+        suiteNumber: "302"
+      townDetail:
+        stateOrProvince: "Oslo"
+    CoordinateSystem:
+      - mRID: "0857679d-6eb1-4a64-ba27-48c72265e889"
+  - mRID: "b1f0667a-0574-4ddc-ac97-460ba732cca2"
+    mainAddress:
+      postalCode: "0250"
+      streetDetail:
+        name: "ThirdStreetName"
+        number: "15"
+      townDetail:
+        stateOrProvince: "Oslo"
+    CoordinateSystem:
+      - mRID: "0857679d-6eb1-4a64-ba27-48c72265e889"
+
+CoordinateSystem:
+  - mRID: "0857679d-6eb1-4a64-ba27-48c72265e889"
+    crsUrn: "urn:ogc:def:crs:EPSG::4326"
+
+PositionPoint:
+  - mRID: "4e715bcd-a36f-18ea-72b4-c6fad9f23be1"
+    xPosition: "59.8975"
+    yPosition: "10.7119"
+    Location:
+      - mRID: "f92c0678-be1a-c395-2d6f-71a5e4ad869c"
+  - mRID: "5f826cde-b470-29fb-83c5-d70be0a34cf2"
+    xPosition: "59.8956"
+    yPosition: "10.7472"
+    Location:
+      - mRID: "1b4e289a-d03c-e5b7-4f81-93c7a6cf08be"
+  - mRID: "26cb557f-58da-4a28-97d0-c3d7d9ce9de1"
+    xPosition: "59.8894"
+    yPosition: "10.7274"
+    Location:
+      - mRID: "b1f0667a-0574-4ddc-ac97-460ba732cca2"
+
+CustomerAgreement:
+  - mRID: "0a3d1789-cf2b-d4a6-3e70-82b6f5be97ad"
+    Customer:
+      - mRID: "d70ae456-9cf8-a173-0b4d-5fe3c28b647a"
+  - mRID: "2c5f39ab-e14d-f6c8-5092-a4d8b7d019cf"
+    Customer:
+      - mRID: "e81bf567-ad09-b284-1c5e-60f4d39c758b"
+  - mRID: "a0bd256a-e43a-4475-9ffc-0014b58c378b"
+    Customer:
+      - mRID: "e9150019-21e2-43fb-a66c-60190d165ec9"
+
+Customer:
+  - mRID: "d70ae456-9cf8-a173-0b4d-5fe3c28b647a"
+    name: "Customer"
+    Organisation:
+      - mRID: "6a937def-c581-3a0c-94d6-e81cf1b45da3"
+  - mRID: "e81bf567-ad09-b284-1c5e-60f4d39c758b"
+    name: "AnotherCustomer"
+    Organisation:
+      - mRID: "7ba48ef0-d692-4b1d-a5e7-f92da2c56eb4"
+  - mRID: "e9150019-21e2-43fb-a66c-60190d165ec9"
+    name: "ThirdCustomer"
+    Organisation:
+      - mRID: "8a80c753-f819-48ac-869f-bf212a1d78cc"
+
+Organisation:
+  - mRID: "6a937def-c581-3a0c-94d6-e81cf1b45da3"
+    name: "Organisation"
+  - mRID: "7ba48ef0-d692-4b1d-a5e7-f92da2c56eb4"
+    name: "AnotherOrganisation"
+  - mRID: "8a80c753-f819-48ac-869f-bf212a1d78cc"
+    name: "ThirdOrganisation"
+
+Meter:
+  - mRID: "8cb59f01-e7a3-5c2e-b6f8-0a3eb3d67fc5"
+    serialNumber: "7350028674290201"
+    UsagePoint:
+      - mRID: "93c6a012-5eb4-6d3f-c709-1baf8e4d2036"
+  - mRID: "9dc6a012-f8b4-6d3f-c709-1b4fc4e780d6"
+    serialNumber: "7350049084426978"
+    UsagePoint:
+      - mRID: "a4d7b123-6fc5-7e40-d81a-2cb09f5e3147"
+  - mRID: "7e1a2b34-c5d6-7890-12ab-cdef34567890"
+    serialNumber: "7350067890123456"
+    UsagePoint:
+      - mRID: "e752dc1e-598a-4138-97ec-11ee1fb5c494"
+
+Name:
+  - mRID: "aed7b123-09c5-7e40-d81a-2cb5d5f891e7"
+    name: "8zz zzz zzz"
+    IdentifiedObject:
+      - mRID: "6a937def-c581-3a0c-94d6-e81cf1b45da3"
+    NameType:
+      - mRID: "197c2451-647d-4351-b188-488c6f3f5877"
+  - mRID: "c0f9d345-2be7-9062-fa3c-4ed7f7ba0309"
+    name: "9ww www www"
+    IdentifiedObject:
+      - mRID: "7ba48ef0-d692-4b1d-a5e7-f92da2c56eb4"
+    NameType:
+      - mRID: "197c2451-647d-4351-b188-488c6f3f5877"
+  - mRID: "0f6ce6c6-85a9-48ca-ad43-6de89c8d2f4a"
+    name: "8uu uuu uuu"
+    IdentifiedObject:
+      - mRID: "8a80c753-f819-48ac-869f-bf212a1d78cc"
+    NameType:
+      - mRID: "197c2451-647d-4351-b188-488c6f3f5877"
+  - mRID: "e6945d75-e207-46a3-9a94-d6860ba03348"
+    name: "707057500012345690"
+    IdentifiedObject:
+      - mRID: "93c6a012-5eb4-6d3f-c709-1baf8e4d2036"
+    NameType:
+      - mRID: "12ac6bf5-d8ef-49f4-9ce8-a30dced1e7ae"
+  - mRID: "7f5484ae-5611-4378-ac8b-8a079157f9fb"
+    name: "707057500012345691"
+    IdentifiedObject:
+      - mRID: "a4d7b123-6fc5-7e40-d81a-2cb09f5e3147"
+    NameType:
+      - mRID: "12ac6bf5-d8ef-49f4-9ce8-a30dced1e7ae"
+  - mRID: "3e734277-7cfc-4616-af53-3896aff7eefc"
+    name: "707057500012345692"
+    IdentifiedObject:
+      - mRID: "e752dc1e-598a-4138-97ec-11ee1fb5c494"
+    NameType:
+      - mRID: "12ac6bf5-d8ef-49f4-9ce8-a30dced1e7ae"
+
+NameType:
+  - mRID: "197c2451-647d-4351-b188-488c6f3f5877"
+    name: "Organisation number"
+    description: "Identifier for organisations."
+  - mRID: "12ac6bf5-d8ef-49f4-9ce8-a30dced1e7ae"
+    name: "Unique identifier for measurement points"
+    description: "Valid measurement point ID issued by GS1."

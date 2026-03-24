@@ -23,25 +23,78 @@ default_curi_maps:
 default_range: string
 default_prefix: this
 classes:
+  Container:
+    tree_root: true
+    attributes:
+      outages:
+        multivalued: true
+        inlined_as_list: true
+        range: Outage
   Agreement:
     description: "Formal agreement between two parties defining the terms and conditions for a set of services. The specifics of the services are, in turn, defined via one or more service agreements."
     annotations:
-      ea_guid: "_17B1479C-FC7D-4621-AF7F-BBA624EE6037"
+      ea_guid: "EAID_17B1479C_FC7D_4621_AF7F_BBA624EE6037"
     is_a: Document
     abstract: true
     class_uri: cim:Agreement
     attributes: 
+  Asset:
+    description: "Tangible resource of the utility, including power system equipment, various end devices, cabinets, buildings, etc. For electrical network equipment, the role of the asset is defined through PowerSystemResource and its subclasses, defined mainly in the Wires model (refer to IEC61970-301 and model package IEC61970::Wires). Asset description places emphasis on the physical characteristics of the equipment fulfilling that role."
+    annotations:
+      ea_guid: "EAID_4F4AE641_1576_4f64_BE09_A19143D580F7"
+    is_a: IdentifiedObject
+    abstract: true
+    class_uri: cim:Asset
+    attributes: 
+      serialNumber:
+        description: "Serial number of this asset."
+        annotations:
+          ea_guid: "EAID_38BCF463_9045_45f3_A63E_FCB96998A392"
+        slot_uri: cim:Asset.serialNumber
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  AssetContainer:
+    description: "Asset that is aggregation of other assets such as conductors, transformers, switchgear, land, fences, buildings, equipment, vehicles, etc."
+    annotations:
+      ea_guid: "EAID_C871BF41_2266_4e8c_B45A_1534C39F8633"
+    is_a: Asset
+    abstract: true
+    class_uri: cim:AssetContainer
+    attributes: 
+  CoordinateSystem:
+    description: "Coordinate reference system."
+    annotations:
+      ea_guid: "EAID_D7A22063_DBE9_467d_9E72_C32640FABCA0"
+    is_a: IdentifiedObject
+    class_uri: cim:CoordinateSystem
+    attributes: 
+      crsUrn:
+        description: "A Uniform Resource Name (URN) for the coordinate reference system (crs) used to define 'Location.PositionPoints'.An example would be the European Petroleum Survey Group (EPSG) code for a coordinate reference system, defined in URN under the Open Geospatial Consortium (OGC) namespace as: urn:ogc:def:crs:EPSG::XXXX, where XXXX is an EPSG code (a full list of codes can be found at the EPSG Registry web site http://www.epsg-registry.org/). To define the coordinate system as being WGS84 (latitude, longitude) using an EPSG OGC, this attribute would be urn:ogc:def:crs:EPSG::4236.A profile should limit this code to a set of allowed URNs agreed to by all sending and receiving parties."
+        annotations:
+          ea_guid: "EAID_88A7A1F0_1E16_4776_8350_629D7362D7E4"
+        slot_uri: cim:CoordinateSystem.crsUrn
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  Customer:
+    description: "Organisation receiving services from service supplier."
+    annotations:
+      ea_guid: "EAID_80011596_1798_4c9c_94A2_182EE31D017B"
+    is_a: OrganisationRole
+    class_uri: cim:Customer
+    attributes: 
   CustomerAgreement:
     description: "Agreement between the customer and the service supplier to pay for service at a specific service location. It records certain billing information about the type of service provided at the service location and is used during charge creation to determine the type of service."
     annotations:
-      ea_guid: "_5245DDE2-E142-46d1-B59C-512F29575A88"
+      ea_guid: "EAID_5245DDE2_E142_46d1_B59C_512F29575A88"
     is_a: Agreement
     class_uri: cim:CustomerAgreement
     attributes: 
       Customer:
         description: "Customer for this agreement."
         annotations:
-          ea_guid: "_12619422-3644-40fc-AA40-CC129C2C199A-B"
+          ea_guid: "EAID_12619422_3644_40fc_AA40_CC129C2C199A-B"
         slot_uri: cim:CustomerAgreement.Customer
         range: Customer
         minimum_cardinality: 0
@@ -49,13 +102,13 @@ classes:
   CustomerNotification:
     description: "Conditions for notifying the customer about the changes in the status of their service (e.g., outage restore, estimated restoration time, tariff or service level change, etc.)"
     annotations:
-      ea_guid: "_DD7A6789-1AF7-48d8-BEA1-E65E8AFCA371"
+      ea_guid: "EAID_DD7A6789_1AF7_48d8_BEA1_E65E8AFCA371"
     class_uri: cim:CustomerNotification
     attributes: 
       contactType:
         description: "Type of contact (e.g., phone, email, etc.)."
         annotations:
-          ea_guid: "_88B92073-B229-40ae-A4ED-B9C6B5D11AEF"
+          ea_guid: "EAID_88B92073_B229_40ae_A4ED_B9C6B5D11AEF"
         slot_uri: cim:CustomerNotification.contactType
         range: string
         minimum_cardinality: 0
@@ -63,23 +116,15 @@ classes:
       contactValue:
         description: "Value of contact type (e.g., phone number, email address, etc.)."
         annotations:
-          ea_guid: "_48BFCAF6-872E-48a0-9BC4-571637693AA3"
+          ea_guid: "EAID_48BFCAF6_872E_48a0_9BC4_571637693AA3"
         slot_uri: cim:CustomerNotification.contactValue
         range: string
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-      trigger:
-        description: "Trigger for this notification."
-        annotations:
-          ea_guid: "_040F4A28-FA7C-4127-A0F0-71E7C8D0B9A5"
-        slot_uri: cim:CustomerNotification.trigger
-        range: NotificationTriggerKind
         minimum_cardinality: 0
         maximum_cardinality: 1
       Customer:
         description: "Customer requiring this notification."
         annotations:
-          ea_guid: "_9979122D-C134-46ef-ACBB-9812051756B2-A"
+          ea_guid: "EAID_9979122D_C134_46ef_ACBB_9812051756B2-A"
         slot_uri: cim:CustomerNotification.Customer
         range: Customer
         minimum_cardinality: 0
@@ -87,30 +132,108 @@ classes:
       Incident:
         description: "Incident as a subject of this customer notification."
         annotations:
-          ea_guid: "_F292A647-3328-43e1-AA6F-08A42730AF41-B"
+          ea_guid: "EAID_F292A647_3328_43e1_AA6F_08A42730AF41-B"
         slot_uri: cim:CustomerNotification.Incident
         range: Incident
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  DateTimeInterval:
+    description: "Interval between two date and time points, where the interval includes the start time but excludes end time."
+    annotations:
+      ea_guid: "EAID_DDF0ECB1_36BC_4660_912F_9B7EF4A672D2"
+    class_uri: cim:DateTimeInterval
+    attributes: 
+      end:
+        description: "End date and time of this interval.  The end date and time where the interval is defined up to, but excluded."
+        annotations:
+          ea_guid: "EAID_55C5DBB1_2BC7_4ff6_9AE1_5D9BD2F9C376"
+        slot_uri: cim:DateTimeInterval.end
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      start:
+        description: "Start date and time of this interval.  The start date and time is included in the defined interval."
+        annotations:
+          ea_guid: "EAID_6B83DB52_1642_4a44_8CCC_C20165ABEF2D"
+        slot_uri: cim:DateTimeInterval.start
+        range: datetime
         minimum_cardinality: 0
         maximum_cardinality: 1
   Document:
     description: "Parent class for different groupings of information collected and managed as a part of a business process. It will frequently contain references to other objects, such as assets, people and power system resources."
     annotations:
-      ea_guid: "_EF39687B-42C9-4204-972C-0F1A9520DC31"
+      ea_guid: "EAID_EF39687B_42C9_4204_972C_0F1A9520DC31"
     is_a: IdentifiedObject
     abstract: true
     class_uri: cim:Document
     attributes: 
+      createdDateTime:
+        description: "Date and time that this document was created."
+        annotations:
+          ea_guid: "EAID_2AADF13C_3746_4a53_9569_4D4F32C28CF4"
+        slot_uri: cim:Document.createdDateTime
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      lastModifiedDateTime:
+        description: "Date and time this document was last modified. Documents may potentially be modified many times during their lifetime."
+        annotations:
+          ea_guid: "EAID_779D509D_F4F0_4279_8E0D_CA2FC2B461C9"
+        slot_uri: cim:Document.lastModifiedDateTime
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      revisionNumber:
+        description: "Revision number for this document."
+        annotations:
+          ea_guid: "EAID_BB9A66A5_1F53_423b_B1D7_328BB2D64C84"
+        slot_uri: cim:Document.revisionNumber
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      title:
+        description: "Document title."
+        annotations:
+          ea_guid: "EAID_D5DB91DF_E1E6_4d77_A2D8_D070A03B9422"
+        slot_uri: cim:Document.title
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      type:
+        description: "Utility-specific classification of this document, according to its corporate standards, practices, and existing IT systems (e.g., for management of assets, maintenance, work, outage, customers, etc.)."
+        annotations:
+          ea_guid: "EAID_6A6BC1C9_8818_43ca_BFB0_A1A43EFAAD20"
+        slot_uri: cim:Document.type
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  EndDevice:
+    description: "Asset container that performs one or more end device functions. One type of end device is a meter which can perform metering, load management, connect/disconnect, accounting functions, etc. Some end devices, such as ones monitoring and controlling air conditioners, refrigerators, pool pumps may be connected to a meter. All end devices may have communication capability defined by the associated communication function(s). An end device may be owned by a consumer, a service provider, utility or otherwise.There may be a related end device function that identifies a sensor or control point within a metering application or communications systems (e.g., water, gas, electricity).Some devices may use an optical port that conforms to the ANSI C12.18 standard for communications."
+    annotations:
+      ea_guid: "EAID_E17004EF_EA47_4c62_9520_DA35E34F44D8"
+    is_a: AssetContainer
+    abstract: true
+    class_uri: cim:EndDevice
+    attributes: 
+      UsagePoint:
+        description: "Usage point to which this end device belongs."
+        annotations:
+          ea_guid: "EAID_6B05F0D3_B04B_4b78_AF42_4AC3046EF869-B"
+        slot_uri: cim:EndDevice.UsagePoint
+        range: UsagePoint
+        minimum_cardinality: 0
+        maximum_cardinality: 1
   IdentifiedObject:
     description: "This is a root class to provide common identification for all classes needing identification and naming attributes."
     annotations:
-      ea_guid: "_2E7314DD-0167-4239-9496-93283E6DAA33"
+      ea_guid: "EAID_EE233964_5AD5_44bf_8A13_6AB7068CF6F6"
     abstract: true
     class_uri: cim:IdentifiedObject
     attributes: 
       mRID:
         description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in IETF RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
         annotations:
-          ea_guid: "_5F2EC550-2969-48a1-8300-94D6EDEB80B8"
+          ea_guid: "EAID_C30067BB_60D9_4fdd_B365_404B5416EA6D"
         slot_uri: cim:IdentifiedObject.mRID
         range: string
         minimum_cardinality: 0
@@ -118,7 +241,7 @@ classes:
       description:
         description: "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."
         annotations:
-          ea_guid: "_45D43BC9-3318-49f1-911C-8CE4BEFD840C"
+          ea_guid: "EAID_D41F0349_BE88_42d8_896B_273A9ACA5917"
         slot_uri: cim:IdentifiedObject.description
         range: string
         minimum_cardinality: 0
@@ -126,7 +249,7 @@ classes:
       name:
         description: "The name is any free human readable and possibly non unique text naming the object."
         annotations:
-          ea_guid: "_C928603C-2624-4566-92E6-D44710C53AEE"
+          ea_guid: "EAID_DBC85ECC_63DA_4db5_9141_4CBF4AA488BA"
         slot_uri: cim:IdentifiedObject.name
         range: string
         minimum_cardinality: 0
@@ -134,14 +257,14 @@ classes:
   Incident:
     description: "Description of a problem in the field that may be reported in a trouble ticket or come from another source. It may have to do with an outage."
     annotations:
-      ea_guid: "_0ED91420-F3BF-47ae-B626-192C9A40CC1A"
+      ea_guid: "EAID_0ED91420_F3BF_47ae_B626_192C9A40CC1A"
     is_a: Document
     class_uri: cim:Incident
     attributes: 
       cause:
         description: "Cause of this incident."
         annotations:
-          ea_guid: "_D9CF34B1-42FB-4ecd-82C0-C3E1215408E9"
+          ea_guid: "EAID_D9CF34B1_42FB_4ecd_82C0_C3E1215408E9"
         slot_uri: cim:Incident.cause
         range: string
         minimum_cardinality: 0
@@ -149,23 +272,145 @@ classes:
       UnplannedOutage:
         description: "The unplanned outage that may be associated with the incidents."
         annotations:
-          ea_guid: "_F41F931E-15E0-43ea-9BBE-8F6DB650B1D9-A"
+          ea_guid: "EAID_F41F931E_15E0_43ea_9BBE_8F6DB650B1D9-A"
         slot_uri: cim:Incident.UnplannedOutage
         range: UnplannedOutage
         minimum_cardinality: 0
         maximum_cardinality: 1
+  Location:
+    description: "rdfs:isDefinedBy : http://www.w3.org/ns/prov-o#<http://www.w3.org/ns/prov#n> : http://www.w3.org/TR/2013/REC-prov-n-20130430/#expression-attribute^^xsd:anyURI<http://www.w3.org/ns/prov#category> : expanded^^xsd:stringrdfs:seeAlso : http://www.w3.org/ns/prov#atLocationrdfs:label : Location^^xsd:string<http://www.w3.org/ns/prov#dm> : http://www.w3.org/TR/2013/REC-prov-dm-20130430/#term-attribute-location^^xsd:anyURI<http://www.w3.org/ns/prov#definition> : A location can be an identifiable geographic place (ISO 19112), but it can also be a non-geographic place such as a directory, row, or column. As such, there are numerous ways in which location can be expressed, such as by a coordinate, address, landmark, and so forth.@en"
+    annotations:
+      ea_guid: "EAID_402673F4_3449_4562_A4A3_1BD200236EE4"
+    is_a: IdentifiedObject
+    abstract: true
+    class_uri: cim:Location
+    attributes: 
+      direction:
+        description: "(if applicable) Direction that allows field crews to quickly find a given asset. For a given location, such as a street address, this is the relative direction in which to find the asset. For example, a streetlight may be located at the 'NW' (northwest) corner of the customer's site, or a usage point may be located on the second floor of an apartment building."
+        annotations:
+          ea_guid: "EAID_08837BC4_44DA_4af5_A8CA_D2158DB60CCB"
+        slot_uri: cim:Location.direction
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      CoordinateSystem:
+        description: "Coordinate system used to describe position points of this location."
+        annotations:
+          ea_guid: "EAID_BC5C575E_F435_450d_AD64_575CD67A5E98-A"
+        slot_uri: cim:Location.CoordinateSystem
+        range: CoordinateSystem
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      mainAddress:
+        description: "Main address of the location."
+        annotations:
+          ea_guid: "EAID_44CF2281_A210_4c5a_A26A_D802302AA58D"
+        slot_uri: cim:Location.mainAddress
+        range: StreetAddress
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  Meter:
+    description: "Physical asset that performs the metering role of the usage point. Used for measuring consumption and detection of events."
+    annotations:
+      ea_guid: "EAID_205B6F34_8938_4372_BC87_FB51486FE4A6"
+    is_a: EndDevice
+    class_uri: cim:Meter
+    attributes: 
+  Name:
+    description: "The Name class provides the means to define any number of human readable  names for an object. A name is <b>not</b> to be used for defining inter-object relationships. For inter-object relationships instead use the object identification 'mRID'."
+    annotations:
+      ea_guid: "EAID_D6F3DF4E_3363_48d2_AB61_7872E337C422"
+    class_uri: cim:Name
+    attributes: 
+      mRID:
+        description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
+        annotations:
+          ea_guid: "EAID_0832318E_6D07_4a67_AE9C_D38696E501BC"
+        slot_uri: cim:Name.mRID
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      name:
+        description: "Any free text that used as a name or alternative identifier of the object."
+        annotations:
+          ea_guid: "EAID_40F56E49_2B15_4ca0_9105_8E5458A2252F"
+        slot_uri: cim:Name.name
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      IdentifiedObject:
+        description: "Identified object that this name designates."
+        annotations:
+          ea_guid: "EAID_4A361A5D_BE43_4241_8F7E_0AD34B0B04EA-A"
+        slot_uri: cim:Name.IdentifiedObject
+        range: IdentifiedObject
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      NameType:
+        description: "Type of this name."
+        annotations:
+          ea_guid: "EAID_2DF559F1_C2F0_43ff_B7E0_654C3E738FDE-A"
+        slot_uri: cim:Name.NameType
+        range: NameType
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  NameType:
+    description: "Type of name. Possible values for attribute 'name' are implementation dependent but standard profiles may specify types. An enterprise may have multiple IT systems each having its own local name for the same object, e.g. a planning system may have different names from an EMS. An object may also have different names within the same IT system, e.g. localName as defined in CIM version 14. The definition from CIM14 is:The localName is a human readable name of the object. It is a free text name local to a node in a naming hierarchy similar to a file directory structure. A power system related naming hierarchy may be: Substation, VoltageLevel, Equipment etc. Children of the same parent in such a hierarchy have names that typically are unique among them."
+    annotations:
+      ea_guid: "EAID_666F94BF_13E3_4947_830F_3A2D4E7CC9FC"
+    class_uri: cim:NameType
+    attributes: 
+      mRID:
+        description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
+        annotations:
+          ea_guid: "EAID_61D5DF3B_B46C_41d3_B386_9CDA4ADEC804"
+        slot_uri: cim:NameType.mRID
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      description:
+        description: "Description of the name type."
+        annotations:
+          ea_guid: "EAID_B831899F_A8DB_470e_B41E_AE8F085A6225"
+        slot_uri: cim:NameType.description
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      name:
+        description: "Name of the name type."
+        annotations:
+          ea_guid: "EAID_0AF8DC48_2EF0_4e89_ACCA_44287F43CFA2"
+        slot_uri: cim:NameType.name
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  Organisation:
+    description: "Organisation that might have roles as utility, contractor, supplier, manufacturer, customer, etc."
+    annotations:
+      ea_guid: "EAID_C5524338_C303_4541_9170_FB4CB97B151D"
+    is_a: IdentifiedObject
+    class_uri: cim:Organisation
+    attributes: 
   OrganisationRole:
     description: "Identifies a way in which an organisation may participate in the utility enterprise (e.g., customer, manufacturer, etc)."
     annotations:
-      ea_guid: "_45CAE682-80BF-4905-BB64-4E4935827618"
+      ea_guid: "EAID_01405DC2_1603_450e_BE69_A6C7E7629423"
     is_a: IdentifiedObject
     abstract: true
     class_uri: cim:OrganisationRole
     attributes: 
+      Organisation:
+        description: "Organisation having this role."
+        annotations:
+          ea_guid: "EAID_69EAE008_4E1D_4248_A3AB_1554BEBAB5B8-A"
+        slot_uri: cim:OrganisationRole.Organisation
+        range: Organisation
+        minimum_cardinality: 0
+        maximum_cardinality: 1
   Outage:
     description: "Document describing details of an active or planned outage in a part of the electrical network.A non-planned outage may be created upon:- a breaker trip,- a fault indicator status change,- a meter event indicating customer outage,- a reception of one or more customer trouble calls, or- an operator command, reflecting information obtained from the field crew.Outage restoration may be performed using a switching plan which complements the outage information with detailed switching activities, including the relationship to the crew and work.A planned outage may be created upon:- a request for service, maintenance or construction work in the field, or- an operator-defined outage for what-if/contingency network analysis."
     annotations:
-      ea_guid: "_09AE35F0-E7A0-46d3-BDB2-C3A38F16A10B"
+      ea_guid: "EAID_09AE35F0_E7A0_46d3_BDB2_C3A38F16A10B"
     is_a: Document
     abstract: true
     class_uri: cim:Outage
@@ -173,7 +418,7 @@ classes:
       customersRestored:
         description: "number of customers that have been restored in the area."
         annotations:
-          ea_guid: "_96EC7A1B-7F86-4742-A6DE-DAB1E3BA1ED2"
+          ea_guid: "EAID_96EC7A1B_7F86_4742_A6DE_DAB1E3BA1ED2"
         slot_uri: cim:Outage.customersRestored
         range: integer
         minimum_cardinality: 0
@@ -181,7 +426,7 @@ classes:
       metersAffected:
         description: "The updated number of meters affected by the outage as reported by the OMS within the utility.  It is assumed this number will be updated repeatedly until the full outage is resolved."
         annotations:
-          ea_guid: "_5793A622-95C4-41c3-B43A-075FBD01DCC4"
+          ea_guid: "EAID_5793A622_95C4_41c3_B43A_075FBD01DCC4"
         slot_uri: cim:Outage.metersAffected
         range: integer
         minimum_cardinality: 0
@@ -189,7 +434,7 @@ classes:
       originalCustomersServed:
         description: "the total number of customers that are served in the area (both outaged and not outaged)."
         annotations:
-          ea_guid: "_81471418-91EA-4a7a-BF26-04C830755313"
+          ea_guid: "EAID_81471418_91EA_4a7a_BF26_04C830755313"
         slot_uri: cim:Outage.originalCustomersServed
         range: integer
         minimum_cardinality: 0
@@ -197,15 +442,21 @@ classes:
       originalMetersAffected:
         description: "The original number of meters that were affected as reported by the OMS within the utility. That is, this is the total number of meters that were out at the beginning of the outage."
         annotations:
-          ea_guid: "_831EAA33-59E8-45c6-A7E0-AD1E0F65E806"
+          ea_guid: "EAID_831EAA33_59E8_45c6_A7E0_AD1E0F65E806"
         slot_uri: cim:Outage.originalMetersAffected
         range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      outageKind:
+        description: "Defines if the outage has been verified or is only estimated."
+        slot_uri: cim:Outage.outageKind
+        range: OutageStatusKind
         minimum_cardinality: 0
         maximum_cardinality: 1
       utilityDisclaimer:
         description: "This contains an disclaimers the utility would like to place on the data provided to any stakeholder.  This may be different for different stakeholders.  This should possibly be an attribute under the Organization class but it is placed here for now."
         annotations:
-          ea_guid: "_B8DD462E-CD50-45dd-B640-C2E9C0D7A292"
+          ea_guid: "EAID_B8DD462E_CD50_45dd_B640_C2E9C0D7A292"
         slot_uri: cim:Outage.utilityDisclaimer
         range: string
         minimum_cardinality: 0
@@ -213,7 +464,7 @@ classes:
       actualPeriod:
         description: "Actual outage period; end of the period corresponds to the actual restoration time."
         annotations:
-          ea_guid: "_0AD368D5-C6D0-47a8-B938-051F2AC57B2C"
+          ea_guid: "EAID_0AD368D5_C6D0_47a8_B938_051F2AC57B2C"
         slot_uri: cim:Outage.actualPeriod
         range: DateTimeInterval
         minimum_cardinality: 0
@@ -221,7 +472,7 @@ classes:
       DeEnergizedUsagePoint:
         description: "all deenergized useage points associated with the outage."
         annotations:
-          ea_guid: "_97DDAF6C-65B2-463f-8202-046CC1702F4C-A"
+          ea_guid: "EAID_97DDAF6C_65B2_463f_8202_046CC1702F4C-A"
         slot_uri: cim:Outage.DeEnergizedUsagePoint
         range: UsagePoint
         minimum_cardinality: 0
@@ -229,30 +480,297 @@ classes:
       EnergizedUsagePoint:
         description: "All energized usage points associated with this outage."
         annotations:
-          ea_guid: "_13D27FCF-5727-416e-9B7E-FCE3388F7C11-A"
+          ea_guid: "EAID_13D27FCF_5727_416e_9B7E_FCE3388F7C11-A"
         slot_uri: cim:Outage.EnergizedUsagePoint
         range: UsagePoint
         minimum_cardinality: 0
         multivalued: true
-      Equipments:
-        description: "All equipments associated with this outage."
+      estimatedPeriod:
+        description: "Estimated outage period for a planned outage. The start of the period is the start of the planned outage and the end of the period corresponds to the end of the planned outage."
         annotations:
-          ea_guid: "_7CB5F824-2EAC-4c6e-B3CE-B2B245253D31-A"
-        slot_uri: cim:Outage.Equipments
-        range: Equipment
+          ea_guid: "EAID_8C9C1A9F_3138_4ade_A916_15CC7860C66E"
+        slot_uri: cim:Outage.estimatedPeriod
+        range: DateTimeInterval
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  OutagePlan:
+    description: "Document containing the definition of planned outages of equipment and/or usage points. It will reference switching plans that are used to execute the planned outage."
+    annotations:
+      ea_guid: "EAID_ACA48F97_FA05_4c4d_94AA_226E14FA7E5C"
+    is_a: Document
+    class_uri: cim:OutagePlan
+    attributes: 
+      approvedDateTime:
+        description: "The date and time the outage plan was approved"
+        annotations:
+          ea_guid: "EAID_97729C42_A9A2_495e_9ED3_60F05F77EB55"
+        slot_uri: cim:OutagePlan.approvedDateTime
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      cancelledDateTime:
+        description: "Date and Time the planned outage was canceled."
+        annotations:
+          ea_guid: "EAID_DEA72F1F_9BAF_48d7_B194_94075F7F99C1"
+        slot_uri: cim:OutagePlan.cancelledDateTime
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      purpose:
+        description: "Purpose of  this outage plan, such as whether it is to replace equipment or perform maintenance or repairs or to reconfigure network topology."
+        annotations:
+          ea_guid: "EAID_529D7F19_8F50_4a43_A14F_12D99A20C4E7"
+        slot_uri: cim:OutagePlan.purpose
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      plannedPeriod:
+        description: "planned start and end time of the planned outage."
+        annotations:
+          ea_guid: "EAID_5FA03C41_4627_4d3a_B71B_75B8A5497E8E"
+        slot_uri: cim:OutagePlan.plannedPeriod
+        range: DateTimeInterval
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  PlannedOutage:
+    annotations:
+      ea_guid: "EAID_0BCDD7D7_E6DF_41ea_BE54_19C927ADCFF9"
+    is_a: Outage
+    class_uri: cim:PlannedOutage
+    attributes: 
+      reason:
+        description: "The reason for the planned outage."
+        annotations:
+          ea_guid: "EAID_D3D3D4BC_E73E_4ed6_92E8_F8B34CB83F0D"
+        slot_uri: cim:PlannedOutage.reason
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      OutagePlan:
+        description: "Outage plan for executing a planned outage."
+        annotations:
+          ea_guid: "EAID_D5052A16_C1AA_4cfa_B0E4_1C79BE08873C-B"
+        slot_uri: cim:PlannedOutage.OutagePlan
+        range: OutagePlan
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  PlannedOutageNotification:
+    description: "This class will be used to generate call ahead lists for customers who will be affected by a planned outage."
+    annotations:
+      ea_guid: "EAID_0F285974_FB1F_4b4b_A71D_C8DB1B4F9389"
+    is_a: Document
+    class_uri: cim:PlannedOutageNotification
+    attributes: 
+      Customer:
+        description: "The customer that receives the notification"
+        annotations:
+          ea_guid: "EAID_C3BE4896_4663_4669_84A9_B881796117E5-A"
+        slot_uri: cim:PlannedOutageNotification.Customer
+        range: Customer
+        minimum_cardinality: 0
+        multivalued: true
+      SwitchingPlan:
+        description: "The switching plan that contains the planned outage notification."
+        annotations:
+          ea_guid: "EAID_D86059AA_B4DC_4561_AA64_9EF56A447F18-A"
+        slot_uri: cim:PlannedOutageNotification.SwitchingPlan
+        range: SwitchingPlan
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      UsagePoint:
+        description: "The Usage Point that is specified in the planned outage notification."
+        annotations:
+          ea_guid: "EAID_98A76F97_9CB9_4dbd_A5C9_20A881D0F3E5-A"
+        slot_uri: cim:PlannedOutageNotification.UsagePoint
+        range: UsagePoint
+        minimum_cardinality: 0
+        multivalued: true
+  PositionPoint:
+    description: "Set of spatial coordinates that determine a point, defined in the coordinate system specified in 'Location.CoordinateSystem'. Use a single position point instance to describe a point-oriented location. Use a sequence of position points to describe a line-oriented object (physical location of non-point oriented objects like cables or lines), or area of an object (like a substation or a geographical zone - in this case, have first and last position point with the same values)."
+    annotations:
+      ea_guid: "EAID_EF85055A_B753_4eb9_9FD7_FE577C68685D"
+    class_uri: cim:PositionPoint
+    attributes: 
+      xPosition:
+        description: "X axis position."
+        annotations:
+          ea_guid: "EAID_6FC2D71B_DBB3_4cf1_BE5C_6F2CC6F5EFC6"
+        slot_uri: cim:PositionPoint.xPosition
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      yPosition:
+        description: "Y axis position."
+        annotations:
+          ea_guid: "EAID_3577FC25_5DB0_46bb_AE53_EE28521E692A"
+        slot_uri: cim:PositionPoint.yPosition
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      Location:
+        description: "Location described by this position point."
+        annotations:
+          ea_guid: "EAID_3915E768_6DC5_4438_99FD_D7A52480F750-B"
+        slot_uri: cim:PositionPoint.Location
+        range: Location
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  StreetAddress:
+    description: "General purpose street and postal address information."
+    annotations:
+      ea_guid: "EAID_7BCBC751_7F78_45b6_B2AF_A9B36A32279D"
+    class_uri: cim:StreetAddress
+    attributes: 
+      postalCode:
+        description: "Postal code for the address."
+        annotations:
+          ea_guid: "EAID_269C6D4D_A5DF_45d7_B9C5_9838F15D5723"
+        slot_uri: cim:StreetAddress.postalCode
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      streetDetail:
+        description: "Street detail."
+        annotations:
+          ea_guid: "EAID_080F12A9_718C_4a10_A2BE_878231C3927F"
+        slot_uri: cim:StreetAddress.streetDetail
+        range: StreetDetail
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      townDetail:
+        description: "Town detail."
+        annotations:
+          ea_guid: "EAID_187CC125_B1BB_42d0_9109_DBF7155516F4"
+        slot_uri: cim:StreetAddress.townDetail
+        range: TownDetail
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  StreetDetail:
+    description: "Street details, in the context of address."
+    annotations:
+      ea_guid: "EAID_A4198329_7F25_4e72_8E8D_C4B4D37288F8"
+    class_uri: cim:StreetDetail
+    attributes: 
+      floorIdentification:
+        description: "The identification by name or number, expressed as text, of the floor in the building as part of this address."
+        annotations:
+          ea_guid: "EAID_38E0BDEB_C212_4f1f_9A6E_A3705713D7C3"
+        slot_uri: cim:StreetDetail.floorIdentification
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      name:
+        description: "Name of the street."
+        annotations:
+          ea_guid: "EAID_CFEA2CAE_B7AA_4efd_ADCA_844A71759BFD"
+        slot_uri: cim:StreetDetail.name
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      number:
+        description: "Designator of the specific location on the street."
+        annotations:
+          ea_guid: "EAID_E0CB4176_0B4A_483f_BF9F_526B1B43FB3B"
+        slot_uri: cim:StreetDetail.number
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      suiteNumber:
+        description: "Number of the apartment or suite."
+        annotations:
+          ea_guid: "EAID_2292B0DB_9622_4f91_A86B_C8067BCB34DF"
+        slot_uri: cim:StreetDetail.suiteNumber
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  SwitchingPlan:
+    description: "A sequence of grouped or atomic steps intended to:- de-energise equipment or part of the network for safe work, and/or- bring back in service previously de-energised equipment or part of the network."
+    annotations:
+      ea_guid: "EAID_94D8F29A_7F14_475a_A47C_4A7A44FDC831"
+    is_a: Document
+    class_uri: cim:SwitchingPlan
+    attributes: 
+      approvedDateTime:
+        description: "The date and time the switching plan was approved"
+        annotations:
+          ea_guid: "EAID_F6C5D9C3_6B86_4667_B16A_A96D45F764D3"
+        slot_uri: cim:SwitchingPlan.approvedDateTime
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      cancelledDateTime:
+        description: "Date and Time the switching plan was cancelled."
+        annotations:
+          ea_guid: "EAID_7540C913_2836_43e3_9DAF_7E81A8DD0B5E"
+        slot_uri: cim:SwitchingPlan.cancelledDateTime
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      purpose:
+        description: "Purpose of  this plan, such as whether it is to move the state from normal to some abnormal condition, or to restore the normal state after an abnormal condition, or to perform some kind of optimisation such as correction of overload, voltage control, etc."
+        annotations:
+          ea_guid: "EAID_1FDFFB30_E37C_4c09_9813_A53FBB508F22"
+        slot_uri: cim:SwitchingPlan.purpose
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      rank:
+        description: "Ranking in comparison to other switching plans."
+        annotations:
+          ea_guid: "EAID_6BBFA369_C2F2_49fb_A2F1_085E8B077A87"
+        slot_uri: cim:SwitchingPlan.rank
+        range: integer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      Outage:
+        description: "Outage that will be activated or eliminated when this switching plan gets executed."
+        annotations:
+          ea_guid: "EAID_D2D106C9_7B45_4172_8201_66E3FAC64E75-A"
+        slot_uri: cim:SwitchingPlan.Outage
+        range: Outage
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      OutagePlan:
+        description: "The outage plan for which the switching plan is defined."
+        annotations:
+          ea_guid: "EAID_205E346A_7AC3_4f63_9926_D90B3687F39B-A"
+        slot_uri: cim:SwitchingPlan.OutagePlan
+        range: OutagePlan
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      plannedPeriod:
+        description: "the planned start and end times for the switching plan."
+        annotations:
+          ea_guid: "EAID_1F964C14_A51B_47aa_9AF9_8840741E6592"
+        slot_uri: cim:SwitchingPlan.plannedPeriod
+        range: DateTimeInterval
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  TownDetail:
+    description: "Town details, in the context of address."
+    annotations:
+      ea_guid: "EAID_E6164797_EA5C_4280_ACA2_1B5F6A71C405"
+    class_uri: cim:TownDetail
+    attributes: 
+      stateOrProvince:
+        description: "Name of the state or province."
+        annotations:
+          ea_guid: "EAID_54BE5603_B97E_4fa8_9398_1AE6FE1A7538"
+        slot_uri: cim:TownDetail.stateOrProvince
+        range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
   UnplannedOutage:
     description: "Document describing the consequence of an unplanned outage in a part of the electrical network. For the purposes of this model, an unplanned outage refers to a state where energy is not delivered; such as, customers out of service, a street light is not served, etc.A unplanned outage may be created upon:- impacts the SAIDI calculation- a breaker trip,- a fault indicator status change,- a meter event indicating customer outage,- a reception of one or more customer trouble calls, or- an operator command, reflecting information obtained from the field crew.Outage restoration may be performed using a switching plan which complements the outage information with detailed switching activities, including the relationship to the crew and work."
     annotations:
-      ea_guid: "_7E6D39E3-90B7-419f-9A40-A63CEA976DE4"
+      ea_guid: "EAID_068C24ED_CE69_4428_9A59_7A9E4E96E837"
     is_a: Outage
     class_uri: cim:UnplannedOutage
     attributes: 
       cause:
         description: "The cause of this outage.  This is the cause that is used to present to external entities.  That is, the cause is weather, equipment failure, etc.Note: At present, this is a free string text; it could be replaced with an enumeration in the future."
         annotations:
-          ea_guid: "_9A9D6ECC-E71D-4ffe-B0E0-189ABDD9F9D7"
+          ea_guid: "EAID_9A9D6ECC_E71D_4ffe_B0E0_189ABDD9F9D7"
         slot_uri: cim:UnplannedOutage.cause
         range: string
         minimum_cardinality: 0
@@ -260,72 +778,102 @@ classes:
       reportedStartTime:
         description: "The earliest start time of the Outage - as reported by some system or individual"
         annotations:
-          ea_guid: "_5BE443C8-30B8-4ef2-879A-03370215004A"
+          ea_guid: "EAID_5BE443C8_30B8_4ef2_879A_03370215004A"
         slot_uri: cim:UnplannedOutage.reportedStartTime
         range: datetime
         minimum_cardinality: 0
         maximum_cardinality: 1
+  UsagePoint:
+    description: "Logical or physical point in the network to which readings or events may be attributed. Used at the place where a physical or virtual meter may be located; however, it is not required that a meter be present."
+    annotations:
+      ea_guid: "EAID_54796D9B_C2B0_4186_99CB_70E4CEF64C85"
+    is_a: IdentifiedObject
+    class_uri: cim:UsagePoint
+    attributes: 
+      CustomerAgreement:
+        description: "Customer agreement regulating this service delivery point."
+        annotations:
+          ea_guid: "EAID_0FEA25EE_6DB0_45d0_99F9_D5895A91A455-B"
+        slot_uri: cim:UsagePoint.CustomerAgreement
+        range: CustomerAgreement
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      UsagePointLocation:
+        description: "Location of this usage point."
+        annotations:
+          ea_guid: "EAID_A316F4EB_589A_4ae7_B7EC_033A447035E7-B"
+        slot_uri: cim:UsagePoint.UsagePointLocation
+        range: UsagePointLocation
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  UsagePointLocation:
+    description: "Location of an individual usage point."
+    annotations:
+      ea_guid: "EAID_355DF23F_F5D0_43f8_A206_1831971FB617"
+    is_a: Location
+    class_uri: cim:UsagePointLocation
+    attributes: 
 types:
 enums:
-  CrewStatusKind:
-    description: "Defines the current status of the Crew - assigned, arrived, etc."
+  NotificationTriggerKind:
+    description: "Kind of trigger to notify customer."
     annotations:
-      ea_guid: "_0256250A-25A5-444f-A3E8-EF37291A12FB"
-    enum_uri:  http://iec.ch/TC57/CIM-generic#CrewStatusKind
+      ea_guid: "EAID_A52701A8_85CB_4fe2_9DC7_F5EDCF562D95"
+    enum_uri:  http://iec.ch/TC57/CIM-generic#NotificationTriggerKind
     permissible_values:
-      arrived:
-        meaning:  cim:CrewStatusKind.arrived
-        description: "the crew is on site at the outage location"
+      etrChange:
+        meaning:  cim:NotificationTriggerKind.etrChange
+        description: "Notify customer if estimated restoration time changes."
         annotations:
-          ea_guid: "_8CC94FC5-1D69-4967-8619-2B2060A069BE"
-      assigned:
-        meaning:  cim:CrewStatusKind.assigned
-        description: "the crew has been assigned to work on a task"
+          ea_guid: "EAID_775E6A45_3F58_4ce8_9A1D_CCD38F954693"
+      informDispatched:
+        meaning:  cim:NotificationTriggerKind.informDispatched
+        description: "Notify customer that a crew has been dispatched to investigate the problem."
         annotations:
-          ea_guid: "_53E018DA-D710-4f09-BF9F-00002BD6B676"
-      awaitingCrewAssignment:
-        meaning:  cim:CrewStatusKind.awaitingCrewAssignment
-        description: "Indicates that the work is awaiting one or more crews to be assigned"
+          ea_guid: "EAID_FCF11AD0_2E2E_4090_8159_7DFCCB5D436F"
+      initialEtr:
+        meaning:  cim:NotificationTriggerKind.initialEtr
+        description: "Notify customer for the first time that estimated restoration time is available."
         annotations:
-          ea_guid: "_35D2334A-1728-4adb-9359-A7F3D7DA9C47"
-      enroute:
-        meaning:  cim:CrewStatusKind.enroute
-        description: "the crew has been dispatched to work on an outage"
+          ea_guid: "EAID_E9A8A82A_DF8D_45bc_9F78_18CC88889579"
+      powerOut:
+        meaning:  cim:NotificationTriggerKind.powerOut
+        description: "Notify customer of planned outage."
         annotations:
-          ea_guid: "_A558BDCD-994E-4835-AB38-81DC1080F516"
-      fieldComplete:
-        meaning:  cim:CrewStatusKind.fieldComplete
-        description: "the crew has corrected the outage in the field.  The equipment or other devices may not be energized at this time."
+          ea_guid: "EAID_11257F70_AD72_4382_B39D_EEC832576F1E"
+      powerRestored:
+        meaning:  cim:NotificationTriggerKind.powerRestored
+        description: "Notify customer when power has been restored."
         annotations:
-          ea_guid: "_DF4869BC-D3EB-4613-A89B-0282E5289E20"
+          ea_guid: "EAID_8AC6D3E4_059C_4bd2_BAD5_53802F86E8B5"
   OutageStatusKind:
     description: "This defines if the outage have been predicted or confirmed"
     annotations:
-      ea_guid: "_EEA30D3B-F1FD-4289-BD60-81C91AEB7886"
+      ea_guid: "EAID_EEA30D3B_F1FD_4289_BD60_81C91AEB7886"
     enum_uri:  http://iec.ch/TC57/CIM-generic#OutageStatusKind
     permissible_values:
       closed:
         meaning:  cim:OutageStatusKind.closed
         description: "The outage has been fully restored, the crews have been released and the outage is shown as closed"
         annotations:
-          ea_guid: "_7AD31E5D-F74F-4d20-883B-8F37F3F9674A"
+          ea_guid: "EAID_7AD31E5D_F74F_4d20_883B_8F37F3F9674A"
       confirmed:
         meaning:  cim:OutageStatusKind.confirmed
         description: "the outage has been verified"
         annotations:
-          ea_guid: "_C25C7C45-AC9E-492c-AC84-68A1C56F7730"
+          ea_guid: "EAID_C25C7C45_AC9E_492c_AC84_68A1C56F7730"
       partiallyRestored:
         meaning:  cim:OutageStatusKind.partiallyRestored
         description: "Some of the usage points affected by the outage have been restored but other usage points are still out of power."
         annotations:
-          ea_guid: "_DABA1CC0-3186-47a9-A1CB-3567E15739F3"
+          ea_guid: "EAID_DABA1CC0_3186_47a9_A1CB_3567E15739F3"
       predicted:
         meaning:  cim:OutageStatusKind.predicted
         description: "the outage may not be real since it has not been verified - it is only thought to be an outage."
         annotations:
-          ea_guid: "_4BB374BE-D703-4f05-8B67-209BC2BD3CA6"
+          ea_guid: "EAID_4BB374BE_D703_4f05_8B67_209BC2BD3CA6"
       restored:
         meaning:  cim:OutageStatusKind.restored
         description: "All usage points associated with the outage have been restored"
         annotations:
-          ea_guid: "_CF0793F6-AC4F-4c31-BF02-A8CB5561A60C"
+          ea_guid: "EAID_CF0793F6_AC4F_4c31_BF02_A8CB5561A60C"
