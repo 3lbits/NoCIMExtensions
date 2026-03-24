@@ -16,6 +16,7 @@ prefixes:
   dcat: http://www.w3.org/ns/dcat#
   eu: http://iec.ch/TC57/CIM100-European#
   cim: http://iec.ch/TC57/CIM-generic#
+  nc: https://cim4.eu/ns/nc#
 imports:
 - linkml:types
 default_curi_maps:
@@ -326,7 +327,7 @@ classes:
         description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
         annotations:
           ea_guid: "EAID_0832318E_6D07_4a67_AE9C_D38696E501BC"
-        slot_uri: cim:Name.mRID
+        slot_uri: nc:Name.mRID
         range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
@@ -364,7 +365,7 @@ classes:
         description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
         annotations:
           ea_guid: "EAID_61D5DF3B_B46C_41d3_B386_9CDA4ADEC804"
-        slot_uri: cim:NameType.mRID
+        slot_uri: nc:NameType.mRID
         range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
