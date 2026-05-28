@@ -1,0 +1,31 @@
+graph TD
+    classDef VoltageLevel fill:#F0A30A,color:#FFFFFF,stroke:#F0A30A
+    classDef Bay fill:#6D8764,color:#FFFFFF,stroke:#6D8764
+    classDef Terminal fill:#000000,color:#FFFFFF,stroke:#000000
+    classDef CN_VoltageLevel fill:#F0A30A,color:#000,stroke:#F0A30A
+    classDef CN_Bay fill:#6D8764,color:#FFFFFF,stroke:#6D8764
+    classDef Line fill:#CC0000,color:#FFFFFF,stroke:#CC0000
+    classDef ACLS_Line fill:#CC0000,color:#FFFFFF,stroke:#CC0000
+    classDef CN_Line fill:#CC0000,color:#FFFFFF,stroke:#CC0000
+    classDef Jumper fill:#6D8764,color:#FFFFFF,stroke:#6D8764
+    classDef BusbarSection fill:#F0A30A,color:#000,stroke:#F0A30A
+
+    %% Container legend
+    VL[VL]:::VoltageLevel
+    Bay1[Bay]:::Bay
+    L[Line]:::Line
+
+    %% BusbarSection at VoltageLevel
+    BS[BS]:::BusbarSection --- T1((T)):::Terminal --- CN((CN)):::CN_VoltageLevel
+
+    %% Bay 1: Jumper to Line 1
+    CN --- T2((T)):::Terminal --- J1[Jumper]:::Jumper --- T3((T)):::Terminal --- CN_B1((CN)):::CN_Bay
+    CN_B1 --- T4((T)):::Terminal --- ACLS1[ACLS]:::ACLS_Line --- T5((T)):::Terminal --- CN1((CN)):::CN_Line
+
+    %% Bay 2: Jumper to Line 2
+    CN --- T6((T)):::Terminal --- J2[Jumper]:::Jumper --- T7((T)):::Terminal --- CN_B2((CN)):::CN_Bay
+    CN_B2 --- T8((T)):::Terminal --- ACLS2[ACLS]:::ACLS_Line --- T9((T)):::Terminal --- CN2((CN)):::CN_Line
+
+    %% Bay 3: Jumper to Line 3
+    CN --- T10((T)):::Terminal --- J3[Jumper]:::Jumper --- T11((T)):::Terminal --- CN_B3((CN)):::CN_Bay
+    CN_B3 --- T12((T)):::Terminal --- ACLS3[ACLS]:::ACLS_Line --- T13((T)):::Terminal --- CN3((CN)):::CN_Line

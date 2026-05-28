@@ -1,0 +1,59 @@
+graph TD
+    classDef Substation fill:#0050EF,color:#FFFFFF,stroke:#0050EF
+    classDef VoltageLevel fill:#F0A30A,color:#FFFFFF,stroke:#F0A30A
+    classDef Bay fill:#6D8764,color:#FFFFFF,stroke:#6D8764
+    classDef FeederLine fill:#7B68A2,color:#FFFFFF,stroke:#7B68A2
+    classDef Terminal fill:#000000,color:#FFFFFF,stroke:#000000
+    classDef CN_VoltageLevel fill:#F0A30A,color:#000,stroke:#F0A30A
+    classDef CN_Bay fill:#6D8764,color:#FFFFFF,stroke:#6D8764
+    classDef CN_FeederLine fill:#7B68A2,color:#FFFFFF,stroke:#7B68A2
+    classDef PowerTransformer fill:#0050EF,color:#FFFFFF,stroke:#0050EF
+    classDef Switch fill:#6D8764,color:#FFFFFF,stroke:#6D8764
+    classDef Switch_FeederLine fill:#7B68A2,color:#FFFFFF,stroke:#7B68A2
+    classDef BusbarSection fill:#F0A30A,color:#000,stroke:#F0A30A
+    classDef BusbarSection_FeederLine fill:#7B68A2,color:#FFFFFF,stroke:#7B68A2
+    classDef ACLS fill:#7B68A2,color:#FFFFFF,stroke:#7B68A2
+    classDef ConformLoad fill:#7B68A2,color:#FFFFFF,stroke:#7B68A2
+
+    %% Container legend (standalone)
+    Sub[Sub]:::Substation
+    VL[VL]:::VoltageLevel
+    Bay1[Bay]:::Bay
+    FL[FL]:::FeederLine
+
+    %% HV equipment chain
+    BS_HV[BS<br>22 kV]:::BusbarSection --- T1((T)):::Terminal --- CN1((CN)):::CN_VoltageLevel
+    CN1 --- T2((T)):::Terminal --- SW1[Switch]:::Switch --- T3((T)):::Terminal --- CN2((CN)):::CN_Bay
+    CN2 --- T4((T)):::Terminal --- SW2[Switch]:::Switch --- T5((T)):::Terminal --- CN3((CN)):::CN_Bay
+    CN3 --- T6((T)):::Terminal --- PT[PT]:::PowerTransformer
+
+    %% PT splits to two LV busbars via switches
+    PT --- T7((T)):::Terminal --- CN_PT1((CN)):::CN_Bay
+    CN_PT1 --- T35((T)):::Terminal --- SW6[Switch]:::Switch --- T36((T)):::Terminal --- CN4((CN)):::CN_VoltageLevel
+    PT --- T8((T)):::Terminal --- CN_PT2((CN)):::CN_Bay
+    CN_PT2 --- T37((T)):::Terminal --- SW7[Switch]:::Switch --- T38((T)):::Terminal --- CN5((CN)):::CN_VoltageLevel
+    CN4 --- T9((T)):::Terminal --- BS230[BS<br>230 V]:::BusbarSection
+    CN5 --- T10((T)):::Terminal --- BS400[BS<br>400 V]:::BusbarSection
+
+    %% Feeder 1 from 230V bus
+    CN4 --- T12((T)):::Terminal --- SW3[Switch]:::Switch --- T33((T)):::Terminal --- CN6((CN)):::CN_Bay
+    CN6 --- T13((T)):::Terminal --- ACLS1[ACLS]:::ACLS --- T14((T)):::Terminal --- CN7((CN)):::CN_FeederLine
+    CN7 --- T29((T)):::Terminal --- CL1[CL]:::ConformLoad
+
+    %% Feeder 2 from 230V bus (longer chain)
+    CN4 --- T15((T)):::Terminal --- SW4[Switch]:::Switch --- T16((T)):::Terminal --- CN8((CN)):::CN_Bay
+    CN8 --- T17((T)):::Terminal --- ACLS2[ACLS]:::ACLS --- T18((T)):::Terminal --- CN9((CN)):::CN_FeederLine
+    CN9 --- T19((T)):::Terminal --- ACLS3[ACLS]:::ACLS --- T20((T)):::Terminal --- CN10((CN)):::CN_FeederLine
+    CN10 --- T21((T)):::Terminal --- ACLS4[ACLS]:::ACLS --- T22((T)):::Terminal --- CN11((CN)):::CN_FeederLine
+    CN10 --- T23((T)):::Terminal --- ACLS5[ACLS]:::ACLS --- T24((T)):::Terminal --- CN12((CN)):::CN_FeederLine
+    CN11 --- T30((T)):::Terminal --- CL2[CL]:::ConformLoad
+    CN12 --- T31((T)):::Terminal --- CL3[CL]:::ConformLoad
+
+    %% Feeder 3 from 400V bus (cable grid with switches at junction)
+    CN5 --- T26((T)):::Terminal --- SW5[Switch]:::Switch --- T34((T)):::Terminal --- CN13((CN)):::CN_Bay
+    CN13 --- T27((T)):::Terminal --- ACLS6[ACLS]:::ACLS --- T28((T)):::Terminal --- CN20((CN)):::CN_FeederLine --- T51((T)):::Terminal --- SW8[Switch]:::Switch_FeederLine --- T45((T)):::Terminal --- CN15((CN)):::CN_FeederLine
+    CN15 --- T48((T)):::Terminal --- BS3[BS]:::BusbarSection_FeederLine
+    CN15 --- T46((T)):::Terminal --- SW9[Switch]:::Switch_FeederLine --- T52((T)):::Terminal --- CN21((CN)):::CN_FeederLine --- T39((T)):::Terminal --- ACLS7[ACLS]:::ACLS --- T40((T)):::Terminal --- CN16((CN)):::CN_FeederLine
+    CN16 --- T41((T)):::Terminal --- CL4[CL]:::ConformLoad
+    CN15 --- T47((T)):::Terminal --- SW10[Switch]:::Switch_FeederLine --- T53((T)):::Terminal --- CN22((CN)):::CN_FeederLine --- T42((T)):::Terminal --- ACLS8[ACLS]:::ACLS --- T43((T)):::Terminal --- CN17((CN)):::CN_FeederLine
+    CN17 --- T44((T)):::Terminal --- CL5[CL]:::ConformLoad

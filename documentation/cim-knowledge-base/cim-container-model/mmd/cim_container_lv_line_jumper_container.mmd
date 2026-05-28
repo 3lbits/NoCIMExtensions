@@ -1,0 +1,63 @@
+graph TD
+    classDef Substation fill:#0050EF,color:#FFFFFF,stroke:#0050EF
+    classDef VoltageLevel fill:#F0A30A,color:#FFFFFF,stroke:#F0A30A
+    classDef Bay fill:#6D8764,color:#FFFFFF,stroke:#6D8764
+    classDef Line fill:#CC0000,color:#FFFFFF,stroke:#CC0000
+    classDef FeederLine fill:#7B68A2,color:#FFFFFF,stroke:#7B68A2
+
+    Sub[Substation]:::Substation
+
+    VL_HV[VoltageLevel<br>22 kV]:::VoltageLevel
+    VL_230[VoltageLevel<br>230 V]:::VoltageLevel
+    VL_400[VoltageLevel<br>400 V]:::VoltageLevel
+
+    Bay_HV[Bay]:::Bay
+    Bay_230_1[Bay]:::Bay
+    Bay_230_2[Bay]:::Bay
+    Bay_230_3[Bay]:::Bay
+    Bay_400_1[Bay]:::Bay
+    Bay_400_2[Bay]:::Bay
+
+    L1[FeederLine]:::FeederLine
+    L2a[Line]:::Line
+    L2b[FeederLine]:::FeederLine
+    L2c[FeederLine]:::FeederLine
+    L3a[Line]:::Line
+    L3b[FeederLine]:::FeederLine
+    L3c[FeederLine]:::FeederLine
+
+    VL_LV[VoltageLevel<br>LV]:::VoltageLevel
+    Bay_LV_1[Bay]:::Bay
+    Bay_LV_2[Bay]:::Bay
+    Bay_LV_in[Bay]:::Bay
+
+    VL_CG[VoltageLevel<br>Cable Grid]:::VoltageLevel
+    Sub_CG[Substation]:::Substation
+    Bay_CG_in[Bay]:::Bay
+    Bay_CG_1[Bay]:::Bay
+    Bay_CG_2[Bay]:::Bay
+
+    %% VoltageLevel (22 kV) belongs to Substation
+    Sub --- VL_HV
+    VL_HV --- Bay_HV
+
+    %% VoltageLevel (230 V) belongs to Substation
+    Sub --- VL_230
+    VL_230 --- Bay_230_1
+    VL_230 --- Bay_230_2 --- L1
+    VL_230 --- Bay_230_3 --- L2a
+
+    %% Line arrives at secondary VL via Bay
+    L2a --- Bay_LV_in --- VL_LV
+    VL_LV --- Sub_LV[Substation]:::Substation
+    VL_LV --- Bay_LV_1 --- L2b
+    VL_LV --- Bay_LV_2 --- L2c
+
+    %% VoltageLevel (400 V) belongs to Substation
+    Sub --- VL_400
+    VL_400 --- Bay_400_1
+    VL_400 --- Bay_400_2 --- L3a
+    L3a --- Bay_CG_in --- VL_CG
+    VL_CG --- Sub_CG
+    VL_CG --- Bay_CG_1 --- L3b
+    VL_CG --- Bay_CG_2 --- L3c

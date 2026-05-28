@@ -1,0 +1,31 @@
+graph TD
+    classDef VoltageLevel fill:#F0A30A,color:#FFFFFF,stroke:#F0A30A
+    classDef Bay fill:#6D8764,color:#FFFFFF,stroke:#6D8764
+    classDef Terminal fill:#000000,color:#FFFFFF,stroke:#000000
+    classDef CN_VoltageLevel fill:#F0A30A,color:#000,stroke:#F0A30A
+    classDef CN_Bay fill:#6D8764,color:#FFFFFF,stroke:#6D8764
+    classDef Switch fill:#6D8764,color:#FFFFFF,stroke:#6D8764
+    classDef BusbarSection fill:#F0A30A,color:#000,stroke:#F0A30A
+    classDef ACLS fill:#CC0000,color:#FFFFFF,stroke:#CC0000
+    classDef Junction fill:#6D8764,color:#FFFFFF,stroke:#6D8764
+    classDef GroundDisconnector fill:#6D8764,color:#FFFFFF,stroke:#6D8764
+    classDef Ground fill:#6D8764,color:#FFFFFF,stroke:#6D8764
+
+    %% Left busbar path down to central CN
+    BS1[BS]:::BusbarSection --- T1((T)):::Terminal --- CN1((CN)):::CN_VoltageLevel
+    CN1 --- T2((T)):::Terminal --- SW1[Switch]:::Switch --- T3((T)):::Terminal --- CN2((CN)):::CN_Bay
+    CN2 --- T4((T)):::Terminal --- SW2[Switch]:::Switch --- T5((T)):::Terminal --- CN_C((CN)):::CN_Bay
+
+    %% Right busbar path down to central CN
+    CN3((CN)):::CN_VoltageLevel --- T6((T)):::Terminal --- BS2[BS]:::BusbarSection
+    CN3 --- T7((T)):::Terminal --- SW3[Switch]:::Switch --- T8((T)):::Terminal --- CN4((CN)):::CN_Bay
+    CN4 --- T9((T)):::Terminal --- SW4[Switch]:::Switch --- T10((T)):::Terminal --- CN_C
+
+    %% Junction (left from central CN)
+    CN_C --- T11((T)):::Terminal --- Junction[Junction]:::Junction
+
+    %% ACLS (down from central CN)
+    CN_C --- T12((T)):::Terminal --- ACLS[ACLS]:::ACLS
+
+    %% GroundDisconnector + Ground (right from central CN)
+    CN_C --- T13((T)):::Terminal --- GD[GD]:::GroundDisconnector --- T14((T)):::Terminal --- CN5((CN)):::CN_Bay --- T15((T)):::Terminal --- Ground[Ground]:::Ground

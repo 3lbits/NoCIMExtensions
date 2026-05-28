@@ -1,0 +1,10 @@
+graph TD
+    classDef Terminal fill:#000000,color:#FFFFFF,stroke:#000000
+    classDef CN fill:#CC0000,color:#FFFFFF,stroke:#CC0000
+    classDef ACLS fill:#CC0000,color:#FFFFFF,stroke:#CC0000
+    classDef Junction fill:#CC0000,color:#FFFFFF,stroke:#CC0000
+
+    ACLS1[ACLS]:::ACLS --- T1((T)):::Terminal --- CN((CN)):::CN
+    CN --- T2((T)):::Terminal --- ACLS2[ACLS]:::ACLS
+    CN --- T3((T)):::Terminal --- ACLS3[ACLS]:::ACLS
+    CN --- Junction[Junction]:::Junction

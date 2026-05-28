@@ -1,0 +1,37 @@
+graph TD
+    classDef Substation fill:#0050EF,color:#FFFFFF,stroke:#0050EF
+    classDef VoltageLevel fill:#F0A30A,color:#FFFFFF,stroke:#F0A30A
+    classDef Bay fill:#6D8764,color:#FFFFFF,stroke:#6D8764
+    classDef FeederLine fill:#7B68A2,color:#FFFFFF,stroke:#7B68A2
+
+    Sub[Substation]:::Substation
+
+    VL_HV[VoltageLevel<br>22 kV]:::VoltageLevel
+    VL_230[VoltageLevel<br>230 V]:::VoltageLevel
+    VL_400[VoltageLevel<br>400 V]:::VoltageLevel
+
+    Bay_HV[Bay]:::Bay
+    Bay_230_1[Bay]:::Bay
+    Bay_230_2[Bay]:::Bay
+    Bay_230_3[Bay]:::Bay
+    Bay_400_1[Bay]:::Bay
+    Bay_400_2[Bay]:::Bay
+
+    FL1[FeederLine]:::FeederLine
+    FL2[FeederLine]:::FeederLine
+    FL3[FeederLine]:::FeederLine
+
+    %% VoltageLevel (22 kV) belongs to Substation
+    Sub --- VL_HV
+    VL_HV --- Bay_HV
+
+    %% VoltageLevel (230 V) belongs to Substation
+    Sub --- VL_230
+    VL_230 --- Bay_230_1
+    VL_230 --- Bay_230_2 --- FL1
+    VL_230 --- Bay_230_3 --- FL2
+
+    %% VoltageLevel (400 V) belongs to Substation
+    Sub --- VL_400
+    VL_400 --- Bay_400_1
+    VL_400 --- Bay_400_2 --- FL3

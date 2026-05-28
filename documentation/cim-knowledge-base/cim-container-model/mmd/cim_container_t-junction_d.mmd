@@ -1,0 +1,15 @@
+graph TD
+    classDef FeederLine fill:#7B68A2,color:#FFFFFF,stroke:#7B68A2
+    classDef Terminal fill:#000000,color:#FFFFFF,stroke:#000000
+    classDef CN_FeederLine fill:#7B68A2,color:#FFFFFF,stroke:#7B68A2
+    classDef ACLS_FeederLine fill:#7B68A2,color:#FFFFFF,stroke:#7B68A2
+    classDef Junction fill:#7B68A2,color:#FFFFFF,stroke:#7B68A2
+
+    %% Container legend
+    FL[FL]:::FeederLine
+
+    %% All in same FeederLine
+    ACLS1[ACLS]:::ACLS_FeederLine --- T1((T)):::Terminal --- CN((CN)):::CN_FeederLine
+    CN --- T2((T)):::Terminal --- ACLS2[ACLS]:::ACLS_FeederLine
+    CN --- T3((T)):::Terminal --- ACLS3[ACLS]:::ACLS_FeederLine
+    CN -.- Junction[Junction]:::Junction

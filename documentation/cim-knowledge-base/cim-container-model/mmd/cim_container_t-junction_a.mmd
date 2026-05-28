@@ -1,0 +1,24 @@
+graph TD
+    classDef VoltageLevel fill:#F0A30A,color:#FFFFFF,stroke:#F0A30A
+    classDef Terminal fill:#000000,color:#FFFFFF,stroke:#000000
+    classDef CN_VoltageLevel fill:#F0A30A,color:#000,stroke:#F0A30A
+    classDef Line fill:#CC0000,color:#FFFFFF,stroke:#CC0000
+    classDef ACLS_Line fill:#CC0000,color:#FFFFFF,stroke:#CC0000
+    classDef CN_Line fill:#CC0000,color:#FFFFFF,stroke:#CC0000
+    classDef Junction fill:#F0A30A,color:#000,stroke:#F0A30A
+
+    %% Container legend
+    VL[VL]:::VoltageLevel
+    L[Line]:::Line
+
+    %% Junction at VoltageLevel CN
+    Junction[Junction]:::Junction --- T1((T)):::Terminal --- CN((CN)):::CN_VoltageLevel
+
+    %% Line 1: ACLS going out
+    CN --- T2((T)):::Terminal --- ACLS1[ACLS]:::ACLS_Line --- T3((T)):::Terminal --- CN1((CN)):::CN_Line
+
+    %% Line 2: ACLS going out
+    CN --- T4((T)):::Terminal --- ACLS2[ACLS]:::ACLS_Line --- T5((T)):::Terminal --- CN2((CN)):::CN_Line
+
+    %% Line 3: ACLS going out
+    CN --- T6((T)):::Terminal --- ACLS3[ACLS]:::ACLS_Line --- T7((T)):::Terminal --- CN3((CN)):::CN_Line
