@@ -103,4 +103,8 @@ docs/               Generated MkDocs documentation source
 cim4CLITool/        CLI tool source code
 ```
 
+## Acknowledgements
+
+The CGMES (Common Grid Model Exchange Standard) LinkML schemas used in this project are sourced from [Netbeheer-Nederland/cgmes](https://github.com/Netbeheer-Nederland/cgmes) — ENTSO-E CGMES profiles represented as LinkML schemas. The Norwegian extension profiles are maintained by us.
+
 ## Before you start
