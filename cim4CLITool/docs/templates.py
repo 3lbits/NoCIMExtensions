@@ -7,11 +7,11 @@ import os
 class General:
 
     def write_file(output_path, data):
-        with open(output_path, 'w') as f:
+        with open(output_path, 'w', encoding='utf-8') as f:
             f.write(data)
 
     def read_file(input_path):
-        with open(input_path, 'r') as f:
+        with open(input_path, 'r', encoding='utf-8') as f:
             data = f.read()
         return data
 

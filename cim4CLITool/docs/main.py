@@ -105,7 +105,7 @@ class mkdocs:
 class General():
     
     def readYamlSchemaFile(self, yamlSchemaPath):
-        with open(yamlSchemaPath, "r") as file: # mkdocs can not take utf-8 but cp1252 , encoding="utf-8"
+        with open(yamlSchemaPath, "r", encoding="utf-8") as file:
             
             yamlDict = yaml.safe_load(file)
 
@@ -783,7 +783,7 @@ class CreateMarkdownFile():
                 path = os.path.join("docs", "Models", "Profiles", globalDocName, "Enumerations" , f"{key}.md")
                 os.makedirs(os.path.dirname(path), exist_ok=True)
 
-                with open(path, 'w') as file:
+                with open(path, 'w', encoding='utf-8') as file:
                     file.write(f'# {key}\n\n')
                     file.write(f'_{description}_\n\n')
                     file.write(f'**URI**: {uri}\n\n')
@@ -827,7 +827,7 @@ class CreateMarkdownFile():
                 path = os.path.join("docs", "Models", "Profiles", globalDocName, "Types" , f"{key}.md")
                 os.makedirs(os.path.dirname(path), exist_ok=True)
 
-                with open(path, 'w') as file:
+                with open(path, 'w', encoding='utf-8') as file:
                     file.write(f'# {key}\n\n')
                     file.write(f'_{description}_\n\n') if description != None else None
                     file.write(f'*{cim_data_type_text}*\n\n') if cim_data_type_text != None else None
@@ -847,7 +847,7 @@ class CreateMarkdownFile():
         path = os.path.join("docs", "index.md")
         os.makedirs(os.path.dirname(path), exist_ok=True)
         
-        with open(path, 'w') as file:
+        with open(path, 'w', encoding='utf-8') as file:
 
             file.write(f'# {vocabularyData["title"]}\n\n')
             file.write(f'**URI**: {vocabularyData["uri"]}\n\n')
@@ -951,7 +951,7 @@ class CreateMarkdownFile():
 
         os.makedirs(os.path.dirname(path), exist_ok=True)
 
-        with open(path, 'w') as file:
+        with open(path, 'w', encoding='utf-8') as file:
             file.write(f"# {title}\n\n")
             file.write(f'_{description}_\n\n')
             file.write(f'*__NOTE__: this is an abstract class and should not be instantiated directly\n\n') if abstract == True else None

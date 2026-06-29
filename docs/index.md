@@ -11,7 +11,14 @@ To access examples of how to use these profiles, please visit our [GitHub reposi
 Profiles:
 
 - [AviationObstacle](/Models/Profiles/AviationObstacle/)
-- [BoundaryModel](/Models/Profiles/BoundaryModel/)
-- [Equipment](/Models/Profiles/Equipment/)
+- [CoreEquipment](/Models/Profiles/CoreEquipment/)
+- [DiagramLayout](/Models/Profiles/DiagramLayout/)
+- [EquipmentBoundary](/Models/Profiles/EquipmentBoundary/)
+- [GeographicalLocation](/Models/Profiles/GeographicalLocation/)
 - [GridCapacity](/Models/Profiles/GridCapacity/)
+- [Operation](/Models/Profiles/Operation/)
+- [ShortCircuit](/Models/Profiles/ShortCircuit/)
+- [StateVariables](/Models/Profiles/StateVariables/)
+- [SteadyStateHypothesis](/Models/Profiles/SteadyStateHypothesis/)
 - [SubseaCableInfo](/Models/Profiles/SubseaCableInfo/)
+- [Topology](/Models/Profiles/Topology/)
