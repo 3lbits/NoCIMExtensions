@@ -68,6 +68,8 @@ classes:
       and auxiliaries, if any, used for conversion.
   CurrentFlow:
     class_uri: cim:CurrentFlow
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:CurrentFlow.value
@@ -88,6 +90,8 @@ classes:
       the conducting equipment into the connectivity node. Can be both AC and DC.'
   ActivePower:
     class_uri: cim:ActivePower
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:ActivePower.value
@@ -108,6 +112,8 @@ classes:
       component of the current.
   Voltage:
     class_uri: cim:Voltage
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:Voltage.value
@@ -181,6 +187,8 @@ classes:
       The range is typically 17-20 degrees.'
   AngleDegrees:
     class_uri: cim:AngleDegrees
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:AngleDegrees.value
@@ -303,6 +311,8 @@ classes:
       may have the remainder after state estimation or slack after power flow calculation.
   ReactivePower:
     class_uri: cim:ReactivePower
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:ReactivePower.value

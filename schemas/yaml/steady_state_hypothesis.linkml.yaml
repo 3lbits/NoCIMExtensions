@@ -70,6 +70,8 @@ classes:
       and auxiliaries, if any, used for conversion.
   ActivePower:
     class_uri: cim:ActivePower
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:ActivePower.value
@@ -90,6 +92,8 @@ classes:
       component of the current.
   ReactivePower:
     class_uri: cim:ReactivePower
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:ReactivePower.value
@@ -110,6 +114,8 @@ classes:
       component of the current.
   Voltage:
     class_uri: cim:Voltage
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:Voltage.value
@@ -183,6 +189,8 @@ classes:
     description: Apparent power limit.
   ApparentPower:
     class_uri: cim:ApparentPower
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:ApparentPower.value
@@ -234,6 +242,8 @@ classes:
     description: An electrochemical energy storage device.
   RealEnergy:
     class_uri: cim:RealEnergy
+    annotations:
+      cim_data_type: true
     attributes:
       multiplier:
         slot_uri: cim:RealEnergy.multiplier
@@ -385,6 +395,8 @@ classes:
       The range is typically 17-20 degrees.'
   AngleDegrees:
     class_uri: cim:AngleDegrees
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:AngleDegrees.value
@@ -404,6 +416,8 @@ classes:
     description: Measurement of angle in degrees.
   CurrentFlow:
     class_uri: cim:CurrentFlow
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:CurrentFlow.value
@@ -540,6 +554,8 @@ classes:
       distribution voltage level.
   AngleRadians:
     class_uri: cim:AngleRadians
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:AngleRadians.value
@@ -1196,6 +1212,8 @@ classes:
     description: DC side of the voltage source converter (VSC).
   PU:
     class_uri: cim:PU
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:PU.value
@@ -1216,6 +1234,8 @@ classes:
       Values typically range from -10 to +10.
   Resistance:
     class_uri: cim:Resistance
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:Resistance.value
@@ -1235,6 +1255,8 @@ classes:
     description: Resistance (real part of impedance).
   PerCent:
     class_uri: cim:PerCent
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:PerCent.value

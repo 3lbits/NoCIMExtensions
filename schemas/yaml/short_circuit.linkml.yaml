@@ -85,6 +85,8 @@ classes:
       in general requires use of an equivalent branch.'
   Susceptance:
     class_uri: cim:Susceptance
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:Susceptance.value
@@ -104,6 +106,8 @@ classes:
     description: Imaginary part of admittance.
   Conductance:
     class_uri: cim:Conductance
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:Conductance.value
@@ -124,6 +128,8 @@ classes:
       power lost from a circuit. Real part of admittance.
   Resistance:
     class_uri: cim:Resistance
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:Resistance.value
@@ -143,6 +149,8 @@ classes:
     description: Resistance (real part of impedance).
   Temperature:
     class_uri: cim:Temperature
+    annotations:
+      cim_data_type: true
     attributes:
       multiplier:
         slot_uri: cim:Temperature.multiplier
@@ -162,6 +170,8 @@ classes:
     description: Value of temperature in degrees Celsius.
   Reactance:
     class_uri: cim:Reactance
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:Reactance.value
@@ -238,6 +248,8 @@ classes:
       rotor windings, e.g. squirrel-cage induction machine.
   PerCent:
     class_uri: cim:PerCent
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:PerCent.value
@@ -259,6 +271,8 @@ classes:
       at the defined base.
   ActivePower:
     class_uri: cim:ActivePower
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:ActivePower.value
@@ -296,6 +310,8 @@ classes:
       \ terminals but for analysis is modelled with exactly one logical terminal."
   CurrentFlow:
     class_uri: cim:CurrentFlow
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:CurrentFlow.value
@@ -691,6 +707,8 @@ classes:
       60909 calculations.
   PU:
     class_uri: cim:PU
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:PU.value
@@ -832,6 +850,8 @@ classes:
     description: This class represents the zero sequence line mutual coupling.
   Length:
     class_uri: cim:Length
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:Length.value
@@ -926,6 +946,8 @@ classes:
       during single line faults in an ungrounded section of network.
   Voltage:
     class_uri: cim:Voltage
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:Voltage.value
@@ -1026,6 +1048,8 @@ classes:
       association from TransformerEnd to BaseVoltage should be used instead.'
   AngleDegrees:
     class_uri: cim:AngleDegrees
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:AngleDegrees.value

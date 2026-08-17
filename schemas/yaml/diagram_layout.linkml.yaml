@@ -185,6 +185,8 @@ classes:
       breakers, disconnectors, power transformers, and transmission lines.
   AngleDegrees:
     class_uri: cim:AngleDegrees
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:AngleDegrees.value

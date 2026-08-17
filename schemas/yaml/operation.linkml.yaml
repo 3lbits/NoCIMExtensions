@@ -510,6 +510,8 @@ classes:
       many state values, each representing a different source for the measurement.
   PerCent:
     class_uri: cim:PerCent
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:PerCent.value

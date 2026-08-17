@@ -132,6 +132,8 @@ classes:
       and auxiliaries, if any, used for conversion.
   ApparentPower:
     class_uri: cim:ApparentPower
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:ApparentPower.value
@@ -152,6 +154,8 @@ classes:
       current.
   ActivePower:
     class_uri: cim:ActivePower
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:ActivePower.value
@@ -172,6 +176,8 @@ classes:
       component of the current.
   Voltage:
     class_uri: cim:Voltage
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:Voltage.value
@@ -191,6 +197,8 @@ classes:
     description: Electrical voltage, can be both AC and DC.
   Resistance:
     class_uri: cim:Resistance
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:Resistance.value
@@ -210,6 +218,8 @@ classes:
     description: Resistance (real part of impedance).
   ActivePowerPerCurrentFlow:
     class_uri: cim:ActivePowerPerCurrentFlow
+    annotations:
+      cim_data_type: true
     attributes:
       multiplier:
         slot_uri: cim:ActivePowerPerCurrentFlow.multiplier
@@ -340,6 +350,8 @@ classes:
       in general requires use of an equivalent branch.'
   Susceptance:
     class_uri: cim:Susceptance
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:Susceptance.value
@@ -359,6 +371,8 @@ classes:
     description: Imaginary part of admittance.
   Conductance:
     class_uri: cim:Conductance
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:Conductance.value
@@ -379,6 +393,8 @@ classes:
       power lost from a circuit. Real part of admittance.
   Reactance:
     class_uri: cim:Reactance
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:Reactance.value
@@ -441,6 +457,8 @@ classes:
       rotor windings, e.g. squirrel-cage induction machine.
   Frequency:
     class_uri: cim:Frequency
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:Frequency.value
@@ -460,6 +478,8 @@ classes:
     description: Cycles per second.
   RotationSpeed:
     class_uri: cim:RotationSpeed
+    annotations:
+      cim_data_type: true
     attributes:
       multiplier:
         slot_uri: cim:RotationSpeed.multiplier
@@ -564,6 +584,8 @@ classes:
     description: An electrochemical energy storage device.
   RealEnergy:
     class_uri: cim:RealEnergy
+    annotations:
+      cim_data_type: true
     attributes:
       multiplier:
         slot_uri: cim:RealEnergy.multiplier
@@ -776,6 +798,8 @@ classes:
       \ can be connected to the Clamp ConnectivityNode."
   Length:
     class_uri: cim:Length
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:Length.value
@@ -1107,6 +1131,8 @@ classes:
       The range is typically 17-20 degrees.'
   AngleDegrees:
     class_uri: cim:AngleDegrees
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:AngleDegrees.value
@@ -1126,6 +1152,8 @@ classes:
     description: Measurement of angle in degrees.
   CurrentFlow:
     class_uri: cim:CurrentFlow
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:CurrentFlow.value
@@ -1381,6 +1409,8 @@ classes:
     description: A ground within a DC system.
   Inductance:
     class_uri: cim:Inductance
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:Inductance.value
@@ -1444,6 +1474,8 @@ classes:
       points in the DC region of the power system.
   Capacitance:
     class_uri: cim:Capacitance
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:Capacitance.value
@@ -1635,6 +1667,8 @@ classes:
       if LoadResponseCharacteristic.exponentModel is set to False.'
   PerCent:
     class_uri: cim:PerCent
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:PerCent.value
@@ -1656,6 +1690,8 @@ classes:
       at the defined base.
   ReactivePower:
     class_uri: cim:ReactivePower
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:ReactivePower.value
@@ -1965,6 +2001,8 @@ classes:
       60909 calculations.
   ActivePowerPerFrequency:
     class_uri: cim:ActivePowerPerFrequency
+    annotations:
+      cim_data_type: true
     attributes:
       multiplier:
         slot_uri: cim:ActivePowerPerFrequency.multiplier
@@ -2162,6 +2200,8 @@ classes:
       of the set and an additional GeneratingUnit corresponding to the set.
   Money:
     class_uri: cim:Money
+    annotations:
+      cim_data_type: true
     attributes:
       unit:
         slot_uri: cim:Money.unit
@@ -2181,6 +2221,8 @@ classes:
     description: Amount of money.
   Seconds:
     class_uri: cim:Seconds
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:Seconds.value
@@ -3537,6 +3579,8 @@ classes:
       a reactor. ShuntCompensator is a single terminal device.  Ground is implied.
   VoltagePerReactivePower:
     class_uri: cim:VoltagePerReactivePower
+    annotations:
+      cim_data_type: true
     attributes:
       value:
         slot_uri: cim:VoltagePerReactivePower.value
