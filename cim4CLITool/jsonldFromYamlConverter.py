@@ -237,7 +237,7 @@ def createJsonOutput(graphList, context, yamlSchemaDict):
     dcterms_temporal_dcat_startDate["@type"] = "xsd:dateTime"
     jsonOutput["dcterms:temporal"]["dcat:startDate"] = dcterms_temporal_dcat_startDate
 
-    jsonOutput["dcterms:rights"] = yamlSchemaDict["dcterms"]["rights"][1:] #"© 2024 Copyright" need to check if the string contains copyright symbol and do some tweaks
+    jsonOutput["dcterms:rights"] = yamlSchemaDict["dcterms"]["rights"][1:] #"© 2026 Copyright" need to check if the string contains copyright symbol and do some tweaks
     jsonOutput["dcterms:rightsHolder"] = yamlSchemaDict["dcterms"]["rightsHolder"]
 
     jsonOutput["dcterms:license"] = {}

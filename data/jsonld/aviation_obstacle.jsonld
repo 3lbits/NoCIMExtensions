@@ -33,7 +33,7 @@
             "@type": "xsd:dateTime"
         }
     },
-    "dcterms:rights": "© 2024 Copyright",
+    "dcterms:rights": "© 2026 Copyright",
     "dcterms:rightsHolder": "ElBits AS",
     "dcterms:license": {
         "dcterms:title": "CC BY-NC-SA 4.0"
