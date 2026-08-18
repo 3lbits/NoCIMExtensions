@@ -30,7 +30,7 @@ classDiagram
         TransformerEnd --> PhaseTapChanger : TransformerEnd.PhaseTapChanger
 
         PhaseTapChanger
-            click PhaseTapChanger href "/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChanger/"
+            click PhaseTapChanger href "/Models/Profiles/CoreEquipment/AbstractClasses/PhaseTapChanger/"
             style PhaseTapChanger fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         TransformerEnd --> RatioTapChanger : TransformerEnd.RatioTapChanger
 
@@ -52,7 +52,7 @@ classDiagram
         PhaseTapChanger --> TransformerEnd : PhaseTapChanger.TransformerEnd
 
         PhaseTapChanger
-            click PhaseTapChanger href "/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChanger/"
+            click PhaseTapChanger href "/Models/Profiles/CoreEquipment/AbstractClasses/PhaseTapChanger/"
             style PhaseTapChanger fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         RatioTapChanger --> TransformerEnd : RatioTapChanger.TransformerEnd

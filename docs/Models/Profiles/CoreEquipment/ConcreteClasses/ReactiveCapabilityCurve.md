@@ -13,11 +13,11 @@ classDiagram
     style ReactiveCapabilityCurve fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Curve <|-- ReactiveCapabilityCurve : inherits
-            click Curve href "/Models/Profiles/CoreEquipment/ConcreteClasses/Curve/"
+            click Curve href "/Models/Profiles/CoreEquipment/AbstractClasses/Curve/"
             style Curve fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- Curve : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ReactiveCapabilityCurve --> EquivalentInjection : ReactiveCapabilityCurve.EquivalentInjection
@@ -90,8 +90,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [Curve](/Models/Profiles/CoreEquipment/ConcreteClasses/Curve/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
+    * [Curve](/Models/Profiles/CoreEquipment/AbstractClasses/Curve/)
         * **ReactiveCapabilityCurve**
 
 ## Attributes

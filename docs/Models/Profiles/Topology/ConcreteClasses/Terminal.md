@@ -13,11 +13,11 @@ classDiagram
     style Terminal fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ACDCTerminal <|-- Terminal : inherits
-            click ACDCTerminal href "/Models/Profiles/Topology/ConcreteClasses/ACDCTerminal/"
+            click ACDCTerminal href "/Models/Profiles/Topology/AbstractClasses/ACDCTerminal/"
             style ACDCTerminal fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- ACDCTerminal : inherits
-            click IdentifiedObject href "/Models/Profiles/Topology/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/Topology/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Terminal --> TopologicalNode : Terminal.TopologicalNode
@@ -42,8 +42,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/Topology/ConcreteClasses/IdentifiedObject/)
-    * [ACDCTerminal](/Models/Profiles/Topology/ConcreteClasses/ACDCTerminal/)
+* [IdentifiedObject](/Models/Profiles/Topology/AbstractClasses/IdentifiedObject/)
+    * [ACDCTerminal](/Models/Profiles/Topology/AbstractClasses/ACDCTerminal/)
         * **Terminal**
 
 ## Attributes

@@ -8,6 +8,7 @@ A command-line tool for working with CIM (Common Information Model) extensions f
 - **YAML to JSON-LD conversion** — Convert YAML data files to JSON-LD using a LinkML schema
 - **JSON Schema generation** — Create JSON Schema from LinkML YAML schemas
 - **XML sorting** — Sort CIM/XML files (single or bulk) with optional CIM4-specific formatting
+- **Schema tools** — Migrate CIM datatype classes from `classes:` to `types:` section in LinkML schemas
 - **UUID generation** — Generate one or more UUIDv4 values
 
 ## Getting Started
@@ -89,6 +90,21 @@ cim4 xml sort -f Telemark-120-LV1_GL -c
 ```bash
 cim4 uuidv4         # Generate 1 UUID
 cim4 uuidv4 -n 5    # Generate 5 UUIDs
+```
+
+### Migrate CIM Datatype Classes
+
+Auto-detects CIM datatype classes (classes with only `value`/`unit`/`multiplier` attributes) and moves them from `classes:` to the `types:` section.
+
+```bash
+# Preview what would be migrated across all schemas
+cim4 schema migrate-datatypes --dry-run
+
+# Migrate all schemas
+cim4 schema migrate-datatypes
+
+# Migrate a single schema
+cim4 schema migrate-datatypes -s core_equipment
 ```
 
 ## Project Structure

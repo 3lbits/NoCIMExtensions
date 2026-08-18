@@ -28,6 +28,7 @@ default_prefix: this
 classes:
   ACDCConverter:
     class_uri: cim:ACDCConverter
+    abstract: true
     attributes:
       idc:
         slot_uri: cim:ACDCConverter.idc
@@ -66,74 +67,10 @@ classes:
     description: A unit with valves for three phases, together with unit control equipment,
       essential protective and switching devices, DC storage capacitors, phase reactors
       and auxiliaries, if any, used for conversion.
-  CurrentFlow:
-    class_uri: cim:CurrentFlow
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:CurrentFlow.value
-        range: float
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:CurrentFlow.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:CurrentFlow.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-    description: 'Electrical current with sign convention: positive flow is out of
-      the conducting equipment into the connectivity node. Can be both AC and DC.'
-  ActivePower:
-    class_uri: cim:ActivePower
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:ActivePower.value
-        range: float
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:ActivePower.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:ActivePower.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-    description: Product of RMS value of the voltage and the RMS value of the in-phase
-      component of the current.
-  Voltage:
-    class_uri: cim:Voltage
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:Voltage.value
-        range: float
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:Voltage.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:Voltage.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-    description: Electrical voltage, can be both AC and DC.
   ACDCTerminal:
     class_uri: cim:ACDCTerminal
     is_a: IdentifiedObject
+    abstract: true
     description: An electrical connection point (AC or DC) to a piece of conducting
       equipment. Terminals are connected at physical connection points called connectivity
       nodes.
@@ -185,29 +122,9 @@ classes:
       The attributes minGamma and maxGamma define the range of extinction angles for
       inverter operation between which no discrete tap changer action takes place.
       The range is typically 17-20 degrees.'
-  AngleDegrees:
-    class_uri: cim:AngleDegrees
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:AngleDegrees.value
-        range: float
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:AngleDegrees.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:AngleDegrees.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-    description: Measurement of angle in degrees.
   ConductingEquipment:
     class_uri: cim:ConductingEquipment
+    abstract: true
     attributes:
       SvStatus:
         slot_uri: cim:ConductingEquipment.SvStatus
@@ -245,6 +162,7 @@ classes:
     description: DC bus.
   IdentifiedObject:
     class_uri: cim:IdentifiedObject
+    abstract: true
     attributes:
       mRID:
         slot_uri: cim:IdentifiedObject.mRID
@@ -269,6 +187,7 @@ classes:
       needing identification and naming attributes.
   ShuntCompensator:
     class_uri: cim:ShuntCompensator
+    abstract: true
     attributes:
       SvShuntCompensatorSections:
         slot_uri: cim:ShuntCompensator.SvShuntCompensatorSections
@@ -309,28 +228,6 @@ classes:
       of the terminal flows. The terminal flow is positive out from the bus (load
       sign convention) and bus injection has positive flow into the bus. SvInjection
       may have the remainder after state estimation or slack after power flow calculation.
-  ReactivePower:
-    class_uri: cim:ReactivePower
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:ReactivePower.value
-        range: float
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:ReactivePower.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:ReactivePower.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-    description: Product of RMS value of the voltage and the RMS value of the quadrature
-      component of the current.
   SvPowerFlow:
     class_uri: cim:SvPowerFlow
     attributes:
@@ -472,6 +369,7 @@ classes:
       and .locked are relevant.
   TapChanger:
     class_uri: cim:TapChanger
+    abstract: true
     attributes:
       SvTapStep:
         slot_uri: cim:TapChanger.SvTapStep
@@ -573,6 +471,49 @@ classes:
           \ shall be a positive value."
     is_a: ACDCConverter
     description: DC side of the voltage source converter (VSC).
+
+types:
+
+  ActivePower:
+    uri: xsd:float
+    base: float
+    description: "Product of RMS value of the voltage and the RMS value of the in-phase component of the current."
+    annotations:
+      cim_data_type: true
+      uri: cim:ActivePower
+
+  AngleDegrees:
+    uri: xsd:float
+    base: float
+    description: "Measurement of angle in degrees."
+    annotations:
+      cim_data_type: true
+      uri: cim:AngleDegrees
+
+  CurrentFlow:
+    uri: xsd:float
+    base: float
+    description: "Electrical current with sign convention: positive flow is out of the conducting equipment into the connectivity node. Can be both AC and DC."
+    annotations:
+      cim_data_type: true
+      uri: cim:CurrentFlow
+
+  ReactivePower:
+    uri: xsd:float
+    base: float
+    description: "Product of RMS value of the voltage and the RMS value of the quadrature component of the current."
+    annotations:
+      cim_data_type: true
+      uri: cim:ReactivePower
+
+  Voltage:
+    uri: xsd:float
+    base: float
+    description: "Electrical voltage, can be both AC and DC."
+    annotations:
+      cim_data_type: true
+      uri: cim:Voltage
+
 enums:
   UnitMultiplier:
     permissible_values:

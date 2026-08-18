@@ -13,7 +13,7 @@ classDiagram
     style PhaseTapChangerTablePoint fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         TapChangerTablePoint <|-- PhaseTapChangerTablePoint : inherits
-            click TapChangerTablePoint href "/Models/Profiles/CoreEquipment/ConcreteClasses/TapChangerTablePoint/"
+            click TapChangerTablePoint href "/Models/Profiles/CoreEquipment/AbstractClasses/TapChangerTablePoint/"
             style TapChangerTablePoint fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PhaseTapChangerTablePoint --> PhaseTapChangerTable : PhaseTapChangerTablePoint.PhaseTapChangerTable
@@ -21,31 +21,6 @@ classDiagram
         PhaseTapChangerTable
             click PhaseTapChangerTable href "/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChangerTable/"
             style PhaseTapChangerTable fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PhaseTapChangerTablePoint --> AngleDegrees : PhaseTapChangerTablePoint.angle
-
-        AngleDegrees
-            click AngleDegrees href "/Models/Profiles/CoreEquipment/ConcreteClasses/AngleDegrees/"
-            style AngleDegrees fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        TapChangerTablePoint --> PerCent : TapChangerTablePoint.b
-
-        PerCent
-            click PerCent href "/Models/Profiles/CoreEquipment/ConcreteClasses/PerCent/"
-            style PerCent fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        TapChangerTablePoint --> PerCent : TapChangerTablePoint.g
-
-        PerCent
-            click PerCent href "/Models/Profiles/CoreEquipment/ConcreteClasses/PerCent/"
-            style PerCent fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        TapChangerTablePoint --> PerCent : TapChangerTablePoint.r
-
-        PerCent
-            click PerCent href "/Models/Profiles/CoreEquipment/ConcreteClasses/PerCent/"
-            style PerCent fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        TapChangerTablePoint --> PerCent : TapChangerTablePoint.x
-
-        PerCent
-            click PerCent href "/Models/Profiles/CoreEquipment/ConcreteClasses/PerCent/"
-            style PerCent fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PhaseTapChangerTable --> PhaseTapChangerTablePoint : PhaseTapChangerTable.PhaseTapChangerTablePoint
 
@@ -65,7 +40,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [TapChangerTablePoint](/Models/Profiles/CoreEquipment/ConcreteClasses/TapChangerTablePoint/)
+* [TapChangerTablePoint](/Models/Profiles/CoreEquipment/AbstractClasses/TapChangerTablePoint/)
     * **PhaseTapChangerTablePoint**
 
 ## Attributes

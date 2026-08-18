@@ -15,13 +15,13 @@ classDiagram
         SvStatus --> ConductingEquipment : SvStatus.ConductingEquipment
 
         ConductingEquipment
-            click ConductingEquipment href "/Models/Profiles/StateVariables/ConcreteClasses/ConductingEquipment/"
+            click ConductingEquipment href "/Models/Profiles/StateVariables/AbstractClasses/ConductingEquipment/"
             style ConductingEquipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConductingEquipment --> SvStatus : ConductingEquipment.SvStatus
 
         ConductingEquipment
-            click ConductingEquipment href "/Models/Profiles/StateVariables/ConcreteClasses/ConductingEquipment/"
+            click ConductingEquipment href "/Models/Profiles/StateVariables/AbstractClasses/ConductingEquipment/"
             style ConductingEquipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 

@@ -38,6 +38,7 @@ classes:
   ACDCTerminal:
     class_uri: cim:ACDCTerminal
     is_a: IdentifiedObject
+    abstract: true
     description: An electrical connection point (AC or DC) to a piece of conducting
       equipment. Terminals are connected at physical connection points called connectivity
       nodes.
@@ -65,6 +66,7 @@ classes:
       are connected together with zero impedance.
   ConnectivityNodeContainer:
     class_uri: cim:ConnectivityNodeContainer
+    abstract: true
     attributes:
       TopologicalNode:
         slot_uri: cim:ConnectivityNodeContainer.TopologicalNode
@@ -85,12 +87,14 @@ classes:
         required: true
         description: See association end Terminal.TopologicalNode.
     is_a: ACDCTerminal
+    abstract: true
     description: An electrical connection point at a piece of DC conducting equipment.
       DC terminals are connected at one physical DC node that may have multiple DC
       terminals connected. A DC node is similar to an AC connectivity node. The model
       requires that DC connections are distinct from AC connections.
   DCEquipmentContainer:
     class_uri: cim:DCEquipmentContainer
+    abstract: true
     attributes:
       DCTopologicalNode:
         slot_uri: cim:DCEquipmentContainer.DCTopologicalNode
@@ -147,6 +151,7 @@ classes:
     description: DC bus.
   IdentifiedObject:
     class_uri: cim:IdentifiedObject
+    abstract: true
     attributes:
       description:
         slot_uri: cim:IdentifiedObject.description

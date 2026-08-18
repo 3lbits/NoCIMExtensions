@@ -13,19 +13,19 @@ classDiagram
     style WaveTrap fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         AuxiliaryEquipment <|-- WaveTrap : inherits
-            click AuxiliaryEquipment href "/Models/Profiles/CoreEquipment/ConcreteClasses/AuxiliaryEquipment/"
+            click AuxiliaryEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/AuxiliaryEquipment/"
             style AuxiliaryEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- AuxiliaryEquipment : inherits
-            click Equipment href "/Models/Profiles/CoreEquipment/ConcreteClasses/Equipment/"
+            click Equipment href "/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/"
             style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
-            click PowerSystemResource href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         AuxiliaryEquipment --> Terminal : AuxiliaryEquipment.Terminal
@@ -36,7 +36,7 @@ classDiagram
         Equipment --> EquipmentContainer : Equipment.EquipmentContainer
 
         EquipmentContainer
-            click EquipmentContainer href "/Models/Profiles/CoreEquipment/ConcreteClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         Equipment --> OperationalLimitSet : Equipment.OperationalLimitSet
 
@@ -47,7 +47,7 @@ classDiagram
         EquipmentContainer --> Equipment : EquipmentContainer.Equipments
 
         EquipmentContainer
-            click EquipmentContainer href "/Models/Profiles/CoreEquipment/ConcreteClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitSet --> Equipment : OperationalLimitSet.Equipment
@@ -76,10 +76,10 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [PowerSystemResource](/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/)
-        * [Equipment](/Models/Profiles/CoreEquipment/ConcreteClasses/Equipment/)
-            * [AuxiliaryEquipment](/Models/Profiles/CoreEquipment/ConcreteClasses/AuxiliaryEquipment/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/)
+        * [Equipment](/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/)
+            * [AuxiliaryEquipment](/Models/Profiles/CoreEquipment/AbstractClasses/AuxiliaryEquipment/)
                 * **WaveTrap**
 
 ## Attributes

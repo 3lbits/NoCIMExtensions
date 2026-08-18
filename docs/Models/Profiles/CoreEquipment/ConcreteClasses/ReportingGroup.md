@@ -13,7 +13,7 @@ classDiagram
     style ReportingGroup fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- ReportingGroup : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ReportingGroup --> BusNameMarker : ReportingGroup.BusNameMarker
@@ -38,7 +38,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
     * **ReportingGroup**
 
 ## Attributes

@@ -32,26 +32,6 @@ classDiagram
             click IdentifiedObject href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        EnergySource --> ActivePower : EnergySource.activePower
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        EnergySource --> ReactivePower : EnergySource.reactivePower
-
-        ReactivePower
-            click ReactivePower href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ReactivePower/"
-            style ReactivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        EnergySource --> AngleRadians : EnergySource.voltageAngle
-
-        AngleRadians
-            click AngleRadians href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/AngleRadians/"
-            style AngleRadians fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        EnergySource --> Voltage : EnergySource.voltageMagnitude
-
-        Voltage
-            click Voltage href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         EnergySource : EnergySource.activePower

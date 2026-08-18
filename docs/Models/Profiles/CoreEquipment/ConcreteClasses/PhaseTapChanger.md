@@ -52,11 +52,6 @@ classDiagram
         TapSchedule
             click TapSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/TapSchedule/"
             style TapSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        TapChanger --> Voltage : TapChanger.neutralU
-
-        Voltage
-            click Voltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         TapChanger --> TapChangerControl : TapChanger.TapChangerControl
 
         TapChangerControl

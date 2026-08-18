@@ -13,19 +13,19 @@ classDiagram
     style MeasurementValueQuality fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Quality61850 <|-- MeasurementValueQuality : inherits
-            click Quality61850 href "/Models/Profiles/Operation/ConcreteClasses/Quality61850/"
+            click Quality61850 href "/Models/Profiles/Operation/AbstractClasses/Quality61850/"
             style Quality61850 fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MeasurementValueQuality --> MeasurementValue : MeasurementValueQuality.MeasurementValue
 
         MeasurementValue
-            click MeasurementValue href "/Models/Profiles/Operation/ConcreteClasses/MeasurementValue/"
+            click MeasurementValue href "/Models/Profiles/Operation/AbstractClasses/MeasurementValue/"
             style MeasurementValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MeasurementValue --> MeasurementValueQuality : MeasurementValue.MeasurementValueQuality
 
         MeasurementValue
-            click MeasurementValue href "/Models/Profiles/Operation/ConcreteClasses/MeasurementValue/"
+            click MeasurementValue href "/Models/Profiles/Operation/AbstractClasses/MeasurementValue/"
             style MeasurementValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Quality61850 --> Source : Quality61850.source
@@ -55,7 +55,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [Quality61850](/Models/Profiles/Operation/ConcreteClasses/Quality61850/)
+* [Quality61850](/Models/Profiles/Operation/AbstractClasses/Quality61850/)
     * **MeasurementValueQuality**
 
 ## Attributes

@@ -13,60 +13,25 @@ classDiagram
     style PetersenCoil fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         EarthFaultCompensator <|-- PetersenCoil : inherits
-            click EarthFaultCompensator href "/Models/Profiles/ShortCircuit/ConcreteClasses/EarthFaultCompensator/"
+            click EarthFaultCompensator href "/Models/Profiles/ShortCircuit/AbstractClasses/EarthFaultCompensator/"
             style EarthFaultCompensator fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ConductingEquipment <|-- EarthFaultCompensator : inherits
-            click ConductingEquipment href "/Models/Profiles/ShortCircuit/ConcreteClasses/ConductingEquipment/"
+            click ConductingEquipment href "/Models/Profiles/ShortCircuit/AbstractClasses/ConductingEquipment/"
             style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- ConductingEquipment : inherits
-            click Equipment href "/Models/Profiles/ShortCircuit/ConcreteClasses/Equipment/"
+            click Equipment href "/Models/Profiles/ShortCircuit/AbstractClasses/Equipment/"
             style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
-            click PowerSystemResource href "/Models/Profiles/ShortCircuit/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/ShortCircuit/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "/Models/Profiles/ShortCircuit/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/ShortCircuit/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        PetersenCoil --> Voltage : PetersenCoil.nominalU
-
-        Voltage
-            click Voltage href "/Models/Profiles/ShortCircuit/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PetersenCoil --> CurrentFlow : PetersenCoil.offsetCurrent
-
-        CurrentFlow
-            click CurrentFlow href "/Models/Profiles/ShortCircuit/ConcreteClasses/CurrentFlow/"
-            style CurrentFlow fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PetersenCoil --> CurrentFlow : PetersenCoil.positionCurrent
-
-        CurrentFlow
-            click CurrentFlow href "/Models/Profiles/ShortCircuit/ConcreteClasses/CurrentFlow/"
-            style CurrentFlow fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PetersenCoil --> Reactance : PetersenCoil.xGroundMax
-
-        Reactance
-            click Reactance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Reactance/"
-            style Reactance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PetersenCoil --> Reactance : PetersenCoil.xGroundMin
-
-        Reactance
-            click Reactance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Reactance/"
-            style Reactance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PetersenCoil --> Reactance : PetersenCoil.xGroundNominal
-
-        Reactance
-            click Reactance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Reactance/"
-            style Reactance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        EarthFaultCompensator --> Resistance : EarthFaultCompensator.r
-
-        Resistance
-            click Resistance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Resistance/"
-            style Resistance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PetersenCoil --> PetersenCoilModeKind : PetersenCoil.mode
 
@@ -86,11 +51,11 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/ShortCircuit/ConcreteClasses/IdentifiedObject/)
-    * [PowerSystemResource](/Models/Profiles/ShortCircuit/ConcreteClasses/PowerSystemResource/)
-        * [Equipment](/Models/Profiles/ShortCircuit/ConcreteClasses/Equipment/)
-            * [ConductingEquipment](/Models/Profiles/ShortCircuit/ConcreteClasses/ConductingEquipment/)
-                * [EarthFaultCompensator](/Models/Profiles/ShortCircuit/ConcreteClasses/EarthFaultCompensator/)
+* [IdentifiedObject](/Models/Profiles/ShortCircuit/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/ShortCircuit/AbstractClasses/PowerSystemResource/)
+        * [Equipment](/Models/Profiles/ShortCircuit/AbstractClasses/Equipment/)
+            * [ConductingEquipment](/Models/Profiles/ShortCircuit/AbstractClasses/ConductingEquipment/)
+                * [EarthFaultCompensator](/Models/Profiles/ShortCircuit/AbstractClasses/EarthFaultCompensator/)
                     * **PetersenCoil**
 
 ## Attributes

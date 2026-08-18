@@ -20,11 +20,6 @@ classDiagram
             click IdentifiedObject href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        ApparentPowerLimit --> ApparentPower : ApparentPowerLimit.value
-
-        ApparentPower
-            click ApparentPower href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ApparentPower/"
-            style ApparentPower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         ApparentPowerLimit : ApparentPowerLimit.value

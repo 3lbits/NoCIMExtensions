@@ -13,19 +13,19 @@ classDiagram
     style Season fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- Season : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Season --> SeasonDayTypeSchedule : Season.SeasonDayTypeSchedules
 
         SeasonDayTypeSchedule
-            click SeasonDayTypeSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/SeasonDayTypeSchedule/"
+            click SeasonDayTypeSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/SeasonDayTypeSchedule/"
             style SeasonDayTypeSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         SeasonDayTypeSchedule --> Season : SeasonDayTypeSchedule.Season
 
         SeasonDayTypeSchedule
-            click SeasonDayTypeSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/SeasonDayTypeSchedule/"
+            click SeasonDayTypeSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/SeasonDayTypeSchedule/"
             style SeasonDayTypeSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
@@ -40,7 +40,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
     * **Season**
 
 ## Attributes

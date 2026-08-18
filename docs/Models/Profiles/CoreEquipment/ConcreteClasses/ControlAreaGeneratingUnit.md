@@ -13,30 +13,30 @@ classDiagram
     style ControlAreaGeneratingUnit fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- ControlAreaGeneratingUnit : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ControlAreaGeneratingUnit --> ControlArea : ControlAreaGeneratingUnit.ControlArea
 
         ControlArea
-            click ControlArea href "/Models/Profiles/CoreEquipment/ConcreteClasses/ControlArea/"
+            click ControlArea href "/Models/Profiles/CoreEquipment/AbstractClasses/ControlArea/"
             style ControlArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         ControlAreaGeneratingUnit --> GeneratingUnit : ControlAreaGeneratingUnit.GeneratingUnit
 
         GeneratingUnit
-            click GeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/GeneratingUnit/"
+            click GeneratingUnit href "/Models/Profiles/CoreEquipment/AbstractClasses/GeneratingUnit/"
             style GeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ControlArea --> ControlAreaGeneratingUnit : ControlArea.ControlAreaGeneratingUnit
 
         ControlArea
-            click ControlArea href "/Models/Profiles/CoreEquipment/ConcreteClasses/ControlArea/"
+            click ControlArea href "/Models/Profiles/CoreEquipment/AbstractClasses/ControlArea/"
             style ControlArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         GeneratingUnit --> ControlAreaGeneratingUnit : GeneratingUnit.ControlAreaGeneratingUnit
 
         GeneratingUnit
-            click GeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/GeneratingUnit/"
+            click GeneratingUnit href "/Models/Profiles/CoreEquipment/AbstractClasses/GeneratingUnit/"
             style GeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
@@ -50,7 +50,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
     * **ControlAreaGeneratingUnit**
 
 ## Attributes

@@ -29,6 +29,7 @@ default_prefix: this
 classes:
   IdentifiedObject:
     class_uri: cim:IdentifiedObject
+    abstract: true
     attributes:
       mRID:
         slot_uri: cim:IdentifiedObject.mRID
@@ -373,6 +374,7 @@ classes:
         required: false
         description: Location of this power system resource.
     is_a: IdentifiedObject
+    abstract: true
     description: A power system resource (PSR) can be an item of equipment such as
       a switch, an equipment container containing many individual items of equipment
       such as a substation, or an organisational entity such as sub-control area.

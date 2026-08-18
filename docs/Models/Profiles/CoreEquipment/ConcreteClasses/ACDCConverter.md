@@ -29,67 +29,17 @@ classDiagram
             style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- ConductingEquipment : inherits
-            click Equipment href "/Models/Profiles/CoreEquipment/ConcreteClasses/Equipment/"
+            click Equipment href "/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/"
             style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
-            click PowerSystemResource href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        ACDCConverter --> ApparentPower : ACDCConverter.baseS
-
-        ApparentPower
-            click ApparentPower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ApparentPower/"
-            style ApparentPower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> ActivePower : ACDCConverter.idleLoss
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> Voltage : ACDCConverter.maxUdc
-
-        Voltage
-            click Voltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> Voltage : ACDCConverter.minUdc
-
-        Voltage
-            click Voltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> Voltage : ACDCConverter.ratedUdc
-
-        Voltage
-            click Voltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> Resistance : ACDCConverter.resistiveLoss
-
-        Resistance
-            click Resistance href "/Models/Profiles/CoreEquipment/ConcreteClasses/Resistance/"
-            style Resistance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> ActivePowerPerCurrentFlow : ACDCConverter.switchingLoss
-
-        ActivePowerPerCurrentFlow
-            click ActivePowerPerCurrentFlow href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePowerPerCurrentFlow/"
-            style ActivePowerPerCurrentFlow fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> Voltage : ACDCConverter.valveU0
-
-        Voltage
-            click Voltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> ActivePower : ACDCConverter.maxP
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> ActivePower : ACDCConverter.minP
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         ACDCConverter --> Terminal : ACDCConverter.PccTerminal
 
         Terminal
@@ -186,8 +136,8 @@ classDiagram
 
 ## Inheritance
 * [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [PowerSystemResource](/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/)
-        * [Equipment](/Models/Profiles/CoreEquipment/ConcreteClasses/Equipment/)
+    * [PowerSystemResource](/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/)
+        * [Equipment](/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/)
             * [ConductingEquipment](/Models/Profiles/CoreEquipment/ConcreteClasses/ConductingEquipment/)
                 * **ACDCConverter**
 

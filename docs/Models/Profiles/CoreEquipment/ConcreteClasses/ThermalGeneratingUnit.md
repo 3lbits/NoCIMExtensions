@@ -13,19 +13,19 @@ classDiagram
     style ThermalGeneratingUnit fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         GeneratingUnit <|-- ThermalGeneratingUnit : inherits
-            click GeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/GeneratingUnit/"
+            click GeneratingUnit href "/Models/Profiles/CoreEquipment/AbstractClasses/GeneratingUnit/"
             style GeneratingUnit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- GeneratingUnit : inherits
-            click Equipment href "/Models/Profiles/CoreEquipment/ConcreteClasses/Equipment/"
+            click Equipment href "/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/"
             style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
-            click PowerSystemResource href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ThermalGeneratingUnit --> CAESPlant : ThermalGeneratingUnit.CAESPlant
@@ -53,66 +53,6 @@ classDiagram
         ControlAreaGeneratingUnit
             click ControlAreaGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/ControlAreaGeneratingUnit/"
             style ControlAreaGeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> PerCent : GeneratingUnit.governorSCD
-
-        PerCent
-            click PerCent href "/Models/Profiles/CoreEquipment/ConcreteClasses/PerCent/"
-            style PerCent fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> ActivePower : GeneratingUnit.maximumAllowableSpinningReserve
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> ActivePower : GeneratingUnit.maxOperatingP
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> ActivePower : GeneratingUnit.minOperatingP
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> ActivePower : GeneratingUnit.nominalP
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> ActivePower : GeneratingUnit.ratedGrossMaxP
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> ActivePower : GeneratingUnit.ratedGrossMinP
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> ActivePower : GeneratingUnit.ratedNetMaxP
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> Money : GeneratingUnit.startupCost
-
-        Money
-            click Money href "/Models/Profiles/CoreEquipment/ConcreteClasses/Money/"
-            style Money fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> Money : GeneratingUnit.variableCost
-
-        Money
-            click Money href "/Models/Profiles/CoreEquipment/ConcreteClasses/Money/"
-            style Money fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> Seconds : GeneratingUnit.startupTime
-
-        Seconds
-            click Seconds href "/Models/Profiles/CoreEquipment/ConcreteClasses/Seconds/"
-            style Seconds fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> PerCent : GeneratingUnit.totalEfficiency
-
-        PerCent
-            click PerCent href "/Models/Profiles/CoreEquipment/ConcreteClasses/PerCent/"
-            style PerCent fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         GeneratingUnit --> GrossToNetActivePowerCurve : GeneratingUnit.GrossToNetActivePowerCurves
 
         GrossToNetActivePowerCurve
@@ -121,12 +61,12 @@ classDiagram
         GeneratingUnit --> RotatingMachine : GeneratingUnit.RotatingMachine
 
         RotatingMachine
-            click RotatingMachine href "/Models/Profiles/CoreEquipment/ConcreteClasses/RotatingMachine/"
+            click RotatingMachine href "/Models/Profiles/CoreEquipment/AbstractClasses/RotatingMachine/"
             style RotatingMachine fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         Equipment --> EquipmentContainer : Equipment.EquipmentContainer
 
         EquipmentContainer
-            click EquipmentContainer href "/Models/Profiles/CoreEquipment/ConcreteClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         Equipment --> OperationalLimitSet : Equipment.OperationalLimitSet
 
@@ -161,7 +101,7 @@ classDiagram
         EquipmentContainer --> Equipment : EquipmentContainer.Equipments
 
         EquipmentContainer
-            click EquipmentContainer href "/Models/Profiles/CoreEquipment/ConcreteClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         FossilFuel --> ThermalGeneratingUnit : FossilFuel.ThermalGeneratingUnit
@@ -185,7 +125,7 @@ classDiagram
         RotatingMachine --> GeneratingUnit : RotatingMachine.GeneratingUnit
 
         RotatingMachine
-            click RotatingMachine href "/Models/Profiles/CoreEquipment/ConcreteClasses/RotatingMachine/"
+            click RotatingMachine href "/Models/Profiles/CoreEquipment/AbstractClasses/RotatingMachine/"
             style RotatingMachine fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         GeneratingUnit --> GeneratorControlSource : GeneratingUnit.genControlSource
@@ -228,10 +168,10 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [PowerSystemResource](/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/)
-        * [Equipment](/Models/Profiles/CoreEquipment/ConcreteClasses/Equipment/)
-            * [GeneratingUnit](/Models/Profiles/CoreEquipment/ConcreteClasses/GeneratingUnit/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/)
+        * [Equipment](/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/)
+            * [GeneratingUnit](/Models/Profiles/CoreEquipment/AbstractClasses/GeneratingUnit/)
                 * **ThermalGeneratingUnit**
 
 ## Attributes

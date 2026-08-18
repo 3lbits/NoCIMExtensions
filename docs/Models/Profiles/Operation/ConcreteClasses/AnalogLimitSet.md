@@ -13,11 +13,11 @@ classDiagram
     style AnalogLimitSet fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         LimitSet <|-- AnalogLimitSet : inherits
-            click LimitSet href "/Models/Profiles/Operation/ConcreteClasses/LimitSet/"
+            click LimitSet href "/Models/Profiles/Operation/AbstractClasses/LimitSet/"
             style LimitSet fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- LimitSet : inherits
-            click IdentifiedObject href "/Models/Profiles/Operation/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         AnalogLimitSet --> Analog : AnalogLimitSet.Measurements
@@ -53,8 +53,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/Operation/ConcreteClasses/IdentifiedObject/)
-    * [LimitSet](/Models/Profiles/Operation/ConcreteClasses/LimitSet/)
+* [IdentifiedObject](/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/)
+    * [LimitSet](/Models/Profiles/Operation/AbstractClasses/LimitSet/)
         * **AnalogLimitSet**
 
 ## Attributes

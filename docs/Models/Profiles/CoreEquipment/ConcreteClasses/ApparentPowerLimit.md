@@ -13,18 +13,13 @@ classDiagram
     style ApparentPowerLimit fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         OperationalLimit <|-- ApparentPowerLimit : inherits
-            click OperationalLimit href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimit/"
+            click OperationalLimit href "/Models/Profiles/CoreEquipment/AbstractClasses/OperationalLimit/"
             style OperationalLimit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- OperationalLimit : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        ApparentPowerLimit --> ApparentPower : ApparentPowerLimit.normalValue
-
-        ApparentPower
-            click ApparentPower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ApparentPower/"
-            style ApparentPower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         OperationalLimit --> OperationalLimitSet : OperationalLimit.OperationalLimitSet
 
         OperationalLimitSet
@@ -60,8 +55,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [OperationalLimit](/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimit/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
+    * [OperationalLimit](/Models/Profiles/CoreEquipment/AbstractClasses/OperationalLimit/)
         * **ApparentPowerLimit**
 
 ## Attributes

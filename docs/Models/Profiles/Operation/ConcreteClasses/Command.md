@@ -13,15 +13,15 @@ classDiagram
     style Command fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Control <|-- Command : inherits
-            click Control href "/Models/Profiles/Operation/ConcreteClasses/Control/"
+            click Control href "/Models/Profiles/Operation/AbstractClasses/Control/"
             style Control fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IOPoint <|-- Control : inherits
-            click IOPoint href "/Models/Profiles/Operation/ConcreteClasses/IOPoint/"
+            click IOPoint href "/Models/Profiles/Operation/AbstractClasses/IOPoint/"
             style IOPoint fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- IOPoint : inherits
-            click IdentifiedObject href "/Models/Profiles/Operation/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Command --> ValueAliasSet : Command.ValueAliasSet
@@ -37,7 +37,7 @@ classDiagram
         Control --> PowerSystemResource : Control.PowerSystemResource
 
         PowerSystemResource
-            click PowerSystemResource href "/Models/Profiles/Operation/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/Operation/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         DiscreteValue --> Command : DiscreteValue.Command
@@ -49,7 +49,7 @@ classDiagram
         PowerSystemResource --> Control : PowerSystemResource.Controls
 
         PowerSystemResource
-            click PowerSystemResource href "/Models/Profiles/Operation/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/Operation/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ValueAliasSet --> Command : ValueAliasSet.Commands
@@ -85,9 +85,9 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/Operation/ConcreteClasses/IdentifiedObject/)
-    * [IOPoint](/Models/Profiles/Operation/ConcreteClasses/IOPoint/)
-        * [Control](/Models/Profiles/Operation/ConcreteClasses/Control/)
+* [IdentifiedObject](/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/)
+    * [IOPoint](/Models/Profiles/Operation/AbstractClasses/IOPoint/)
+        * [Control](/Models/Profiles/Operation/AbstractClasses/Control/)
             * **Command**
 
 ## Attributes

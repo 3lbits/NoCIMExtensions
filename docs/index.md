@@ -8,24 +8,17 @@ Access comprehensive documentation on CIM profiles and their usage, helping you 
 #### Currently documented profiles (click on each to learn more): 
 To access examples of how to use these profiles, please visit our [GitHub repository](https://github.com/3lbits/NoCIMExtensions) and navigate to the folder **data**.
 
-#### CGMES Profiles
+Profiles:
 
-The CGMES (Common Grid Model Exchange Standard) LinkML schemas are sourced from [Netbeheer-Nederland/cgmes](https://github.com/Netbeheer-Nederland/cgmes) — ENTSO-E CGMES profiles represented as LinkML schemas.
-
+- [AviationObstacle](/Models/Profiles/AviationObstacle/)
 - [CoreEquipment](/Models/Profiles/CoreEquipment/)
 - [DiagramLayout](/Models/Profiles/DiagramLayout/)
 - [EquipmentBoundary](/Models/Profiles/EquipmentBoundary/)
 - [GeographicalLocation](/Models/Profiles/GeographicalLocation/)
+- [GridCapacity](/Models/Profiles/GridCapacity/)
 - [Operation](/Models/Profiles/Operation/)
 - [ShortCircuit](/Models/Profiles/ShortCircuit/)
 - [StateVariables](/Models/Profiles/StateVariables/)
 - [SteadyStateHypothesis](/Models/Profiles/SteadyStateHypothesis/)
-- [Topology](/Models/Profiles/Topology/)
-
-#### Norwegian Profiles
-
-The Norwegian extension profiles are developed and maintained by us.
-
-- [AviationObstacle](/Models/Profiles/AviationObstacle/)
-- [GridCapacity](/Models/Profiles/GridCapacity/)
 - [SubseaCableInfo](/Models/Profiles/SubseaCableInfo/)
+- [Topology](/Models/Profiles/Topology/)

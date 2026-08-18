@@ -13,55 +13,25 @@ classDiagram
     style EnergySource fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         EnergyConnection <|-- EnergySource : inherits
-            click EnergyConnection href "/Models/Profiles/ShortCircuit/ConcreteClasses/EnergyConnection/"
+            click EnergyConnection href "/Models/Profiles/ShortCircuit/AbstractClasses/EnergyConnection/"
             style EnergyConnection fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ConductingEquipment <|-- EnergyConnection : inherits
-            click ConductingEquipment href "/Models/Profiles/ShortCircuit/ConcreteClasses/ConductingEquipment/"
+            click ConductingEquipment href "/Models/Profiles/ShortCircuit/AbstractClasses/ConductingEquipment/"
             style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- ConductingEquipment : inherits
-            click Equipment href "/Models/Profiles/ShortCircuit/ConcreteClasses/Equipment/"
+            click Equipment href "/Models/Profiles/ShortCircuit/AbstractClasses/Equipment/"
             style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
-            click PowerSystemResource href "/Models/Profiles/ShortCircuit/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/ShortCircuit/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "/Models/Profiles/ShortCircuit/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/ShortCircuit/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        EnergySource --> Resistance : EnergySource.r
-
-        Resistance
-            click Resistance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Resistance/"
-            style Resistance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        EnergySource --> Resistance : EnergySource.r0
-
-        Resistance
-            click Resistance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Resistance/"
-            style Resistance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        EnergySource --> Resistance : EnergySource.rn
-
-        Resistance
-            click Resistance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Resistance/"
-            style Resistance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        EnergySource --> Reactance : EnergySource.x
-
-        Reactance
-            click Reactance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Reactance/"
-            style Reactance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        EnergySource --> Reactance : EnergySource.x0
-
-        Reactance
-            click Reactance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Reactance/"
-            style Reactance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        EnergySource --> Reactance : EnergySource.xn
-
-        Reactance
-            click Reactance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Reactance/"
-            style Reactance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         EnergySource : EnergySource.r
@@ -74,11 +44,11 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/ShortCircuit/ConcreteClasses/IdentifiedObject/)
-    * [PowerSystemResource](/Models/Profiles/ShortCircuit/ConcreteClasses/PowerSystemResource/)
-        * [Equipment](/Models/Profiles/ShortCircuit/ConcreteClasses/Equipment/)
-            * [ConductingEquipment](/Models/Profiles/ShortCircuit/ConcreteClasses/ConductingEquipment/)
-                * [EnergyConnection](/Models/Profiles/ShortCircuit/ConcreteClasses/EnergyConnection/)
+* [IdentifiedObject](/Models/Profiles/ShortCircuit/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/ShortCircuit/AbstractClasses/PowerSystemResource/)
+        * [Equipment](/Models/Profiles/ShortCircuit/AbstractClasses/Equipment/)
+            * [ConductingEquipment](/Models/Profiles/ShortCircuit/AbstractClasses/ConductingEquipment/)
+                * [EnergyConnection](/Models/Profiles/ShortCircuit/AbstractClasses/EnergyConnection/)
                     * **EnergySource**
 
 ## Attributes

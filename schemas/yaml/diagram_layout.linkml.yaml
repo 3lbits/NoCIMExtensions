@@ -183,27 +183,6 @@ classes:
       object can be associated with anything that specializes IdentifiedObject. For
       single line diagrams such objects typically include such items as analog values,
       breakers, disconnectors, power transformers, and transmission lines.
-  AngleDegrees:
-    class_uri: cim:AngleDegrees
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:AngleDegrees.value
-        range: float
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:AngleDegrees.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:AngleDegrees.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-    description: Measurement of angle in degrees.
   DiagramObjectGluePoint:
     class_uri: cim:DiagramObjectGluePoint
     attributes:
@@ -289,6 +268,7 @@ classes:
       etc.
   IdentifiedObject:
     class_uri: cim:IdentifiedObject
+    abstract: true
     attributes:
       DiagramObjects:
         slot_uri: cim:IdentifiedObject.DiagramObjects
@@ -362,6 +342,17 @@ classes:
       CIM based graphics exchange supports an m:n relationship between diagram objects
       and layers. The importing system shall convert an m:n case into an appropriate
       1:n representation if the importing system does not support m:n.'
+
+types:
+
+  AngleDegrees:
+    uri: xsd:float
+    base: float
+    description: "Measurement of angle in degrees."
+    annotations:
+      cim_data_type: true
+      uri: cim:AngleDegrees
+
 enums:
   OrientationKind:
     permissible_values:

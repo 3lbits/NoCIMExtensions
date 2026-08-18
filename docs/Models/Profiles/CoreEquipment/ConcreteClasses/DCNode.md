@@ -13,30 +13,30 @@ classDiagram
     style DCNode fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- DCNode : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         DCNode --> DCBaseTerminal : DCNode.DCTerminals
 
         DCBaseTerminal
-            click DCBaseTerminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCBaseTerminal/"
+            click DCBaseTerminal href "/Models/Profiles/CoreEquipment/AbstractClasses/DCBaseTerminal/"
             style DCBaseTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         DCNode --> DCEquipmentContainer : DCNode.DCEquipmentContainer
 
         DCEquipmentContainer
-            click DCEquipmentContainer href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCEquipmentContainer/"
+            click DCEquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/DCEquipmentContainer/"
             style DCEquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         DCBaseTerminal --> DCNode : DCBaseTerminal.DCNode
 
         DCBaseTerminal
-            click DCBaseTerminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCBaseTerminal/"
+            click DCBaseTerminal href "/Models/Profiles/CoreEquipment/AbstractClasses/DCBaseTerminal/"
             style DCBaseTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         DCEquipmentContainer --> DCNode : DCEquipmentContainer.DCNodes
 
         DCEquipmentContainer
-            click DCEquipmentContainer href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCEquipmentContainer/"
+            click DCEquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/DCEquipmentContainer/"
             style DCEquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
@@ -50,7 +50,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
     * **DCNode**
 
 ## Attributes

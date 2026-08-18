@@ -13,13 +13,13 @@ classDiagram
     style TieFlow fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- TieFlow : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         TieFlow --> ControlArea : TieFlow.ControlArea
 
         ControlArea
-            click ControlArea href "/Models/Profiles/CoreEquipment/ConcreteClasses/ControlArea/"
+            click ControlArea href "/Models/Profiles/CoreEquipment/AbstractClasses/ControlArea/"
             style ControlArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         TieFlow --> Terminal : TieFlow.Terminal
 
@@ -30,7 +30,7 @@ classDiagram
         ControlArea --> TieFlow : ControlArea.TieFlow
 
         ControlArea
-            click ControlArea href "/Models/Profiles/CoreEquipment/ConcreteClasses/ControlArea/"
+            click ControlArea href "/Models/Profiles/CoreEquipment/AbstractClasses/ControlArea/"
             style ControlArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Terminal --> TieFlow : Terminal.TieFlow
@@ -51,7 +51,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
     * **TieFlow**
 
 ## Attributes

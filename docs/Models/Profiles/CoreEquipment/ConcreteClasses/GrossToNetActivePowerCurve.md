@@ -13,17 +13,17 @@ classDiagram
     style GrossToNetActivePowerCurve fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Curve <|-- GrossToNetActivePowerCurve : inherits
-            click Curve href "/Models/Profiles/CoreEquipment/ConcreteClasses/Curve/"
+            click Curve href "/Models/Profiles/CoreEquipment/AbstractClasses/Curve/"
             style Curve fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- Curve : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         GrossToNetActivePowerCurve --> GeneratingUnit : GrossToNetActivePowerCurve.GeneratingUnit
 
         GeneratingUnit
-            click GeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/GeneratingUnit/"
+            click GeneratingUnit href "/Models/Profiles/CoreEquipment/AbstractClasses/GeneratingUnit/"
             style GeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         Curve --> CurveData : Curve.CurveDatas
 
@@ -40,7 +40,7 @@ classDiagram
         GeneratingUnit --> GrossToNetActivePowerCurve : GeneratingUnit.GrossToNetActivePowerCurves
 
         GeneratingUnit
-            click GeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/GeneratingUnit/"
+            click GeneratingUnit href "/Models/Profiles/CoreEquipment/AbstractClasses/GeneratingUnit/"
             style GeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Curve --> CurveStyle : Curve.curveStyle
@@ -78,8 +78,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [Curve](/Models/Profiles/CoreEquipment/ConcreteClasses/Curve/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
+    * [Curve](/Models/Profiles/CoreEquipment/AbstractClasses/Curve/)
         * **GrossToNetActivePowerCurve**
 
 ## Attributes

@@ -13,24 +13,19 @@ classDiagram
     style OperationalLimitType fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- OperationalLimitType : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitType --> OperationalLimit : OperationalLimitType.OperationalLimit
 
         OperationalLimit
-            click OperationalLimit href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimit/"
+            click OperationalLimit href "/Models/Profiles/CoreEquipment/AbstractClasses/OperationalLimit/"
             style OperationalLimit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        OperationalLimitType --> Seconds : OperationalLimitType.acceptableDuration
-
-        Seconds
-            click Seconds href "/Models/Profiles/CoreEquipment/ConcreteClasses/Seconds/"
-            style Seconds fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimit --> OperationalLimitType : OperationalLimit.OperationalLimitType
 
         OperationalLimit
-            click OperationalLimit href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimit/"
+            click OperationalLimit href "/Models/Profiles/CoreEquipment/AbstractClasses/OperationalLimit/"
             style OperationalLimit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitType --> OperationalLimitDirectionKind : OperationalLimitType.direction
@@ -57,7 +52,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
     * **OperationalLimitType**
 
 ## Attributes

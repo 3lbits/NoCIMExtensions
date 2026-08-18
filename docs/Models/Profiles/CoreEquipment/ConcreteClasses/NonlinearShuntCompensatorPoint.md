@@ -17,16 +17,6 @@ classDiagram
         NonlinearShuntCompensator
             click NonlinearShuntCompensator href "/Models/Profiles/CoreEquipment/ConcreteClasses/NonlinearShuntCompensator/"
             style NonlinearShuntCompensator fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        NonlinearShuntCompensatorPoint --> Susceptance : NonlinearShuntCompensatorPoint.b
-
-        Susceptance
-            click Susceptance href "/Models/Profiles/CoreEquipment/ConcreteClasses/Susceptance/"
-            style Susceptance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        NonlinearShuntCompensatorPoint --> Conductance : NonlinearShuntCompensatorPoint.g
-
-        Conductance
-            click Conductance href "/Models/Profiles/CoreEquipment/ConcreteClasses/Conductance/"
-            style Conductance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         NonlinearShuntCompensator --> NonlinearShuntCompensatorPoint : NonlinearShuntCompensator.NonlinearShuntCompensatorPoints
 

@@ -8,10 +8,10 @@ Profiles:
 
 - Abstract Classes
     
+    - [IdentifiedObject](/Models/Profiles/DiagramLayout/AbstractClasses/IdentifiedObject/)
+    
 
 - Concrete Classes
-    
-    - [AngleDegrees](/Models/Profiles/DiagramLayout/ConcreteClasses/AngleDegrees/)
     
     - [Diagram](/Models/Profiles/DiagramLayout/ConcreteClasses/Diagram/)
     
@@ -24,8 +24,6 @@ Profiles:
     - [DiagramObjectStyle](/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObjectStyle/)
     
     - [DiagramStyle](/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramStyle/)
-    
-    - [IdentifiedObject](/Models/Profiles/DiagramLayout/ConcreteClasses/IdentifiedObject/)
     
     - [TextDiagramObject](/Models/Profiles/DiagramLayout/ConcreteClasses/TextDiagramObject/)
     
@@ -42,4 +40,6 @@ Profiles:
     
 
 - Types
+    
+    - [AngleDegrees](/Models/Profiles/DiagramLayout/Types/AngleDegrees/)
     

@@ -13,11 +13,11 @@ classDiagram
     style NonConformLoadGroup fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         LoadGroup <|-- NonConformLoadGroup : inherits
-            click LoadGroup href "/Models/Profiles/CoreEquipment/ConcreteClasses/LoadGroup/"
+            click LoadGroup href "/Models/Profiles/CoreEquipment/AbstractClasses/LoadGroup/"
             style LoadGroup fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- LoadGroup : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         NonConformLoadGroup --> NonConformLoad : NonConformLoadGroup.EnergyConsumers
@@ -66,8 +66,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [LoadGroup](/Models/Profiles/CoreEquipment/ConcreteClasses/LoadGroup/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
+    * [LoadGroup](/Models/Profiles/CoreEquipment/AbstractClasses/LoadGroup/)
         * **NonConformLoadGroup**
 
 ## Attributes

@@ -13,7 +13,7 @@ classDiagram
     style DCTopologicalNode fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- DCTopologicalNode : inherits
-            click IdentifiedObject href "/Models/Profiles/StateVariables/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/StateVariables/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         DCTopologicalNode --> DCTopologicalIsland : DCTopologicalNode.DCTopologicalIsland
@@ -35,7 +35,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/StateVariables/ConcreteClasses/IdentifiedObject/)
+* [IdentifiedObject](/Models/Profiles/StateVariables/AbstractClasses/IdentifiedObject/)
     * **DCTopologicalNode**
 
 ## Attributes

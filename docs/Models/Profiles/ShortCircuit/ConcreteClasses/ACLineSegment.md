@@ -15,50 +15,25 @@ classDiagram
     style ACLineSegment fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Conductor <|-- ACLineSegment : inherits
-            click Conductor href "/Models/Profiles/ShortCircuit/ConcreteClasses/Conductor/"
+            click Conductor href "/Models/Profiles/ShortCircuit/AbstractClasses/Conductor/"
             style Conductor fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ConductingEquipment <|-- Conductor : inherits
-            click ConductingEquipment href "/Models/Profiles/ShortCircuit/ConcreteClasses/ConductingEquipment/"
+            click ConductingEquipment href "/Models/Profiles/ShortCircuit/AbstractClasses/ConductingEquipment/"
             style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- ConductingEquipment : inherits
-            click Equipment href "/Models/Profiles/ShortCircuit/ConcreteClasses/Equipment/"
+            click Equipment href "/Models/Profiles/ShortCircuit/AbstractClasses/Equipment/"
             style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
-            click PowerSystemResource href "/Models/Profiles/ShortCircuit/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/ShortCircuit/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "/Models/Profiles/ShortCircuit/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/ShortCircuit/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        ACLineSegment --> Susceptance : ACLineSegment.b0ch
-
-        Susceptance
-            click Susceptance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Susceptance/"
-            style Susceptance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACLineSegment --> Conductance : ACLineSegment.g0ch
-
-        Conductance
-            click Conductance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Conductance/"
-            style Conductance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACLineSegment --> Resistance : ACLineSegment.r0
-
-        Resistance
-            click Resistance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Resistance/"
-            style Resistance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACLineSegment --> Temperature : ACLineSegment.shortCircuitEndTemperature
-
-        Temperature
-            click Temperature href "/Models/Profiles/ShortCircuit/ConcreteClasses/Temperature/"
-            style Temperature fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACLineSegment --> Reactance : ACLineSegment.x0
-
-        Reactance
-            click Reactance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Reactance/"
-            style Reactance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         ACLineSegment : ACLineSegment.b0ch
@@ -70,11 +45,11 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/ShortCircuit/ConcreteClasses/IdentifiedObject/)
-    * [PowerSystemResource](/Models/Profiles/ShortCircuit/ConcreteClasses/PowerSystemResource/)
-        * [Equipment](/Models/Profiles/ShortCircuit/ConcreteClasses/Equipment/)
-            * [ConductingEquipment](/Models/Profiles/ShortCircuit/ConcreteClasses/ConductingEquipment/)
-                * [Conductor](/Models/Profiles/ShortCircuit/ConcreteClasses/Conductor/)
+* [IdentifiedObject](/Models/Profiles/ShortCircuit/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/ShortCircuit/AbstractClasses/PowerSystemResource/)
+        * [Equipment](/Models/Profiles/ShortCircuit/AbstractClasses/Equipment/)
+            * [ConductingEquipment](/Models/Profiles/ShortCircuit/AbstractClasses/ConductingEquipment/)
+                * [Conductor](/Models/Profiles/ShortCircuit/AbstractClasses/Conductor/)
                     * **ACLineSegment**
 
 ## Attributes

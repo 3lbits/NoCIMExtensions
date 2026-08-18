@@ -55,22 +55,17 @@ classDiagram
             style DCSwitch fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- DCConductingEquipment : inherits
-            click Equipment href "/Models/Profiles/CoreEquipment/ConcreteClasses/Equipment/"
+            click Equipment href "/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/"
             style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
-            click PowerSystemResource href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        DCConductingEquipment --> Voltage : DCConductingEquipment.ratedUdc
-
-        Voltage
-            click Voltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         DCConductingEquipment --> DCTerminal : DCConductingEquipment.DCTerminals
 
         DCTerminal
@@ -121,8 +116,8 @@ classDiagram
 
 ## Inheritance
 * [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [PowerSystemResource](/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/)
-        * [Equipment](/Models/Profiles/CoreEquipment/ConcreteClasses/Equipment/)
+    * [PowerSystemResource](/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/)
+        * [Equipment](/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/)
             * **DCConductingEquipment**
 
 ## Attributes

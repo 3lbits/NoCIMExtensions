@@ -19,7 +19,7 @@ classDiagram
         PowerSystemResource --> Control : PowerSystemResource.Controls
 
         Control
-            click Control href "/Models/Profiles/Operation/ConcreteClasses/Control/"
+            click Control href "/Models/Profiles/Operation/AbstractClasses/Control/"
             style Control fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         PowerSystemResource --> Measurement : PowerSystemResource.Measurements
 
@@ -30,7 +30,7 @@ classDiagram
         Control --> PowerSystemResource : Control.PowerSystemResource
 
         Control
-            click Control href "/Models/Profiles/Operation/ConcreteClasses/Control/"
+            click Control href "/Models/Profiles/Operation/AbstractClasses/Control/"
             style Control fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Measurement --> PowerSystemResource : Measurement.PowerSystemResource

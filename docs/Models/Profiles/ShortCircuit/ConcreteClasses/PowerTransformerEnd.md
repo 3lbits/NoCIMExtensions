@@ -19,43 +19,13 @@ classDiagram
     style PowerTransformerEnd fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         TransformerEnd <|-- PowerTransformerEnd : inherits
-            click TransformerEnd href "/Models/Profiles/ShortCircuit/ConcreteClasses/TransformerEnd/"
+            click TransformerEnd href "/Models/Profiles/ShortCircuit/AbstractClasses/TransformerEnd/"
             style TransformerEnd fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- TransformerEnd : inherits
-            click IdentifiedObject href "/Models/Profiles/ShortCircuit/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/ShortCircuit/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        PowerTransformerEnd --> Susceptance : PowerTransformerEnd.b0
-
-        Susceptance
-            click Susceptance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Susceptance/"
-            style Susceptance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PowerTransformerEnd --> Conductance : PowerTransformerEnd.g0
-
-        Conductance
-            click Conductance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Conductance/"
-            style Conductance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PowerTransformerEnd --> Resistance : PowerTransformerEnd.r0
-
-        Resistance
-            click Resistance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Resistance/"
-            style Resistance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PowerTransformerEnd --> Reactance : PowerTransformerEnd.x0
-
-        Reactance
-            click Reactance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Reactance/"
-            style Reactance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        TransformerEnd --> Resistance : TransformerEnd.rground
-
-        Resistance
-            click Resistance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Resistance/"
-            style Resistance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        TransformerEnd --> Reactance : TransformerEnd.xground
-
-        Reactance
-            click Reactance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Reactance/"
-            style Reactance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         PowerTransformerEnd : PowerTransformerEnd.b0
@@ -70,8 +40,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/ShortCircuit/ConcreteClasses/IdentifiedObject/)
-    * [TransformerEnd](/Models/Profiles/ShortCircuit/ConcreteClasses/TransformerEnd/)
+* [IdentifiedObject](/Models/Profiles/ShortCircuit/AbstractClasses/IdentifiedObject/)
+    * [TransformerEnd](/Models/Profiles/ShortCircuit/AbstractClasses/TransformerEnd/)
         * **PowerTransformerEnd**
 
 ## Attributes

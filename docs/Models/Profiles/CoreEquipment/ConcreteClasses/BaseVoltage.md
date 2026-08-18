@@ -13,18 +13,13 @@ classDiagram
     style BaseVoltage fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- BaseVoltage : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        BaseVoltage --> Voltage : BaseVoltage.nominalVoltage
-
-        Voltage
-            click Voltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         BaseVoltage --> ConductingEquipment : BaseVoltage.ConductingEquipment
 
         ConductingEquipment
-            click ConductingEquipment href "/Models/Profiles/CoreEquipment/ConcreteClasses/ConductingEquipment/"
+            click ConductingEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/ConductingEquipment/"
             style ConductingEquipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         BaseVoltage --> VoltageLevel : BaseVoltage.VoltageLevel
 
@@ -34,19 +29,19 @@ classDiagram
         BaseVoltage --> TransformerEnd : BaseVoltage.TransformerEnds
 
         TransformerEnd
-            click TransformerEnd href "/Models/Profiles/CoreEquipment/ConcreteClasses/TransformerEnd/"
+            click TransformerEnd href "/Models/Profiles/CoreEquipment/AbstractClasses/TransformerEnd/"
             style TransformerEnd fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConductingEquipment --> BaseVoltage : ConductingEquipment.BaseVoltage
 
         ConductingEquipment
-            click ConductingEquipment href "/Models/Profiles/CoreEquipment/ConcreteClasses/ConductingEquipment/"
+            click ConductingEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/ConductingEquipment/"
             style ConductingEquipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         TransformerEnd --> BaseVoltage : TransformerEnd.BaseVoltage
 
         TransformerEnd
-            click TransformerEnd href "/Models/Profiles/CoreEquipment/ConcreteClasses/TransformerEnd/"
+            click TransformerEnd href "/Models/Profiles/CoreEquipment/AbstractClasses/TransformerEnd/"
             style TransformerEnd fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         VoltageLevel --> BaseVoltage : VoltageLevel.BaseVoltage
@@ -68,7 +63,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
     * **BaseVoltage**
 
 ## Attributes

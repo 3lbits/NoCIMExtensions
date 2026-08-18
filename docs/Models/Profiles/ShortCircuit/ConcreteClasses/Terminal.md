@@ -13,11 +13,11 @@ classDiagram
     style Terminal fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ACDCTerminal <|-- Terminal : inherits
-            click ACDCTerminal href "/Models/Profiles/ShortCircuit/ConcreteClasses/ACDCTerminal/"
+            click ACDCTerminal href "/Models/Profiles/ShortCircuit/AbstractClasses/ACDCTerminal/"
             style ACDCTerminal fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- ACDCTerminal : inherits
-            click IdentifiedObject href "/Models/Profiles/ShortCircuit/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/ShortCircuit/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Terminal --> MutualCoupling : Terminal.HasSecondMutualCoupling
@@ -50,8 +50,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/ShortCircuit/ConcreteClasses/IdentifiedObject/)
-    * [ACDCTerminal](/Models/Profiles/ShortCircuit/ConcreteClasses/ACDCTerminal/)
+* [IdentifiedObject](/Models/Profiles/ShortCircuit/AbstractClasses/IdentifiedObject/)
+    * [ACDCTerminal](/Models/Profiles/ShortCircuit/AbstractClasses/ACDCTerminal/)
         * **Terminal**
 
 ## Attributes

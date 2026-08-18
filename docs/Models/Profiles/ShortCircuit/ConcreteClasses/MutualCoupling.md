@@ -13,49 +13,9 @@ classDiagram
     style MutualCoupling fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- MutualCoupling : inherits
-            click IdentifiedObject href "/Models/Profiles/ShortCircuit/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/ShortCircuit/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        MutualCoupling --> Susceptance : MutualCoupling.b0ch
-
-        Susceptance
-            click Susceptance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Susceptance/"
-            style Susceptance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        MutualCoupling --> Length : MutualCoupling.distance11
-
-        Length
-            click Length href "/Models/Profiles/ShortCircuit/ConcreteClasses/Length/"
-            style Length fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        MutualCoupling --> Length : MutualCoupling.distance12
-
-        Length
-            click Length href "/Models/Profiles/ShortCircuit/ConcreteClasses/Length/"
-            style Length fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        MutualCoupling --> Length : MutualCoupling.distance21
-
-        Length
-            click Length href "/Models/Profiles/ShortCircuit/ConcreteClasses/Length/"
-            style Length fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        MutualCoupling --> Length : MutualCoupling.distance22
-
-        Length
-            click Length href "/Models/Profiles/ShortCircuit/ConcreteClasses/Length/"
-            style Length fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        MutualCoupling --> Conductance : MutualCoupling.g0ch
-
-        Conductance
-            click Conductance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Conductance/"
-            style Conductance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        MutualCoupling --> Resistance : MutualCoupling.r0
-
-        Resistance
-            click Resistance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Resistance/"
-            style Resistance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        MutualCoupling --> Reactance : MutualCoupling.x0
-
-        Reactance
-            click Reactance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Reactance/"
-            style Reactance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         MutualCoupling --> Terminal : MutualCoupling.Second_Terminal
 
         Terminal
@@ -94,7 +54,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/ShortCircuit/ConcreteClasses/IdentifiedObject/)
+* [IdentifiedObject](/Models/Profiles/ShortCircuit/AbstractClasses/IdentifiedObject/)
     * **MutualCoupling**
 
 ## Attributes

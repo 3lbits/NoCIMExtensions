@@ -19,11 +19,11 @@ classDiagram
     style PowerTransformerEnd fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         TransformerEnd <|-- PowerTransformerEnd : inherits
-            click TransformerEnd href "/Models/Profiles/CoreEquipment/ConcreteClasses/TransformerEnd/"
+            click TransformerEnd href "/Models/Profiles/CoreEquipment/AbstractClasses/TransformerEnd/"
             style TransformerEnd fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- TransformerEnd : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerTransformerEnd --> PowerTransformer : PowerTransformerEnd.PowerTransformer
@@ -31,36 +31,6 @@ classDiagram
         PowerTransformer
             click PowerTransformer href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerTransformer/"
             style PowerTransformer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PowerTransformerEnd --> Susceptance : PowerTransformerEnd.b
-
-        Susceptance
-            click Susceptance href "/Models/Profiles/CoreEquipment/ConcreteClasses/Susceptance/"
-            style Susceptance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PowerTransformerEnd --> ApparentPower : PowerTransformerEnd.ratedS
-
-        ApparentPower
-            click ApparentPower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ApparentPower/"
-            style ApparentPower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PowerTransformerEnd --> Conductance : PowerTransformerEnd.g
-
-        Conductance
-            click Conductance href "/Models/Profiles/CoreEquipment/ConcreteClasses/Conductance/"
-            style Conductance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PowerTransformerEnd --> Voltage : PowerTransformerEnd.ratedU
-
-        Voltage
-            click Voltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PowerTransformerEnd --> Resistance : PowerTransformerEnd.r
-
-        Resistance
-            click Resistance href "/Models/Profiles/CoreEquipment/ConcreteClasses/Resistance/"
-            style Resistance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PowerTransformerEnd --> Reactance : PowerTransformerEnd.x
-
-        Reactance
-            click Reactance href "/Models/Profiles/CoreEquipment/ConcreteClasses/Reactance/"
-            style Reactance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         TransformerEnd --> BaseVoltage : TransformerEnd.BaseVoltage
 
         BaseVoltage
@@ -69,7 +39,7 @@ classDiagram
         TransformerEnd --> PhaseTapChanger : TransformerEnd.PhaseTapChanger
 
         PhaseTapChanger
-            click PhaseTapChanger href "/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChanger/"
+            click PhaseTapChanger href "/Models/Profiles/CoreEquipment/AbstractClasses/PhaseTapChanger/"
             style PhaseTapChanger fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         TransformerEnd --> RatioTapChanger : TransformerEnd.RatioTapChanger
 
@@ -91,7 +61,7 @@ classDiagram
         PhaseTapChanger --> TransformerEnd : PhaseTapChanger.TransformerEnd
 
         PhaseTapChanger
-            click PhaseTapChanger href "/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChanger/"
+            click PhaseTapChanger href "/Models/Profiles/CoreEquipment/AbstractClasses/PhaseTapChanger/"
             style PhaseTapChanger fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerTransformer --> PowerTransformerEnd : PowerTransformer.PowerTransformerEnd
@@ -139,8 +109,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [TransformerEnd](/Models/Profiles/CoreEquipment/ConcreteClasses/TransformerEnd/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
+    * [TransformerEnd](/Models/Profiles/CoreEquipment/AbstractClasses/TransformerEnd/)
         * **PowerTransformerEnd**
 
 ## Attributes

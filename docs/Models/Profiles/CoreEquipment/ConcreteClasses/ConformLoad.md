@@ -41,26 +41,6 @@ classDiagram
         ConformLoadGroup
             click ConformLoadGroup href "/Models/Profiles/CoreEquipment/ConcreteClasses/ConformLoadGroup/"
             style ConformLoadGroup fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        EnergyConsumer --> ActivePower : EnergyConsumer.pfixed
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        EnergyConsumer --> PerCent : EnergyConsumer.pfixedPct
-
-        PerCent
-            click PerCent href "/Models/Profiles/CoreEquipment/ConcreteClasses/PerCent/"
-            style PerCent fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        EnergyConsumer --> ReactivePower : EnergyConsumer.qfixed
-
-        ReactivePower
-            click ReactivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ReactivePower/"
-            style ReactivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        EnergyConsumer --> PerCent : EnergyConsumer.qfixedPct
-
-        PerCent
-            click PerCent href "/Models/Profiles/CoreEquipment/ConcreteClasses/PerCent/"
-            style PerCent fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         EnergyConsumer --> LoadResponseCharacteristic : EnergyConsumer.LoadResponse
 
         LoadResponseCharacteristic

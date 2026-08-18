@@ -15,7 +15,7 @@ classDiagram
         ACDCTerminal <|-- DCBaseTerminal : inherits
 
         DCBaseTerminal
-            click DCBaseTerminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCBaseTerminal/"
+            click DCBaseTerminal href "/Models/Profiles/CoreEquipment/AbstractClasses/DCBaseTerminal/"
             style DCBaseTerminal fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ACDCTerminal <|-- Terminal : inherits

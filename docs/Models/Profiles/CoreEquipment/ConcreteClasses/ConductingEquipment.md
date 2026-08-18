@@ -27,31 +27,31 @@ classDiagram
         ConductingEquipment <|-- Conductor : inherits
 
         Conductor
-            click Conductor href "/Models/Profiles/CoreEquipment/ConcreteClasses/Conductor/"
+            click Conductor href "/Models/Profiles/CoreEquipment/AbstractClasses/Conductor/"
             style Conductor fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConductingEquipment <|-- Connector : inherits
 
         Connector
-            click Connector href "/Models/Profiles/CoreEquipment/ConcreteClasses/Connector/"
+            click Connector href "/Models/Profiles/CoreEquipment/AbstractClasses/Connector/"
             style Connector fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConductingEquipment <|-- EarthFaultCompensator : inherits
 
         EarthFaultCompensator
-            click EarthFaultCompensator href "/Models/Profiles/CoreEquipment/ConcreteClasses/EarthFaultCompensator/"
+            click EarthFaultCompensator href "/Models/Profiles/CoreEquipment/AbstractClasses/EarthFaultCompensator/"
             style EarthFaultCompensator fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConductingEquipment <|-- EnergyConnection : inherits
 
         EnergyConnection
-            click EnergyConnection href "/Models/Profiles/CoreEquipment/ConcreteClasses/EnergyConnection/"
+            click EnergyConnection href "/Models/Profiles/CoreEquipment/AbstractClasses/EnergyConnection/"
             style EnergyConnection fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConductingEquipment <|-- EquivalentEquipment : inherits
 
         EquivalentEquipment
-            click EquivalentEquipment href "/Models/Profiles/CoreEquipment/ConcreteClasses/EquivalentEquipment/"
+            click EquivalentEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/EquivalentEquipment/"
             style EquivalentEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConductingEquipment <|-- Ground : inherits
@@ -79,11 +79,11 @@ classDiagram
             style Switch fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- ConductingEquipment : inherits
-            click Equipment href "/Models/Profiles/CoreEquipment/ConcreteClasses/Equipment/"
+            click Equipment href "/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/"
             style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
-            click PowerSystemResource href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
@@ -151,8 +151,8 @@ classDiagram
 
 ## Inheritance
 * [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [PowerSystemResource](/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/)
-        * [Equipment](/Models/Profiles/CoreEquipment/ConcreteClasses/Equipment/)
+    * [PowerSystemResource](/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/)
+        * [Equipment](/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/)
             * **ConductingEquipment**
 
 ## Attributes

@@ -8,42 +8,46 @@ Profiles:
 
 - Abstract Classes
     
+    - [ACDCTerminal](/Models/Profiles/ShortCircuit/AbstractClasses/ACDCTerminal/)
+    
+    - [ConductingEquipment](/Models/Profiles/ShortCircuit/AbstractClasses/ConductingEquipment/)
+    
+    - [Conductor](/Models/Profiles/ShortCircuit/AbstractClasses/Conductor/)
+    
+    - [Connector](/Models/Profiles/ShortCircuit/AbstractClasses/Connector/)
+    
+    - [EarthFaultCompensator](/Models/Profiles/ShortCircuit/AbstractClasses/EarthFaultCompensator/)
+    
+    - [EnergyConnection](/Models/Profiles/ShortCircuit/AbstractClasses/EnergyConnection/)
+    
+    - [Equipment](/Models/Profiles/ShortCircuit/AbstractClasses/Equipment/)
+    
+    - [EquivalentEquipment](/Models/Profiles/ShortCircuit/AbstractClasses/EquivalentEquipment/)
+    
+    - [IdentifiedObject](/Models/Profiles/ShortCircuit/AbstractClasses/IdentifiedObject/)
+    
+    - [PowerSystemResource](/Models/Profiles/ShortCircuit/AbstractClasses/PowerSystemResource/)
+    
+    - [RegulatingCondEq](/Models/Profiles/ShortCircuit/AbstractClasses/RegulatingCondEq/)
+    
+    - [RotatingMachine](/Models/Profiles/ShortCircuit/AbstractClasses/RotatingMachine/)
+    
+    - [ShuntCompensator](/Models/Profiles/ShortCircuit/AbstractClasses/ShuntCompensator/)
+    
+    - [TransformerEnd](/Models/Profiles/ShortCircuit/AbstractClasses/TransformerEnd/)
+    
 
 - Concrete Classes
     
-    - [ACDCTerminal](/Models/Profiles/ShortCircuit/ConcreteClasses/ACDCTerminal/)
-    
     - [ACLineSegment](/Models/Profiles/ShortCircuit/ConcreteClasses/ACLineSegment/)
-    
-    - [ActivePower](/Models/Profiles/ShortCircuit/ConcreteClasses/ActivePower/)
-    
-    - [AngleDegrees](/Models/Profiles/ShortCircuit/ConcreteClasses/AngleDegrees/)
     
     - [AsynchronousMachine](/Models/Profiles/ShortCircuit/ConcreteClasses/AsynchronousMachine/)
     
     - [BusbarSection](/Models/Profiles/ShortCircuit/ConcreteClasses/BusbarSection/)
     
-    - [Conductance](/Models/Profiles/ShortCircuit/ConcreteClasses/Conductance/)
-    
-    - [ConductingEquipment](/Models/Profiles/ShortCircuit/ConcreteClasses/ConductingEquipment/)
-    
-    - [Conductor](/Models/Profiles/ShortCircuit/ConcreteClasses/Conductor/)
-    
-    - [Connector](/Models/Profiles/ShortCircuit/ConcreteClasses/Connector/)
-    
-    - [CurrentFlow](/Models/Profiles/ShortCircuit/ConcreteClasses/CurrentFlow/)
-    
-    - [EarthFaultCompensator](/Models/Profiles/ShortCircuit/ConcreteClasses/EarthFaultCompensator/)
-    
-    - [EnergyConnection](/Models/Profiles/ShortCircuit/ConcreteClasses/EnergyConnection/)
-    
     - [EnergySource](/Models/Profiles/ShortCircuit/ConcreteClasses/EnergySource/)
     
-    - [Equipment](/Models/Profiles/ShortCircuit/ConcreteClasses/Equipment/)
-    
     - [EquivalentBranch](/Models/Profiles/ShortCircuit/ConcreteClasses/EquivalentBranch/)
-    
-    - [EquivalentEquipment](/Models/Profiles/ShortCircuit/ConcreteClasses/EquivalentEquipment/)
     
     - [EquivalentInjection](/Models/Profiles/ShortCircuit/ConcreteClasses/EquivalentInjection/)
     
@@ -51,51 +55,23 @@ Profiles:
     
     - [GroundingImpedance](/Models/Profiles/ShortCircuit/ConcreteClasses/GroundingImpedance/)
     
-    - [IdentifiedObject](/Models/Profiles/ShortCircuit/ConcreteClasses/IdentifiedObject/)
-    
-    - [Length](/Models/Profiles/ShortCircuit/ConcreteClasses/Length/)
-    
     - [LinearShuntCompensator](/Models/Profiles/ShortCircuit/ConcreteClasses/LinearShuntCompensator/)
     
     - [MutualCoupling](/Models/Profiles/ShortCircuit/ConcreteClasses/MutualCoupling/)
     
     - [NonlinearShuntCompensatorPoint](/Models/Profiles/ShortCircuit/ConcreteClasses/NonlinearShuntCompensatorPoint/)
     
-    - [PU](/Models/Profiles/ShortCircuit/ConcreteClasses/PU/)
-    
-    - [PerCent](/Models/Profiles/ShortCircuit/ConcreteClasses/PerCent/)
-    
     - [PetersenCoil](/Models/Profiles/ShortCircuit/ConcreteClasses/PetersenCoil/)
-    
-    - [PowerSystemResource](/Models/Profiles/ShortCircuit/ConcreteClasses/PowerSystemResource/)
     
     - [PowerTransformer](/Models/Profiles/ShortCircuit/ConcreteClasses/PowerTransformer/)
     
     - [PowerTransformerEnd](/Models/Profiles/ShortCircuit/ConcreteClasses/PowerTransformerEnd/)
     
-    - [Reactance](/Models/Profiles/ShortCircuit/ConcreteClasses/Reactance/)
-    
-    - [RegulatingCondEq](/Models/Profiles/ShortCircuit/ConcreteClasses/RegulatingCondEq/)
-    
-    - [Resistance](/Models/Profiles/ShortCircuit/ConcreteClasses/Resistance/)
-    
-    - [RotatingMachine](/Models/Profiles/ShortCircuit/ConcreteClasses/RotatingMachine/)
-    
     - [SeriesCompensator](/Models/Profiles/ShortCircuit/ConcreteClasses/SeriesCompensator/)
-    
-    - [ShuntCompensator](/Models/Profiles/ShortCircuit/ConcreteClasses/ShuntCompensator/)
-    
-    - [Susceptance](/Models/Profiles/ShortCircuit/ConcreteClasses/Susceptance/)
     
     - [SynchronousMachine](/Models/Profiles/ShortCircuit/ConcreteClasses/SynchronousMachine/)
     
-    - [Temperature](/Models/Profiles/ShortCircuit/ConcreteClasses/Temperature/)
-    
     - [Terminal](/Models/Profiles/ShortCircuit/ConcreteClasses/Terminal/)
-    
-    - [TransformerEnd](/Models/Profiles/ShortCircuit/ConcreteClasses/TransformerEnd/)
-    
-    - [Voltage](/Models/Profiles/ShortCircuit/ConcreteClasses/Voltage/)
     
 
 - Enumerations
@@ -110,4 +86,28 @@ Profiles:
     
 
 - Types
+    
+    - [ActivePower](/Models/Profiles/ShortCircuit/Types/ActivePower/)
+    
+    - [AngleDegrees](/Models/Profiles/ShortCircuit/Types/AngleDegrees/)
+    
+    - [Conductance](/Models/Profiles/ShortCircuit/Types/Conductance/)
+    
+    - [CurrentFlow](/Models/Profiles/ShortCircuit/Types/CurrentFlow/)
+    
+    - [Length](/Models/Profiles/ShortCircuit/Types/Length/)
+    
+    - [PU](/Models/Profiles/ShortCircuit/Types/PU/)
+    
+    - [PerCent](/Models/Profiles/ShortCircuit/Types/PerCent/)
+    
+    - [Reactance](/Models/Profiles/ShortCircuit/Types/Reactance/)
+    
+    - [Resistance](/Models/Profiles/ShortCircuit/Types/Resistance/)
+    
+    - [Susceptance](/Models/Profiles/ShortCircuit/Types/Susceptance/)
+    
+    - [Temperature](/Models/Profiles/ShortCircuit/Types/Temperature/)
+    
+    - [Voltage](/Models/Profiles/ShortCircuit/Types/Voltage/)
     

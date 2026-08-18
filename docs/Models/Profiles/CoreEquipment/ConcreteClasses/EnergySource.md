@@ -13,23 +13,23 @@ classDiagram
     style EnergySource fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         EnergyConnection <|-- EnergySource : inherits
-            click EnergyConnection href "/Models/Profiles/CoreEquipment/ConcreteClasses/EnergyConnection/"
+            click EnergyConnection href "/Models/Profiles/CoreEquipment/AbstractClasses/EnergyConnection/"
             style EnergyConnection fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ConductingEquipment <|-- EnergyConnection : inherits
-            click ConductingEquipment href "/Models/Profiles/CoreEquipment/ConcreteClasses/ConductingEquipment/"
+            click ConductingEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/ConductingEquipment/"
             style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- ConductingEquipment : inherits
-            click Equipment href "/Models/Profiles/CoreEquipment/ConcreteClasses/Equipment/"
+            click Equipment href "/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/"
             style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
-            click PowerSystemResource href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         EnergySource --> EnergySchedulingType : EnergySource.EnergySchedulingType
@@ -37,21 +37,6 @@ classDiagram
         EnergySchedulingType
             click EnergySchedulingType href "/Models/Profiles/CoreEquipment/ConcreteClasses/EnergySchedulingType/"
             style EnergySchedulingType fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        EnergySource --> Voltage : EnergySource.nominalVoltage
-
-        Voltage
-            click Voltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        EnergySource --> ActivePower : EnergySource.pMin
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        EnergySource --> ActivePower : EnergySource.pMax
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         ConductingEquipment --> BaseVoltage : ConductingEquipment.BaseVoltage
 
         BaseVoltage
@@ -65,7 +50,7 @@ classDiagram
         Equipment --> EquipmentContainer : Equipment.EquipmentContainer
 
         EquipmentContainer
-            click EquipmentContainer href "/Models/Profiles/CoreEquipment/ConcreteClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         Equipment --> OperationalLimitSet : Equipment.OperationalLimitSet
 
@@ -88,7 +73,7 @@ classDiagram
         EquipmentContainer --> Equipment : EquipmentContainer.Equipments
 
         EquipmentContainer
-            click EquipmentContainer href "/Models/Profiles/CoreEquipment/ConcreteClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitSet --> Equipment : OperationalLimitSet.Equipment
@@ -122,11 +107,11 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [PowerSystemResource](/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/)
-        * [Equipment](/Models/Profiles/CoreEquipment/ConcreteClasses/Equipment/)
-            * [ConductingEquipment](/Models/Profiles/CoreEquipment/ConcreteClasses/ConductingEquipment/)
-                * [EnergyConnection](/Models/Profiles/CoreEquipment/ConcreteClasses/EnergyConnection/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/)
+        * [Equipment](/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/)
+            * [ConductingEquipment](/Models/Profiles/CoreEquipment/AbstractClasses/ConductingEquipment/)
+                * [EnergyConnection](/Models/Profiles/CoreEquipment/AbstractClasses/EnergyConnection/)
                     * **EnergySource**
 
 ## Attributes

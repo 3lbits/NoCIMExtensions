@@ -32,56 +32,6 @@ classDiagram
             click IdentifiedObject href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        VsConverter --> PU : VsConverter.droop
-
-        PU
-            click PU href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/PU/"
-            style PU fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        VsConverter --> Resistance : VsConverter.droopCompensation
-
-        Resistance
-            click Resistance href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/Resistance/"
-            style Resistance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        VsConverter --> PerCent : VsConverter.qShare
-
-        PerCent
-            click PerCent href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/PerCent/"
-            style PerCent fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        VsConverter --> ReactivePower : VsConverter.targetQpcc
-
-        ReactivePower
-            click ReactivePower href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ReactivePower/"
-            style ReactivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        VsConverter --> Voltage : VsConverter.targetUpcc
-
-        Voltage
-            click Voltage href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        VsConverter --> AngleDegrees : VsConverter.targetPhasePcc
-
-        AngleDegrees
-            click AngleDegrees href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/AngleDegrees/"
-            style AngleDegrees fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> ActivePower : ACDCConverter.p
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> ReactivePower : ACDCConverter.q
-
-        ReactivePower
-            click ReactivePower href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ReactivePower/"
-            style ReactivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> ActivePower : ACDCConverter.targetPpcc
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> Voltage : ACDCConverter.targetUdc
-
-        Voltage
-            click Voltage href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         VsConverter --> VsPpccControlKind : VsConverter.pPccControl
 

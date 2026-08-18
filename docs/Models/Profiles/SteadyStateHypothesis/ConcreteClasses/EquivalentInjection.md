@@ -32,21 +32,6 @@ classDiagram
             click IdentifiedObject href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        EquivalentInjection --> Voltage : EquivalentInjection.regulationTarget
-
-        Voltage
-            click Voltage href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        EquivalentInjection --> ActivePower : EquivalentInjection.p
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        EquivalentInjection --> ReactivePower : EquivalentInjection.q
-
-        ReactivePower
-            click ReactivePower href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ReactivePower/"
-            style ReactivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         EquivalentInjection : EquivalentInjection.regulationStatus

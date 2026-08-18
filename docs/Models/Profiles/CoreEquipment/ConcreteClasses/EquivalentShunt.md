@@ -13,35 +13,25 @@ classDiagram
     style EquivalentShunt fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         EquivalentEquipment <|-- EquivalentShunt : inherits
-            click EquivalentEquipment href "/Models/Profiles/CoreEquipment/ConcreteClasses/EquivalentEquipment/"
+            click EquivalentEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/EquivalentEquipment/"
             style EquivalentEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ConductingEquipment <|-- EquivalentEquipment : inherits
-            click ConductingEquipment href "/Models/Profiles/CoreEquipment/ConcreteClasses/ConductingEquipment/"
+            click ConductingEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/ConductingEquipment/"
             style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- ConductingEquipment : inherits
-            click Equipment href "/Models/Profiles/CoreEquipment/ConcreteClasses/Equipment/"
+            click Equipment href "/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/"
             style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
-            click PowerSystemResource href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        EquivalentShunt --> Susceptance : EquivalentShunt.b
-
-        Susceptance
-            click Susceptance href "/Models/Profiles/CoreEquipment/ConcreteClasses/Susceptance/"
-            style Susceptance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        EquivalentShunt --> Conductance : EquivalentShunt.g
-
-        Conductance
-            click Conductance href "/Models/Profiles/CoreEquipment/ConcreteClasses/Conductance/"
-            style Conductance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         EquivalentEquipment --> EquivalentNetwork : EquivalentEquipment.EquivalentNetwork
 
         EquivalentNetwork
@@ -60,7 +50,7 @@ classDiagram
         Equipment --> EquipmentContainer : Equipment.EquipmentContainer
 
         EquipmentContainer
-            click EquipmentContainer href "/Models/Profiles/CoreEquipment/ConcreteClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         Equipment --> OperationalLimitSet : Equipment.OperationalLimitSet
 
@@ -77,7 +67,7 @@ classDiagram
         EquipmentContainer --> Equipment : EquipmentContainer.Equipments
 
         EquipmentContainer
-            click EquipmentContainer href "/Models/Profiles/CoreEquipment/ConcreteClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         EquivalentNetwork --> EquivalentEquipment : EquivalentNetwork.EquivalentEquipments
@@ -116,11 +106,11 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [PowerSystemResource](/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/)
-        * [Equipment](/Models/Profiles/CoreEquipment/ConcreteClasses/Equipment/)
-            * [ConductingEquipment](/Models/Profiles/CoreEquipment/ConcreteClasses/ConductingEquipment/)
-                * [EquivalentEquipment](/Models/Profiles/CoreEquipment/ConcreteClasses/EquivalentEquipment/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/)
+        * [Equipment](/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/)
+            * [ConductingEquipment](/Models/Profiles/CoreEquipment/AbstractClasses/ConductingEquipment/)
+                * [EquivalentEquipment](/Models/Profiles/CoreEquipment/AbstractClasses/EquivalentEquipment/)
                     * **EquivalentShunt**
 
 ## Attributes

@@ -13,7 +13,7 @@ classDiagram
     style Diagram fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- Diagram : inherits
-            click IdentifiedObject href "/Models/Profiles/DiagramLayout/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/DiagramLayout/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Diagram --> DiagramObject : Diagram.DiagramElements
@@ -70,7 +70,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/DiagramLayout/ConcreteClasses/IdentifiedObject/)
+* [IdentifiedObject](/Models/Profiles/DiagramLayout/AbstractClasses/IdentifiedObject/)
     * **Diagram**
 
 ## Attributes

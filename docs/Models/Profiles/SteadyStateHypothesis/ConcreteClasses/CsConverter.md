@@ -36,41 +36,6 @@ classDiagram
             click IdentifiedObject href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        CsConverter --> AngleDegrees : CsConverter.targetAlpha
-
-        AngleDegrees
-            click AngleDegrees href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/AngleDegrees/"
-            style AngleDegrees fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        CsConverter --> AngleDegrees : CsConverter.targetGamma
-
-        AngleDegrees
-            click AngleDegrees href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/AngleDegrees/"
-            style AngleDegrees fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        CsConverter --> CurrentFlow : CsConverter.targetIdc
-
-        CurrentFlow
-            click CurrentFlow href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/CurrentFlow/"
-            style CurrentFlow fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> ActivePower : ACDCConverter.p
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> ReactivePower : ACDCConverter.q
-
-        ReactivePower
-            click ReactivePower href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ReactivePower/"
-            style ReactivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> ActivePower : ACDCConverter.targetPpcc
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> Voltage : ACDCConverter.targetUdc
-
-        Voltage
-            click Voltage href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         CsConverter --> CsOperatingModeKind : CsConverter.operatingMode
 

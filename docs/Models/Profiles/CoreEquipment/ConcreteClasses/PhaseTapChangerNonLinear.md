@@ -25,7 +25,7 @@ classDiagram
             style PhaseTapChangerSymmetrical fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PhaseTapChanger <|-- PhaseTapChangerNonLinear : inherits
-            click PhaseTapChanger href "/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChanger/"
+            click PhaseTapChanger href "/Models/Profiles/CoreEquipment/AbstractClasses/PhaseTapChanger/"
             style PhaseTapChanger fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         TapChanger <|-- PhaseTapChanger : inherits
@@ -33,28 +33,13 @@ classDiagram
             style TapChanger fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- TapChanger : inherits
-            click PowerSystemResource href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        PhaseTapChangerNonLinear --> PerCent : PhaseTapChangerNonLinear.voltageStepIncrement
-
-        PerCent
-            click PerCent href "/Models/Profiles/CoreEquipment/ConcreteClasses/PerCent/"
-            style PerCent fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PhaseTapChangerNonLinear --> Reactance : PhaseTapChangerNonLinear.xMax
-
-        Reactance
-            click Reactance href "/Models/Profiles/CoreEquipment/ConcreteClasses/Reactance/"
-            style Reactance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PhaseTapChangerNonLinear --> Reactance : PhaseTapChangerNonLinear.xMin
-
-        Reactance
-            click Reactance href "/Models/Profiles/CoreEquipment/ConcreteClasses/Reactance/"
-            style Reactance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         PhaseTapChanger --> TransformerEnd : PhaseTapChanger.TransformerEnd
 
         TransformerEnd
@@ -63,13 +48,8 @@ classDiagram
         TapChanger --> TapSchedule : TapChanger.TapSchedules
 
         TapSchedule
-            click TapSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/TapSchedule/"
+            click TapSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/TapSchedule/"
             style TapSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        TapChanger --> Voltage : TapChanger.neutralU
-
-        Voltage
-            click Voltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         TapChanger --> TapChangerControl : TapChanger.TapChangerControl
 
         TapChangerControl
@@ -79,7 +59,7 @@ classDiagram
         TapSchedule --> TapChanger : TapSchedule.TapChanger
 
         TapSchedule
-            click TapSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/TapSchedule/"
+            click TapSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/TapSchedule/"
             style TapSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         TapChangerControl --> TapChanger : TapChangerControl.TapChanger
@@ -116,9 +96,9 @@ classDiagram
 
 ## Inheritance
 * [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [PowerSystemResource](/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/)
+    * [PowerSystemResource](/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/)
         * [TapChanger](/Models/Profiles/CoreEquipment/ConcreteClasses/TapChanger/)
-            * [PhaseTapChanger](/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChanger/)
+            * [PhaseTapChanger](/Models/Profiles/CoreEquipment/AbstractClasses/PhaseTapChanger/)
                 * **PhaseTapChangerNonLinear**
 
 ## Attributes

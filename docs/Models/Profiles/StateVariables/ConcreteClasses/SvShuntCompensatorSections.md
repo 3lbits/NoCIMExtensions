@@ -15,13 +15,13 @@ classDiagram
         SvShuntCompensatorSections --> ShuntCompensator : SvShuntCompensatorSections.ShuntCompensator
 
         ShuntCompensator
-            click ShuntCompensator href "/Models/Profiles/StateVariables/ConcreteClasses/ShuntCompensator/"
+            click ShuntCompensator href "/Models/Profiles/StateVariables/AbstractClasses/ShuntCompensator/"
             style ShuntCompensator fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ShuntCompensator --> SvShuntCompensatorSections : ShuntCompensator.SvShuntCompensatorSections
 
         ShuntCompensator
-            click ShuntCompensator href "/Models/Profiles/StateVariables/ConcreteClasses/ShuntCompensator/"
+            click ShuntCompensator href "/Models/Profiles/StateVariables/AbstractClasses/ShuntCompensator/"
             style ShuntCompensator fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 

@@ -15,13 +15,13 @@ classDiagram
         CurveData --> Curve : CurveData.Curve
 
         Curve
-            click Curve href "/Models/Profiles/CoreEquipment/ConcreteClasses/Curve/"
+            click Curve href "/Models/Profiles/CoreEquipment/AbstractClasses/Curve/"
             style Curve fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Curve --> CurveData : Curve.CurveDatas
 
         Curve
-            click Curve href "/Models/Profiles/CoreEquipment/ConcreteClasses/Curve/"
+            click Curve href "/Models/Profiles/CoreEquipment/AbstractClasses/Curve/"
             style Curve fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 

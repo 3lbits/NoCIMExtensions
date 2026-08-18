@@ -8,14 +8,34 @@ Profiles:
 
 - Abstract Classes
     
+    - [ACDCTerminal](/Models/Profiles/Operation/AbstractClasses/ACDCTerminal/)
+    
+    - [AccumulatorLimit](/Models/Profiles/Operation/AbstractClasses/AccumulatorLimit/)
+    
+    - [AnalogControl](/Models/Profiles/Operation/AbstractClasses/AnalogControl/)
+    
+    - [Control](/Models/Profiles/Operation/AbstractClasses/Control/)
+    
+    - [IOPoint](/Models/Profiles/Operation/AbstractClasses/IOPoint/)
+    
+    - [IdentifiedObject](/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/)
+    
+    - [Limit](/Models/Profiles/Operation/AbstractClasses/Limit/)
+    
+    - [LimitSet](/Models/Profiles/Operation/AbstractClasses/LimitSet/)
+    
+    - [Measurement](/Models/Profiles/Operation/AbstractClasses/Measurement/)
+    
+    - [MeasurementValue](/Models/Profiles/Operation/AbstractClasses/MeasurementValue/)
+    
+    - [PowerSystemResource](/Models/Profiles/Operation/AbstractClasses/PowerSystemResource/)
+    
+    - [Quality61850](/Models/Profiles/Operation/AbstractClasses/Quality61850/)
+    
 
 - Concrete Classes
     
-    - [ACDCTerminal](/Models/Profiles/Operation/ConcreteClasses/ACDCTerminal/)
-    
     - [Accumulator](/Models/Profiles/Operation/ConcreteClasses/Accumulator/)
-    
-    - [AccumulatorLimit](/Models/Profiles/Operation/ConcreteClasses/AccumulatorLimit/)
     
     - [AccumulatorLimitSet](/Models/Profiles/Operation/ConcreteClasses/AccumulatorLimitSet/)
     
@@ -25,8 +45,6 @@ Profiles:
     
     - [Analog](/Models/Profiles/Operation/ConcreteClasses/Analog/)
     
-    - [AnalogControl](/Models/Profiles/Operation/ConcreteClasses/AnalogControl/)
-    
     - [AnalogLimit](/Models/Profiles/Operation/ConcreteClasses/AnalogLimit/)
     
     - [AnalogLimitSet](/Models/Profiles/Operation/ConcreteClasses/AnalogLimitSet/)
@@ -35,33 +53,13 @@ Profiles:
     
     - [Command](/Models/Profiles/Operation/ConcreteClasses/Command/)
     
-    - [Control](/Models/Profiles/Operation/ConcreteClasses/Control/)
-    
     - [Discrete](/Models/Profiles/Operation/ConcreteClasses/Discrete/)
     
     - [DiscreteValue](/Models/Profiles/Operation/ConcreteClasses/DiscreteValue/)
     
-    - [IOPoint](/Models/Profiles/Operation/ConcreteClasses/IOPoint/)
-    
-    - [IdentifiedObject](/Models/Profiles/Operation/ConcreteClasses/IdentifiedObject/)
-    
-    - [Limit](/Models/Profiles/Operation/ConcreteClasses/Limit/)
-    
-    - [LimitSet](/Models/Profiles/Operation/ConcreteClasses/LimitSet/)
-    
-    - [Measurement](/Models/Profiles/Operation/ConcreteClasses/Measurement/)
-    
-    - [MeasurementValue](/Models/Profiles/Operation/ConcreteClasses/MeasurementValue/)
-    
     - [MeasurementValueQuality](/Models/Profiles/Operation/ConcreteClasses/MeasurementValueQuality/)
     
     - [MeasurementValueSource](/Models/Profiles/Operation/ConcreteClasses/MeasurementValueSource/)
-    
-    - [PerCent](/Models/Profiles/Operation/ConcreteClasses/PerCent/)
-    
-    - [PowerSystemResource](/Models/Profiles/Operation/ConcreteClasses/PowerSystemResource/)
-    
-    - [Quality61850](/Models/Profiles/Operation/ConcreteClasses/Quality61850/)
     
     - [RaiseLowerCommand](/Models/Profiles/Operation/ConcreteClasses/RaiseLowerCommand/)
     
@@ -92,4 +90,6 @@ Profiles:
     
 
 - Types
+    
+    - [PerCent](/Models/Profiles/Operation/Types/PerCent/)
     

@@ -28,26 +28,6 @@ classDiagram
             click ConductingEquipment href "/Models/Profiles/StateVariables/ConcreteClasses/ConductingEquipment/"
             style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        ACDCConverter --> CurrentFlow : ACDCConverter.idc
-
-        CurrentFlow
-            click CurrentFlow href "/Models/Profiles/StateVariables/ConcreteClasses/CurrentFlow/"
-            style CurrentFlow fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> ActivePower : ACDCConverter.poleLossP
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/StateVariables/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> Voltage : ACDCConverter.uc
-
-        Voltage
-            click Voltage href "/Models/Profiles/StateVariables/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> Voltage : ACDCConverter.udc
-
-        Voltage
-            click Voltage href "/Models/Profiles/StateVariables/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         ConductingEquipment --> SvStatus : ConductingEquipment.SvStatus
 
         SvStatus

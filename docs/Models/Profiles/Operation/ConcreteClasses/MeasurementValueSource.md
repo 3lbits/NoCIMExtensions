@@ -13,19 +13,19 @@ classDiagram
     style MeasurementValueSource fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- MeasurementValueSource : inherits
-            click IdentifiedObject href "/Models/Profiles/Operation/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MeasurementValueSource --> MeasurementValue : MeasurementValueSource.MeasurementValues
 
         MeasurementValue
-            click MeasurementValue href "/Models/Profiles/Operation/ConcreteClasses/MeasurementValue/"
+            click MeasurementValue href "/Models/Profiles/Operation/AbstractClasses/MeasurementValue/"
             style MeasurementValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         MeasurementValue --> MeasurementValueSource : MeasurementValue.MeasurementValueSource
 
         MeasurementValue
-            click MeasurementValue href "/Models/Profiles/Operation/ConcreteClasses/MeasurementValue/"
+            click MeasurementValue href "/Models/Profiles/Operation/AbstractClasses/MeasurementValue/"
             style MeasurementValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
@@ -36,7 +36,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/Operation/ConcreteClasses/IdentifiedObject/)
+* [IdentifiedObject](/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/)
     * **MeasurementValueSource**
 
 ## Attributes

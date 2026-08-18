@@ -14,18 +14,13 @@ classDiagram
     style VoltageLimit fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         OperationalLimit <|-- VoltageLimit : inherits
-            click OperationalLimit href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimit/"
+            click OperationalLimit href "/Models/Profiles/CoreEquipment/AbstractClasses/OperationalLimit/"
             style OperationalLimit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- OperationalLimit : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        VoltageLimit --> Voltage : VoltageLimit.normalValue
-
-        Voltage
-            click Voltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         OperationalLimit --> OperationalLimitSet : OperationalLimit.OperationalLimitSet
 
         OperationalLimitSet
@@ -61,8 +56,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [OperationalLimit](/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimit/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
+    * [OperationalLimit](/Models/Profiles/CoreEquipment/AbstractClasses/OperationalLimit/)
         * **VoltageLimit**
 
 ## Attributes

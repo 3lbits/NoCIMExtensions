@@ -13,21 +13,21 @@ classDiagram
     style ACDCConverterDCTerminal fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         DCBaseTerminal <|-- ACDCConverterDCTerminal : inherits
-            click DCBaseTerminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCBaseTerminal/"
+            click DCBaseTerminal href "/Models/Profiles/CoreEquipment/AbstractClasses/DCBaseTerminal/"
             style DCBaseTerminal fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ACDCTerminal <|-- DCBaseTerminal : inherits
-            click ACDCTerminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/ACDCTerminal/"
+            click ACDCTerminal href "/Models/Profiles/CoreEquipment/AbstractClasses/ACDCTerminal/"
             style ACDCTerminal fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- ACDCTerminal : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ACDCConverterDCTerminal --> ACDCConverter : ACDCConverterDCTerminal.DCConductingEquipment
 
         ACDCConverter
-            click ACDCConverter href "/Models/Profiles/CoreEquipment/ConcreteClasses/ACDCConverter/"
+            click ACDCConverter href "/Models/Profiles/CoreEquipment/AbstractClasses/ACDCConverter/"
             style ACDCConverter fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         DCBaseTerminal --> DCNode : DCBaseTerminal.DCNode
 
@@ -48,7 +48,7 @@ classDiagram
         ACDCConverter --> ACDCConverterDCTerminal : ACDCConverter.DCTerminals
 
         ACDCConverter
-            click ACDCConverter href "/Models/Profiles/CoreEquipment/ConcreteClasses/ACDCConverter/"
+            click ACDCConverter href "/Models/Profiles/CoreEquipment/AbstractClasses/ACDCConverter/"
             style ACDCConverter fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         BusNameMarker --> ACDCTerminal : BusNameMarker.Terminal
@@ -89,9 +89,9 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [ACDCTerminal](/Models/Profiles/CoreEquipment/ConcreteClasses/ACDCTerminal/)
-        * [DCBaseTerminal](/Models/Profiles/CoreEquipment/ConcreteClasses/DCBaseTerminal/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
+    * [ACDCTerminal](/Models/Profiles/CoreEquipment/AbstractClasses/ACDCTerminal/)
+        * [DCBaseTerminal](/Models/Profiles/CoreEquipment/AbstractClasses/DCBaseTerminal/)
             * **ACDCConverterDCTerminal**
 
 ## Attributes

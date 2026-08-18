@@ -15,13 +15,13 @@ classDiagram
         SvTapStep --> TapChanger : SvTapStep.TapChanger
 
         TapChanger
-            click TapChanger href "/Models/Profiles/StateVariables/ConcreteClasses/TapChanger/"
+            click TapChanger href "/Models/Profiles/StateVariables/AbstractClasses/TapChanger/"
             style TapChanger fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         TapChanger --> SvTapStep : TapChanger.SvTapStep
 
         TapChanger
-            click TapChanger href "/Models/Profiles/StateVariables/ConcreteClasses/TapChanger/"
+            click TapChanger href "/Models/Profiles/StateVariables/AbstractClasses/TapChanger/"
             style TapChanger fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 

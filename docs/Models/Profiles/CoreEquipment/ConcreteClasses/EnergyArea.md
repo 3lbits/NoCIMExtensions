@@ -31,13 +31,13 @@ classDiagram
         EnergyArea --> ControlArea : EnergyArea.ControlArea
 
         ControlArea
-            click ControlArea href "/Models/Profiles/CoreEquipment/ConcreteClasses/ControlArea/"
+            click ControlArea href "/Models/Profiles/CoreEquipment/AbstractClasses/ControlArea/"
             style ControlArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ControlArea --> EnergyArea : ControlArea.EnergyArea
 
         ControlArea
-            click ControlArea href "/Models/Profiles/CoreEquipment/ConcreteClasses/ControlArea/"
+            click ControlArea href "/Models/Profiles/CoreEquipment/AbstractClasses/ControlArea/"
             style ControlArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 

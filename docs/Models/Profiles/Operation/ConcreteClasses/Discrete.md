@@ -13,11 +13,11 @@ classDiagram
     style Discrete fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Measurement <|-- Discrete : inherits
-            click Measurement href "/Models/Profiles/Operation/ConcreteClasses/Measurement/"
+            click Measurement href "/Models/Profiles/Operation/AbstractClasses/Measurement/"
             style Measurement fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- Measurement : inherits
-            click IdentifiedObject href "/Models/Profiles/Operation/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Discrete --> DiscreteValue : Discrete.DiscreteValues
@@ -33,18 +33,18 @@ classDiagram
         Measurement --> ACDCTerminal : Measurement.Terminal
 
         ACDCTerminal
-            click ACDCTerminal href "/Models/Profiles/Operation/ConcreteClasses/ACDCTerminal/"
+            click ACDCTerminal href "/Models/Profiles/Operation/AbstractClasses/ACDCTerminal/"
             style ACDCTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         Measurement --> PowerSystemResource : Measurement.PowerSystemResource
 
         PowerSystemResource
-            click PowerSystemResource href "/Models/Profiles/Operation/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/Operation/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ACDCTerminal --> Measurement : ACDCTerminal.Measurements
 
         ACDCTerminal
-            click ACDCTerminal href "/Models/Profiles/Operation/ConcreteClasses/ACDCTerminal/"
+            click ACDCTerminal href "/Models/Profiles/Operation/AbstractClasses/ACDCTerminal/"
             style ACDCTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         DiscreteValue --> Discrete : DiscreteValue.Discrete
@@ -56,7 +56,7 @@ classDiagram
         PowerSystemResource --> Measurement : PowerSystemResource.Measurements
 
         PowerSystemResource
-            click PowerSystemResource href "/Models/Profiles/Operation/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/Operation/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ValueAliasSet --> Discrete : ValueAliasSet.Discretes
@@ -95,8 +95,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/Operation/ConcreteClasses/IdentifiedObject/)
-    * [Measurement](/Models/Profiles/Operation/ConcreteClasses/Measurement/)
+* [IdentifiedObject](/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/)
+    * [Measurement](/Models/Profiles/Operation/AbstractClasses/Measurement/)
         * **Discrete**
 
 ## Attributes

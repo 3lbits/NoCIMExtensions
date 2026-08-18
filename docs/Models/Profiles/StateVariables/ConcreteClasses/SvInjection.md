@@ -12,16 +12,6 @@ classDiagram
     click SvInjection href "/Models/Profiles/StateVariables/ConcreteClasses/SvInjection/"
     style SvInjection fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        SvInjection --> ActivePower : SvInjection.pInjection
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/StateVariables/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        SvInjection --> ReactivePower : SvInjection.qInjection
-
-        ReactivePower
-            click ReactivePower href "/Models/Profiles/StateVariables/ConcreteClasses/ReactivePower/"
-            style ReactivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         SvInjection --> TopologicalNode : SvInjection.TopologicalNode
 
         TopologicalNode

@@ -28,11 +28,6 @@ classDiagram
             click IdentifiedObject href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        BatteryUnit --> RealEnergy : BatteryUnit.storedE
-
-        RealEnergy
-            click RealEnergy href "/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/RealEnergy/"
-            style RealEnergy fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         BatteryUnit --> BatteryStateKind : BatteryUnit.batteryState
 

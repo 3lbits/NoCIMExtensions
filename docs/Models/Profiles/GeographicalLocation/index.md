@@ -8,18 +8,18 @@ Profiles:
 
 - Abstract Classes
     
+    - [IdentifiedObject](/Models/Profiles/GeographicalLocation/AbstractClasses/IdentifiedObject/)
+    
+    - [PowerSystemResource](/Models/Profiles/GeographicalLocation/AbstractClasses/PowerSystemResource/)
+    
 
 - Concrete Classes
     
     - [CoordinateSystem](/Models/Profiles/GeographicalLocation/ConcreteClasses/CoordinateSystem/)
     
-    - [IdentifiedObject](/Models/Profiles/GeographicalLocation/ConcreteClasses/IdentifiedObject/)
-    
     - [Location](/Models/Profiles/GeographicalLocation/ConcreteClasses/Location/)
     
     - [PositionPoint](/Models/Profiles/GeographicalLocation/ConcreteClasses/PositionPoint/)
-    
-    - [PowerSystemResource](/Models/Profiles/GeographicalLocation/ConcreteClasses/PowerSystemResource/)
     
     - [ServiceLocation](/Models/Profiles/GeographicalLocation/ConcreteClasses/ServiceLocation/)
     

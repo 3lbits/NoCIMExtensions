@@ -13,63 +13,43 @@ classDiagram
     style AsynchronousMachine fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         RotatingMachine <|-- AsynchronousMachine : inherits
-            click RotatingMachine href "/Models/Profiles/CoreEquipment/ConcreteClasses/RotatingMachine/"
+            click RotatingMachine href "/Models/Profiles/CoreEquipment/AbstractClasses/RotatingMachine/"
             style RotatingMachine fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         RegulatingCondEq <|-- RotatingMachine : inherits
-            click RegulatingCondEq href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegulatingCondEq/"
+            click RegulatingCondEq href "/Models/Profiles/CoreEquipment/AbstractClasses/RegulatingCondEq/"
             style RegulatingCondEq fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         EnergyConnection <|-- RegulatingCondEq : inherits
-            click EnergyConnection href "/Models/Profiles/CoreEquipment/ConcreteClasses/EnergyConnection/"
+            click EnergyConnection href "/Models/Profiles/CoreEquipment/AbstractClasses/EnergyConnection/"
             style EnergyConnection fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ConductingEquipment <|-- EnergyConnection : inherits
-            click ConductingEquipment href "/Models/Profiles/CoreEquipment/ConcreteClasses/ConductingEquipment/"
+            click ConductingEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/ConductingEquipment/"
             style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- ConductingEquipment : inherits
-            click Equipment href "/Models/Profiles/CoreEquipment/ConcreteClasses/Equipment/"
+            click Equipment href "/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/"
             style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
-            click PowerSystemResource href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        AsynchronousMachine --> Frequency : AsynchronousMachine.nominalFrequency
-
-        Frequency
-            click Frequency href "/Models/Profiles/CoreEquipment/ConcreteClasses/Frequency/"
-            style Frequency fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        AsynchronousMachine --> RotationSpeed : AsynchronousMachine.nominalSpeed
-
-        RotationSpeed
-            click RotationSpeed href "/Models/Profiles/CoreEquipment/ConcreteClasses/RotationSpeed/"
-            style RotationSpeed fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         RotatingMachine --> GeneratingUnit : RotatingMachine.GeneratingUnit
 
         GeneratingUnit
-            click GeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/GeneratingUnit/"
+            click GeneratingUnit href "/Models/Profiles/CoreEquipment/AbstractClasses/GeneratingUnit/"
             style GeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         RotatingMachine --> HydroPump : RotatingMachine.HydroPump
 
         HydroPump
             click HydroPump href "/Models/Profiles/CoreEquipment/ConcreteClasses/HydroPump/"
             style HydroPump fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        RotatingMachine --> ApparentPower : RotatingMachine.ratedS
-
-        ApparentPower
-            click ApparentPower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ApparentPower/"
-            style ApparentPower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        RotatingMachine --> Voltage : RotatingMachine.ratedU
-
-        Voltage
-            click Voltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         RegulatingCondEq --> RegulatingControl : RegulatingCondEq.RegulatingControl
 
         RegulatingControl
@@ -88,7 +68,7 @@ classDiagram
         Equipment --> EquipmentContainer : Equipment.EquipmentContainer
 
         EquipmentContainer
-            click EquipmentContainer href "/Models/Profiles/CoreEquipment/ConcreteClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         Equipment --> OperationalLimitSet : Equipment.OperationalLimitSet
 
@@ -105,13 +85,13 @@ classDiagram
         EquipmentContainer --> Equipment : EquipmentContainer.Equipments
 
         EquipmentContainer
-            click EquipmentContainer href "/Models/Profiles/CoreEquipment/ConcreteClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         GeneratingUnit --> RotatingMachine : GeneratingUnit.RotatingMachine
 
         GeneratingUnit
-            click GeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/GeneratingUnit/"
+            click GeneratingUnit href "/Models/Profiles/CoreEquipment/AbstractClasses/GeneratingUnit/"
             style GeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         HydroPump --> RotatingMachine : HydroPump.RotatingMachine
@@ -161,13 +141,13 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [PowerSystemResource](/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/)
-        * [Equipment](/Models/Profiles/CoreEquipment/ConcreteClasses/Equipment/)
-            * [ConductingEquipment](/Models/Profiles/CoreEquipment/ConcreteClasses/ConductingEquipment/)
-                * [EnergyConnection](/Models/Profiles/CoreEquipment/ConcreteClasses/EnergyConnection/)
-                    * [RegulatingCondEq](/Models/Profiles/CoreEquipment/ConcreteClasses/RegulatingCondEq/)
-                        * [RotatingMachine](/Models/Profiles/CoreEquipment/ConcreteClasses/RotatingMachine/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/)
+        * [Equipment](/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/)
+            * [ConductingEquipment](/Models/Profiles/CoreEquipment/AbstractClasses/ConductingEquipment/)
+                * [EnergyConnection](/Models/Profiles/CoreEquipment/AbstractClasses/EnergyConnection/)
+                    * [RegulatingCondEq](/Models/Profiles/CoreEquipment/AbstractClasses/RegulatingCondEq/)
+                        * [RotatingMachine](/Models/Profiles/CoreEquipment/AbstractClasses/RotatingMachine/)
                             * **AsynchronousMachine**
 
 ## Attributes

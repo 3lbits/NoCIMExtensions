@@ -24,26 +24,6 @@ classDiagram
             click RatioTapChangerTablePoint href "/Models/Profiles/CoreEquipment/ConcreteClasses/RatioTapChangerTablePoint/"
             style RatioTapChangerTablePoint fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        TapChangerTablePoint --> PerCent : TapChangerTablePoint.b
-
-        PerCent
-            click PerCent href "/Models/Profiles/CoreEquipment/ConcreteClasses/PerCent/"
-            style PerCent fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        TapChangerTablePoint --> PerCent : TapChangerTablePoint.g
-
-        PerCent
-            click PerCent href "/Models/Profiles/CoreEquipment/ConcreteClasses/PerCent/"
-            style PerCent fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        TapChangerTablePoint --> PerCent : TapChangerTablePoint.r
-
-        PerCent
-            click PerCent href "/Models/Profiles/CoreEquipment/ConcreteClasses/PerCent/"
-            style PerCent fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        TapChangerTablePoint --> PerCent : TapChangerTablePoint.x
-
-        PerCent
-            click PerCent href "/Models/Profiles/CoreEquipment/ConcreteClasses/PerCent/"
-            style PerCent fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         TapChangerTablePoint : TapChangerTablePoint.b

@@ -23,7 +23,7 @@ classDiagram
             style Location fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- Location : inherits
-            click IdentifiedObject href "/Models/Profiles/GeographicalLocation/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/GeographicalLocation/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Location --> CoordinateSystem : Location.CoordinateSystem
@@ -39,7 +39,7 @@ classDiagram
         Location --> PowerSystemResource : Location.PowerSystemResources
 
         PowerSystemResource
-            click PowerSystemResource href "/Models/Profiles/GeographicalLocation/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/GeographicalLocation/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         Location --> PositionPoint : Location.PositionPoints
 
@@ -62,7 +62,7 @@ classDiagram
         PowerSystemResource --> Location : PowerSystemResource.Location
 
         PowerSystemResource
-            click PowerSystemResource href "/Models/Profiles/GeographicalLocation/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/GeographicalLocation/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
@@ -75,7 +75,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/GeographicalLocation/ConcreteClasses/IdentifiedObject/)
+* [IdentifiedObject](/Models/Profiles/GeographicalLocation/AbstractClasses/IdentifiedObject/)
     * [Location](/Models/Profiles/GeographicalLocation/ConcreteClasses/Location/)
         * **WorkLocation**
 

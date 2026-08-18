@@ -26,11 +26,11 @@ classDiagram
             style TapChangerControl fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- RegulatingControl : inherits
-            click PowerSystemResource href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         RegulatingControl --> RegulationSchedule : RegulatingControl.RegulationSchedule
@@ -41,7 +41,7 @@ classDiagram
         RegulatingControl --> RegulatingCondEq : RegulatingControl.RegulatingCondEq
 
         RegulatingCondEq
-            click RegulatingCondEq href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegulatingCondEq/"
+            click RegulatingCondEq href "/Models/Profiles/CoreEquipment/AbstractClasses/RegulatingCondEq/"
             style RegulatingCondEq fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         RegulatingControl --> Terminal : RegulatingControl.Terminal
 
@@ -58,7 +58,7 @@ classDiagram
         RegulatingCondEq --> RegulatingControl : RegulatingCondEq.RegulatingControl
 
         RegulatingCondEq
-            click RegulatingCondEq href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegulatingCondEq/"
+            click RegulatingCondEq href "/Models/Profiles/CoreEquipment/AbstractClasses/RegulatingCondEq/"
             style RegulatingCondEq fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Terminal --> RegulatingControl : Terminal.RegulatingControl
@@ -85,8 +85,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [PowerSystemResource](/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/)
         * **RegulatingControl**
 
 ## Attributes

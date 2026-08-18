@@ -13,19 +13,19 @@ classDiagram
     style PhaseTapChangerTabular fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PhaseTapChanger <|-- PhaseTapChangerTabular : inherits
-            click PhaseTapChanger href "/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChanger/"
+            click PhaseTapChanger href "/Models/Profiles/CoreEquipment/AbstractClasses/PhaseTapChanger/"
             style PhaseTapChanger fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         TapChanger <|-- PhaseTapChanger : inherits
-            click TapChanger href "/Models/Profiles/CoreEquipment/ConcreteClasses/TapChanger/"
+            click TapChanger href "/Models/Profiles/CoreEquipment/AbstractClasses/TapChanger/"
             style TapChanger fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- TapChanger : inherits
-            click PowerSystemResource href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PhaseTapChangerTabular --> PhaseTapChangerTable : PhaseTapChangerTabular.PhaseTapChangerTable
@@ -36,18 +36,13 @@ classDiagram
         PhaseTapChanger --> TransformerEnd : PhaseTapChanger.TransformerEnd
 
         TransformerEnd
-            click TransformerEnd href "/Models/Profiles/CoreEquipment/ConcreteClasses/TransformerEnd/"
+            click TransformerEnd href "/Models/Profiles/CoreEquipment/AbstractClasses/TransformerEnd/"
             style TransformerEnd fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         TapChanger --> TapSchedule : TapChanger.TapSchedules
 
         TapSchedule
-            click TapSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/TapSchedule/"
+            click TapSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/TapSchedule/"
             style TapSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        TapChanger --> Voltage : TapChanger.neutralU
-
-        Voltage
-            click Voltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         TapChanger --> TapChangerControl : TapChanger.TapChangerControl
 
         TapChangerControl
@@ -57,7 +52,7 @@ classDiagram
         TapSchedule --> TapChanger : TapSchedule.TapChanger
 
         TapSchedule
-            click TapSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/TapSchedule/"
+            click TapSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/TapSchedule/"
             style TapSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PhaseTapChangerTable --> PhaseTapChangerTabular : PhaseTapChangerTable.PhaseTapChangerTabular
@@ -75,7 +70,7 @@ classDiagram
         TransformerEnd --> PhaseTapChanger : TransformerEnd.PhaseTapChanger
 
         TransformerEnd
-            click TransformerEnd href "/Models/Profiles/CoreEquipment/ConcreteClasses/TransformerEnd/"
+            click TransformerEnd href "/Models/Profiles/CoreEquipment/AbstractClasses/TransformerEnd/"
             style TransformerEnd fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
@@ -97,10 +92,10 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [PowerSystemResource](/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/)
-        * [TapChanger](/Models/Profiles/CoreEquipment/ConcreteClasses/TapChanger/)
-            * [PhaseTapChanger](/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChanger/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/)
+        * [TapChanger](/Models/Profiles/CoreEquipment/AbstractClasses/TapChanger/)
+            * [PhaseTapChanger](/Models/Profiles/CoreEquipment/AbstractClasses/PhaseTapChanger/)
                 * **PhaseTapChangerTabular**
 
 ## Attributes

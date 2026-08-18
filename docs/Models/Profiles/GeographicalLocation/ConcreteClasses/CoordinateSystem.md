@@ -13,7 +13,7 @@ classDiagram
     style CoordinateSystem fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- CoordinateSystem : inherits
-            click IdentifiedObject href "/Models/Profiles/GeographicalLocation/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/GeographicalLocation/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         CoordinateSystem --> Location : CoordinateSystem.Locations
@@ -36,7 +36,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/GeographicalLocation/ConcreteClasses/IdentifiedObject/)
+* [IdentifiedObject](/Models/Profiles/GeographicalLocation/AbstractClasses/IdentifiedObject/)
     * **CoordinateSystem**
 
 ## Attributes

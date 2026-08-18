@@ -13,21 +13,21 @@ classDiagram
     style DCTerminal fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         DCBaseTerminal <|-- DCTerminal : inherits
-            click DCBaseTerminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCBaseTerminal/"
+            click DCBaseTerminal href "/Models/Profiles/CoreEquipment/AbstractClasses/DCBaseTerminal/"
             style DCBaseTerminal fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ACDCTerminal <|-- DCBaseTerminal : inherits
-            click ACDCTerminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/ACDCTerminal/"
+            click ACDCTerminal href "/Models/Profiles/CoreEquipment/AbstractClasses/ACDCTerminal/"
             style ACDCTerminal fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- ACDCTerminal : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         DCTerminal --> DCConductingEquipment : DCTerminal.DCConductingEquipment
 
         DCConductingEquipment
-            click DCConductingEquipment href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCConductingEquipment/"
+            click DCConductingEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/DCConductingEquipment/"
             style DCConductingEquipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         DCBaseTerminal --> DCNode : DCBaseTerminal.DCNode
 
@@ -54,7 +54,7 @@ classDiagram
         DCConductingEquipment --> DCTerminal : DCConductingEquipment.DCTerminals
 
         DCConductingEquipment
-            click DCConductingEquipment href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCConductingEquipment/"
+            click DCConductingEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/DCConductingEquipment/"
             style DCConductingEquipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         DCNode --> DCBaseTerminal : DCNode.DCTerminals
@@ -83,9 +83,9 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [ACDCTerminal](/Models/Profiles/CoreEquipment/ConcreteClasses/ACDCTerminal/)
-        * [DCBaseTerminal](/Models/Profiles/CoreEquipment/ConcreteClasses/DCBaseTerminal/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
+    * [ACDCTerminal](/Models/Profiles/CoreEquipment/AbstractClasses/ACDCTerminal/)
+        * [DCBaseTerminal](/Models/Profiles/CoreEquipment/AbstractClasses/DCBaseTerminal/)
             * **DCTerminal**
 
 ## Attributes

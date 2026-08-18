@@ -69,11 +69,6 @@ classDiagram
         RegularTimePoint
             click RegularTimePoint href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegularTimePoint/"
             style RegularTimePoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        RegularIntervalSchedule --> Seconds : RegularIntervalSchedule.timeStep
-
-        Seconds
-            click Seconds href "/Models/Profiles/CoreEquipment/ConcreteClasses/Seconds/"
-            style Seconds fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         DayType --> SeasonDayTypeSchedule : DayType.SeasonDayTypeSchedules
 

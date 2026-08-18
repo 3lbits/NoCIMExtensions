@@ -14,7 +14,7 @@ classDiagram
     style TopologicalNode fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- TopologicalNode : inherits
-            click IdentifiedObject href "/Models/Profiles/Topology/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/Topology/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         TopologicalNode --> BaseVoltage : TopologicalNode.BaseVoltage
@@ -30,7 +30,7 @@ classDiagram
         TopologicalNode --> ConnectivityNodeContainer : TopologicalNode.ConnectivityNodeContainer
 
         ConnectivityNodeContainer
-            click ConnectivityNodeContainer href "/Models/Profiles/Topology/ConcreteClasses/ConnectivityNodeContainer/"
+            click ConnectivityNodeContainer href "/Models/Profiles/Topology/AbstractClasses/ConnectivityNodeContainer/"
             style ConnectivityNodeContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         TopologicalNode --> Terminal : TopologicalNode.Terminal
 
@@ -58,7 +58,7 @@ classDiagram
         ConnectivityNodeContainer --> TopologicalNode : ConnectivityNodeContainer.TopologicalNode
 
         ConnectivityNodeContainer
-            click ConnectivityNodeContainer href "/Models/Profiles/Topology/ConcreteClasses/ConnectivityNodeContainer/"
+            click ConnectivityNodeContainer href "/Models/Profiles/Topology/AbstractClasses/ConnectivityNodeContainer/"
             style ConnectivityNodeContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Terminal --> TopologicalNode : Terminal.TopologicalNode
@@ -87,7 +87,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/Topology/ConcreteClasses/IdentifiedObject/)
+* [IdentifiedObject](/Models/Profiles/Topology/AbstractClasses/IdentifiedObject/)
     * **TopologicalNode**
 
 ## Attributes

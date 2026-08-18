@@ -39,7 +39,7 @@ classDiagram
         IdentifiedObject <|-- ConnectivityNode : inherits
 
         ConnectivityNode
-            click ConnectivityNode href "/Models/Profiles/CoreEquipment/ConcreteClasses/ConnectivityNode/"
+            click ConnectivityNode href "/Models/Profiles/CoreEquipment/AbstractClasses/ConnectivityNode/"
             style ConnectivityNode fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- ControlAreaGeneratingUnit : inherits
@@ -129,7 +129,7 @@ classDiagram
         IdentifiedObject <|-- PowerSystemResource : inherits
 
         PowerSystemResource
-            click PowerSystemResource href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- RatioTapChangerTable : inherits

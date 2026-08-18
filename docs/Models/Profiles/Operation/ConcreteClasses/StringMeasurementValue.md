@@ -13,15 +13,15 @@ classDiagram
     style StringMeasurementValue fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         MeasurementValue <|-- StringMeasurementValue : inherits
-            click MeasurementValue href "/Models/Profiles/Operation/ConcreteClasses/MeasurementValue/"
+            click MeasurementValue href "/Models/Profiles/Operation/AbstractClasses/MeasurementValue/"
             style MeasurementValue fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IOPoint <|-- MeasurementValue : inherits
-            click IOPoint href "/Models/Profiles/Operation/ConcreteClasses/IOPoint/"
+            click IOPoint href "/Models/Profiles/Operation/AbstractClasses/IOPoint/"
             style IOPoint fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- IOPoint : inherits
-            click IdentifiedObject href "/Models/Profiles/Operation/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         StringMeasurementValue --> StringMeasurement : StringMeasurementValue.StringMeasurement
@@ -29,11 +29,6 @@ classDiagram
         StringMeasurement
             click StringMeasurement href "/Models/Profiles/Operation/ConcreteClasses/StringMeasurement/"
             style StringMeasurement fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        MeasurementValue --> PerCent : MeasurementValue.sensorAccuracy
-
-        PerCent
-            click PerCent href "/Models/Profiles/Operation/ConcreteClasses/PerCent/"
-            style PerCent fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         MeasurementValue --> MeasurementValueQuality : MeasurementValue.MeasurementValueQuality
 
         MeasurementValueQuality
@@ -75,9 +70,9 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/Operation/ConcreteClasses/IdentifiedObject/)
-    * [IOPoint](/Models/Profiles/Operation/ConcreteClasses/IOPoint/)
-        * [MeasurementValue](/Models/Profiles/Operation/ConcreteClasses/MeasurementValue/)
+* [IdentifiedObject](/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/)
+    * [IOPoint](/Models/Profiles/Operation/AbstractClasses/IOPoint/)
+        * [MeasurementValue](/Models/Profiles/Operation/AbstractClasses/MeasurementValue/)
             * **StringMeasurementValue**
 
 ## Attributes

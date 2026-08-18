@@ -29,6 +29,7 @@ default_prefix: this
 classes:
   ACDCConverter:
     class_uri: cim:ACDCConverter
+    abstract: true
     attributes:
       p:
         slot_uri: cim:ACDCConverter.p
@@ -68,71 +69,6 @@ classes:
     description: A unit with valves for three phases, together with unit control equipment,
       essential protective and switching devices, DC storage capacitors, phase reactors
       and auxiliaries, if any, used for conversion.
-  ActivePower:
-    class_uri: cim:ActivePower
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:ActivePower.value
-        range: float
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:ActivePower.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:ActivePower.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-    description: Product of RMS value of the voltage and the RMS value of the in-phase
-      component of the current.
-  ReactivePower:
-    class_uri: cim:ReactivePower
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:ReactivePower.value
-        range: float
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:ReactivePower.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:ReactivePower.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-    description: Product of RMS value of the voltage and the RMS value of the quadrature
-      component of the current.
-  Voltage:
-    class_uri: cim:Voltage
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:Voltage.value
-        range: float
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:Voltage.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:Voltage.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-    description: Electrical voltage, can be both AC and DC.
   ACDCConverterDCTerminal:
     class_uri: cim:ACDCConverterDCTerminal
     is_a: DCBaseTerminal
@@ -144,6 +80,7 @@ classes:
       equipment can be connected to the AC side.
   ACDCTerminal:
     class_uri: cim:ACDCTerminal
+    abstract: true
     attributes:
       connected:
         slot_uri: cim:ACDCTerminal.connected
@@ -187,28 +124,6 @@ classes:
           or zero.
     is_a: OperationalLimit
     description: Apparent power limit.
-  ApparentPower:
-    class_uri: cim:ApparentPower
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:ApparentPower.value
-        range: float
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:ApparentPower.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:ApparentPower.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-    description: Product of the RMS value of the voltage and the RMS value of the
-      current.
   AsynchronousMachine:
     class_uri: cim:AsynchronousMachine
     attributes:
@@ -240,27 +155,6 @@ classes:
           value or zero and lower than BatteryUnit.ratedE.
     is_a: PowerElectronicsUnit
     description: An electrochemical energy storage device.
-  RealEnergy:
-    class_uri: cim:RealEnergy
-    annotations:
-      cim_data_type: true
-    attributes:
-      multiplier:
-        slot_uri: cim:RealEnergy.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:RealEnergy.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      value:
-        slot_uri: cim:RealEnergy.value
-        range: float
-        multivalued: false
-        required: false
-    description: Real electrical energy.
   Breaker:
     class_uri: cim:Breaker
     is_a: ProtectedSwitch
@@ -271,6 +165,7 @@ classes:
   ConductingEquipment:
     class_uri: cim:ConductingEquipment
     is_a: Equipment
+    abstract: true
     description: The parts of the AC power system that are designed to carry current
       or that are conductively connected through terminals.
   ConformLoad:
@@ -393,49 +288,6 @@ classes:
       The attributes minGamma and maxGamma define the range of extinction angles for
       inverter operation between which no discrete tap changer action takes place.
       The range is typically 17-20 degrees.'
-  AngleDegrees:
-    class_uri: cim:AngleDegrees
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:AngleDegrees.value
-        range: float
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:AngleDegrees.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:AngleDegrees.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-    description: Measurement of angle in degrees.
-  CurrentFlow:
-    class_uri: cim:CurrentFlow
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:CurrentFlow.value
-        range: float
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:CurrentFlow.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:CurrentFlow.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-    description: 'Electrical current with sign convention: positive flow is out of
-      the conducting equipment into the connectivity node. Can be both AC and DC.'
   CurrentLimit:
     class_uri: cim:CurrentLimit
     attributes:
@@ -451,6 +303,7 @@ classes:
   DCBaseTerminal:
     class_uri: cim:DCBaseTerminal
     is_a: ACDCTerminal
+    abstract: true
     description: An electrical connection point at a piece of DC conducting equipment.
       DC terminals are connected at one physical DC node that may have multiple DC
       terminals connected. A DC node is similar to an AC connectivity node. The model
@@ -474,10 +327,12 @@ classes:
   EnergyConnection:
     class_uri: cim:EnergyConnection
     is_a: ConductingEquipment
+    abstract: true
     description: A connection of energy generation or consumption on the power system
       model.
   EnergyConsumer:
     class_uri: cim:EnergyConsumer
+    abstract: true
     attributes:
       p:
         slot_uri: cim:EnergyConsumer.p
@@ -552,27 +407,6 @@ classes:
     is_a: EnergyConnection
     description: A generic equivalent for an energy supplier on a transmission or
       distribution voltage level.
-  AngleRadians:
-    class_uri: cim:AngleRadians
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:AngleRadians.value
-        range: float
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:AngleRadians.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:AngleRadians.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-    description: Phase angle in radians.
   Equipment:
     class_uri: cim:Equipment
     attributes:
@@ -585,12 +419,14 @@ classes:
           is available for topology processing, which determines if the equipment
           is energized or not. False means that the equipment is treated by network
           applications as if it is not in the model.
-    is_a: PowerSystemResource
+    is_a: Pow
+    abstract: trueerSystemResource
     description: The parts of a power system that are physical devices, electronic
       or mechanical.
   EquivalentEquipment:
     class_uri: cim:EquivalentEquipment
     is_a: ConductingEquipment
+    abstract: true
     description: The class represents equivalent objects that are the result of a
       network reduction. The class is the base for equivalent objects of different
       types.
@@ -700,6 +536,7 @@ classes:
       Francis, Pelton, Kaplan).
   IdentifiedObject:
     class_uri: cim:IdentifiedObject
+    abstract: true
     attributes:
       mRID:
         slot_uri: cim:IdentifiedObject.mRID
@@ -750,6 +587,7 @@ classes:
   OperationalLimit:
     class_uri: cim:OperationalLimit
     is_a: IdentifiedObject
+    abstract: true
     description: "A value and normal value associated with a specific kind of limit.\
       \ \nThe sub class value and normalValue attributes vary inversely to the associated\
       \ OperationalLimitType.acceptableDuration (acceptableDuration for short).  \n\
@@ -762,6 +600,7 @@ classes:
   PhaseTapChanger:
     class_uri: cim:PhaseTapChanger
     is_a: TapChanger
+    abstract: true
     description: A transformer phase shifting tap model that controls the phase angle
       difference across the power transformer and potentially the active power flow
       through the power transformer.  This phase tap model may also impact the voltage
@@ -788,6 +627,7 @@ classes:
   PhaseTapChangerNonLinear:
     class_uri: cim:PhaseTapChangerNonLinear
     is_a: PhaseTapChanger
+    abstract: true
     description: The non-linear phase tap changer describes the non-linear behaviour
       of a phase tap changer. This is a base class for the symmetrical and asymmetrical
       phase tap changer models. The details of these models can be found in IEC 61970-301.
@@ -831,11 +671,13 @@ classes:
   PowerElectronicsUnit:
     class_uri: cim:PowerElectronicsUnit
     is_a: Equipment
+    abstract: true
     description: A generating unit or battery or aggregation that connects to the
       AC network using power electronics rather than rotating machines.
   PowerSystemResource:
     class_uri: cim:PowerSystemResource
     is_a: IdentifiedObject
+    abstract: true
     description: A power system resource (PSR) can be an item of equipment such as
       a switch, an equipment container containing many individual items of equipment
       such as a substation, or an organisational entity such as sub-control area.
@@ -843,6 +685,7 @@ classes:
   ProtectedSwitch:
     class_uri: cim:ProtectedSwitch
     is_a: Switch
+    abstract: true
     description: A ProtectedSwitch is a switching device that can be operated by ProtectionEquipment.
   RatioTapChanger:
     class_uri: cim:RatioTapChanger
@@ -865,6 +708,7 @@ classes:
         description: Specifies the regulation status of the equipment.  True is regulating,
           false is not regulating.
     is_a: EnergyConnection
+    abstract: true
     description: A type of conducting equipment that can regulate a quantity (i.e.
       voltage or flow) at a specific point in the network.
   RegulatingControl:
@@ -950,6 +794,7 @@ classes:
       \ and maxAllowedTargetValue."
   RotatingMachine:
     class_uri: cim:RotatingMachine
+    abstract: true
     attributes:
       p:
         slot_uri: cim:RotatingMachine.p
@@ -973,6 +818,7 @@ classes:
     description: A rotating machine which may be used as a generator or motor.
   ShuntCompensator:
     class_uri: cim:ShuntCompensator
+    abstract: true
     attributes:
       sections:
         slot_uri: cim:ShuntCompensator.sections
@@ -1078,6 +924,7 @@ classes:
       synchronous condenser or pump.
   TapChanger:
     class_uri: cim:TapChanger
+    abstract: true
     attributes:
       controlEnabled:
         slot_uri: cim:TapChanger.controlEnabled
@@ -1210,77 +1057,102 @@ classes:
           a positive value.
     is_a: ACDCConverter
     description: DC side of the voltage source converter (VSC).
-  PU:
-    class_uri: cim:PU
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:PU.value
-        range: float
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:PU.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:PU.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-    description: Per Unit - a positive or negative value referred to a defined base.
-      Values typically range from -10 to +10.
-  Resistance:
-    class_uri: cim:Resistance
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:Resistance.value
-        range: float
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:Resistance.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:Resistance.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-    description: Resistance (real part of impedance).
-  PerCent:
-    class_uri: cim:PerCent
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:PerCent.value
-        range: float
-        multivalued: false
-        required: false
-        description: Normally 0 to 100 on a defined base.
-      unit:
-        slot_uri: cim:PerCent.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:PerCent.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-    description: Percentage on a defined base.   For example, specify as 100 to indicate
-      at the defined base.
   WindGeneratingUnit:
     class_uri: cim:WindGeneratingUnit
     is_a: GeneratingUnit
     description: A wind driven generating unit, connected to the grid by means of
       a rotating machine.  May be used to represent a single turbine or an aggregation.
+
+types:
+
+  ActivePower:
+    uri: xsd:float
+    base: float
+    description: "Product of RMS value of the voltage and the RMS value of the in-phase component of the current."
+    annotations:
+      cim_data_type: true
+      uri: cim:ActivePower
+
+  AngleDegrees:
+    uri: xsd:float
+    base: float
+    description: "Measurement of angle in degrees."
+    annotations:
+      cim_data_type: true
+      uri: cim:AngleDegrees
+
+  AngleRadians:
+    uri: xsd:float
+    base: float
+    description: "Phase angle in radians."
+    annotations:
+      cim_data_type: true
+      uri: cim:AngleRadians
+
+  ApparentPower:
+    uri: xsd:float
+    base: float
+    description: "Product of the RMS value of the voltage and the RMS value of the current."
+    annotations:
+      cim_data_type: true
+      uri: cim:ApparentPower
+
+  CurrentFlow:
+    uri: xsd:float
+    base: float
+    description: "Electrical current with sign convention: positive flow is out of the conducting equipment into the connectivity node. Can be both AC and DC."
+    annotations:
+      cim_data_type: true
+      uri: cim:CurrentFlow
+
+  PU:
+    uri: xsd:float
+    base: float
+    description: "Per Unit - a positive or negative value referred to a defined base. Values typically range from -10 to +10."
+    annotations:
+      cim_data_type: true
+      uri: cim:PU
+
+  PerCent:
+    uri: xsd:float
+    base: float
+    description: "Percentage on a defined base.   For example, specify as 100 to indicate at the defined base."
+    annotations:
+      cim_data_type: true
+      uri: cim:PerCent
+
+  ReactivePower:
+    uri: xsd:float
+    base: float
+    description: "Product of RMS value of the voltage and the RMS value of the quadrature component of the current."
+    annotations:
+      cim_data_type: true
+      uri: cim:ReactivePower
+
+  RealEnergy:
+    uri: xsd:float
+    base: float
+    description: "Real electrical energy."
+    annotations:
+      cim_data_type: true
+      uri: cim:RealEnergy
+
+  Resistance:
+    uri: xsd:float
+    base: float
+    description: "Resistance (real part of impedance)."
+    annotations:
+      cim_data_type: true
+      uri: cim:Resistance
+
+  Voltage:
+    uri: xsd:float
+    base: float
+    description: "Electrical voltage, can be both AC and DC."
+    annotations:
+      cim_data_type: true
+      uri: cim:Voltage
+
 enums:
   UnitMultiplier:
     permissible_values:

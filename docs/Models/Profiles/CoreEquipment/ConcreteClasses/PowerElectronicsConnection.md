@@ -36,26 +36,6 @@ classDiagram
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        PowerElectronicsConnection --> ReactivePower : PowerElectronicsConnection.maxQ
-
-        ReactivePower
-            click ReactivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ReactivePower/"
-            style ReactivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PowerElectronicsConnection --> ReactivePower : PowerElectronicsConnection.minQ
-
-        ReactivePower
-            click ReactivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ReactivePower/"
-            style ReactivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PowerElectronicsConnection --> ApparentPower : PowerElectronicsConnection.ratedS
-
-        ApparentPower
-            click ApparentPower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ApparentPower/"
-            style ApparentPower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PowerElectronicsConnection --> Voltage : PowerElectronicsConnection.ratedU
-
-        Voltage
-            click Voltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         PowerElectronicsConnection --> PowerElectronicsUnit : PowerElectronicsConnection.PowerElectronicsUnit
 
         PowerElectronicsUnit

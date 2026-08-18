@@ -13,11 +13,11 @@ classDiagram
     style AccumulatorLimitSet fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         LimitSet <|-- AccumulatorLimitSet : inherits
-            click LimitSet href "/Models/Profiles/Operation/ConcreteClasses/LimitSet/"
+            click LimitSet href "/Models/Profiles/Operation/AbstractClasses/LimitSet/"
             style LimitSet fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- LimitSet : inherits
-            click IdentifiedObject href "/Models/Profiles/Operation/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         AccumulatorLimitSet --> Accumulator : AccumulatorLimitSet.Measurements
@@ -28,7 +28,7 @@ classDiagram
         AccumulatorLimitSet --> AccumulatorLimit : AccumulatorLimitSet.Limits
 
         AccumulatorLimit
-            click AccumulatorLimit href "/Models/Profiles/Operation/ConcreteClasses/AccumulatorLimit/"
+            click AccumulatorLimit href "/Models/Profiles/Operation/AbstractClasses/AccumulatorLimit/"
             style AccumulatorLimit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Accumulator --> AccumulatorLimitSet : Accumulator.LimitSets
@@ -40,7 +40,7 @@ classDiagram
         AccumulatorLimit --> AccumulatorLimitSet : AccumulatorLimit.LimitSet
 
         AccumulatorLimit
-            click AccumulatorLimit href "/Models/Profiles/Operation/ConcreteClasses/AccumulatorLimit/"
+            click AccumulatorLimit href "/Models/Profiles/Operation/AbstractClasses/AccumulatorLimit/"
             style AccumulatorLimit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
@@ -53,8 +53,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/Operation/ConcreteClasses/IdentifiedObject/)
-    * [LimitSet](/Models/Profiles/Operation/ConcreteClasses/LimitSet/)
+* [IdentifiedObject](/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/)
+    * [LimitSet](/Models/Profiles/Operation/AbstractClasses/LimitSet/)
         * **AccumulatorLimitSet**
 
 ## Attributes

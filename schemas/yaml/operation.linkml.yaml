@@ -61,6 +61,7 @@ classes:
         required: true
         description: The set of limits.
     is_a: Limit
+    abstract: true
     description: Limit values for Accumulator measurements.
   AccumulatorLimitSet:
     class_uri: cim:AccumulatorLimitSet
@@ -110,6 +111,7 @@ classes:
     description: AccumulatorValue represents an accumulated (counted) MeasurementValue.
   ACDCTerminal:
     class_uri: cim:ACDCTerminal
+    abstract: true
     attributes:
       Measurements:
         slot_uri: cim:ACDCTerminal.Measurements
@@ -153,6 +155,7 @@ classes:
     description: Analog represents an analog Measurement.
   AnalogControl:
     class_uri: cim:AnalogControl
+    abstract: true
     attributes:
       maxValue:
         slot_uri: cim:AnalogControl.maxValue
@@ -301,6 +304,7 @@ classes:
         required: false
         description: Regulating device governed by this control output.
     is_a: IOPoint
+    abstract: true
     description: Control is used for supervisory/device control. It represents control
       outputs that are used to change the state in a process, e.g. close or open breaker,
       a set point value or a raise lower command.
@@ -342,6 +346,7 @@ classes:
     description: DiscreteValue represents a discrete MeasurementValue.
   IdentifiedObject:
     class_uri: cim:IdentifiedObject
+    abstract: true
     attributes:
       description:
         slot_uri: cim:IdentifiedObject.description
@@ -374,11 +379,13 @@ classes:
   IOPoint:
     class_uri: cim:IOPoint
     is_a: IdentifiedObject
+    abstract: true
     description: The class describe a measurement or control value. The purpose is
       to enable having attributes and associations common for measurement and control.
   Limit:
     class_uri: cim:Limit
     is_a: IdentifiedObject
+    abstract: true
     description: Specifies one limit value for a Measurement. A Measurement typically
       has several limits that are kept together by the LimitSet class. The actual
       meaning and use of a Limit instance (i.e., if it is an alarm or warning limit
@@ -386,6 +393,7 @@ classes:
       the name of a Limit instance may indicate both meaning and use.
   LimitSet:
     class_uri: cim:LimitSet
+    abstract: true
     attributes:
       isPercentageLimits:
         slot_uri: cim:LimitSet.isPercentageLimits
@@ -402,6 +410,7 @@ classes:
       limits are used this way.
   Measurement:
     class_uri: cim:Measurement
+    abstract: true
     attributes:
       Terminal:
         slot_uri: cim:Measurement.Terminal
@@ -475,6 +484,7 @@ classes:
       \ The Measurement-Terminal association is never used alone."
   MeasurementValue:
     class_uri: cim:MeasurementValue
+    abstract: true
     attributes:
       timeStamp:
         slot_uri: cim:MeasurementValue.timeStamp
@@ -508,29 +518,6 @@ classes:
     description: The current state for a measurement. A state value is an instance
       of a measurement from a specific source. Measurements can be associated with
       many state values, each representing a different source for the measurement.
-  PerCent:
-    class_uri: cim:PerCent
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:PerCent.value
-        range: float
-        multivalued: false
-        required: false
-        description: Normally 0 to 100 on a defined base.
-      unit:
-        slot_uri: cim:PerCent.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:PerCent.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-    description: Percentage on a defined base.   For example, specify as 100 to indicate
-      at the defined base.
   MeasurementValueQuality:
     class_uri: cim:MeasurementValueQuality
     attributes:
@@ -560,6 +547,7 @@ classes:
       attributes are defined in IEC 61970-301.
   PowerSystemResource:
     class_uri: cim:PowerSystemResource
+    abstract: true
     attributes:
       Controls:
         slot_uri: cim:PowerSystemResource.Controls
@@ -582,6 +570,7 @@ classes:
       Power system resources can have measurements associated.
   Quality61850:
     class_uri: cim:Quality61850
+    abstract: true
     attributes:
       badReference:
         slot_uri: cim:Quality61850.badReference
@@ -787,6 +776,17 @@ classes:
     is_a: IdentifiedObject
     description: Describes the translation of one particular value into a name, e.g.
       1 as "Open".
+
+types:
+
+  PerCent:
+    uri: xsd:float
+    base: float
+    description: "Percentage on a defined base.   For example, specify as 100 to indicate at the defined base."
+    annotations:
+      cim_data_type: true
+      uri: cim:PerCent
+
 enums:
   UnitMultiplier:
     permissible_values:

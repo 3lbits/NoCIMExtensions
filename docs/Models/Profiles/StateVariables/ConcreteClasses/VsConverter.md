@@ -13,43 +13,13 @@ classDiagram
     style VsConverter fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ACDCConverter <|-- VsConverter : inherits
-            click ACDCConverter href "/Models/Profiles/StateVariables/ConcreteClasses/ACDCConverter/"
+            click ACDCConverter href "/Models/Profiles/StateVariables/AbstractClasses/ACDCConverter/"
             style ACDCConverter fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ConductingEquipment <|-- ACDCConverter : inherits
-            click ConductingEquipment href "/Models/Profiles/StateVariables/ConcreteClasses/ConductingEquipment/"
+            click ConductingEquipment href "/Models/Profiles/StateVariables/AbstractClasses/ConductingEquipment/"
             style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        VsConverter --> AngleDegrees : VsConverter.delta
-
-        AngleDegrees
-            click AngleDegrees href "/Models/Profiles/StateVariables/ConcreteClasses/AngleDegrees/"
-            style AngleDegrees fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        VsConverter --> Voltage : VsConverter.uv
-
-        Voltage
-            click Voltage href "/Models/Profiles/StateVariables/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> CurrentFlow : ACDCConverter.idc
-
-        CurrentFlow
-            click CurrentFlow href "/Models/Profiles/StateVariables/ConcreteClasses/CurrentFlow/"
-            style CurrentFlow fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> ActivePower : ACDCConverter.poleLossP
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/StateVariables/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> Voltage : ACDCConverter.uc
-
-        Voltage
-            click Voltage href "/Models/Profiles/StateVariables/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        ACDCConverter --> Voltage : ACDCConverter.udc
-
-        Voltage
-            click Voltage href "/Models/Profiles/StateVariables/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         ConductingEquipment --> SvStatus : ConductingEquipment.SvStatus
 
         SvStatus
@@ -73,8 +43,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [ConductingEquipment](/Models/Profiles/StateVariables/ConcreteClasses/ConductingEquipment/)
-    * [ACDCConverter](/Models/Profiles/StateVariables/ConcreteClasses/ACDCConverter/)
+* [ConductingEquipment](/Models/Profiles/StateVariables/AbstractClasses/ConductingEquipment/)
+    * [ACDCConverter](/Models/Profiles/StateVariables/AbstractClasses/ACDCConverter/)
         * **VsConverter**
 
 ## Attributes

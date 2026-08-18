@@ -21,13 +21,13 @@ classDiagram
         IdentifiedObject <|-- IOPoint : inherits
 
         IOPoint
-            click IOPoint href "/Models/Profiles/Operation/ConcreteClasses/IOPoint/"
+            click IOPoint href "/Models/Profiles/Operation/AbstractClasses/IOPoint/"
             style IOPoint fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- Limit : inherits
 
         Limit
-            click Limit href "/Models/Profiles/Operation/ConcreteClasses/Limit/"
+            click Limit href "/Models/Profiles/Operation/AbstractClasses/Limit/"
             style Limit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- LimitSet : inherits

@@ -12,16 +12,6 @@ classDiagram
     click SvVoltage href "/Models/Profiles/StateVariables/ConcreteClasses/SvVoltage/"
     style SvVoltage fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        SvVoltage --> AngleDegrees : SvVoltage.angle
-
-        AngleDegrees
-            click AngleDegrees href "/Models/Profiles/StateVariables/ConcreteClasses/AngleDegrees/"
-            style AngleDegrees fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        SvVoltage --> Voltage : SvVoltage.v
-
-        Voltage
-            click Voltage href "/Models/Profiles/StateVariables/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         SvVoltage --> TopologicalNode : SvVoltage.TopologicalNode
 
         TopologicalNode

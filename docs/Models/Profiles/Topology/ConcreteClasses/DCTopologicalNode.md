@@ -13,18 +13,18 @@ classDiagram
     style DCTopologicalNode fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- DCTopologicalNode : inherits
-            click IdentifiedObject href "/Models/Profiles/Topology/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/Topology/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         DCTopologicalNode --> DCBaseTerminal : DCTopologicalNode.DCTerminals
 
         DCBaseTerminal
-            click DCBaseTerminal href "/Models/Profiles/Topology/ConcreteClasses/DCBaseTerminal/"
+            click DCBaseTerminal href "/Models/Profiles/Topology/AbstractClasses/DCBaseTerminal/"
             style DCBaseTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         DCTopologicalNode --> DCEquipmentContainer : DCTopologicalNode.DCEquipmentContainer
 
         DCEquipmentContainer
-            click DCEquipmentContainer href "/Models/Profiles/Topology/ConcreteClasses/DCEquipmentContainer/"
+            click DCEquipmentContainer href "/Models/Profiles/Topology/AbstractClasses/DCEquipmentContainer/"
             style DCEquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         DCTopologicalNode --> DCNode : DCTopologicalNode.DCNodes
 
@@ -35,13 +35,13 @@ classDiagram
         DCBaseTerminal --> DCTopologicalNode : DCBaseTerminal.DCTopologicalNode
 
         DCBaseTerminal
-            click DCBaseTerminal href "/Models/Profiles/Topology/ConcreteClasses/DCBaseTerminal/"
+            click DCBaseTerminal href "/Models/Profiles/Topology/AbstractClasses/DCBaseTerminal/"
             style DCBaseTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         DCEquipmentContainer --> DCTopologicalNode : DCEquipmentContainer.DCTopologicalNode
 
         DCEquipmentContainer
-            click DCEquipmentContainer href "/Models/Profiles/Topology/ConcreteClasses/DCEquipmentContainer/"
+            click DCEquipmentContainer href "/Models/Profiles/Topology/AbstractClasses/DCEquipmentContainer/"
             style DCEquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         DCNode --> DCTopologicalNode : DCNode.DCTopologicalNode
@@ -62,7 +62,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/Topology/ConcreteClasses/IdentifiedObject/)
+* [IdentifiedObject](/Models/Profiles/Topology/AbstractClasses/IdentifiedObject/)
     * **DCTopologicalNode**
 
 ## Attributes

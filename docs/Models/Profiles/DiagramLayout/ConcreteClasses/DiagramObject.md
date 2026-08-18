@@ -19,7 +19,7 @@ classDiagram
             style TextDiagramObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- DiagramObject : inherits
-            click IdentifiedObject href "/Models/Profiles/DiagramLayout/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/DiagramLayout/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         DiagramObject --> Diagram : DiagramObject.Diagram
@@ -27,15 +27,10 @@ classDiagram
         Diagram
             click Diagram href "/Models/Profiles/DiagramLayout/ConcreteClasses/Diagram/"
             style Diagram fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        DiagramObject --> AngleDegrees : DiagramObject.rotation
-
-        AngleDegrees
-            click AngleDegrees href "/Models/Profiles/DiagramLayout/ConcreteClasses/AngleDegrees/"
-            style AngleDegrees fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         DiagramObject --> IdentifiedObject : DiagramObject.IdentifiedObject
 
         IdentifiedObject
-            click IdentifiedObject href "/Models/Profiles/DiagramLayout/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/DiagramLayout/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         DiagramObject --> DiagramObjectPoint : DiagramObject.DiagramObjectPoints
 
@@ -85,7 +80,7 @@ classDiagram
         IdentifiedObject --> DiagramObject : IdentifiedObject.DiagramObjects
 
         IdentifiedObject
-            click IdentifiedObject href "/Models/Profiles/DiagramLayout/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/DiagramLayout/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         VisibilityLayer --> DiagramObject : VisibilityLayer.VisibleObjects
@@ -112,7 +107,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/DiagramLayout/ConcreteClasses/IdentifiedObject/)
+* [IdentifiedObject](/Models/Profiles/DiagramLayout/AbstractClasses/IdentifiedObject/)
     * **DiagramObject**
 
 ## Attributes

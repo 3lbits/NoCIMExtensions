@@ -15,7 +15,7 @@ classDiagram
         IdentifiedObject <|-- ACDCTerminal : inherits
 
         ACDCTerminal
-            click ACDCTerminal href "/Models/Profiles/Topology/ConcreteClasses/ACDCTerminal/"
+            click ACDCTerminal href "/Models/Profiles/Topology/AbstractClasses/ACDCTerminal/"
             style ACDCTerminal fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- DCNode : inherits

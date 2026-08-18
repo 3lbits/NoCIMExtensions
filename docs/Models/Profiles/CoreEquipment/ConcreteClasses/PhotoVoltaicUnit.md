@@ -13,40 +13,30 @@ classDiagram
     style PhotoVoltaicUnit fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerElectronicsUnit <|-- PhotoVoltaicUnit : inherits
-            click PowerElectronicsUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerElectronicsUnit/"
+            click PowerElectronicsUnit href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerElectronicsUnit/"
             style PowerElectronicsUnit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- PowerElectronicsUnit : inherits
-            click Equipment href "/Models/Profiles/CoreEquipment/ConcreteClasses/Equipment/"
+            click Equipment href "/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/"
             style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
-            click PowerSystemResource href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerElectronicsUnit --> PowerElectronicsConnection : PowerElectronicsUnit.PowerElectronicsConnection
 
         PowerElectronicsConnection
-            click PowerElectronicsConnection href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerElectronicsConnection/"
+            click PowerElectronicsConnection href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerElectronicsConnection/"
             style PowerElectronicsConnection fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PowerElectronicsUnit --> ActivePower : PowerElectronicsUnit.maxP
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        PowerElectronicsUnit --> ActivePower : PowerElectronicsUnit.minP
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         Equipment --> EquipmentContainer : Equipment.EquipmentContainer
 
         EquipmentContainer
-            click EquipmentContainer href "/Models/Profiles/CoreEquipment/ConcreteClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         Equipment --> OperationalLimitSet : Equipment.OperationalLimitSet
 
@@ -57,7 +47,7 @@ classDiagram
         EquipmentContainer --> Equipment : EquipmentContainer.Equipments
 
         EquipmentContainer
-            click EquipmentContainer href "/Models/Profiles/CoreEquipment/ConcreteClasses/EquipmentContainer/"
+            click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
             style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitSet --> Equipment : OperationalLimitSet.Equipment
@@ -69,7 +59,7 @@ classDiagram
         PowerElectronicsConnection --> PowerElectronicsUnit : PowerElectronicsConnection.PowerElectronicsUnit
 
         PowerElectronicsConnection
-            click PowerElectronicsConnection href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerElectronicsConnection/"
+            click PowerElectronicsConnection href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerElectronicsConnection/"
             style PowerElectronicsConnection fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
@@ -88,10 +78,10 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [PowerSystemResource](/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/)
-        * [Equipment](/Models/Profiles/CoreEquipment/ConcreteClasses/Equipment/)
-            * [PowerElectronicsUnit](/Models/Profiles/CoreEquipment/ConcreteClasses/PowerElectronicsUnit/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/)
+        * [Equipment](/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/)
+            * [PowerElectronicsUnit](/Models/Profiles/CoreEquipment/AbstractClasses/PowerElectronicsUnit/)
                 * **PhotoVoltaicUnit**
 
 ## Attributes

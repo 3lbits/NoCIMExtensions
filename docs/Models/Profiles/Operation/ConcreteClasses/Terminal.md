@@ -13,23 +13,23 @@ classDiagram
     style Terminal fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ACDCTerminal <|-- Terminal : inherits
-            click ACDCTerminal href "/Models/Profiles/Operation/ConcreteClasses/ACDCTerminal/"
+            click ACDCTerminal href "/Models/Profiles/Operation/AbstractClasses/ACDCTerminal/"
             style ACDCTerminal fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- ACDCTerminal : inherits
-            click IdentifiedObject href "/Models/Profiles/Operation/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ACDCTerminal --> Measurement : ACDCTerminal.Measurements
 
         Measurement
-            click Measurement href "/Models/Profiles/Operation/ConcreteClasses/Measurement/"
+            click Measurement href "/Models/Profiles/Operation/AbstractClasses/Measurement/"
             style Measurement fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Measurement --> ACDCTerminal : Measurement.Terminal
 
         Measurement
-            click Measurement href "/Models/Profiles/Operation/ConcreteClasses/Measurement/"
+            click Measurement href "/Models/Profiles/Operation/AbstractClasses/Measurement/"
             style Measurement fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
@@ -40,8 +40,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/Operation/ConcreteClasses/IdentifiedObject/)
-    * [ACDCTerminal](/Models/Profiles/Operation/ConcreteClasses/ACDCTerminal/)
+* [IdentifiedObject](/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/)
+    * [ACDCTerminal](/Models/Profiles/Operation/AbstractClasses/ACDCTerminal/)
         * **Terminal**
 
 ## Attributes

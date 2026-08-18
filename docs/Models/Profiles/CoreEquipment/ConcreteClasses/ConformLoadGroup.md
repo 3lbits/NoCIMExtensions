@@ -13,11 +13,11 @@ classDiagram
     style ConformLoadGroup fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         LoadGroup <|-- ConformLoadGroup : inherits
-            click LoadGroup href "/Models/Profiles/CoreEquipment/ConcreteClasses/LoadGroup/"
+            click LoadGroup href "/Models/Profiles/CoreEquipment/AbstractClasses/LoadGroup/"
             style LoadGroup fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- LoadGroup : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ConformLoadGroup --> ConformLoadSchedule : ConformLoadGroup.ConformLoadSchedules
@@ -28,7 +28,7 @@ classDiagram
         ConformLoadGroup --> ConformLoad : ConformLoadGroup.EnergyConsumers
 
         ConformLoad
-            click ConformLoad href "/Models/Profiles/CoreEquipment/ConcreteClasses/ConformLoad/"
+            click ConformLoad href "/Models/Profiles/CoreEquipment/AbstractClasses/ConformLoad/"
             style ConformLoad fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         LoadGroup --> SubLoadArea : LoadGroup.SubLoadArea
 
@@ -45,7 +45,7 @@ classDiagram
         ConformLoad --> ConformLoadGroup : ConformLoad.LoadGroup
 
         ConformLoad
-            click ConformLoad href "/Models/Profiles/CoreEquipment/ConcreteClasses/ConformLoad/"
+            click ConformLoad href "/Models/Profiles/CoreEquipment/AbstractClasses/ConformLoad/"
             style ConformLoad fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         SubLoadArea --> LoadGroup : SubLoadArea.LoadGroups
@@ -66,8 +66,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [LoadGroup](/Models/Profiles/CoreEquipment/ConcreteClasses/LoadGroup/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
+    * [LoadGroup](/Models/Profiles/CoreEquipment/AbstractClasses/LoadGroup/)
         * **ConformLoadGroup**
 
 ## Attributes

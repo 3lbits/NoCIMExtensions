@@ -13,7 +13,7 @@ classDiagram
     style Switch fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ConductingEquipment <|-- Switch : inherits
-            click ConductingEquipment href "/Models/Profiles/StateVariables/ConcreteClasses/ConductingEquipment/"
+            click ConductingEquipment href "/Models/Profiles/StateVariables/AbstractClasses/ConductingEquipment/"
             style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Switch --> SvSwitch : Switch.SvSwitch
@@ -45,7 +45,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [ConductingEquipment](/Models/Profiles/StateVariables/ConcreteClasses/ConductingEquipment/)
+* [ConductingEquipment](/Models/Profiles/StateVariables/AbstractClasses/ConductingEquipment/)
     * **Switch**
 
 ## Attributes

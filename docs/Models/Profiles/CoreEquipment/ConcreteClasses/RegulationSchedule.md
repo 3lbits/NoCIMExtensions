@@ -13,19 +13,19 @@ classDiagram
     style RegulationSchedule fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         SeasonDayTypeSchedule <|-- RegulationSchedule : inherits
-            click SeasonDayTypeSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/SeasonDayTypeSchedule/"
+            click SeasonDayTypeSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/SeasonDayTypeSchedule/"
             style SeasonDayTypeSchedule fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         RegularIntervalSchedule <|-- SeasonDayTypeSchedule : inherits
-            click RegularIntervalSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegularIntervalSchedule/"
+            click RegularIntervalSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/RegularIntervalSchedule/"
             style RegularIntervalSchedule fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         BasicIntervalSchedule <|-- RegularIntervalSchedule : inherits
-            click BasicIntervalSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/BasicIntervalSchedule/"
+            click BasicIntervalSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/BasicIntervalSchedule/"
             style BasicIntervalSchedule fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- BasicIntervalSchedule : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         RegulationSchedule --> RegulatingControl : RegulationSchedule.RegulatingControl
@@ -48,11 +48,6 @@ classDiagram
         RegularTimePoint
             click RegularTimePoint href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegularTimePoint/"
             style RegularTimePoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        RegularIntervalSchedule --> Seconds : RegularIntervalSchedule.timeStep
-
-        Seconds
-            click Seconds href "/Models/Profiles/CoreEquipment/ConcreteClasses/Seconds/"
-            style Seconds fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         DayType --> SeasonDayTypeSchedule : DayType.SeasonDayTypeSchedules
 
@@ -106,10 +101,10 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [BasicIntervalSchedule](/Models/Profiles/CoreEquipment/ConcreteClasses/BasicIntervalSchedule/)
-        * [RegularIntervalSchedule](/Models/Profiles/CoreEquipment/ConcreteClasses/RegularIntervalSchedule/)
-            * [SeasonDayTypeSchedule](/Models/Profiles/CoreEquipment/ConcreteClasses/SeasonDayTypeSchedule/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
+    * [BasicIntervalSchedule](/Models/Profiles/CoreEquipment/AbstractClasses/BasicIntervalSchedule/)
+        * [RegularIntervalSchedule](/Models/Profiles/CoreEquipment/AbstractClasses/RegularIntervalSchedule/)
+            * [SeasonDayTypeSchedule](/Models/Profiles/CoreEquipment/AbstractClasses/SeasonDayTypeSchedule/)
                 * **RegulationSchedule**
 
 ## Attributes

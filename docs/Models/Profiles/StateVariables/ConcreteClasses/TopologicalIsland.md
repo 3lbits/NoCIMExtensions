@@ -16,7 +16,7 @@ classDiagram
     style TopologicalIsland fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- TopologicalIsland : inherits
-            click IdentifiedObject href "/Models/Profiles/StateVariables/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/StateVariables/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         TopologicalIsland --> TopologicalNode : TopologicalIsland.AngleRefTopologicalNode
@@ -50,7 +50,7 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/StateVariables/ConcreteClasses/IdentifiedObject/)
+* [IdentifiedObject](/Models/Profiles/StateVariables/AbstractClasses/IdentifiedObject/)
     * **TopologicalIsland**
 
 ## Attributes

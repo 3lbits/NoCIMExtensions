@@ -17,15 +17,7 @@ Profiles:
     
     - [ACDCTerminal](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ACDCTerminal/)
     
-    - [ActivePower](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ActivePower/)
-    
     - [ActivePowerLimit](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ActivePowerLimit/)
-    
-    - [AngleDegrees](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/AngleDegrees/)
-    
-    - [AngleRadians](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/AngleRadians/)
-    
-    - [ApparentPower](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ApparentPower/)
     
     - [ApparentPowerLimit](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ApparentPowerLimit/)
     
@@ -42,8 +34,6 @@ Profiles:
     - [ControlArea](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ControlArea/)
     
     - [CsConverter](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/CsConverter/)
-    
-    - [CurrentFlow](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/CurrentFlow/)
     
     - [CurrentLimit](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/CurrentLimit/)
     
@@ -93,10 +83,6 @@ Profiles:
     
     - [OperationalLimit](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/OperationalLimit/)
     
-    - [PU](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/PU/)
-    
-    - [PerCent](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/PerCent/)
-    
     - [PhaseTapChanger](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/PhaseTapChanger/)
     
     - [PhaseTapChangerAsymmetrical](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/PhaseTapChangerAsymmetrical/)
@@ -119,15 +105,9 @@ Profiles:
     
     - [RatioTapChanger](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/RatioTapChanger/)
     
-    - [ReactivePower](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ReactivePower/)
-    
-    - [RealEnergy](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/RealEnergy/)
-    
     - [RegulatingCondEq](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/RegulatingCondEq/)
     
     - [RegulatingControl](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/RegulatingControl/)
-    
-    - [Resistance](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/Resistance/)
     
     - [RotatingMachine](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/RotatingMachine/)
     
@@ -150,8 +130,6 @@ Profiles:
     - [Terminal](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/Terminal/)
     
     - [ThermalGeneratingUnit](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ThermalGeneratingUnit/)
-    
-    - [Voltage](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/Voltage/)
     
     - [VoltageLimit](/Models/Profiles/SteadyStateHypothesis/ConcreteClasses/VoltageLimit/)
     
@@ -182,4 +160,26 @@ Profiles:
     
 
 - Types
+    
+    - [ActivePower](/Models/Profiles/SteadyStateHypothesis/Types/ActivePower/)
+    
+    - [AngleDegrees](/Models/Profiles/SteadyStateHypothesis/Types/AngleDegrees/)
+    
+    - [AngleRadians](/Models/Profiles/SteadyStateHypothesis/Types/AngleRadians/)
+    
+    - [ApparentPower](/Models/Profiles/SteadyStateHypothesis/Types/ApparentPower/)
+    
+    - [CurrentFlow](/Models/Profiles/SteadyStateHypothesis/Types/CurrentFlow/)
+    
+    - [PU](/Models/Profiles/SteadyStateHypothesis/Types/PU/)
+    
+    - [PerCent](/Models/Profiles/SteadyStateHypothesis/Types/PerCent/)
+    
+    - [ReactivePower](/Models/Profiles/SteadyStateHypothesis/Types/ReactivePower/)
+    
+    - [RealEnergy](/Models/Profiles/SteadyStateHypothesis/Types/RealEnergy/)
+    
+    - [Resistance](/Models/Profiles/SteadyStateHypothesis/Types/Resistance/)
+    
+    - [Voltage](/Models/Profiles/SteadyStateHypothesis/Types/Voltage/)
     

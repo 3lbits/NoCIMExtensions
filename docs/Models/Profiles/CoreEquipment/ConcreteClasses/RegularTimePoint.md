@@ -15,13 +15,13 @@ classDiagram
         RegularTimePoint --> RegularIntervalSchedule : RegularTimePoint.IntervalSchedule
 
         RegularIntervalSchedule
-            click RegularIntervalSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegularIntervalSchedule/"
+            click RegularIntervalSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/RegularIntervalSchedule/"
             style RegularIntervalSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         RegularIntervalSchedule --> RegularTimePoint : RegularIntervalSchedule.TimePoints
 
         RegularIntervalSchedule
-            click RegularIntervalSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegularIntervalSchedule/"
+            click RegularIntervalSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/RegularIntervalSchedule/"
             style RegularIntervalSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 

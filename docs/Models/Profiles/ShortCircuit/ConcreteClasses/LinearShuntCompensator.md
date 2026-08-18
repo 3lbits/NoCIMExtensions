@@ -13,43 +13,33 @@ classDiagram
     style LinearShuntCompensator fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ShuntCompensator <|-- LinearShuntCompensator : inherits
-            click ShuntCompensator href "/Models/Profiles/ShortCircuit/ConcreteClasses/ShuntCompensator/"
+            click ShuntCompensator href "/Models/Profiles/ShortCircuit/AbstractClasses/ShuntCompensator/"
             style ShuntCompensator fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         RegulatingCondEq <|-- ShuntCompensator : inherits
-            click RegulatingCondEq href "/Models/Profiles/ShortCircuit/ConcreteClasses/RegulatingCondEq/"
+            click RegulatingCondEq href "/Models/Profiles/ShortCircuit/AbstractClasses/RegulatingCondEq/"
             style RegulatingCondEq fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         EnergyConnection <|-- RegulatingCondEq : inherits
-            click EnergyConnection href "/Models/Profiles/ShortCircuit/ConcreteClasses/EnergyConnection/"
+            click EnergyConnection href "/Models/Profiles/ShortCircuit/AbstractClasses/EnergyConnection/"
             style EnergyConnection fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ConductingEquipment <|-- EnergyConnection : inherits
-            click ConductingEquipment href "/Models/Profiles/ShortCircuit/ConcreteClasses/ConductingEquipment/"
+            click ConductingEquipment href "/Models/Profiles/ShortCircuit/AbstractClasses/ConductingEquipment/"
             style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- ConductingEquipment : inherits
-            click Equipment href "/Models/Profiles/ShortCircuit/ConcreteClasses/Equipment/"
+            click Equipment href "/Models/Profiles/ShortCircuit/AbstractClasses/Equipment/"
             style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
-            click PowerSystemResource href "/Models/Profiles/ShortCircuit/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/ShortCircuit/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
-            click IdentifiedObject href "/Models/Profiles/ShortCircuit/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/ShortCircuit/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
-        LinearShuntCompensator --> Susceptance : LinearShuntCompensator.b0PerSection
-
-        Susceptance
-            click Susceptance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Susceptance/"
-            style Susceptance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        LinearShuntCompensator --> Conductance : LinearShuntCompensator.g0PerSection
-
-        Conductance
-            click Conductance href "/Models/Profiles/ShortCircuit/ConcreteClasses/Conductance/"
-            style Conductance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
         LinearShuntCompensator : LinearShuntCompensator.b0PerSection
@@ -58,13 +48,13 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/ShortCircuit/ConcreteClasses/IdentifiedObject/)
-    * [PowerSystemResource](/Models/Profiles/ShortCircuit/ConcreteClasses/PowerSystemResource/)
-        * [Equipment](/Models/Profiles/ShortCircuit/ConcreteClasses/Equipment/)
-            * [ConductingEquipment](/Models/Profiles/ShortCircuit/ConcreteClasses/ConductingEquipment/)
-                * [EnergyConnection](/Models/Profiles/ShortCircuit/ConcreteClasses/EnergyConnection/)
-                    * [RegulatingCondEq](/Models/Profiles/ShortCircuit/ConcreteClasses/RegulatingCondEq/)
-                        * [ShuntCompensator](/Models/Profiles/ShortCircuit/ConcreteClasses/ShuntCompensator/)
+* [IdentifiedObject](/Models/Profiles/ShortCircuit/AbstractClasses/IdentifiedObject/)
+    * [PowerSystemResource](/Models/Profiles/ShortCircuit/AbstractClasses/PowerSystemResource/)
+        * [Equipment](/Models/Profiles/ShortCircuit/AbstractClasses/Equipment/)
+            * [ConductingEquipment](/Models/Profiles/ShortCircuit/AbstractClasses/ConductingEquipment/)
+                * [EnergyConnection](/Models/Profiles/ShortCircuit/AbstractClasses/EnergyConnection/)
+                    * [RegulatingCondEq](/Models/Profiles/ShortCircuit/AbstractClasses/RegulatingCondEq/)
+                        * [ShuntCompensator](/Models/Profiles/ShortCircuit/AbstractClasses/ShuntCompensator/)
                             * **LinearShuntCompensator**
 
 ## Attributes

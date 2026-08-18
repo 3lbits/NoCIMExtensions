@@ -15,7 +15,7 @@ classDiagram
         TapChanger <|-- PhaseTapChanger : inherits
 
         PhaseTapChanger
-            click PhaseTapChanger href "/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChanger/"
+            click PhaseTapChanger href "/Models/Profiles/CoreEquipment/AbstractClasses/PhaseTapChanger/"
             style PhaseTapChanger fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         TapChanger <|-- RatioTapChanger : inherits
@@ -25,7 +25,7 @@ classDiagram
             style RatioTapChanger fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- TapChanger : inherits
-            click PowerSystemResource href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/"
+            click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
             style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
@@ -35,13 +35,8 @@ classDiagram
         TapChanger --> TapSchedule : TapChanger.TapSchedules
 
         TapSchedule
-            click TapSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/TapSchedule/"
+            click TapSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/TapSchedule/"
             style TapSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        TapChanger --> Voltage : TapChanger.neutralU
-
-        Voltage
-            click Voltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/Voltage/"
-            style Voltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         TapChanger --> TapChangerControl : TapChanger.TapChangerControl
 
         TapChangerControl
@@ -51,7 +46,7 @@ classDiagram
         TapSchedule --> TapChanger : TapSchedule.TapChanger
 
         TapSchedule
-            click TapSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/TapSchedule/"
+            click TapSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/TapSchedule/"
             style TapSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         TapChangerControl --> TapChanger : TapChangerControl.TapChanger
@@ -78,7 +73,7 @@ classDiagram
 
 ## Inheritance
 * [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [PowerSystemResource](/Models/Profiles/CoreEquipment/ConcreteClasses/PowerSystemResource/)
+    * [PowerSystemResource](/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/)
         * **TapChanger**
 
 ## Attributes

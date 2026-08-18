@@ -59,66 +59,6 @@ classDiagram
         ControlAreaGeneratingUnit
             click ControlAreaGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/ControlAreaGeneratingUnit/"
             style ControlAreaGeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> PerCent : GeneratingUnit.governorSCD
-
-        PerCent
-            click PerCent href "/Models/Profiles/CoreEquipment/ConcreteClasses/PerCent/"
-            style PerCent fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> ActivePower : GeneratingUnit.maximumAllowableSpinningReserve
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> ActivePower : GeneratingUnit.maxOperatingP
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> ActivePower : GeneratingUnit.minOperatingP
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> ActivePower : GeneratingUnit.nominalP
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> ActivePower : GeneratingUnit.ratedGrossMaxP
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> ActivePower : GeneratingUnit.ratedGrossMinP
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> ActivePower : GeneratingUnit.ratedNetMaxP
-
-        ActivePower
-            click ActivePower href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePower/"
-            style ActivePower fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> Money : GeneratingUnit.startupCost
-
-        Money
-            click Money href "/Models/Profiles/CoreEquipment/ConcreteClasses/Money/"
-            style Money fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> Money : GeneratingUnit.variableCost
-
-        Money
-            click Money href "/Models/Profiles/CoreEquipment/ConcreteClasses/Money/"
-            style Money fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> Seconds : GeneratingUnit.startupTime
-
-        Seconds
-            click Seconds href "/Models/Profiles/CoreEquipment/ConcreteClasses/Seconds/"
-            style Seconds fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
-        GeneratingUnit --> PerCent : GeneratingUnit.totalEfficiency
-
-        PerCent
-            click PerCent href "/Models/Profiles/CoreEquipment/ConcreteClasses/PerCent/"
-            style PerCent fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         GeneratingUnit --> GrossToNetActivePowerCurve : GeneratingUnit.GrossToNetActivePowerCurves
 
         GrossToNetActivePowerCurve

@@ -13,11 +13,11 @@ classDiagram
     style Terminal fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         ACDCTerminal <|-- Terminal : inherits
-            click ACDCTerminal href "/Models/Profiles/StateVariables/ConcreteClasses/ACDCTerminal/"
+            click ACDCTerminal href "/Models/Profiles/StateVariables/AbstractClasses/ACDCTerminal/"
             style ACDCTerminal fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- ACDCTerminal : inherits
-            click IdentifiedObject href "/Models/Profiles/StateVariables/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/StateVariables/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         Terminal --> SvPowerFlow : Terminal.SvPowerFlow
@@ -39,8 +39,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/StateVariables/ConcreteClasses/IdentifiedObject/)
-    * [ACDCTerminal](/Models/Profiles/StateVariables/ConcreteClasses/ACDCTerminal/)
+* [IdentifiedObject](/Models/Profiles/StateVariables/AbstractClasses/IdentifiedObject/)
+    * [ACDCTerminal](/Models/Profiles/StateVariables/AbstractClasses/ACDCTerminal/)
         * **Terminal**
 
 ## Attributes

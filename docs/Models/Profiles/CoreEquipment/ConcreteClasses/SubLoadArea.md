@@ -13,11 +13,11 @@ classDiagram
     style SubLoadArea fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         EnergyArea <|-- SubLoadArea : inherits
-            click EnergyArea href "/Models/Profiles/CoreEquipment/ConcreteClasses/EnergyArea/"
+            click EnergyArea href "/Models/Profiles/CoreEquipment/AbstractClasses/EnergyArea/"
             style EnergyArea fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- EnergyArea : inherits
-            click IdentifiedObject href "/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         SubLoadArea --> LoadArea : SubLoadArea.LoadArea
@@ -28,18 +28,18 @@ classDiagram
         SubLoadArea --> LoadGroup : SubLoadArea.LoadGroups
 
         LoadGroup
-            click LoadGroup href "/Models/Profiles/CoreEquipment/ConcreteClasses/LoadGroup/"
+            click LoadGroup href "/Models/Profiles/CoreEquipment/AbstractClasses/LoadGroup/"
             style LoadGroup fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
         EnergyArea --> ControlArea : EnergyArea.ControlArea
 
         ControlArea
-            click ControlArea href "/Models/Profiles/CoreEquipment/ConcreteClasses/ControlArea/"
+            click ControlArea href "/Models/Profiles/CoreEquipment/AbstractClasses/ControlArea/"
             style ControlArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         ControlArea --> EnergyArea : ControlArea.EnergyArea
 
         ControlArea
-            click ControlArea href "/Models/Profiles/CoreEquipment/ConcreteClasses/ControlArea/"
+            click ControlArea href "/Models/Profiles/CoreEquipment/AbstractClasses/ControlArea/"
             style ControlArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         LoadArea --> SubLoadArea : LoadArea.SubLoadAreas
@@ -51,7 +51,7 @@ classDiagram
         LoadGroup --> SubLoadArea : LoadGroup.SubLoadArea
 
         LoadGroup
-            click LoadGroup href "/Models/Profiles/CoreEquipment/ConcreteClasses/LoadGroup/"
+            click LoadGroup href "/Models/Profiles/CoreEquipment/AbstractClasses/LoadGroup/"
             style LoadGroup fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
 
@@ -66,8 +66,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/CoreEquipment/ConcreteClasses/IdentifiedObject/)
-    * [EnergyArea](/Models/Profiles/CoreEquipment/ConcreteClasses/EnergyArea/)
+* [IdentifiedObject](/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/)
+    * [EnergyArea](/Models/Profiles/CoreEquipment/AbstractClasses/EnergyArea/)
         * **SubLoadArea**
 
 ## Attributes

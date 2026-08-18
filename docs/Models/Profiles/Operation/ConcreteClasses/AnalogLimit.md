@@ -13,11 +13,11 @@ classDiagram
     style AnalogLimit fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         Limit <|-- AnalogLimit : inherits
-            click Limit href "/Models/Profiles/Operation/ConcreteClasses/Limit/"
+            click Limit href "/Models/Profiles/Operation/AbstractClasses/Limit/"
             style Limit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- Limit : inherits
-            click IdentifiedObject href "/Models/Profiles/Operation/ConcreteClasses/IdentifiedObject/"
+            click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
             style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
 
         AnalogLimit --> AnalogLimitSet : AnalogLimit.LimitSet
@@ -41,8 +41,8 @@ classDiagram
 ```
 
 ## Inheritance
-* [IdentifiedObject](/Models/Profiles/Operation/ConcreteClasses/IdentifiedObject/)
-    * [Limit](/Models/Profiles/Operation/ConcreteClasses/Limit/)
+* [IdentifiedObject](/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/)
+    * [Limit](/Models/Profiles/Operation/AbstractClasses/Limit/)
         * **AnalogLimit**
 
 ## Attributes

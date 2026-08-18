@@ -29,6 +29,7 @@ classes:
   ACDCTerminal:
     class_uri: cim:ACDCTerminal
     is_a: IdentifiedObject
+    abstract: true
     description: An electrical connection point (AC or DC) to a piece of conducting
       equipment. Terminals are connected at physical connection points called connectivity
       nodes.
@@ -83,112 +84,6 @@ classes:
       BaseVoltage.nominalVoltage. However, boundary lines may have slightly different
       BaseVoltage.nominalVoltages and variation is allowed. Larger voltage difference
       in general requires use of an equivalent branch.'
-  Susceptance:
-    class_uri: cim:Susceptance
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:Susceptance.value
-        range: float
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:Susceptance.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:Susceptance.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-    description: Imaginary part of admittance.
-  Conductance:
-    class_uri: cim:Conductance
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:Conductance.value
-        range: float
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:Conductance.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:Conductance.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-    description: Factor by which voltage must be multiplied to give corresponding
-      power lost from a circuit. Real part of admittance.
-  Resistance:
-    class_uri: cim:Resistance
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:Resistance.value
-        range: float
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:Resistance.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:Resistance.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-    description: Resistance (real part of impedance).
-  Temperature:
-    class_uri: cim:Temperature
-    annotations:
-      cim_data_type: true
-    attributes:
-      multiplier:
-        slot_uri: cim:Temperature.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:Temperature.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      value:
-        slot_uri: cim:Temperature.value
-        range: float
-        multivalued: false
-        required: false
-    description: Value of temperature in degrees Celsius.
-  Reactance:
-    class_uri: cim:Reactance
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:Reactance.value
-        range: float
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:Reactance.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:Reactance.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-    description: Reactance (imaginary part of impedance), at rated frequency.
   AsynchronousMachine:
     class_uri: cim:AsynchronousMachine
     attributes:
@@ -246,51 +141,6 @@ classes:
     description: A rotating machine whose shaft rotates asynchronously with the electrical
       field.  Also known as an induction machine with no external connection to the
       rotor windings, e.g. squirrel-cage induction machine.
-  PerCent:
-    class_uri: cim:PerCent
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:PerCent.value
-        range: float
-        multivalued: false
-        required: false
-        description: Normally 0 to 100 on a defined base.
-      unit:
-        slot_uri: cim:PerCent.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:PerCent.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-    description: Percentage on a defined base.   For example, specify as 100 to indicate
-      at the defined base.
-  ActivePower:
-    class_uri: cim:ActivePower
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:ActivePower.value
-        range: float
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:ActivePower.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:ActivePower.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-    description: Product of RMS value of the voltage and the RMS value of the in-phase
-      component of the current.
   BusbarSection:
     class_uri: cim:BusbarSection
     attributes:
@@ -308,42 +158,23 @@ classes:
       \ \nVoltage measurements are typically obtained from voltage transformers that\
       \ are connected to busbar sections. A bus bar section may have many physical\
       \ terminals but for analysis is modelled with exactly one logical terminal."
-  CurrentFlow:
-    class_uri: cim:CurrentFlow
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:CurrentFlow.value
-        range: float
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:CurrentFlow.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:CurrentFlow.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-    description: 'Electrical current with sign convention: positive flow is out of
-      the conducting equipment into the connectivity node. Can be both AC and DC.'
   ConductingEquipment:
     class_uri: cim:ConductingEquipment
     is_a: Equipment
+    abstract: true
     description: The parts of the AC power system that are designed to carry current
       or that are conductively connected through terminals.
   Conductor:
     class_uri: cim:Conductor
     is_a: ConductingEquipment
+    abstract: true
     description: Combination of conducting material with consistent electrical characteristics,
       building a single electrical system, used to carry current between points in
       the power system.
   Connector:
     class_uri: cim:Connector
     is_a: ConductingEquipment
+    abstract: true
     description: A conductor, or group of conductors, with negligible impedance, that
       serve to connect other conducting equipment within a single substation and are
       modelled with a single logical terminal.
@@ -357,6 +188,7 @@ classes:
         required: false
         description: Nominal resistance of device.
     is_a: ConductingEquipment
+    abstract: true
     description: A conducting equipment used to represent a connection to ground which
       is typically used to compensate earth faults.   An earth fault compensator device
       modelled with a single terminal implies a second terminal solidly connected
@@ -365,6 +197,7 @@ classes:
   EnergyConnection:
     class_uri: cim:EnergyConnection
     is_a: ConductingEquipment
+    abstract: true
     description: A connection of energy generation or consumption on the power system
       model.
   EnergySource:
@@ -412,6 +245,7 @@ classes:
   Equipment:
     class_uri: cim:Equipment
     is_a: PowerSystemResource
+    abstract: true
     description: The parts of a power system that are physical devices, electronic
       or mechanical.
   EquivalentBranch:
@@ -550,6 +384,7 @@ classes:
   EquivalentEquipment:
     class_uri: cim:EquivalentEquipment
     is_a: ConductingEquipment
+    abstract: true
     description: The class represents equivalent objects that are the result of a
       network reduction. The class is the base for equivalent objects of different
       types.
@@ -705,28 +540,6 @@ classes:
     is_a: RegulatingCondEq
     description: This class represents the external network and it is used for IEC
       60909 calculations.
-  PU:
-    class_uri: cim:PU
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:PU.value
-        range: float
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:PU.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:PU.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-    description: Per Unit - a positive or negative value referred to a defined base.
-      Values typically range from -10 to +10.
   GroundingImpedance:
     class_uri: cim:GroundingImpedance
     attributes:
@@ -740,6 +553,7 @@ classes:
     description: A fixed impedance device used for grounding.
   IdentifiedObject:
     class_uri: cim:IdentifiedObject
+    abstract: true
     attributes:
       mRID:
         slot_uri: cim:IdentifiedObject.mRID
@@ -848,27 +662,6 @@ classes:
           of a mutual coupling should point to different AC line segments.
     is_a: IdentifiedObject
     description: This class represents the zero sequence line mutual coupling.
-  Length:
-    class_uri: cim:Length
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:Length.value
-        range: float
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:Length.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:Length.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-    description: Unit of length. It shall be a positive value or zero.
   NonlinearShuntCompensatorPoint:
     class_uri: cim:NonlinearShuntCompensatorPoint
     attributes:
@@ -944,30 +737,10 @@ classes:
     is_a: EarthFaultCompensator
     description: A variable impedance device normally used to offset line charging
       during single line faults in an ungrounded section of network.
-  Voltage:
-    class_uri: cim:Voltage
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:Voltage.value
-        range: float
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:Voltage.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:Voltage.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-    description: Electrical voltage, can be both AC and DC.
   PowerSystemResource:
     class_uri: cim:PowerSystemResource
     is_a: IdentifiedObject
+    abstract: true
     description: A power system resource (PSR) can be an item of equipment such as
       a switch, an equipment container containing many individual items of equipment
       such as a substation, or an organisational entity such as sub-control area.
@@ -1046,27 +819,6 @@ classes:
 
       The inherited association ConductingEquipment.BaseVoltage should not be used.  The
       association from TransformerEnd to BaseVoltage should be used instead.'
-  AngleDegrees:
-    class_uri: cim:AngleDegrees
-    annotations:
-      cim_data_type: true
-    attributes:
-      value:
-        slot_uri: cim:AngleDegrees.value
-        range: float
-        multivalued: false
-        required: false
-      unit:
-        slot_uri: cim:AngleDegrees.unit
-        range: UnitSymbol
-        multivalued: false
-        required: false
-      multiplier:
-        slot_uri: cim:AngleDegrees.multiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: false
-    description: Measurement of angle in degrees.
   PowerTransformerEnd:
     class_uri: cim:PowerTransformerEnd
     attributes:
@@ -1141,11 +893,13 @@ classes:
   RegulatingCondEq:
     class_uri: cim:RegulatingCondEq
     is_a: EnergyConnection
+    abstract: true
     description: A type of conducting equipment that can regulate a quantity (i.e.
       voltage or flow) at a specific point in the network.
   RotatingMachine:
     class_uri: cim:RotatingMachine
     is_a: RegulatingCondEq
+    abstract: true
     description: A rotating machine which may be used as a generator or motor.
   SeriesCompensator:
     class_uri: cim:SeriesCompensator
@@ -1194,6 +948,7 @@ classes:
   ShuntCompensator:
     class_uri: cim:ShuntCompensator
     is_a: RegulatingCondEq
+    abstract: true
     description: A shunt capacitor or reactor or switchable bank of shunt capacitors
       or reactors. A section of a shunt compensator is an individual capacitor or
       reactor. A negative value for bPerSection indicates that the compensator is
@@ -1345,6 +1100,7 @@ classes:
       Terminals are connected at physical connection points called connectivity nodes.
   TransformerEnd:
     class_uri: cim:TransformerEnd
+    abstract: true
     attributes:
       rground:
         slot_uri: cim:TransformerEnd.rground
@@ -1371,6 +1127,105 @@ classes:
       to a physical transformer winding terminal.  In earlier CIM versions, the TransformerWinding
       class served a similar purpose, but this class is more flexible because it associates
       to terminal but is not a specialization of ConductingEquipment.
+
+types:
+
+  ActivePower:
+    uri: xsd:float
+    base: float
+    description: "Product of RMS value of the voltage and the RMS value of the in-phase component of the current."
+    annotations:
+      cim_data_type: true
+      uri: cim:ActivePower
+
+  AngleDegrees:
+    uri: xsd:float
+    base: float
+    description: "Measurement of angle in degrees."
+    annotations:
+      cim_data_type: true
+      uri: cim:AngleDegrees
+
+  Conductance:
+    uri: xsd:float
+    base: float
+    description: "Factor by which voltage must be multiplied to give corresponding power lost from a circuit. Real part of admittance."
+    annotations:
+      cim_data_type: true
+      uri: cim:Conductance
+
+  CurrentFlow:
+    uri: xsd:float
+    base: float
+    description: "Electrical current with sign convention: positive flow is out of the conducting equipment into the connectivity node. Can be both AC and DC."
+    annotations:
+      cim_data_type: true
+      uri: cim:CurrentFlow
+
+  Length:
+    uri: xsd:float
+    base: float
+    description: "Unit of length. It shall be a positive value or zero."
+    annotations:
+      cim_data_type: true
+      uri: cim:Length
+
+  PU:
+    uri: xsd:float
+    base: float
+    description: "Per Unit - a positive or negative value referred to a defined base. Values typically range from -10 to +10."
+    annotations:
+      cim_data_type: true
+      uri: cim:PU
+
+  PerCent:
+    uri: xsd:float
+    base: float
+    description: "Percentage on a defined base.   For example, specify as 100 to indicate at the defined base."
+    annotations:
+      cim_data_type: true
+      uri: cim:PerCent
+
+  Reactance:
+    uri: xsd:float
+    base: float
+    description: "Reactance (imaginary part of impedance), at rated frequency."
+    annotations:
+      cim_data_type: true
+      uri: cim:Reactance
+
+  Resistance:
+    uri: xsd:float
+    base: float
+    description: "Resistance (real part of impedance)."
+    annotations:
+      cim_data_type: true
+      uri: cim:Resistance
+
+  Susceptance:
+    uri: xsd:float
+    base: float
+    description: "Imaginary part of admittance."
+    annotations:
+      cim_data_type: true
+      uri: cim:Susceptance
+
+  Temperature:
+    uri: xsd:float
+    base: float
+    description: "Value of temperature in degrees Celsius."
+    annotations:
+      cim_data_type: true
+      uri: cim:Temperature
+
+  Voltage:
+    uri: xsd:float
+    base: float
+    description: "Electrical voltage, can be both AC and DC."
+    annotations:
+      cim_data_type: true
+      uri: cim:Voltage
+
 enums:
   UnitSymbol:
     permissible_values:
