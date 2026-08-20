@@ -8,31 +8,31 @@ _Limit values for Accumulator measurements._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class AccumulatorLimit
     click AccumulatorLimit href "/Models/Profiles/Operation/AbstractClasses/AccumulatorLimit/"
-    style AccumulatorLimit fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style AccumulatorLimit fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         Limit <|-- AccumulatorLimit : inherits
             click Limit href "/Models/Profiles/Operation/AbstractClasses/Limit/"
-            style Limit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Limit fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- Limit : inherits
             click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         AccumulatorLimit --> AccumulatorLimitSet : AccumulatorLimit.LimitSet
 
         AccumulatorLimitSet
             click AccumulatorLimitSet href "/Models/Profiles/Operation/ConcreteClasses/AccumulatorLimitSet/"
-            style AccumulatorLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AccumulatorLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         AccumulatorLimitSet --> AccumulatorLimit : AccumulatorLimitSet.Limits
 
         AccumulatorLimitSet
             click AccumulatorLimitSet href "/Models/Profiles/Operation/ConcreteClasses/AccumulatorLimitSet/"
-            style AccumulatorLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AccumulatorLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         AccumulatorLimit : AccumulatorLimit.value

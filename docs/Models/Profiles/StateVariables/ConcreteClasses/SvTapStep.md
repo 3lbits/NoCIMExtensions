@@ -6,23 +6,23 @@ _State variable for transformer tap step._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class SvTapStep
     click SvTapStep href "/Models/Profiles/StateVariables/ConcreteClasses/SvTapStep/"
-    style SvTapStep fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style SvTapStep fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SvTapStep --> TapChanger : SvTapStep.TapChanger
 
         TapChanger
             click TapChanger href "/Models/Profiles/StateVariables/AbstractClasses/TapChanger/"
-            style TapChanger fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TapChanger fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TapChanger --> SvTapStep : TapChanger.SvTapStep
 
         TapChanger
             click TapChanger href "/Models/Profiles/StateVariables/AbstractClasses/TapChanger/"
-            style TapChanger fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TapChanger fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         SvTapStep : SvTapStep.position

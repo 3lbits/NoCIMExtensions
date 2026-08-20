@@ -8,22 +8,22 @@ _Geometric representation details._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class Geometry
     click Geometry href "/Models/Profiles/GridCapacity/AbstractClasses/Geometry/"
-    style Geometry fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style Geometry fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         SpatialObject <|-- Geometry : inherits
             click SpatialObject href "/Models/Profiles/GridCapacity/AbstractClasses/SpatialObject/"
-            style SpatialObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SpatialObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         Feature --> Geometry : Feature.hasGeometry
 
         Feature
             click Feature href "/Models/Profiles/GridCapacity/AbstractClasses/Feature/"
-            style Feature fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Feature fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         Geometry : asWKT

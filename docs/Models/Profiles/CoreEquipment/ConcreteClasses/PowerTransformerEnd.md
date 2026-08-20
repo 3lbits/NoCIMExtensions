@@ -12,81 +12,81 @@ Each PowerTransformerEnd must be contained by a PowerTransformer. Because a Powe
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class PowerTransformerEnd
     click PowerTransformerEnd href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerTransformerEnd/"
-    style PowerTransformerEnd fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style PowerTransformerEnd fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         TransformerEnd <|-- PowerTransformerEnd : inherits
             click TransformerEnd href "/Models/Profiles/CoreEquipment/AbstractClasses/TransformerEnd/"
-            style TransformerEnd fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TransformerEnd fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- TransformerEnd : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerTransformerEnd --> PowerTransformer : PowerTransformerEnd.PowerTransformer
 
         PowerTransformer
             click PowerTransformer href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerTransformer/"
-            style PowerTransformer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerTransformer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         TransformerEnd --> BaseVoltage : TransformerEnd.BaseVoltage
 
         BaseVoltage
             click BaseVoltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/BaseVoltage/"
-            style BaseVoltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BaseVoltage fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         TransformerEnd --> PhaseTapChanger : TransformerEnd.PhaseTapChanger
 
         PhaseTapChanger
             click PhaseTapChanger href "/Models/Profiles/CoreEquipment/AbstractClasses/PhaseTapChanger/"
-            style PhaseTapChanger fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PhaseTapChanger fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         TransformerEnd --> RatioTapChanger : TransformerEnd.RatioTapChanger
 
         RatioTapChanger
             click RatioTapChanger href "/Models/Profiles/CoreEquipment/ConcreteClasses/RatioTapChanger/"
-            style RatioTapChanger fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RatioTapChanger fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         TransformerEnd --> Terminal : TransformerEnd.Terminal
 
         Terminal
             click Terminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/Terminal/"
-            style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Terminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseVoltage --> TransformerEnd : BaseVoltage.TransformerEnds
 
         BaseVoltage
             click BaseVoltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/BaseVoltage/"
-            style BaseVoltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BaseVoltage fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PhaseTapChanger --> TransformerEnd : PhaseTapChanger.TransformerEnd
 
         PhaseTapChanger
             click PhaseTapChanger href "/Models/Profiles/CoreEquipment/AbstractClasses/PhaseTapChanger/"
-            style PhaseTapChanger fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PhaseTapChanger fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerTransformer --> PowerTransformerEnd : PowerTransformer.PowerTransformerEnd
 
         PowerTransformer
             click PowerTransformer href "/Models/Profiles/CoreEquipment/ConcreteClasses/PowerTransformer/"
-            style PowerTransformer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerTransformer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RatioTapChanger --> TransformerEnd : RatioTapChanger.TransformerEnd
 
         RatioTapChanger
             click RatioTapChanger href "/Models/Profiles/CoreEquipment/ConcreteClasses/RatioTapChanger/"
-            style RatioTapChanger fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RatioTapChanger fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Terminal --> TransformerEnd : Terminal.TransformerEnd
 
         Terminal
             click Terminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/Terminal/"
-            style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Terminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerTransformerEnd --> WindingConnection : PowerTransformerEnd.connectionKind
 
         WindingConnection
             click WindingConnection href "/Models/Profiles/CoreEquipment/Enumerations/WindingConnection/"
-            style WindingConnection fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style WindingConnection fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerTransformerEnd : PowerTransformerEnd.PowerTransformer
         PowerTransformerEnd : PowerTransformerEnd.b

@@ -6,80 +6,80 @@ _Analog represents an analog Measurement._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class Analog
     click Analog href "/Models/Profiles/Operation/ConcreteClasses/Analog/"
-    style Analog fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style Analog fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         Measurement <|-- Analog : inherits
             click Measurement href "/Models/Profiles/Operation/AbstractClasses/Measurement/"
-            style Measurement fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Measurement fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- Measurement : inherits
             click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Analog --> AnalogValue : Analog.AnalogValues
 
         AnalogValue
             click AnalogValue href "/Models/Profiles/Operation/ConcreteClasses/AnalogValue/"
-            style AnalogValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AnalogValue fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Analog --> AnalogLimitSet : Analog.LimitSets
 
         AnalogLimitSet
             click AnalogLimitSet href "/Models/Profiles/Operation/ConcreteClasses/AnalogLimitSet/"
-            style AnalogLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AnalogLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Measurement --> ACDCTerminal : Measurement.Terminal
 
         ACDCTerminal
             click ACDCTerminal href "/Models/Profiles/Operation/AbstractClasses/ACDCTerminal/"
-            style ACDCTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCTerminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Measurement --> PowerSystemResource : Measurement.PowerSystemResource
 
         PowerSystemResource
             click PowerSystemResource href "/Models/Profiles/Operation/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ACDCTerminal --> Measurement : ACDCTerminal.Measurements
 
         ACDCTerminal
             click ACDCTerminal href "/Models/Profiles/Operation/AbstractClasses/ACDCTerminal/"
-            style ACDCTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCTerminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         AnalogLimitSet --> Analog : AnalogLimitSet.Measurements
 
         AnalogLimitSet
             click AnalogLimitSet href "/Models/Profiles/Operation/ConcreteClasses/AnalogLimitSet/"
-            style AnalogLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AnalogLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         AnalogValue --> Analog : AnalogValue.Analog
 
         AnalogValue
             click AnalogValue href "/Models/Profiles/Operation/ConcreteClasses/AnalogValue/"
-            style AnalogValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AnalogValue fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource --> Measurement : PowerSystemResource.Measurements
 
         PowerSystemResource
             click PowerSystemResource href "/Models/Profiles/Operation/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Measurement --> PhaseCode : Measurement.phases
 
         PhaseCode
             click PhaseCode href "/Models/Profiles/Operation/Enumerations/PhaseCode/"
-            style PhaseCode fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PhaseCode fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Measurement --> UnitMultiplier : Measurement.unitMultiplier
 
         UnitMultiplier
             click UnitMultiplier href "/Models/Profiles/Operation/Enumerations/UnitMultiplier/"
-            style UnitMultiplier fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitMultiplier fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Measurement --> UnitSymbol : Measurement.unitSymbol
 
         UnitSymbol
             click UnitSymbol href "/Models/Profiles/Operation/Enumerations/UnitSymbol/"
-            style UnitSymbol fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitSymbol fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Analog : Analog.positiveFlowIn
         Analog : Analog.AnalogValues

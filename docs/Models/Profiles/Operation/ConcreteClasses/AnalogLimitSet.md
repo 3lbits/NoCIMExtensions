@@ -6,42 +6,42 @@ _An AnalogLimitSet specifies a set of Limits that are associated with an Analog 
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class AnalogLimitSet
     click AnalogLimitSet href "/Models/Profiles/Operation/ConcreteClasses/AnalogLimitSet/"
-    style AnalogLimitSet fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style AnalogLimitSet fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         LimitSet <|-- AnalogLimitSet : inherits
             click LimitSet href "/Models/Profiles/Operation/AbstractClasses/LimitSet/"
-            style LimitSet fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style LimitSet fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- LimitSet : inherits
             click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         AnalogLimitSet --> Analog : AnalogLimitSet.Measurements
 
         Analog
             click Analog href "/Models/Profiles/Operation/ConcreteClasses/Analog/"
-            style Analog fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Analog fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         AnalogLimitSet --> AnalogLimit : AnalogLimitSet.Limits
 
         AnalogLimit
             click AnalogLimit href "/Models/Profiles/Operation/ConcreteClasses/AnalogLimit/"
-            style AnalogLimit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AnalogLimit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Analog --> AnalogLimitSet : Analog.LimitSets
 
         Analog
             click Analog href "/Models/Profiles/Operation/ConcreteClasses/Analog/"
-            style Analog fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Analog fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         AnalogLimit --> AnalogLimitSet : AnalogLimit.LimitSet
 
         AnalogLimit
             click AnalogLimit href "/Models/Profiles/Operation/ConcreteClasses/AnalogLimit/"
-            style AnalogLimit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AnalogLimit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         AnalogLimitSet : AnalogLimitSet.Measurements

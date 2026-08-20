@@ -8,48 +8,48 @@ _The schedule has time points where the time between them is constant._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class RegularIntervalSchedule
     click RegularIntervalSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/RegularIntervalSchedule/"
-    style RegularIntervalSchedule fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style RegularIntervalSchedule fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RegularIntervalSchedule <|-- SeasonDayTypeSchedule : inherits
 
         SeasonDayTypeSchedule
             click SeasonDayTypeSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/SeasonDayTypeSchedule/"
-            style SeasonDayTypeSchedule fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SeasonDayTypeSchedule fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         BasicIntervalSchedule <|-- RegularIntervalSchedule : inherits
             click BasicIntervalSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/BasicIntervalSchedule/"
-            style BasicIntervalSchedule fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BasicIntervalSchedule fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- BasicIntervalSchedule : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RegularIntervalSchedule --> RegularTimePoint : RegularIntervalSchedule.TimePoints
 
         RegularTimePoint
             click RegularTimePoint href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegularTimePoint/"
-            style RegularTimePoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegularTimePoint fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RegularTimePoint --> RegularIntervalSchedule : RegularTimePoint.IntervalSchedule
 
         RegularTimePoint
             click RegularTimePoint href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegularTimePoint/"
-            style RegularTimePoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegularTimePoint fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         BasicIntervalSchedule --> UnitSymbol : BasicIntervalSchedule.value1Unit
 
         UnitSymbol
             click UnitSymbol href "/Models/Profiles/CoreEquipment/Enumerations/UnitSymbol/"
-            style UnitSymbol fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitSymbol fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         BasicIntervalSchedule --> UnitSymbol : BasicIntervalSchedule.value2Unit
 
         UnitSymbol
             click UnitSymbol href "/Models/Profiles/CoreEquipment/Enumerations/UnitSymbol/"
-            style UnitSymbol fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitSymbol fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RegularIntervalSchedule : RegularIntervalSchedule.TimePoints
         RegularIntervalSchedule : RegularIntervalSchedule.timeStep

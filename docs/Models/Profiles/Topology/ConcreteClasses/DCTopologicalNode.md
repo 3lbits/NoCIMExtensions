@@ -6,49 +6,49 @@ _DC bus._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class DCTopologicalNode
     click DCTopologicalNode href "/Models/Profiles/Topology/ConcreteClasses/DCTopologicalNode/"
-    style DCTopologicalNode fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style DCTopologicalNode fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- DCTopologicalNode : inherits
             click IdentifiedObject href "/Models/Profiles/Topology/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCTopologicalNode --> DCBaseTerminal : DCTopologicalNode.DCTerminals
 
         DCBaseTerminal
             click DCBaseTerminal href "/Models/Profiles/Topology/AbstractClasses/DCBaseTerminal/"
-            style DCBaseTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCBaseTerminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         DCTopologicalNode --> DCEquipmentContainer : DCTopologicalNode.DCEquipmentContainer
 
         DCEquipmentContainer
             click DCEquipmentContainer href "/Models/Profiles/Topology/AbstractClasses/DCEquipmentContainer/"
-            style DCEquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCEquipmentContainer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         DCTopologicalNode --> DCNode : DCTopologicalNode.DCNodes
 
         DCNode
             click DCNode href "/Models/Profiles/Topology/ConcreteClasses/DCNode/"
-            style DCNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCBaseTerminal --> DCTopologicalNode : DCBaseTerminal.DCTopologicalNode
 
         DCBaseTerminal
             click DCBaseTerminal href "/Models/Profiles/Topology/AbstractClasses/DCBaseTerminal/"
-            style DCBaseTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCBaseTerminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCEquipmentContainer --> DCTopologicalNode : DCEquipmentContainer.DCTopologicalNode
 
         DCEquipmentContainer
             click DCEquipmentContainer href "/Models/Profiles/Topology/AbstractClasses/DCEquipmentContainer/"
-            style DCEquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCEquipmentContainer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCNode --> DCTopologicalNode : DCNode.DCTopologicalNode
 
         DCNode
             click DCNode href "/Models/Profiles/Topology/ConcreteClasses/DCNode/"
-            style DCNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         DCTopologicalNode : DCTopologicalNode.DCTerminals

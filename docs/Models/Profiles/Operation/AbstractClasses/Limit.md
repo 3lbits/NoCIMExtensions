@@ -8,27 +8,27 @@ _Specifies one limit value for a Measurement. A Measurement typically has severa
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class Limit
     click Limit href "/Models/Profiles/Operation/AbstractClasses/Limit/"
-    style Limit fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style Limit fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Limit <|-- AccumulatorLimit : inherits
 
         AccumulatorLimit
             click AccumulatorLimit href "/Models/Profiles/Operation/AbstractClasses/AccumulatorLimit/"
-            style AccumulatorLimit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AccumulatorLimit fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Limit <|-- AnalogLimit : inherits
 
         AnalogLimit
             click AnalogLimit href "/Models/Profiles/Operation/ConcreteClasses/AnalogLimit/"
-            style AnalogLimit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AnalogLimit fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- Limit : inherits
             click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

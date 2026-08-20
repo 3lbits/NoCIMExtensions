@@ -10,62 +10,62 @@ If a particular piece of equipment has multiple operational limits of the same k
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class OperationalLimit
     click OperationalLimit href "/Models/Profiles/CoreEquipment/AbstractClasses/OperationalLimit/"
-    style OperationalLimit fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style OperationalLimit fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimit <|-- ActivePowerLimit : inherits
 
         ActivePowerLimit
             click ActivePowerLimit href "/Models/Profiles/CoreEquipment/ConcreteClasses/ActivePowerLimit/"
-            style ActivePowerLimit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ActivePowerLimit fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimit <|-- ApparentPowerLimit : inherits
 
         ApparentPowerLimit
             click ApparentPowerLimit href "/Models/Profiles/CoreEquipment/ConcreteClasses/ApparentPowerLimit/"
-            style ApparentPowerLimit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ApparentPowerLimit fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimit <|-- CurrentLimit : inherits
 
         CurrentLimit
             click CurrentLimit href "/Models/Profiles/CoreEquipment/ConcreteClasses/CurrentLimit/"
-            style CurrentLimit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CurrentLimit fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimit <|-- VoltageLimit : inherits
 
         VoltageLimit
             click VoltageLimit href "/Models/Profiles/CoreEquipment/ConcreteClasses/VoltageLimit/"
-            style VoltageLimit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style VoltageLimit fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- OperationalLimit : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimit --> OperationalLimitSet : OperationalLimit.OperationalLimitSet
 
         OperationalLimitSet
             click OperationalLimitSet href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitSet/"
-            style OperationalLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         OperationalLimit --> OperationalLimitType : OperationalLimit.OperationalLimitType
 
         OperationalLimitType
             click OperationalLimitType href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitType/"
-            style OperationalLimitType fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimitType fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitSet --> OperationalLimit : OperationalLimitSet.OperationalLimitValue
 
         OperationalLimitSet
             click OperationalLimitSet href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitSet/"
-            style OperationalLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitType --> OperationalLimit : OperationalLimitType.OperationalLimit
 
         OperationalLimitType
             click OperationalLimitType href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitType/"
-            style OperationalLimitType fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimitType fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         OperationalLimit : OperationalLimit.OperationalLimitSet

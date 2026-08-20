@@ -8,65 +8,65 @@ _This is a root class to provide common identification for all classes needing i
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class IdentifiedObject
     click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
-    style IdentifiedObject fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style IdentifiedObject fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- ACDCTerminal : inherits
 
         ACDCTerminal
             click ACDCTerminal href "/Models/Profiles/Operation/AbstractClasses/ACDCTerminal/"
-            style ACDCTerminal fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCTerminal fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- IOPoint : inherits
 
         IOPoint
             click IOPoint href "/Models/Profiles/Operation/AbstractClasses/IOPoint/"
-            style IOPoint fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IOPoint fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- Limit : inherits
 
         Limit
             click Limit href "/Models/Profiles/Operation/AbstractClasses/Limit/"
-            style Limit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Limit fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- LimitSet : inherits
 
         LimitSet
             click LimitSet href "/Models/Profiles/Operation/AbstractClasses/LimitSet/"
-            style LimitSet fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style LimitSet fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- Measurement : inherits
 
         Measurement
             click Measurement href "/Models/Profiles/Operation/AbstractClasses/Measurement/"
-            style Measurement fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Measurement fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- MeasurementValueSource : inherits
 
         MeasurementValueSource
             click MeasurementValueSource href "/Models/Profiles/Operation/ConcreteClasses/MeasurementValueSource/"
-            style MeasurementValueSource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MeasurementValueSource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- PowerSystemResource : inherits
 
         PowerSystemResource
             click PowerSystemResource href "/Models/Profiles/Operation/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- ValueAliasSet : inherits
 
         ValueAliasSet
             click ValueAliasSet href "/Models/Profiles/Operation/ConcreteClasses/ValueAliasSet/"
-            style ValueAliasSet fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ValueAliasSet fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- ValueToAlias : inherits
 
         ValueToAlias
             click ValueToAlias href "/Models/Profiles/Operation/ConcreteClasses/ValueToAlias/"
-            style ValueToAlias fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ValueToAlias fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

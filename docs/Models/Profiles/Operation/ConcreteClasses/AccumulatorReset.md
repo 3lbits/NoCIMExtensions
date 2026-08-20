@@ -6,57 +6,57 @@ _This command resets the counter value to zero._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class AccumulatorReset
     click AccumulatorReset href "/Models/Profiles/Operation/ConcreteClasses/AccumulatorReset/"
-    style AccumulatorReset fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style AccumulatorReset fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         Control <|-- AccumulatorReset : inherits
             click Control href "/Models/Profiles/Operation/AbstractClasses/Control/"
-            style Control fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Control fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IOPoint <|-- Control : inherits
             click IOPoint href "/Models/Profiles/Operation/AbstractClasses/IOPoint/"
-            style IOPoint fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IOPoint fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- IOPoint : inherits
             click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         AccumulatorReset --> AccumulatorValue : AccumulatorReset.AccumulatorValue
 
         AccumulatorValue
             click AccumulatorValue href "/Models/Profiles/Operation/ConcreteClasses/AccumulatorValue/"
-            style AccumulatorValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AccumulatorValue fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Control --> PowerSystemResource : Control.PowerSystemResource
 
         PowerSystemResource
             click PowerSystemResource href "/Models/Profiles/Operation/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         AccumulatorValue --> AccumulatorReset : AccumulatorValue.AccumulatorReset
 
         AccumulatorValue
             click AccumulatorValue href "/Models/Profiles/Operation/ConcreteClasses/AccumulatorValue/"
-            style AccumulatorValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AccumulatorValue fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource --> Control : PowerSystemResource.Controls
 
         PowerSystemResource
             click PowerSystemResource href "/Models/Profiles/Operation/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Control --> UnitMultiplier : Control.unitMultiplier
 
         UnitMultiplier
             click UnitMultiplier href "/Models/Profiles/Operation/Enumerations/UnitMultiplier/"
-            style UnitMultiplier fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitMultiplier fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Control --> UnitSymbol : Control.unitSymbol
 
         UnitSymbol
             click UnitSymbol href "/Models/Profiles/Operation/Enumerations/UnitSymbol/"
-            style UnitSymbol fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitSymbol fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         AccumulatorReset : AccumulatorReset.AccumulatorValue
         Control : Control.controlType

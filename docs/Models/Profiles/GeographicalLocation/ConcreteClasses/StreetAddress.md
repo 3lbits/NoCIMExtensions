@@ -6,33 +6,33 @@ _General purpose street and postal address information._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class StreetAddress
     click StreetAddress href "/Models/Profiles/GeographicalLocation/ConcreteClasses/StreetAddress/"
-    style StreetAddress fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style StreetAddress fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         StreetAddress --> StreetDetail : StreetAddress.streetDetail
 
         StreetDetail
             click StreetDetail href "/Models/Profiles/GeographicalLocation/ConcreteClasses/StreetDetail/"
-            style StreetDetail fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style StreetDetail fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         StreetAddress --> TownDetail : StreetAddress.townDetail
 
         TownDetail
             click TownDetail href "/Models/Profiles/GeographicalLocation/ConcreteClasses/TownDetail/"
-            style TownDetail fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TownDetail fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         StreetAddress --> Status : StreetAddress.status
 
         Status
             click Status href "/Models/Profiles/GeographicalLocation/ConcreteClasses/Status/"
-            style Status fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Status fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Location --> StreetAddress : Location.mainAddress
 
         Location
             click Location href "/Models/Profiles/GeographicalLocation/ConcreteClasses/Location/"
-            style Location fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Location fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         StreetAddress : StreetAddress.streetDetail

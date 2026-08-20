@@ -8,23 +8,23 @@ _A spatial object is a physical object that has a location in space. It may have
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class SpatialObject
     click SpatialObject href "/Models/Profiles/GridCapacity/AbstractClasses/SpatialObject/"
-    style SpatialObject fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style SpatialObject fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SpatialObject <|-- Feature : inherits
 
         Feature
             click Feature href "/Models/Profiles/GridCapacity/AbstractClasses/Feature/"
-            style Feature fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Feature fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SpatialObject <|-- Geometry : inherits
 
         Geometry
             click Geometry href "/Models/Profiles/GridCapacity/AbstractClasses/Geometry/"
-            style Geometry fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Geometry fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

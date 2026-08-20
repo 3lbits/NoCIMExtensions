@@ -8,29 +8,29 @@ _Quality flags in this class are as defined in IEC 61850, except for estimatorRe
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class Quality61850
     click Quality61850 href "/Models/Profiles/Operation/AbstractClasses/Quality61850/"
-    style Quality61850 fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style Quality61850 fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Quality61850 <|-- MeasurementValueQuality : inherits
 
         MeasurementValueQuality
             click MeasurementValueQuality href "/Models/Profiles/Operation/ConcreteClasses/MeasurementValueQuality/"
-            style MeasurementValueQuality fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MeasurementValueQuality fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         Quality61850 --> Source : Quality61850.source
 
         Source
             click Source href "/Models/Profiles/Operation/Enumerations/Source/"
-            style Source fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Source fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Quality61850 --> Validity : Quality61850.validity
 
         Validity
             click Validity href "/Models/Profiles/Operation/Enumerations/Validity/"
-            style Validity fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Validity fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Quality61850 : Quality61850.badReference
         Quality61850 : Quality61850.estimatorReplaced

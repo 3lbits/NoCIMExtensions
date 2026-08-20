@@ -8,99 +8,99 @@ _The parts of the DC power system that are designed to carry current or that are
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class DCConductingEquipment
     click DCConductingEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/DCConductingEquipment/"
-    style DCConductingEquipment fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style DCConductingEquipment fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCConductingEquipment <|-- DCBusbar : inherits
 
         DCBusbar
             click DCBusbar href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCBusbar/"
-            style DCBusbar fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCBusbar fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCConductingEquipment <|-- DCChopper : inherits
 
         DCChopper
             click DCChopper href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCChopper/"
-            style DCChopper fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCChopper fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCConductingEquipment <|-- DCGround : inherits
 
         DCGround
             click DCGround href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCGround/"
-            style DCGround fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCGround fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCConductingEquipment <|-- DCLineSegment : inherits
 
         DCLineSegment
             click DCLineSegment href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCLineSegment/"
-            style DCLineSegment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCLineSegment fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCConductingEquipment <|-- DCSeriesDevice : inherits
 
         DCSeriesDevice
             click DCSeriesDevice href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCSeriesDevice/"
-            style DCSeriesDevice fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCSeriesDevice fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCConductingEquipment <|-- DCShunt : inherits
 
         DCShunt
             click DCShunt href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCShunt/"
-            style DCShunt fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCShunt fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCConductingEquipment <|-- DCSwitch : inherits
 
         DCSwitch
             click DCSwitch href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCSwitch/"
-            style DCSwitch fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCSwitch fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- DCConductingEquipment : inherits
             click Equipment href "/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/"
-            style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Equipment fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
             click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCConductingEquipment --> DCTerminal : DCConductingEquipment.DCTerminals
 
         DCTerminal
             click DCTerminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCTerminal/"
-            style DCTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCTerminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Equipment --> EquipmentContainer : Equipment.EquipmentContainer
 
         EquipmentContainer
             click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
-            style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EquipmentContainer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Equipment --> OperationalLimitSet : Equipment.OperationalLimitSet
 
         OperationalLimitSet
             click OperationalLimitSet href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitSet/"
-            style OperationalLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCTerminal --> DCConductingEquipment : DCTerminal.DCConductingEquipment
 
         DCTerminal
             click DCTerminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCTerminal/"
-            style DCTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCTerminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         EquipmentContainer --> Equipment : EquipmentContainer.Equipments
 
         EquipmentContainer
             click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
-            style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EquipmentContainer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitSet --> Equipment : OperationalLimitSet.Equipment
 
         OperationalLimitSet
             click OperationalLimitSet href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitSet/"
-            style OperationalLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         DCConductingEquipment : DCConductingEquipment.ratedUdc

@@ -6,46 +6,46 @@ __
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class CapacitySchedule
     click CapacitySchedule href "/Models/Profiles/GridCapacity/ConcreteClasses/CapacitySchedule/"
-    style CapacitySchedule fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style CapacitySchedule fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         BaseIrregularTimeSeries <|-- CapacitySchedule : inherits
             click BaseIrregularTimeSeries href "/Models/Profiles/GridCapacity/AbstractClasses/BaseIrregularTimeSeries/"
-            style BaseIrregularTimeSeries fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BaseIrregularTimeSeries fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         BaseTimeSeries <|-- BaseIrregularTimeSeries : inherits
             click BaseTimeSeries href "/Models/Profiles/GridCapacity/AbstractClasses/BaseTimeSeries/"
-            style BaseTimeSeries fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BaseTimeSeries fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- BaseTimeSeries : inherits
             click IdentifiedObject href "/Models/Profiles/GridCapacity/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         CapacitySchedule --> Feeder : CapacitySchedule.Feeder
 
         Feeder
             click Feeder href "/Models/Profiles/GridCapacity/ConcreteClasses/Feeder/"
-            style Feeder fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Feeder fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         CapacityTimePoint --> CapacitySchedule : CapacityTimePoint.CapacitySchedule
 
         CapacityTimePoint
             click CapacityTimePoint href "/Models/Profiles/GridCapacity/ConcreteClasses/CapacityTimePoint/"
-            style CapacityTimePoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CapacityTimePoint fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseTimeSeries --> TimeSeriesInterpolationKind : BaseTimeSeries.interpolationKind
 
         TimeSeriesInterpolationKind
             click TimeSeriesInterpolationKind href "/Models/Profiles/GridCapacity/Enumerations/TimeSeriesInterpolationKind/"
-            style TimeSeriesInterpolationKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TimeSeriesInterpolationKind fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         BaseTimeSeries --> BaseTimeSeriesKind : BaseTimeSeries.timeSeriesKind
 
         BaseTimeSeriesKind
             click BaseTimeSeriesKind href "/Models/Profiles/GridCapacity/Enumerations/BaseTimeSeriesKind/"
-            style BaseTimeSeriesKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BaseTimeSeriesKind fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         CapacitySchedule : CapacitySchedule.Feeder
         BaseTimeSeries : BaseTimeSeries.interpolationKind

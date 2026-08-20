@@ -9,38 +9,38 @@ Only energised TopologicalNode-s shall be part of the topological island._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class TopologicalIsland
     click TopologicalIsland href "/Models/Profiles/StateVariables/ConcreteClasses/TopologicalIsland/"
-    style TopologicalIsland fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style TopologicalIsland fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- TopologicalIsland : inherits
             click IdentifiedObject href "/Models/Profiles/StateVariables/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TopologicalIsland --> TopologicalNode : TopologicalIsland.AngleRefTopologicalNode
 
         TopologicalNode
             click TopologicalNode href "/Models/Profiles/StateVariables/ConcreteClasses/TopologicalNode/"
-            style TopologicalNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TopologicalNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         TopologicalIsland --> TopologicalNode : TopologicalIsland.TopologicalNodes
 
         TopologicalNode
             click TopologicalNode href "/Models/Profiles/StateVariables/ConcreteClasses/TopologicalNode/"
-            style TopologicalNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TopologicalNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TopologicalNode --> TopologicalIsland : TopologicalNode.AngleRefTopologicalIsland
 
         TopologicalNode
             click TopologicalNode href "/Models/Profiles/StateVariables/ConcreteClasses/TopologicalNode/"
-            style TopologicalNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TopologicalNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TopologicalNode --> TopologicalIsland : TopologicalNode.TopologicalIsland
 
         TopologicalNode
             click TopologicalNode href "/Models/Profiles/StateVariables/ConcreteClasses/TopologicalNode/"
-            style TopologicalNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TopologicalNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         TopologicalIsland : TopologicalIsland.AngleRefTopologicalNode

@@ -6,62 +6,62 @@ _Tape layer base class._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class TapeLayer
     click TapeLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/TapeLayer/"
-    style TapeLayer fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style TapeLayer fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TapeLayer <|-- GappedTape : inherits
 
         GappedTape
             click GappedTape href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/GappedTape/"
-            style GappedTape fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style GappedTape fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TapeLayer <|-- LappedTape : inherits
 
         LappedTape
             click LappedTape href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/LappedTape/"
-            style LappedTape fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style LappedTape fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TapeLayer <|-- LongitudinallyCorrugatedTape : inherits
 
         LongitudinallyCorrugatedTape
             click LongitudinallyCorrugatedTape href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/LongitudinallyCorrugatedTape/"
-            style LongitudinallyCorrugatedTape fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style LongitudinallyCorrugatedTape fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TapeLayer <|-- TubularTape : inherits
 
         TubularTape
             click TubularTape href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/TubularTape/"
-            style TubularTape fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TubularTape fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         MetallicSheathLayer <|-- TapeLayer : inherits
             click MetallicSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MetallicSheathLayer/"
-            style MetallicSheathLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MetallicSheathLayer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         CableLayer <|-- MetallicSheathLayer : inherits
             click CableLayer href "/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/"
-            style CableLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CableLayer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CableInfo --> CableLayer : CableInfo.Layer
 
         CableInfo
             click CableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/CableInfo/"
-            style CableInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CableInfo fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         MultiCoreCableInfo --> CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
             click MultiCoreCableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MultiCoreCableInfo/"
-            style MultiCoreCableInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MultiCoreCableInfo fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         MetallicSheathLayer --> CableShieldMaterialKind : MetallicSheathLayer.material
 
         CableShieldMaterialKind
             click CableShieldMaterialKind href "/Models/Profiles/SubseaCableInfo/Enumerations/CableShieldMaterialKind/"
-            style CableShieldMaterialKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CableShieldMaterialKind fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         MetallicSheathLayer : MetallicSheathLayer.isArmor
         MetallicSheathLayer : MetallicSheathLayer.material

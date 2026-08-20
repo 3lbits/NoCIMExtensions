@@ -6,27 +6,27 @@ _A reporting group is used for various ad-hoc groupings used for reporting._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class ReportingGroup
     click ReportingGroup href "/Models/Profiles/CoreEquipment/ConcreteClasses/ReportingGroup/"
-    style ReportingGroup fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style ReportingGroup fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- ReportingGroup : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ReportingGroup --> BusNameMarker : ReportingGroup.BusNameMarker
 
         BusNameMarker
             click BusNameMarker href "/Models/Profiles/CoreEquipment/ConcreteClasses/BusNameMarker/"
-            style BusNameMarker fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BusNameMarker fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         BusNameMarker --> ReportingGroup : BusNameMarker.ReportingGroup
 
         BusNameMarker
             click BusNameMarker href "/Models/Profiles/CoreEquipment/ConcreteClasses/BusNameMarker/"
-            style BusNameMarker fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BusNameMarker fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         ReportingGroup : ReportingGroup.BusNameMarker

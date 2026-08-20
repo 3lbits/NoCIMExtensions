@@ -6,22 +6,22 @@ _Defines a system base voltage which is referenced._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class BaseVoltage
     click BaseVoltage href "/Models/Profiles/AviationObstacle/ConcreteClasses/BaseVoltage/"
-    style BaseVoltage fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style BaseVoltage fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- BaseVoltage : inherits
             click IdentifiedObject href "/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         AssetDeployment --> BaseVoltage : AssetDeployment.BaseVoltage
 
         AssetDeployment
             click AssetDeployment href "/Models/Profiles/AviationObstacle/ConcreteClasses/AssetDeployment/"
-            style AssetDeployment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AssetDeployment fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         BaseVoltage : BaseVoltage.nominalVoltage

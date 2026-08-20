@@ -6,38 +6,38 @@ _Describes a curve for how the voltage magnitude and impedance varies with the t
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class RatioTapChangerTable
     click RatioTapChangerTable href "/Models/Profiles/CoreEquipment/ConcreteClasses/RatioTapChangerTable/"
-    style RatioTapChangerTable fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style RatioTapChangerTable fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- RatioTapChangerTable : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RatioTapChangerTable --> RatioTapChanger : RatioTapChangerTable.RatioTapChanger
 
         RatioTapChanger
             click RatioTapChanger href "/Models/Profiles/CoreEquipment/ConcreteClasses/RatioTapChanger/"
-            style RatioTapChanger fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RatioTapChanger fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         RatioTapChangerTable --> RatioTapChangerTablePoint : RatioTapChangerTable.RatioTapChangerTablePoint
 
         RatioTapChangerTablePoint
             click RatioTapChangerTablePoint href "/Models/Profiles/CoreEquipment/ConcreteClasses/RatioTapChangerTablePoint/"
-            style RatioTapChangerTablePoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RatioTapChangerTablePoint fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RatioTapChanger --> RatioTapChangerTable : RatioTapChanger.RatioTapChangerTable
 
         RatioTapChanger
             click RatioTapChanger href "/Models/Profiles/CoreEquipment/ConcreteClasses/RatioTapChanger/"
-            style RatioTapChanger fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RatioTapChanger fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RatioTapChangerTablePoint --> RatioTapChangerTable : RatioTapChangerTablePoint.RatioTapChangerTable
 
         RatioTapChangerTablePoint
             click RatioTapChangerTablePoint href "/Models/Profiles/CoreEquipment/ConcreteClasses/RatioTapChangerTablePoint/"
-            style RatioTapChangerTablePoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RatioTapChangerTablePoint fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         RatioTapChangerTable : RatioTapChangerTable.RatioTapChanger

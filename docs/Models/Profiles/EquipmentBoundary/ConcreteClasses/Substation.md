@@ -6,46 +6,46 @@ _A collection of equipment for purposes other than generation or utilization, th
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class Substation
     click Substation href "/Models/Profiles/EquipmentBoundary/ConcreteClasses/Substation/"
-    style Substation fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style Substation fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         EquipmentContainer <|-- Substation : inherits
             click EquipmentContainer href "/Models/Profiles/EquipmentBoundary/AbstractClasses/EquipmentContainer/"
-            style EquipmentContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EquipmentContainer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         ConnectivityNodeContainer <|-- EquipmentContainer : inherits
             click ConnectivityNodeContainer href "/Models/Profiles/EquipmentBoundary/AbstractClasses/ConnectivityNodeContainer/"
-            style ConnectivityNodeContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConnectivityNodeContainer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- ConnectivityNodeContainer : inherits
             click PowerSystemResource href "/Models/Profiles/EquipmentBoundary/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/EquipmentBoundary/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Substation --> SubGeographicalRegion : Substation.Region
 
         SubGeographicalRegion : Not defined in profile
 
         SubGeographicalRegion
-            style SubGeographicalRegion fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SubGeographicalRegion fill:#98A2B3,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConnectivityNode --> ConnectivityNodeContainer : ConnectivityNode.ConnectivityNodeContainer
 
         ConnectivityNode
             click ConnectivityNode href "/Models/Profiles/EquipmentBoundary/ConcreteClasses/ConnectivityNode/"
-            style ConnectivityNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConnectivityNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         VoltageLevel --> Substation : VoltageLevel.Substation
 
         VoltageLevel
             click VoltageLevel href "/Models/Profiles/EquipmentBoundary/ConcreteClasses/VoltageLevel/"
-            style VoltageLevel fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style VoltageLevel fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         Substation : Substation.Region

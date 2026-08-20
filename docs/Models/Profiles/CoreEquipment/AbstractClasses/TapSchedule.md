@@ -8,83 +8,83 @@ _A pre-established pattern over time for a tap step._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class TapSchedule
     click TapSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/TapSchedule/"
-    style TapSchedule fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style TapSchedule fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         SeasonDayTypeSchedule <|-- TapSchedule : inherits
             click SeasonDayTypeSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/SeasonDayTypeSchedule/"
-            style SeasonDayTypeSchedule fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SeasonDayTypeSchedule fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         RegularIntervalSchedule <|-- SeasonDayTypeSchedule : inherits
             click RegularIntervalSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/RegularIntervalSchedule/"
-            style RegularIntervalSchedule fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegularIntervalSchedule fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         BasicIntervalSchedule <|-- RegularIntervalSchedule : inherits
             click BasicIntervalSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/BasicIntervalSchedule/"
-            style BasicIntervalSchedule fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BasicIntervalSchedule fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- BasicIntervalSchedule : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TapSchedule --> TapChanger : TapSchedule.TapChanger
 
         TapChanger
             click TapChanger href "/Models/Profiles/CoreEquipment/AbstractClasses/TapChanger/"
-            style TapChanger fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TapChanger fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         SeasonDayTypeSchedule --> DayType : SeasonDayTypeSchedule.DayType
 
         DayType
             click DayType href "/Models/Profiles/CoreEquipment/ConcreteClasses/DayType/"
-            style DayType fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DayType fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         SeasonDayTypeSchedule --> Season : SeasonDayTypeSchedule.Season
 
         Season
             click Season href "/Models/Profiles/CoreEquipment/ConcreteClasses/Season/"
-            style Season fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Season fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         RegularIntervalSchedule --> RegularTimePoint : RegularIntervalSchedule.TimePoints
 
         RegularTimePoint
             click RegularTimePoint href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegularTimePoint/"
-            style RegularTimePoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegularTimePoint fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DayType --> SeasonDayTypeSchedule : DayType.SeasonDayTypeSchedules
 
         DayType
             click DayType href "/Models/Profiles/CoreEquipment/ConcreteClasses/DayType/"
-            style DayType fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DayType fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RegularTimePoint --> RegularIntervalSchedule : RegularTimePoint.IntervalSchedule
 
         RegularTimePoint
             click RegularTimePoint href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegularTimePoint/"
-            style RegularTimePoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegularTimePoint fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Season --> SeasonDayTypeSchedule : Season.SeasonDayTypeSchedules
 
         Season
             click Season href "/Models/Profiles/CoreEquipment/ConcreteClasses/Season/"
-            style Season fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Season fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TapChanger --> TapSchedule : TapChanger.TapSchedules
 
         TapChanger
             click TapChanger href "/Models/Profiles/CoreEquipment/AbstractClasses/TapChanger/"
-            style TapChanger fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TapChanger fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         BasicIntervalSchedule --> UnitSymbol : BasicIntervalSchedule.value1Unit
 
         UnitSymbol
             click UnitSymbol href "/Models/Profiles/CoreEquipment/Enumerations/UnitSymbol/"
-            style UnitSymbol fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitSymbol fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         BasicIntervalSchedule --> UnitSymbol : BasicIntervalSchedule.value2Unit
 
         UnitSymbol
             click UnitSymbol href "/Models/Profiles/CoreEquipment/Enumerations/UnitSymbol/"
-            style UnitSymbol fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitSymbol fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TapSchedule : TapSchedule.TapChanger
         SeasonDayTypeSchedule : SeasonDayTypeSchedule.DayType

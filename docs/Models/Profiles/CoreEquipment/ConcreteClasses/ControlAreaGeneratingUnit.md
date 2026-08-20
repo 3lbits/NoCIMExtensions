@@ -6,38 +6,38 @@ _A control area generating unit. This class is needed so that alternate control 
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class ControlAreaGeneratingUnit
     click ControlAreaGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/ControlAreaGeneratingUnit/"
-    style ControlAreaGeneratingUnit fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style ControlAreaGeneratingUnit fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- ControlAreaGeneratingUnit : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ControlAreaGeneratingUnit --> ControlArea : ControlAreaGeneratingUnit.ControlArea
 
         ControlArea
             click ControlArea href "/Models/Profiles/CoreEquipment/AbstractClasses/ControlArea/"
-            style ControlArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ControlArea fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         ControlAreaGeneratingUnit --> GeneratingUnit : ControlAreaGeneratingUnit.GeneratingUnit
 
         GeneratingUnit
             click GeneratingUnit href "/Models/Profiles/CoreEquipment/AbstractClasses/GeneratingUnit/"
-            style GeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style GeneratingUnit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ControlArea --> ControlAreaGeneratingUnit : ControlArea.ControlAreaGeneratingUnit
 
         ControlArea
             click ControlArea href "/Models/Profiles/CoreEquipment/AbstractClasses/ControlArea/"
-            style ControlArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ControlArea fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         GeneratingUnit --> ControlAreaGeneratingUnit : GeneratingUnit.ControlAreaGeneratingUnit
 
         GeneratingUnit
             click GeneratingUnit href "/Models/Profiles/CoreEquipment/AbstractClasses/GeneratingUnit/"
-            style GeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style GeneratingUnit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         ControlAreaGeneratingUnit : ControlAreaGeneratingUnit.ControlArea

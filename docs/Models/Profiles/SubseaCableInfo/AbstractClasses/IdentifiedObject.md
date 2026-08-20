@@ -8,41 +8,41 @@ _This is a root class to provide common identification for all classes needing i
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class IdentifiedObject
     click IdentifiedObject href "/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/"
-    style IdentifiedObject fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style IdentifiedObject fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- AssetInfo : inherits
 
         AssetInfo
             click AssetInfo href "/Models/Profiles/SubseaCableInfo/AbstractClasses/AssetInfo/"
-            style AssetInfo fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AssetInfo fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- AssetSpecification : inherits
 
         AssetSpecification
             click AssetSpecification href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/AssetSpecification/"
-            style AssetSpecification fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AssetSpecification fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- OrganisationRole : inherits
 
         OrganisationRole
             click OrganisationRole href "/Models/Profiles/SubseaCableInfo/AbstractClasses/OrganisationRole/"
-            style OrganisationRole fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OrganisationRole fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- PerLengthConductorParameter : inherits
 
         PerLengthConductorParameter
             click PerLengthConductorParameter href "/Models/Profiles/SubseaCableInfo/AbstractClasses/PerLengthConductorParameter/"
-            style PerLengthConductorParameter fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PerLengthConductorParameter fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- ProductAssetModel : inherits
 
         ProductAssetModel
             click ProductAssetModel href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ProductAssetModel/"
-            style ProductAssetModel fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ProductAssetModel fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

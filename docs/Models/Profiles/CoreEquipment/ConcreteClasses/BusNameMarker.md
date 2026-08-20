@@ -6,38 +6,38 @@ _Used to apply user standard names to TopologicalNodes. Associated with one or m
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class BusNameMarker
     click BusNameMarker href "/Models/Profiles/CoreEquipment/ConcreteClasses/BusNameMarker/"
-    style BusNameMarker fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style BusNameMarker fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- BusNameMarker : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         BusNameMarker --> ACDCTerminal : BusNameMarker.Terminal
 
         ACDCTerminal
             click ACDCTerminal href "/Models/Profiles/CoreEquipment/AbstractClasses/ACDCTerminal/"
-            style ACDCTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCTerminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         BusNameMarker --> ReportingGroup : BusNameMarker.ReportingGroup
 
         ReportingGroup
             click ReportingGroup href "/Models/Profiles/CoreEquipment/ConcreteClasses/ReportingGroup/"
-            style ReportingGroup fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ReportingGroup fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ACDCTerminal --> BusNameMarker : ACDCTerminal.BusNameMarker
 
         ACDCTerminal
             click ACDCTerminal href "/Models/Profiles/CoreEquipment/AbstractClasses/ACDCTerminal/"
-            style ACDCTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCTerminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ReportingGroup --> BusNameMarker : ReportingGroup.BusNameMarker
 
         ReportingGroup
             click ReportingGroup href "/Models/Profiles/CoreEquipment/ConcreteClasses/ReportingGroup/"
-            style ReportingGroup fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ReportingGroup fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         BusNameMarker : BusNameMarker.Terminal

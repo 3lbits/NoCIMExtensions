@@ -8,6 +8,9 @@ theme:
   custom_dir: overrides
   favicon: {{ theme_favicon }}
   logo: {{ theme_logo }}
+  font:
+    text: Inter
+    code: Roboto Mono
   features: # Enables optional features provided by the material theme.
     {{ '' if feature_navigation_tabs else '# ' }}- navigation.tabs # Organizes the top-level navigation into tabs.
     {{ '' if feature_navigation_expand else '# ' }}- navigation.expand # Allows the navigation to expand automatically as users drill down into sections. This is annoying.

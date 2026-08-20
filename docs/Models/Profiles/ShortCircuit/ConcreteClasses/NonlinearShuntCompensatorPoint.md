@@ -6,11 +6,11 @@ _A non linear shunt compensator bank or section admittance value. The number of 
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class NonlinearShuntCompensatorPoint
     click NonlinearShuntCompensatorPoint href "/Models/Profiles/ShortCircuit/ConcreteClasses/NonlinearShuntCompensatorPoint/"
-    style NonlinearShuntCompensatorPoint fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style NonlinearShuntCompensatorPoint fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

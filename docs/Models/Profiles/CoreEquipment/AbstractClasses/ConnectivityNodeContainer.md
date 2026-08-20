@@ -8,43 +8,43 @@ _A base class for all objects that may contain connectivity nodes or topological
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class ConnectivityNodeContainer
     click ConnectivityNodeContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/ConnectivityNodeContainer/"
-    style ConnectivityNodeContainer fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style ConnectivityNodeContainer fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConnectivityNodeContainer <|-- EquipmentContainer : inherits
 
         EquipmentContainer
             click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
-            style EquipmentContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EquipmentContainer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConnectivityNodeContainer <|-- EquivalentNetwork : inherits
 
         EquivalentNetwork
             click EquivalentNetwork href "/Models/Profiles/CoreEquipment/ConcreteClasses/EquivalentNetwork/"
-            style EquivalentNetwork fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EquivalentNetwork fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- ConnectivityNodeContainer : inherits
             click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConnectivityNodeContainer --> ConnectivityNode : ConnectivityNodeContainer.ConnectivityNodes
 
         ConnectivityNode
             click ConnectivityNode href "/Models/Profiles/CoreEquipment/AbstractClasses/ConnectivityNode/"
-            style ConnectivityNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConnectivityNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConnectivityNode --> ConnectivityNodeContainer : ConnectivityNode.ConnectivityNodeContainer
 
         ConnectivityNode
             click ConnectivityNode href "/Models/Profiles/CoreEquipment/AbstractClasses/ConnectivityNode/"
-            style ConnectivityNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConnectivityNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         ConnectivityNodeContainer : ConnectivityNodeContainer.ConnectivityNodes

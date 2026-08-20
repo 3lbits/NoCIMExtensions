@@ -6,31 +6,31 @@ _A set of combustion turbines and steam turbines where the exhaust heat from the
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class CombinedCyclePlant
     click CombinedCyclePlant href "/Models/Profiles/CoreEquipment/ConcreteClasses/CombinedCyclePlant/"
-    style CombinedCyclePlant fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style CombinedCyclePlant fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- CombinedCyclePlant : inherits
             click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         CombinedCyclePlant --> ThermalGeneratingUnit : CombinedCyclePlant.ThermalGeneratingUnits
 
         ThermalGeneratingUnit
             click ThermalGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/ThermalGeneratingUnit/"
-            style ThermalGeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ThermalGeneratingUnit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ThermalGeneratingUnit --> CombinedCyclePlant : ThermalGeneratingUnit.CombinedCyclePlant
 
         ThermalGeneratingUnit
             click ThermalGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/ThermalGeneratingUnit/"
-            style ThermalGeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ThermalGeneratingUnit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CombinedCyclePlant : CombinedCyclePlant.ThermalGeneratingUnits

@@ -6,18 +6,18 @@ _Street details, in the context of address._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class StreetDetail
     click StreetDetail href "/Models/Profiles/GeographicalLocation/ConcreteClasses/StreetDetail/"
-    style StreetDetail fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style StreetDetail fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         StreetAddress --> StreetDetail : StreetAddress.streetDetail
 
         StreetAddress
             click StreetAddress href "/Models/Profiles/GeographicalLocation/ConcreteClasses/StreetAddress/"
-            style StreetAddress fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style StreetAddress fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         StreetDetail : StreetDetail.number

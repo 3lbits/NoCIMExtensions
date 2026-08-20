@@ -6,38 +6,38 @@ _This class represents the zero sequence line mutual coupling._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class MutualCoupling
     click MutualCoupling href "/Models/Profiles/ShortCircuit/ConcreteClasses/MutualCoupling/"
-    style MutualCoupling fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style MutualCoupling fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- MutualCoupling : inherits
             click IdentifiedObject href "/Models/Profiles/ShortCircuit/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         MutualCoupling --> Terminal : MutualCoupling.Second_Terminal
 
         Terminal
             click Terminal href "/Models/Profiles/ShortCircuit/ConcreteClasses/Terminal/"
-            style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Terminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         MutualCoupling --> Terminal : MutualCoupling.First_Terminal
 
         Terminal
             click Terminal href "/Models/Profiles/ShortCircuit/ConcreteClasses/Terminal/"
-            style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Terminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Terminal --> MutualCoupling : Terminal.HasSecondMutualCoupling
 
         Terminal
             click Terminal href "/Models/Profiles/ShortCircuit/ConcreteClasses/Terminal/"
-            style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Terminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Terminal --> MutualCoupling : Terminal.HasFirstMutualCoupling
 
         Terminal
             click Terminal href "/Models/Profiles/ShortCircuit/ConcreteClasses/Terminal/"
-            style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Terminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         MutualCoupling : MutualCoupling.b0ch

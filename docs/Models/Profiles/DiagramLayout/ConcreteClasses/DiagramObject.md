@@ -6,88 +6,88 @@ _An object that defines one or more points in a given space. This object can be 
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class DiagramObject
     click DiagramObject href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObject/"
-    style DiagramObject fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style DiagramObject fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DiagramObject <|-- TextDiagramObject : inherits
 
         TextDiagramObject
             click TextDiagramObject href "/Models/Profiles/DiagramLayout/ConcreteClasses/TextDiagramObject/"
-            style TextDiagramObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TextDiagramObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- DiagramObject : inherits
             click IdentifiedObject href "/Models/Profiles/DiagramLayout/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DiagramObject --> Diagram : DiagramObject.Diagram
 
         Diagram
             click Diagram href "/Models/Profiles/DiagramLayout/ConcreteClasses/Diagram/"
-            style Diagram fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Diagram fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         DiagramObject --> IdentifiedObject : DiagramObject.IdentifiedObject
 
         IdentifiedObject
             click IdentifiedObject href "/Models/Profiles/DiagramLayout/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         DiagramObject --> DiagramObjectPoint : DiagramObject.DiagramObjectPoints
 
         DiagramObjectPoint
             click DiagramObjectPoint href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObjectPoint/"
-            style DiagramObjectPoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObjectPoint fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         DiagramObject --> VisibilityLayer : DiagramObject.VisibilityLayers
 
         VisibilityLayer
             click VisibilityLayer href "/Models/Profiles/DiagramLayout/ConcreteClasses/VisibilityLayer/"
-            style VisibilityLayer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style VisibilityLayer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         DiagramObject --> DiagramObjectStyle : DiagramObject.DiagramObjectStyle
 
         DiagramObjectStyle
             click DiagramObjectStyle href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObjectStyle/"
-            style DiagramObjectStyle fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObjectStyle fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         IdentifiedObject --> DiagramObject : IdentifiedObject.DiagramObjects
 
         DiagramObject
             click DiagramObject href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObject/"
-            style DiagramObject fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObject fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Diagram --> DiagramObject : Diagram.DiagramElements
 
         Diagram
             click Diagram href "/Models/Profiles/DiagramLayout/ConcreteClasses/Diagram/"
-            style Diagram fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Diagram fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DiagramObject --> IdentifiedObject : DiagramObject.IdentifiedObject
 
         DiagramObject
             click DiagramObject href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObject/"
-            style DiagramObject fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObject fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DiagramObjectPoint --> DiagramObject : DiagramObjectPoint.DiagramObject
 
         DiagramObjectPoint
             click DiagramObjectPoint href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObjectPoint/"
-            style DiagramObjectPoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObjectPoint fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DiagramObjectStyle --> DiagramObject : DiagramObjectStyle.StyledObjects
 
         DiagramObjectStyle
             click DiagramObjectStyle href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObjectStyle/"
-            style DiagramObjectStyle fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObjectStyle fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject --> DiagramObject : IdentifiedObject.DiagramObjects
 
         IdentifiedObject
             click IdentifiedObject href "/Models/Profiles/DiagramLayout/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         VisibilityLayer --> DiagramObject : VisibilityLayer.VisibleObjects
 
         VisibilityLayer
             click VisibilityLayer href "/Models/Profiles/DiagramLayout/ConcreteClasses/VisibilityLayer/"
-            style VisibilityLayer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style VisibilityLayer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         DiagramObject : DiagramObject.Diagram

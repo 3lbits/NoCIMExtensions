@@ -8,48 +8,48 @@ _No description available_
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class CableLayer
     click CableLayer href "/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/"
-    style CableLayer fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style CableLayer fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         CableLayer <|-- InsulationLayer : inherits
 
         InsulationLayer
             click InsulationLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/InsulationLayer/"
-            style InsulationLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style InsulationLayer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         CableLayer <|-- MetallicSheathLayer : inherits
 
         MetallicSheathLayer
             click MetallicSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MetallicSheathLayer/"
-            style MetallicSheathLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MetallicSheathLayer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         CableLayer <|-- NonMetallicSheathLayer : inherits
 
         NonMetallicSheathLayer
             click NonMetallicSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/NonMetallicSheathLayer/"
-            style NonMetallicSheathLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style NonMetallicSheathLayer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         CableLayer <|-- ScreenLayer : inherits
 
         ScreenLayer
             click ScreenLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ScreenLayer/"
-            style ScreenLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ScreenLayer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CableInfo --> CableLayer : CableInfo.Layer
 
         CableInfo
             click CableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/CableInfo/"
-            style CableInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CableInfo fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         MultiCoreCableInfo --> CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
             click MultiCoreCableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MultiCoreCableInfo/"
-            style MultiCoreCableInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MultiCoreCableInfo fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CableLayer : CableLayer.mRID

@@ -6,69 +6,69 @@ _StringMeasurement represents a measurement with values of type string._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class StringMeasurement
     click StringMeasurement href "/Models/Profiles/Operation/ConcreteClasses/StringMeasurement/"
-    style StringMeasurement fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style StringMeasurement fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         Measurement <|-- StringMeasurement : inherits
             click Measurement href "/Models/Profiles/Operation/AbstractClasses/Measurement/"
-            style Measurement fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Measurement fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- Measurement : inherits
             click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         StringMeasurement --> StringMeasurementValue : StringMeasurement.StringMeasurementValues
 
         StringMeasurementValue
             click StringMeasurementValue href "/Models/Profiles/Operation/ConcreteClasses/StringMeasurementValue/"
-            style StringMeasurementValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style StringMeasurementValue fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Measurement --> ACDCTerminal : Measurement.Terminal
 
         ACDCTerminal
             click ACDCTerminal href "/Models/Profiles/Operation/AbstractClasses/ACDCTerminal/"
-            style ACDCTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCTerminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Measurement --> PowerSystemResource : Measurement.PowerSystemResource
 
         PowerSystemResource
             click PowerSystemResource href "/Models/Profiles/Operation/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ACDCTerminal --> Measurement : ACDCTerminal.Measurements
 
         ACDCTerminal
             click ACDCTerminal href "/Models/Profiles/Operation/AbstractClasses/ACDCTerminal/"
-            style ACDCTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCTerminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource --> Measurement : PowerSystemResource.Measurements
 
         PowerSystemResource
             click PowerSystemResource href "/Models/Profiles/Operation/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         StringMeasurementValue --> StringMeasurement : StringMeasurementValue.StringMeasurement
 
         StringMeasurementValue
             click StringMeasurementValue href "/Models/Profiles/Operation/ConcreteClasses/StringMeasurementValue/"
-            style StringMeasurementValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style StringMeasurementValue fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Measurement --> PhaseCode : Measurement.phases
 
         PhaseCode
             click PhaseCode href "/Models/Profiles/Operation/Enumerations/PhaseCode/"
-            style PhaseCode fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PhaseCode fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Measurement --> UnitMultiplier : Measurement.unitMultiplier
 
         UnitMultiplier
             click UnitMultiplier href "/Models/Profiles/Operation/Enumerations/UnitMultiplier/"
-            style UnitMultiplier fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitMultiplier fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Measurement --> UnitSymbol : Measurement.unitSymbol
 
         UnitSymbol
             click UnitSymbol href "/Models/Profiles/Operation/Enumerations/UnitSymbol/"
-            style UnitSymbol fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitSymbol fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         StringMeasurement : StringMeasurement.StringMeasurementValues
         Measurement : Measurement.Terminal

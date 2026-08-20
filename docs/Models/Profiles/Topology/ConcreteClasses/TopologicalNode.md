@@ -7,71 +7,71 @@ For a planning model, switch statuses are not used to form topological nodes. In
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class TopologicalNode
     click TopologicalNode href "/Models/Profiles/Topology/ConcreteClasses/TopologicalNode/"
-    style TopologicalNode fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style TopologicalNode fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- TopologicalNode : inherits
             click IdentifiedObject href "/Models/Profiles/Topology/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TopologicalNode --> BaseVoltage : TopologicalNode.BaseVoltage
 
         BaseVoltage
             click BaseVoltage href "/Models/Profiles/Topology/ConcreteClasses/BaseVoltage/"
-            style BaseVoltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BaseVoltage fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         TopologicalNode --> ConnectivityNode : TopologicalNode.ConnectivityNodes
 
         ConnectivityNode
             click ConnectivityNode href "/Models/Profiles/Topology/ConcreteClasses/ConnectivityNode/"
-            style ConnectivityNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConnectivityNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         TopologicalNode --> ConnectivityNodeContainer : TopologicalNode.ConnectivityNodeContainer
 
         ConnectivityNodeContainer
             click ConnectivityNodeContainer href "/Models/Profiles/Topology/AbstractClasses/ConnectivityNodeContainer/"
-            style ConnectivityNodeContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConnectivityNodeContainer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         TopologicalNode --> Terminal : TopologicalNode.Terminal
 
         Terminal
             click Terminal href "/Models/Profiles/Topology/ConcreteClasses/Terminal/"
-            style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Terminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         TopologicalNode --> ReportingGroup : TopologicalNode.ReportingGroup
 
         ReportingGroup
             click ReportingGroup href "/Models/Profiles/Topology/ConcreteClasses/ReportingGroup/"
-            style ReportingGroup fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ReportingGroup fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseVoltage --> TopologicalNode : BaseVoltage.TopologicalNode
 
         BaseVoltage
             click BaseVoltage href "/Models/Profiles/Topology/ConcreteClasses/BaseVoltage/"
-            style BaseVoltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BaseVoltage fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConnectivityNode --> TopologicalNode : ConnectivityNode.TopologicalNode
 
         ConnectivityNode
             click ConnectivityNode href "/Models/Profiles/Topology/ConcreteClasses/ConnectivityNode/"
-            style ConnectivityNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConnectivityNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConnectivityNodeContainer --> TopologicalNode : ConnectivityNodeContainer.TopologicalNode
 
         ConnectivityNodeContainer
             click ConnectivityNodeContainer href "/Models/Profiles/Topology/AbstractClasses/ConnectivityNodeContainer/"
-            style ConnectivityNodeContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConnectivityNodeContainer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Terminal --> TopologicalNode : Terminal.TopologicalNode
 
         Terminal
             click Terminal href "/Models/Profiles/Topology/ConcreteClasses/Terminal/"
-            style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Terminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ReportingGroup --> TopologicalNode : ReportingGroup.TopologicalNode
 
         ReportingGroup
             click ReportingGroup href "/Models/Profiles/Topology/ConcreteClasses/ReportingGroup/"
-            style ReportingGroup fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ReportingGroup fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         TopologicalNode : TopologicalNode.BaseVoltage

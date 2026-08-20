@@ -6,49 +6,49 @@ _A set of limits associated with equipment.  Sets of limits might apply to a spe
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class OperationalLimitSet
     click OperationalLimitSet href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitSet/"
-    style OperationalLimitSet fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style OperationalLimitSet fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- OperationalLimitSet : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitSet --> ACDCTerminal : OperationalLimitSet.Terminal
 
         ACDCTerminal
             click ACDCTerminal href "/Models/Profiles/CoreEquipment/AbstractClasses/ACDCTerminal/"
-            style ACDCTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCTerminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         OperationalLimitSet --> Equipment : OperationalLimitSet.Equipment
 
         Equipment
             click Equipment href "/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/"
-            style Equipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Equipment fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         OperationalLimitSet --> OperationalLimit : OperationalLimitSet.OperationalLimitValue
 
         OperationalLimit
             click OperationalLimit href "/Models/Profiles/CoreEquipment/AbstractClasses/OperationalLimit/"
-            style OperationalLimit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ACDCTerminal --> OperationalLimitSet : ACDCTerminal.OperationalLimitSet
 
         ACDCTerminal
             click ACDCTerminal href "/Models/Profiles/CoreEquipment/AbstractClasses/ACDCTerminal/"
-            style ACDCTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCTerminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Equipment --> OperationalLimitSet : Equipment.OperationalLimitSet
 
         Equipment
             click Equipment href "/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/"
-            style Equipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Equipment fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimit --> OperationalLimitSet : OperationalLimit.OperationalLimitSet
 
         OperationalLimit
             click OperationalLimit href "/Models/Profiles/CoreEquipment/AbstractClasses/OperationalLimit/"
-            style OperationalLimit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         OperationalLimitSet : OperationalLimitSet.Terminal

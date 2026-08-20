@@ -6,72 +6,72 @@ _An analog control that increases or decreases a set point value with pulses. Un
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class RaiseLowerCommand
     click RaiseLowerCommand href "/Models/Profiles/Operation/ConcreteClasses/RaiseLowerCommand/"
-    style RaiseLowerCommand fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style RaiseLowerCommand fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         AnalogControl <|-- RaiseLowerCommand : inherits
             click AnalogControl href "/Models/Profiles/Operation/AbstractClasses/AnalogControl/"
-            style AnalogControl fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AnalogControl fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         Control <|-- AnalogControl : inherits
             click Control href "/Models/Profiles/Operation/AbstractClasses/Control/"
-            style Control fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Control fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IOPoint <|-- Control : inherits
             click IOPoint href "/Models/Profiles/Operation/AbstractClasses/IOPoint/"
-            style IOPoint fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IOPoint fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- IOPoint : inherits
             click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RaiseLowerCommand --> ValueAliasSet : RaiseLowerCommand.ValueAliasSet
 
         ValueAliasSet
             click ValueAliasSet href "/Models/Profiles/Operation/ConcreteClasses/ValueAliasSet/"
-            style ValueAliasSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ValueAliasSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         AnalogControl --> AnalogValue : AnalogControl.AnalogValue
 
         AnalogValue
             click AnalogValue href "/Models/Profiles/Operation/ConcreteClasses/AnalogValue/"
-            style AnalogValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AnalogValue fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Control --> PowerSystemResource : Control.PowerSystemResource
 
         PowerSystemResource
             click PowerSystemResource href "/Models/Profiles/Operation/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         AnalogValue --> AnalogControl : AnalogValue.AnalogControl
 
         AnalogValue
             click AnalogValue href "/Models/Profiles/Operation/ConcreteClasses/AnalogValue/"
-            style AnalogValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AnalogValue fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource --> Control : PowerSystemResource.Controls
 
         PowerSystemResource
             click PowerSystemResource href "/Models/Profiles/Operation/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ValueAliasSet --> RaiseLowerCommand : ValueAliasSet.RaiseLowerCommands
 
         ValueAliasSet
             click ValueAliasSet href "/Models/Profiles/Operation/ConcreteClasses/ValueAliasSet/"
-            style ValueAliasSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ValueAliasSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Control --> UnitMultiplier : Control.unitMultiplier
 
         UnitMultiplier
             click UnitMultiplier href "/Models/Profiles/Operation/Enumerations/UnitMultiplier/"
-            style UnitMultiplier fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitMultiplier fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Control --> UnitSymbol : Control.unitSymbol
 
         UnitSymbol
             click UnitSymbol href "/Models/Profiles/Operation/Enumerations/UnitSymbol/"
-            style UnitSymbol fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitSymbol fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RaiseLowerCommand : RaiseLowerCommand.ValueAliasSet
         AnalogControl : AnalogControl.maxValue

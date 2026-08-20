@@ -6,63 +6,63 @@ _The P-Q capability curve for a voltage source converter, with P on X-axis and Q
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class VsCapabilityCurve
     click VsCapabilityCurve href "/Models/Profiles/CoreEquipment/ConcreteClasses/VsCapabilityCurve/"
-    style VsCapabilityCurve fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style VsCapabilityCurve fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         Curve <|-- VsCapabilityCurve : inherits
             click Curve href "/Models/Profiles/CoreEquipment/AbstractClasses/Curve/"
-            style Curve fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Curve fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- Curve : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         VsCapabilityCurve --> VsConverter : VsCapabilityCurve.VsConverterDCSides
 
         VsConverter
             click VsConverter href "/Models/Profiles/CoreEquipment/ConcreteClasses/VsConverter/"
-            style VsConverter fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style VsConverter fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Curve --> CurveData : Curve.CurveDatas
 
         CurveData
             click CurveData href "/Models/Profiles/CoreEquipment/ConcreteClasses/CurveData/"
-            style CurveData fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CurveData fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         CurveData --> Curve : CurveData.Curve
 
         CurveData
             click CurveData href "/Models/Profiles/CoreEquipment/ConcreteClasses/CurveData/"
-            style CurveData fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CurveData fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         VsConverter --> VsCapabilityCurve : VsConverter.CapabilityCurve
 
         VsConverter
             click VsConverter href "/Models/Profiles/CoreEquipment/ConcreteClasses/VsConverter/"
-            style VsConverter fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style VsConverter fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Curve --> CurveStyle : Curve.curveStyle
 
         CurveStyle
             click CurveStyle href "/Models/Profiles/CoreEquipment/Enumerations/CurveStyle/"
-            style CurveStyle fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CurveStyle fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Curve --> UnitSymbol : Curve.xUnit
 
         UnitSymbol
             click UnitSymbol href "/Models/Profiles/CoreEquipment/Enumerations/UnitSymbol/"
-            style UnitSymbol fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitSymbol fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Curve --> UnitSymbol : Curve.y1Unit
 
         UnitSymbol
             click UnitSymbol href "/Models/Profiles/CoreEquipment/Enumerations/UnitSymbol/"
-            style UnitSymbol fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitSymbol fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Curve --> UnitSymbol : Curve.y2Unit
 
         UnitSymbol
             click UnitSymbol href "/Models/Profiles/CoreEquipment/Enumerations/UnitSymbol/"
-            style UnitSymbol fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitSymbol fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         VsCapabilityCurve : VsCapabilityCurve.VsConverterDCSides
         Curve : Curve.curveStyle

@@ -6,60 +6,60 @@ _Describes the translation of a set of values into a name and is intendend to fa
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class ValueAliasSet
     click ValueAliasSet href "/Models/Profiles/Operation/ConcreteClasses/ValueAliasSet/"
-    style ValueAliasSet fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style ValueAliasSet fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- ValueAliasSet : inherits
             click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ValueAliasSet --> Command : ValueAliasSet.Commands
 
         Command
             click Command href "/Models/Profiles/Operation/ConcreteClasses/Command/"
-            style Command fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Command fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         ValueAliasSet --> Discrete : ValueAliasSet.Discretes
 
         Discrete
             click Discrete href "/Models/Profiles/Operation/ConcreteClasses/Discrete/"
-            style Discrete fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Discrete fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         ValueAliasSet --> RaiseLowerCommand : ValueAliasSet.RaiseLowerCommands
 
         RaiseLowerCommand
             click RaiseLowerCommand href "/Models/Profiles/Operation/ConcreteClasses/RaiseLowerCommand/"
-            style RaiseLowerCommand fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RaiseLowerCommand fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         ValueAliasSet --> ValueToAlias : ValueAliasSet.Values
 
         ValueToAlias
             click ValueToAlias href "/Models/Profiles/Operation/ConcreteClasses/ValueToAlias/"
-            style ValueToAlias fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ValueToAlias fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Command --> ValueAliasSet : Command.ValueAliasSet
 
         Command
             click Command href "/Models/Profiles/Operation/ConcreteClasses/Command/"
-            style Command fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Command fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Discrete --> ValueAliasSet : Discrete.ValueAliasSet
 
         Discrete
             click Discrete href "/Models/Profiles/Operation/ConcreteClasses/Discrete/"
-            style Discrete fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Discrete fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RaiseLowerCommand --> ValueAliasSet : RaiseLowerCommand.ValueAliasSet
 
         RaiseLowerCommand
             click RaiseLowerCommand href "/Models/Profiles/Operation/ConcreteClasses/RaiseLowerCommand/"
-            style RaiseLowerCommand fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RaiseLowerCommand fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ValueToAlias --> ValueAliasSet : ValueToAlias.ValueAliasSet
 
         ValueToAlias
             click ValueToAlias href "/Models/Profiles/Operation/ConcreteClasses/ValueToAlias/"
-            style ValueToAlias fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ValueToAlias fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         ValueAliasSet : ValueAliasSet.Commands

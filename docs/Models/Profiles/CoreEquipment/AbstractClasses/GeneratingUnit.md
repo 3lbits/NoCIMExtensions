@@ -8,115 +8,115 @@ _A single or set of synchronous machines for converting mechanical power into al
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class GeneratingUnit
     click GeneratingUnit href "/Models/Profiles/CoreEquipment/AbstractClasses/GeneratingUnit/"
-    style GeneratingUnit fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style GeneratingUnit fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         GeneratingUnit <|-- HydroGeneratingUnit : inherits
 
         HydroGeneratingUnit
             click HydroGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/HydroGeneratingUnit/"
-            style HydroGeneratingUnit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style HydroGeneratingUnit fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         GeneratingUnit <|-- NuclearGeneratingUnit : inherits
 
         NuclearGeneratingUnit
             click NuclearGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/NuclearGeneratingUnit/"
-            style NuclearGeneratingUnit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style NuclearGeneratingUnit fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         GeneratingUnit <|-- SolarGeneratingUnit : inherits
 
         SolarGeneratingUnit
             click SolarGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/SolarGeneratingUnit/"
-            style SolarGeneratingUnit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SolarGeneratingUnit fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         GeneratingUnit <|-- ThermalGeneratingUnit : inherits
 
         ThermalGeneratingUnit
             click ThermalGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/ThermalGeneratingUnit/"
-            style ThermalGeneratingUnit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ThermalGeneratingUnit fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         GeneratingUnit <|-- WindGeneratingUnit : inherits
 
         WindGeneratingUnit
             click WindGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/WindGeneratingUnit/"
-            style WindGeneratingUnit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style WindGeneratingUnit fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- GeneratingUnit : inherits
             click Equipment href "/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/"
-            style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Equipment fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
             click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         GeneratingUnit --> ControlAreaGeneratingUnit : GeneratingUnit.ControlAreaGeneratingUnit
 
         ControlAreaGeneratingUnit
             click ControlAreaGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/ControlAreaGeneratingUnit/"
-            style ControlAreaGeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ControlAreaGeneratingUnit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         GeneratingUnit --> GrossToNetActivePowerCurve : GeneratingUnit.GrossToNetActivePowerCurves
 
         GrossToNetActivePowerCurve
             click GrossToNetActivePowerCurve href "/Models/Profiles/CoreEquipment/ConcreteClasses/GrossToNetActivePowerCurve/"
-            style GrossToNetActivePowerCurve fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style GrossToNetActivePowerCurve fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         GeneratingUnit --> RotatingMachine : GeneratingUnit.RotatingMachine
 
         RotatingMachine
             click RotatingMachine href "/Models/Profiles/CoreEquipment/AbstractClasses/RotatingMachine/"
-            style RotatingMachine fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RotatingMachine fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Equipment --> EquipmentContainer : Equipment.EquipmentContainer
 
         EquipmentContainer
             click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
-            style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EquipmentContainer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Equipment --> OperationalLimitSet : Equipment.OperationalLimitSet
 
         OperationalLimitSet
             click OperationalLimitSet href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitSet/"
-            style OperationalLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ControlAreaGeneratingUnit --> GeneratingUnit : ControlAreaGeneratingUnit.GeneratingUnit
 
         ControlAreaGeneratingUnit
             click ControlAreaGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/ControlAreaGeneratingUnit/"
-            style ControlAreaGeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ControlAreaGeneratingUnit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         EquipmentContainer --> Equipment : EquipmentContainer.Equipments
 
         EquipmentContainer
             click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
-            style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EquipmentContainer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         GrossToNetActivePowerCurve --> GeneratingUnit : GrossToNetActivePowerCurve.GeneratingUnit
 
         GrossToNetActivePowerCurve
             click GrossToNetActivePowerCurve href "/Models/Profiles/CoreEquipment/ConcreteClasses/GrossToNetActivePowerCurve/"
-            style GrossToNetActivePowerCurve fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style GrossToNetActivePowerCurve fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitSet --> Equipment : OperationalLimitSet.Equipment
 
         OperationalLimitSet
             click OperationalLimitSet href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitSet/"
-            style OperationalLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RotatingMachine --> GeneratingUnit : RotatingMachine.GeneratingUnit
 
         RotatingMachine
             click RotatingMachine href "/Models/Profiles/CoreEquipment/AbstractClasses/RotatingMachine/"
-            style RotatingMachine fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RotatingMachine fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         GeneratingUnit --> GeneratorControlSource : GeneratingUnit.genControlSource
 
         GeneratorControlSource
             click GeneratorControlSource href "/Models/Profiles/CoreEquipment/Enumerations/GeneratorControlSource/"
-            style GeneratorControlSource fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style GeneratorControlSource fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         GeneratingUnit : GeneratingUnit.ControlAreaGeneratingUnit
         GeneratingUnit : GeneratingUnit.genControlSource

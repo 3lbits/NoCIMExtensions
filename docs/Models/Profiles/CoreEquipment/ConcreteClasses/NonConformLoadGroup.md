@@ -6,53 +6,53 @@ _Loads that do not follow a daily and seasonal load variation pattern._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class NonConformLoadGroup
     click NonConformLoadGroup href "/Models/Profiles/CoreEquipment/ConcreteClasses/NonConformLoadGroup/"
-    style NonConformLoadGroup fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style NonConformLoadGroup fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         LoadGroup <|-- NonConformLoadGroup : inherits
             click LoadGroup href "/Models/Profiles/CoreEquipment/AbstractClasses/LoadGroup/"
-            style LoadGroup fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style LoadGroup fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- LoadGroup : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         NonConformLoadGroup --> NonConformLoad : NonConformLoadGroup.EnergyConsumers
 
         NonConformLoad
             click NonConformLoad href "/Models/Profiles/CoreEquipment/ConcreteClasses/NonConformLoad/"
-            style NonConformLoad fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style NonConformLoad fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         NonConformLoadGroup --> NonConformLoadSchedule : NonConformLoadGroup.NonConformLoadSchedules
 
         NonConformLoadSchedule
             click NonConformLoadSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/NonConformLoadSchedule/"
-            style NonConformLoadSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style NonConformLoadSchedule fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         LoadGroup --> SubLoadArea : LoadGroup.SubLoadArea
 
         SubLoadArea
             click SubLoadArea href "/Models/Profiles/CoreEquipment/ConcreteClasses/SubLoadArea/"
-            style SubLoadArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SubLoadArea fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         NonConformLoad --> NonConformLoadGroup : NonConformLoad.LoadGroup
 
         NonConformLoad
             click NonConformLoad href "/Models/Profiles/CoreEquipment/ConcreteClasses/NonConformLoad/"
-            style NonConformLoad fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style NonConformLoad fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         NonConformLoadSchedule --> NonConformLoadGroup : NonConformLoadSchedule.NonConformLoadGroup
 
         NonConformLoadSchedule
             click NonConformLoadSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/NonConformLoadSchedule/"
-            style NonConformLoadSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style NonConformLoadSchedule fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SubLoadArea --> LoadGroup : SubLoadArea.LoadGroups
 
         SubLoadArea
             click SubLoadArea href "/Models/Profiles/CoreEquipment/ConcreteClasses/SubLoadArea/"
-            style SubLoadArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SubLoadArea fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         NonConformLoadGroup : NonConformLoadGroup.EnergyConsumers

@@ -8,78 +8,78 @@ _The parts of a power system that are physical devices, electronic or mechanical
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class Equipment
     click Equipment href "/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/"
-    style Equipment fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style Equipment fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Equipment <|-- AuxiliaryEquipment : inherits
 
         AuxiliaryEquipment
             click AuxiliaryEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/AuxiliaryEquipment/"
-            style AuxiliaryEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AuxiliaryEquipment fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Equipment <|-- ConductingEquipment : inherits
 
         ConductingEquipment
             click ConductingEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/ConductingEquipment/"
-            style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConductingEquipment fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Equipment <|-- DCConductingEquipment : inherits
 
         DCConductingEquipment
             click DCConductingEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/DCConductingEquipment/"
-            style DCConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCConductingEquipment fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Equipment <|-- GeneratingUnit : inherits
 
         GeneratingUnit
             click GeneratingUnit href "/Models/Profiles/CoreEquipment/AbstractClasses/GeneratingUnit/"
-            style GeneratingUnit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style GeneratingUnit fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Equipment <|-- HydroPump : inherits
 
         HydroPump
             click HydroPump href "/Models/Profiles/CoreEquipment/ConcreteClasses/HydroPump/"
-            style HydroPump fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style HydroPump fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Equipment <|-- PowerElectronicsUnit : inherits
 
         PowerElectronicsUnit
             click PowerElectronicsUnit href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerElectronicsUnit/"
-            style PowerElectronicsUnit fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerElectronicsUnit fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
             click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Equipment --> EquipmentContainer : Equipment.EquipmentContainer
 
         EquipmentContainer
             click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
-            style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EquipmentContainer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Equipment --> OperationalLimitSet : Equipment.OperationalLimitSet
 
         OperationalLimitSet
             click OperationalLimitSet href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitSet/"
-            style OperationalLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         EquipmentContainer --> Equipment : EquipmentContainer.Equipments
 
         EquipmentContainer
             click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
-            style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EquipmentContainer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitSet --> Equipment : OperationalLimitSet.Equipment
 
         OperationalLimitSet
             click OperationalLimitSet href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitSet/"
-            style OperationalLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         Equipment : Equipment.aggregate

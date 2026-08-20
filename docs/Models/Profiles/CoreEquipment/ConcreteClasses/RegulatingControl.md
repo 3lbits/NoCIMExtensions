@@ -13,65 +13,65 @@ The attributes minAllowedTargetValue and maxAllowedTargetValue are not related t
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class RegulatingControl
     click RegulatingControl href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegulatingControl/"
-    style RegulatingControl fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style RegulatingControl fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RegulatingControl <|-- TapChangerControl : inherits
 
         TapChangerControl
             click TapChangerControl href "/Models/Profiles/CoreEquipment/ConcreteClasses/TapChangerControl/"
-            style TapChangerControl fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TapChangerControl fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- RegulatingControl : inherits
             click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RegulatingControl --> RegulationSchedule : RegulatingControl.RegulationSchedule
 
         RegulationSchedule
             click RegulationSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegulationSchedule/"
-            style RegulationSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegulationSchedule fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         RegulatingControl --> RegulatingCondEq : RegulatingControl.RegulatingCondEq
 
         RegulatingCondEq
             click RegulatingCondEq href "/Models/Profiles/CoreEquipment/AbstractClasses/RegulatingCondEq/"
-            style RegulatingCondEq fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegulatingCondEq fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         RegulatingControl --> Terminal : RegulatingControl.Terminal
 
         Terminal
             click Terminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/Terminal/"
-            style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Terminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RegulationSchedule --> RegulatingControl : RegulationSchedule.RegulatingControl
 
         RegulationSchedule
             click RegulationSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegulationSchedule/"
-            style RegulationSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegulationSchedule fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RegulatingCondEq --> RegulatingControl : RegulatingCondEq.RegulatingControl
 
         RegulatingCondEq
             click RegulatingCondEq href "/Models/Profiles/CoreEquipment/AbstractClasses/RegulatingCondEq/"
-            style RegulatingCondEq fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegulatingCondEq fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Terminal --> RegulatingControl : Terminal.RegulatingControl
 
         Terminal
             click Terminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/Terminal/"
-            style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Terminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RegulatingControl --> RegulatingControlModeKind : RegulatingControl.mode
 
         RegulatingControlModeKind
             click RegulatingControlModeKind href "/Models/Profiles/CoreEquipment/Enumerations/RegulatingControlModeKind/"
-            style RegulatingControlModeKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegulatingControlModeKind fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RegulatingControl : RegulatingControl.RegulationSchedule
         RegulatingControl : RegulatingControl.RegulatingCondEq

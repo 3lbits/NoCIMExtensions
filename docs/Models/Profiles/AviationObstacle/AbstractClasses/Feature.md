@@ -8,29 +8,29 @@ _Defines a system base voltage which is referenced._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class Feature
     click Feature href "/Models/Profiles/AviationObstacle/AbstractClasses/Feature/"
-    style Feature fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style Feature fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         SpatialObject <|-- Feature : inherits
             click SpatialObject href "/Models/Profiles/AviationObstacle/AbstractClasses/SpatialObject/"
-            style SpatialObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SpatialObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource --|> Feature : inherits
             click PowerSystemResource href "/Models/Profiles/AviationObstacle/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#F2EBE2,stroke:#333,stroke-width:2px,rx:10,ry:10,color:#8A0303
+            style PowerSystemResource fill:#E0E7FA,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:#163289
 
         LocationResource --|> Feature : inherits
             click LocationResource href "/Models/Profiles/AviationObstacle/AbstractClasses/LocationResource/"
-            style LocationResource fill:#F2EBE2,stroke:#333,stroke-width:2px,rx:10,ry:10,color:#8A0303
+            style LocationResource fill:#E0E7FA,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:#163289
 
         Feature --> Geometry : Feature.hasGeometry
 
         Geometry
             click Geometry href "/Models/Profiles/AviationObstacle/AbstractClasses/Geometry/"
-            style Geometry fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Geometry fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         Feature : hasGeometry

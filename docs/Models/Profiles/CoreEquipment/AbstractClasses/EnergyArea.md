@@ -8,39 +8,39 @@ _Describes an area having energy production or consumption.  Specializations are
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class EnergyArea
     click EnergyArea href "/Models/Profiles/CoreEquipment/AbstractClasses/EnergyArea/"
-    style EnergyArea fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style EnergyArea fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         EnergyArea <|-- LoadArea : inherits
 
         LoadArea
             click LoadArea href "/Models/Profiles/CoreEquipment/ConcreteClasses/LoadArea/"
-            style LoadArea fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style LoadArea fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         EnergyArea <|-- SubLoadArea : inherits
 
         SubLoadArea
             click SubLoadArea href "/Models/Profiles/CoreEquipment/ConcreteClasses/SubLoadArea/"
-            style SubLoadArea fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SubLoadArea fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- EnergyArea : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         EnergyArea --> ControlArea : EnergyArea.ControlArea
 
         ControlArea
             click ControlArea href "/Models/Profiles/CoreEquipment/AbstractClasses/ControlArea/"
-            style ControlArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ControlArea fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ControlArea --> EnergyArea : ControlArea.EnergyArea
 
         ControlArea
             click ControlArea href "/Models/Profiles/CoreEquipment/AbstractClasses/ControlArea/"
-            style ControlArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ControlArea fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         EnergyArea : EnergyArea.ControlArea

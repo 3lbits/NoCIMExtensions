@@ -1,4 +1,4 @@
-site_name: CIM for Norway
+﻿site_name: CIM for Norway
 extra_css:
 - stylesheets/extra.css
 extra_javascript:
@@ -20,19 +20,22 @@ theme:
   - content.code.annotation
   - content.code.copy
   language: en
+  font:
+    text: Inter
+    code: Roboto Mono
   palette:
   - scheme: default
     toggle:
       icon: material/toggle-switch-off-outline
       name: Switch to dark mode
-    primary: black
-    accent: red
+    primary: indigo
+    accent: blue
   - scheme: slate
     toggle:
       icon: material/toggle-switch
       name: Switch to light mode
-    primary: black
-    accent: green
+    primary: indigo
+    accent: blue
 markdown_extensions:
 - pymdownx.betterem
 - pymdownx.superfences:

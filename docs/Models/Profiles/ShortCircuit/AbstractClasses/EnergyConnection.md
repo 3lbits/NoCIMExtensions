@@ -8,39 +8,39 @@ _A connection of energy generation or consumption on the power system model._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class EnergyConnection
     click EnergyConnection href "/Models/Profiles/ShortCircuit/AbstractClasses/EnergyConnection/"
-    style EnergyConnection fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style EnergyConnection fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         EnergyConnection <|-- EnergySource : inherits
 
         EnergySource
             click EnergySource href "/Models/Profiles/ShortCircuit/ConcreteClasses/EnergySource/"
-            style EnergySource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EnergySource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         EnergyConnection <|-- RegulatingCondEq : inherits
 
         RegulatingCondEq
             click RegulatingCondEq href "/Models/Profiles/ShortCircuit/AbstractClasses/RegulatingCondEq/"
-            style RegulatingCondEq fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegulatingCondEq fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         ConductingEquipment <|-- EnergyConnection : inherits
             click ConductingEquipment href "/Models/Profiles/ShortCircuit/AbstractClasses/ConductingEquipment/"
-            style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConductingEquipment fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- ConductingEquipment : inherits
             click Equipment href "/Models/Profiles/ShortCircuit/AbstractClasses/Equipment/"
-            style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Equipment fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
             click PowerSystemResource href "/Models/Profiles/ShortCircuit/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/ShortCircuit/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

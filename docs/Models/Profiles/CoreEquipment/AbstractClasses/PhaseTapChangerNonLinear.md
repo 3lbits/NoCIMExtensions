@@ -8,73 +8,73 @@ _The non-linear phase tap changer describes the non-linear behaviour of a phase 
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class PhaseTapChangerNonLinear
     click PhaseTapChangerNonLinear href "/Models/Profiles/CoreEquipment/AbstractClasses/PhaseTapChangerNonLinear/"
-    style PhaseTapChangerNonLinear fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style PhaseTapChangerNonLinear fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PhaseTapChangerNonLinear <|-- PhaseTapChangerAsymmetrical : inherits
 
         PhaseTapChangerAsymmetrical
             click PhaseTapChangerAsymmetrical href "/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChangerAsymmetrical/"
-            style PhaseTapChangerAsymmetrical fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PhaseTapChangerAsymmetrical fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PhaseTapChangerNonLinear <|-- PhaseTapChangerSymmetrical : inherits
 
         PhaseTapChangerSymmetrical
             click PhaseTapChangerSymmetrical href "/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChangerSymmetrical/"
-            style PhaseTapChangerSymmetrical fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PhaseTapChangerSymmetrical fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         PhaseTapChanger <|-- PhaseTapChangerNonLinear : inherits
             click PhaseTapChanger href "/Models/Profiles/CoreEquipment/AbstractClasses/PhaseTapChanger/"
-            style PhaseTapChanger fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PhaseTapChanger fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         TapChanger <|-- PhaseTapChanger : inherits
             click TapChanger href "/Models/Profiles/CoreEquipment/AbstractClasses/TapChanger/"
-            style TapChanger fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TapChanger fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- TapChanger : inherits
             click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PhaseTapChanger --> TransformerEnd : PhaseTapChanger.TransformerEnd
 
         TransformerEnd
             click TransformerEnd href "/Models/Profiles/CoreEquipment/AbstractClasses/TransformerEnd/"
-            style TransformerEnd fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TransformerEnd fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         TapChanger --> TapSchedule : TapChanger.TapSchedules
 
         TapSchedule
             click TapSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/TapSchedule/"
-            style TapSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TapSchedule fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         TapChanger --> TapChangerControl : TapChanger.TapChangerControl
 
         TapChangerControl
             click TapChangerControl href "/Models/Profiles/CoreEquipment/ConcreteClasses/TapChangerControl/"
-            style TapChangerControl fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TapChangerControl fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TapSchedule --> TapChanger : TapSchedule.TapChanger
 
         TapSchedule
             click TapSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/TapSchedule/"
-            style TapSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TapSchedule fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TapChangerControl --> TapChanger : TapChangerControl.TapChanger
 
         TapChangerControl
             click TapChangerControl href "/Models/Profiles/CoreEquipment/ConcreteClasses/TapChangerControl/"
-            style TapChangerControl fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TapChangerControl fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TransformerEnd --> PhaseTapChanger : TransformerEnd.PhaseTapChanger
 
         TransformerEnd
             click TransformerEnd href "/Models/Profiles/CoreEquipment/AbstractClasses/TransformerEnd/"
-            style TransformerEnd fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TransformerEnd fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         PhaseTapChangerNonLinear : PhaseTapChangerNonLinear.voltageStepIncrement

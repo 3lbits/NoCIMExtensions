@@ -6,74 +6,74 @@ _A DC electrical connection point at the AC/DC converter. The AC/DC converter is
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class ACDCConverterDCTerminal
     click ACDCConverterDCTerminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/ACDCConverterDCTerminal/"
-    style ACDCConverterDCTerminal fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style ACDCConverterDCTerminal fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         DCBaseTerminal <|-- ACDCConverterDCTerminal : inherits
             click DCBaseTerminal href "/Models/Profiles/CoreEquipment/AbstractClasses/DCBaseTerminal/"
-            style DCBaseTerminal fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCBaseTerminal fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         ACDCTerminal <|-- DCBaseTerminal : inherits
             click ACDCTerminal href "/Models/Profiles/CoreEquipment/AbstractClasses/ACDCTerminal/"
-            style ACDCTerminal fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCTerminal fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- ACDCTerminal : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ACDCConverterDCTerminal --> ACDCConverter : ACDCConverterDCTerminal.DCConductingEquipment
 
         ACDCConverter
             click ACDCConverter href "/Models/Profiles/CoreEquipment/AbstractClasses/ACDCConverter/"
-            style ACDCConverter fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCConverter fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         DCBaseTerminal --> DCNode : DCBaseTerminal.DCNode
 
         DCNode
             click DCNode href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCNode/"
-            style DCNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         ACDCTerminal --> OperationalLimitSet : ACDCTerminal.OperationalLimitSet
 
         OperationalLimitSet
             click OperationalLimitSet href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitSet/"
-            style OperationalLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         ACDCTerminal --> BusNameMarker : ACDCTerminal.BusNameMarker
 
         BusNameMarker
             click BusNameMarker href "/Models/Profiles/CoreEquipment/ConcreteClasses/BusNameMarker/"
-            style BusNameMarker fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BusNameMarker fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ACDCConverter --> ACDCConverterDCTerminal : ACDCConverter.DCTerminals
 
         ACDCConverter
             click ACDCConverter href "/Models/Profiles/CoreEquipment/AbstractClasses/ACDCConverter/"
-            style ACDCConverter fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCConverter fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         BusNameMarker --> ACDCTerminal : BusNameMarker.Terminal
 
         BusNameMarker
             click BusNameMarker href "/Models/Profiles/CoreEquipment/ConcreteClasses/BusNameMarker/"
-            style BusNameMarker fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BusNameMarker fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCNode --> DCBaseTerminal : DCNode.DCTerminals
 
         DCNode
             click DCNode href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCNode/"
-            style DCNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitSet --> ACDCTerminal : OperationalLimitSet.Terminal
 
         OperationalLimitSet
             click OperationalLimitSet href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitSet/"
-            style OperationalLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ACDCConverterDCTerminal --> DCPolarityKind : ACDCConverterDCTerminal.polarity
 
         DCPolarityKind
             click DCPolarityKind href "/Models/Profiles/CoreEquipment/Enumerations/DCPolarityKind/"
-            style DCPolarityKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCPolarityKind fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ACDCConverterDCTerminal : ACDCConverterDCTerminal.DCConductingEquipment
         ACDCConverterDCTerminal : ACDCConverterDCTerminal.polarity

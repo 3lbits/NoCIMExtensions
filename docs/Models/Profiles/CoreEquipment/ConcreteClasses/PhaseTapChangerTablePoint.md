@@ -6,27 +6,27 @@ _Describes each tap step in the phase tap changer tabular curve._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class PhaseTapChangerTablePoint
     click PhaseTapChangerTablePoint href "/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChangerTablePoint/"
-    style PhaseTapChangerTablePoint fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style PhaseTapChangerTablePoint fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         TapChangerTablePoint <|-- PhaseTapChangerTablePoint : inherits
             click TapChangerTablePoint href "/Models/Profiles/CoreEquipment/AbstractClasses/TapChangerTablePoint/"
-            style TapChangerTablePoint fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TapChangerTablePoint fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PhaseTapChangerTablePoint --> PhaseTapChangerTable : PhaseTapChangerTablePoint.PhaseTapChangerTable
 
         PhaseTapChangerTable
             click PhaseTapChangerTable href "/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChangerTable/"
-            style PhaseTapChangerTable fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PhaseTapChangerTable fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PhaseTapChangerTable --> PhaseTapChangerTablePoint : PhaseTapChangerTable.PhaseTapChangerTablePoint
 
         PhaseTapChangerTable
             click PhaseTapChangerTable href "/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChangerTable/"
-            style PhaseTapChangerTable fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PhaseTapChangerTable fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         PhaseTapChangerTablePoint : PhaseTapChangerTablePoint.PhaseTapChangerTable

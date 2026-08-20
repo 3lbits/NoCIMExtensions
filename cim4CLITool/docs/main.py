@@ -461,28 +461,22 @@ class CreateMermaid():
             print(globalClass, 'something is wrong', value, _type)
 
         if _type == "inheritance":
-            style = f'style {value} fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white'
-            # returnType = "inheritance"
+            style = f'style {value} fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white'
         
         if _type == "mixins":
-            style = f'style {value} fill:#F2EBE2,stroke:#333,stroke-width:2px,rx:10,ry:10,color:#8A0303' #Blood red"
-            # returnType = "mixins"
+            style = f'style {value} fill:#E0E7FA,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:#163289'
         
         if _type == "relationship":
-            style = f'style {value} fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white'
-            # returnType = "relationship"
+            style = f'style {value} fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white'
 
         if _type == "missingRelationship":
-            style = f'style {value} fill:#A9A9A9,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white'
-            # returnType = "missingRelationship"
+            style = f'style {value} fill:#98A2B3,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white'
         
         if _type == "enum":
-            style = f'style {value} fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white'
-            # returnType = "enum"
+            style = f'style {value} fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white'
         
         if _type == "thisClass":
-            style = f'style {value} fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white'
-            # returnType = "thisClass"
+            style = f'style {value} fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white'
 
         return style
 
@@ -747,7 +741,7 @@ class CreateMermaid():
         relationshipString = CreateMermaid().createMermaidRelationshipString(inheritanceList) if CreateMermaid().createMermaidRelationshipString(inheritanceList) != None else ""
         enumString = CreateMermaid().createMermaidEnumString(inheritanceList) if CreateMermaid().createMermaidEnumString(inheritanceList) != None else ""
         attributeString = CreateMermaid().createMermaidAttributeString(inheritanceDict[globalClass]) if CreateMermaid().createMermaidAttributeString(inheritanceDict[globalClass]) != None else ""
-        themeString = "%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%" # For controlling the line head fill color
+        themeString = "%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%"
         mermaidStyleThisClass = CreateMermaid().mermaidStyles(globalClass, "thisClass")
         mermaidString = f'''
 ```mermaid

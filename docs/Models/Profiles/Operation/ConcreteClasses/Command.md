@@ -6,68 +6,68 @@ _A Command is a discrete control used for supervisory control._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class Command
     click Command href "/Models/Profiles/Operation/ConcreteClasses/Command/"
-    style Command fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style Command fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         Control <|-- Command : inherits
             click Control href "/Models/Profiles/Operation/AbstractClasses/Control/"
-            style Control fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Control fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IOPoint <|-- Control : inherits
             click IOPoint href "/Models/Profiles/Operation/AbstractClasses/IOPoint/"
-            style IOPoint fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IOPoint fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- IOPoint : inherits
             click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Command --> ValueAliasSet : Command.ValueAliasSet
 
         ValueAliasSet
             click ValueAliasSet href "/Models/Profiles/Operation/ConcreteClasses/ValueAliasSet/"
-            style ValueAliasSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ValueAliasSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Command --> DiscreteValue : Command.DiscreteValue
 
         DiscreteValue
             click DiscreteValue href "/Models/Profiles/Operation/ConcreteClasses/DiscreteValue/"
-            style DiscreteValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiscreteValue fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Control --> PowerSystemResource : Control.PowerSystemResource
 
         PowerSystemResource
             click PowerSystemResource href "/Models/Profiles/Operation/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DiscreteValue --> Command : DiscreteValue.Command
 
         DiscreteValue
             click DiscreteValue href "/Models/Profiles/Operation/ConcreteClasses/DiscreteValue/"
-            style DiscreteValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiscreteValue fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource --> Control : PowerSystemResource.Controls
 
         PowerSystemResource
             click PowerSystemResource href "/Models/Profiles/Operation/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ValueAliasSet --> Command : ValueAliasSet.Commands
 
         ValueAliasSet
             click ValueAliasSet href "/Models/Profiles/Operation/ConcreteClasses/ValueAliasSet/"
-            style ValueAliasSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ValueAliasSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Control --> UnitMultiplier : Control.unitMultiplier
 
         UnitMultiplier
             click UnitMultiplier href "/Models/Profiles/Operation/Enumerations/UnitMultiplier/"
-            style UnitMultiplier fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitMultiplier fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Control --> UnitSymbol : Control.unitSymbol
 
         UnitSymbol
             click UnitSymbol href "/Models/Profiles/Operation/Enumerations/UnitSymbol/"
-            style UnitSymbol fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitSymbol fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Command : Command.normalValue
         Command : Command.value

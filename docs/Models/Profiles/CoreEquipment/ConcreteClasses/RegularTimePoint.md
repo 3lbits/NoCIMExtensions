@@ -6,23 +6,23 @@ _Time point for a schedule where the time between the consecutive points is cons
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class RegularTimePoint
     click RegularTimePoint href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegularTimePoint/"
-    style RegularTimePoint fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style RegularTimePoint fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RegularTimePoint --> RegularIntervalSchedule : RegularTimePoint.IntervalSchedule
 
         RegularIntervalSchedule
             click RegularIntervalSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/RegularIntervalSchedule/"
-            style RegularIntervalSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegularIntervalSchedule fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RegularIntervalSchedule --> RegularTimePoint : RegularIntervalSchedule.TimePoints
 
         RegularIntervalSchedule
             click RegularIntervalSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/RegularIntervalSchedule/"
-            style RegularIntervalSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegularIntervalSchedule fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         RegularTimePoint : RegularTimePoint.sequenceNumber

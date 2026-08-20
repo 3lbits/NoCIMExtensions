@@ -8,25 +8,25 @@ _An element of an asset that has no electrical characteristic._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class ElementResource
     click ElementResource href "/Models/Profiles/AviationObstacle/AbstractClasses/ElementResource/"
-    style ElementResource fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style ElementResource fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ElementResource <|-- LocationResource : inherits
 
         LocationResource
             click LocationResource href "/Models/Profiles/AviationObstacle/AbstractClasses/LocationResource/"
-            style LocationResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style LocationResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- ElementResource : inherits
             click IdentifiedObject href "/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature <|-- LocationResource : inherits
             click Feature href "/Models/Profiles/AviationObstacle/AbstractClasses/Feature/"
-            style Feature fill:#F2EBE2,stroke:#333,stroke-width:2px,rx:10,ry:10,color:#8A0303
+            style Feature fill:#E0E7FA,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:#163289
 
 
 

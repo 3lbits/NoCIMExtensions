@@ -8,39 +8,39 @@ _A conducting equipment used to represent a connection to ground which is typica
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class EarthFaultCompensator
     click EarthFaultCompensator href "/Models/Profiles/ShortCircuit/AbstractClasses/EarthFaultCompensator/"
-    style EarthFaultCompensator fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style EarthFaultCompensator fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         EarthFaultCompensator <|-- GroundingImpedance : inherits
 
         GroundingImpedance
             click GroundingImpedance href "/Models/Profiles/ShortCircuit/ConcreteClasses/GroundingImpedance/"
-            style GroundingImpedance fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style GroundingImpedance fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         EarthFaultCompensator <|-- PetersenCoil : inherits
 
         PetersenCoil
             click PetersenCoil href "/Models/Profiles/ShortCircuit/ConcreteClasses/PetersenCoil/"
-            style PetersenCoil fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PetersenCoil fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         ConductingEquipment <|-- EarthFaultCompensator : inherits
             click ConductingEquipment href "/Models/Profiles/ShortCircuit/AbstractClasses/ConductingEquipment/"
-            style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConductingEquipment fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- ConductingEquipment : inherits
             click Equipment href "/Models/Profiles/ShortCircuit/AbstractClasses/Equipment/"
-            style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Equipment fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
             click PowerSystemResource href "/Models/Profiles/ShortCircuit/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/ShortCircuit/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

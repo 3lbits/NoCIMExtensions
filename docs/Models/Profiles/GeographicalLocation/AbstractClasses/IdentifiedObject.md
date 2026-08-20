@@ -8,29 +8,29 @@ _This is a root class to provide common identification for all classes needing i
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class IdentifiedObject
     click IdentifiedObject href "/Models/Profiles/GeographicalLocation/AbstractClasses/IdentifiedObject/"
-    style IdentifiedObject fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style IdentifiedObject fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- CoordinateSystem : inherits
 
         CoordinateSystem
             click CoordinateSystem href "/Models/Profiles/GeographicalLocation/ConcreteClasses/CoordinateSystem/"
-            style CoordinateSystem fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CoordinateSystem fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- Location : inherits
 
         Location
             click Location href "/Models/Profiles/GeographicalLocation/ConcreteClasses/Location/"
-            style Location fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Location fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- PowerSystemResource : inherits
 
         PowerSystemResource
             click PowerSystemResource href "/Models/Profiles/GeographicalLocation/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

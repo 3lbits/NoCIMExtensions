@@ -6,38 +6,38 @@ _Measurement quality flags. Bits 0-10 are defined for substation automation in I
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class MeasurementValueQuality
     click MeasurementValueQuality href "/Models/Profiles/Operation/ConcreteClasses/MeasurementValueQuality/"
-    style MeasurementValueQuality fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style MeasurementValueQuality fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         Quality61850 <|-- MeasurementValueQuality : inherits
             click Quality61850 href "/Models/Profiles/Operation/AbstractClasses/Quality61850/"
-            style Quality61850 fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Quality61850 fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         MeasurementValueQuality --> MeasurementValue : MeasurementValueQuality.MeasurementValue
 
         MeasurementValue
             click MeasurementValue href "/Models/Profiles/Operation/AbstractClasses/MeasurementValue/"
-            style MeasurementValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MeasurementValue fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         MeasurementValue --> MeasurementValueQuality : MeasurementValue.MeasurementValueQuality
 
         MeasurementValue
             click MeasurementValue href "/Models/Profiles/Operation/AbstractClasses/MeasurementValue/"
-            style MeasurementValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MeasurementValue fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Quality61850 --> Source : Quality61850.source
 
         Source
             click Source href "/Models/Profiles/Operation/Enumerations/Source/"
-            style Source fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Source fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Quality61850 --> Validity : Quality61850.validity
 
         Validity
             click Validity href "/Models/Profiles/Operation/Enumerations/Validity/"
-            style Validity fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Validity fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         MeasurementValueQuality : MeasurementValueQuality.MeasurementValue
         Quality61850 : Quality61850.badReference

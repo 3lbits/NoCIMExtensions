@@ -6,134 +6,134 @@ _An electromechanical device that operates with shaft rotating synchronously wit
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class SynchronousMachine
     click SynchronousMachine href "/Models/Profiles/CoreEquipment/ConcreteClasses/SynchronousMachine/"
-    style SynchronousMachine fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style SynchronousMachine fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         RotatingMachine <|-- SynchronousMachine : inherits
             click RotatingMachine href "/Models/Profiles/CoreEquipment/AbstractClasses/RotatingMachine/"
-            style RotatingMachine fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RotatingMachine fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         RegulatingCondEq <|-- RotatingMachine : inherits
             click RegulatingCondEq href "/Models/Profiles/CoreEquipment/AbstractClasses/RegulatingCondEq/"
-            style RegulatingCondEq fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegulatingCondEq fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         EnergyConnection <|-- RegulatingCondEq : inherits
             click EnergyConnection href "/Models/Profiles/CoreEquipment/AbstractClasses/EnergyConnection/"
-            style EnergyConnection fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EnergyConnection fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         ConductingEquipment <|-- EnergyConnection : inherits
             click ConductingEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/ConductingEquipment/"
-            style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConductingEquipment fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- ConductingEquipment : inherits
             click Equipment href "/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/"
-            style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Equipment fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
             click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SynchronousMachine --> ReactiveCapabilityCurve : SynchronousMachine.InitialReactiveCapabilityCurve
 
         ReactiveCapabilityCurve
             click ReactiveCapabilityCurve href "/Models/Profiles/CoreEquipment/ConcreteClasses/ReactiveCapabilityCurve/"
-            style ReactiveCapabilityCurve fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ReactiveCapabilityCurve fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         RotatingMachine --> GeneratingUnit : RotatingMachine.GeneratingUnit
 
         GeneratingUnit
             click GeneratingUnit href "/Models/Profiles/CoreEquipment/AbstractClasses/GeneratingUnit/"
-            style GeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style GeneratingUnit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         RotatingMachine --> HydroPump : RotatingMachine.HydroPump
 
         HydroPump
             click HydroPump href "/Models/Profiles/CoreEquipment/ConcreteClasses/HydroPump/"
-            style HydroPump fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style HydroPump fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         RegulatingCondEq --> RegulatingControl : RegulatingCondEq.RegulatingControl
 
         RegulatingControl
             click RegulatingControl href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegulatingControl/"
-            style RegulatingControl fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegulatingControl fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         ConductingEquipment --> BaseVoltage : ConductingEquipment.BaseVoltage
 
         BaseVoltage
             click BaseVoltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/BaseVoltage/"
-            style BaseVoltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BaseVoltage fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         ConductingEquipment --> Terminal : ConductingEquipment.Terminals
 
         Terminal
             click Terminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/Terminal/"
-            style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Terminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Equipment --> EquipmentContainer : Equipment.EquipmentContainer
 
         EquipmentContainer
             click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
-            style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EquipmentContainer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Equipment --> OperationalLimitSet : Equipment.OperationalLimitSet
 
         OperationalLimitSet
             click OperationalLimitSet href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitSet/"
-            style OperationalLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseVoltage --> ConductingEquipment : BaseVoltage.ConductingEquipment
 
         BaseVoltage
             click BaseVoltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/BaseVoltage/"
-            style BaseVoltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BaseVoltage fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         EquipmentContainer --> Equipment : EquipmentContainer.Equipments
 
         EquipmentContainer
             click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
-            style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EquipmentContainer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         GeneratingUnit --> RotatingMachine : GeneratingUnit.RotatingMachine
 
         GeneratingUnit
             click GeneratingUnit href "/Models/Profiles/CoreEquipment/AbstractClasses/GeneratingUnit/"
-            style GeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style GeneratingUnit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         HydroPump --> RotatingMachine : HydroPump.RotatingMachine
 
         HydroPump
             click HydroPump href "/Models/Profiles/CoreEquipment/ConcreteClasses/HydroPump/"
-            style HydroPump fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style HydroPump fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitSet --> Equipment : OperationalLimitSet.Equipment
 
         OperationalLimitSet
             click OperationalLimitSet href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitSet/"
-            style OperationalLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ReactiveCapabilityCurve --> SynchronousMachine : ReactiveCapabilityCurve.InitiallyUsedBySynchronousMachines
 
         ReactiveCapabilityCurve
             click ReactiveCapabilityCurve href "/Models/Profiles/CoreEquipment/ConcreteClasses/ReactiveCapabilityCurve/"
-            style ReactiveCapabilityCurve fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ReactiveCapabilityCurve fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RegulatingControl --> RegulatingCondEq : RegulatingControl.RegulatingCondEq
 
         RegulatingControl
             click RegulatingControl href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegulatingControl/"
-            style RegulatingControl fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegulatingControl fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Terminal --> ConductingEquipment : Terminal.ConductingEquipment
 
         Terminal
             click Terminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/Terminal/"
-            style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Terminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SynchronousMachine --> SynchronousMachineKind : SynchronousMachine.type
 
         SynchronousMachineKind
             click SynchronousMachineKind href "/Models/Profiles/CoreEquipment/Enumerations/SynchronousMachineKind/"
-            style SynchronousMachineKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SynchronousMachineKind fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SynchronousMachine : SynchronousMachine.InitialReactiveCapabilityCurve
         SynchronousMachine : SynchronousMachine.maxQ

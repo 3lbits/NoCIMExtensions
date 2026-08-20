@@ -6,48 +6,48 @@ _A hydro power station which can generate or pump. When generating, the generato
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class HydroPowerPlant
     click HydroPowerPlant href "/Models/Profiles/CoreEquipment/ConcreteClasses/HydroPowerPlant/"
-    style HydroPowerPlant fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style HydroPowerPlant fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- HydroPowerPlant : inherits
             click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         HydroPowerPlant --> HydroGeneratingUnit : HydroPowerPlant.HydroGeneratingUnits
 
         HydroGeneratingUnit
             click HydroGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/HydroGeneratingUnit/"
-            style HydroGeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style HydroGeneratingUnit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         HydroPowerPlant --> HydroPump : HydroPowerPlant.HydroPumps
 
         HydroPump
             click HydroPump href "/Models/Profiles/CoreEquipment/ConcreteClasses/HydroPump/"
-            style HydroPump fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style HydroPump fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         HydroGeneratingUnit --> HydroPowerPlant : HydroGeneratingUnit.HydroPowerPlant
 
         HydroGeneratingUnit
             click HydroGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/HydroGeneratingUnit/"
-            style HydroGeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style HydroGeneratingUnit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         HydroPump --> HydroPowerPlant : HydroPump.HydroPowerPlant
 
         HydroPump
             click HydroPump href "/Models/Profiles/CoreEquipment/ConcreteClasses/HydroPump/"
-            style HydroPump fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style HydroPump fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         HydroPowerPlant --> HydroPlantStorageKind : HydroPowerPlant.hydroPlantStorageType
 
         HydroPlantStorageKind
             click HydroPlantStorageKind href "/Models/Profiles/CoreEquipment/Enumerations/HydroPlantStorageKind/"
-            style HydroPlantStorageKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style HydroPlantStorageKind fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         HydroPowerPlant : HydroPowerPlant.HydroGeneratingUnits
         HydroPowerPlant : HydroPowerPlant.hydroPlantStorageType

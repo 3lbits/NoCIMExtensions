@@ -6,68 +6,68 @@ _AnalogValue represents an analog MeasurementValue._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class AnalogValue
     click AnalogValue href "/Models/Profiles/Operation/ConcreteClasses/AnalogValue/"
-    style AnalogValue fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style AnalogValue fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         MeasurementValue <|-- AnalogValue : inherits
             click MeasurementValue href "/Models/Profiles/Operation/AbstractClasses/MeasurementValue/"
-            style MeasurementValue fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MeasurementValue fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IOPoint <|-- MeasurementValue : inherits
             click IOPoint href "/Models/Profiles/Operation/AbstractClasses/IOPoint/"
-            style IOPoint fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IOPoint fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- IOPoint : inherits
             click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         AnalogValue --> Analog : AnalogValue.Analog
 
         Analog
             click Analog href "/Models/Profiles/Operation/ConcreteClasses/Analog/"
-            style Analog fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Analog fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         AnalogValue --> AnalogControl : AnalogValue.AnalogControl
 
         AnalogControl
             click AnalogControl href "/Models/Profiles/Operation/AbstractClasses/AnalogControl/"
-            style AnalogControl fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AnalogControl fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         MeasurementValue --> MeasurementValueQuality : MeasurementValue.MeasurementValueQuality
 
         MeasurementValueQuality
             click MeasurementValueQuality href "/Models/Profiles/Operation/ConcreteClasses/MeasurementValueQuality/"
-            style MeasurementValueQuality fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MeasurementValueQuality fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         MeasurementValue --> MeasurementValueSource : MeasurementValue.MeasurementValueSource
 
         MeasurementValueSource
             click MeasurementValueSource href "/Models/Profiles/Operation/ConcreteClasses/MeasurementValueSource/"
-            style MeasurementValueSource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MeasurementValueSource fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Analog --> AnalogValue : Analog.AnalogValues
 
         Analog
             click Analog href "/Models/Profiles/Operation/ConcreteClasses/Analog/"
-            style Analog fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Analog fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         AnalogControl --> AnalogValue : AnalogControl.AnalogValue
 
         AnalogControl
             click AnalogControl href "/Models/Profiles/Operation/AbstractClasses/AnalogControl/"
-            style AnalogControl fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AnalogControl fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         MeasurementValueQuality --> MeasurementValue : MeasurementValueQuality.MeasurementValue
 
         MeasurementValueQuality
             click MeasurementValueQuality href "/Models/Profiles/Operation/ConcreteClasses/MeasurementValueQuality/"
-            style MeasurementValueQuality fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MeasurementValueQuality fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         MeasurementValueSource --> MeasurementValue : MeasurementValueSource.MeasurementValues
 
         MeasurementValueSource
             click MeasurementValueSource href "/Models/Profiles/Operation/ConcreteClasses/MeasurementValueSource/"
-            style MeasurementValueSource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MeasurementValueSource fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         AnalogValue : AnalogValue.Analog

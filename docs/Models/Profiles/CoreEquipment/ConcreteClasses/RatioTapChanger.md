@@ -8,68 +8,68 @@ Angle sign convention (general): Positive value indicates a positive phase shift
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class RatioTapChanger
     click RatioTapChanger href "/Models/Profiles/CoreEquipment/ConcreteClasses/RatioTapChanger/"
-    style RatioTapChanger fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style RatioTapChanger fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         TapChanger <|-- RatioTapChanger : inherits
             click TapChanger href "/Models/Profiles/CoreEquipment/AbstractClasses/TapChanger/"
-            style TapChanger fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TapChanger fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- TapChanger : inherits
             click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RatioTapChanger --> RatioTapChangerTable : RatioTapChanger.RatioTapChangerTable
 
         RatioTapChangerTable
             click RatioTapChangerTable href "/Models/Profiles/CoreEquipment/ConcreteClasses/RatioTapChangerTable/"
-            style RatioTapChangerTable fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RatioTapChangerTable fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         RatioTapChanger --> TransformerEnd : RatioTapChanger.TransformerEnd
 
         TransformerEnd
             click TransformerEnd href "/Models/Profiles/CoreEquipment/AbstractClasses/TransformerEnd/"
-            style TransformerEnd fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TransformerEnd fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         TapChanger --> TapSchedule : TapChanger.TapSchedules
 
         TapSchedule
             click TapSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/TapSchedule/"
-            style TapSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TapSchedule fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         TapChanger --> TapChangerControl : TapChanger.TapChangerControl
 
         TapChangerControl
             click TapChangerControl href "/Models/Profiles/CoreEquipment/ConcreteClasses/TapChangerControl/"
-            style TapChangerControl fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TapChangerControl fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TapSchedule --> TapChanger : TapSchedule.TapChanger
 
         TapSchedule
             click TapSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/TapSchedule/"
-            style TapSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TapSchedule fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RatioTapChangerTable --> RatioTapChanger : RatioTapChangerTable.RatioTapChanger
 
         RatioTapChangerTable
             click RatioTapChangerTable href "/Models/Profiles/CoreEquipment/ConcreteClasses/RatioTapChangerTable/"
-            style RatioTapChangerTable fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RatioTapChangerTable fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TapChangerControl --> TapChanger : TapChangerControl.TapChanger
 
         TapChangerControl
             click TapChangerControl href "/Models/Profiles/CoreEquipment/ConcreteClasses/TapChangerControl/"
-            style TapChangerControl fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TapChangerControl fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TransformerEnd --> RatioTapChanger : TransformerEnd.RatioTapChanger
 
         TransformerEnd
             click TransformerEnd href "/Models/Profiles/CoreEquipment/AbstractClasses/TransformerEnd/"
-            style TransformerEnd fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TransformerEnd fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         RatioTapChanger : RatioTapChanger.stepVoltageIncrement

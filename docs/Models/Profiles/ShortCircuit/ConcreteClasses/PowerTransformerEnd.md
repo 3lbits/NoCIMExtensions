@@ -12,19 +12,19 @@ Each PowerTransformerEnd must be contained by a PowerTransformer. Because a Powe
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class PowerTransformerEnd
     click PowerTransformerEnd href "/Models/Profiles/ShortCircuit/ConcreteClasses/PowerTransformerEnd/"
-    style PowerTransformerEnd fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style PowerTransformerEnd fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         TransformerEnd <|-- PowerTransformerEnd : inherits
             click TransformerEnd href "/Models/Profiles/ShortCircuit/AbstractClasses/TransformerEnd/"
-            style TransformerEnd fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TransformerEnd fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- TransformerEnd : inherits
             click IdentifiedObject href "/Models/Profiles/ShortCircuit/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

@@ -8,42 +8,42 @@ _A spatial entity. LocationResource serves a similar purpose as PowerSystemResou
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class LocationResource
     click LocationResource href "/Models/Profiles/AviationObstacle/AbstractClasses/LocationResource/"
-    style LocationResource fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style LocationResource fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         LocationResource <|-- Structure : inherits
 
         Structure
             click Structure href "/Models/Profiles/AviationObstacle/AbstractClasses/Structure/"
-            style Structure fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Structure fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         LocationResource <|-- Zone : inherits
 
         Zone
             click Zone href "/Models/Profiles/AviationObstacle/ConcreteClasses/Zone/"
-            style Zone fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Zone fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         ElementResource <|-- LocationResource : inherits
             click ElementResource href "/Models/Profiles/AviationObstacle/AbstractClasses/ElementResource/"
-            style ElementResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ElementResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- ElementResource : inherits
             click IdentifiedObject href "/Models/Profiles/AviationObstacle/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Feature <|-- LocationResource : inherits
             click Feature href "/Models/Profiles/AviationObstacle/AbstractClasses/Feature/"
-            style Feature fill:#F2EBE2,stroke:#333,stroke-width:2px,rx:10,ry:10,color:#8A0303
+            style Feature fill:#E0E7FA,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:#163289
 
 
         LocationResource --> LocationMethodKind : LocationResource.locationMethod
 
         LocationMethodKind
             click LocationMethodKind href "/Models/Profiles/AviationObstacle/Enumerations/LocationMethodKind/"
-            style LocationMethodKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style LocationMethodKind fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         LocationResource : PowerSystemResource.locationMethod
         IdentifiedObject : IdentifiedObject.mRID

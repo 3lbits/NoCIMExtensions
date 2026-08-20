@@ -6,23 +6,23 @@ _Multi-purpose data points for defining a curve.  The use of this generic class 
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class CurveData
     click CurveData href "/Models/Profiles/CoreEquipment/ConcreteClasses/CurveData/"
-    style CurveData fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style CurveData fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         CurveData --> Curve : CurveData.Curve
 
         Curve
             click Curve href "/Models/Profiles/CoreEquipment/AbstractClasses/Curve/"
-            style Curve fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Curve fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Curve --> CurveData : Curve.CurveDatas
 
         Curve
             click Curve href "/Models/Profiles/CoreEquipment/AbstractClasses/Curve/"
-            style Curve fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Curve fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CurveData : CurveData.Curve

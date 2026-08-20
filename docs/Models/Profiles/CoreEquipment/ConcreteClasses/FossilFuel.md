@@ -6,33 +6,33 @@ _The fossil fuel consumed by the non-nuclear thermal generating unit.   For exam
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class FossilFuel
     click FossilFuel href "/Models/Profiles/CoreEquipment/ConcreteClasses/FossilFuel/"
-    style FossilFuel fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style FossilFuel fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- FossilFuel : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         FossilFuel --> ThermalGeneratingUnit : FossilFuel.ThermalGeneratingUnit
 
         ThermalGeneratingUnit
             click ThermalGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/ThermalGeneratingUnit/"
-            style ThermalGeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ThermalGeneratingUnit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ThermalGeneratingUnit --> FossilFuel : ThermalGeneratingUnit.FossilFuels
 
         ThermalGeneratingUnit
             click ThermalGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/ThermalGeneratingUnit/"
-            style ThermalGeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ThermalGeneratingUnit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         FossilFuel --> FuelType : FossilFuel.fossilFuelType
 
         FuelType
             click FuelType href "/Models/Profiles/CoreEquipment/Enumerations/FuelType/"
-            style FuelType fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style FuelType fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         FossilFuel : FossilFuel.fossilFuelType
         FossilFuel : FossilFuel.ThermalGeneratingUnit

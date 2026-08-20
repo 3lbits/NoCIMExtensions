@@ -6,53 +6,53 @@ _A group of loads conforming to an allocation pattern._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class ConformLoadGroup
     click ConformLoadGroup href "/Models/Profiles/CoreEquipment/ConcreteClasses/ConformLoadGroup/"
-    style ConformLoadGroup fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style ConformLoadGroup fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         LoadGroup <|-- ConformLoadGroup : inherits
             click LoadGroup href "/Models/Profiles/CoreEquipment/AbstractClasses/LoadGroup/"
-            style LoadGroup fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style LoadGroup fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- LoadGroup : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConformLoadGroup --> ConformLoadSchedule : ConformLoadGroup.ConformLoadSchedules
 
         ConformLoadSchedule
             click ConformLoadSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/ConformLoadSchedule/"
-            style ConformLoadSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConformLoadSchedule fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         ConformLoadGroup --> ConformLoad : ConformLoadGroup.EnergyConsumers
 
         ConformLoad
             click ConformLoad href "/Models/Profiles/CoreEquipment/AbstractClasses/ConformLoad/"
-            style ConformLoad fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConformLoad fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         LoadGroup --> SubLoadArea : LoadGroup.SubLoadArea
 
         SubLoadArea
             click SubLoadArea href "/Models/Profiles/CoreEquipment/ConcreteClasses/SubLoadArea/"
-            style SubLoadArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SubLoadArea fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConformLoadSchedule --> ConformLoadGroup : ConformLoadSchedule.ConformLoadGroup
 
         ConformLoadSchedule
             click ConformLoadSchedule href "/Models/Profiles/CoreEquipment/ConcreteClasses/ConformLoadSchedule/"
-            style ConformLoadSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConformLoadSchedule fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConformLoad --> ConformLoadGroup : ConformLoad.LoadGroup
 
         ConformLoad
             click ConformLoad href "/Models/Profiles/CoreEquipment/AbstractClasses/ConformLoad/"
-            style ConformLoad fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConformLoad fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SubLoadArea --> LoadGroup : SubLoadArea.LoadGroups
 
         SubLoadArea
             click SubLoadArea href "/Models/Profiles/CoreEquipment/ConcreteClasses/SubLoadArea/"
-            style SubLoadArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SubLoadArea fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         ConformLoadGroup : ConformLoadGroup.ConformLoadSchedules

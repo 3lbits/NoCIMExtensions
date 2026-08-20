@@ -17,27 +17,27 @@ Where:
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class LoadResponseCharacteristic
     click LoadResponseCharacteristic href "/Models/Profiles/CoreEquipment/ConcreteClasses/LoadResponseCharacteristic/"
-    style LoadResponseCharacteristic fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style LoadResponseCharacteristic fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- LoadResponseCharacteristic : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         LoadResponseCharacteristic --> EnergyConsumer : LoadResponseCharacteristic.EnergyConsumer
 
         EnergyConsumer
             click EnergyConsumer href "/Models/Profiles/CoreEquipment/AbstractClasses/EnergyConsumer/"
-            style EnergyConsumer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EnergyConsumer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         EnergyConsumer --> LoadResponseCharacteristic : EnergyConsumer.LoadResponse
 
         EnergyConsumer
             click EnergyConsumer href "/Models/Profiles/CoreEquipment/AbstractClasses/EnergyConsumer/"
-            style EnergyConsumer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EnergyConsumer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         LoadResponseCharacteristic : LoadResponseCharacteristic.EnergyConsumer

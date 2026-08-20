@@ -12,59 +12,59 @@ _A control area is a grouping of generating units and/or loads and a cutset of t
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class ControlArea
     click ControlArea href "/Models/Profiles/CoreEquipment/AbstractClasses/ControlArea/"
-    style ControlArea fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style ControlArea fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- ControlArea : inherits
             click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ControlArea --> TieFlow : ControlArea.TieFlow
 
         TieFlow
             click TieFlow href "/Models/Profiles/CoreEquipment/ConcreteClasses/TieFlow/"
-            style TieFlow fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TieFlow fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         ControlArea --> ControlAreaGeneratingUnit : ControlArea.ControlAreaGeneratingUnit
 
         ControlAreaGeneratingUnit
             click ControlAreaGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/ControlAreaGeneratingUnit/"
-            style ControlAreaGeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ControlAreaGeneratingUnit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         ControlArea --> EnergyArea : ControlArea.EnergyArea
 
         EnergyArea
             click EnergyArea href "/Models/Profiles/CoreEquipment/AbstractClasses/EnergyArea/"
-            style EnergyArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EnergyArea fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ControlAreaGeneratingUnit --> ControlArea : ControlAreaGeneratingUnit.ControlArea
 
         ControlAreaGeneratingUnit
             click ControlAreaGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/ControlAreaGeneratingUnit/"
-            style ControlAreaGeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ControlAreaGeneratingUnit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         EnergyArea --> ControlArea : EnergyArea.ControlArea
 
         EnergyArea
             click EnergyArea href "/Models/Profiles/CoreEquipment/AbstractClasses/EnergyArea/"
-            style EnergyArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EnergyArea fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TieFlow --> ControlArea : TieFlow.ControlArea
 
         TieFlow
             click TieFlow href "/Models/Profiles/CoreEquipment/ConcreteClasses/TieFlow/"
-            style TieFlow fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TieFlow fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ControlArea --> ControlAreaTypeKind : ControlArea.type
 
         ControlAreaTypeKind
             click ControlAreaTypeKind href "/Models/Profiles/CoreEquipment/Enumerations/ControlAreaTypeKind/"
-            style ControlAreaTypeKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ControlAreaTypeKind fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ControlArea : ControlArea.type
         ControlArea : ControlArea.TieFlow

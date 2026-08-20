@@ -8,27 +8,27 @@ _Specifies a set of Limits that are associated with a Measurement. A Measurement
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class LimitSet
     click LimitSet href "/Models/Profiles/Operation/AbstractClasses/LimitSet/"
-    style LimitSet fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style LimitSet fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         LimitSet <|-- AccumulatorLimitSet : inherits
 
         AccumulatorLimitSet
             click AccumulatorLimitSet href "/Models/Profiles/Operation/ConcreteClasses/AccumulatorLimitSet/"
-            style AccumulatorLimitSet fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AccumulatorLimitSet fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         LimitSet <|-- AnalogLimitSet : inherits
 
         AnalogLimitSet
             click AnalogLimitSet href "/Models/Profiles/Operation/ConcreteClasses/AnalogLimitSet/"
-            style AnalogLimitSet fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AnalogLimitSet fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- LimitSet : inherits
             click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

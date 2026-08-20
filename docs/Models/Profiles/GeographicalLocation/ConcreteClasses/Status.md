@@ -6,18 +6,18 @@ _Current status information relevant to an entity._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class Status
     click Status href "/Models/Profiles/GeographicalLocation/ConcreteClasses/Status/"
-    style Status fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style Status fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         StreetAddress --> Status : StreetAddress.status
 
         StreetAddress
             click StreetAddress href "/Models/Profiles/GeographicalLocation/ConcreteClasses/StreetAddress/"
-            style StreetAddress fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style StreetAddress fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         Status : Status.value

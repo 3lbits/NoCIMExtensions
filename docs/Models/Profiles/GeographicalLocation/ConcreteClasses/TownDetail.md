@@ -6,18 +6,18 @@ _Town details, in the context of address._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class TownDetail
     click TownDetail href "/Models/Profiles/GeographicalLocation/ConcreteClasses/TownDetail/"
-    style TownDetail fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style TownDetail fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         StreetAddress --> TownDetail : StreetAddress.townDetail
 
         StreetAddress
             click StreetAddress href "/Models/Profiles/GeographicalLocation/ConcreteClasses/StreetAddress/"
-            style StreetAddress fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style StreetAddress fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         TownDetail : TownDetail.code

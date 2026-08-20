@@ -6,42 +6,42 @@ _An AccumulatorLimitSet specifies a set of Limits that are associated with an Ac
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class AccumulatorLimitSet
     click AccumulatorLimitSet href "/Models/Profiles/Operation/ConcreteClasses/AccumulatorLimitSet/"
-    style AccumulatorLimitSet fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style AccumulatorLimitSet fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         LimitSet <|-- AccumulatorLimitSet : inherits
             click LimitSet href "/Models/Profiles/Operation/AbstractClasses/LimitSet/"
-            style LimitSet fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style LimitSet fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- LimitSet : inherits
             click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         AccumulatorLimitSet --> Accumulator : AccumulatorLimitSet.Measurements
 
         Accumulator
             click Accumulator href "/Models/Profiles/Operation/ConcreteClasses/Accumulator/"
-            style Accumulator fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Accumulator fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         AccumulatorLimitSet --> AccumulatorLimit : AccumulatorLimitSet.Limits
 
         AccumulatorLimit
             click AccumulatorLimit href "/Models/Profiles/Operation/AbstractClasses/AccumulatorLimit/"
-            style AccumulatorLimit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AccumulatorLimit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Accumulator --> AccumulatorLimitSet : Accumulator.LimitSets
 
         Accumulator
             click Accumulator href "/Models/Profiles/Operation/ConcreteClasses/Accumulator/"
-            style Accumulator fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Accumulator fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         AccumulatorLimit --> AccumulatorLimitSet : AccumulatorLimit.LimitSet
 
         AccumulatorLimit
             click AccumulatorLimit href "/Models/Profiles/Operation/AbstractClasses/AccumulatorLimit/"
-            style AccumulatorLimit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AccumulatorLimit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         AccumulatorLimitSet : AccumulatorLimitSet.Measurements

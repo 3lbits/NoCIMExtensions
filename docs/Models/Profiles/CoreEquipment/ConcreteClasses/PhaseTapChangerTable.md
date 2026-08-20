@@ -6,38 +6,38 @@ _Describes a tabular curve for how the phase angle difference and impedance vari
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class PhaseTapChangerTable
     click PhaseTapChangerTable href "/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChangerTable/"
-    style PhaseTapChangerTable fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style PhaseTapChangerTable fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PhaseTapChangerTable : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PhaseTapChangerTable --> PhaseTapChangerTablePoint : PhaseTapChangerTable.PhaseTapChangerTablePoint
 
         PhaseTapChangerTablePoint
             click PhaseTapChangerTablePoint href "/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChangerTablePoint/"
-            style PhaseTapChangerTablePoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PhaseTapChangerTablePoint fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         PhaseTapChangerTable --> PhaseTapChangerTabular : PhaseTapChangerTable.PhaseTapChangerTabular
 
         PhaseTapChangerTabular
             click PhaseTapChangerTabular href "/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChangerTabular/"
-            style PhaseTapChangerTabular fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PhaseTapChangerTabular fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PhaseTapChangerTablePoint --> PhaseTapChangerTable : PhaseTapChangerTablePoint.PhaseTapChangerTable
 
         PhaseTapChangerTablePoint
             click PhaseTapChangerTablePoint href "/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChangerTablePoint/"
-            style PhaseTapChangerTablePoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PhaseTapChangerTablePoint fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PhaseTapChangerTabular --> PhaseTapChangerTable : PhaseTapChangerTabular.PhaseTapChangerTable
 
         PhaseTapChangerTabular
             click PhaseTapChangerTabular href "/Models/Profiles/CoreEquipment/ConcreteClasses/PhaseTapChangerTabular/"
-            style PhaseTapChangerTabular fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PhaseTapChangerTabular fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         PhaseTapChangerTable : PhaseTapChangerTable.PhaseTapChangerTablePoint

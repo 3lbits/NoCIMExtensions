@@ -8,102 +8,102 @@ _ConformLoad represent loads that follow a daily load change pattern where the p
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class ConformLoad
     click ConformLoad href "/Models/Profiles/CoreEquipment/AbstractClasses/ConformLoad/"
-    style ConformLoad fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style ConformLoad fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         EnergyConsumer <|-- ConformLoad : inherits
             click EnergyConsumer href "/Models/Profiles/CoreEquipment/AbstractClasses/EnergyConsumer/"
-            style EnergyConsumer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EnergyConsumer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         EnergyConnection <|-- EnergyConsumer : inherits
             click EnergyConnection href "/Models/Profiles/CoreEquipment/AbstractClasses/EnergyConnection/"
-            style EnergyConnection fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EnergyConnection fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         ConductingEquipment <|-- EnergyConnection : inherits
             click ConductingEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/ConductingEquipment/"
-            style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConductingEquipment fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         Equipment <|-- ConductingEquipment : inherits
             click Equipment href "/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/"
-            style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Equipment fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- Equipment : inherits
             click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConformLoad --> ConformLoadGroup : ConformLoad.LoadGroup
 
         ConformLoadGroup
             click ConformLoadGroup href "/Models/Profiles/CoreEquipment/ConcreteClasses/ConformLoadGroup/"
-            style ConformLoadGroup fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConformLoadGroup fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         EnergyConsumer --> LoadResponseCharacteristic : EnergyConsumer.LoadResponse
 
         LoadResponseCharacteristic
             click LoadResponseCharacteristic href "/Models/Profiles/CoreEquipment/ConcreteClasses/LoadResponseCharacteristic/"
-            style LoadResponseCharacteristic fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style LoadResponseCharacteristic fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         ConductingEquipment --> BaseVoltage : ConductingEquipment.BaseVoltage
 
         BaseVoltage
             click BaseVoltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/BaseVoltage/"
-            style BaseVoltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BaseVoltage fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         ConductingEquipment --> Terminal : ConductingEquipment.Terminals
 
         Terminal
             click Terminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/Terminal/"
-            style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Terminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Equipment --> EquipmentContainer : Equipment.EquipmentContainer
 
         EquipmentContainer
             click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
-            style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EquipmentContainer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Equipment --> OperationalLimitSet : Equipment.OperationalLimitSet
 
         OperationalLimitSet
             click OperationalLimitSet href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitSet/"
-            style OperationalLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         BaseVoltage --> ConductingEquipment : BaseVoltage.ConductingEquipment
 
         BaseVoltage
             click BaseVoltage href "/Models/Profiles/CoreEquipment/ConcreteClasses/BaseVoltage/"
-            style BaseVoltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BaseVoltage fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConformLoadGroup --> ConformLoad : ConformLoadGroup.EnergyConsumers
 
         ConformLoadGroup
             click ConformLoadGroup href "/Models/Profiles/CoreEquipment/ConcreteClasses/ConformLoadGroup/"
-            style ConformLoadGroup fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConformLoadGroup fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         EquipmentContainer --> Equipment : EquipmentContainer.Equipments
 
         EquipmentContainer
             click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
-            style EquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EquipmentContainer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         LoadResponseCharacteristic --> EnergyConsumer : LoadResponseCharacteristic.EnergyConsumer
 
         LoadResponseCharacteristic
             click LoadResponseCharacteristic href "/Models/Profiles/CoreEquipment/ConcreteClasses/LoadResponseCharacteristic/"
-            style LoadResponseCharacteristic fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style LoadResponseCharacteristic fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitSet --> Equipment : OperationalLimitSet.Equipment
 
         OperationalLimitSet
             click OperationalLimitSet href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitSet/"
-            style OperationalLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Terminal --> ConductingEquipment : Terminal.ConductingEquipment
 
         Terminal
             click Terminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/Terminal/"
-            style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Terminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         ConformLoad : ConformLoad.LoadGroup

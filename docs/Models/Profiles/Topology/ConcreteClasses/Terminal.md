@@ -6,31 +6,31 @@ _An AC electrical connection point to a piece of conducting equipment. Terminals
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class Terminal
     click Terminal href "/Models/Profiles/Topology/ConcreteClasses/Terminal/"
-    style Terminal fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style Terminal fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         ACDCTerminal <|-- Terminal : inherits
             click ACDCTerminal href "/Models/Profiles/Topology/AbstractClasses/ACDCTerminal/"
-            style ACDCTerminal fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCTerminal fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- ACDCTerminal : inherits
             click IdentifiedObject href "/Models/Profiles/Topology/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Terminal --> TopologicalNode : Terminal.TopologicalNode
 
         TopologicalNode
             click TopologicalNode href "/Models/Profiles/Topology/ConcreteClasses/TopologicalNode/"
-            style TopologicalNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TopologicalNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TopologicalNode --> Terminal : TopologicalNode.Terminal
 
         TopologicalNode
             click TopologicalNode href "/Models/Profiles/Topology/ConcreteClasses/TopologicalNode/"
-            style TopologicalNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TopologicalNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         Terminal : Terminal.TopologicalNode

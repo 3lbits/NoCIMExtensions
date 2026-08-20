@@ -6,52 +6,52 @@ _Uniform and continuous tubular non-metallic sheath. This class allows for the r
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class NonMetallicSheathLayer
     click NonMetallicSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/NonMetallicSheathLayer/"
-    style NonMetallicSheathLayer fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style NonMetallicSheathLayer fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         NonMetallicSheathLayer <|-- BindingLayer : inherits
 
         BindingLayer
             click BindingLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/BindingLayer/"
-            style BindingLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BindingLayer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         NonMetallicSheathLayer <|-- InnerSheathLayer : inherits
 
         InnerSheathLayer
             click InnerSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/InnerSheathLayer/"
-            style InnerSheathLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style InnerSheathLayer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         NonMetallicSheathLayer <|-- OverSheathLayer : inherits
 
         OverSheathLayer
             click OverSheathLayer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/OverSheathLayer/"
-            style OverSheathLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OverSheathLayer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         NonMetallicSheathLayer <|-- SwellableWaterTapes : inherits
 
         SwellableWaterTapes
             click SwellableWaterTapes href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/SwellableWaterTapes/"
-            style SwellableWaterTapes fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SwellableWaterTapes fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         CableLayer <|-- NonMetallicSheathLayer : inherits
             click CableLayer href "/Models/Profiles/SubseaCableInfo/AbstractClasses/CableLayer/"
-            style CableLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CableLayer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CableInfo --> CableLayer : CableInfo.Layer
 
         CableInfo
             click CableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/CableInfo/"
-            style CableInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CableInfo fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         MultiCoreCableInfo --> CableLayer : MultiCoreCableInfo.BeltedLayer
 
         MultiCoreCableInfo
             click MultiCoreCableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/MultiCoreCableInfo/"
-            style MultiCoreCableInfo fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MultiCoreCableInfo fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CableLayer : CableLayer.mRID

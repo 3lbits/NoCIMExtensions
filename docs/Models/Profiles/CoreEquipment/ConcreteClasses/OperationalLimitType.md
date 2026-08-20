@@ -6,38 +6,38 @@ _The operational meaning of a category of limits._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class OperationalLimitType
     click OperationalLimitType href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitType/"
-    style OperationalLimitType fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style OperationalLimitType fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- OperationalLimitType : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitType --> OperationalLimit : OperationalLimitType.OperationalLimit
 
         OperationalLimit
             click OperationalLimit href "/Models/Profiles/CoreEquipment/AbstractClasses/OperationalLimit/"
-            style OperationalLimit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimit --> OperationalLimitType : OperationalLimit.OperationalLimitType
 
         OperationalLimit
             click OperationalLimit href "/Models/Profiles/CoreEquipment/AbstractClasses/OperationalLimit/"
-            style OperationalLimit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitType --> OperationalLimitDirectionKind : OperationalLimitType.direction
 
         OperationalLimitDirectionKind
             click OperationalLimitDirectionKind href "/Models/Profiles/CoreEquipment/Enumerations/OperationalLimitDirectionKind/"
-            style OperationalLimitDirectionKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimitDirectionKind fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         OperationalLimitType --> LimitKind : OperationalLimitType.kind
 
         LimitKind
             click LimitKind href "/Models/Profiles/CoreEquipment/Enumerations/LimitKind/"
-            style LimitKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style LimitKind fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitType : OperationalLimitType.OperationalLimit
         OperationalLimitType : OperationalLimitType.acceptableDuration

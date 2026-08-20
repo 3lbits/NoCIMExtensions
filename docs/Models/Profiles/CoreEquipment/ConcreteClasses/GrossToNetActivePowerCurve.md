@@ -6,63 +6,63 @@ _Relationship between the generating unit's gross active power output on the X-a
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class GrossToNetActivePowerCurve
     click GrossToNetActivePowerCurve href "/Models/Profiles/CoreEquipment/ConcreteClasses/GrossToNetActivePowerCurve/"
-    style GrossToNetActivePowerCurve fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style GrossToNetActivePowerCurve fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         Curve <|-- GrossToNetActivePowerCurve : inherits
             click Curve href "/Models/Profiles/CoreEquipment/AbstractClasses/Curve/"
-            style Curve fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Curve fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- Curve : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         GrossToNetActivePowerCurve --> GeneratingUnit : GrossToNetActivePowerCurve.GeneratingUnit
 
         GeneratingUnit
             click GeneratingUnit href "/Models/Profiles/CoreEquipment/AbstractClasses/GeneratingUnit/"
-            style GeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style GeneratingUnit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Curve --> CurveData : Curve.CurveDatas
 
         CurveData
             click CurveData href "/Models/Profiles/CoreEquipment/ConcreteClasses/CurveData/"
-            style CurveData fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CurveData fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         CurveData --> Curve : CurveData.Curve
 
         CurveData
             click CurveData href "/Models/Profiles/CoreEquipment/ConcreteClasses/CurveData/"
-            style CurveData fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CurveData fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         GeneratingUnit --> GrossToNetActivePowerCurve : GeneratingUnit.GrossToNetActivePowerCurves
 
         GeneratingUnit
             click GeneratingUnit href "/Models/Profiles/CoreEquipment/AbstractClasses/GeneratingUnit/"
-            style GeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style GeneratingUnit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Curve --> CurveStyle : Curve.curveStyle
 
         CurveStyle
             click CurveStyle href "/Models/Profiles/CoreEquipment/Enumerations/CurveStyle/"
-            style CurveStyle fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CurveStyle fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Curve --> UnitSymbol : Curve.xUnit
 
         UnitSymbol
             click UnitSymbol href "/Models/Profiles/CoreEquipment/Enumerations/UnitSymbol/"
-            style UnitSymbol fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitSymbol fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Curve --> UnitSymbol : Curve.y1Unit
 
         UnitSymbol
             click UnitSymbol href "/Models/Profiles/CoreEquipment/Enumerations/UnitSymbol/"
-            style UnitSymbol fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitSymbol fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Curve --> UnitSymbol : Curve.y2Unit
 
         UnitSymbol
             click UnitSymbol href "/Models/Profiles/CoreEquipment/Enumerations/UnitSymbol/"
-            style UnitSymbol fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitSymbol fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         GrossToNetActivePowerCurve : GrossToNetActivePowerCurve.GeneratingUnit
         Curve : Curve.curveStyle

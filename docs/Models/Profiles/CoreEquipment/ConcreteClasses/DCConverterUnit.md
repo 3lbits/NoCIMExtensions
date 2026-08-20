@@ -6,82 +6,82 @@ _Indivisible operative unit comprising all equipment between the point of common
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class DCConverterUnit
     click DCConverterUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCConverterUnit/"
-    style DCConverterUnit fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style DCConverterUnit fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         DCEquipmentContainer <|-- DCConverterUnit : inherits
             click DCEquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/DCEquipmentContainer/"
-            style DCEquipmentContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCEquipmentContainer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         EquipmentContainer <|-- DCEquipmentContainer : inherits
             click EquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer/"
-            style EquipmentContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EquipmentContainer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         ConnectivityNodeContainer <|-- EquipmentContainer : inherits
             click ConnectivityNodeContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/ConnectivityNodeContainer/"
-            style ConnectivityNodeContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConnectivityNodeContainer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- ConnectivityNodeContainer : inherits
             click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCConverterUnit --> Substation : DCConverterUnit.Substation
 
         Substation
             click Substation href "/Models/Profiles/CoreEquipment/ConcreteClasses/Substation/"
-            style Substation fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Substation fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         DCEquipmentContainer --> DCNode : DCEquipmentContainer.DCNodes
 
         DCNode
             click DCNode href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCNode/"
-            style DCNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         EquipmentContainer --> Equipment : EquipmentContainer.Equipments
 
         Equipment
             click Equipment href "/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/"
-            style Equipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Equipment fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         ConnectivityNodeContainer --> ConnectivityNode : ConnectivityNodeContainer.ConnectivityNodes
 
         ConnectivityNode
             click ConnectivityNode href "/Models/Profiles/CoreEquipment/AbstractClasses/ConnectivityNode/"
-            style ConnectivityNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConnectivityNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConnectivityNode --> ConnectivityNodeContainer : ConnectivityNode.ConnectivityNodeContainer
 
         ConnectivityNode
             click ConnectivityNode href "/Models/Profiles/CoreEquipment/AbstractClasses/ConnectivityNode/"
-            style ConnectivityNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConnectivityNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCNode --> DCEquipmentContainer : DCNode.DCEquipmentContainer
 
         DCNode
             click DCNode href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCNode/"
-            style DCNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Equipment --> EquipmentContainer : Equipment.EquipmentContainer
 
         Equipment
             click Equipment href "/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/"
-            style Equipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Equipment fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Substation --> DCConverterUnit : Substation.DCConverterUnit
 
         Substation
             click Substation href "/Models/Profiles/CoreEquipment/ConcreteClasses/Substation/"
-            style Substation fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Substation fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCConverterUnit --> DCConverterOperatingModeKind : DCConverterUnit.operationMode
 
         DCConverterOperatingModeKind
             click DCConverterOperatingModeKind href "/Models/Profiles/CoreEquipment/Enumerations/DCConverterOperatingModeKind/"
-            style DCConverterOperatingModeKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCConverterOperatingModeKind fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCConverterUnit : DCConverterUnit.operationMode
         DCConverterUnit : DCConverterUnit.Substation

@@ -6,27 +6,27 @@ _Group of similar days.   For example it could be used to represent weekdays, we
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class DayType
     click DayType href "/Models/Profiles/CoreEquipment/ConcreteClasses/DayType/"
-    style DayType fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style DayType fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- DayType : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DayType --> SeasonDayTypeSchedule : DayType.SeasonDayTypeSchedules
 
         SeasonDayTypeSchedule
             click SeasonDayTypeSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/SeasonDayTypeSchedule/"
-            style SeasonDayTypeSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SeasonDayTypeSchedule fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SeasonDayTypeSchedule --> DayType : SeasonDayTypeSchedule.DayType
 
         SeasonDayTypeSchedule
             click SeasonDayTypeSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/SeasonDayTypeSchedule/"
-            style SeasonDayTypeSchedule fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SeasonDayTypeSchedule fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         DayType : DayType.SeasonDayTypeSchedules

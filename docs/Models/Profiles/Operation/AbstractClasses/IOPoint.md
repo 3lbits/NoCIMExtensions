@@ -8,27 +8,27 @@ _The class describe a measurement or control value. The purpose is to enable hav
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class IOPoint
     click IOPoint href "/Models/Profiles/Operation/AbstractClasses/IOPoint/"
-    style IOPoint fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style IOPoint fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IOPoint <|-- Control : inherits
 
         Control
             click Control href "/Models/Profiles/Operation/AbstractClasses/Control/"
-            style Control fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Control fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IOPoint <|-- MeasurementValue : inherits
 
         MeasurementValue
             click MeasurementValue href "/Models/Profiles/Operation/AbstractClasses/MeasurementValue/"
-            style MeasurementValue fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MeasurementValue fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- IOPoint : inherits
             click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

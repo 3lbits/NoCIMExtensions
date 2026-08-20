@@ -6,27 +6,27 @@ _Describes each tap step in the ratio tap changer tabular curve._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class RatioTapChangerTablePoint
     click RatioTapChangerTablePoint href "/Models/Profiles/CoreEquipment/ConcreteClasses/RatioTapChangerTablePoint/"
-    style RatioTapChangerTablePoint fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style RatioTapChangerTablePoint fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         TapChangerTablePoint <|-- RatioTapChangerTablePoint : inherits
             click TapChangerTablePoint href "/Models/Profiles/CoreEquipment/AbstractClasses/TapChangerTablePoint/"
-            style TapChangerTablePoint fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TapChangerTablePoint fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RatioTapChangerTablePoint --> RatioTapChangerTable : RatioTapChangerTablePoint.RatioTapChangerTable
 
         RatioTapChangerTable
             click RatioTapChangerTable href "/Models/Profiles/CoreEquipment/ConcreteClasses/RatioTapChangerTable/"
-            style RatioTapChangerTable fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RatioTapChangerTable fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RatioTapChangerTable --> RatioTapChangerTablePoint : RatioTapChangerTable.RatioTapChangerTablePoint
 
         RatioTapChangerTable
             click RatioTapChangerTable href "/Models/Profiles/CoreEquipment/ConcreteClasses/RatioTapChangerTable/"
-            style RatioTapChangerTable fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RatioTapChangerTable fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         RatioTapChangerTablePoint : RatioTapChangerTablePoint.RatioTapChangerTable

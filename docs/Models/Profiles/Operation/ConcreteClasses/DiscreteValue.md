@@ -6,68 +6,68 @@ _DiscreteValue represents a discrete MeasurementValue._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class DiscreteValue
     click DiscreteValue href "/Models/Profiles/Operation/ConcreteClasses/DiscreteValue/"
-    style DiscreteValue fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style DiscreteValue fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         MeasurementValue <|-- DiscreteValue : inherits
             click MeasurementValue href "/Models/Profiles/Operation/AbstractClasses/MeasurementValue/"
-            style MeasurementValue fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MeasurementValue fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IOPoint <|-- MeasurementValue : inherits
             click IOPoint href "/Models/Profiles/Operation/AbstractClasses/IOPoint/"
-            style IOPoint fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IOPoint fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- IOPoint : inherits
             click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DiscreteValue --> Command : DiscreteValue.Command
 
         Command
             click Command href "/Models/Profiles/Operation/ConcreteClasses/Command/"
-            style Command fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Command fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         DiscreteValue --> Discrete : DiscreteValue.Discrete
 
         Discrete
             click Discrete href "/Models/Profiles/Operation/ConcreteClasses/Discrete/"
-            style Discrete fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Discrete fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         MeasurementValue --> MeasurementValueQuality : MeasurementValue.MeasurementValueQuality
 
         MeasurementValueQuality
             click MeasurementValueQuality href "/Models/Profiles/Operation/ConcreteClasses/MeasurementValueQuality/"
-            style MeasurementValueQuality fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MeasurementValueQuality fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         MeasurementValue --> MeasurementValueSource : MeasurementValue.MeasurementValueSource
 
         MeasurementValueSource
             click MeasurementValueSource href "/Models/Profiles/Operation/ConcreteClasses/MeasurementValueSource/"
-            style MeasurementValueSource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MeasurementValueSource fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Command --> DiscreteValue : Command.DiscreteValue
 
         Command
             click Command href "/Models/Profiles/Operation/ConcreteClasses/Command/"
-            style Command fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Command fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Discrete --> DiscreteValue : Discrete.DiscreteValues
 
         Discrete
             click Discrete href "/Models/Profiles/Operation/ConcreteClasses/Discrete/"
-            style Discrete fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Discrete fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         MeasurementValueQuality --> MeasurementValue : MeasurementValueQuality.MeasurementValue
 
         MeasurementValueQuality
             click MeasurementValueQuality href "/Models/Profiles/Operation/ConcreteClasses/MeasurementValueQuality/"
-            style MeasurementValueQuality fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MeasurementValueQuality fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         MeasurementValueSource --> MeasurementValue : MeasurementValueSource.MeasurementValues
 
         MeasurementValueSource
             click MeasurementValueSource href "/Models/Profiles/Operation/ConcreteClasses/MeasurementValueSource/"
-            style MeasurementValueSource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MeasurementValueSource fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         DiscreteValue : DiscreteValue.Command

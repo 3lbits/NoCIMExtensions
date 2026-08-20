@@ -6,38 +6,38 @@ _Defines the structure (in terms of location and direction) of the net interchan
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class TieFlow
     click TieFlow href "/Models/Profiles/CoreEquipment/ConcreteClasses/TieFlow/"
-    style TieFlow fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style TieFlow fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- TieFlow : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TieFlow --> ControlArea : TieFlow.ControlArea
 
         ControlArea
             click ControlArea href "/Models/Profiles/CoreEquipment/AbstractClasses/ControlArea/"
-            style ControlArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ControlArea fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         TieFlow --> Terminal : TieFlow.Terminal
 
         Terminal
             click Terminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/Terminal/"
-            style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Terminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ControlArea --> TieFlow : ControlArea.TieFlow
 
         ControlArea
             click ControlArea href "/Models/Profiles/CoreEquipment/AbstractClasses/ControlArea/"
-            style ControlArea fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ControlArea fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Terminal --> TieFlow : Terminal.TieFlow
 
         Terminal
             click Terminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/Terminal/"
-            style Terminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Terminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         TieFlow : TieFlow.ControlArea

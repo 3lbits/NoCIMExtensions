@@ -8,39 +8,39 @@ _A unit with valves for three phases, together with unit control equipment, esse
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class ACDCConverter
     click ACDCConverter href "/Models/Profiles/StateVariables/AbstractClasses/ACDCConverter/"
-    style ACDCConverter fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style ACDCConverter fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ACDCConverter <|-- CsConverter : inherits
 
         CsConverter
             click CsConverter href "/Models/Profiles/StateVariables/ConcreteClasses/CsConverter/"
-            style CsConverter fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CsConverter fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ACDCConverter <|-- VsConverter : inherits
 
         VsConverter
             click VsConverter href "/Models/Profiles/StateVariables/ConcreteClasses/VsConverter/"
-            style VsConverter fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style VsConverter fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         ConductingEquipment <|-- ACDCConverter : inherits
             click ConductingEquipment href "/Models/Profiles/StateVariables/AbstractClasses/ConductingEquipment/"
-            style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConductingEquipment fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConductingEquipment --> SvStatus : ConductingEquipment.SvStatus
 
         SvStatus
             click SvStatus href "/Models/Profiles/StateVariables/ConcreteClasses/SvStatus/"
-            style SvStatus fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SvStatus fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SvStatus --> ConductingEquipment : SvStatus.ConductingEquipment
 
         SvStatus
             click SvStatus href "/Models/Profiles/StateVariables/ConcreteClasses/SvStatus/"
-            style SvStatus fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SvStatus fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         ACDCConverter : ACDCConverter.idc

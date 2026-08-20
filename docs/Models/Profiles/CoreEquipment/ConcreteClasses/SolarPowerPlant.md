@@ -6,31 +6,31 @@ _Solar power plant._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class SolarPowerPlant
     click SolarPowerPlant href "/Models/Profiles/CoreEquipment/ConcreteClasses/SolarPowerPlant/"
-    style SolarPowerPlant fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style SolarPowerPlant fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- SolarPowerPlant : inherits
             click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SolarPowerPlant --> SolarGeneratingUnit : SolarPowerPlant.SolarGeneratingUnits
 
         SolarGeneratingUnit
             click SolarGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/SolarGeneratingUnit/"
-            style SolarGeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SolarGeneratingUnit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SolarGeneratingUnit --> SolarPowerPlant : SolarGeneratingUnit.SolarPowerPlant
 
         SolarGeneratingUnit
             click SolarGeneratingUnit href "/Models/Profiles/CoreEquipment/ConcreteClasses/SolarGeneratingUnit/"
-            style SolarGeneratingUnit fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SolarGeneratingUnit fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         SolarPowerPlant : SolarPowerPlant.SolarGeneratingUnits

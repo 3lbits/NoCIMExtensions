@@ -6,80 +6,80 @@ _Accumulator represents an accumulated (counted) Measurement, e.g. an energy val
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class Accumulator
     click Accumulator href "/Models/Profiles/Operation/ConcreteClasses/Accumulator/"
-    style Accumulator fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style Accumulator fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         Measurement <|-- Accumulator : inherits
             click Measurement href "/Models/Profiles/Operation/AbstractClasses/Measurement/"
-            style Measurement fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Measurement fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- Measurement : inherits
             click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Accumulator --> AccumulatorValue : Accumulator.AccumulatorValues
 
         AccumulatorValue
             click AccumulatorValue href "/Models/Profiles/Operation/ConcreteClasses/AccumulatorValue/"
-            style AccumulatorValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AccumulatorValue fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Accumulator --> AccumulatorLimitSet : Accumulator.LimitSets
 
         AccumulatorLimitSet
             click AccumulatorLimitSet href "/Models/Profiles/Operation/ConcreteClasses/AccumulatorLimitSet/"
-            style AccumulatorLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AccumulatorLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Measurement --> ACDCTerminal : Measurement.Terminal
 
         ACDCTerminal
             click ACDCTerminal href "/Models/Profiles/Operation/AbstractClasses/ACDCTerminal/"
-            style ACDCTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCTerminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Measurement --> PowerSystemResource : Measurement.PowerSystemResource
 
         PowerSystemResource
             click PowerSystemResource href "/Models/Profiles/Operation/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         AccumulatorLimitSet --> Accumulator : AccumulatorLimitSet.Measurements
 
         AccumulatorLimitSet
             click AccumulatorLimitSet href "/Models/Profiles/Operation/ConcreteClasses/AccumulatorLimitSet/"
-            style AccumulatorLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AccumulatorLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         AccumulatorValue --> Accumulator : AccumulatorValue.Accumulator
 
         AccumulatorValue
             click AccumulatorValue href "/Models/Profiles/Operation/ConcreteClasses/AccumulatorValue/"
-            style AccumulatorValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AccumulatorValue fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ACDCTerminal --> Measurement : ACDCTerminal.Measurements
 
         ACDCTerminal
             click ACDCTerminal href "/Models/Profiles/Operation/AbstractClasses/ACDCTerminal/"
-            style ACDCTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCTerminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource --> Measurement : PowerSystemResource.Measurements
 
         PowerSystemResource
             click PowerSystemResource href "/Models/Profiles/Operation/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Measurement --> PhaseCode : Measurement.phases
 
         PhaseCode
             click PhaseCode href "/Models/Profiles/Operation/Enumerations/PhaseCode/"
-            style PhaseCode fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PhaseCode fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Measurement --> UnitMultiplier : Measurement.unitMultiplier
 
         UnitMultiplier
             click UnitMultiplier href "/Models/Profiles/Operation/Enumerations/UnitMultiplier/"
-            style UnitMultiplier fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitMultiplier fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Measurement --> UnitSymbol : Measurement.unitSymbol
 
         UnitSymbol
             click UnitSymbol href "/Models/Profiles/Operation/Enumerations/UnitSymbol/"
-            style UnitSymbol fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitSymbol fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Accumulator : Accumulator.AccumulatorValues
         Accumulator : Accumulator.LimitSets

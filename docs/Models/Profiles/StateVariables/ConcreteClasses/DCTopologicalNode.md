@@ -6,27 +6,27 @@ _DC bus._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class DCTopologicalNode
     click DCTopologicalNode href "/Models/Profiles/StateVariables/ConcreteClasses/DCTopologicalNode/"
-    style DCTopologicalNode fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style DCTopologicalNode fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- DCTopologicalNode : inherits
             click IdentifiedObject href "/Models/Profiles/StateVariables/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCTopologicalNode --> DCTopologicalIsland : DCTopologicalNode.DCTopologicalIsland
 
         DCTopologicalIsland
             click DCTopologicalIsland href "/Models/Profiles/StateVariables/ConcreteClasses/DCTopologicalIsland/"
-            style DCTopologicalIsland fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCTopologicalIsland fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCTopologicalIsland --> DCTopologicalNode : DCTopologicalIsland.DCTopologicalNodes
 
         DCTopologicalIsland
             click DCTopologicalIsland href "/Models/Profiles/StateVariables/ConcreteClasses/DCTopologicalIsland/"
-            style DCTopologicalIsland fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCTopologicalIsland fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         DCTopologicalNode : DCTopologicalNode.DCTopologicalIsland

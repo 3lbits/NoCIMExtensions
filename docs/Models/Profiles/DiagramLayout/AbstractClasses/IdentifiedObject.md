@@ -8,53 +8,53 @@ _This is a root class to provide common identification for all classes needing i
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class IdentifiedObject
     click IdentifiedObject href "/Models/Profiles/DiagramLayout/AbstractClasses/IdentifiedObject/"
-    style IdentifiedObject fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style IdentifiedObject fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- Diagram : inherits
 
         Diagram
             click Diagram href "/Models/Profiles/DiagramLayout/ConcreteClasses/Diagram/"
-            style Diagram fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Diagram fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- DiagramObject : inherits
 
         DiagramObject
             click DiagramObject href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObject/"
-            style DiagramObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- DiagramObjectStyle : inherits
 
         DiagramObjectStyle
             click DiagramObjectStyle href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObjectStyle/"
-            style DiagramObjectStyle fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObjectStyle fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- DiagramStyle : inherits
 
         DiagramStyle
             click DiagramStyle href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramStyle/"
-            style DiagramStyle fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramStyle fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- VisibilityLayer : inherits
 
         VisibilityLayer
             click VisibilityLayer href "/Models/Profiles/DiagramLayout/ConcreteClasses/VisibilityLayer/"
-            style VisibilityLayer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style VisibilityLayer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject --> DiagramObject : IdentifiedObject.DiagramObjects
 
         DiagramObject
             click DiagramObject href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObject/"
-            style DiagramObject fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObject fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DiagramObject --> IdentifiedObject : DiagramObject.IdentifiedObject
 
         DiagramObject
             click DiagramObject href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObject/"
-            style DiagramObject fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObject fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         IdentifiedObject : IdentifiedObject.DiagramObjects

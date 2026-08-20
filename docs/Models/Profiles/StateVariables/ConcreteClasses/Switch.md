@@ -6,38 +6,38 @@ _A generic device designed to close, or open, or both, one or more electric circ
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class Switch
     click Switch href "/Models/Profiles/StateVariables/ConcreteClasses/Switch/"
-    style Switch fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style Switch fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         ConductingEquipment <|-- Switch : inherits
             click ConductingEquipment href "/Models/Profiles/StateVariables/AbstractClasses/ConductingEquipment/"
-            style ConductingEquipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConductingEquipment fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Switch --> SvSwitch : Switch.SvSwitch
 
         SvSwitch
             click SvSwitch href "/Models/Profiles/StateVariables/ConcreteClasses/SvSwitch/"
-            style SvSwitch fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SvSwitch fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         ConductingEquipment --> SvStatus : ConductingEquipment.SvStatus
 
         SvStatus
             click SvStatus href "/Models/Profiles/StateVariables/ConcreteClasses/SvStatus/"
-            style SvStatus fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SvStatus fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SvStatus --> ConductingEquipment : SvStatus.ConductingEquipment
 
         SvStatus
             click SvStatus href "/Models/Profiles/StateVariables/ConcreteClasses/SvStatus/"
-            style SvStatus fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SvStatus fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SvSwitch --> Switch : SvSwitch.Switch
 
         SvSwitch
             click SvSwitch href "/Models/Profiles/StateVariables/ConcreteClasses/SvSwitch/"
-            style SvSwitch fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SvSwitch fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         Switch : Switch.SvSwitch

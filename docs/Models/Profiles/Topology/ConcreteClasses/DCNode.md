@@ -6,27 +6,27 @@ _DC nodes are points where terminals of DC conducting equipment are connected to
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class DCNode
     click DCNode href "/Models/Profiles/Topology/ConcreteClasses/DCNode/"
-    style DCNode fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style DCNode fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- DCNode : inherits
             click IdentifiedObject href "/Models/Profiles/Topology/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCNode --> DCTopologicalNode : DCNode.DCTopologicalNode
 
         DCTopologicalNode
             click DCTopologicalNode href "/Models/Profiles/Topology/ConcreteClasses/DCTopologicalNode/"
-            style DCTopologicalNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCTopologicalNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCTopologicalNode --> DCNode : DCTopologicalNode.DCNodes
 
         DCTopologicalNode
             click DCTopologicalNode href "/Models/Profiles/Topology/ConcreteClasses/DCTopologicalNode/"
-            style DCTopologicalNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCTopologicalNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         DCNode : DCNode.DCTopologicalNode

@@ -7,56 +7,56 @@ For a planning model, switch statuses are not used to form topological nodes. In
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class TopologicalNode
     click TopologicalNode href "/Models/Profiles/StateVariables/ConcreteClasses/TopologicalNode/"
-    style TopologicalNode fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style TopologicalNode fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TopologicalNode --> SvInjection : TopologicalNode.SvInjection
 
         SvInjection
             click SvInjection href "/Models/Profiles/StateVariables/ConcreteClasses/SvInjection/"
-            style SvInjection fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SvInjection fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         TopologicalNode --> SvVoltage : TopologicalNode.SvVoltage
 
         SvVoltage
             click SvVoltage href "/Models/Profiles/StateVariables/ConcreteClasses/SvVoltage/"
-            style SvVoltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SvVoltage fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         TopologicalNode --> TopologicalIsland : TopologicalNode.AngleRefTopologicalIsland
 
         TopologicalIsland
             click TopologicalIsland href "/Models/Profiles/StateVariables/ConcreteClasses/TopologicalIsland/"
-            style TopologicalIsland fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TopologicalIsland fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         TopologicalNode --> TopologicalIsland : TopologicalNode.TopologicalIsland
 
         TopologicalIsland
             click TopologicalIsland href "/Models/Profiles/StateVariables/ConcreteClasses/TopologicalIsland/"
-            style TopologicalIsland fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TopologicalIsland fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SvInjection --> TopologicalNode : SvInjection.TopologicalNode
 
         SvInjection
             click SvInjection href "/Models/Profiles/StateVariables/ConcreteClasses/SvInjection/"
-            style SvInjection fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SvInjection fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SvVoltage --> TopologicalNode : SvVoltage.TopologicalNode
 
         SvVoltage
             click SvVoltage href "/Models/Profiles/StateVariables/ConcreteClasses/SvVoltage/"
-            style SvVoltage fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SvVoltage fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TopologicalIsland --> TopologicalNode : TopologicalIsland.AngleRefTopologicalNode
 
         TopologicalIsland
             click TopologicalIsland href "/Models/Profiles/StateVariables/ConcreteClasses/TopologicalIsland/"
-            style TopologicalIsland fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TopologicalIsland fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TopologicalIsland --> TopologicalNode : TopologicalIsland.TopologicalNodes
 
         TopologicalIsland
             click TopologicalIsland href "/Models/Profiles/StateVariables/ConcreteClasses/TopologicalIsland/"
-            style TopologicalIsland fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TopologicalIsland fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         TopologicalNode : TopologicalNode.SvInjection

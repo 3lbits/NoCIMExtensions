@@ -6,26 +6,26 @@ _Organisation that manufactures asset products._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class Manufacturer
     click Manufacturer href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/Manufacturer/"
-    style Manufacturer fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style Manufacturer fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         OrganisationRole <|-- Manufacturer : inherits
             click OrganisationRole href "/Models/Profiles/SubseaCableInfo/AbstractClasses/OrganisationRole/"
-            style OrganisationRole fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OrganisationRole fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- OrganisationRole : inherits
             click IdentifiedObject href "/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         ProductAssetModel --> Manufacturer : ProductAssetModel.Manufacturer
 
         ProductAssetModel
             click ProductAssetModel href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ProductAssetModel/"
-            style ProductAssetModel fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ProductAssetModel fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         IdentifiedObject : IdentifiedObject.mRID

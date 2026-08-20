@@ -6,23 +6,23 @@ _The SvInjection reports the calculated bus injection minus the sum of the termi
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class SvInjection
     click SvInjection href "/Models/Profiles/StateVariables/ConcreteClasses/SvInjection/"
-    style SvInjection fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style SvInjection fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SvInjection --> TopologicalNode : SvInjection.TopologicalNode
 
         TopologicalNode
             click TopologicalNode href "/Models/Profiles/StateVariables/ConcreteClasses/TopologicalNode/"
-            style TopologicalNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TopologicalNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TopologicalNode --> SvInjection : TopologicalNode.SvInjection
 
         TopologicalNode
             click TopologicalNode href "/Models/Profiles/StateVariables/ConcreteClasses/TopologicalNode/"
-            style TopologicalNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TopologicalNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         SvInjection : SvInjection.pInjection

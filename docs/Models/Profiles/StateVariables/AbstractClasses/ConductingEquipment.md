@@ -8,35 +8,35 @@ _The parts of the AC power system that are designed to carry current or that are
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class ConductingEquipment
     click ConductingEquipment href "/Models/Profiles/StateVariables/AbstractClasses/ConductingEquipment/"
-    style ConductingEquipment fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style ConductingEquipment fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConductingEquipment <|-- ACDCConverter : inherits
 
         ACDCConverter
             click ACDCConverter href "/Models/Profiles/StateVariables/AbstractClasses/ACDCConverter/"
-            style ACDCConverter fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCConverter fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConductingEquipment <|-- Switch : inherits
 
         Switch
             click Switch href "/Models/Profiles/StateVariables/ConcreteClasses/Switch/"
-            style Switch fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Switch fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConductingEquipment --> SvStatus : ConductingEquipment.SvStatus
 
         SvStatus
             click SvStatus href "/Models/Profiles/StateVariables/ConcreteClasses/SvStatus/"
-            style SvStatus fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SvStatus fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SvStatus --> ConductingEquipment : SvStatus.ConductingEquipment
 
         SvStatus
             click SvStatus href "/Models/Profiles/StateVariables/ConcreteClasses/SvStatus/"
-            style SvStatus fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SvStatus fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         ConductingEquipment : ConductingEquipment.SvStatus

@@ -6,23 +6,23 @@ _State variable for status._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class SvStatus
     click SvStatus href "/Models/Profiles/StateVariables/ConcreteClasses/SvStatus/"
-    style SvStatus fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style SvStatus fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SvStatus --> ConductingEquipment : SvStatus.ConductingEquipment
 
         ConductingEquipment
             click ConductingEquipment href "/Models/Profiles/StateVariables/AbstractClasses/ConductingEquipment/"
-            style ConductingEquipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConductingEquipment fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConductingEquipment --> SvStatus : ConductingEquipment.SvStatus
 
         ConductingEquipment
             click ConductingEquipment href "/Models/Profiles/StateVariables/AbstractClasses/ConductingEquipment/"
-            style ConductingEquipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConductingEquipment fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         SvStatus : SvStatus.ConductingEquipment

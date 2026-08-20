@@ -6,64 +6,64 @@ _Information about a particular location for various forms of work._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class WorkLocation
     click WorkLocation href "/Models/Profiles/GeographicalLocation/ConcreteClasses/WorkLocation/"
-    style WorkLocation fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style WorkLocation fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         WorkLocation <|-- ServiceLocation : inherits
 
         ServiceLocation
             click ServiceLocation href "/Models/Profiles/GeographicalLocation/ConcreteClasses/ServiceLocation/"
-            style ServiceLocation fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ServiceLocation fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         Location <|-- WorkLocation : inherits
             click Location href "/Models/Profiles/GeographicalLocation/ConcreteClasses/Location/"
-            style Location fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Location fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- Location : inherits
             click IdentifiedObject href "/Models/Profiles/GeographicalLocation/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Location --> CoordinateSystem : Location.CoordinateSystem
 
         CoordinateSystem
             click CoordinateSystem href "/Models/Profiles/GeographicalLocation/ConcreteClasses/CoordinateSystem/"
-            style CoordinateSystem fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CoordinateSystem fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Location --> StreetAddress : Location.mainAddress
 
         StreetAddress
             click StreetAddress href "/Models/Profiles/GeographicalLocation/ConcreteClasses/StreetAddress/"
-            style StreetAddress fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style StreetAddress fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Location --> PowerSystemResource : Location.PowerSystemResources
 
         PowerSystemResource
             click PowerSystemResource href "/Models/Profiles/GeographicalLocation/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Location --> PositionPoint : Location.PositionPoints
 
         PositionPoint
             click PositionPoint href "/Models/Profiles/GeographicalLocation/ConcreteClasses/PositionPoint/"
-            style PositionPoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PositionPoint fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         CoordinateSystem --> Location : CoordinateSystem.Locations
 
         CoordinateSystem
             click CoordinateSystem href "/Models/Profiles/GeographicalLocation/ConcreteClasses/CoordinateSystem/"
-            style CoordinateSystem fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CoordinateSystem fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PositionPoint --> Location : PositionPoint.Location
 
         PositionPoint
             click PositionPoint href "/Models/Profiles/GeographicalLocation/ConcreteClasses/PositionPoint/"
-            style PositionPoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PositionPoint fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource --> Location : PowerSystemResource.Location
 
         PowerSystemResource
             click PowerSystemResource href "/Models/Profiles/GeographicalLocation/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         Location : Location.CoordinateSystem

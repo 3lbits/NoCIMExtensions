@@ -7,38 +7,38 @@ CIM based graphics exchange supports an m:n relationship between diagram objects
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class VisibilityLayer
     click VisibilityLayer href "/Models/Profiles/DiagramLayout/ConcreteClasses/VisibilityLayer/"
-    style VisibilityLayer fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style VisibilityLayer fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- VisibilityLayer : inherits
             click IdentifiedObject href "/Models/Profiles/DiagramLayout/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         VisibilityLayer --> DiagramObject : VisibilityLayer.VisibleObjects
 
         DiagramObject
             click DiagramObject href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObject/"
-            style DiagramObject fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObject fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         IdentifiedObject --> DiagramObject : IdentifiedObject.DiagramObjects
 
         DiagramObject
             click DiagramObject href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObject/"
-            style DiagramObject fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObject fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DiagramObject --> IdentifiedObject : DiagramObject.IdentifiedObject
 
         DiagramObject
             click DiagramObject href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObject/"
-            style DiagramObject fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObject fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DiagramObject --> VisibilityLayer : DiagramObject.VisibilityLayers
 
         DiagramObject
             click DiagramObject href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObject/"
-            style DiagramObject fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObject fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         VisibilityLayer : VisibilityLayer.VisibleObjects

@@ -6,27 +6,27 @@ _A geographical region of a power system network model._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class GeographicalRegion
     click GeographicalRegion href "/Models/Profiles/CoreEquipment/ConcreteClasses/GeographicalRegion/"
-    style GeographicalRegion fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style GeographicalRegion fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- GeographicalRegion : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         GeographicalRegion --> SubGeographicalRegion : GeographicalRegion.Regions
 
         SubGeographicalRegion
             click SubGeographicalRegion href "/Models/Profiles/CoreEquipment/ConcreteClasses/SubGeographicalRegion/"
-            style SubGeographicalRegion fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SubGeographicalRegion fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SubGeographicalRegion --> GeographicalRegion : SubGeographicalRegion.Region
 
         SubGeographicalRegion
             click SubGeographicalRegion href "/Models/Profiles/CoreEquipment/ConcreteClasses/SubGeographicalRegion/"
-            style SubGeographicalRegion fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SubGeographicalRegion fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         GeographicalRegion : GeographicalRegion.Regions

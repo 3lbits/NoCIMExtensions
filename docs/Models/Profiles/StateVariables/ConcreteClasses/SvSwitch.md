@@ -6,23 +6,23 @@ _State variable for switch._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class SvSwitch
     click SvSwitch href "/Models/Profiles/StateVariables/ConcreteClasses/SvSwitch/"
-    style SvSwitch fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style SvSwitch fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SvSwitch --> Switch : SvSwitch.Switch
 
         Switch
             click Switch href "/Models/Profiles/StateVariables/ConcreteClasses/Switch/"
-            style Switch fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Switch fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Switch --> SvSwitch : Switch.SvSwitch
 
         Switch
             click Switch href "/Models/Profiles/StateVariables/ConcreteClasses/Switch/"
-            style Switch fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Switch fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         SvSwitch : SvSwitch.open

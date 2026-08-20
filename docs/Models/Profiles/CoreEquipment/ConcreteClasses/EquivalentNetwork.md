@@ -6,46 +6,46 @@ _A class that groups electrical equivalents, including internal nodes, of a netw
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class EquivalentNetwork
     click EquivalentNetwork href "/Models/Profiles/CoreEquipment/ConcreteClasses/EquivalentNetwork/"
-    style EquivalentNetwork fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style EquivalentNetwork fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         ConnectivityNodeContainer <|-- EquivalentNetwork : inherits
             click ConnectivityNodeContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/ConnectivityNodeContainer/"
-            style ConnectivityNodeContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConnectivityNodeContainer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         PowerSystemResource <|-- ConnectivityNodeContainer : inherits
             click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
-            style PowerSystemResource fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PowerSystemResource fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         EquivalentNetwork --> EquivalentEquipment : EquivalentNetwork.EquivalentEquipments
 
         EquivalentEquipment
             click EquivalentEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/EquivalentEquipment/"
-            style EquivalentEquipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EquivalentEquipment fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         ConnectivityNodeContainer --> ConnectivityNode : ConnectivityNodeContainer.ConnectivityNodes
 
         ConnectivityNode
             click ConnectivityNode href "/Models/Profiles/CoreEquipment/AbstractClasses/ConnectivityNode/"
-            style ConnectivityNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConnectivityNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConnectivityNode --> ConnectivityNodeContainer : ConnectivityNode.ConnectivityNodeContainer
 
         ConnectivityNode
             click ConnectivityNode href "/Models/Profiles/CoreEquipment/AbstractClasses/ConnectivityNode/"
-            style ConnectivityNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConnectivityNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         EquivalentEquipment --> EquivalentNetwork : EquivalentEquipment.EquivalentNetwork
 
         EquivalentEquipment
             click EquivalentEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/EquivalentEquipment/"
-            style EquivalentEquipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style EquivalentEquipment fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         EquivalentNetwork : EquivalentNetwork.EquivalentEquipments

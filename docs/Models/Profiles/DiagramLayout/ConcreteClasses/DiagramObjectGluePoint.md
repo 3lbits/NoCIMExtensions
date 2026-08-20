@@ -6,23 +6,23 @@ _This is used for grouping diagram object points from different diagram objects 
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class DiagramObjectGluePoint
     click DiagramObjectGluePoint href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObjectGluePoint/"
-    style DiagramObjectGluePoint fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style DiagramObjectGluePoint fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DiagramObjectGluePoint --> DiagramObjectPoint : DiagramObjectGluePoint.DiagramObjectPoints
 
         DiagramObjectPoint
             click DiagramObjectPoint href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObjectPoint/"
-            style DiagramObjectPoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObjectPoint fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DiagramObjectPoint --> DiagramObjectGluePoint : DiagramObjectPoint.DiagramObjectGluePoint
 
         DiagramObjectPoint
             click DiagramObjectPoint href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObjectPoint/"
-            style DiagramObjectPoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObjectPoint fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         DiagramObjectGluePoint : DiagramObjectGluePoint.DiagramObjectPoints

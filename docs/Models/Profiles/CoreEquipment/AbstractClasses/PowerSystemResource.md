@@ -8,87 +8,87 @@ _A power system resource (PSR) can be an item of equipment such as a switch, an 
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class PowerSystemResource
     click PowerSystemResource href "/Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource/"
-    style PowerSystemResource fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style PowerSystemResource fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- BoundaryPoint : inherits
 
         BoundaryPoint
             click BoundaryPoint href "/Models/Profiles/CoreEquipment/ConcreteClasses/BoundaryPoint/"
-            style BoundaryPoint fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BoundaryPoint fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- CAESPlant : inherits
 
         CAESPlant
             click CAESPlant href "/Models/Profiles/CoreEquipment/ConcreteClasses/CAESPlant/"
-            style CAESPlant fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CAESPlant fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- CogenerationPlant : inherits
 
         CogenerationPlant
             click CogenerationPlant href "/Models/Profiles/CoreEquipment/ConcreteClasses/CogenerationPlant/"
-            style CogenerationPlant fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CogenerationPlant fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- CombinedCyclePlant : inherits
 
         CombinedCyclePlant
             click CombinedCyclePlant href "/Models/Profiles/CoreEquipment/ConcreteClasses/CombinedCyclePlant/"
-            style CombinedCyclePlant fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CombinedCyclePlant fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- ConnectivityNodeContainer : inherits
 
         ConnectivityNodeContainer
             click ConnectivityNodeContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/ConnectivityNodeContainer/"
-            style ConnectivityNodeContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConnectivityNodeContainer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- ControlArea : inherits
 
         ControlArea
             click ControlArea href "/Models/Profiles/CoreEquipment/AbstractClasses/ControlArea/"
-            style ControlArea fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ControlArea fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- Equipment : inherits
 
         Equipment
             click Equipment href "/Models/Profiles/CoreEquipment/AbstractClasses/Equipment/"
-            style Equipment fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Equipment fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- HydroPowerPlant : inherits
 
         HydroPowerPlant
             click HydroPowerPlant href "/Models/Profiles/CoreEquipment/ConcreteClasses/HydroPowerPlant/"
-            style HydroPowerPlant fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style HydroPowerPlant fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- RegulatingControl : inherits
 
         RegulatingControl
             click RegulatingControl href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegulatingControl/"
-            style RegulatingControl fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegulatingControl fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- SolarPowerPlant : inherits
 
         SolarPowerPlant
             click SolarPowerPlant href "/Models/Profiles/CoreEquipment/ConcreteClasses/SolarPowerPlant/"
-            style SolarPowerPlant fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SolarPowerPlant fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- TapChanger : inherits
 
         TapChanger
             click TapChanger href "/Models/Profiles/CoreEquipment/AbstractClasses/TapChanger/"
-            style TapChanger fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TapChanger fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- WindPowerPlant : inherits
 
         WindPowerPlant
             click WindPowerPlant href "/Models/Profiles/CoreEquipment/ConcreteClasses/WindPowerPlant/"
-            style WindPowerPlant fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style WindPowerPlant fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

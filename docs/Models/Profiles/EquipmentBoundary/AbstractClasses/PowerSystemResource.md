@@ -8,27 +8,27 @@ _A power system resource (PSR) can be an item of equipment such as a switch, an 
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class PowerSystemResource
     click PowerSystemResource href "/Models/Profiles/EquipmentBoundary/AbstractClasses/PowerSystemResource/"
-    style PowerSystemResource fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style PowerSystemResource fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- BoundaryPoint : inherits
 
         BoundaryPoint
             click BoundaryPoint href "/Models/Profiles/EquipmentBoundary/ConcreteClasses/BoundaryPoint/"
-            style BoundaryPoint fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BoundaryPoint fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PowerSystemResource <|-- ConnectivityNodeContainer : inherits
 
         ConnectivityNodeContainer
             click ConnectivityNodeContainer href "/Models/Profiles/EquipmentBoundary/AbstractClasses/ConnectivityNodeContainer/"
-            style ConnectivityNodeContainer fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConnectivityNodeContainer fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- PowerSystemResource : inherits
             click IdentifiedObject href "/Models/Profiles/EquipmentBoundary/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

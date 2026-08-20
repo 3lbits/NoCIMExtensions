@@ -6,27 +6,27 @@ _Describes the translation of one particular value into a name, e.g. 1 as "Open"
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class ValueToAlias
     click ValueToAlias href "/Models/Profiles/Operation/ConcreteClasses/ValueToAlias/"
-    style ValueToAlias fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style ValueToAlias fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- ValueToAlias : inherits
             click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ValueToAlias --> ValueAliasSet : ValueToAlias.ValueAliasSet
 
         ValueAliasSet
             click ValueAliasSet href "/Models/Profiles/Operation/ConcreteClasses/ValueAliasSet/"
-            style ValueAliasSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ValueAliasSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ValueAliasSet --> ValueToAlias : ValueAliasSet.Values
 
         ValueAliasSet
             click ValueAliasSet href "/Models/Profiles/Operation/ConcreteClasses/ValueAliasSet/"
-            style ValueAliasSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ValueAliasSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         ValueToAlias : ValueToAlias.ValueAliasSet

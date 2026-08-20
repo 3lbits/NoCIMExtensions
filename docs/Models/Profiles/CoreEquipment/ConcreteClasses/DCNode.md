@@ -6,38 +6,38 @@ _DC nodes are points where terminals of DC conducting equipment are connected to
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class DCNode
     click DCNode href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCNode/"
-    style DCNode fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style DCNode fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- DCNode : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCNode --> DCBaseTerminal : DCNode.DCTerminals
 
         DCBaseTerminal
             click DCBaseTerminal href "/Models/Profiles/CoreEquipment/AbstractClasses/DCBaseTerminal/"
-            style DCBaseTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCBaseTerminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         DCNode --> DCEquipmentContainer : DCNode.DCEquipmentContainer
 
         DCEquipmentContainer
             click DCEquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/DCEquipmentContainer/"
-            style DCEquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCEquipmentContainer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCBaseTerminal --> DCNode : DCBaseTerminal.DCNode
 
         DCBaseTerminal
             click DCBaseTerminal href "/Models/Profiles/CoreEquipment/AbstractClasses/DCBaseTerminal/"
-            style DCBaseTerminal fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCBaseTerminal fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCEquipmentContainer --> DCNode : DCEquipmentContainer.DCNodes
 
         DCEquipmentContainer
             click DCEquipmentContainer href "/Models/Profiles/CoreEquipment/AbstractClasses/DCEquipmentContainer/"
-            style DCEquipmentContainer fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCEquipmentContainer fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         DCNode : DCNode.DCTerminals

@@ -6,17 +6,17 @@ _Impedance and conductance matrix element values.The diagonal elements are descr
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class PhaseImpedanceData
     click PhaseImpedanceData href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/PhaseImpedanceData/"
-    style PhaseImpedanceData fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style PhaseImpedanceData fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PhaseImpedanceData --> PerLengthPhaseImpedance : PhaseImpedanceData.PhaseImpedance
 
         PerLengthPhaseImpedance
             click PerLengthPhaseImpedance href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/PerLengthPhaseImpedance/"
-            style PerLengthPhaseImpedance fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PerLengthPhaseImpedance fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         PhaseImpedanceData : PhaseImpedanceData.mRID

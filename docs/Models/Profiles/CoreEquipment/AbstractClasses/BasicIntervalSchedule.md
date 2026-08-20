@@ -8,33 +8,33 @@ _Schedule of values at points in time._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class BasicIntervalSchedule
     click BasicIntervalSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/BasicIntervalSchedule/"
-    style BasicIntervalSchedule fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style BasicIntervalSchedule fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         BasicIntervalSchedule <|-- RegularIntervalSchedule : inherits
 
         RegularIntervalSchedule
             click RegularIntervalSchedule href "/Models/Profiles/CoreEquipment/AbstractClasses/RegularIntervalSchedule/"
-            style RegularIntervalSchedule fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegularIntervalSchedule fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- BasicIntervalSchedule : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         BasicIntervalSchedule --> UnitSymbol : BasicIntervalSchedule.value1Unit
 
         UnitSymbol
             click UnitSymbol href "/Models/Profiles/CoreEquipment/Enumerations/UnitSymbol/"
-            style UnitSymbol fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitSymbol fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         BasicIntervalSchedule --> UnitSymbol : BasicIntervalSchedule.value2Unit
 
         UnitSymbol
             click UnitSymbol href "/Models/Profiles/CoreEquipment/Enumerations/UnitSymbol/"
-            style UnitSymbol fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style UnitSymbol fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         BasicIntervalSchedule : BasicIntervalSchedule.startTime
         BasicIntervalSchedule : BasicIntervalSchedule.value1Unit

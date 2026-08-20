@@ -6,27 +6,27 @@ _MeasurementValueSource describes the alternative sources updating a Measurement
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class MeasurementValueSource
     click MeasurementValueSource href "/Models/Profiles/Operation/ConcreteClasses/MeasurementValueSource/"
-    style MeasurementValueSource fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style MeasurementValueSource fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- MeasurementValueSource : inherits
             click IdentifiedObject href "/Models/Profiles/Operation/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         MeasurementValueSource --> MeasurementValue : MeasurementValueSource.MeasurementValues
 
         MeasurementValue
             click MeasurementValue href "/Models/Profiles/Operation/AbstractClasses/MeasurementValue/"
-            style MeasurementValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MeasurementValue fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         MeasurementValue --> MeasurementValueSource : MeasurementValue.MeasurementValueSource
 
         MeasurementValue
             click MeasurementValue href "/Models/Profiles/Operation/AbstractClasses/MeasurementValue/"
-            style MeasurementValue fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style MeasurementValue fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         MeasurementValueSource : MeasurementValueSource.MeasurementValues

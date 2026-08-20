@@ -8,23 +8,23 @@ _A modelling construct to provide a root class for containment of DC as well as 
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class DCEquipmentContainer
     click DCEquipmentContainer href "/Models/Profiles/Topology/AbstractClasses/DCEquipmentContainer/"
-    style DCEquipmentContainer fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style DCEquipmentContainer fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCEquipmentContainer --> DCTopologicalNode : DCEquipmentContainer.DCTopologicalNode
 
         DCTopologicalNode
             click DCTopologicalNode href "/Models/Profiles/Topology/ConcreteClasses/DCTopologicalNode/"
-            style DCTopologicalNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCTopologicalNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCTopologicalNode --> DCEquipmentContainer : DCTopologicalNode.DCEquipmentContainer
 
         DCTopologicalNode
             click DCTopologicalNode href "/Models/Profiles/Topology/ConcreteClasses/DCTopologicalNode/"
-            style DCTopologicalNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCTopologicalNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         DCEquipmentContainer : DCEquipmentContainer.DCTopologicalNode

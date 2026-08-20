@@ -8,64 +8,64 @@ _Wire data that can be specified per line segment phase, or for the line segment
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class WireInfo
     click WireInfo href "/Models/Profiles/SubseaCableInfo/AbstractClasses/WireInfo/"
-    style WireInfo fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style WireInfo fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         WireInfo <|-- CableInfo : inherits
 
         CableInfo
             click CableInfo href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/CableInfo/"
-            style CableInfo fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style CableInfo fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         ConductorInfo <|-- WireInfo : inherits
             click ConductorInfo href "/Models/Profiles/SubseaCableInfo/AbstractClasses/ConductorInfo/"
-            style ConductorInfo fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConductorInfo fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         ConductingAssetInfo <|-- ConductorInfo : inherits
             click ConductingAssetInfo href "/Models/Profiles/SubseaCableInfo/AbstractClasses/ConductingAssetInfo/"
-            style ConductingAssetInfo fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConductingAssetInfo fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         AssetInfo <|-- ConductingAssetInfo : inherits
             click AssetInfo href "/Models/Profiles/SubseaCableInfo/AbstractClasses/AssetInfo/"
-            style AssetInfo fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AssetInfo fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- AssetInfo : inherits
             click IdentifiedObject href "/Models/Profiles/SubseaCableInfo/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         AssetSpecification --> AssetInfo : AssetSpecification.AssetInfo
 
         AssetSpecification
             click AssetSpecification href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/AssetSpecification/"
-            style AssetSpecification fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AssetSpecification fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         PerLengthConductorParameter --> ConductorInfo : PerLengthConductorParameter.ConductorInfo
 
         PerLengthConductorParameter
             click PerLengthConductorParameter href "/Models/Profiles/SubseaCableInfo/AbstractClasses/PerLengthConductorParameter/"
-            style PerLengthConductorParameter fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PerLengthConductorParameter fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ProductAssetModel --> AssetInfo : ProductAssetModel.AssetInfo
 
         ProductAssetModel
             click ProductAssetModel href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ProductAssetModel/"
-            style ProductAssetModel fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ProductAssetModel fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ResistancePerLengthTemperaturePoint --> ConductorInfo : ResistancePerLengthTemperaturePoint.ConductorInfo
 
         ResistancePerLengthTemperaturePoint
             click ResistancePerLengthTemperaturePoint href "/Models/Profiles/SubseaCableInfo/ConcreteClasses/ResistancePerLengthTemperaturePoint/"
-            style ResistancePerLengthTemperaturePoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ResistancePerLengthTemperaturePoint fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConductorInfo --> WireMaterialKind : ConductorInfo.material
 
         WireMaterialKind
             click WireMaterialKind href "/Models/Profiles/SubseaCableInfo/Enumerations/WireMaterialKind/"
-            style WireMaterialKind fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style WireMaterialKind fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         WireInfo : WireInfo.coreRadius
         WireInfo : WireInfo.radius

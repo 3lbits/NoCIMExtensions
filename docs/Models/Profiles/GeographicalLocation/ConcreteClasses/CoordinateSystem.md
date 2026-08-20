@@ -6,27 +6,27 @@ _Coordinate reference system._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class CoordinateSystem
     click CoordinateSystem href "/Models/Profiles/GeographicalLocation/ConcreteClasses/CoordinateSystem/"
-    style CoordinateSystem fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style CoordinateSystem fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- CoordinateSystem : inherits
             click IdentifiedObject href "/Models/Profiles/GeographicalLocation/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         CoordinateSystem --> Location : CoordinateSystem.Locations
 
         Location
             click Location href "/Models/Profiles/GeographicalLocation/ConcreteClasses/Location/"
-            style Location fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Location fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Location --> CoordinateSystem : Location.CoordinateSystem
 
         Location
             click Location href "/Models/Profiles/GeographicalLocation/ConcreteClasses/Location/"
-            style Location fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Location fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         CoordinateSystem : CoordinateSystem.crsUrn

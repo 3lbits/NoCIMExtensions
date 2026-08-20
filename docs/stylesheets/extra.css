@@ -1,3 +1,24 @@
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: #163289;
+  --md-primary-fg-color--light: #4169E1;
+  --md-primary-fg-color--dark: #101828;
+  --md-accent-fg-color: #4169E1;
+  --md-mermaid-node-bg-color: #E0E7FA;
+  --md-mermaid-node-fg-color: #1F2A37;
+  --md-mermaid-edge-color: #4169E1;
+  --md-mermaid-label-bg-color: #F2F4F7;
+  --md-mermaid-label-fg-color: #344054;
+}
+
+[data-md-color-scheme="slate"] {
+  --md-accent-fg-color: #4169E1;
+  --md-mermaid-node-bg-color: #1D2939;
+  --md-mermaid-node-fg-color: #F2F4F7;
+  --md-mermaid-edge-color: #4169E1;
+  --md-mermaid-label-bg-color: #344054;
+  --md-mermaid-label-fg-color: #EAECF0;
+}
+
 /* General footer styling */
 .footer {
     display: flex;
@@ -5,8 +26,8 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem;
-    background-color: black;
-    border-top: 1px black;
+    background-color: #163289;
+    border-top: 1px solid #163289;
     color: white;
     font-size: 0.69rem;
   }

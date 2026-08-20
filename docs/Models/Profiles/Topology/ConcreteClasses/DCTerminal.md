@@ -6,35 +6,35 @@ _An electrical connection point to generic DC conducting equipment._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class DCTerminal
     click DCTerminal href "/Models/Profiles/Topology/ConcreteClasses/DCTerminal/"
-    style DCTerminal fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style DCTerminal fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         DCBaseTerminal <|-- DCTerminal : inherits
             click DCBaseTerminal href "/Models/Profiles/Topology/AbstractClasses/DCBaseTerminal/"
-            style DCBaseTerminal fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCBaseTerminal fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         ACDCTerminal <|-- DCBaseTerminal : inherits
             click ACDCTerminal href "/Models/Profiles/Topology/AbstractClasses/ACDCTerminal/"
-            style ACDCTerminal fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCTerminal fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- ACDCTerminal : inherits
             click IdentifiedObject href "/Models/Profiles/Topology/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCBaseTerminal --> DCTopologicalNode : DCBaseTerminal.DCTopologicalNode
 
         DCTopologicalNode
             click DCTopologicalNode href "/Models/Profiles/Topology/ConcreteClasses/DCTopologicalNode/"
-            style DCTopologicalNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCTopologicalNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCTopologicalNode --> DCBaseTerminal : DCTopologicalNode.DCTerminals
 
         DCTopologicalNode
             click DCTopologicalNode href "/Models/Profiles/Topology/ConcreteClasses/DCTopologicalNode/"
-            style DCTopologicalNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCTopologicalNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         DCBaseTerminal : DCBaseTerminal.DCTopologicalNode

@@ -8,35 +8,35 @@ _This is a root class to provide common identification for all classes needing i
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class IdentifiedObject
     click IdentifiedObject href "/Models/Profiles/StateVariables/AbstractClasses/IdentifiedObject/"
-    style IdentifiedObject fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style IdentifiedObject fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- ACDCTerminal : inherits
 
         ACDCTerminal
             click ACDCTerminal href "/Models/Profiles/StateVariables/AbstractClasses/ACDCTerminal/"
-            style ACDCTerminal fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCTerminal fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- DCTopologicalIsland : inherits
 
         DCTopologicalIsland
             click DCTopologicalIsland href "/Models/Profiles/StateVariables/ConcreteClasses/DCTopologicalIsland/"
-            style DCTopologicalIsland fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCTopologicalIsland fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- DCTopologicalNode : inherits
 
         DCTopologicalNode
             click DCTopologicalNode href "/Models/Profiles/StateVariables/ConcreteClasses/DCTopologicalNode/"
-            style DCTopologicalNode fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCTopologicalNode fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         IdentifiedObject <|-- TopologicalIsland : inherits
 
         TopologicalIsland
             click TopologicalIsland href "/Models/Profiles/StateVariables/ConcreteClasses/TopologicalIsland/"
-            style TopologicalIsland fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TopologicalIsland fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
 

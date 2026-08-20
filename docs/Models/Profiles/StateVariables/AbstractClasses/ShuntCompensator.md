@@ -8,23 +8,23 @@ _A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class ShuntCompensator
     click ShuntCompensator href "/Models/Profiles/StateVariables/AbstractClasses/ShuntCompensator/"
-    style ShuntCompensator fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style ShuntCompensator fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ShuntCompensator --> SvShuntCompensatorSections : ShuntCompensator.SvShuntCompensatorSections
 
         SvShuntCompensatorSections
             click SvShuntCompensatorSections href "/Models/Profiles/StateVariables/ConcreteClasses/SvShuntCompensatorSections/"
-            style SvShuntCompensatorSections fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SvShuntCompensatorSections fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SvShuntCompensatorSections --> ShuntCompensator : SvShuntCompensatorSections.ShuntCompensator
 
         SvShuntCompensatorSections
             click SvShuntCompensatorSections href "/Models/Profiles/StateVariables/ConcreteClasses/SvShuntCompensatorSections/"
-            style SvShuntCompensatorSections fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style SvShuntCompensatorSections fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         ShuntCompensator : ShuntCompensator.SvShuntCompensatorSections

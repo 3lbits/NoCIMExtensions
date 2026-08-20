@@ -6,125 +6,125 @@ _An AC electrical connection point to a piece of conducting equipment. Terminals
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class Terminal
     click Terminal href "/Models/Profiles/CoreEquipment/ConcreteClasses/Terminal/"
-    style Terminal fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style Terminal fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         ACDCTerminal <|-- Terminal : inherits
             click ACDCTerminal href "/Models/Profiles/CoreEquipment/AbstractClasses/ACDCTerminal/"
-            style ACDCTerminal fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCTerminal fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- ACDCTerminal : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Terminal --> ACDCConverter : Terminal.ConverterDCSides
 
         ACDCConverter
             click ACDCConverter href "/Models/Profiles/CoreEquipment/AbstractClasses/ACDCConverter/"
-            style ACDCConverter fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCConverter fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Terminal --> AuxiliaryEquipment : Terminal.AuxiliaryEquipment
 
         AuxiliaryEquipment
             click AuxiliaryEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/AuxiliaryEquipment/"
-            style AuxiliaryEquipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AuxiliaryEquipment fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Terminal --> ConductingEquipment : Terminal.ConductingEquipment
 
         ConductingEquipment
             click ConductingEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/ConductingEquipment/"
-            style ConductingEquipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConductingEquipment fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Terminal --> ConnectivityNode : Terminal.ConnectivityNode
 
         ConnectivityNode
             click ConnectivityNode href "/Models/Profiles/CoreEquipment/AbstractClasses/ConnectivityNode/"
-            style ConnectivityNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConnectivityNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Terminal --> RegulatingControl : Terminal.RegulatingControl
 
         RegulatingControl
             click RegulatingControl href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegulatingControl/"
-            style RegulatingControl fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegulatingControl fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Terminal --> TransformerEnd : Terminal.TransformerEnd
 
         TransformerEnd
             click TransformerEnd href "/Models/Profiles/CoreEquipment/AbstractClasses/TransformerEnd/"
-            style TransformerEnd fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TransformerEnd fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         Terminal --> TieFlow : Terminal.TieFlow
 
         TieFlow
             click TieFlow href "/Models/Profiles/CoreEquipment/ConcreteClasses/TieFlow/"
-            style TieFlow fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TieFlow fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         ACDCTerminal --> OperationalLimitSet : ACDCTerminal.OperationalLimitSet
 
         OperationalLimitSet
             click OperationalLimitSet href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitSet/"
-            style OperationalLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         ACDCTerminal --> BusNameMarker : ACDCTerminal.BusNameMarker
 
         BusNameMarker
             click BusNameMarker href "/Models/Profiles/CoreEquipment/ConcreteClasses/BusNameMarker/"
-            style BusNameMarker fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BusNameMarker fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ACDCConverter --> Terminal : ACDCConverter.PccTerminal
 
         ACDCConverter
             click ACDCConverter href "/Models/Profiles/CoreEquipment/AbstractClasses/ACDCConverter/"
-            style ACDCConverter fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ACDCConverter fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         AuxiliaryEquipment --> Terminal : AuxiliaryEquipment.Terminal
 
         AuxiliaryEquipment
             click AuxiliaryEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/AuxiliaryEquipment/"
-            style AuxiliaryEquipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style AuxiliaryEquipment fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         BusNameMarker --> ACDCTerminal : BusNameMarker.Terminal
 
         BusNameMarker
             click BusNameMarker href "/Models/Profiles/CoreEquipment/ConcreteClasses/BusNameMarker/"
-            style BusNameMarker fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style BusNameMarker fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConductingEquipment --> Terminal : ConductingEquipment.Terminals
 
         ConductingEquipment
             click ConductingEquipment href "/Models/Profiles/CoreEquipment/AbstractClasses/ConductingEquipment/"
-            style ConductingEquipment fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConductingEquipment fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         ConnectivityNode --> Terminal : ConnectivityNode.Terminals
 
         ConnectivityNode
             click ConnectivityNode href "/Models/Profiles/CoreEquipment/AbstractClasses/ConnectivityNode/"
-            style ConnectivityNode fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style ConnectivityNode fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         OperationalLimitSet --> ACDCTerminal : OperationalLimitSet.Terminal
 
         OperationalLimitSet
             click OperationalLimitSet href "/Models/Profiles/CoreEquipment/ConcreteClasses/OperationalLimitSet/"
-            style OperationalLimitSet fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style OperationalLimitSet fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         RegulatingControl --> Terminal : RegulatingControl.Terminal
 
         RegulatingControl
             click RegulatingControl href "/Models/Profiles/CoreEquipment/ConcreteClasses/RegulatingControl/"
-            style RegulatingControl fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style RegulatingControl fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TieFlow --> Terminal : TieFlow.Terminal
 
         TieFlow
             click TieFlow href "/Models/Profiles/CoreEquipment/ConcreteClasses/TieFlow/"
-            style TieFlow fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TieFlow fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         TransformerEnd --> Terminal : TransformerEnd.Terminal
 
         TransformerEnd
             click TransformerEnd href "/Models/Profiles/CoreEquipment/AbstractClasses/TransformerEnd/"
-            style TransformerEnd fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style TransformerEnd fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Terminal --> PhaseCode : Terminal.phases
 
         PhaseCode
             click PhaseCode href "/Models/Profiles/CoreEquipment/Enumerations/PhaseCode/"
-            style PhaseCode fill:#4D2D18,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style PhaseCode fill:#5729FF,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Terminal : Terminal.ConverterDCSides
         Terminal : Terminal.AuxiliaryEquipment

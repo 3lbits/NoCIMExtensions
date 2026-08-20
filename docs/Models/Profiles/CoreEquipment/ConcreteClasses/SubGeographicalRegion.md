@@ -6,60 +6,60 @@ _A subset of a geographical region of a power system network model._
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class SubGeographicalRegion
     click SubGeographicalRegion href "/Models/Profiles/CoreEquipment/ConcreteClasses/SubGeographicalRegion/"
-    style SubGeographicalRegion fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style SubGeographicalRegion fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
      
         IdentifiedObject <|-- SubGeographicalRegion : inherits
             click IdentifiedObject href "/Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject/"
-            style IdentifiedObject fill:#8F9779,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style IdentifiedObject fill:#4169E1,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         SubGeographicalRegion --> DCLine : SubGeographicalRegion.DCLines
 
         DCLine
             click DCLine href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCLine/"
-            style DCLine fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCLine fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         SubGeographicalRegion --> GeographicalRegion : SubGeographicalRegion.Region
 
         GeographicalRegion
             click GeographicalRegion href "/Models/Profiles/CoreEquipment/ConcreteClasses/GeographicalRegion/"
-            style GeographicalRegion fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style GeographicalRegion fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         SubGeographicalRegion --> Line : SubGeographicalRegion.Lines
 
         Line
             click Line href "/Models/Profiles/CoreEquipment/ConcreteClasses/Line/"
-            style Line fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Line fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         SubGeographicalRegion --> Substation : SubGeographicalRegion.Substations
 
         Substation
             click Substation href "/Models/Profiles/CoreEquipment/ConcreteClasses/Substation/"
-            style Substation fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Substation fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DCLine --> SubGeographicalRegion : DCLine.Region
 
         DCLine
             click DCLine href "/Models/Profiles/CoreEquipment/ConcreteClasses/DCLine/"
-            style DCLine fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DCLine fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         GeographicalRegion --> SubGeographicalRegion : GeographicalRegion.Regions
 
         GeographicalRegion
             click GeographicalRegion href "/Models/Profiles/CoreEquipment/ConcreteClasses/GeographicalRegion/"
-            style GeographicalRegion fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style GeographicalRegion fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Line --> SubGeographicalRegion : Line.Region
 
         Line
             click Line href "/Models/Profiles/CoreEquipment/ConcreteClasses/Line/"
-            style Line fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Line fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         Substation --> SubGeographicalRegion : Substation.Region
 
         Substation
             click Substation href "/Models/Profiles/CoreEquipment/ConcreteClasses/Substation/"
-            style Substation fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style Substation fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         SubGeographicalRegion : SubGeographicalRegion.DCLines

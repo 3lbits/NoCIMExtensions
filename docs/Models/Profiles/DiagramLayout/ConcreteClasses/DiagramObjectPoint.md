@@ -6,34 +6,34 @@ _A point in a given space defined by 3 coordinates and associated to a diagram o
 **Type**: Class
 
 ```mermaid
-%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'}}}%%
+%%{init: {'theme':'base','themeVariables': {'lineColor': '#4169E1'}}}%%
 classDiagram
     class DiagramObjectPoint
     click DiagramObjectPoint href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObjectPoint/"
-    style DiagramObjectPoint fill:#102820,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+    style DiagramObjectPoint fill:#163289,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DiagramObjectPoint --> DiagramObject : DiagramObjectPoint.DiagramObject
 
         DiagramObject
             click DiagramObject href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObject/"
-            style DiagramObject fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObject fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
         DiagramObjectPoint --> DiagramObjectGluePoint : DiagramObjectPoint.DiagramObjectGluePoint
 
         DiagramObjectGluePoint
             click DiagramObjectGluePoint href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObjectGluePoint/"
-            style DiagramObjectGluePoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObjectGluePoint fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DiagramObject --> DiagramObjectPoint : DiagramObject.DiagramObjectPoints
 
         DiagramObject
             click DiagramObject href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObject/"
-            style DiagramObject fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObject fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
         DiagramObjectGluePoint --> DiagramObjectPoint : DiagramObjectGluePoint.DiagramObjectPoints
 
         DiagramObjectGluePoint
             click DiagramObjectGluePoint href "/Models/Profiles/DiagramLayout/ConcreteClasses/DiagramObjectGluePoint/"
-            style DiagramObjectGluePoint fill:#A52A2A,stroke:#333,stroke-width:2px,rx:10,ry:10,color:white
+            style DiagramObjectGluePoint fill:#00D156,stroke:#1F2A37,stroke-width:2px,rx:10,ry:10,color:white
 
 
         DiagramObjectPoint : DiagramObjectPoint.DiagramObject
