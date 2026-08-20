@@ -5,6 +5,8 @@ from cim4CLITool.generalFunctions import run_bash_command, to_camel_case, remove
 from cim4CLITool.docs.main import CreateMdController
 from cim4CLITool.createOverviewMd import CreateOverviewMdController
 from cim4CLITool.xmlSorting import ControllerXmlSorting
+from cim4CLITool.migrateDatatypes import run as migrate_datatypes_run
+from cim4CLITool.markAbstractClasses import run as mark_abstract_run
 import os
 
 @click.group()
@@ -36,6 +38,32 @@ def docs():
     '''Group for Documentation related commands'''
     pass
 
+@main.group()
+def schema():
+    '''Group for Schema related commands'''
+    pass
+
+@schema.command()
+@click.option('--schema', '-s', required=False, default=None, help='Schema file name (without path/extension). Omit to process all schemas.')
+@click.option('--dry-run', '-d', is_flag=True, default=False, help='Show what would be migrated without making changes')
+def migrate_datatypes(schema, dry_run):
+    '''Migrate CIM datatype classes from classes: to types: section'''
+    click.echo('Migrating CIM datatype classes to types section...')
+    migrate_datatypes_run(schema=schema, dry_run=dry_run)
+    if not dry_run:
+        click.echo('Done. Remember to regenerate docs with: cim4 docs gen -s <schema>')
+
+@schema.command()
+@click.option('--schema', '-s', required=False, default=None, help='Schema file name (without path/extension). Omit to process all schemas.')
+@click.option('--dry-run', '-d', is_flag=True, default=False, help='Show what would be changed without making changes')
+@click.option('--show-uncertain', '-u', is_flag=True, default=False, help='Also list parent classes not in the known-abstract list')
+def mark_abstract(schema, dry_run, show_uncertain):
+    '''Mark known-abstract CIM classes with abstract: true'''
+    click.echo('Marking known-abstract CIM classes...')
+    mark_abstract_run(schema=schema, dry_run=dry_run, show_uncertain=show_uncertain)
+    if not dry_run:
+        click.echo('Done. Remember to regenerate docs with: cim4 docs gen -s <schema>')
+
 @main.command()
 @click.option('--number', '-n', required=False, default=1, type=int, help='Number of uuids you want. If not provided, it will generate 1 uuid')
 def uuidv4(number: int):
@@ -45,11 +73,12 @@ def uuidv4(number: int):
 
 @docs.command()
 @click.option('--schema', '-s', required=True, default=None, help='YAML Schema file name to use')
-def gen(schema: str):
+@click.option('--nav-group', '-g', required=False, default=None, help='Navigation group to nest the profile under (e.g. CGMES, "Norwegian Extensions")')
+def gen(schema: str, nav_group: str):
     '''Generate Documentation from yaml schemas using python'''
     click.echo('Generating Documentation using python')
     remove_all_md_files(f"docs/{to_camel_case(schema)}")
-    CreateMdController().main(schema, template='elbits')
+    CreateMdController().main(schema, template='elbits', nav_group=nav_group)
     click.echo('Generating Overview index.md')
     CreateOverviewMdController().main()
     click.echo('Overview index.md Created')

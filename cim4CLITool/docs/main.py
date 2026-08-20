@@ -60,7 +60,7 @@ class mkdocs:
         data = mkdocs.mkdocs_profile_index()
         TemplateClass.controller('ProfileOverview.md', data, path, write_file=True)
 
-    def mkdocs_config_handler(config):
+    def mkdocs_config_handler(config, nav_group=None):
 
         yaml_config_file_path = os.path.join("mkdocs.yaml")
 
@@ -71,11 +71,11 @@ class mkdocs:
 
         if os.path.exists('mkdocs.yaml'):
             print("mkdocs.yaml file exists in the root directory.")
-            EditMkDocsYaml.controller(yaml_config_file_path, globalNavDict)
+            EditMkDocsYaml.controller(yaml_config_file_path, globalNavDict, nav_group=nav_group)
         else:
             print("mkdocs.yaml file does not exist in the root directory.")
             TemplateClass.controller("mkdocs.yaml", config, yaml_config_file_path)
-            EditMkDocsYaml.controller(yaml_config_file_path, globalNavDict)
+            EditMkDocsYaml.controller(yaml_config_file_path, globalNavDict, nav_group=nav_group)
 
     def createNavigationDict():
         navDict = {
@@ -105,7 +105,7 @@ class mkdocs:
 class General():
     
     def readYamlSchemaFile(self, yamlSchemaPath):
-        with open(yamlSchemaPath, "r") as file: # mkdocs can not take utf-8 but cp1252 , encoding="utf-8"
+        with open(yamlSchemaPath, "r", encoding="utf-8") as file:
             
             yamlDict = yaml.safe_load(file)
 
@@ -783,7 +783,7 @@ class CreateMarkdownFile():
                 path = os.path.join("docs", "Models", "Profiles", globalDocName, "Enumerations" , f"{key}.md")
                 os.makedirs(os.path.dirname(path), exist_ok=True)
 
-                with open(path, 'w') as file:
+                with open(path, 'w', encoding='utf-8') as file:
                     file.write(f'# {key}\n\n')
                     file.write(f'_{description}_\n\n')
                     file.write(f'**URI**: {uri}\n\n')
@@ -801,7 +801,7 @@ class CreateMarkdownFile():
                         
                         file.write(f'| {enumValue} | [{meaning}]({enum_uri}) | {enumDescription} |\n')
 
-                    file.write(f'## Schema Source\n\n')
+                    file.write(f'\n## Schema Source\n\n')
                     file.write(f'from schema: [{sourceUri}]({sourceUri})\n')
 
                 print(f'Markdown file created for the enumeration {key}')
@@ -827,7 +827,7 @@ class CreateMarkdownFile():
                 path = os.path.join("docs", "Models", "Profiles", globalDocName, "Types" , f"{key}.md")
                 os.makedirs(os.path.dirname(path), exist_ok=True)
 
-                with open(path, 'w') as file:
+                with open(path, 'w', encoding='utf-8') as file:
                     file.write(f'# {key}\n\n')
                     file.write(f'_{description}_\n\n') if description != None else None
                     file.write(f'*{cim_data_type_text}*\n\n') if cim_data_type_text != None else None
@@ -847,7 +847,7 @@ class CreateMarkdownFile():
         path = os.path.join("docs", "index.md")
         os.makedirs(os.path.dirname(path), exist_ok=True)
         
-        with open(path, 'w') as file:
+        with open(path, 'w', encoding='utf-8') as file:
 
             file.write(f'# {vocabularyData["title"]}\n\n')
             file.write(f'**URI**: {vocabularyData["uri"]}\n\n')
@@ -951,7 +951,7 @@ class CreateMarkdownFile():
 
         os.makedirs(os.path.dirname(path), exist_ok=True)
 
-        with open(path, 'w') as file:
+        with open(path, 'w', encoding='utf-8') as file:
             file.write(f"# {title}\n\n")
             file.write(f'_{description}_\n\n')
             file.write(f'*__NOTE__: this is an abstract class and should not be instantiated directly\n\n') if abstract == True else None
@@ -979,7 +979,7 @@ class CreateMarkdownFile():
 
 class CreateMdController():
 
-    def main(self, schemaName, template='default'):
+    def main(self, schemaName, template='default', nav_group=None):
 
         global globalErrorSet
         globalErrorSet = set()
@@ -1012,7 +1012,7 @@ class CreateMdController():
         CreateMarkdownFile().create_markdown_files()
         # CreateMarkdownFile().createIndex()
 
-        mkdocs.mkdocs_config_handler(template)
+        mkdocs.mkdocs_config_handler(template, nav_group=nav_group)
         mkdocs.mkdocs_create_profile_index()
         
         if len(globalErrorSet) > 0:

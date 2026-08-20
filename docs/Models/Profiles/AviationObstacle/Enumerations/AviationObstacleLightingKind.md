@@ -19,6 +19,7 @@ _The kind of aviation obstacle lighting._
 | lowIntensityTypeB | [nc-no:AviationObstacleLightingKind.lowIntensityTypeB](https://ap-no.cim4.eu/AviationObstacle/1.0#AviationObstacleLightingKind.lowIntensityTypeB) | The aviation obstacle lighting is lowIntensityTypeB. |
 | highIntensityTypeA | [nc-no:AviationObstacleLightingKind.highIntensityTypeA](https://ap-no.cim4.eu/AviationObstacle/1.0#AviationObstacleLightingKind.highIntensityTypeA) | The aviation obstacle lighting is highIntensityTypeA. |
 | highIntensityTypeB | [nc-no:AviationObstacleLightingKind.highIntensityTypeB](https://ap-no.cim4.eu/AviationObstacle/1.0#AviationObstacleLightingKind.highIntensityTypeB) | The aviation obstacle lighting is highIntensityTypeB. |
+
 ## Schema Source
 
 from schema: [https://ap-no.cim4.eu/AviationObstacle/1.0](https://ap-no.cim4.eu/AviationObstacle/1.0)

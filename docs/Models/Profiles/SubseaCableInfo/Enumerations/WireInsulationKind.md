@@ -28,6 +28,7 @@ _Kind of wire insulation._
 | unbeltedPilc | [cim:WireInsulationKind.unbeltedPilc](http://iec.ch/TC57/CIM-generic#WireInsulationKind.unbeltedPilc) | Unbelted pilc wire insulation. |
 | varnishedCambricCloth | [cim:WireInsulationKind.varnishedCambricCloth](http://iec.ch/TC57/CIM-generic#WireInsulationKind.varnishedCambricCloth) | Varnished cambric cloth wire insulation. |
 | varnishedDacronGlass | [cim:WireInsulationKind.varnishedDacronGlass](http://iec.ch/TC57/CIM-generic#WireInsulationKind.varnishedDacronGlass) | Varnished dacron glass wire insulation. |
+
 ## Schema Source
 
 from schema: [http://iec.ch/TC57/2007/profile](http://iec.ch/TC57/2007/profile)
