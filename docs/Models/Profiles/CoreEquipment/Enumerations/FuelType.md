@@ -20,6 +20,7 @@ _No description available_
 | coalDerivedGas | [cim:FuelType.coalDerivedGas](http://iec.ch/TC57/CIM100#FuelType.coalDerivedGas) | No description available |
 | peat | [cim:FuelType.peat](http://iec.ch/TC57/CIM100#FuelType.peat) | No description available |
 | other | [cim:FuelType.other](http://iec.ch/TC57/CIM100#FuelType.other) | No description available |
+
 ## Schema Source
 
 from schema: [http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile](http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile)

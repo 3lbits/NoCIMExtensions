@@ -15,6 +15,7 @@ _No description available_
 | waiting | [cim:BatteryStateKind.waiting](http://iec.ch/TC57/CIM100#BatteryStateKind.waiting) | No description available |
 | charging | [cim:BatteryStateKind.charging](http://iec.ch/TC57/CIM100#BatteryStateKind.charging) | No description available |
 | empty | [cim:BatteryStateKind.empty](http://iec.ch/TC57/CIM100#BatteryStateKind.empty) | No description available |
+
 ## Schema Source
 
 from schema: [http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EUPackage_SteadyStateHypothesisProfile](http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EUPackage_SteadyStateHypothesisProfile)

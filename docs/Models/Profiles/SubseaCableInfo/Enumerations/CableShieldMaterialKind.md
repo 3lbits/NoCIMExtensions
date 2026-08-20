@@ -17,6 +17,7 @@ _Kind of cable shield material._
 | lead | [cim:CableShieldMaterialKind.lead](http://iec.ch/TC57/CIM-generic#CableShieldMaterialKind.lead) | Lead cable shield. |
 | other | [cim:CableShieldMaterialKind.other](http://iec.ch/TC57/CIM-generic#CableShieldMaterialKind.other) | Other kind of cable shield material. |
 | steel | [cim:CableShieldMaterialKind.steel](http://iec.ch/TC57/CIM-generic#CableShieldMaterialKind.steel) | Steel cable shield. |
+
 ## Schema Source
 
 from schema: [http://iec.ch/TC57/2007/profile](http://iec.ch/TC57/2007/profile)

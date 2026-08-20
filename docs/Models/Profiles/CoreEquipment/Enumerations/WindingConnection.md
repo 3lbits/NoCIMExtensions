@@ -17,6 +17,7 @@ _No description available_
 | Zn | [cim:WindingConnection.Zn](http://iec.ch/TC57/CIM100#WindingConnection.Zn) | No description available |
 | A | [cim:WindingConnection.A](http://iec.ch/TC57/CIM100#WindingConnection.A) | No description available |
 | I | [cim:WindingConnection.I](http://iec.ch/TC57/CIM100#WindingConnection.I) | No description available |
+
 ## Schema Source
 
 from schema: [http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile](http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile)

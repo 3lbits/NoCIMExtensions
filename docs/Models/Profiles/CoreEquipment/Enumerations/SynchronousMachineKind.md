@@ -17,6 +17,7 @@ _No description available_
 | generatorOrMotor | [cim:SynchronousMachineKind.generatorOrMotor](http://iec.ch/TC57/CIM100#SynchronousMachineKind.generatorOrMotor) | No description available |
 | motorOrCondenser | [cim:SynchronousMachineKind.motorOrCondenser](http://iec.ch/TC57/CIM100#SynchronousMachineKind.motorOrCondenser) | No description available |
 | generatorOrCondenserOrMotor | [cim:SynchronousMachineKind.generatorOrCondenserOrMotor](http://iec.ch/TC57/CIM100#SynchronousMachineKind.generatorOrCondenserOrMotor) | No description available |
+
 ## Schema Source
 
 from schema: [http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile](http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile)

@@ -273,6 +273,19 @@ nav:
           - UnitMultiplier: Models/Profiles/DiagramLayout/Enumerations/UnitMultiplier.md
         - Types:
           - AngleDegrees: Models/Profiles/DiagramLayout/Types/AngleDegrees.md
+      - EquipmentBoundary:
+        - Overview: Models/Profiles/EquipmentBoundary/index.md
+        - Abstract Classes:
+          - ConnectivityNodeContainer: Models/Profiles/EquipmentBoundary/AbstractClasses/ConnectivityNodeContainer.md
+          - EquipmentContainer: Models/Profiles/EquipmentBoundary/AbstractClasses/EquipmentContainer.md
+          - IdentifiedObject: Models/Profiles/EquipmentBoundary/AbstractClasses/IdentifiedObject.md
+          - PowerSystemResource: Models/Profiles/EquipmentBoundary/AbstractClasses/PowerSystemResource.md
+        - Concrete Classes:
+          - Bay: Models/Profiles/EquipmentBoundary/ConcreteClasses/Bay.md
+          - BoundaryPoint: Models/Profiles/EquipmentBoundary/ConcreteClasses/BoundaryPoint.md
+          - ConnectivityNode: Models/Profiles/EquipmentBoundary/ConcreteClasses/ConnectivityNode.md
+          - Substation: Models/Profiles/EquipmentBoundary/ConcreteClasses/Substation.md
+          - VoltageLevel: Models/Profiles/EquipmentBoundary/ConcreteClasses/VoltageLevel.md
       - GeographicalLocation:
         - Overview: Models/Profiles/GeographicalLocation/index.md
         - Abstract Classes:

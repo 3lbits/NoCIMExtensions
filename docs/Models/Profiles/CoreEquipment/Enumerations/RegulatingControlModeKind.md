@@ -18,6 +18,7 @@ _No description available_
 | timeScheduled | [cim:RegulatingControlModeKind.timeScheduled](http://iec.ch/TC57/CIM100#RegulatingControlModeKind.timeScheduled) | No description available |
 | temperature | [cim:RegulatingControlModeKind.temperature](http://iec.ch/TC57/CIM100#RegulatingControlModeKind.temperature) | No description available |
 | powerFactor | [cim:RegulatingControlModeKind.powerFactor](http://iec.ch/TC57/CIM100#RegulatingControlModeKind.powerFactor) | No description available |
+
 ## Schema Source
 
 from schema: [http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile](http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile)

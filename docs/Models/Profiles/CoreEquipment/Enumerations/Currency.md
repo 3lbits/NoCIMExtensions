@@ -171,6 +171,7 @@ _No description available_
 | ZAR | [cim:Currency.ZAR](http://iec.ch/TC57/CIM100#Currency.ZAR) | No description available |
 | ZMK | [cim:Currency.ZMK](http://iec.ch/TC57/CIM100#Currency.ZMK) | No description available |
 | ZWL | [cim:Currency.ZWL](http://iec.ch/TC57/CIM100#Currency.ZWL) | No description available |
+
 ## Schema Source
 
 from schema: [http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile](http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile)

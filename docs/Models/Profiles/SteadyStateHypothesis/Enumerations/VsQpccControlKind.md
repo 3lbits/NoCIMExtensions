@@ -14,6 +14,7 @@ _No description available_
 | voltagePcc | [cim:VsQpccControlKind.voltagePcc](http://iec.ch/TC57/CIM100#VsQpccControlKind.voltagePcc) | No description available |
 | powerFactorPcc | [cim:VsQpccControlKind.powerFactorPcc](http://iec.ch/TC57/CIM100#VsQpccControlKind.powerFactorPcc) | No description available |
 | pulseWidthModulation | [cim:VsQpccControlKind.pulseWidthModulation](http://iec.ch/TC57/CIM100#VsQpccControlKind.pulseWidthModulation) | No description available |
+
 ## Schema Source
 
 from schema: [http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EUPackage_SteadyStateHypothesisProfile](http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EUPackage_SteadyStateHypothesisProfile)

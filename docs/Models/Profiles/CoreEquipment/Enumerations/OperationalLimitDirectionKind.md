@@ -13,6 +13,7 @@ _No description available_
 | high | [cim:OperationalLimitDirectionKind.high](http://iec.ch/TC57/CIM100#OperationalLimitDirectionKind.high) | No description available |
 | low | [cim:OperationalLimitDirectionKind.low](http://iec.ch/TC57/CIM100#OperationalLimitDirectionKind.low) | No description available |
 | absoluteValue | [cim:OperationalLimitDirectionKind.absoluteValue](http://iec.ch/TC57/CIM100#OperationalLimitDirectionKind.absoluteValue) | No description available |
+
 ## Schema Source
 
 from schema: [http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile](http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile)

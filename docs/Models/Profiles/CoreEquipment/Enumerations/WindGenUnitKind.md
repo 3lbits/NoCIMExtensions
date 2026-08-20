@@ -12,6 +12,7 @@ _No description available_
 | --- | --- | --- |
 | offshore | [cim:WindGenUnitKind.offshore](http://iec.ch/TC57/CIM100#WindGenUnitKind.offshore) | No description available |
 | onshore | [cim:WindGenUnitKind.onshore](http://iec.ch/TC57/CIM100#WindGenUnitKind.onshore) | No description available |
+
 ## Schema Source
 
 from schema: [http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile](http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile)

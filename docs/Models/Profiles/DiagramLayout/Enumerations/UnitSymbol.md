@@ -151,6 +151,7 @@ _No description available_
 | ohmPerm | [cim:UnitSymbol.ohmPerm](cim:UnitSymbol.ohmPerm) | No description available |
 | kgPerJ | [cim:UnitSymbol.kgPerJ](cim:UnitSymbol.kgPerJ) | No description available |
 | JPers | [cim:UnitSymbol.JPers](cim:UnitSymbol.JPers) | No description available |
+
 ## Schema Source
 
 from schema: [http://iec.ch/TC57/ns/CIM/DiagramLayout-EUPackage_DiagramLayoutProfile](http://iec.ch/TC57/ns/CIM/DiagramLayout-EUPackage_DiagramLayoutProfile)

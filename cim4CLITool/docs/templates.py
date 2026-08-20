@@ -69,7 +69,7 @@ class EditMkDocsYaml:
                 _list.remove(item)
                 break
 
-    def add_profile_to_nav(nav_profile):
+    def add_profile_to_nav(nav_profile, nav_group=None):
 
         mkdocs_dict_file = EditMkDocsYaml.replace_mermaid_format()
 
@@ -119,23 +119,38 @@ class EditMkDocsYaml:
         # Remove the Overview if it already exists
         EditMkDocsYaml.remove_object_from_list(profileList, 'Overview')
 
-        # Remove the profile if it already exists
-        EditMkDocsYaml.remove_object_from_list(profileList, profileName)
+        if nav_group:
+            # Find or create the nav group under Profiles
+            checkGroup = EditMkDocsYaml.traverse_navDict(profileList, nav_group)
+            if checkGroup is not None:
+                groupList = checkGroup[1]
+            else:
+                groupList = []
+                profileList.append({nav_group: groupList})
 
-        # Add the profile and Overview if validation is okay
-        profileList.append({'Overview': 'Models/Profiles/index.md'})
-        profileList.append(nav_profile)
+            # Remove the profile from the group if it already exists
+            EditMkDocsYaml.remove_object_from_list(groupList, profileName)
 
-        # Sort the nav with Overview first and then the rest of the profiles alphabetically
-        profileList.sort(key=lambda x: (list(x.keys())[0] != 'Overview', list(x.keys())[0]))
+            # Also remove from top-level profileList in case it was previously ungrouped
+            EditMkDocsYaml.remove_object_from_list(profileList, profileName)
+
+            groupList.append(nav_profile)
+            groupList.sort(key=lambda x: list(x.keys())[0])
+        else:
+            # Remove the profile if it already exists
+            EditMkDocsYaml.remove_object_from_list(profileList, profileName)
+            profileList.append(nav_profile)
+
+        # Add Overview back and sort with Overview first, then groups/profiles alphabetically
+        profileList.insert(0, {'Overview': 'Models/Profiles/index.md'})
         return mkdocs_dict_file
 
-    def controller(path, nav_profile):
+    def controller(path, nav_profile, nav_group=None):
         
         global file_path
         file_path = path
 
-        mkdocs_dict_file = EditMkDocsYaml.add_profile_to_nav(nav_profile)
+        mkdocs_dict_file = EditMkDocsYaml.add_profile_to_nav(nav_profile, nav_group=nav_group)
         General.write_file(path, yaml.dump(mkdocs_dict_file, sort_keys=False))
         mkdocs_dict_file = EditMkDocsYaml.add_mermaid_format_back_in()
         General.write_file(path, mkdocs_dict_file)

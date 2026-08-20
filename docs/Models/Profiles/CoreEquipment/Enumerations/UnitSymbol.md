@@ -151,6 +151,7 @@ _No description available_
 | ohmPerm | [cim:UnitSymbol.ohmPerm](http://iec.ch/TC57/CIM100#UnitSymbol.ohmPerm) | No description available |
 | kgPerJ | [cim:UnitSymbol.kgPerJ](http://iec.ch/TC57/CIM100#UnitSymbol.kgPerJ) | No description available |
 | JPers | [cim:UnitSymbol.JPers](http://iec.ch/TC57/CIM100#UnitSymbol.JPers) | No description available |
+
 ## Schema Source
 
 from schema: [http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile](http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile)

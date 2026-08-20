@@ -20,6 +20,7 @@ _Kind of wire material._
 | copper | [cim:WireMaterialKind.copper](http://iec.ch/TC57/CIM-generic#WireMaterialKind.copper) | Copper wire. |
 | other | [cim:WireMaterialKind.other](http://iec.ch/TC57/CIM-generic#WireMaterialKind.other) | Other wire material. |
 | steel | [cim:WireMaterialKind.steel](http://iec.ch/TC57/CIM-generic#WireMaterialKind.steel) | Steel wire. |
+
 ## Schema Source
 
 from schema: [http://iec.ch/TC57/2007/profile](http://iec.ch/TC57/2007/profile)

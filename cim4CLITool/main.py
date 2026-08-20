@@ -73,11 +73,12 @@ def uuidv4(number: int):
 
 @docs.command()
 @click.option('--schema', '-s', required=True, default=None, help='YAML Schema file name to use')
-def gen(schema: str):
+@click.option('--nav-group', '-g', required=False, default=None, help='Navigation group to nest the profile under (e.g. CGMES, "Norwegian Extensions")')
+def gen(schema: str, nav_group: str):
     '''Generate Documentation from yaml schemas using python'''
     click.echo('Generating Documentation using python')
     remove_all_md_files(f"docs/{to_camel_case(schema)}")
-    CreateMdController().main(schema, template='elbits')
+    CreateMdController().main(schema, template='elbits', nav_group=nav_group)
     click.echo('Generating Overview index.md')
     CreateOverviewMdController().main()
     click.echo('Overview index.md Created')

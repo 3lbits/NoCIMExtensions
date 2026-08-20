@@ -12,6 +12,7 @@ _No description available_
 | --- | --- | --- |
 | generator | [cim:HydroEnergyConversionKind.generator](http://iec.ch/TC57/CIM100#HydroEnergyConversionKind.generator) | No description available |
 | pumpAndGenerator | [cim:HydroEnergyConversionKind.pumpAndGenerator](http://iec.ch/TC57/CIM100#HydroEnergyConversionKind.pumpAndGenerator) | No description available |
+
 ## Schema Source
 
 from schema: [http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile](http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile)

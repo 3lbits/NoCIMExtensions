@@ -16,6 +16,7 @@ _No description available_
 | pPccAndUdcDroopWithCompensation | [cim:VsPpccControlKind.pPccAndUdcDroopWithCompensation](http://iec.ch/TC57/CIM100#VsPpccControlKind.pPccAndUdcDroopWithCompensation) | No description available |
 | pPccAndUdcDroopPilot | [cim:VsPpccControlKind.pPccAndUdcDroopPilot](http://iec.ch/TC57/CIM100#VsPpccControlKind.pPccAndUdcDroopPilot) | No description available |
 | phasePcc | [cim:VsPpccControlKind.phasePcc](http://iec.ch/TC57/CIM100#VsPpccControlKind.phasePcc) | No description available |
+
 ## Schema Source
 
 from schema: [http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EUPackage_SteadyStateHypothesisProfile](http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EUPackage_SteadyStateHypothesisProfile)

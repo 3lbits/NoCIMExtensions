@@ -21,6 +21,7 @@ _No description available_
 | alarmVoltage | [eu:LimitKind.alarmVoltage](http://iec.ch/TC57/CIM100-European#LimitKind.alarmVoltage) | No description available |
 | warningVoltage | [eu:LimitKind.warningVoltage](http://iec.ch/TC57/CIM100-European#LimitKind.warningVoltage) | No description available |
 | stability | [eu:LimitKind.stability](http://iec.ch/TC57/CIM100-European#LimitKind.stability) | No description available |
+
 ## Schema Source
 
 from schema: [http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile](http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile)

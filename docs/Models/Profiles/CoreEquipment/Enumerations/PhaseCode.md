@@ -36,6 +36,7 @@ _No description available_
 | XY | [cim:PhaseCode.XY](http://iec.ch/TC57/CIM100#PhaseCode.XY) | No description available |
 | XN | [cim:PhaseCode.XN](http://iec.ch/TC57/CIM100#PhaseCode.XN) | No description available |
 | XYN | [cim:PhaseCode.XYN](http://iec.ch/TC57/CIM100#PhaseCode.XYN) | No description available |
+
 ## Schema Source
 
 from schema: [http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile](http://iec.ch/TC57/ns/CIM/CoreEquipment-EUPackage_CoreEquipmentProfile)
