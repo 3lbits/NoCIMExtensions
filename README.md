@@ -49,6 +49,10 @@ cim4 --help
 # Generate docs for a specific schema
 cim4 docs gen -s aviation_obstacle
 
+# Generate docs nested under a navigation group in mkdocs.yaml
+cim4 docs gen -s core_equipment -g CGMES
+cim4 docs gen -s aviation_obstacle -g "Norwegian Profiles"
+
 # Serve docs locally
 mkdocs serve
 ```
@@ -105,6 +109,21 @@ cim4 schema migrate-datatypes
 
 # Migrate a single schema
 cim4 schema migrate-datatypes -s core_equipment
+```
+
+### Mark Abstract Classes
+
+Marks known-abstract CIM classes with `abstract: true` in LinkML schemas.
+
+```bash
+# Preview what would be changed
+cim4 schema mark-abstract --dry-run
+
+# Mark abstract classes in a single schema
+cim4 schema mark-abstract -s core_equipment
+
+# Also list uncertain parent classes
+cim4 schema mark-abstract --dry-run --show-uncertain
 ```
 
 ## Project Structure
