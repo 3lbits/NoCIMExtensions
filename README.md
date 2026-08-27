@@ -13,11 +13,55 @@ A command-line tool for working with CIM (Common Information Model) extensions f
 
 ## Getting Started
 
-### Prerequisites
+### Option A: Dev Container (recommended)
+
+A fully configured development environment using VS Code Dev Containers. No manual Python/Node setup needed.
+
+#### Prerequisites
+
+1. **[VS Code](https://code.visualstudio.com/)** with the [Dev Containers](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-containers) extension
+2. **[Podman Desktop](https://podman-desktop.io/)** (open source)
+
+#### Podman Setup (one-time)
+
+```powershell
+podman machine init
+podman machine set --rootful
+podman machine start
+```
+
+Configure VS Code to use Podman — add to your **User** settings (`Ctrl+Shift+P` → "Preferences: Open User Settings (JSON)"):
+
+```json
+"dev.containers.dockerPath": "podman",
+"dev.containers.dockerSocketPath": "//./pipe/podman-machine-default"
+```
+
+#### Open in Dev Container
+
+1. Open this repository in VS Code
+2. Press `Ctrl+Shift+P` → **Dev Containers: Reopen in Container**
+3. Wait for the container to build and install dependencies
+4. The `cim4` CLI and `mkdocs` are ready to use
+
+The container includes Python 3.12, Node.js 20, PowerShell, and all project dependencies.
+
+```bash
+cim4 --help
+mkdocs serve          # docs available at http://localhost:8000
+```
+
+#### Alternative: GitHub Codespaces
+
+Click **Code → Codespaces → Create codespace on main** on the GitHub repo page. Same environment, runs in the browser.
+
+### Option B: Local Setup
+
+#### Prerequisites
 
 - Python 3.10+
 
-### Setup (PowerShell)
+#### Setup (PowerShell)
 
 ```powershell
 .\startup.ps1
