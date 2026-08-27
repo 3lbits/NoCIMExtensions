@@ -883,18 +883,25 @@ class CreateMarkdownFile():
                 attributes = object[key]["attributes"]
                 for attribute in attributes:
                     name = attribute
-                    slot_uri = attributes[attribute]["slot_uri"] if "slot_uri" in attributes[attribute] else 'No URI available'
+                    attr = attributes[attribute]
+                    slot_uri = attr.get("slot_uri", 'No URI available')
                     prefix = slot_uri.split(":")[0]                    
                     nonPrefix = slot_uri.split(":")[1] if slot_uri != 'No URI available' else 'No URI available'
                     url = ClassData().getURL(prefix)
                     _URI = f'[{slot_uri}]({url}{nonPrefix})' if slot_uri != 'No URI available' else 'No URI available'
-                    minimum_cardinality = attributes[attribute]["minimum_cardinality"] if "minimum_cardinality" in attributes[attribute] else None
-                    maximum_cardinality = attributes[attribute]["maximum_cardinality"] if "maximum_cardinality" in attributes[attribute] else None
+                    required = attr.get("required", False)
+                    multivalued = attr.get("multivalued", False)
+                    has_explicit = "minimum_cardinality" in attr or "maximum_cardinality" in attr
+                    has_derived = "required" in attr or "multivalued" in attr
+                    if has_explicit and has_derived:
+                        print(f"\033[93mWARNING: '{attribute}' in '{key}' has both explicit cardinality and required/multivalued — explicit values take precedence\033[0m")
+                    minimum_cardinality = attr.get("minimum_cardinality", 1 if required else 0)
+                    maximum_cardinality = attr.get("maximum_cardinality", "*" if multivalued else 1)
 
                     rangeList = []
 
-                    if "any_of" in attributes[attribute]:
-                        any_of = attributes[attribute]["any_of"]
+                    if "any_of" in attr:
+                        any_of = attr["any_of"]
                         for _dict in any_of:
                             value = _dict["range"]
                             if value in globalYamlDict["classes"]:
@@ -905,18 +912,16 @@ class CreateMarkdownFile():
                                 rangeList.append(f'[{value}]({absoluteUrlPath})')
                             else:
                                 rangeList.append(value)
-                    elif "range" in attributes[attribute]:
-                        rangeList = [attributes[attribute]["range"]]
+                    elif "range" in attr:
+                        rangeList = [attr["range"]]
 
                     _range = ' or '.join(rangeList)
-                    
-                    multivalued = attributes[attribute]["multivalued"] if "multivalued" in attributes[attribute] else False
-                    maximum_cardinality = "*" if multivalued == True else maximum_cardinality
-                    cardinality = f'{minimum_cardinality}..{maximum_cardinality}' if minimum_cardinality != None and maximum_cardinality != None else 'No cardinality available'
-                    cardninality_and_range = f'''{cardinality} {_range}'''
-                    description = attributes[attribute]["description"] if "description" in attributes[attribute] else 'No description available'
+
+                    cardinality = f'{minimum_cardinality}..{maximum_cardinality}'
+                    cardinality_and_range = f'''{cardinality} {_range}'''
+                    description = attr.get("description", 'No description available')
                     inheritance = key if key != globalClass else 'direct'
-                    tableAttribiuteString += f'| {name} | {_URI} | {cardninality_and_range} | {description} | {inheritance} |\n'
+                    tableAttribiuteString += f'| {name} | {_URI} | {cardinality_and_range} | {description} | {inheritance} |\n'
 
         return tableAttribiuteString
 
