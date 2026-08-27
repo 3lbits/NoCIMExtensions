@@ -2,6 +2,7 @@ import yaml
 import os
 from cim4CLITool.docs.templates import TemplateClass, EditMkDocsYaml
 from cim4CLITool.docs.configs.mkdocs_config import MkDocsConfig
+from cim4CLITool.docs.mermaid_renderer import prepare_mermaid_file, render_all_svgs, check_mmdc_installed
 
 class mkdocs:
 
@@ -951,13 +952,21 @@ class CreateMarkdownFile():
 
         os.makedirs(os.path.dirname(path), exist_ok=True)
 
+        # Render mermaid to SVG if mmdc is available
+        if globalUseSvgDiagrams and classDataDict["mermaidString"]:
+            diagram_content = prepare_mermaid_file(
+                classDataDict["mermaidString"], title, globalDocName
+            )
+        else:
+            diagram_content = classDataDict["mermaidString"] or ''
+
         with open(path, 'w', encoding='utf-8') as file:
             file.write(f"# {title}\n\n")
             file.write(f'_{description}_\n\n')
             file.write(f'*__NOTE__: this is an abstract class and should not be instantiated directly\n\n') if abstract == True else None
             file.write(f'**URI**: [{uri}]({completeUri})<br />\n')
             file.write(f'**Type**: Class\n')
-            file.write(f'{classDataDict["mermaidString"]}')
+            file.write(f'{diagram_content}')
             file.write(f'{classDataDict["inheritanceString"]}\n')
             file.write(f'## Attributes\n')
             file.write(f'| Name | URI | Cardinality and Range | Description | Inheritance |\n')
@@ -979,10 +988,15 @@ class CreateMarkdownFile():
 
 class CreateMdController():
 
-    def main(self, schemaName, template='default', nav_group=None):
+    def main(self, schemaName, template='default', nav_group=None, use_svg_diagrams=False):
 
         global globalErrorSet
         globalErrorSet = set()
+
+        global globalUseSvgDiagrams
+        globalUseSvgDiagrams = use_svg_diagrams and check_mmdc_installed()
+        if use_svg_diagrams and not globalUseSvgDiagrams:
+            print("WARNING: Node.js not found, falling back to inline mermaid. Install Node.js and run: npm install puppeteer")
 
         yamlSchemaPath = f"schemas/yaml/{schemaName}.linkml.yaml"
         
@@ -1010,7 +1024,9 @@ class CreateMdController():
         CreateMarkdownFile().createEnums()
         CreateMarkdownFile().createTypes()
         CreateMarkdownFile().create_markdown_files()
-        # CreateMarkdownFile().createIndex()
+
+        if globalUseSvgDiagrams:
+            render_all_svgs(globalDocName)
 
         mkdocs.mkdocs_config_handler(template, nav_group=nav_group)
         mkdocs.mkdocs_create_profile_index()

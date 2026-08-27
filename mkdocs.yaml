@@ -434,65 +434,65 @@ nav:
           - Voltage: Models/Profiles/StateVariables/Types/Voltage.md
       - SteadyStateHypothesis:
         - Overview: Models/Profiles/SteadyStateHypothesis/index.md
-        - Abstract Classes: []
+        - Abstract Classes:
+          - ACDCConverter: Models/Profiles/SteadyStateHypothesis/AbstractClasses/ACDCConverter.md
+          - ACDCTerminal: Models/Profiles/SteadyStateHypothesis/AbstractClasses/ACDCTerminal.md
+          - ConductingEquipment: Models/Profiles/SteadyStateHypothesis/AbstractClasses/ConductingEquipment.md
+          - DCBaseTerminal: Models/Profiles/SteadyStateHypothesis/AbstractClasses/DCBaseTerminal.md
+          - EnergyConnection: Models/Profiles/SteadyStateHypothesis/AbstractClasses/EnergyConnection.md
+          - EnergyConsumer: Models/Profiles/SteadyStateHypothesis/AbstractClasses/EnergyConsumer.md
+          - Equipment: Models/Profiles/SteadyStateHypothesis/AbstractClasses/Equipment.md
+          - EquivalentEquipment: Models/Profiles/SteadyStateHypothesis/AbstractClasses/EquivalentEquipment.md
+          - IdentifiedObject: Models/Profiles/SteadyStateHypothesis/AbstractClasses/IdentifiedObject.md
+          - OperationalLimit: Models/Profiles/SteadyStateHypothesis/AbstractClasses/OperationalLimit.md
+          - PhaseTapChanger: Models/Profiles/SteadyStateHypothesis/AbstractClasses/PhaseTapChanger.md
+          - PhaseTapChangerNonLinear: Models/Profiles/SteadyStateHypothesis/AbstractClasses/PhaseTapChangerNonLinear.md
+          - PowerElectronicsUnit: Models/Profiles/SteadyStateHypothesis/AbstractClasses/PowerElectronicsUnit.md
+          - PowerSystemResource: Models/Profiles/SteadyStateHypothesis/AbstractClasses/PowerSystemResource.md
+          - ProtectedSwitch: Models/Profiles/SteadyStateHypothesis/AbstractClasses/ProtectedSwitch.md
+          - RegulatingCondEq: Models/Profiles/SteadyStateHypothesis/AbstractClasses/RegulatingCondEq.md
+          - RotatingMachine: Models/Profiles/SteadyStateHypothesis/AbstractClasses/RotatingMachine.md
+          - ShuntCompensator: Models/Profiles/SteadyStateHypothesis/AbstractClasses/ShuntCompensator.md
+          - TapChanger: Models/Profiles/SteadyStateHypothesis/AbstractClasses/TapChanger.md
         - Concrete Classes:
-          - ACDCConverter: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ACDCConverter.md
           - ACDCConverterDCTerminal: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ACDCConverterDCTerminal.md
-          - ACDCTerminal: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ACDCTerminal.md
           - ActivePowerLimit: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ActivePowerLimit.md
           - ApparentPowerLimit: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ApparentPowerLimit.md
           - AsynchronousMachine: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/AsynchronousMachine.md
           - BatteryUnit: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/BatteryUnit.md
           - Breaker: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/Breaker.md
-          - ConductingEquipment: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ConductingEquipment.md
           - ConformLoad: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ConformLoad.md
           - ControlArea: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ControlArea.md
           - CsConverter: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/CsConverter.md
           - CurrentLimit: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/CurrentLimit.md
-          - DCBaseTerminal: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/DCBaseTerminal.md
           - DCTerminal: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/DCTerminal.md
           - Disconnector: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/Disconnector.md
           - DisconnectingCircuitBreaker: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/DisconnectingCircuitBreaker.md
-          - EnergyConnection: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/EnergyConnection.md
-          - EnergyConsumer: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/EnergyConsumer.md
           - EnergySource: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/EnergySource.md
-          - Equipment: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/Equipment.md
-          - EquivalentEquipment: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/EquivalentEquipment.md
           - EquivalentInjection: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/EquivalentInjection.md
           - ExternalNetworkInjection: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ExternalNetworkInjection.md
           - Fuse: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/Fuse.md
           - GeneratingUnit: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/GeneratingUnit.md
           - GroundDisconnector: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/GroundDisconnector.md
           - HydroGeneratingUnit: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/HydroGeneratingUnit.md
-          - IdentifiedObject: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/IdentifiedObject.md
           - Jumper: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/Jumper.md
           - LinearShuntCompensator: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/LinearShuntCompensator.md
           - LoadBreakSwitch: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/LoadBreakSwitch.md
           - NonConformLoad: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/NonConformLoad.md
           - NonlinearShuntCompensator: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/NonlinearShuntCompensator.md
           - NuclearGeneratingUnit: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/NuclearGeneratingUnit.md
-          - OperationalLimit: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/OperationalLimit.md
-          - PhaseTapChanger: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/PhaseTapChanger.md
           - PhaseTapChangerAsymmetrical: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/PhaseTapChangerAsymmetrical.md
           - PhaseTapChangerLinear: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/PhaseTapChangerLinear.md
-          - PhaseTapChangerNonLinear: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/PhaseTapChangerNonLinear.md
           - PhaseTapChangerSymmetrical: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/PhaseTapChangerSymmetrical.md
           - PhaseTapChangerTabular: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/PhaseTapChangerTabular.md
           - PowerElectronicsConnection: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/PowerElectronicsConnection.md
-          - PowerElectronicsUnit: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/PowerElectronicsUnit.md
-          - PowerSystemResource: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/PowerSystemResource.md
-          - ProtectedSwitch: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ProtectedSwitch.md
           - RatioTapChanger: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/RatioTapChanger.md
-          - RegulatingCondEq: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/RegulatingCondEq.md
           - RegulatingControl: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/RegulatingControl.md
-          - RotatingMachine: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/RotatingMachine.md
-          - ShuntCompensator: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ShuntCompensator.md
           - SolarGeneratingUnit: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/SolarGeneratingUnit.md
           - StaticVarCompensator: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/StaticVarCompensator.md
           - StationSupply: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/StationSupply.md
           - Switch: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/Switch.md
           - SynchronousMachine: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/SynchronousMachine.md
-          - TapChanger: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/TapChanger.md
           - TapChangerControl: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/TapChangerControl.md
           - Terminal: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/Terminal.md
           - ThermalGeneratingUnit: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ThermalGeneratingUnit.md
