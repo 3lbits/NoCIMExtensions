@@ -74,11 +74,12 @@ def uuidv4(number: int):
 @docs.command()
 @click.option('--schema', '-s', required=True, default=None, help='YAML Schema file name to use')
 @click.option('--nav-group', '-g', required=False, default=None, help='Navigation group to nest the profile under (e.g. CGMES, "Norwegian Extensions")')
-def gen(schema: str, nav_group: str):
+@click.option('--svg', is_flag=True, default=False, help='Pre-render mermaid diagrams to SVG (requires Node.js + puppeteer)')
+def gen(schema: str, nav_group: str, svg: bool):
     '''Generate Documentation from yaml schemas using python'''
     click.echo('Generating Documentation using python')
     remove_all_md_files(f"docs/{to_camel_case(schema)}")
-    CreateMdController().main(schema, template='elbits', nav_group=nav_group)
+    CreateMdController().main(schema, template='elbits', nav_group=nav_group, use_svg_diagrams=svg)
     click.echo('Generating Overview index.md')
     CreateOverviewMdController().main()
     click.echo('Overview index.md Created')

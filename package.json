@@ -1,0 +1,30 @@
+{
+  "name": "nocimextensions",
+  "version": "1.0.0",
+  "description": "A command-line tool for working with CIM (Common Information Model) extensions for Norway's power grid. It uses [LinkML](https://linkml.io/) YAML schemas and YAML data files as input to generate documentation, convert data formats, and sort XML files.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/3lbits/NoCIMExtensions.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/3lbits/NoCIMExtensions/issues"
+  },
+  "homepage": "https://github.com/3lbits/NoCIMExtensions#readme",
+  "dependencies": {
+    "puppeteer": "^25.9.0"
+  },
+  "allowScripts": {
+    "puppeteer@25.9.0": true
+  }
+}

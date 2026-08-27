@@ -419,8 +419,8 @@ classes:
           is available for topology processing, which determines if the equipment
           is energized or not. False means that the equipment is treated by network
           applications as if it is not in the model.
-    is_a: Pow
-    abstract: trueerSystemResource
+    is_a: PowerSystemResource
+    abstract: true
     description: The parts of a power system that are physical devices, electronic
       or mechanical.
   EquivalentEquipment:

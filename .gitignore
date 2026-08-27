@@ -8,4 +8,8 @@
 **/__pycache__/
 /site/
 /.vscode/
+/node_modules/
+package-lock.json
+docs/**/diagrams/
+docs/Models/Profiles/
 **/elbits-design-skill/
