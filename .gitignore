@@ -10,6 +10,6 @@
 /.vscode/
 /node_modules/
 package-lock.json
-docs/**/diagrams/
-docs/Models/Profiles/
+docs/Models/Profiles/*
+!docs/Models/Profiles/index.md
 **/elbits-design-skill/

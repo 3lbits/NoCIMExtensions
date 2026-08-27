@@ -60,16 +60,9 @@ Click **Code → Codespaces → Create codespace on main** on the GitHub repo pa
 #### Prerequisites
 
 - Python 3.10+
+- Node.js 18+ (only needed for `--svg` diagram rendering)
 
-#### Setup (PowerShell)
-
-```powershell
-.\startup.ps1
-```
-
-This creates a virtual environment, installs dependencies, and installs the `cim4` CLI in editable mode.
-
-### Manual Setup
+#### Setup
 
 ```bash
 python -m venv venv
