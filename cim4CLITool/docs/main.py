@@ -449,6 +449,7 @@ class ClassData():
             dataDict[_class]["inheritanceString"] = CreateMarkdownFile().createInheritanceString(inheritanceDict)
             dataDict[_class]["tableString"] = CreateMarkdownFile().createAttributeTableString(inheritanceDict) if _class in inheritanceDict else None
             dataDict[_class]["schemaSource"] = globalYamlDict["id"] if "id" in globalYamlDict else "Missing id in Schema"
+            dataDict[_class]["formatExamplesString"] = CreateMarkdownFile().createFormatExamplesString(inheritanceDict) if dataDict[_class]["abstract"] == False else None
 
         return dataDict
 
@@ -925,6 +926,176 @@ class CreateMarkdownFile():
 
         return tableAttribiuteString
 
+    def getFormatExampleAttributes(self, inheritanceDict):
+        _list = inheritanceDict[globalClass]
+        attributes = []
+        seenNames = set()
+
+        for object in _list:
+            for key in object:
+                if "attributes" not in object[key] or object[key]["attributes"] == None:
+                    continue
+                classAttributes = object[key]["attributes"]
+                for attribute in classAttributes:
+                    if attribute in seenNames:
+                        continue
+                    seenNames.add(attribute)
+                    attr = classAttributes[attribute]
+
+                    rangeList = []
+                    if "any_of" in attr:
+                        for _dict in attr["any_of"]:
+                            rangeList.append(_dict["range"])
+                    elif "range" in attr:
+                        rangeList = [attr["range"]]
+
+                    attributes.append({
+                        "name": attribute,
+                        "slot_uri": attr.get("slot_uri"),
+                        "ranges": rangeList,
+                        "multivalued": attr.get("multivalued", False),
+                    })
+
+        return attributes
+
+    def resolveExampleType(self, rangeValue):
+        baseTypes = ["string", "integer", "boolean", "float", "double", "datetime", "date", "time", "duration"]
+        types = globalYamlDict.get("types") or {}
+        classes = globalYamlDict.get("classes") or {}
+        enums = globalYamlDict.get("enums") or {}
+
+        if rangeValue == None:
+            return {"kind": "literal", "type": "string"}
+        if rangeValue in types and types[rangeValue] != None:
+            return {"kind": "literal", "type": types[rangeValue].get("base", "string")}
+        if rangeValue in classes:
+            return {"kind": "object", "type": rangeValue}
+        if rangeValue in enums:
+            return {"kind": "enum", "type": rangeValue}
+        if rangeValue in baseTypes:
+            return {"kind": "literal", "type": rangeValue}
+        return {"kind": "literal", "type": "string"}
+
+    def indentBlock(self, text, spaces=4):
+        pad = " " * spaces
+        return "\n".join((pad + line) if line != "" else "" for line in text.split("\n"))
+
+    def buildJsonExample(self, attributes):
+        import json
+        obj = {}
+        for attr in attributes:
+            resolved = CreateMarkdownFile().resolveExampleType(attr["ranges"][0] if attr["ranges"] else None)
+            if resolved["kind"] == "literal":
+                value = resolved["type"]
+            elif resolved["kind"] == "object":
+                value = f'<{resolved["type"]}>'
+            else:
+                value = resolved["type"]
+
+            if attr["multivalued"]:
+                obj[attr["name"]] = [value]
+            else:
+                obj[attr["name"]] = value
+        return json.dumps(obj, indent=4)
+
+    def buildXmlExample(self, attributes, prefix):
+        lines = [f'<{prefix}:{globalClass} rdf:ID="_<uuid>">']
+        for attr in attributes:
+            resolved = CreateMarkdownFile().resolveExampleType(attr["ranges"][0] if attr["ranges"] else None)
+            tagName = attr["slot_uri"] if attr["slot_uri"] else f'{prefix}:{globalClass}.{attr["name"]}'
+            if resolved["kind"] == "literal":
+                lines.append(f'    <{tagName}>{resolved["type"]}</{tagName}>')
+            elif resolved["kind"] == "object":
+                lines.append(f'    <{tagName} rdf:resource="#_<uuid of {resolved["type"]}>" />')
+            else:
+                lines.append(f'    <{tagName} rdf:resource="{prefix}:{resolved["type"]}.<value>" />')
+        lines.append(f'</{prefix}:{globalClass}>')
+        return "\n".join(lines)
+
+    def buildJsonLdExample(self, attributes, prefix):
+        import json
+        context = {}
+        for contextPrefix, contextUri in (globalYamlDict.get("prefixes") or {}).items():
+            if isinstance(contextUri, str):
+                context[contextPrefix] = contextUri
+
+        lines = ["{"]
+        lines.append(f'    "@context": {json.dumps(context)},')
+        lines.append('    "@id": "urn:uuid:<uuid>",')
+        lines.append(f'    "@type": "{prefix}:{globalClass}",')
+        for index, attr in enumerate(attributes):
+            resolved = CreateMarkdownFile().resolveExampleType(attr["ranges"][0] if attr["ranges"] else None)
+            tagName = attr["slot_uri"] if attr["slot_uri"] else f'{prefix}:{globalClass}.{attr["name"]}'
+            comma = "," if index < len(attributes) - 1 else ""
+
+            if resolved["kind"] == "literal":
+                value = f'"{resolved["type"]}"'
+                if attr["multivalued"]:
+                    value = f'[ {value} ]'
+            elif resolved["kind"] == "object":
+                value = '{ "@id": "urn:uuid:<uuid of ' + resolved["type"] + '>" }'
+            else:
+                value = '{ "@id": "' + prefix + ':' + resolved["type"] + '.<value>" }'
+
+            if attr["multivalued"]:
+                value = f'[ {value} ]'
+
+            lines.append(f'    "{tagName}": {value}{comma}')
+        lines.append("}")
+        return "\n".join(lines)
+
+    def buildTrigExample(self, attributes, prefix):
+        lines = ["<urn:uuid:<graph-id>> {", "    <urn:uuid:<uuid>>", f'        a {prefix}:{globalClass} ;']
+        for index, attr in enumerate(attributes):
+            resolved = CreateMarkdownFile().resolveExampleType(attr["ranges"][0] if attr["ranges"] else None)
+            tagName = attr["slot_uri"] if attr["slot_uri"] else f'{prefix}:{globalClass}.{attr["name"]}'
+            terminator = ";" if index < len(attributes) - 1 else "."
+            if resolved["kind"] == "literal":
+                lines.append(f'        {tagName} "{resolved["type"]}" {terminator}')
+            elif resolved["kind"] == "object":
+                lines.append(f'        {tagName} <urn:uuid:<uuid of {resolved["type"]}>> {terminator}')
+            else:
+                lines.append(f'        {tagName} {prefix}:{resolved["type"]}.<value> {terminator}')
+        lines.append("}")
+        return "\n".join(lines)
+
+    def createFormatExamplesString(self, inheritanceDict):
+        if globalClass not in inheritanceDict:
+            return None
+
+        attributes = CreateMarkdownFile().getFormatExampleAttributes(inheritanceDict)
+
+        if len(attributes) == 0:
+            return None
+
+        classUri = globalYamlDict["classes"][globalClass].get("class_uri")
+        prefix = classUri.split(":")[0] if classUri else "cim"
+
+        jsonBlock = CreateMarkdownFile().indentBlock(f'```json\n{CreateMarkdownFile().buildJsonExample(attributes)}\n```')
+        xmlBlock = CreateMarkdownFile().indentBlock(f'```xml\n{CreateMarkdownFile().buildXmlExample(attributes, prefix)}\n```')
+        jsonldBlock = CreateMarkdownFile().indentBlock(f'```json\n{CreateMarkdownFile().buildJsonLdExample(attributes, prefix)}\n```')
+        trigBlock = CreateMarkdownFile().indentBlock(f'```turtle\n{CreateMarkdownFile().buildTrigExample(attributes, prefix)}\n```')
+
+        return f'''
+## Format Examples
+
+=== "JSON-LD"
+
+{jsonldBlock}
+
+=== "XML"
+
+{xmlBlock}
+
+=== "JSON"
+
+{jsonBlock}
+
+=== "TRIG"
+
+{trigBlock}
+'''
+
     def createInheritanceString(self, inheritanceDict):
         if len(inheritanceDict) == 0:
             return
@@ -977,6 +1148,7 @@ class CreateMarkdownFile():
             file.write(f'| Name | URI | Cardinality and Range | Description | Inheritance |\n')
             file.write(f'| ---  | --- | --- | --- | --- |\n')
             file.write(f'{classDataDict["tableString"]}\n')
+            file.write(f'{classDataDict["formatExamplesString"]}\n') if classDataDict.get("formatExamplesString") else None
             file.write(f'### Schema Source\n')
             file.write(f'* from schema: [{schemaSource}]({schemaSource})\n')
 
