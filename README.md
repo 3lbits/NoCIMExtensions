@@ -97,6 +97,14 @@ cim4 docs gen -s aviation_obstacle -g "Norwegian Profiles" --svg
 mkdocs serve
 ```
 
+Each generated concrete-class page includes a **Format Examples** section with tabs for JSON, XML, JSON-LD, and TRIG. The examples list the class attributes, including inherited attributes, and use type placeholders such as `string`, `integer`, `float`, and `boolean`. Relationships are represented as class or node references. JSON follows the schema cardinality, while JSON-LD uses CIM namespace-qualified properties and linked node objects.
+
+Regenerate all configured profiles with:
+
+```bash
+bash generate_all_profiles.sh
+```
+
 #### SVG Diagram Pre-rendering
 
 By default, class diagrams are embedded as Mermaid code blocks and rendered client-side in the browser. With the `--svg` flag, diagrams are pre-rendered to SVG files at build time. This eliminates the flash of raw Mermaid code on page load and improves performance.

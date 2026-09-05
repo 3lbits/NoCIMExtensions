@@ -35,10 +35,12 @@ theme:
       primary: {{ dark_mode_color_primary }} # Set primary color for scheme.
       accent: {{ dark_mode_color_accent }} # Set accent color for scheme.
 
-{{ '' if mermaid else '# ' }}markdown_extensions:
-{{ '' if mermaid else '# ' }}  - pymdownx.betterem
+markdown_extensions:
+  - pymdownx.betterem
 {{ '' if mermaid else '# ' }}  - pymdownx.superfences:
 {{ '' if mermaid else '# ' }}      custom_fences:
 {{ '' if mermaid else '# ' }}        - name: mermaid
 {{ '' if mermaid else '# ' }}          class: mermaid
 {{ '' if mermaid else '# ' }}          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
