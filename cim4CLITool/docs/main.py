@@ -768,6 +768,9 @@ classDiagram
 
 class CreateMarkdownFile():
 
+    def formatMarkdownTableCell(self, value):
+        return ' '.join(str(value).split()).replace('|', r'\|')
+
     def createEnums(self):
         
         if "enums" not in globalYamlDict or globalYamlDict["enums"] == None:
@@ -920,9 +923,11 @@ class CreateMarkdownFile():
 
                     cardinality = f'{minimum_cardinality}..{maximum_cardinality}'
                     cardinality_and_range = f'''{cardinality} {_range}'''
-                    description = attr.get("description", 'No description available')
+                    description = CreateMarkdownFile().formatMarkdownTableCell(
+                        attr.get("description", 'No description available')
+                    )
                     inheritance = key if key != globalClass else 'direct'
-                    tableAttribiuteString += f'| {name} | {_URI} | {cardinality_and_range} | {description} | {inheritance} |\n'
+                    tableAttribiuteString += f'| {name} | {_URI} | {cardinality_and_range} | {inheritance} | {description} |\n'
 
         return tableAttribiuteString
 
@@ -1145,11 +1150,12 @@ class CreateMarkdownFile():
             file.write(f'{diagram_content}')
             file.write(f'{classDataDict["inheritanceString"]}\n')
             file.write(f'## Attributes\n')
-            file.write(f'| Name | URI | Cardinality and Range | Description | Inheritance |\n')
+            file.write(f'<div class="attribute-table" markdown>\n\n')
+            file.write(f'| Name | URI | Cardinality and Range | Inheritance | Description |\n')
             file.write(f'| ---  | --- | --- | --- | --- |\n')
-            file.write(f'{classDataDict["tableString"]}\n')
+            file.write(f'{classDataDict["tableString"]}\n</div>\n')
             file.write(f'{classDataDict["formatExamplesString"]}\n') if classDataDict.get("formatExamplesString") else None
-            file.write(f'### Schema Source\n')
+            file.write(f'## Schema Source\n')
             file.write(f'* from schema: [{schemaSource}]({schemaSource})\n')
 
     def create_markdown_files(self):
