@@ -34,6 +34,7 @@ theme:
     primary: black
     accent: green
 markdown_extensions:
+- md_in_html
 - pymdownx.betterem
 - pymdownx.superfences:
     custom_fences:

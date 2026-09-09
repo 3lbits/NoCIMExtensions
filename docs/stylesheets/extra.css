@@ -25,6 +25,19 @@
     margin-right: 0.1em;
 }
 
+.attribute-table {
+  overflow-x: auto;
+}
+
+.attribute-table table {
+  min-width: 64rem;
+}
+
+.attribute-table th:nth-child(5),
+.attribute-table td:nth-child(5) {
+  min-width: 24rem;
+}
+
   .footer-item {
     flex: 1;
     text-align: center;

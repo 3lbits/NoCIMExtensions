@@ -36,6 +36,7 @@ theme:
       accent: {{ dark_mode_color_accent }} # Set accent color for scheme.
 
 markdown_extensions:
+  - md_in_html
   - pymdownx.betterem
 {{ '' if mermaid else '# ' }}  - pymdownx.superfences:
 {{ '' if mermaid else '# ' }}      custom_fences:
