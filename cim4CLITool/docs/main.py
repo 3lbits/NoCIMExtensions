@@ -4,6 +4,9 @@ from cim4CLITool.docs.templates import TemplateClass, EditMkDocsYaml
 from cim4CLITool.docs.configs.mkdocs_config import MkDocsConfig
 from cim4CLITool.docs.mermaid_renderer import prepare_mermaid_file, render_all_svgs, check_mmdc_installed
 
+def relativeMarkdownPath(targetPath, sourcePath):
+    return os.path.relpath(targetPath, os.path.dirname(sourcePath)).replace(os.sep, '/')
+
 class mkdocs:
 
     def mkdocs_profile_index():
@@ -11,6 +14,7 @@ class mkdocs:
         title = globalYamlDict["title"] if "title" in globalYamlDict else "No title available"
         name = globalYamlDict["name"] if "name" in globalYamlDict else "No name available"
         description = globalYamlDict["comments"] if "comments" in globalYamlDict else "No description available"
+        indexPath = os.path.join("docs", "Models", "Profiles", globalDocName, "index.md")
 
         profile_index_dict = {
             'title': title,
@@ -26,17 +30,17 @@ class mkdocs:
         for _class in globalYamlDict["classes"]:
 
             if 'abstract' in globalYamlDict["classes"][_class] and globalYamlDict["classes"][_class]['abstract'] == True:
-                abstractClasses.append({'name': _class, 'path': f'{globalLookUpDataDict[_class]["absoluteUrlPath"]}'})
+                abstractClasses.append({'name': _class, 'path': relativeMarkdownPath(globalLookUpDataDict[_class]["filePath"], indexPath)})
             if 'abstract' in globalYamlDict["classes"][_class] and globalYamlDict["classes"][_class]['abstract'] == False or 'abstract' not in globalYamlDict["classes"][_class]:
-                concreteClasses.append({'name': _class, 'path': f'{globalLookUpDataDict[_class]["absoluteUrlPath"]}'})
+                concreteClasses.append({'name': _class, 'path': relativeMarkdownPath(globalLookUpDataDict[_class]["filePath"], indexPath)})
 
         if "enums" in globalYamlDict and globalYamlDict["enums"] != None:
             for enum in globalYamlDict["enums"]:
-                enumerations.append({'name': enum, 'path': f'{globalLookUpDataDict[enum]["absoluteUrlPath"]}'})
+                enumerations.append({'name': enum, 'path': relativeMarkdownPath(globalLookUpDataDict[enum]["filePath"], indexPath)})
 
         if "types" in globalYamlDict and globalYamlDict["types"] != None:
             for _type in globalYamlDict["types"]:
-                types.append({'name': _type, 'path': f'{globalLookUpDataDict[_type]["absoluteUrlPath"]}'})
+                types.append({'name': _type, 'path': relativeMarkdownPath(globalLookUpDataDict[_type]["filePath"], indexPath)})
         
         if len(abstractClasses) > 0:
             abstractClasses.sort(key=lambda x: x['name'])
@@ -909,11 +913,17 @@ class CreateMarkdownFile():
                         for _dict in any_of:
                             value = _dict["range"]
                             if value in globalYamlDict["classes"]:
-                                absoluteUrlPath = globalLookUpDataDict[value]["absoluteUrlPath"]
-                                rangeList.append(f'[{value}]({absoluteUrlPath})')
+                                markdownPath = relativeMarkdownPath(
+                                    globalLookUpDataDict[value]["filePath"],
+                                    globalLookUpDataDict[globalClass]["filePath"]
+                                )
+                                rangeList.append(f'[{value}]({markdownPath})')
                             elif value in globalYamlDict["enums"]:
-                                absoluteUrlPath = globalLookUpDataDict[value]["absoluteUrlPath"]
-                                rangeList.append(f'[{value}]({absoluteUrlPath})')
+                                markdownPath = relativeMarkdownPath(
+                                    globalLookUpDataDict[value]["filePath"],
+                                    globalLookUpDataDict[globalClass]["filePath"]
+                                )
+                                rangeList.append(f'[{value}]({markdownPath})')
                             else:
                                 rangeList.append(value)
                     elif "range" in attr:
@@ -1116,8 +1126,11 @@ class CreateMarkdownFile():
             if key == globalClass:
                 inheritanceString += f'{" " * (4 * count)}* **{key}**\n'
             else:
-                absoluteUrlPath = globalLookUpDataDict[key]["absoluteUrlPath"]
-                inheritanceString += f'{" " * (4 * count)}* [{key}]({absoluteUrlPath})\n'
+                markdownPath = relativeMarkdownPath(
+                    globalLookUpDataDict[key]["filePath"],
+                    globalLookUpDataDict[globalClass]["filePath"]
+                )
+                inheritanceString += f'{" " * (4 * count)}* [{key}]({markdownPath})\n'
                 
             count += 1
         return inheritanceString

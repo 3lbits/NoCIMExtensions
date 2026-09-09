@@ -36,7 +36,7 @@ class CreateMarkdown():
         profileNamesMdString = ''
 
         for profileName in profileNames:
-            profileNamesMdString += f'- [{profileName}](/Models/Profiles/{profileName}/)\n'
+            profileNamesMdString += f'- [{profileName}](Models/Profiles/{profileName}/index.md)\n'
 
         with open(f'{docFilePath}', 'w', encoding='utf-8') as file:
             file.write(f"# {title}\n\n")

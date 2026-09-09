@@ -6,20 +6,20 @@ Common Information Model (CIM) profiles are standardized data models that define
 
 The CGMES (Common Grid Model Exchange Standard) LinkML schemas are sourced from [Netbeheer-Nederland/cgmes](https://github.com/Netbeheer-Nederland/cgmes) — ENTSO-E CGMES profiles represented as LinkML schemas.
 
-- [CoreEquipment](/Models/Profiles/CoreEquipment/)
-- [DiagramLayout](/Models/Profiles/DiagramLayout/)
-- [EquipmentBoundary](/Models/Profiles/EquipmentBoundary/)
-- [GeographicalLocation](/Models/Profiles/GeographicalLocation/)
-- [Operation](/Models/Profiles/Operation/)
-- [ShortCircuit](/Models/Profiles/ShortCircuit/)
-- [StateVariables](/Models/Profiles/StateVariables/)
-- [SteadyStateHypothesis](/Models/Profiles/SteadyStateHypothesis/)
-- [Topology](/Models/Profiles/Topology/)
+- [CoreEquipment](CoreEquipment/index.md)
+- [DiagramLayout](DiagramLayout/index.md)
+- [EquipmentBoundary](EquipmentBoundary/index.md)
+- [GeographicalLocation](GeographicalLocation/index.md)
+- [Operation](Operation/index.md)
+- [ShortCircuit](ShortCircuit/index.md)
+- [StateVariables](StateVariables/index.md)
+- [SteadyStateHypothesis](SteadyStateHypothesis/index.md)
+- [Topology](Topology/index.md)
 
 ## Norwegian Profiles
 
 The Norwegian extension profiles are developed and maintained by us.
 
-- [AviationObstacle](/Models/Profiles/AviationObstacle/)
-- [GridCapacity](/Models/Profiles/GridCapacity/)
-- [SubseaCableInfo](/Models/Profiles/SubseaCableInfo/)
+- [AviationObstacle](AviationObstacle/index.md)
+- [GridCapacity](GridCapacity/index.md)
+- [SubseaCableInfo](SubseaCableInfo/index.md)
