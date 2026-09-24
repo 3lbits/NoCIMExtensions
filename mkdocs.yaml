@@ -58,11 +58,8 @@ nav:
           - BasicIntervalSchedule: Models/Profiles/CoreEquipment/AbstractClasses/BasicIntervalSchedule.md
           - ConductingEquipment: Models/Profiles/CoreEquipment/AbstractClasses/ConductingEquipment.md
           - Conductor: Models/Profiles/CoreEquipment/AbstractClasses/Conductor.md
-          - ConformLoad: Models/Profiles/CoreEquipment/AbstractClasses/ConformLoad.md
-          - ConnectivityNode: Models/Profiles/CoreEquipment/AbstractClasses/ConnectivityNode.md
           - ConnectivityNodeContainer: Models/Profiles/CoreEquipment/AbstractClasses/ConnectivityNodeContainer.md
           - Connector: Models/Profiles/CoreEquipment/AbstractClasses/Connector.md
-          - ControlArea: Models/Profiles/CoreEquipment/AbstractClasses/ControlArea.md
           - Curve: Models/Profiles/CoreEquipment/AbstractClasses/Curve.md
           - DCBaseTerminal: Models/Profiles/CoreEquipment/AbstractClasses/DCBaseTerminal.md
           - DCConductingEquipment: Models/Profiles/CoreEquipment/AbstractClasses/DCConductingEquipment.md
@@ -70,26 +67,22 @@ nav:
           - EarthFaultCompensator: Models/Profiles/CoreEquipment/AbstractClasses/EarthFaultCompensator.md
           - EnergyArea: Models/Profiles/CoreEquipment/AbstractClasses/EnergyArea.md
           - EnergyConnection: Models/Profiles/CoreEquipment/AbstractClasses/EnergyConnection.md
-          - EnergyConsumer: Models/Profiles/CoreEquipment/AbstractClasses/EnergyConsumer.md
-          - TapSchedule: Models/Profiles/CoreEquipment/AbstractClasses/TapSchedule.md
           - Equipment: Models/Profiles/CoreEquipment/AbstractClasses/Equipment.md
           - EquipmentContainer: Models/Profiles/CoreEquipment/AbstractClasses/EquipmentContainer.md
           - EquivalentEquipment: Models/Profiles/CoreEquipment/AbstractClasses/EquivalentEquipment.md
-          - GeneratingUnit: Models/Profiles/CoreEquipment/AbstractClasses/GeneratingUnit.md
           - IdentifiedObject: Models/Profiles/CoreEquipment/AbstractClasses/IdentifiedObject.md
           - LoadGroup: Models/Profiles/CoreEquipment/AbstractClasses/LoadGroup.md
           - OperationalLimit: Models/Profiles/CoreEquipment/AbstractClasses/OperationalLimit.md
           - PhaseTapChanger: Models/Profiles/CoreEquipment/AbstractClasses/PhaseTapChanger.md
           - PhaseTapChangerNonLinear: Models/Profiles/CoreEquipment/AbstractClasses/PhaseTapChangerNonLinear.md
-          - PowerElectronicsConnection: Models/Profiles/CoreEquipment/AbstractClasses/PowerElectronicsConnection.md
           - PowerElectronicsUnit: Models/Profiles/CoreEquipment/AbstractClasses/PowerElectronicsUnit.md
           - PowerSystemResource: Models/Profiles/CoreEquipment/AbstractClasses/PowerSystemResource.md
           - ProtectedSwitch: Models/Profiles/CoreEquipment/AbstractClasses/ProtectedSwitch.md
-          - RegulatingCondEq: Models/Profiles/CoreEquipment/AbstractClasses/RegulatingCondEq.md
           - RegularIntervalSchedule: Models/Profiles/CoreEquipment/AbstractClasses/RegularIntervalSchedule.md
+          - RegulatingCondEq: Models/Profiles/CoreEquipment/AbstractClasses/RegulatingCondEq.md
           - RotatingMachine: Models/Profiles/CoreEquipment/AbstractClasses/RotatingMachine.md
-          - Sensor: Models/Profiles/CoreEquipment/AbstractClasses/Sensor.md
           - SeasonDayTypeSchedule: Models/Profiles/CoreEquipment/AbstractClasses/SeasonDayTypeSchedule.md
+          - Sensor: Models/Profiles/CoreEquipment/AbstractClasses/Sensor.md
           - ShuntCompensator: Models/Profiles/CoreEquipment/AbstractClasses/ShuntCompensator.md
           - TapChanger: Models/Profiles/CoreEquipment/AbstractClasses/TapChanger.md
           - TapChangerTablePoint: Models/Profiles/CoreEquipment/AbstractClasses/TapChangerTablePoint.md
@@ -105,21 +98,23 @@ nav:
           - Bay: Models/Profiles/CoreEquipment/ConcreteClasses/Bay.md
           - BoundaryPoint: Models/Profiles/CoreEquipment/ConcreteClasses/BoundaryPoint.md
           - Breaker: Models/Profiles/CoreEquipment/ConcreteClasses/Breaker.md
-          - BusbarSection: Models/Profiles/CoreEquipment/ConcreteClasses/BusbarSection.md
           - BusNameMarker: Models/Profiles/CoreEquipment/ConcreteClasses/BusNameMarker.md
+          - BusbarSection: Models/Profiles/CoreEquipment/ConcreteClasses/BusbarSection.md
           - CAESPlant: Models/Profiles/CoreEquipment/ConcreteClasses/CAESPlant.md
           - Clamp: Models/Profiles/CoreEquipment/ConcreteClasses/Clamp.md
-          - ConformLoadSchedule: Models/Profiles/CoreEquipment/ConcreteClasses/ConformLoadSchedule.md
           - CogenerationPlant: Models/Profiles/CoreEquipment/ConcreteClasses/CogenerationPlant.md
           - CombinedCyclePlant: Models/Profiles/CoreEquipment/ConcreteClasses/CombinedCyclePlant.md
+          - ConformLoad: Models/Profiles/CoreEquipment/ConcreteClasses/ConformLoad.md
           - ConformLoadGroup: Models/Profiles/CoreEquipment/ConcreteClasses/ConformLoadGroup.md
+          - ConformLoadSchedule: Models/Profiles/CoreEquipment/ConcreteClasses/ConformLoadSchedule.md
+          - ConnectivityNode: Models/Profiles/CoreEquipment/ConcreteClasses/ConnectivityNode.md
+          - ControlArea: Models/Profiles/CoreEquipment/ConcreteClasses/ControlArea.md
           - ControlAreaGeneratingUnit: Models/Profiles/CoreEquipment/ConcreteClasses/ControlAreaGeneratingUnit.md
           - CsConverter: Models/Profiles/CoreEquipment/ConcreteClasses/CsConverter.md
           - CurrentLimit: Models/Profiles/CoreEquipment/ConcreteClasses/CurrentLimit.md
           - CurrentTransformer: Models/Profiles/CoreEquipment/ConcreteClasses/CurrentTransformer.md
           - CurveData: Models/Profiles/CoreEquipment/ConcreteClasses/CurveData.md
           - Cut: Models/Profiles/CoreEquipment/ConcreteClasses/Cut.md
-          - DayType: Models/Profiles/CoreEquipment/ConcreteClasses/DayType.md
           - DCBreaker: Models/Profiles/CoreEquipment/ConcreteClasses/DCBreaker.md
           - DCBusbar: Models/Profiles/CoreEquipment/ConcreteClasses/DCBusbar.md
           - DCChopper: Models/Profiles/CoreEquipment/ConcreteClasses/DCChopper.md
@@ -129,13 +124,14 @@ nav:
           - DCLine: Models/Profiles/CoreEquipment/ConcreteClasses/DCLine.md
           - DCLineSegment: Models/Profiles/CoreEquipment/ConcreteClasses/DCLineSegment.md
           - DCNode: Models/Profiles/CoreEquipment/ConcreteClasses/DCNode.md
-          - RegulationSchedule: Models/Profiles/CoreEquipment/ConcreteClasses/RegulationSchedule.md
           - DCSeriesDevice: Models/Profiles/CoreEquipment/ConcreteClasses/DCSeriesDevice.md
           - DCShunt: Models/Profiles/CoreEquipment/ConcreteClasses/DCShunt.md
           - DCSwitch: Models/Profiles/CoreEquipment/ConcreteClasses/DCSwitch.md
           - DCTerminal: Models/Profiles/CoreEquipment/ConcreteClasses/DCTerminal.md
-          - Disconnector: Models/Profiles/CoreEquipment/ConcreteClasses/Disconnector.md
+          - DayType: Models/Profiles/CoreEquipment/ConcreteClasses/DayType.md
           - DisconnectingCircuitBreaker: Models/Profiles/CoreEquipment/ConcreteClasses/DisconnectingCircuitBreaker.md
+          - Disconnector: Models/Profiles/CoreEquipment/ConcreteClasses/Disconnector.md
+          - EnergyConsumer: Models/Profiles/CoreEquipment/ConcreteClasses/EnergyConsumer.md
           - EnergySchedulingType: Models/Profiles/CoreEquipment/ConcreteClasses/EnergySchedulingType.md
           - EnergySource: Models/Profiles/CoreEquipment/ConcreteClasses/EnergySource.md
           - EquivalentBranch: Models/Profiles/CoreEquipment/ConcreteClasses/EquivalentBranch.md
@@ -146,6 +142,7 @@ nav:
           - FaultIndicator: Models/Profiles/CoreEquipment/ConcreteClasses/FaultIndicator.md
           - FossilFuel: Models/Profiles/CoreEquipment/ConcreteClasses/FossilFuel.md
           - Fuse: Models/Profiles/CoreEquipment/ConcreteClasses/Fuse.md
+          - GeneratingUnit: Models/Profiles/CoreEquipment/ConcreteClasses/GeneratingUnit.md
           - GeographicalRegion: Models/Profiles/CoreEquipment/ConcreteClasses/GeographicalRegion.md
           - GrossToNetActivePowerCurve: Models/Profiles/CoreEquipment/ConcreteClasses/GrossToNetActivePowerCurve.md
           - Ground: Models/Profiles/CoreEquipment/ConcreteClasses/Ground.md
@@ -179,6 +176,7 @@ nav:
           - PhotoVoltaicUnit: Models/Profiles/CoreEquipment/ConcreteClasses/PhotoVoltaicUnit.md
           - PostLineSensor: Models/Profiles/CoreEquipment/ConcreteClasses/PostLineSensor.md
           - PotentialTransformer: Models/Profiles/CoreEquipment/ConcreteClasses/PotentialTransformer.md
+          - PowerElectronicsConnection: Models/Profiles/CoreEquipment/ConcreteClasses/PowerElectronicsConnection.md
           - PowerElectronicsWindUnit: Models/Profiles/CoreEquipment/ConcreteClasses/PowerElectronicsWindUnit.md
           - PowerTransformer: Models/Profiles/CoreEquipment/ConcreteClasses/PowerTransformer.md
           - PowerTransformerEnd: Models/Profiles/CoreEquipment/ConcreteClasses/PowerTransformerEnd.md
@@ -186,8 +184,9 @@ nav:
           - RatioTapChangerTable: Models/Profiles/CoreEquipment/ConcreteClasses/RatioTapChangerTable.md
           - RatioTapChangerTablePoint: Models/Profiles/CoreEquipment/ConcreteClasses/RatioTapChangerTablePoint.md
           - ReactiveCapabilityCurve: Models/Profiles/CoreEquipment/ConcreteClasses/ReactiveCapabilityCurve.md
-          - RegulatingControl: Models/Profiles/CoreEquipment/ConcreteClasses/RegulatingControl.md
           - RegularTimePoint: Models/Profiles/CoreEquipment/ConcreteClasses/RegularTimePoint.md
+          - RegulatingControl: Models/Profiles/CoreEquipment/ConcreteClasses/RegulatingControl.md
+          - RegulationSchedule: Models/Profiles/CoreEquipment/ConcreteClasses/RegulationSchedule.md
           - ReportingGroup: Models/Profiles/CoreEquipment/ConcreteClasses/ReportingGroup.md
           - Season: Models/Profiles/CoreEquipment/ConcreteClasses/Season.md
           - SeriesCompensator: Models/Profiles/CoreEquipment/ConcreteClasses/SeriesCompensator.md
@@ -203,6 +202,7 @@ nav:
           - SwitchSchedule: Models/Profiles/CoreEquipment/ConcreteClasses/SwitchSchedule.md
           - SynchronousMachine: Models/Profiles/CoreEquipment/ConcreteClasses/SynchronousMachine.md
           - TapChangerControl: Models/Profiles/CoreEquipment/ConcreteClasses/TapChangerControl.md
+          - TapSchedule: Models/Profiles/CoreEquipment/ConcreteClasses/TapSchedule.md
           - Terminal: Models/Profiles/CoreEquipment/ConcreteClasses/Terminal.md
           - ThermalGeneratingUnit: Models/Profiles/CoreEquipment/ConcreteClasses/ThermalGeneratingUnit.md
           - TieFlow: Models/Profiles/CoreEquipment/ConcreteClasses/TieFlow.md
@@ -214,26 +214,26 @@ nav:
           - WindGeneratingUnit: Models/Profiles/CoreEquipment/ConcreteClasses/WindGeneratingUnit.md
           - WindPowerPlant: Models/Profiles/CoreEquipment/ConcreteClasses/WindPowerPlant.md
         - Enumerations:
-          - UnitMultiplier: Models/Profiles/CoreEquipment/Enumerations/UnitMultiplier.md
-          - UnitSymbol: Models/Profiles/CoreEquipment/Enumerations/UnitSymbol.md
-          - DCPolarityKind: Models/Profiles/CoreEquipment/Enumerations/DCPolarityKind.md
           - ControlAreaTypeKind: Models/Profiles/CoreEquipment/Enumerations/ControlAreaTypeKind.md
+          - Currency: Models/Profiles/CoreEquipment/Enumerations/Currency.md
           - CurveStyle: Models/Profiles/CoreEquipment/Enumerations/CurveStyle.md
           - DCConverterOperatingModeKind: Models/Profiles/CoreEquipment/Enumerations/DCConverterOperatingModeKind.md
+          - DCPolarityKind: Models/Profiles/CoreEquipment/Enumerations/DCPolarityKind.md
           - FuelType: Models/Profiles/CoreEquipment/Enumerations/FuelType.md
           - GeneratorControlSource: Models/Profiles/CoreEquipment/Enumerations/GeneratorControlSource.md
-          - Currency: Models/Profiles/CoreEquipment/Enumerations/Currency.md
           - HydroEnergyConversionKind: Models/Profiles/CoreEquipment/Enumerations/HydroEnergyConversionKind.md
-          - HydroTurbineKind: Models/Profiles/CoreEquipment/Enumerations/HydroTurbineKind.md
           - HydroPlantStorageKind: Models/Profiles/CoreEquipment/Enumerations/HydroPlantStorageKind.md
-          - OperationalLimitDirectionKind: Models/Profiles/CoreEquipment/Enumerations/OperationalLimitDirectionKind.md
+          - HydroTurbineKind: Models/Profiles/CoreEquipment/Enumerations/HydroTurbineKind.md
           - LimitKind: Models/Profiles/CoreEquipment/Enumerations/LimitKind.md
-          - WindingConnection: Models/Profiles/CoreEquipment/Enumerations/WindingConnection.md
+          - OperationalLimitDirectionKind: Models/Profiles/CoreEquipment/Enumerations/OperationalLimitDirectionKind.md
+          - PhaseCode: Models/Profiles/CoreEquipment/Enumerations/PhaseCode.md
           - RegulatingControlModeKind: Models/Profiles/CoreEquipment/Enumerations/RegulatingControlModeKind.md
           - SVCControlMode: Models/Profiles/CoreEquipment/Enumerations/SVCControlMode.md
           - SynchronousMachineKind: Models/Profiles/CoreEquipment/Enumerations/SynchronousMachineKind.md
-          - PhaseCode: Models/Profiles/CoreEquipment/Enumerations/PhaseCode.md
+          - UnitMultiplier: Models/Profiles/CoreEquipment/Enumerations/UnitMultiplier.md
+          - UnitSymbol: Models/Profiles/CoreEquipment/Enumerations/UnitSymbol.md
           - WindGenUnitKind: Models/Profiles/CoreEquipment/Enumerations/WindGenUnitKind.md
+          - WindingConnection: Models/Profiles/CoreEquipment/Enumerations/WindingConnection.md
         - Types:
           - ActivePower: Models/Profiles/CoreEquipment/Types/ActivePower.md
           - ActivePowerPerCurrentFlow: Models/Profiles/CoreEquipment/Types/ActivePowerPerCurrentFlow.md
@@ -272,55 +272,67 @@ nav:
           - VisibilityLayer: Models/Profiles/DiagramLayout/ConcreteClasses/VisibilityLayer.md
         - Enumerations:
           - OrientationKind: Models/Profiles/DiagramLayout/Enumerations/OrientationKind.md
-          - UnitSymbol: Models/Profiles/DiagramLayout/Enumerations/UnitSymbol.md
-          - UnitMultiplier: Models/Profiles/DiagramLayout/Enumerations/UnitMultiplier.md
         - Types:
           - AngleDegrees: Models/Profiles/DiagramLayout/Types/AngleDegrees.md
       - EquipmentBoundary:
         - Overview: Models/Profiles/EquipmentBoundary/index.md
         - Abstract Classes:
+          - ACDCTerminal: Models/Profiles/EquipmentBoundary/AbstractClasses/ACDCTerminal.md
+          - ConductingEquipment: Models/Profiles/EquipmentBoundary/AbstractClasses/ConductingEquipment.md
           - ConnectivityNodeContainer: Models/Profiles/EquipmentBoundary/AbstractClasses/ConnectivityNodeContainer.md
+          - Connector: Models/Profiles/EquipmentBoundary/AbstractClasses/Connector.md
+          - Equipment: Models/Profiles/EquipmentBoundary/AbstractClasses/Equipment.md
           - EquipmentContainer: Models/Profiles/EquipmentBoundary/AbstractClasses/EquipmentContainer.md
           - IdentifiedObject: Models/Profiles/EquipmentBoundary/AbstractClasses/IdentifiedObject.md
           - PowerSystemResource: Models/Profiles/EquipmentBoundary/AbstractClasses/PowerSystemResource.md
         - Concrete Classes:
+          - BaseVoltage: Models/Profiles/EquipmentBoundary/ConcreteClasses/BaseVoltage.md
           - Bay: Models/Profiles/EquipmentBoundary/ConcreteClasses/Bay.md
           - BoundaryPoint: Models/Profiles/EquipmentBoundary/ConcreteClasses/BoundaryPoint.md
           - ConnectivityNode: Models/Profiles/EquipmentBoundary/ConcreteClasses/ConnectivityNode.md
+          - EnergySchedulingType: Models/Profiles/EquipmentBoundary/ConcreteClasses/EnergySchedulingType.md
+          - GeographicalRegion: Models/Profiles/EquipmentBoundary/ConcreteClasses/GeographicalRegion.md
+          - Junction: Models/Profiles/EquipmentBoundary/ConcreteClasses/Junction.md
+          - Line: Models/Profiles/EquipmentBoundary/ConcreteClasses/Line.md
+          - SubGeographicalRegion: Models/Profiles/EquipmentBoundary/ConcreteClasses/SubGeographicalRegion.md
           - Substation: Models/Profiles/EquipmentBoundary/ConcreteClasses/Substation.md
+          - Terminal: Models/Profiles/EquipmentBoundary/ConcreteClasses/Terminal.md
           - VoltageLevel: Models/Profiles/EquipmentBoundary/ConcreteClasses/VoltageLevel.md
+        - Types:
+          - Voltage: Models/Profiles/EquipmentBoundary/Types/Voltage.md
       - GeographicalLocation:
         - Overview: Models/Profiles/GeographicalLocation/index.md
         - Abstract Classes:
           - IdentifiedObject: Models/Profiles/GeographicalLocation/AbstractClasses/IdentifiedObject.md
           - PowerSystemResource: Models/Profiles/GeographicalLocation/AbstractClasses/PowerSystemResource.md
+          - WorkLocation: Models/Profiles/GeographicalLocation/AbstractClasses/WorkLocation.md
         - Concrete Classes:
-          - ServiceLocation: Models/Profiles/GeographicalLocation/ConcreteClasses/ServiceLocation.md
-          - WorkLocation: Models/Profiles/GeographicalLocation/ConcreteClasses/WorkLocation.md
           - CoordinateSystem: Models/Profiles/GeographicalLocation/ConcreteClasses/CoordinateSystem.md
           - Location: Models/Profiles/GeographicalLocation/ConcreteClasses/Location.md
+          - PositionPoint: Models/Profiles/GeographicalLocation/ConcreteClasses/PositionPoint.md
+          - ServiceLocation: Models/Profiles/GeographicalLocation/ConcreteClasses/ServiceLocation.md
+          - Status: Models/Profiles/GeographicalLocation/ConcreteClasses/Status.md
           - StreetAddress: Models/Profiles/GeographicalLocation/ConcreteClasses/StreetAddress.md
           - StreetDetail: Models/Profiles/GeographicalLocation/ConcreteClasses/StreetDetail.md
           - TownDetail: Models/Profiles/GeographicalLocation/ConcreteClasses/TownDetail.md
-          - Status: Models/Profiles/GeographicalLocation/ConcreteClasses/Status.md
-          - PositionPoint: Models/Profiles/GeographicalLocation/ConcreteClasses/PositionPoint.md
       - Operation:
         - Overview: Models/Profiles/Operation/index.md
         - Abstract Classes:
-          - AccumulatorLimit: Models/Profiles/Operation/AbstractClasses/AccumulatorLimit.md
           - ACDCTerminal: Models/Profiles/Operation/AbstractClasses/ACDCTerminal.md
           - AnalogControl: Models/Profiles/Operation/AbstractClasses/AnalogControl.md
           - Control: Models/Profiles/Operation/AbstractClasses/Control.md
-          - IdentifiedObject: Models/Profiles/Operation/AbstractClasses/IdentifiedObject.md
           - IOPoint: Models/Profiles/Operation/AbstractClasses/IOPoint.md
+          - IdentifiedObject: Models/Profiles/Operation/AbstractClasses/IdentifiedObject.md
           - Limit: Models/Profiles/Operation/AbstractClasses/Limit.md
           - LimitSet: Models/Profiles/Operation/AbstractClasses/LimitSet.md
           - Measurement: Models/Profiles/Operation/AbstractClasses/Measurement.md
           - MeasurementValue: Models/Profiles/Operation/AbstractClasses/MeasurementValue.md
           - PowerSystemResource: Models/Profiles/Operation/AbstractClasses/PowerSystemResource.md
           - Quality61850: Models/Profiles/Operation/AbstractClasses/Quality61850.md
+          - Terminal: Models/Profiles/Operation/AbstractClasses/Terminal.md
         - Concrete Classes:
           - Accumulator: Models/Profiles/Operation/ConcreteClasses/Accumulator.md
+          - AccumulatorLimit: Models/Profiles/Operation/ConcreteClasses/AccumulatorLimit.md
           - AccumulatorLimitSet: Models/Profiles/Operation/ConcreteClasses/AccumulatorLimitSet.md
           - AccumulatorReset: Models/Profiles/Operation/ConcreteClasses/AccumulatorReset.md
           - AccumulatorValue: Models/Profiles/Operation/ConcreteClasses/AccumulatorValue.md
@@ -337,14 +349,13 @@ nav:
           - SetPoint: Models/Profiles/Operation/ConcreteClasses/SetPoint.md
           - StringMeasurement: Models/Profiles/Operation/ConcreteClasses/StringMeasurement.md
           - StringMeasurementValue: Models/Profiles/Operation/ConcreteClasses/StringMeasurementValue.md
-          - Terminal: Models/Profiles/Operation/ConcreteClasses/Terminal.md
           - ValueAliasSet: Models/Profiles/Operation/ConcreteClasses/ValueAliasSet.md
           - ValueToAlias: Models/Profiles/Operation/ConcreteClasses/ValueToAlias.md
         - Enumerations:
-          - UnitMultiplier: Models/Profiles/Operation/Enumerations/UnitMultiplier.md
-          - UnitSymbol: Models/Profiles/Operation/Enumerations/UnitSymbol.md
           - PhaseCode: Models/Profiles/Operation/Enumerations/PhaseCode.md
           - Source: Models/Profiles/Operation/Enumerations/Source.md
+          - UnitMultiplier: Models/Profiles/Operation/Enumerations/UnitMultiplier.md
+          - UnitSymbol: Models/Profiles/Operation/Enumerations/UnitSymbol.md
           - Validity: Models/Profiles/Operation/Enumerations/Validity.md
         - Types:
           - PerCent: Models/Profiles/Operation/Types/PerCent.md
@@ -364,6 +375,7 @@ nav:
           - RegulatingCondEq: Models/Profiles/ShortCircuit/AbstractClasses/RegulatingCondEq.md
           - RotatingMachine: Models/Profiles/ShortCircuit/AbstractClasses/RotatingMachine.md
           - ShuntCompensator: Models/Profiles/ShortCircuit/AbstractClasses/ShuntCompensator.md
+          - Terminal: Models/Profiles/ShortCircuit/AbstractClasses/Terminal.md
           - TransformerEnd: Models/Profiles/ShortCircuit/AbstractClasses/TransformerEnd.md
         - Concrete Classes:
           - ACLineSegment: Models/Profiles/ShortCircuit/ConcreteClasses/ACLineSegment.md
@@ -382,12 +394,11 @@ nav:
           - PowerTransformerEnd: Models/Profiles/ShortCircuit/ConcreteClasses/PowerTransformerEnd.md
           - SeriesCompensator: Models/Profiles/ShortCircuit/ConcreteClasses/SeriesCompensator.md
           - SynchronousMachine: Models/Profiles/ShortCircuit/ConcreteClasses/SynchronousMachine.md
-          - Terminal: Models/Profiles/ShortCircuit/ConcreteClasses/Terminal.md
         - Enumerations:
-          - UnitSymbol: Models/Profiles/ShortCircuit/Enumerations/UnitSymbol.md
-          - UnitMultiplier: Models/Profiles/ShortCircuit/Enumerations/UnitMultiplier.md
           - PetersenCoilModeKind: Models/Profiles/ShortCircuit/Enumerations/PetersenCoilModeKind.md
           - ShortCircuitRotorKind: Models/Profiles/ShortCircuit/Enumerations/ShortCircuitRotorKind.md
+          - UnitMultiplier: Models/Profiles/ShortCircuit/Enumerations/UnitMultiplier.md
+          - UnitSymbol: Models/Profiles/ShortCircuit/Enumerations/UnitSymbol.md
         - Types:
           - ActivePower: Models/Profiles/ShortCircuit/Types/ActivePower.md
           - AngleDegrees: Models/Profiles/ShortCircuit/Types/AngleDegrees.md
@@ -407,13 +418,16 @@ nav:
           - ACDCConverter: Models/Profiles/StateVariables/AbstractClasses/ACDCConverter.md
           - ACDCTerminal: Models/Profiles/StateVariables/AbstractClasses/ACDCTerminal.md
           - ConductingEquipment: Models/Profiles/StateVariables/AbstractClasses/ConductingEquipment.md
+          - DCTopologicalNode: Models/Profiles/StateVariables/AbstractClasses/DCTopologicalNode.md
           - IdentifiedObject: Models/Profiles/StateVariables/AbstractClasses/IdentifiedObject.md
           - ShuntCompensator: Models/Profiles/StateVariables/AbstractClasses/ShuntCompensator.md
+          - Switch: Models/Profiles/StateVariables/AbstractClasses/Switch.md
           - TapChanger: Models/Profiles/StateVariables/AbstractClasses/TapChanger.md
+          - Terminal: Models/Profiles/StateVariables/AbstractClasses/Terminal.md
+          - TopologicalNode: Models/Profiles/StateVariables/AbstractClasses/TopologicalNode.md
         - Concrete Classes:
           - CsConverter: Models/Profiles/StateVariables/ConcreteClasses/CsConverter.md
           - DCTopologicalIsland: Models/Profiles/StateVariables/ConcreteClasses/DCTopologicalIsland.md
-          - DCTopologicalNode: Models/Profiles/StateVariables/ConcreteClasses/DCTopologicalNode.md
           - SvInjection: Models/Profiles/StateVariables/ConcreteClasses/SvInjection.md
           - SvPowerFlow: Models/Profiles/StateVariables/ConcreteClasses/SvPowerFlow.md
           - SvShuntCompensatorSections: Models/Profiles/StateVariables/ConcreteClasses/SvShuntCompensatorSections.md
@@ -421,10 +435,7 @@ nav:
           - SvSwitch: Models/Profiles/StateVariables/ConcreteClasses/SvSwitch.md
           - SvTapStep: Models/Profiles/StateVariables/ConcreteClasses/SvTapStep.md
           - SvVoltage: Models/Profiles/StateVariables/ConcreteClasses/SvVoltage.md
-          - Switch: Models/Profiles/StateVariables/ConcreteClasses/Switch.md
-          - Terminal: Models/Profiles/StateVariables/ConcreteClasses/Terminal.md
           - TopologicalIsland: Models/Profiles/StateVariables/ConcreteClasses/TopologicalIsland.md
-          - TopologicalNode: Models/Profiles/StateVariables/ConcreteClasses/TopologicalNode.md
           - VsConverter: Models/Profiles/StateVariables/ConcreteClasses/VsConverter.md
         - Enumerations:
           - UnitMultiplier: Models/Profiles/StateVariables/Enumerations/UnitMultiplier.md
@@ -443,8 +454,8 @@ nav:
           - ConductingEquipment: Models/Profiles/SteadyStateHypothesis/AbstractClasses/ConductingEquipment.md
           - DCBaseTerminal: Models/Profiles/SteadyStateHypothesis/AbstractClasses/DCBaseTerminal.md
           - EnergyConnection: Models/Profiles/SteadyStateHypothesis/AbstractClasses/EnergyConnection.md
-          - EnergyConsumer: Models/Profiles/SteadyStateHypothesis/AbstractClasses/EnergyConsumer.md
           - Equipment: Models/Profiles/SteadyStateHypothesis/AbstractClasses/Equipment.md
+          - EquipmentContainer: Models/Profiles/SteadyStateHypothesis/AbstractClasses/EquipmentContainer.md
           - EquivalentEquipment: Models/Profiles/SteadyStateHypothesis/AbstractClasses/EquivalentEquipment.md
           - IdentifiedObject: Models/Profiles/SteadyStateHypothesis/AbstractClasses/IdentifiedObject.md
           - OperationalLimit: Models/Profiles/SteadyStateHypothesis/AbstractClasses/OperationalLimit.md
@@ -453,7 +464,6 @@ nav:
           - PowerElectronicsUnit: Models/Profiles/SteadyStateHypothesis/AbstractClasses/PowerElectronicsUnit.md
           - PowerSystemResource: Models/Profiles/SteadyStateHypothesis/AbstractClasses/PowerSystemResource.md
           - ProtectedSwitch: Models/Profiles/SteadyStateHypothesis/AbstractClasses/ProtectedSwitch.md
-          - RegulatingCondEq: Models/Profiles/SteadyStateHypothesis/AbstractClasses/RegulatingCondEq.md
           - RotatingMachine: Models/Profiles/SteadyStateHypothesis/AbstractClasses/RotatingMachine.md
           - ShuntCompensator: Models/Profiles/SteadyStateHypothesis/AbstractClasses/ShuntCompensator.md
           - TapChanger: Models/Profiles/SteadyStateHypothesis/AbstractClasses/TapChanger.md
@@ -469,8 +479,9 @@ nav:
           - CsConverter: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/CsConverter.md
           - CurrentLimit: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/CurrentLimit.md
           - DCTerminal: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/DCTerminal.md
-          - Disconnector: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/Disconnector.md
           - DisconnectingCircuitBreaker: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/DisconnectingCircuitBreaker.md
+          - Disconnector: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/Disconnector.md
+          - EnergyConsumer: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/EnergyConsumer.md
           - EnergySource: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/EnergySource.md
           - EquivalentInjection: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/EquivalentInjection.md
           - ExternalNetworkInjection: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/ExternalNetworkInjection.md
@@ -490,6 +501,7 @@ nav:
           - PhaseTapChangerTabular: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/PhaseTapChangerTabular.md
           - PowerElectronicsConnection: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/PowerElectronicsConnection.md
           - RatioTapChanger: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/RatioTapChanger.md
+          - RegulatingCondEq: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/RegulatingCondEq.md
           - RegulatingControl: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/RegulatingControl.md
           - SolarGeneratingUnit: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/SolarGeneratingUnit.md
           - StaticVarCompensator: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/StaticVarCompensator.md
@@ -503,13 +515,13 @@ nav:
           - VsConverter: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/VsConverter.md
           - WindGeneratingUnit: Models/Profiles/SteadyStateHypothesis/ConcreteClasses/WindGeneratingUnit.md
         - Enumerations:
-          - UnitMultiplier: Models/Profiles/SteadyStateHypothesis/Enumerations/UnitMultiplier.md
-          - UnitSymbol: Models/Profiles/SteadyStateHypothesis/Enumerations/UnitSymbol.md
           - AsynchronousMachineKind: Models/Profiles/SteadyStateHypothesis/Enumerations/AsynchronousMachineKind.md
           - BatteryStateKind: Models/Profiles/SteadyStateHypothesis/Enumerations/BatteryStateKind.md
           - CsOperatingModeKind: Models/Profiles/SteadyStateHypothesis/Enumerations/CsOperatingModeKind.md
           - CsPpccControlKind: Models/Profiles/SteadyStateHypothesis/Enumerations/CsPpccControlKind.md
           - SynchronousMachineOperatingMode: Models/Profiles/SteadyStateHypothesis/Enumerations/SynchronousMachineOperatingMode.md
+          - UnitMultiplier: Models/Profiles/SteadyStateHypothesis/Enumerations/UnitMultiplier.md
+          - UnitSymbol: Models/Profiles/SteadyStateHypothesis/Enumerations/UnitSymbol.md
           - VsPpccControlKind: Models/Profiles/SteadyStateHypothesis/Enumerations/VsPpccControlKind.md
           - VsQpccControlKind: Models/Profiles/SteadyStateHypothesis/Enumerations/VsQpccControlKind.md
         - Types:
@@ -528,20 +540,20 @@ nav:
         - Overview: Models/Profiles/Topology/index.md
         - Abstract Classes:
           - ACDCTerminal: Models/Profiles/Topology/AbstractClasses/ACDCTerminal.md
+          - BaseVoltage: Models/Profiles/Topology/AbstractClasses/BaseVoltage.md
           - ConnectivityNodeContainer: Models/Profiles/Topology/AbstractClasses/ConnectivityNodeContainer.md
           - DCBaseTerminal: Models/Profiles/Topology/AbstractClasses/DCBaseTerminal.md
           - DCEquipmentContainer: Models/Profiles/Topology/AbstractClasses/DCEquipmentContainer.md
           - IdentifiedObject: Models/Profiles/Topology/AbstractClasses/IdentifiedObject.md
+          - ReportingGroup: Models/Profiles/Topology/AbstractClasses/ReportingGroup.md
         - Concrete Classes:
           - ACDCConverterDCTerminal: Models/Profiles/Topology/ConcreteClasses/ACDCConverterDCTerminal.md
-          - BaseVoltage: Models/Profiles/Topology/ConcreteClasses/BaseVoltage.md
           - ConnectivityNode: Models/Profiles/Topology/ConcreteClasses/ConnectivityNode.md
           - DCNode: Models/Profiles/Topology/ConcreteClasses/DCNode.md
           - DCTerminal: Models/Profiles/Topology/ConcreteClasses/DCTerminal.md
           - DCTopologicalNode: Models/Profiles/Topology/ConcreteClasses/DCTopologicalNode.md
           - Terminal: Models/Profiles/Topology/ConcreteClasses/Terminal.md
           - TopologicalNode: Models/Profiles/Topology/ConcreteClasses/TopologicalNode.md
-          - ReportingGroup: Models/Profiles/Topology/ConcreteClasses/ReportingGroup.md
     - Norwegian Profiles:
       - AviationObstacle:
         - Overview: Models/Profiles/AviationObstacle/index.md

@@ -1,25 +1,23 @@
-id: http://iec.ch/TC57/ns/CIM/GeographicalLocation-EU#Package_GeographicalLocationProfile
-name: GeographicalLocationProfile
-description: This vocabulary is describing the geographical location profile from
-  IEC 61970-600-2.
-title: Geographical Location Vocabulary
+id: http://ucaiug.org/ns/CGMES/GeographicalLocation-EU/3.0#
+name: GeographicalLocation
+title: GeographicalLocation Vocabulary
+annotations:
+  copyright: "Copyright 2026 UCAIug SPDX-License-Identifier: Apache-2.0"
 prefixes:
-  linkml: https://w3id.org/linkml/
-  cim: http://iec.ch/TC57/CIM100#
-  cims: http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#
-  dc: http://purl.org/dc/elements/1.1/
-  dcat: http://www.w3.org/ns/dcat#
-  dct: http://purl.org/dc/terms/
-  eu: http://iec.ch/TC57/CIM100-European#
-  owl: http://www.w3.org/2002/07/owl#
-  profcim: http://iec.ch/TC57/ns/CIM/prof-cim#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  linkml: https://w3id.org/linkml/
   sh: http://www.w3.org/ns/shacl#
   skos: http://www.w3.org/2004/02/skos/core#
-  xsd: http://www.w3.org/2001/XMLSchema#
-  gl: http://iec.ch/TC57/ns/CIM/GeographicalLocation-EU#
-  this: http://iec.ch/TC57/ns/CIM/GeographicalLocation-EU#Package_GeographicalLocationProfile
+  dc: http://purl.org/dc/elements/1.1/
+  profcim: http://iec.ch/TC57/ns/CIM/prof-cim#
+  owl: http://www.w3.org/2002/07/owl#
+  cim: http://iec.ch/TC57/CIM100#
+  cims: http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#
+  dct: http://purl.org/dc/terms/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  this: http://ucaiug.org/ns/CGMES/GeographicalLocation-EU/3.0#
+  dcat: http://www.w3.org/ns/dcat#
+  eu: http://iec.ch/TC57/CIM100-European#
 imports:
 - linkml:types
 default_curi_maps:
@@ -27,355 +25,391 @@ default_curi_maps:
 default_range: string
 default_prefix: this
 classes:
-  IdentifiedObject:
-    class_uri: cim:IdentifiedObject
-    abstract: true
-    attributes:
-      mRID:
-        slot_uri: cim:IdentifiedObject.mRID
-        range: string
-        multivalued: false
-        required: true
-        description: 'Master resource identifier issued by a model authority. The
-          mRID is unique within an exchange context. Global uniqueness is easily achieved
-          by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID
-          is strongly recommended.
-
-          For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID
-          is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.'
-      name:
-        slot_uri: cim:IdentifiedObject.name
-        range: string
-        multivalued: false
-        required: false
-        description: The name is any free human readable and possibly non unique text
-          naming the object.
-    description: This is a root class to provide common identification for all classes
-      needing identification and naming attributes.
-  ServiceLocation:
-    class_uri: cim:ServiceLocation
-    is_a: WorkLocation
-    description: A real estate location, commonly referred to as premises.
-  WorkLocation:
-    class_uri: cim:WorkLocation
-    is_a: Location
-    description: Information about a particular location for various forms of work.
   CoordinateSystem:
+    description: "Coordinate reference system."
+    annotations:
+      ea_guid: "EAID_D7A22063_DBE9_467d_9E72_C32640FABCA0"
+    is_a: IdentifiedObject
     class_uri: cim:CoordinateSystem
-    attributes:
+    attributes: 
       crsUrn:
+        description: "A Uniform Resource Name (URN) for the coordinate reference system (crs) used to define 'Location.PositionPoints'.An example would be the European Petroleum Survey Group (EPSG) code for a coordinate reference system, defined in URN under the Open Geospatial Consortium (OGC) namespace as: urn:ogc:def:crs:EPSG::XXXX, where XXXX is an EPSG code (a full list of codes can be found at the EPSG Registry web site http://www.epsg-registry.org/). To define the coordinate system as being WGS84 (latitude, longitude) using an EPSG OGC, this attribute would be urn:ogc:def:crs:EPSG::4236.A profile should limit this code to a set of allowed URNs agreed to by all sending and receiving parties."
+        annotations:
+          ea_guid: "EAID_961FC72C_29B9_4d09_B575_0140E5585552"
         slot_uri: cim:CoordinateSystem.crsUrn
         range: string
-        multivalued: false
-        required: true
-        description: 'A Uniform Resource Name (URN) for the coordinate reference system
-          (crs) used to define ''Location.PositionPoints''.
-
-          An example would be the European Petroleum Survey Group (EPSG) code for
-          a coordinate reference system, defined in URN under the Open Geospatial
-          Consortium (OGC) namespace as: urn:ogc:def:crs:EPSG::XXXX, where XXXX is
-          an EPSG code (a full list of codes can be found at the EPSG Registry web
-          site http://www.epsg-registry.org/). To define the coordinate system as
-          being WGS84 (latitude, longitude) using an EPSG OGC, this attribute would
-          be urn:ogc:def:crs:EPSG::4236.
-
-          A profile should limit this code to a set of allowed URNs agreed to by all
-          sending and receiving parties.'
-      Locations:
-        slot_uri: cim:CoordinateSystem.Locations
-        range: Location
-        multivalued: true
-        required: false
-        description: All locations described with position points in this coordinate
-          system.
-    is_a: IdentifiedObject
-    description: Coordinate reference system.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+  IdentifiedObject:
+    description: "This is a root class to provide common identification for all classes needing identification and naming attributes."
+    annotations:
+      ea_guid: "EAID_055C5806_E9D8_4a7a_9307_DAF7C31763C7"
+    abstract: true
+    class_uri: cim:IdentifiedObject
+    attributes: 
+      mRID:
+        description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
+        annotations:
+          ea_guid: "EAID_C775F80A_A23D_4f38_AB9D_49D1FA882337"
+        slot_uri: cim:IdentifiedObject.mRID
+        range: string
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+      name:
+        description: "The name is any free human readable and possibly non unique text naming the object."
+        annotations:
+          ea_guid: "EAID_870F033B_EDA6_4a32_A5AD_47DCBBFE2997"
+        slot_uri: cim:IdentifiedObject.name
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
   Location:
+    description: "The place, scene, or point of something where someone or something has been, is, and/or will be at a given moment in time. It can be defined with one or more position points (coordinates) in a given coordinate system."
+    annotations:
+      ea_guid: "EAID_671B9EF5_A0CB_467e_ADAC_FBEA4156EEBB"
+    is_a: IdentifiedObject
     class_uri: cim:Location
-    attributes:
+    attributes: 
       CoordinateSystem:
+        description: "Coordinate system used to describe position points of this location."
+        annotations:
+          ea_guid: "EAID_D9DB79D8_27F1_4071_9C79_F0F1F62B4F18-A"
         slot_uri: cim:Location.CoordinateSystem
         range: CoordinateSystem
-        multivalued: false
-        required: true
-        description: Coordinate system used to describe position points of this location.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       mainAddress:
+        description: "Main address of the location."
+        annotations:
+          ea_guid: "EAID_44CF2281_A210_4c5a_A26A_D802302AA58D"
         slot_uri: cim:Location.mainAddress
         range: StreetAddress
-        multivalued: false
-        required: false
-        description: Main address of the location.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       PowerSystemResources:
+        description: "All power system resources at this location."
+        annotations:
+          ea_guid: "EAID_9F4B30FA_0A66_4ce4_9A00_413B0DB058C7-A"
         slot_uri: cim:Location.PowerSystemResources
         range: PowerSystemResource
-        multivalued: false
-        required: true
-        description: All power system resources at this location.
-      PositionPoints:
-        slot_uri: cim:Location.PositionPoints
-        range: PositionPoint
-        multivalued: true
-        required: false
-        description: Sequence of position points describing this location, expressed
-          in coordinate system 'Location.CoordinateSystem'.
-    is_a: IdentifiedObject
-    description: The place, scene, or point of something where someone or something
-      has been, is, and/or will be at a given moment in time. It can be defined with
-      one or more position points (coordinates) in a given coordinate system.
-  StreetAddress:
-    class_uri: cim:StreetAddress
-    attributes:
-      streetDetail:
-        slot_uri: cim:StreetAddress.streetDetail
-        range: StreetDetail
-        multivalued: false
-        required: false
-        description: Street detail.
-      townDetail:
-        slot_uri: cim:StreetAddress.townDetail
-        range: TownDetail
-        multivalued: false
-        required: false
-        description: Town detail.
-      status:
-        slot_uri: cim:StreetAddress.status
-        range: Status
-        multivalued: false
-        required: false
-        description: Status of this address.
-      postalCode:
-        slot_uri: cim:StreetAddress.postalCode
-        range: string
-        multivalued: false
-        required: false
-        description: Postal code for the address.
-      poBox:
-        slot_uri: cim:StreetAddress.poBox
-        range: string
-        multivalued: false
-        required: false
-        description: Post office box.
-      language:
-        slot_uri: cim:StreetAddress.language
-        range: string
-        multivalued: false
-        required: false
-        description: The language in which the address is specified, using ISO 639-1
-          two digit language code.
-    description: General purpose street and postal address information.
-  StreetDetail:
-    class_uri: cim:StreetDetail
-    attributes:
-      number:
-        slot_uri: cim:StreetDetail.number
-        range: string
-        multivalued: false
-        required: false
-        description: Designator of the specific location on the street.
-      name:
-        slot_uri: cim:StreetDetail.name
-        range: string
-        multivalued: false
-        required: false
-        description: Name of the street.
-      suffix:
-        slot_uri: cim:StreetDetail.suffix
-        range: string
-        multivalued: false
-        required: false
-        description: 'Suffix to the street name. For example: North, South, East,
-          West.'
-      prefix:
-        slot_uri: cim:StreetDetail.prefix
-        range: string
-        multivalued: false
-        required: false
-        description: 'Prefix to the street name. For example: North, South, East,
-          West.'
-      type:
-        slot_uri: cim:StreetDetail.type
-        range: string
-        multivalued: false
-        required: false
-        description: 'Type of street. Examples include: street, circle, boulevard,
-          avenue, road, drive, etc.'
-      code:
-        slot_uri: cim:StreetDetail.code
-        range: string
-        multivalued: false
-        required: false
-        description: (if applicable) Utilities often make use of external reference
-          systems, such as those of the town-planner's department or surveyor general's
-          mapping system, that allocate global reference codes to streets.
-      buildingName:
-        slot_uri: cim:StreetDetail.buildingName
-        range: string
-        multivalued: false
-        required: false
-        description: (if applicable) In certain cases the physical location of the
-          place of interest does not have a direct point of entry from the street,
-          but may be located inside a larger structure such as a building, complex,
-          office block, apartment, etc.
-      suiteNumber:
-        slot_uri: cim:StreetDetail.suiteNumber
-        range: string
-        multivalued: false
-        required: false
-        description: Number of the apartment or suite.
-      addressGeneral:
-        slot_uri: cim:StreetDetail.addressGeneral
-        range: string
-        multivalued: false
-        required: false
-        description: First line of a free form address or some additional address
-          information (for example a mail stop).
-      addressGeneral2:
-        slot_uri: cim:StreetDetail.addressGeneral2
-        range: string
-        multivalued: false
-        required: false
-        description: (if applicable) Second line of a free form address.
-      addressGeneral3:
-        slot_uri: cim:StreetDetail.addressGeneral3
-        range: string
-        multivalued: false
-        required: false
-        description: (if applicable) Third line of a free form address.
-      withinTownLimits:
-        slot_uri: cim:StreetDetail.withinTownLimits
-        range: boolean
-        multivalued: false
-        required: false
-        description: True if this street is within the legal geographical boundaries
-          of the specified town (default).
-      floorIdentification:
-        slot_uri: cim:StreetDetail.floorIdentification
-        range: string
-        multivalued: false
-        required: false
-        description: The identification by name or number, expressed as text, of the
-          floor in the building as part of this address.
-    description: Street details, in the context of address.
-  TownDetail:
-    class_uri: cim:TownDetail
-    attributes:
-      code:
-        slot_uri: cim:TownDetail.code
-        range: string
-        multivalued: false
-        required: false
-        description: Town code.
-      section:
-        slot_uri: cim:TownDetail.section
-        range: string
-        multivalued: false
-        required: false
-        description: Town section. For example, it is common for there to be 36 sections
-          per township.
-      name:
-        slot_uri: cim:TownDetail.name
-        range: string
-        multivalued: false
-        required: false
-        description: Town name.
-      stateOrProvince:
-        slot_uri: cim:TownDetail.stateOrProvince
-        range: string
-        multivalued: false
-        required: false
-        description: Name of the state or province.
-      country:
-        slot_uri: cim:TownDetail.country
-        range: string
-        multivalued: false
-        required: false
-        description: Name of the country.
-    description: Town details, in the context of address.
-  Status:
-    class_uri: cim:Status
-    attributes:
-      value:
-        slot_uri: cim:Status.value
-        range: string
-        multivalued: false
-        required: false
-        description: Status value at 'dateTime'; prior status changes may have been
-          kept in instances of activity records associated with the object to which
-          this status applies.
-      dateTime:
-        slot_uri: cim:Status.dateTime
-        range: date
-        multivalued: false
-        required: false
-        description: Date and time for which status 'value' applies.
-      remark:
-        slot_uri: cim:Status.remark
-        range: string
-        multivalued: false
-        required: false
-        description: Pertinent information regarding the current 'value', as free
-          form text.
-      reason:
-        slot_uri: cim:Status.reason
-        range: string
-        multivalued: false
-        required: false
-        description: Reason code or explanation for why an object went to the current
-          status 'value'.
-    description: Current status information relevant to an entity.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   PositionPoint:
+    description: "Set of spatial coordinates that determine a point, defined in the coordinate system specified in 'Location.CoordinateSystem'. Use a single position point instance to describe a point-oriented location. Use a sequence of position points to describe a line-oriented object (physical location of non-point oriented objects like cables or lines), or area of an object (like a substation or a geographical zone - in this case, have first and last position point with the same values)."
+    annotations:
+      ea_guid: "EAID_17847D7C_A86C_43c9_B8AA_522B70002D29"
     class_uri: cim:PositionPoint
-    attributes:
-      Location:
-        slot_uri: cim:PositionPoint.Location
-        range: Location
-        multivalued: false
-        required: true
-        description: Location described by this position point.
+    attributes: 
       sequenceNumber:
+        description: "Zero-relative sequence number of this point within a series of points."
+        annotations:
+          ea_guid: "EAID_9C1FA17F_EC70_452a_9BD5_2F5E29234B28"
         slot_uri: cim:PositionPoint.sequenceNumber
         range: integer
-        multivalued: false
-        required: false
-        description: Zero-relative sequence number of this point within a series of
-          points.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       xPosition:
+        description: "X axis position."
+        annotations:
+          ea_guid: "EAID_2C06CBF6_1564_417b_98DF_24B9E0040DCC"
         slot_uri: cim:PositionPoint.xPosition
         range: string
-        multivalued: false
-        required: true
-        description: X axis position.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       yPosition:
+        description: "Y axis position."
+        annotations:
+          ea_guid: "EAID_150622F9_462B_4479_9DC4_F9035E140110"
         slot_uri: cim:PositionPoint.yPosition
         range: string
-        multivalued: false
-        required: true
-        description: Y axis position.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       zPosition:
+        description: "(if applicable) Z axis position."
+        annotations:
+          ea_guid: "EAID_A0537144_D5D9_4a24_805C_D4478E98690C"
         slot_uri: cim:PositionPoint.zPosition
         range: string
-        multivalued: false
-        required: false
-        description: (if applicable) Z axis position.
-    description: Set of spatial coordinates that determine a point, defined in the
-      coordinate system specified in 'Location.CoordinateSystem'. Use a single position
-      point instance to describe a point-oriented location. Use a sequence of position
-      points to describe a line-oriented object (physical location of non-point oriented
-      objects like cables or lines), or area of an object (like a substation or a
-      geographical zone - in this case, have first and last position point with the
-      same values).
-  PowerSystemResource:
-    class_uri: cim:PowerSystemResource
-    attributes:
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       Location:
-        slot_uri: cim:PowerSystemResource.Location
+        description: "Location described by this position point."
+        annotations:
+          ea_guid: "EAID_DBF35456_ABE1_4deb_A885_2E48B3D6F8F6-B"
+        slot_uri: cim:PositionPoint.Location
         range: Location
-        multivalued: false
-        required: false
-        description: Location of this power system resource.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+  PowerSystemResource:
+    description: "A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated."
+    annotations:
+      ea_guid: "EAID_0340C084_3759_40cc_AAF2_386101DE842F"
     is_a: IdentifiedObject
     abstract: true
-    description: A power system resource (PSR) can be an item of equipment such as
-      a switch, an equipment container containing many individual items of equipment
-      such as a substation, or an organisational entity such as sub-control area.
-      Power system resources can have measurements associated.
+    class_uri: cim:PowerSystemResource
+    attributes: 
+  ServiceLocation:
+    description: "A real estate location, commonly referred to as premises."
+    annotations:
+      ea_guid: "EAID_90D00036_1728_473a_9966_26BADB297110"
+    is_a: WorkLocation
+    class_uri: cim:ServiceLocation
+    attributes: 
+  Status:
+    description: "Current status information relevant to an entity."
+    annotations:
+      ea_guid: "EAID_9EF7B157_4B24_45ee_A340_2CFB8F049D68"
+    class_uri: cim:Status
+    attributes: 
+      dateTime:
+        description: "Date and time for which status 'value' applies."
+        annotations:
+          ea_guid: "EAID_F75CAF5C_DCC0_40fc_A2AF_D10354C0E735"
+        slot_uri: cim:Status.dateTime
+        range: datetime
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      reason:
+        description: "Reason code or explanation for why an object went to the current status 'value'."
+        annotations:
+          ea_guid: "EAID_BF4685AC_F0E0_40f0_87F2_5D4714B1D11F"
+        slot_uri: cim:Status.reason
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      remark:
+        description: "Pertinent information regarding the current 'value', as free form text."
+        annotations:
+          ea_guid: "EAID_BD8B05D0_CEC7_4f60_8CC3_7C88DA03505F"
+        slot_uri: cim:Status.remark
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        description: "Status value at 'dateTime'; prior status changes may have been kept in instances of activity records associated with the object to which this status applies."
+        annotations:
+          ea_guid: "EAID_7BAA985C_D13D_4282_91ED_90FBCF326D6B"
+        slot_uri: cim:Status.value
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  StreetAddress:
+    description: "General purpose street and postal address information."
+    annotations:
+      ea_guid: "EAID_90007399_BB87_4f28_9898_853DAB696115"
+    class_uri: cim:StreetAddress
+    attributes: 
+      language:
+        description: "The language in which the address is specified, using ISO 639-1 two digit language code."
+        annotations:
+          ea_guid: "EAID_7BD40FC3_3D5F_4229_ADAF_7CFC1AC97F0B"
+        slot_uri: cim:StreetAddress.language
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      poBox:
+        description: "Post office box."
+        annotations:
+          ea_guid: "EAID_AE33800A_1AD9_45e6_8415_1B9FB3A789C8"
+        slot_uri: cim:StreetAddress.poBox
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      postalCode:
+        description: "Postal code for the address."
+        annotations:
+          ea_guid: "EAID_8F962EBC_8805_4e03_8051_45E7382F0649"
+        slot_uri: cim:StreetAddress.postalCode
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      status:
+        description: "Status of this address."
+        annotations:
+          ea_guid: "EAID_32354147_6588_46c6_9B6F_C327E702BCAC"
+        slot_uri: cim:StreetAddress.status
+        range: Status
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      streetDetail:
+        description: "Street detail."
+        annotations:
+          ea_guid: "EAID_080F12A9_718C_4a10_A2BE_878231C3927F"
+        slot_uri: cim:StreetAddress.streetDetail
+        range: StreetDetail
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      townDetail:
+        description: "Town detail."
+        annotations:
+          ea_guid: "EAID_07E7BC8F_BAA8_4462_BDA1_BA35D58B129D"
+        slot_uri: cim:StreetAddress.townDetail
+        range: TownDetail
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  StreetDetail:
+    description: "Street details, in the context of address."
+    annotations:
+      ea_guid: "EAID_A4198329_7F25_4e72_8E8D_C4B4D37288F8"
+    class_uri: cim:StreetDetail
+    attributes: 
+      addressGeneral:
+        description: "First line of a free form address or some additional address information (for example a mail stop)."
+        annotations:
+          ea_guid: "EAID_5CE3C56A_A8CB_4d17_8F13_B1D56813F9B0"
+        slot_uri: cim:StreetDetail.addressGeneral
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      addressGeneral2:
+        description: "(if applicable) Second line of a free form address."
+        annotations:
+          ea_guid: "EAID_DC974BBD_371B_400a_BECB_7D8F8A5C58E2"
+        slot_uri: cim:StreetDetail.addressGeneral2
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      addressGeneral3:
+        description: "(if applicable) Third line of a free form address."
+        annotations:
+          ea_guid: "EAID_07C70D18_5538_4645_B13D_BBD72DE32C97"
+        slot_uri: cim:StreetDetail.addressGeneral3
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      buildingName:
+        description: "(if applicable) In certain cases the physical location of the place of interest does not have a direct point of entry from the street, but may be located inside a larger structure such as a building, complex, office block, apartment, etc."
+        annotations:
+          ea_guid: "EAID_7537B883_F71B_4189_B0C4_036277339DEF"
+        slot_uri: cim:StreetDetail.buildingName
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      code:
+        description: "(if applicable) Utilities often make use of external reference systems, such as those of the town-planner's department or surveyor general's mapping system, that allocate global reference codes to streets."
+        annotations:
+          ea_guid: "EAID_9C44FAD9_C465_4c6b_A403_E6F1E66D9BE1"
+        slot_uri: cim:StreetDetail.code
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      floorIdentification:
+        description: "The identification by name or number, expressed as text, of the floor in the building as part of this address."
+        annotations:
+          ea_guid: "EAID_24B16BCA_4094_43e8_9867_BC2E9EDC5D04"
+        slot_uri: cim:StreetDetail.floorIdentification
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      name:
+        description: "Name of the street."
+        annotations:
+          ea_guid: "EAID_CFEA2CAE_B7AA_4efd_ADCA_844A71759BFD"
+        slot_uri: cim:StreetDetail.name
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      number:
+        description: "Designator of the specific location on the street."
+        annotations:
+          ea_guid: "EAID_DF4B02A3_F827_403b_AF42_3EDF7C5AB26E"
+        slot_uri: cim:StreetDetail.number
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      prefix:
+        description: "Prefix to the street name. For example: North, South, East, West."
+        annotations:
+          ea_guid: "EAID_C0D97DAC_BB35_430e_B7F4_8C9FFBBED05D"
+        slot_uri: cim:StreetDetail.prefix
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      suffix:
+        description: "Suffix to the street name. For example: North, South, East, West."
+        annotations:
+          ea_guid: "EAID_E00200CA_8258_41be_8D82_475C894ECD59"
+        slot_uri: cim:StreetDetail.suffix
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      suiteNumber:
+        description: "Number of the apartment or suite."
+        annotations:
+          ea_guid: "EAID_2292B0DB_9622_4f91_A86B_C8067BCB34DF"
+        slot_uri: cim:StreetDetail.suiteNumber
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      type:
+        description: "Type of street. Examples include: street, circle, boulevard, avenue, road, drive, etc."
+        annotations:
+          ea_guid: "EAID_C1813D47_8834_4076_8C7D_A2A86410A073"
+        slot_uri: cim:StreetDetail.type
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      withinTownLimits:
+        description: "True if this street is within the legal geographical boundaries of the specified town (default)."
+        annotations:
+          ea_guid: "EAID_9B131882_C1C7_4ecc_B52A_FC25C2AFFCC7"
+        slot_uri: cim:StreetDetail.withinTownLimits
+        range: boolean
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  TownDetail:
+    description: "Town details, in the context of address."
+    annotations:
+      ea_guid: "EAID_26275F22_BDC6_4a76_ABE7_AC797CFE35D9"
+    class_uri: cim:TownDetail
+    attributes: 
+      code:
+        description: "Town code."
+        annotations:
+          ea_guid: "EAID_7435FA35_FEF2_44b0_96AC_8F11789C1AF9"
+        slot_uri: cim:TownDetail.code
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      country:
+        description: "Name of the country."
+        annotations:
+          ea_guid: "EAID_ACD16500_AC2D_464f_AD2C_5F78BDB8C8A1"
+        slot_uri: cim:TownDetail.country
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      name:
+        description: "Town name."
+        annotations:
+          ea_guid: "EAID_D21D8A7E_6B52_42de_BBC4_5A334BE6FC3B"
+        slot_uri: cim:TownDetail.name
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      section:
+        description: "Town section. For example, it is common for there to be 36 sections per township."
+        annotations:
+          ea_guid: "EAID_D3BABCE4_BCC6_4352_838F_CE2D37898326"
+        slot_uri: cim:TownDetail.section
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      stateOrProvince:
+        description: "Name of the state or province."
+        annotations:
+          ea_guid: "EAID_54BE5603_B97E_4fa8_9398_1AE6FE1A7538"
+        slot_uri: cim:TownDetail.stateOrProvince
+        range: string
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+  WorkLocation:
+    description: "Information about a particular location for various forms of work."
+    annotations:
+      ea_guid: "EAID_CFEB5DD5_B1F3_4dc1_8312_174824017CC9"
+    is_a: Location
+    abstract: true
+    class_uri: cim:WorkLocation
+    attributes: 
+types:
+enums:

@@ -1,24 +1,24 @@
-id: http://iec.ch/TC57/ns/CIM/ShortCircuit-EU#Package_ShortCircuitProfile
-name: ShortCircuitProfile
-description: This vocabulary is describing the short circuit profile from IEC 61970-600-2.
-title: Short Circuit Vocabulary
+id: http://ucaiug.org/ns/CGMES/ShortCircuit-EU/3.0#
+name: ShortCircuit
+title: ShortCircuit Vocabulary
+comments: "This profile represents the equipment of the power system and their hierarchical relationships."
+annotations:
+  copyright: "Copyright 2026 UCAIug SPDX-License-Identifier: Apache-2.0"
 prefixes:
-  linkml: https://w3id.org/linkml/
-  cim: http://iec.ch/TC57/CIM100#
-  cims: http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#
-  dc: http://purl.org/dc/elements/1.1/
-  dcat: http://www.w3.org/ns/dcat#
-  dct: http://purl.org/dc/terms/
-  eu: http://iec.ch/TC57/CIM100-European#
-  owl: http://www.w3.org/2002/07/owl#
-  profcim: http://iec.ch/TC57/ns/CIM/prof-cim#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  linkml: https://w3id.org/linkml/
   sh: http://www.w3.org/ns/shacl#
   skos: http://www.w3.org/2004/02/skos/core#
-  xsd: http://www.w3.org/2001/XMLSchema#
-  sc: http://iec.ch/TC57/ns/CIM/ShortCircuit-EU#
-  this: http://iec.ch/TC57/ns/CIM/ShortCircuit-EU#Package_ShortCircuitProfile
+  dc: http://purl.org/dc/elements/1.1/
+  profcim: http://iec.ch/TC57/ns/CIM/prof-cim#
+  owl: http://www.w3.org/2002/07/owl#
+  cim: http://iec.ch/TC57/CIM100#
+  cims: http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#
+  this: http://ucaiug.org/ns/CGMES/ShortCircuit-EU/3.0#
+  dct: http://purl.org/dc/terms/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  dcat: http://www.w3.org/ns/dcat#
+  eu: http://iec.ch/TC57/CIM100-European#
 imports:
 - linkml:types
 default_curi_maps:
@@ -27,1553 +27,2109 @@ default_range: string
 default_prefix: this
 classes:
   ACDCTerminal:
-    class_uri: cim:ACDCTerminal
+    description: "An electrical connection point (AC or DC) to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes."
+    annotations:
+      ea_guid: "EAID_D37077B9_3B0C_4c16_8F5F_9A6F2C83A7F2"
     is_a: IdentifiedObject
     abstract: true
-    description: An electrical connection point (AC or DC) to a piece of conducting
-      equipment. Terminals are connected at physical connection points called connectivity
-      nodes.
+    class_uri: cim:ACDCTerminal
+    attributes: 
   ACLineSegment:
+    description: "A wire or combination of wires, with consistent electrical characteristics, building a single electrical system, used to carry alternating current between points in the power system.For symmetrical, transposed three phase lines, it is sufficient to use attributes of the line segment, which describe impedances and admittances for the entire length of the segment.  Additionally impedances can be computed by using length and associated per length impedances.The BaseVoltage at the two ends of ACLineSegments in a Line shall have the same BaseVoltage.nominalVoltage. However, boundary lines may have slightly different BaseVoltage.nominalVoltages and variation is allowed. Larger voltage difference in general requires use of an equivalent branch."
+    annotations:
+      ea_guid: "EAID_625BD764_3907_4d65_8497_7FD09708BD8E"
+    is_a: Conductor
     class_uri: cim:ACLineSegment
-    attributes:
+    attributes: 
       b0ch:
+        description: "Zero sequence shunt (charging) susceptance, uniformly distributed, of the entire line section."
+        annotations:
+          ea_guid: "EAID_5EE8B645_9FB5_4985_8930_6CB5CAA29CE2"
         slot_uri: cim:ACLineSegment.b0ch
         range: Susceptance
-        multivalued: false
-        required: true
-        description: Zero sequence shunt (charging) susceptance, uniformly distributed,
-          of the entire line section.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       g0ch:
+        description: "Zero sequence shunt (charging) conductance, uniformly distributed, of the entire line section."
+        annotations:
+          ea_guid: "EAID_59D23066_ADB0_4369_BD9D_95AB3B53376F"
         slot_uri: cim:ACLineSegment.g0ch
         range: Conductance
-        multivalued: false
-        required: true
-        description: Zero sequence shunt (charging) conductance, uniformly distributed,
-          of the entire line section.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       r0:
+        description: "Zero sequence series resistance of the entire line section."
+        annotations:
+          ea_guid: "EAID_DDBBA03D_E40D_4200_941D_CFB4E24253A0"
         slot_uri: cim:ACLineSegment.r0
         range: Resistance
-        multivalued: false
-        required: true
-        description: Zero sequence series resistance of the entire line section.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       shortCircuitEndTemperature:
+        description: "Maximum permitted temperature at the end of SC for the calculation of minimum short-circuit currents. Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_5BD9D924_26C6_4f14_AB49_6D3A0C16D6BB"
         slot_uri: cim:ACLineSegment.shortCircuitEndTemperature
         range: Temperature
-        multivalued: false
-        required: true
-        description: Maximum permitted temperature at the end of SC for the calculation
-          of minimum short-circuit currents. Used for short circuit data exchange
-          according to IEC 60909.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       x0:
+        description: "Zero sequence series reactance of the entire line section."
+        annotations:
+          ea_guid: "EAID_14CCC61E_8CFF_4748_BB34_30167D45B278"
         slot_uri: cim:ACLineSegment.x0
         range: Reactance
-        multivalued: false
-        required: true
-        description: Zero sequence series reactance of the entire line section.
-    is_a: Conductor
-    description: 'A wire or combination of wires, with consistent electrical characteristics,
-      building a single electrical system, used to carry alternating current between
-      points in the power system.
-
-      For symmetrical, transposed three phase lines, it is sufficient to use attributes
-      of the line segment, which describe impedances and admittances for the entire
-      length of the segment.  Additionally impedances can be computed by using length
-      and associated per length impedances.
-
-      The BaseVoltage at the two ends of ACLineSegments in a Line shall have the same
-      BaseVoltage.nominalVoltage. However, boundary lines may have slightly different
-      BaseVoltage.nominalVoltages and variation is allowed. Larger voltage difference
-      in general requires use of an equivalent branch.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   AsynchronousMachine:
+    description: "A rotating machine whose shaft rotates asynchronously with the electrical field.  Also known as an induction machine with no external connection to the rotor windings, e.g. squirrel-cage induction machine."
+    annotations:
+      ea_guid: "EAID_EC5FCEFF_1274_4771_9D92_C0FF7A100AB8"
+    is_a: RotatingMachine
     class_uri: cim:AsynchronousMachine
-    attributes:
+    attributes: 
       converterFedDrive:
+        description: "Indicates whether the machine is a converter fed drive. Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_2D0ABFAD_5524_4839_992E_427EDB49569A"
         slot_uri: cim:AsynchronousMachine.converterFedDrive
         range: boolean
-        multivalued: false
-        required: true
-        description: Indicates whether the machine is a converter fed drive. Used
-          for short circuit data exchange according to IEC 60909.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       efficiency:
+        description: "Efficiency of the asynchronous machine at nominal operation as a percentage. Indicator for converter drive motors. Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_51FACBB4_CB35_46a8_A0B9_6482118D1FC7"
         slot_uri: cim:AsynchronousMachine.efficiency
         range: PerCent
-        multivalued: false
-        required: true
-        description: Efficiency of the asynchronous machine at nominal operation as
-          a percentage. Indicator for converter drive motors. Used for short circuit
-          data exchange according to IEC 60909.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       iaIrRatio:
+        description: "Ratio of locked-rotor current to the rated current of the motor (Ia/Ir). Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_6B830706_4F9D_40d7_BB25_9CB32BE5982F"
         slot_uri: cim:AsynchronousMachine.iaIrRatio
         range: float
-        multivalued: false
-        required: true
-        description: Ratio of locked-rotor current to the rated current of the motor
-          (Ia/Ir). Used for short circuit data exchange according to IEC 60909.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       polePairNumber:
+        description: "Number of pole pairs of stator. Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_C2D7D457_6BD4_436b_8F2A_17AD64AC94CB"
         slot_uri: cim:AsynchronousMachine.polePairNumber
         range: integer
-        multivalued: false
-        required: true
-        description: Number of pole pairs of stator. Used for short circuit data exchange
-          according to IEC 60909.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       ratedMechanicalPower:
+        description: "Rated mechanical power (Pr in IEC 60909-0). Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_78EDFD71_FC20_44e4_AE1C_99B5C285C54E"
         slot_uri: cim:AsynchronousMachine.ratedMechanicalPower
         range: ActivePower
-        multivalued: false
-        required: true
-        description: Rated mechanical power (Pr in IEC 60909-0). Used for short circuit
-          data exchange according to IEC 60909.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       reversible:
+        description: "Indicates for converter drive motors if the power can be reversible. Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_D064CD3B_17AA_4a0e_9F52_2C43776FC32F"
         slot_uri: cim:AsynchronousMachine.reversible
         range: boolean
-        multivalued: false
-        required: true
-        description: Indicates for converter drive motors if the power can be reversible.
-          Used for short circuit data exchange according to IEC 60909.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       rxLockedRotorRatio:
+        description: "Locked rotor ratio (R/X). Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_CF346A15_5379_44bf_B21A_3AFD391B6F47"
         slot_uri: cim:AsynchronousMachine.rxLockedRotorRatio
         range: float
-        multivalued: false
-        required: false
-        description: Locked rotor ratio (R/X). Used for short circuit data exchange
-          according to IEC 60909.
-    is_a: RotatingMachine
-    description: A rotating machine whose shaft rotates asynchronously with the electrical
-      field.  Also known as an induction machine with no external connection to the
-      rotor windings, e.g. squirrel-cage induction machine.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
   BusbarSection:
+    description: "A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation.Voltage measurements are typically obtained from voltage transformers that are connected to busbar sections. A bus bar section may have many physical terminals but for analysis is modelled with exactly one logical terminal."
+    annotations:
+      ea_guid: "EAID_0A63A81D_5142_4736_BD22_8C28BA32F233"
+    is_a: Connector
     class_uri: cim:BusbarSection
-    attributes:
+    attributes: 
       ipMax:
+        description: "Maximum allowable peak short-circuit current of busbar (Ipmax in IEC 60909-0).Mechanical limit of the busbar in the substation itself. Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_2E32481A_0F4F_4da0_B81F_8C1E6543F0CD"
         slot_uri: cim:BusbarSection.ipMax
         range: CurrentFlow
-        multivalued: false
-        required: false
-        description: "Maximum allowable peak short-circuit current of busbar (Ipmax\
-          \ in IEC 60909-0). \nMechanical limit of the busbar in the substation itself.\
-          \ Used for short circuit data exchange according to IEC 60909."
-    is_a: Connector
-    description: "A conductor, or group of conductors, with negligible impedance,\
-      \ that serve to connect other conducting equipment within a single substation.\
-      \ \nVoltage measurements are typically obtained from voltage transformers that\
-      \ are connected to busbar sections. A bus bar section may have many physical\
-      \ terminals but for analysis is modelled with exactly one logical terminal."
+        minimum_cardinality: 0
+        maximum_cardinality: 1
   ConductingEquipment:
-    class_uri: cim:ConductingEquipment
+    description: "The parts of the AC power system that are designed to carry current or that are conductively connected through terminals."
+    annotations:
+      ea_guid: "EAID_7C5F19FB_5253_430c_8E53_BDCF7EBCE4C1"
     is_a: Equipment
     abstract: true
-    description: The parts of the AC power system that are designed to carry current
-      or that are conductively connected through terminals.
+    class_uri: cim:ConductingEquipment
+    attributes: 
   Conductor:
+    description: "Combination of conducting material with consistent electrical characteristics, building a single electrical system, used to carry current between points in the power system."
+    annotations:
+      ea_guid: "EAID_C435D1A4_31AE_46ef_BCF8_7932F0785DA9"
+    is_a: ConductingEquipment
+    abstract: true
     class_uri: cim:Conductor
-    is_a: ConductingEquipment
-    abstract: true
-    description: Combination of conducting material with consistent electrical characteristics,
-      building a single electrical system, used to carry current between points in
-      the power system.
+    attributes: 
   Connector:
-    class_uri: cim:Connector
+    description: "A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation and are modelled with a single logical terminal."
+    annotations:
+      ea_guid: "EAID_E33769DD_F111_4793_AF11_B4AFE5FDE50F"
     is_a: ConductingEquipment
     abstract: true
-    description: A conductor, or group of conductors, with negligible impedance, that
-      serve to connect other conducting equipment within a single substation and are
-      modelled with a single logical terminal.
+    class_uri: cim:Connector
+    attributes: 
   EarthFaultCompensator:
+    description: "A conducting equipment used to represent a connection to ground which is typically used to compensate earth faults.   An earth fault compensator device modelled with a single terminal implies a second terminal solidly connected to ground.  If two terminals are modelled, the ground is not assumed and normal connection rules apply."
+    annotations:
+      ea_guid: "EAID_99B51F43_C935_4382_AB8A_6352DAB082D4"
+    is_a: ConductingEquipment
+    abstract: true
     class_uri: cim:EarthFaultCompensator
-    attributes:
+    attributes: 
       r:
+        description: "Nominal resistance of device."
+        annotations:
+          ea_guid: "EAID_6063FBE9_5BE7_424a_AC8F_116EF8F9A799"
         slot_uri: cim:EarthFaultCompensator.r
         range: Resistance
-        multivalued: false
-        required: false
-        description: Nominal resistance of device.
-    is_a: ConductingEquipment
-    abstract: true
-    description: A conducting equipment used to represent a connection to ground which
-      is typically used to compensate earth faults.   An earth fault compensator device
-      modelled with a single terminal implies a second terminal solidly connected
-      to ground.  If two terminals are modelled, the ground is not assumed and normal
-      connection rules apply.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
   EnergyConnection:
-    class_uri: cim:EnergyConnection
+    description: "A connection of energy generation or consumption on the power system model."
+    annotations:
+      ea_guid: "EAID_13966DE6_BE71_4f50_8051_2A082891138D"
     is_a: ConductingEquipment
     abstract: true
-    description: A connection of energy generation or consumption on the power system
-      model.
+    class_uri: cim:EnergyConnection
+    attributes: 
   EnergySource:
+    description: "A generic equivalent for an energy supplier on a transmission or distribution voltage level."
+    annotations:
+      ea_guid: "EAID_7174F78A_A2B7_457a_8EBC_4E9CBA6DA738"
+    is_a: EnergyConnection
     class_uri: cim:EnergySource
-    attributes:
+    attributes: 
       r:
+        description: "Positive sequence Thevenin resistance."
+        annotations:
+          ea_guid: "EAID_EF264738_8B04_4eea_A024_F7D5E2DAA0F3"
         slot_uri: cim:EnergySource.r
         range: Resistance
-        multivalued: false
-        required: false
-        description: Positive sequence Thevenin resistance.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       r0:
+        description: "Zero sequence Thevenin resistance."
+        annotations:
+          ea_guid: "EAID_864DC9B8_D243_400b_AF81_9495FD47BA0B"
         slot_uri: cim:EnergySource.r0
         range: Resistance
-        multivalued: false
-        required: false
-        description: Zero sequence Thevenin resistance.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       rn:
+        description: "Negative sequence Thevenin resistance."
+        annotations:
+          ea_guid: "EAID_A36F03C0_ADF9_46ed_8051_6A031F820282"
         slot_uri: cim:EnergySource.rn
         range: Resistance
-        multivalued: false
-        required: false
-        description: Negative sequence Thevenin resistance.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       x:
+        description: "Positive sequence Thevenin reactance."
+        annotations:
+          ea_guid: "EAID_511C3E9E_75F0_42fd_8E16_A972A3C23E6D"
         slot_uri: cim:EnergySource.x
         range: Reactance
-        multivalued: false
-        required: false
-        description: Positive sequence Thevenin reactance.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       x0:
+        description: "Zero sequence Thevenin reactance."
+        annotations:
+          ea_guid: "EAID_60183FA3_68AD_4510_B89D_3F5F9A1D1F77"
         slot_uri: cim:EnergySource.x0
         range: Reactance
-        multivalued: false
-        required: false
-        description: Zero sequence Thevenin reactance.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       xn:
+        description: "Negative sequence Thevenin reactance."
+        annotations:
+          ea_guid: "EAID_2BCE8602_2CB1_48b8_97AE_9163CC618BC7"
         slot_uri: cim:EnergySource.xn
         range: Reactance
-        multivalued: false
-        required: false
-        description: Negative sequence Thevenin reactance.
-    is_a: EnergyConnection
-    description: A generic equivalent for an energy supplier on a transmission or
-      distribution voltage level.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
   Equipment:
-    class_uri: cim:Equipment
+    description: "The parts of a power system that are physical devices, electronic or mechanical."
+    annotations:
+      ea_guid: "EAID_F8DD8DAC_3545_4660_9CA5_794881CC6591"
     is_a: PowerSystemResource
     abstract: true
-    description: The parts of a power system that are physical devices, electronic
-      or mechanical.
+    class_uri: cim:Equipment
+    attributes: 
   EquivalentBranch:
+    description: "The class represents equivalent branches. In cases where a transformer phase shift is modelled and the EquivalentBranch is spanning the same nodes, the impedance quantities for the EquivalentBranch shall consider the needed phase shift."
+    annotations:
+      ea_guid: "EAID_FC8BE368_2F3E_4ff8_BDC1_4229823DC5AE"
+    is_a: EquivalentEquipment
     class_uri: cim:EquivalentBranch
-    attributes:
+    attributes: 
       negativeR12:
+        description: "Negative sequence series resistance from terminal sequence  1 to terminal sequence 2. Used for short circuit data exchange according to IEC 60909.EquivalentBranch is a result of network reduction prior to the data exchange."
+        annotations:
+          ea_guid: "EAID_B1A62182_45DA_4986_9AD7_77E0AA97A1B9"
         slot_uri: cim:EquivalentBranch.negativeR12
         range: Resistance
-        multivalued: false
-        required: true
-        description: 'Negative sequence series resistance from terminal sequence  1
-          to terminal sequence 2. Used for short circuit data exchange according to
-          IEC 60909.
-
-          EquivalentBranch is a result of network reduction prior to the data exchange.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       negativeR21:
+        description: "Negative sequence series resistance from terminal sequence 2 to terminal sequence 1. Used for short circuit data exchange according to IEC 60909.EquivalentBranch is a result of network reduction prior to the data exchange."
+        annotations:
+          ea_guid: "EAID_20639149_2242_4312_872C_16CD27A6283C"
         slot_uri: cim:EquivalentBranch.negativeR21
         range: Resistance
-        multivalued: false
-        required: true
-        description: 'Negative sequence series resistance from terminal sequence 2
-          to terminal sequence 1. Used for short circuit data exchange according to
-          IEC 60909.
-
-          EquivalentBranch is a result of network reduction prior to the data exchange.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       negativeX12:
+        description: "Negative sequence series reactance from terminal sequence  1 to terminal sequence 2. Used for short circuit data exchange according to IEC 60909.Usage : EquivalentBranch is a result of network reduction prior to the data exchange."
+        annotations:
+          ea_guid: "EAID_CD82466D_D982_4513_8CAA_27FB73559F16"
         slot_uri: cim:EquivalentBranch.negativeX12
         range: Reactance
-        multivalued: false
-        required: true
-        description: 'Negative sequence series reactance from terminal sequence  1
-          to terminal sequence 2. Used for short circuit data exchange according to
-          IEC 60909.
-
-          Usage : EquivalentBranch is a result of network reduction prior to the data
-          exchange.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       negativeX21:
+        description: "Negative sequence series reactance from terminal sequence 2 to terminal sequence 1. Used for short circuit data exchange according to IEC 60909.Usage: EquivalentBranch is a result of network reduction prior to the data exchange."
+        annotations:
+          ea_guid: "EAID_EEF7F824_5B80_4eb2_AA46_C3AB841CA150"
         slot_uri: cim:EquivalentBranch.negativeX21
         range: Reactance
-        multivalued: false
-        required: true
-        description: 'Negative sequence series reactance from terminal sequence 2
-          to terminal sequence 1. Used for short circuit data exchange according to
-          IEC 60909.
-
-          Usage: EquivalentBranch is a result of network reduction prior to the data
-          exchange.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       positiveR12:
+        description: "Positive sequence series resistance from terminal sequence  1 to terminal sequence 2 . Used for short circuit data exchange according to IEC 60909.EquivalentBranch is a result of network reduction prior to the data exchange."
+        annotations:
+          ea_guid: "EAID_B2DB32FB_D03F_4e20_A232_010D8CBEA16D"
         slot_uri: cim:EquivalentBranch.positiveR12
         range: Resistance
-        multivalued: false
-        required: true
-        description: "Positive sequence series resistance from terminal sequence \
-          \ 1 to terminal sequence 2 . Used for short circuit data exchange according\
-          \ to IEC 60909. \nEquivalentBranch is a result of network reduction prior\
-          \ to the data exchange."
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       positiveR21:
+        description: "Positive sequence series resistance from terminal sequence 2 to terminal sequence 1. Used for short circuit data exchange according to IEC 60909.EquivalentBranch is a result of network reduction prior to the data exchange."
+        annotations:
+          ea_guid: "EAID_8BB8921A_0D66_4f17_9E3F_D86911D7AB83"
         slot_uri: cim:EquivalentBranch.positiveR21
         range: Resistance
-        multivalued: false
-        required: true
-        description: 'Positive sequence series resistance from terminal sequence 2
-          to terminal sequence 1. Used for short circuit data exchange according to
-          IEC 60909.
-
-          EquivalentBranch is a result of network reduction prior to the data exchange.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       positiveX12:
+        description: "Positive sequence series reactance from terminal sequence  1 to terminal sequence 2. Used for short circuit data exchange according to IEC 60909.Usage : EquivalentBranch is a result of network reduction prior to the data exchange."
+        annotations:
+          ea_guid: "EAID_334AD4DB_EC20_4576_BB4A_A0F37E316CA7"
         slot_uri: cim:EquivalentBranch.positiveX12
         range: Reactance
-        multivalued: false
-        required: true
-        description: 'Positive sequence series reactance from terminal sequence  1
-          to terminal sequence 2. Used for short circuit data exchange according to
-          IEC 60909.
-
-          Usage : EquivalentBranch is a result of network reduction prior to the data
-          exchange.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       positiveX21:
+        description: "Positive sequence series reactance from terminal sequence 2 to terminal sequence 1. Used for short circuit data exchange according to IEC 60909.Usage : EquivalentBranch is a result of network reduction prior to the data exchange."
+        annotations:
+          ea_guid: "EAID_F95AFB29_D445_4d86_A53E_D91AEB6534D7"
         slot_uri: cim:EquivalentBranch.positiveX21
         range: Reactance
-        multivalued: false
-        required: true
-        description: 'Positive sequence series reactance from terminal sequence 2
-          to terminal sequence 1. Used for short circuit data exchange according to
-          IEC 60909.
-
-          Usage : EquivalentBranch is a result of network reduction prior to the data
-          exchange.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       zeroR12:
+        description: "Zero sequence series resistance from terminal sequence  1 to terminal sequence 2. Used for short circuit data exchange according to IEC 60909.EquivalentBranch is a result of network reduction prior to the data exchange."
+        annotations:
+          ea_guid: "EAID_68167E61_E4CA_4823_A369_4F220EB91141"
         slot_uri: cim:EquivalentBranch.zeroR12
         range: Resistance
-        multivalued: false
-        required: true
-        description: 'Zero sequence series resistance from terminal sequence  1 to
-          terminal sequence 2. Used for short circuit data exchange according to IEC
-          60909.
-
-          EquivalentBranch is a result of network reduction prior to the data exchange.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       zeroR21:
+        description: "Zero sequence series resistance from terminal sequence  2 to terminal sequence 1. Used for short circuit data exchange according to IEC 60909.Usage : EquivalentBranch is a result of network reduction prior to the data exchange."
+        annotations:
+          ea_guid: "EAID_D0CD7162_A205_4651_8224_59E6C312851E"
         slot_uri: cim:EquivalentBranch.zeroR21
         range: Resistance
-        multivalued: false
-        required: true
-        description: 'Zero sequence series resistance from terminal sequence  2 to
-          terminal sequence 1. Used for short circuit data exchange according to IEC
-          60909.
-
-          Usage : EquivalentBranch is a result of network reduction prior to the data
-          exchange.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       zeroX12:
+        description: "Zero sequence series reactance from terminal sequence  1 to terminal sequence 2. Used for short circuit data exchange according to IEC 60909.Usage : EquivalentBranch is a result of network reduction prior to the data exchange."
+        annotations:
+          ea_guid: "EAID_A782C660_AD8E_4742_AE66_1A5F14EF6D97"
         slot_uri: cim:EquivalentBranch.zeroX12
         range: Reactance
-        multivalued: false
-        required: true
-        description: 'Zero sequence series reactance from terminal sequence  1 to
-          terminal sequence 2. Used for short circuit data exchange according to IEC
-          60909.
-
-          Usage : EquivalentBranch is a result of network reduction prior to the data
-          exchange.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       zeroX21:
+        description: "Zero sequence series reactance from terminal sequence 2 to terminal sequence 1. Used for short circuit data exchange according to IEC 60909.Usage : EquivalentBranch is a result of network reduction prior to the data exchange."
+        annotations:
+          ea_guid: "EAID_959BBBCF_5B65_41ea_B459_8A0496C293CD"
         slot_uri: cim:EquivalentBranch.zeroX21
         range: Reactance
-        multivalued: false
-        required: true
-        description: 'Zero sequence series reactance from terminal sequence 2 to terminal
-          sequence 1. Used for short circuit data exchange according to IEC 60909.
-
-          Usage : EquivalentBranch is a result of network reduction prior to the data
-          exchange.'
-    is_a: EquivalentEquipment
-    description: The class represents equivalent branches. In cases where a transformer
-      phase shift is modelled and the EquivalentBranch is spanning the same nodes,
-      the impedance quantities for the EquivalentBranch shall consider the needed
-      phase shift.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   EquivalentEquipment:
-    class_uri: cim:EquivalentEquipment
+    description: "The class represents equivalent objects that are the result of a network reduction. The class is the base for equivalent objects of different types."
+    annotations:
+      ea_guid: "EAID_966D682F_CD37_4038_9739_3EEC0E6CB044"
     is_a: ConductingEquipment
     abstract: true
-    description: The class represents equivalent objects that are the result of a
-      network reduction. The class is the base for equivalent objects of different
-      types.
+    class_uri: cim:EquivalentEquipment
+    attributes: 
   EquivalentInjection:
+    description: "This class represents equivalent injections (generation or load).  Voltage regulation is allowed only at the point of connection."
+    annotations:
+      ea_guid: "EAID_9749AD93_8F33_48c8_9291_02B9D671C172"
+    is_a: EquivalentEquipment
     class_uri: cim:EquivalentInjection
-    attributes:
+    attributes: 
       r:
+        description: "Positive sequence resistance. Used to represent Extended-Ward (IEC 60909).Usage : Extended-Ward is a result of network reduction prior to the data exchange."
+        annotations:
+          ea_guid: "EAID_35F3E67E_F428_439e_ABE0_284CC8BBBD7C"
         slot_uri: cim:EquivalentInjection.r
         range: Resistance
-        multivalued: false
-        required: true
-        description: 'Positive sequence resistance. Used to represent Extended-Ward
-          (IEC 60909).
-
-          Usage : Extended-Ward is a result of network reduction prior to the data
-          exchange.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       r0:
+        description: "Zero sequence resistance. Used to represent Extended-Ward (IEC 60909).Usage : Extended-Ward is a result of network reduction prior to the data exchange."
+        annotations:
+          ea_guid: "EAID_48277F25_31FB_4e9d_9F09_482886F04693"
         slot_uri: cim:EquivalentInjection.r0
         range: Resistance
-        multivalued: false
-        required: true
-        description: 'Zero sequence resistance. Used to represent Extended-Ward (IEC
-          60909).
-
-          Usage : Extended-Ward is a result of network reduction prior to the data
-          exchange.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       r2:
+        description: "Negative sequence resistance. Used to represent Extended-Ward (IEC 60909).Usage : Extended-Ward is a result of network reduction prior to the data exchange."
+        annotations:
+          ea_guid: "EAID_17951FC2_83D8_4363_9ED5_EE48ADC75FD6"
         slot_uri: cim:EquivalentInjection.r2
         range: Resistance
-        multivalued: false
-        required: true
-        description: 'Negative sequence resistance. Used to represent Extended-Ward
-          (IEC 60909).
-
-          Usage : Extended-Ward is a result of network reduction prior to the data
-          exchange.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       x:
+        description: "Positive sequence reactance. Used to represent Extended-Ward (IEC 60909).Usage : Extended-Ward is a result of network reduction prior to the data exchange."
+        annotations:
+          ea_guid: "EAID_C2694F5C_8E2F_4a91_941B_06C03D805B37"
         slot_uri: cim:EquivalentInjection.x
         range: Reactance
-        multivalued: false
-        required: true
-        description: 'Positive sequence reactance. Used to represent Extended-Ward
-          (IEC 60909).
-
-          Usage : Extended-Ward is a result of network reduction prior to the data
-          exchange.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       x0:
+        description: "Zero sequence reactance. Used to represent Extended-Ward (IEC 60909).Usage : Extended-Ward is a result of network reduction prior to the data exchange."
+        annotations:
+          ea_guid: "EAID_D5B4C735_2A8A_414e_B4DC_34A67427B5BD"
         slot_uri: cim:EquivalentInjection.x0
         range: Reactance
-        multivalued: false
-        required: true
-        description: 'Zero sequence reactance. Used to represent Extended-Ward (IEC
-          60909).
-
-          Usage : Extended-Ward is a result of network reduction prior to the data
-          exchange.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       x2:
+        description: "Negative sequence reactance. Used to represent Extended-Ward (IEC 60909).Usage : Extended-Ward is a result of network reduction prior to the data exchange."
+        annotations:
+          ea_guid: "EAID_0FE79852_D304_4aec_9BDA_940C762DA50E"
         slot_uri: cim:EquivalentInjection.x2
         range: Reactance
-        multivalued: false
-        required: true
-        description: 'Negative sequence reactance. Used to represent Extended-Ward
-          (IEC 60909).
-
-          Usage : Extended-Ward is a result of network reduction prior to the data
-          exchange.'
-    is_a: EquivalentEquipment
-    description: This class represents equivalent injections (generation or load).  Voltage
-      regulation is allowed only at the point of connection.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   ExternalNetworkInjection:
+    description: "This class represents the external network and it is used for IEC 60909 calculations."
+    annotations:
+      ea_guid: "EAID_B7E110A4_CE7A_4414_9477_4310D44B43D0"
+    is_a: RegulatingCondEq
     class_uri: cim:ExternalNetworkInjection
-    attributes:
+    attributes: 
       ikSecond:
+        description: "Indicates whether initial symmetrical short-circuit current and power have been calculated according to IEC (Ik).  Used only if short circuit calculations are done according to superposition method."
+        annotations:
+          ea_guid: "EAID_8CE33CA0_BF90_4ffb_8094_3E13248C294D"
         slot_uri: cim:ExternalNetworkInjection.ikSecond
         range: boolean
-        multivalued: false
-        required: false
-        description: Indicates whether initial symmetrical short-circuit current and
-          power have been calculated according to IEC (Ik").  Used only if short circuit
-          calculations are done according to superposition method.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       maxInitialSymShCCurrent:
+        description: "Maximum initial symmetrical short-circuit currents (Ik max) in A (Ik = Sk/(SQRT(3) Un)). Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_A9F4F42E_246F_4da4_AE34_14AE148CF3BF"
         slot_uri: cim:ExternalNetworkInjection.maxInitialSymShCCurrent
         range: CurrentFlow
-        multivalued: false
-        required: true
-        description: Maximum initial symmetrical short-circuit currents (Ik" max)
-          in A (Ik" = Sk"/(SQRT(3) Un)). Used for short circuit data exchange according
-          to IEC 60909.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       maxR0ToX0Ratio:
+        description: "Maximum ratio of zero sequence resistance of Network Feeder to its zero sequence reactance (R(0)/X(0) max). Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_DEEA4970_8179_4c0c_835B_448F523182C6"
         slot_uri: cim:ExternalNetworkInjection.maxR0ToX0Ratio
         range: float
-        multivalued: false
-        required: true
-        description: Maximum ratio of zero sequence resistance of Network Feeder to
-          its zero sequence reactance (R(0)/X(0) max). Used for short circuit data
-          exchange according to IEC 60909.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       maxR1ToX1Ratio:
+        description: "Maximum ratio of positive sequence resistance of Network Feeder to its positive sequence reactance (R(1)/X(1) max). Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_38290CCA_41EE_43e1_A7C4_FC39CFB33C7C"
         slot_uri: cim:ExternalNetworkInjection.maxR1ToX1Ratio
         range: float
-        multivalued: false
-        required: true
-        description: Maximum ratio of positive sequence resistance of Network Feeder
-          to its positive sequence reactance (R(1)/X(1) max). Used for short circuit
-          data exchange according to IEC 60909.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       maxZ0ToZ1Ratio:
+        description: "Maximum ratio of zero sequence impedance to its positive sequence impedance (Z(0)/Z(1) max). Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_FC3C5788_3C3E_41a9_B90F_01C842E72DEE"
         slot_uri: cim:ExternalNetworkInjection.maxZ0ToZ1Ratio
         range: float
-        multivalued: false
-        required: true
-        description: Maximum ratio of zero sequence impedance to its positive sequence
-          impedance (Z(0)/Z(1) max). Used for short circuit data exchange according
-          to IEC 60909.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       minInitialSymShCCurrent:
+        description: "Minimum initial symmetrical short-circuit currents (Ik min) in A (Ik = Sk/(SQRT(3) Un)). Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_CEA5D0C1_40FF_4bc9_9887_7E2C67B4A121"
         slot_uri: cim:ExternalNetworkInjection.minInitialSymShCCurrent
         range: CurrentFlow
-        multivalued: false
-        required: true
-        description: Minimum initial symmetrical short-circuit currents (Ik" min)
-          in A (Ik" = Sk"/(SQRT(3) Un)). Used for short circuit data exchange according
-          to IEC 60909.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       minR0ToX0Ratio:
+        description: "Indicates whether initial symmetrical short-circuit current and power have been calculated according to IEC (Ik). Used for short circuit data exchange according to IEC 6090."
+        annotations:
+          ea_guid: "EAID_BCD7177E_8D88_4797_949C_3068CE234417"
         slot_uri: cim:ExternalNetworkInjection.minR0ToX0Ratio
         range: float
-        multivalued: false
-        required: true
-        description: Indicates whether initial symmetrical short-circuit current and
-          power have been calculated according to IEC (Ik"). Used for short circuit
-          data exchange according to IEC 6090.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       minR1ToX1Ratio:
+        description: "Minimum ratio of positive sequence resistance of Network Feeder to its positive sequence reactance (R(1)/X(1) min). Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_A2644704_DF87_4b44_8C4D_F4D202095BB0"
         slot_uri: cim:ExternalNetworkInjection.minR1ToX1Ratio
         range: float
-        multivalued: false
-        required: true
-        description: Minimum ratio of positive sequence resistance of Network Feeder
-          to its positive sequence reactance (R(1)/X(1) min). Used for short circuit
-          data exchange according to IEC 60909.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       minZ0ToZ1Ratio:
+        description: "Minimum ratio of zero sequence impedance to its positive sequence impedance (Z(0)/Z(1) min). Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_224FEA10_D384_4c38_87D8_5B84DA49BD3F"
         slot_uri: cim:ExternalNetworkInjection.minZ0ToZ1Ratio
         range: float
-        multivalued: false
-        required: true
-        description: Minimum ratio of zero sequence impedance to its positive sequence
-          impedance (Z(0)/Z(1) min). Used for short circuit data exchange according
-          to IEC 60909.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       voltageFactor:
+        description: "Voltage factor in pu, which was used to calculate short-circuit current Ik and power Sk.  Used only if short circuit calculations are done according to superposition method."
+        annotations:
+          ea_guid: "EAID_F0AAD163_7313_4376_9CED_46F863F38E66"
         slot_uri: cim:ExternalNetworkInjection.voltageFactor
         range: PU
-        multivalued: false
-        required: false
-        description: Voltage factor in pu, which was used to calculate short-circuit
-          current Ik" and power Sk".  Used only if short circuit calculations are
-          done according to superposition method.
-    is_a: RegulatingCondEq
-    description: This class represents the external network and it is used for IEC
-      60909 calculations.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
   GroundingImpedance:
+    description: "A fixed impedance device used for grounding."
+    annotations:
+      ea_guid: "EAID_5E278FF4_B19F_4c63_8AA5_5DE09E2586DA"
+    is_a: EarthFaultCompensator
     class_uri: cim:GroundingImpedance
-    attributes:
+    attributes: 
       x:
+        description: "Reactance of device."
+        annotations:
+          ea_guid: "EAID_EAF81570_74C7_49bb_B7CD_DDC0F14E9A27"
         slot_uri: cim:GroundingImpedance.x
         range: Reactance
-        multivalued: false
-        required: true
-        description: Reactance of device.
-    is_a: EarthFaultCompensator
-    description: A fixed impedance device used for grounding.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   IdentifiedObject:
-    class_uri: cim:IdentifiedObject
+    description: "This is a root class to provide common identification for all classes needing identification and naming attributes."
+    annotations:
+      ea_guid: "EAID_055C5806_E9D8_4a7a_9307_DAF7C31763C7"
     abstract: true
-    attributes:
+    class_uri: cim:IdentifiedObject
+    attributes: 
       mRID:
+        description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
+        annotations:
+          ea_guid: "EAID_C775F80A_A23D_4f38_AB9D_49D1FA882337"
         slot_uri: cim:IdentifiedObject.mRID
         range: string
-        multivalued: false
-        required: true
-        description: 'Master resource identifier issued by a model authority. The
-          mRID is unique within an exchange context. Global uniqueness is easily achieved
-          by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID
-          is strongly recommended.
-
-          For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID
-          is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.'
-    description: This is a root class to provide common identification for all classes
-      needing identification and naming attributes.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   LinearShuntCompensator:
+    description: "A linear shunt compensator has banks or sections with equal admittance values."
+    annotations:
+      ea_guid: "EAID_94E82A47_069F_4e2b_A4FA_8CFD5E140FD7"
+    is_a: ShuntCompensator
     class_uri: cim:LinearShuntCompensator
-    attributes:
+    attributes: 
       b0PerSection:
+        description: "Zero sequence shunt (charging) susceptance per section."
+        annotations:
+          ea_guid: "EAID_18D033B2_4A27_4254_8F20_5442D0E163E7"
         slot_uri: cim:LinearShuntCompensator.b0PerSection
         range: Susceptance
-        multivalued: false
-        required: true
-        description: Zero sequence shunt (charging) susceptance per section.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       g0PerSection:
+        description: "Zero sequence shunt (charging) conductance per section."
+        annotations:
+          ea_guid: "EAID_2D5E2E4F_C07A_4000_BD54_C5FBF7B99D7A"
         slot_uri: cim:LinearShuntCompensator.g0PerSection
         range: Conductance
-        multivalued: false
-        required: true
-        description: Zero sequence shunt (charging) conductance per section.
-    is_a: ShuntCompensator
-    description: A linear shunt compensator has banks or sections with equal admittance
-      values.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   MutualCoupling:
+    description: "This class represents the zero sequence line mutual coupling."
+    comments: "The terminals (first terminal and second terminal) associated with the mutual coupling must have sequence number set.  The terminals must be associated with two different AC line segments."
+    annotations:
+      ea_guid: "EAID_A46F0441_DB66_4ff2_A892_7C5F9F54FA38"
+    is_a: IdentifiedObject
     class_uri: cim:MutualCoupling
-    attributes:
+    attributes: 
       b0ch:
+        description: "Zero sequence mutual coupling shunt (charging) susceptance, uniformly distributed, of the entire line section."
+        annotations:
+          ea_guid: "EAID_AC6F5010_FE14_46d4_8356_FAC00C72C23E"
         slot_uri: cim:MutualCoupling.b0ch
         range: Susceptance
-        multivalued: false
-        required: true
-        description: Zero sequence mutual coupling shunt (charging) susceptance, uniformly
-          distributed, of the entire line section.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       distance11:
+        description: "Distance to the start of the coupled region from the first line's terminal having sequence number equal to 1."
+        annotations:
+          ea_guid: "EAID_24F204CC_E384_4dfe_98B9_D0075DF1DA65"
         slot_uri: cim:MutualCoupling.distance11
         range: Length
-        multivalued: false
-        required: true
-        description: Distance to the start of the coupled region from the first line's
-          terminal having sequence number equal to 1.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       distance12:
+        description: "Distance to the end of the coupled region from the first line's terminal with sequence number equal to 1."
+        annotations:
+          ea_guid: "EAID_7275F327_1ABD_4a11_B170_904B24B53BDD"
         slot_uri: cim:MutualCoupling.distance12
         range: Length
-        multivalued: false
-        required: true
-        description: Distance to the end of the coupled region from the first line's
-          terminal with sequence number equal to 1.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       distance21:
+        description: "Distance to the start of coupled region from the second line's terminal with sequence number equal to 1."
+        annotations:
+          ea_guid: "EAID_5BB2F943_1CE7_4997_9E13_BAD43BA321F6"
         slot_uri: cim:MutualCoupling.distance21
         range: Length
-        multivalued: false
-        required: true
-        description: Distance to the start of coupled region from the second line's
-          terminal with sequence number equal to 1.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       distance22:
+        description: "Distance to the end of coupled region from the second line's terminal with sequence number equal to 1."
+        annotations:
+          ea_guid: "EAID_40540F6D_3306_4d14_B600_53F9A1392F82"
         slot_uri: cim:MutualCoupling.distance22
         range: Length
-        multivalued: false
-        required: true
-        description: Distance to the end of coupled region from the second line's
-          terminal with sequence number equal to 1.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       g0ch:
+        description: "Zero sequence mutual coupling shunt (charging) conductance, uniformly distributed, of the entire line section."
+        annotations:
+          ea_guid: "EAID_5AC0AF5A_CD75_4dc9_9A70_DE9012477272"
         slot_uri: cim:MutualCoupling.g0ch
         range: Conductance
-        multivalued: false
-        required: true
-        description: Zero sequence mutual coupling shunt (charging) conductance, uniformly
-          distributed, of the entire line section.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       r0:
+        description: "Zero sequence branch-to-branch mutual impedance coupling, resistance."
+        annotations:
+          ea_guid: "EAID_4F35A9CE_4DB1_4270_BC6C_2E4415752E41"
         slot_uri: cim:MutualCoupling.r0
         range: Resistance
-        multivalued: false
-        required: true
-        description: Zero sequence branch-to-branch mutual impedance coupling, resistance.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       x0:
+        description: "Zero sequence branch-to-branch mutual impedance coupling, reactance."
+        annotations:
+          ea_guid: "EAID_D4B922E9_B25A_4821_A84E_AEDFA549F466"
         slot_uri: cim:MutualCoupling.x0
         range: Reactance
-        multivalued: false
-        required: true
-        description: Zero sequence branch-to-branch mutual impedance coupling, reactance.
-      Second_Terminal:
-        slot_uri: cim:MutualCoupling.Second_Terminal
-        range: Terminal
-        multivalued: false
-        required: true
-        description: The starting terminal for the calculation of distances along
-          the second branch of the mutual coupling.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       First_Terminal:
+        description: "The starting terminal for the calculation of distances along the first branch of the mutual coupling.  Normally MutualCoupling would only be used for terminals of AC line segments.  The first and second terminals of a mutual coupling should point to different AC line segments."
+        annotations:
+          ea_guid: "EAID_E0778435_CE76_4d56_9FCA_FF9F04ED4FCA-A"
         slot_uri: cim:MutualCoupling.First_Terminal
         range: Terminal
-        multivalued: false
-        required: true
-        description: The starting terminal for the calculation of distances along
-          the first branch of the mutual coupling.  Normally MutualCoupling would
-          only be used for terminals of AC line segments.  The first and second terminals
-          of a mutual coupling should point to different AC line segments.
-    is_a: IdentifiedObject
-    description: This class represents the zero sequence line mutual coupling.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+      Second_Terminal:
+        description: "The starting terminal for the calculation of distances along the second branch of the mutual coupling."
+        annotations:
+          ea_guid: "EAID_3849B779_18E4_46d5_B987_8359D8A98A12-A"
+        slot_uri: cim:MutualCoupling.Second_Terminal
+        range: Terminal
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   NonlinearShuntCompensatorPoint:
+    description: "A non linear shunt compensator bank or section admittance value. The number of NonlinearShuntCompenstorPoint instances associated with a NonlinearShuntCompensator shall be equal to ShuntCompensator.maximumSections. ShuntCompensator.sections shall only be set to one of the NonlinearShuntCompenstorPoint.sectionNumber. There is no interpolation between NonlinearShuntCompenstorPoint-s."
+    annotations:
+      ea_guid: "EAID_96F8BB1B_2776_413c_A4AF_63924395C921"
     class_uri: cim:NonlinearShuntCompensatorPoint
-    attributes:
+    attributes: 
       b0:
+        description: "Zero sequence shunt (charging) susceptance per section."
+        annotations:
+          ea_guid: "EAID_5BC99084_351E_4a1d_AEEA_41C16FBE6AA8"
         slot_uri: cim:NonlinearShuntCompensatorPoint.b0
         range: Susceptance
-        multivalued: false
-        required: true
-        description: Zero sequence shunt (charging) susceptance per section.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       g0:
+        description: "Zero sequence shunt (charging) conductance per section."
+        annotations:
+          ea_guid: "EAID_E58C51D2_C678_4903_ADFB_59CA9EC22209"
         slot_uri: cim:NonlinearShuntCompensatorPoint.g0
         range: Conductance
-        multivalued: false
-        required: true
-        description: Zero sequence shunt (charging) conductance per section.
-    description: A non linear shunt compensator bank or section admittance value.
-      The number of NonlinearShuntCompenstorPoint instances associated with a NonlinearShuntCompensator
-      shall be equal to ShuntCompensator.maximumSections. ShuntCompensator.sections
-      shall only be set to one of the NonlinearShuntCompenstorPoint.sectionNumber.
-      There is no interpolation between NonlinearShuntCompenstorPoint-s.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   PetersenCoil:
+    description: "A variable impedance device normally used to offset line charging during single line faults in an ungrounded section of network."
+    annotations:
+      ea_guid: "EAID_5538A367_14D4_4160_836F_2D049DB218B6"
+    is_a: EarthFaultCompensator
     class_uri: cim:PetersenCoil
-    attributes:
-      mode:
-        slot_uri: cim:PetersenCoil.mode
-        range: PetersenCoilModeKind
-        multivalued: false
-        required: true
-        description: The mode of operation of the Petersen coil.
+    attributes: 
       nominalU:
+        description: "The nominal voltage for which the coil is designed."
+        annotations:
+          ea_guid: "EAID_E1BE229C_3743_423e_8437_A7F7AEC0C9DD"
         slot_uri: cim:PetersenCoil.nominalU
         range: Voltage
-        multivalued: false
-        required: true
-        description: The nominal voltage for which the coil is designed.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       offsetCurrent:
+        description: "The offset current that the Petersen coil controller is operating from the resonant point.  This is normally a fixed amount for which the controller is configured and could be positive or negative.  Typically 0 to 60 A depending on voltage and resonance conditions."
+        annotations:
+          ea_guid: "EAID_B1508A24_D2C6_4199_A0A8_03BAED4649F6"
         slot_uri: cim:PetersenCoil.offsetCurrent
         range: CurrentFlow
-        multivalued: false
-        required: false
-        description: The offset current that the Petersen coil controller is operating
-          from the resonant point.  This is normally a fixed amount for which the
-          controller is configured and could be positive or negative.  Typically 0
-          to 60 A depending on voltage and resonance conditions.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       positionCurrent:
+        description: "The control current used to control the Petersen coil also known as the position current.  Typically in the range of 20 mA to 200 mA."
+        annotations:
+          ea_guid: "EAID_C965BDE0_0426_46b5_A0C2_54956F9AD7EE"
         slot_uri: cim:PetersenCoil.positionCurrent
         range: CurrentFlow
-        multivalued: false
-        required: false
-        description: The control current used to control the Petersen coil also known
-          as the position current.  Typically in the range of 20 mA to 200 mA.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       xGroundMax:
+        description: "The maximum reactance."
+        annotations:
+          ea_guid: "EAID_1FB3F4FB_2915_4aed_92F5_58D3CD2ECDF5"
         slot_uri: cim:PetersenCoil.xGroundMax
         range: Reactance
-        multivalued: false
-        required: true
-        description: The maximum reactance.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       xGroundMin:
+        description: "The minimum reactance."
+        annotations:
+          ea_guid: "EAID_897F6E69_DAE7_4bd0_96F4_CBD61ED7257F"
         slot_uri: cim:PetersenCoil.xGroundMin
         range: Reactance
-        multivalued: false
-        required: true
-        description: The minimum reactance.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       xGroundNominal:
+        description: "The nominal reactance.  This is the operating point (normally over compensation) that is defined based on the resonance point in the healthy network condition.  The impedance is calculated based on nominal voltage divided by position current."
+        annotations:
+          ea_guid: "EAID_84902AD5_0FA1_4993_9BDD_9B736E29961E"
         slot_uri: cim:PetersenCoil.xGroundNominal
         range: Reactance
-        multivalued: false
-        required: true
-        description: The nominal reactance.  This is the operating point (normally
-          over compensation) that is defined based on the resonance point in the healthy
-          network condition.  The impedance is calculated based on nominal voltage
-          divided by position current.
-    is_a: EarthFaultCompensator
-    description: A variable impedance device normally used to offset line charging
-      during single line faults in an ungrounded section of network.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   PowerSystemResource:
-    class_uri: cim:PowerSystemResource
+    description: "A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated."
+    annotations:
+      ea_guid: "EAID_0340C084_3759_40cc_AAF2_386101DE842F"
     is_a: IdentifiedObject
     abstract: true
-    description: A power system resource (PSR) can be an item of equipment such as
-      a switch, an equipment container containing many individual items of equipment
-      such as a substation, or an organisational entity such as sub-control area.
-      Power system resources can have measurements associated.
+    class_uri: cim:PowerSystemResource
+    attributes: 
   PowerTransformer:
+    description: "An electrical device consisting of  two or more coupled windings, with or without a magnetic core, for introducing mutual coupling between electric circuits. Transformers can be used to control voltage and phase shift (active power flow).A power transformer may be composed of separate transformer tanks that need not be identical.A power transformer can be modelled with or without tanks and is intended for use in both balanced and unbalanced representations.   A power transformer typically has two terminals, but may have one (grounding), three or more terminals.The inherited association ConductingEquipment.BaseVoltage should not be used.  The association from TransformerEnd to BaseVoltage should be used instead."
+    annotations:
+      ea_guid: "EAID_3D50627C_324C_4e9d_AB5C_592E0A1E0AFE"
+    is_a: ConductingEquipment
     class_uri: cim:PowerTransformer
-    attributes:
+    attributes: 
       beforeShCircuitHighestOperatingCurrent:
+        description: "The highest operating current (Ib in IEC 60909-0) before short circuit (depends on network configuration and relevant reliability philosophy). It is used for calculation of the impedance correction factor KT defined in IEC 60909-0."
+        annotations:
+          ea_guid: "EAID_AE4EA8D2_F7DE_4b53_BB69_AC364144A1CF"
         slot_uri: cim:PowerTransformer.beforeShCircuitHighestOperatingCurrent
         range: CurrentFlow
-        multivalued: false
-        required: false
-        description: The highest operating current (Ib in IEC 60909-0) before short
-          circuit (depends on network configuration and relevant reliability philosophy).
-          It is used for calculation of the impedance correction factor KT defined
-          in IEC 60909-0.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       beforeShCircuitHighestOperatingVoltage:
+        description: "The highest operating voltage (Ub in IEC 60909-0) before short circuit. It is used for calculation of the impedance correction factor KT defined in IEC 60909-0. This is worst case voltage on the low side winding (3.7.1 of IEC 60909:2001). Used to define operating conditions."
+        annotations:
+          ea_guid: "EAID_4E3E92DC_A260_4f23_87CC_E569FF4567A7"
         slot_uri: cim:PowerTransformer.beforeShCircuitHighestOperatingVoltage
         range: Voltage
-        multivalued: false
-        required: false
-        description: The highest operating voltage (Ub in IEC 60909-0) before short
-          circuit. It is used for calculation of the impedance correction factor KT
-          defined in IEC 60909-0. This is worst case voltage on the low side winding
-          (3.7.1 of IEC 60909:2001). Used to define operating conditions.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       beforeShortCircuitAnglePf:
+        description: "The angle of power factor before short circuit (phib in IEC 60909-0). It is used for calculation of the impedance correction factor KT defined in IEC 60909-0. This is the worst case power factor. Used to define operating conditions."
+        annotations:
+          ea_guid: "EAID_041C6D4A_4D33_416b_869F_3546D7B28527"
         slot_uri: cim:PowerTransformer.beforeShortCircuitAnglePf
         range: AngleDegrees
-        multivalued: false
-        required: false
-        description: The angle of power factor before short circuit (phib in IEC 60909-0).
-          It is used for calculation of the impedance correction factor KT defined
-          in IEC 60909-0. This is the worst case power factor. Used to define operating
-          conditions.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       highSideMinOperatingU:
+        description: "The minimum operating voltage (uQmin in IEC 60909-0) at the high voltage side (Q side) of the unit transformer of the power station unit. A value well established from long-term operating experience of the system. It is used for calculation of the impedance correction factor KG defined in IEC 60909-0."
+        annotations:
+          ea_guid: "EAID_B621D953_1CCB_4d6e_AE7D_6231CCE96831"
         slot_uri: cim:PowerTransformer.highSideMinOperatingU
         range: Voltage
-        multivalued: false
-        required: false
-        description: The minimum operating voltage (uQmin in IEC 60909-0) at the high
-          voltage side (Q side) of the unit transformer of the power station unit.
-          A value well established from long-term operating experience of the system.
-          It is used for calculation of the impedance correction factor KG defined
-          in IEC 60909-0.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       isPartOfGeneratorUnit:
+        description: "Indicates whether the machine is part of a power station unit. Used for short circuit data exchange according to IEC 60909.  It has an impact on how the correction factors are calculated for transformers, since the transformer is not necessarily part of a synchronous machine and generating unit. It is not always possible to derive this information from the model. This is why the attribute is necessary."
+        annotations:
+          ea_guid: "EAID_90536F90_2FEE_4023_A72F_58DACED054DC"
         slot_uri: cim:PowerTransformer.isPartOfGeneratorUnit
         range: boolean
-        multivalued: false
-        required: true
-        description: Indicates whether the machine is part of a power station unit.
-          Used for short circuit data exchange according to IEC 60909.  It has an
-          impact on how the correction factors are calculated for transformers, since
-          the transformer is not necessarily part of a synchronous machine and generating
-          unit. It is not always possible to derive this information from the model.
-          This is why the attribute is necessary.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       operationalValuesConsidered:
+        description: "It is used to define if the data (other attributes related to short circuit data exchange) defines long term operational conditions or not. Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_48CE1171_4EB3_4eb0_981D_28AE7ABB7F49"
         slot_uri: cim:PowerTransformer.operationalValuesConsidered
         range: boolean
-        multivalued: false
-        required: false
-        description: It is used to define if the data (other attributes related to
-          short circuit data exchange) defines long term operational conditions or
-          not. Used for short circuit data exchange according to IEC 60909.
-    is_a: ConductingEquipment
-    description: 'An electrical device consisting of  two or more coupled windings,
-      with or without a magnetic core, for introducing mutual coupling between electric
-      circuits. Transformers can be used to control voltage and phase shift (active
-      power flow).
-
-      A power transformer may be composed of separate transformer tanks that need
-      not be identical.
-
-      A power transformer can be modelled with or without tanks and is intended for
-      use in both balanced and unbalanced representations.   A power transformer typically
-      has two terminals, but may have one (grounding), three or more terminals.
-
-      The inherited association ConductingEquipment.BaseVoltage should not be used.  The
-      association from TransformerEnd to BaseVoltage should be used instead.'
+        minimum_cardinality: 0
+        maximum_cardinality: 1
   PowerTransformerEnd:
+    description: "A PowerTransformerEnd is associated with each Terminal of a PowerTransformer.The impedance values r, r0, x, and x0 of a PowerTransformerEnd represents a star equivalent as follows.1) for a two Terminal PowerTransformer the high voltage (TransformerEnd.endNumber=1) PowerTransformerEnd has non zero values on r, r0, x, and x0 while the low voltage (TransformerEnd.endNumber=2) PowerTransformerEnd has zero values for r, r0, x, and x0.  Parameters are always provided, even if the PowerTransformerEnds have the same rated voltage.  In this case, the parameters are provided at the PowerTransformerEnd which has TransformerEnd.endNumber equal to 1.2) for a three Terminal PowerTransformer the three PowerTransformerEnds represent a star equivalent with each leg in the star represented by r, r0, x, and x0 values.3) For a three Terminal transformer each PowerTransformerEnd shall have g, g0, b and b0 values corresponding to the no load losses distributed on the three PowerTransformerEnds. The total no load loss shunt impedances may also be placed at one of the PowerTransformerEnds, preferably the end numbered 1, having the shunt values on end 1.  This is the preferred way.4) for a PowerTransformer with more than three Terminals the PowerTransformerEnd impedance values cannot be used. Instead use the TransformerMeshImpedance or split the transformer into multiple PowerTransformers.Each PowerTransformerEnd must be contained by a PowerTransformer. Because a PowerTransformerEnd (or any other object) can not be contained by more than one parent, a PowerTransformerEnd can not have an association to an EquipmentContainer (Substation, VoltageLevel, etc)."
+    annotations:
+      ea_guid: "EAID_51A671B1_C546_4106_92F9_ED7C0305A2DB"
+    is_a: TransformerEnd
     class_uri: cim:PowerTransformerEnd
-    attributes:
+    attributes: 
       b0:
+        description: "Zero sequence magnetizing branch susceptance."
+        annotations:
+          ea_guid: "EAID_9F90313E_3782_459e_A4BC_66938E5A52F5"
         slot_uri: cim:PowerTransformerEnd.b0
         range: Susceptance
-        multivalued: false
-        required: true
-        description: Zero sequence magnetizing branch susceptance.
-      phaseAngleClock:
-        slot_uri: cim:PowerTransformerEnd.phaseAngleClock
-        range: integer
-        multivalued: false
-        required: true
-        description: Terminal voltage phase angle displacement where 360 degrees are
-          represented with clock hours. The valid values are 0 to 11. For example,
-          for the secondary side end of a transformer with vector group code of 'Dyn11',
-          specify the connection kind as wye with neutral and specify the phase angle
-          of the clock as 11.  The clock value of the transformer end number specified
-          as 1, is assumed to be zero.  Note the transformer end number is not assumed
-          to be the same as the terminal sequence number.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       g0:
+        description: "Zero sequence magnetizing branch conductance (star-model)."
+        annotations:
+          ea_guid: "EAID_40582586_E7A8_4d85_9328_02F6B38300A1"
         slot_uri: cim:PowerTransformerEnd.g0
         range: Conductance
-        multivalued: false
-        required: true
-        description: Zero sequence magnetizing branch conductance (star-model).
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+      phaseAngleClock:
+        description: "Terminal voltage phase angle displacement where 360 degrees are represented with clock hours. The valid values are 0 to 11. For example, for the secondary side end of a transformer with vector group code of 'Dyn11', specify the connection kind as wye with neutral and specify the phase angle of the clock as 11.  The clock value of the transformer end number specified as 1, is assumed to be zero.  Note the transformer end number is not assumed to be the same as the terminal sequence number."
+        annotations:
+          ea_guid: "EAID_D2BA85F8_D4BC_4f1a_824A_2B7E701EC65B"
+        slot_uri: cim:PowerTransformerEnd.phaseAngleClock
+        range: integer
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       r0:
+        description: "Zero sequence series resistance (star-model) of the transformer end."
+        annotations:
+          ea_guid: "EAID_ED74BF4C_8DAC_425b_9352_4051C611F9BC"
         slot_uri: cim:PowerTransformerEnd.r0
         range: Resistance
-        multivalued: false
-        required: true
-        description: Zero sequence series resistance (star-model) of the transformer
-          end.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       x0:
+        description: "Zero sequence series reactance of the transformer end."
+        annotations:
+          ea_guid: "EAID_9F61AC19_7526_4234_AB78_F7FC96E9833F"
         slot_uri: cim:PowerTransformerEnd.x0
         range: Reactance
-        multivalued: false
-        required: true
-        description: Zero sequence series reactance of the transformer end.
-    is_a: TransformerEnd
-    description: 'A PowerTransformerEnd is associated with each Terminal of a PowerTransformer.
-
-      The impedance values r, r0, x, and x0 of a PowerTransformerEnd represents a
-      star equivalent as follows.
-
-      1) for a two Terminal PowerTransformer the high voltage (TransformerEnd.endNumber=1)
-      PowerTransformerEnd has non zero values on r, r0, x, and x0 while the low voltage
-      (TransformerEnd.endNumber=2) PowerTransformerEnd has zero values for r, r0,
-      x, and x0.  Parameters are always provided, even if the PowerTransformerEnds
-      have the same rated voltage.  In this case, the parameters are provided at the
-      PowerTransformerEnd which has TransformerEnd.endNumber equal to 1.
-
-      2) for a three Terminal PowerTransformer the three PowerTransformerEnds represent
-      a star equivalent with each leg in the star represented by r, r0, x, and x0
-      values.
-
-      3) For a three Terminal transformer each PowerTransformerEnd shall have g, g0,
-      b and b0 values corresponding to the no load losses distributed on the three
-      PowerTransformerEnds. The total no load loss shunt impedances may also be placed
-      at one of the PowerTransformerEnds, preferably the end numbered 1, having the
-      shunt values on end 1.  This is the preferred way.
-
-      4) for a PowerTransformer with more than three Terminals the PowerTransformerEnd
-      impedance values cannot be used. Instead use the TransformerMeshImpedance or
-      split the transformer into multiple PowerTransformers.
-
-      Each PowerTransformerEnd must be contained by a PowerTransformer. Because a
-      PowerTransformerEnd (or any other object) can not be contained by more than
-      one parent, a PowerTransformerEnd can not have an association to an EquipmentContainer
-      (Substation, VoltageLevel, etc).'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   RegulatingCondEq:
-    class_uri: cim:RegulatingCondEq
+    description: "A type of conducting equipment that can regulate a quantity (i.e. voltage or flow) at a specific point in the network."
+    annotations:
+      ea_guid: "EAID_598D5E45_FF89_4074_B3C1_3F40425EE8D6"
     is_a: EnergyConnection
     abstract: true
-    description: A type of conducting equipment that can regulate a quantity (i.e.
-      voltage or flow) at a specific point in the network.
+    class_uri: cim:RegulatingCondEq
+    attributes: 
   RotatingMachine:
-    class_uri: cim:RotatingMachine
+    description: "A rotating machine which may be used as a generator or motor."
+    annotations:
+      ea_guid: "EAID_8ADF23B6_43B5_436b_91CE_E22D54B323B8"
     is_a: RegulatingCondEq
     abstract: true
-    description: A rotating machine which may be used as a generator or motor.
+    class_uri: cim:RotatingMachine
+    attributes: 
   SeriesCompensator:
+    description: "A Series Compensator is a series capacitor or reactor or an AC transmission line without charging susceptance.  It is a two terminal device."
+    annotations:
+      ea_guid: "EAID_5B656059_8C65_455e_9E02_5A14C2631D6A"
+    is_a: ConductingEquipment
     class_uri: cim:SeriesCompensator
-    attributes:
+    attributes: 
       r0:
+        description: "Zero sequence resistance."
+        annotations:
+          ea_guid: "EAID_E37FE89F_D6D7_4728_894D_1797E5FE6B15"
         slot_uri: cim:SeriesCompensator.r0
         range: Resistance
-        multivalued: false
-        required: true
-        description: Zero sequence resistance.
-      x0:
-        slot_uri: cim:SeriesCompensator.x0
-        range: Reactance
-        multivalued: false
-        required: true
-        description: Zero sequence reactance.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       varistorPresent:
+        description: "Describe if a metal oxide varistor (mov) for over voltage protection is configured in parallel with the series compensator. It is used for short circuit calculations."
+        annotations:
+          ea_guid: "EAID_7D1BDB14_3258_4f63_B2B4_D55EEB08EC07"
         slot_uri: cim:SeriesCompensator.varistorPresent
         range: boolean
-        multivalued: false
-        required: true
-        description: Describe if a metal oxide varistor (mov) for over voltage protection
-          is configured in parallel with the series compensator. It is used for short
-          circuit calculations.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       varistorRatedCurrent:
+        description: "The maximum current the varistor is designed to handle at specified duration. It is used for short circuit calculations and exchanged only if SeriesCompensator.varistorPresent is true.The attribute shall be a positive value."
+        annotations:
+          ea_guid: "EAID_A64EF97A_B0EC_45de_B90A_1A86F08CA31B"
         slot_uri: cim:SeriesCompensator.varistorRatedCurrent
         range: CurrentFlow
-        multivalued: false
-        required: false
-        description: 'The maximum current the varistor is designed to handle at specified
-          duration. It is used for short circuit calculations and exchanged only if
-          SeriesCompensator.varistorPresent is true.
-
-          The attribute shall be a positive value.'
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       varistorVoltageThreshold:
+        description: "The dc voltage at which the varistor starts conducting. It is used for short circuit calculations and exchanged only if SeriesCompensator.varistorPresent is true."
+        annotations:
+          ea_guid: "EAID_5E30BCEC_E8EB_4b1d_9AE5_E44FF6B0FFDE"
         slot_uri: cim:SeriesCompensator.varistorVoltageThreshold
         range: Voltage
-        multivalued: false
-        required: false
-        description: The dc voltage at which the varistor starts conducting. It is
-          used for short circuit calculations and exchanged only if SeriesCompensator.varistorPresent
-          is true.
-    is_a: ConductingEquipment
-    description: A Series Compensator is a series capacitor or reactor or an AC transmission
-      line without charging susceptance.  It is a two terminal device.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      x0:
+        description: "Zero sequence reactance."
+        annotations:
+          ea_guid: "EAID_B3898136_E885_48bc_BBFB_A9F50D36078B"
+        slot_uri: cim:SeriesCompensator.x0
+        range: Reactance
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   ShuntCompensator:
-    class_uri: cim:ShuntCompensator
+    description: "A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors. A section of a shunt compensator is an individual capacitor or reactor. A negative value for bPerSection indicates that the compensator is a reactor. ShuntCompensator is a single terminal device.  Ground is implied."
+    annotations:
+      ea_guid: "EAID_92B30569_5ED0_4fc0_B796_984D9BF75453"
     is_a: RegulatingCondEq
     abstract: true
-    description: A shunt capacitor or reactor or switchable bank of shunt capacitors
-      or reactors. A section of a shunt compensator is an individual capacitor or
-      reactor. A negative value for bPerSection indicates that the compensator is
-      a reactor. ShuntCompensator is a single terminal device.  Ground is implied.
+    class_uri: cim:ShuntCompensator
+    attributes: 
   SynchronousMachine:
+    description: "An electromechanical device that operates with shaft rotating synchronously with the network. It is a single machine operating either as a generator or synchronous condenser or pump."
+    annotations:
+      ea_guid: "EAID_7862E21E_F054_4a33_949F_04B8B4690D49"
+    is_a: RotatingMachine
     class_uri: cim:SynchronousMachine
-    attributes:
+    attributes: 
       earthing:
+        description: "Indicates whether or not the generator is earthed. Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_F7C4DAB6_7373_4bab_B049_98CFFFE863F3"
         slot_uri: cim:SynchronousMachine.earthing
         range: boolean
-        multivalued: false
-        required: true
-        description: Indicates whether or not the generator is earthed. Used for short
-          circuit data exchange according to IEC 60909.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       earthingStarPointR:
+        description: "Generator star point earthing resistance (Re). Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_91080667_F08F_4376_A5BB_2FF78C475574"
         slot_uri: cim:SynchronousMachine.earthingStarPointR
         range: Resistance
-        multivalued: false
-        required: false
-        description: Generator star point earthing resistance (Re). Used for short
-          circuit data exchange according to IEC 60909.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       earthingStarPointX:
+        description: "Generator star point earthing reactance (Xe). Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_ED9C53CE_C21E_4d12_B219_BE9E666EF2AA"
         slot_uri: cim:SynchronousMachine.earthingStarPointX
         range: Reactance
-        multivalued: false
-        required: false
-        description: Generator star point earthing reactance (Xe). Used for short
-          circuit data exchange according to IEC 60909.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       ikk:
+        description: "Steady-state short-circuit current (in A for the profile) of generator with compound excitation during 3-phase short circuit.- Ikk=0: Generator with no compound excitation.- Ikk&lt;&gt;0: Generator with compound excitation.Ikk is used to calculate the minimum steady-state short-circuit current for generators with compound excitation.(4.6.1.2 in IEC 60909-0:2001).Used only for single fed short circuit on a generator. (4.3.4.2. in IEC 60909-0:2001)."
+        annotations:
+          ea_guid: "EAID_8A08EE9F_30F4_4ddd_9531_161EAB9B8F7E"
         slot_uri: cim:SynchronousMachine.ikk
         range: CurrentFlow
-        multivalued: false
-        required: false
-        description: 'Steady-state short-circuit current (in A for the profile) of
-          generator with compound excitation during 3-phase short circuit.
-
-          - Ikk=0: Generator with no compound excitation.
-
-          - Ikk&lt;&gt;0: Generator with compound excitation.
-
-          Ikk is used to calculate the minimum steady-state short-circuit current
-          for generators with compound excitation.
-
-          (4.6.1.2 in IEC 60909-0:2001).
-
-          Used only for single fed short circuit on a generator. (4.3.4.2. in IEC
-          60909-0:2001).'
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       mu:
+        description: "Factor to calculate the breaking current (Section 4.5.2.1 in IEC 60909-0).Used only for single fed short circuit on a generator (Section 4.3.4.2. in IEC 60909-0)."
+        annotations:
+          ea_guid: "EAID_848A6DD0_9E82_42fa_B11B_8532CB3D9AA3"
         slot_uri: cim:SynchronousMachine.mu
         range: float
-        multivalued: false
-        required: false
-        description: 'Factor to calculate the breaking current (Section 4.5.2.1 in
-          IEC 60909-0).
-
-          Used only for single fed short circuit on a generator (Section 4.3.4.2.
-          in IEC 60909-0).'
-      x0:
-        slot_uri: cim:SynchronousMachine.x0
-        range: Reactance
-        multivalued: false
-        required: true
-        description: Zero sequence reactance of the synchronous machine.
-      r0:
-        slot_uri: cim:SynchronousMachine.r0
-        range: Resistance
-        multivalued: false
-        required: true
-        description: Zero sequence resistance of the synchronous machine.
-      x2:
-        slot_uri: cim:SynchronousMachine.x2
-        range: Reactance
-        multivalued: false
-        required: true
-        description: Negative sequence reactance.
-      r2:
-        slot_uri: cim:SynchronousMachine.r2
-        range: Resistance
-        multivalued: false
-        required: true
-        description: Negative sequence resistance.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       r:
+        description: "Equivalent resistance (RG) of generator. RG is considered for the calculation of all currents, except for the calculation of the peak current ip. Used for short circuit data exchange according to IEC 60909."
+        annotations:
+          ea_guid: "EAID_F5F4EFCA_977E_4231_ACF7_CEDC8A85CD6F"
         slot_uri: cim:SynchronousMachine.r
         range: Resistance
-        multivalued: false
-        required: true
-        description: Equivalent resistance (RG) of generator. RG is considered for
-          the calculation of all currents, except for the calculation of the peak
-          current ip. Used for short circuit data exchange according to IEC 60909.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+      r0:
+        description: "Zero sequence resistance of the synchronous machine."
+        annotations:
+          ea_guid: "EAID_3734B4AC_4BD3_4f19_A04C_3435D7EE6C14"
+        slot_uri: cim:SynchronousMachine.r0
+        range: Resistance
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+      r2:
+        description: "Negative sequence resistance."
+        annotations:
+          ea_guid: "EAID_3D5502B1_D49E_4c17_87D6_44C0850D2D41"
+        slot_uri: cim:SynchronousMachine.r2
+        range: Resistance
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       satDirectSubtransX:
+        description: "Direct-axis subtransient reactance saturated, also known as Xdsat."
+        annotations:
+          ea_guid: "EAID_5155AE7B_4DBA_4521_B3B8_B3623D53AF96"
         slot_uri: cim:SynchronousMachine.satDirectSubtransX
         range: PU
-        multivalued: false
-        required: true
-        description: Direct-axis subtransient reactance saturated, also known as Xd"sat.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       satDirectSyncX:
+        description: "Direct-axes saturated synchronous reactance (xdsat); reciprocal of short-circuit ration. Used for short circuit data exchange, only for single fed short circuit on a generator. (4.3.4.2. in IEC 60909-0:2001)."
+        annotations:
+          ea_guid: "EAID_FB6AA45C_2D6E_4ce4_92F0_5669E53A8EDF"
         slot_uri: cim:SynchronousMachine.satDirectSyncX
         range: PU
-        multivalued: false
-        required: false
-        description: Direct-axes saturated synchronous reactance (xdsat); reciprocal
-          of short-circuit ration. Used for short circuit data exchange, only for
-          single fed short circuit on a generator. (4.3.4.2. in IEC 60909-0:2001).
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       satDirectTransX:
+        description: "Saturated Direct-axis transient reactance. The attribute is primarily used for short circuit calculations according to ANSI."
+        annotations:
+          ea_guid: "EAID_B56C10AE_7F4B_4b90_BE6C_BC1D10973D6F"
         slot_uri: cim:SynchronousMachine.satDirectTransX
         range: PU
-        multivalued: false
-        required: false
-        description: Saturated Direct-axis transient reactance. The attribute is primarily
-          used for short circuit calculations according to ANSI.
-      shortCircuitRotorType:
-        slot_uri: cim:SynchronousMachine.shortCircuitRotorType
-        range: ShortCircuitRotorKind
-        multivalued: false
-        required: false
-        description: Type of rotor, used by short circuit applications, only for single
-          fed short circuit according to IEC 60909.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       voltageRegulationRange:
+        description: "Range of generator voltage regulation (PG in IEC 60909-0) used for calculation of the impedance correction factor KG defined in IEC 60909-0.This attribute is used to describe the operating voltage of the generating unit."
+        annotations:
+          ea_guid: "EAID_EA18FF08_9F66_47bc_BF32_90256C925F9C"
         slot_uri: cim:SynchronousMachine.voltageRegulationRange
         range: PerCent
-        multivalued: false
-        required: false
-        description: 'Range of generator voltage regulation (PG in IEC 60909-0) used
-          for calculation of the impedance correction factor KG defined in IEC 60909-0.
-
-          This attribute is used to describe the operating voltage of the generating
-          unit.'
-    is_a: RotatingMachine
-    description: An electromechanical device that operates with shaft rotating synchronously
-      with the network. It is a single machine operating either as a generator or
-      synchronous condenser or pump.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      x0:
+        description: "Zero sequence reactance of the synchronous machine."
+        annotations:
+          ea_guid: "EAID_B18BF255_A3E4_4cba_B7D0_6E4F825191A9"
+        slot_uri: cim:SynchronousMachine.x0
+        range: Reactance
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+      x2:
+        description: "Negative sequence reactance."
+        annotations:
+          ea_guid: "EAID_BF860696_8442_4a51_A9C4_D369A3154954"
+        slot_uri: cim:SynchronousMachine.x2
+        range: Reactance
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   Terminal:
-    class_uri: cim:Terminal
-    attributes:
-      HasSecondMutualCoupling:
-        slot_uri: cim:Terminal.HasSecondMutualCoupling
-        range: MutualCoupling
-        multivalued: true
-        required: false
-        description: Mutual couplings with the branch associated as the first branch.
-      HasFirstMutualCoupling:
-        slot_uri: cim:Terminal.HasFirstMutualCoupling
-        range: MutualCoupling
-        multivalued: true
-        required: false
-        description: Mutual couplings associated with the branch as the first branch.
+    description: "An AC electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes."
+    annotations:
+      ea_guid: "EAID_1A0F8321_5E77_4d68_BE29_B36FA31549DC"
     is_a: ACDCTerminal
-    description: An AC electrical connection point to a piece of conducting equipment.
-      Terminals are connected at physical connection points called connectivity nodes.
-  TransformerEnd:
-    class_uri: cim:TransformerEnd
     abstract: true
-    attributes:
-      rground:
-        slot_uri: cim:TransformerEnd.rground
-        range: Resistance
-        multivalued: false
-        required: false
-        description: (for Yn and Zn connections) Resistance part of neutral impedance
-          where 'grounded' is true.
+    class_uri: cim:Terminal
+    attributes: 
+  TransformerEnd:
+    description: "A conducting connection point of a power transformer. It corresponds to a physical transformer winding terminal.  In earlier CIM versions, the TransformerWinding class served a similar purpose, but this class is more flexible because it associates to terminal but is not a specialization of ConductingEquipment."
+    annotations:
+      ea_guid: "EAID_6E6AF445_8CD5_434b_8E74_08970A4E6D95"
+    is_a: IdentifiedObject
+    abstract: true
+    class_uri: cim:TransformerEnd
+    attributes: 
       grounded:
+        description: "(for Yn and Zn connections) True if the neutral is solidly grounded."
+        annotations:
+          ea_guid: "EAID_AF0E90AF_70E5_4620_9474_F9DD0E9C4DB2"
         slot_uri: cim:TransformerEnd.grounded
         range: boolean
-        multivalued: false
-        required: true
-        description: (for Yn and Zn connections) True if the neutral is solidly grounded.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+      rground:
+        description: "(for Yn and Zn connections) Resistance part of neutral impedance where 'grounded' is true."
+        annotations:
+          ea_guid: "EAID_EE05F10D_59F9_4a26_84CF_01E7909E179B"
+        slot_uri: cim:TransformerEnd.rground
+        range: Resistance
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       xground:
+        description: "(for Yn and Zn connections) Reactive part of neutral impedance where 'grounded' is true."
+        annotations:
+          ea_guid: "EAID_50CE0265_4A20_4352_B5D6_FCFECC48E995"
         slot_uri: cim:TransformerEnd.xground
         range: Reactance
-        multivalued: false
-        required: false
-        description: (for Yn and Zn connections) Reactive part of neutral impedance
-          where 'grounded' is true.
-    is_a: IdentifiedObject
-    description: A conducting connection point of a power transformer. It corresponds
-      to a physical transformer winding terminal.  In earlier CIM versions, the TransformerWinding
-      class served a similar purpose, but this class is more flexible because it associates
-      to terminal but is not a specialization of ConductingEquipment.
-
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_133597D7_9050_4335_B968_86AF7E16558C"
+        slot_uri: cim:ActivePower.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_8C467CE2_6EA5_4aed_810B_32597261DB61"
+        slot_uri: cim:AngleDegrees.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_A37F340D_8291_465f_8A0A_FF87B2676B0E"
+        slot_uri: cim:Conductance.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_83BDDC04_3689_432d_BF6E_0712C32CE504"
+        slot_uri: cim:CurrentFlow.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_C594A615_29EA_4d24_8984_B8844EE042B2"
+        slot_uri: cim:Length.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_9E5F92B8_7F02_49bd_BC52_81240FB30E84"
+        slot_uri: cim:PU.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        description: "Normally 0 to 100 on a defined base."
+        annotations:
+          ea_guid: "EAID_3F3F1095_2284_438d_89FF_699BCA187532"
+        slot_uri: cim:PerCent.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_1010C898_C3A2_45b0_BF5D_C0DEDEBA27CC"
+        slot_uri: cim:Reactance.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_CFCFA1A2_5401_4f99_81B4_5B5441697F60"
+        slot_uri: cim:Resistance.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_5AB38FF3_6ED0_4479_947D_CB7B7FF06765"
+        slot_uri: cim:Susceptance.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_7716E759_D73B_4c62_81B9_898473941C90"
+        slot_uri: cim:Temperature.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_C86122FF_94E1_4244_975A_BA865D8135BC"
+        slot_uri: cim:Voltage.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
 types:
-
   ActivePower:
     uri: xsd:float
     base: float
     description: "Product of RMS value of the voltage and the RMS value of the in-phase component of the current."
     annotations:
+      ea_guid: "EAID_E52EDC2D_8972_42c7_A7EB_D8C017E138A4"
       cim_data_type: true
       uri: cim:ActivePower
-
   AngleDegrees:
     uri: xsd:float
     base: float
     description: "Measurement of angle in degrees."
     annotations:
+      ea_guid: "EAID_A633BDC9_A238_4f69_AF1B_FF8A5C2FFCC8"
       cim_data_type: true
       uri: cim:AngleDegrees
-
   Conductance:
     uri: xsd:float
     base: float
     description: "Factor by which voltage must be multiplied to give corresponding power lost from a circuit. Real part of admittance."
     annotations:
+      ea_guid: "EAID_CCE4615A_C403_4c96_8122_26904C128276"
       cim_data_type: true
       uri: cim:Conductance
-
   CurrentFlow:
     uri: xsd:float
     base: float
     description: "Electrical current with sign convention: positive flow is out of the conducting equipment into the connectivity node. Can be both AC and DC."
     annotations:
+      ea_guid: "EAID_DC3FD69C_E9B2_440d_A113_BE84B71BA691"
       cim_data_type: true
       uri: cim:CurrentFlow
-
   Length:
     uri: xsd:float
     base: float
     description: "Unit of length. It shall be a positive value or zero."
     annotations:
+      ea_guid: "EAID_06F9A3F0_3AE3_4ad1_88F8_06C207238C3B"
       cim_data_type: true
       uri: cim:Length
-
   PU:
     uri: xsd:float
     base: float
     description: "Per Unit - a positive or negative value referred to a defined base. Values typically range from -10 to +10."
     annotations:
+      ea_guid: "EAID_B47F1EC8_BE4F_47df_9ACA_3F12A128BF85"
       cim_data_type: true
       uri: cim:PU
-
   PerCent:
     uri: xsd:float
     base: float
     description: "Percentage on a defined base.   For example, specify as 100 to indicate at the defined base."
     annotations:
+      ea_guid: "EAID_8345A4E0_E4BB_45d6_894B_983BB43C4B4F"
       cim_data_type: true
       uri: cim:PerCent
-
   Reactance:
     uri: xsd:float
     base: float
     description: "Reactance (imaginary part of impedance), at rated frequency."
     annotations:
+      ea_guid: "EAID_F1C90FB4_B7BE_4528_A974_E36BBEAB8616"
       cim_data_type: true
       uri: cim:Reactance
-
   Resistance:
     uri: xsd:float
     base: float
     description: "Resistance (real part of impedance)."
     annotations:
+      ea_guid: "EAID_EDB281E6_BBB4_438d_953B_7D746CAF55B5"
       cim_data_type: true
       uri: cim:Resistance
-
   Susceptance:
     uri: xsd:float
     base: float
     description: "Imaginary part of admittance."
     annotations:
+      ea_guid: "EAID_F246F97E_529D_4ec3_9F06_BAF4AFD0829B"
       cim_data_type: true
       uri: cim:Susceptance
-
   Temperature:
     uri: xsd:float
     base: float
     description: "Value of temperature in degrees Celsius."
     annotations:
+      ea_guid: "EAID_2C614F42_FED1_4705_82C8_57771A0466CE"
       cim_data_type: true
       uri: cim:Temperature
-
   Voltage:
     uri: xsd:float
     base: float
     description: "Electrical voltage, can be both AC and DC."
     annotations:
+      ea_guid: "EAID_233C330A_11B8_4705_879C_5497380F1D82"
       cim_data_type: true
       uri: cim:Voltage
-
 enums:
-  UnitSymbol:
-    permissible_values:
-      none:
-        meaning: cim:UnitSymbol.none
-      m:
-        meaning: cim:UnitSymbol.m
-      kg:
-        meaning: cim:UnitSymbol.kg
-      s:
-        meaning: cim:UnitSymbol.s
-      A:
-        meaning: cim:UnitSymbol.A
-      K:
-        meaning: cim:UnitSymbol.K
-      mol:
-        meaning: cim:UnitSymbol.mol
-      cd:
-        meaning: cim:UnitSymbol.cd
-      deg:
-        meaning: cim:UnitSymbol.deg
-      rad:
-        meaning: cim:UnitSymbol.rad
-      sr:
-        meaning: cim:UnitSymbol.sr
-      Gy:
-        meaning: cim:UnitSymbol.Gy
-      Bq:
-        meaning: cim:UnitSymbol.Bq
-      degC:
-        meaning: cim:UnitSymbol.degC
-      Sv:
-        meaning: cim:UnitSymbol.Sv
-      F:
-        meaning: cim:UnitSymbol.F
-      C:
-        meaning: cim:UnitSymbol.C
-      S:
-        meaning: cim:UnitSymbol.S
-      H:
-        meaning: cim:UnitSymbol.H
-      V:
-        meaning: cim:UnitSymbol.V
-      ohm:
-        meaning: cim:UnitSymbol.ohm
-      J:
-        meaning: cim:UnitSymbol.J
-      N:
-        meaning: cim:UnitSymbol.N
-      Hz:
-        meaning: cim:UnitSymbol.Hz
-      lx:
-        meaning: cim:UnitSymbol.lx
-      lm:
-        meaning: cim:UnitSymbol.lm
-      Wb:
-        meaning: cim:UnitSymbol.Wb
-      T:
-        meaning: cim:UnitSymbol.T
-      W:
-        meaning: cim:UnitSymbol.W
-      Pa:
-        meaning: cim:UnitSymbol.Pa
-      m2:
-        meaning: cim:UnitSymbol.m2
-      m3:
-        meaning: cim:UnitSymbol.m3
-      mPers:
-        meaning: cim:UnitSymbol.mPers
-      mPers2:
-        meaning: cim:UnitSymbol.mPers2
-      m3Pers:
-        meaning: cim:UnitSymbol.m3Pers
-      mPerm3:
-        meaning: cim:UnitSymbol.mPerm3
-      kgm:
-        meaning: cim:UnitSymbol.kgm
-      kgPerm3:
-        meaning: cim:UnitSymbol.kgPerm3
-      m2Pers:
-        meaning: cim:UnitSymbol.m2Pers
-      WPermK:
-        meaning: cim:UnitSymbol.WPermK
-      JPerK:
-        meaning: cim:UnitSymbol.JPerK
-      ppm:
-        meaning: cim:UnitSymbol.ppm
-      rotPers:
-        meaning: cim:UnitSymbol.rotPers
-      radPers:
-        meaning: cim:UnitSymbol.radPers
-      WPerm2:
-        meaning: cim:UnitSymbol.WPerm2
-      JPerm2:
-        meaning: cim:UnitSymbol.JPerm2
-      SPerm:
-        meaning: cim:UnitSymbol.SPerm
-      KPers:
-        meaning: cim:UnitSymbol.KPers
-      PaPers:
-        meaning: cim:UnitSymbol.PaPers
-      JPerkgK:
-        meaning: cim:UnitSymbol.JPerkgK
-      VA:
-        meaning: cim:UnitSymbol.VA
-      VAr:
-        meaning: cim:UnitSymbol.VAr
-      cosPhi:
-        meaning: cim:UnitSymbol.cosPhi
-      Vs:
-        meaning: cim:UnitSymbol.Vs
-      V2:
-        meaning: cim:UnitSymbol.V2
-      As:
-        meaning: cim:UnitSymbol.As
-      A2:
-        meaning: cim:UnitSymbol.A2
-      A2s:
-        meaning: cim:UnitSymbol.A2s
-      VAh:
-        meaning: cim:UnitSymbol.VAh
-      Wh:
-        meaning: cim:UnitSymbol.Wh
-      VArh:
-        meaning: cim:UnitSymbol.VArh
-      VPerHz:
-        meaning: cim:UnitSymbol.VPerHz
-      HzPers:
-        meaning: cim:UnitSymbol.HzPers
-      character:
-        meaning: cim:UnitSymbol.character
-      charPers:
-        meaning: cim:UnitSymbol.charPers
-      kgm2:
-        meaning: cim:UnitSymbol.kgm2
-      dB:
-        meaning: cim:UnitSymbol.dB
-      WPers:
-        meaning: cim:UnitSymbol.WPers
-      lPers:
-        meaning: cim:UnitSymbol.lPers
-      dBm:
-        meaning: cim:UnitSymbol.dBm
-      h:
-        meaning: cim:UnitSymbol.h
-      min:
-        meaning: cim:UnitSymbol.min
-      Q:
-        meaning: cim:UnitSymbol.Q
-      Qh:
-        meaning: cim:UnitSymbol.Qh
-      ohmm:
-        meaning: cim:UnitSymbol.ohmm
-      APerm:
-        meaning: cim:UnitSymbol.APerm
-      V2h:
-        meaning: cim:UnitSymbol.V2h
-      A2h:
-        meaning: cim:UnitSymbol.A2h
-      Ah:
-        meaning: cim:UnitSymbol.Ah
-      count:
-        meaning: cim:UnitSymbol.count
-      ft3:
-        meaning: cim:UnitSymbol.ft3
-      m3Perh:
-        meaning: cim:UnitSymbol.m3Perh
-      gal:
-        meaning: cim:UnitSymbol.gal
-      Btu:
-        meaning: cim:UnitSymbol.Btu
-      l:
-        meaning: cim:UnitSymbol.l
-      lPerh:
-        meaning: cim:UnitSymbol.lPerh
-      lPerl:
-        meaning: cim:UnitSymbol.lPerl
-      gPerg:
-        meaning: cim:UnitSymbol.gPerg
-      molPerm3:
-        meaning: cim:UnitSymbol.molPerm3
-      molPermol:
-        meaning: cim:UnitSymbol.molPermol
-      molPerkg:
-        meaning: cim:UnitSymbol.molPerkg
-      sPers:
-        meaning: cim:UnitSymbol.sPers
-      HzPerHz:
-        meaning: cim:UnitSymbol.HzPerHz
-      VPerV:
-        meaning: cim:UnitSymbol.VPerV
-      APerA:
-        meaning: cim:UnitSymbol.APerA
-      VPerVA:
-        meaning: cim:UnitSymbol.VPerVA
-      rev:
-        meaning: cim:UnitSymbol.rev
-      kat:
-        meaning: cim:UnitSymbol.kat
-      JPerkg:
-        meaning: cim:UnitSymbol.JPerkg
-      m3Uncompensated:
-        meaning: cim:UnitSymbol.m3Uncompensated
-      m3Compensated:
-        meaning: cim:UnitSymbol.m3Compensated
-      WPerW:
-        meaning: cim:UnitSymbol.WPerW
-      therm:
-        meaning: cim:UnitSymbol.therm
-      onePerm:
-        meaning: cim:UnitSymbol.onePerm
-      m3Perkg:
-        meaning: cim:UnitSymbol.m3Perkg
-      Pas:
-        meaning: cim:UnitSymbol.Pas
-      Nm:
-        meaning: cim:UnitSymbol.Nm
-      NPerm:
-        meaning: cim:UnitSymbol.NPerm
-      radPers2:
-        meaning: cim:UnitSymbol.radPers2
-      JPerm3:
-        meaning: cim:UnitSymbol.JPerm3
-      VPerm:
-        meaning: cim:UnitSymbol.VPerm
-      CPerm3:
-        meaning: cim:UnitSymbol.CPerm3
-      CPerm2:
-        meaning: cim:UnitSymbol.CPerm2
-      FPerm:
-        meaning: cim:UnitSymbol.FPerm
-      HPerm:
-        meaning: cim:UnitSymbol.HPerm
-      JPermol:
-        meaning: cim:UnitSymbol.JPermol
-      JPermolK:
-        meaning: cim:UnitSymbol.JPermolK
-      CPerkg:
-        meaning: cim:UnitSymbol.CPerkg
-      GyPers:
-        meaning: cim:UnitSymbol.GyPers
-      WPersr:
-        meaning: cim:UnitSymbol.WPersr
-      WPerm2sr:
-        meaning: cim:UnitSymbol.WPerm2sr
-      katPerm3:
-        meaning: cim:UnitSymbol.katPerm3
-      d:
-        meaning: cim:UnitSymbol.d
-      anglemin:
-        meaning: cim:UnitSymbol.anglemin
-      anglesec:
-        meaning: cim:UnitSymbol.anglesec
-      ha:
-        meaning: cim:UnitSymbol.ha
-      tonne:
-        meaning: cim:UnitSymbol.tonne
-      bar:
-        meaning: cim:UnitSymbol.bar
-      mmHg:
-        meaning: cim:UnitSymbol.mmHg
-      M:
-        meaning: cim:UnitSymbol.M
-      kn:
-        meaning: cim:UnitSymbol.kn
-      Mx:
-        meaning: cim:UnitSymbol.Mx
-      G:
-        meaning: cim:UnitSymbol.G
-      Oe:
-        meaning: cim:UnitSymbol.Oe
-      Vh:
-        meaning: cim:UnitSymbol.Vh
-      WPerA:
-        meaning: cim:UnitSymbol.WPerA
-      onePerHz:
-        meaning: cim:UnitSymbol.onePerHz
-      VPerVAr:
-        meaning: cim:UnitSymbol.VPerVAr
-      ohmPerm:
-        meaning: cim:UnitSymbol.ohmPerm
-      kgPerJ:
-        meaning: cim:UnitSymbol.kgPerJ
-      JPers:
-        meaning: cim:UnitSymbol.JPers
-    enum_uri: http://iec.ch/TC57/CIM100#UnitSymbol
-  UnitMultiplier:
-    permissible_values:
-      y:
-        meaning: cim:UnitMultiplier.y
-      z:
-        meaning: cim:UnitMultiplier.z
-      a:
-        meaning: cim:UnitMultiplier.a
-      f:
-        meaning: cim:UnitMultiplier.f
-      p:
-        meaning: cim:UnitMultiplier.p
-      n:
-        meaning: cim:UnitMultiplier.n
-      micro:
-        meaning: cim:UnitMultiplier.micro
-      m:
-        meaning: cim:UnitMultiplier.m
-      c:
-        meaning: cim:UnitMultiplier.c
-      d:
-        meaning: cim:UnitMultiplier.d
-      none:
-        meaning: cim:UnitMultiplier.none
-      da:
-        meaning: cim:UnitMultiplier.da
-      h:
-        meaning: cim:UnitMultiplier.h
-      k:
-        meaning: cim:UnitMultiplier.k
-      M:
-        meaning: cim:UnitMultiplier.M
-      G:
-        meaning: cim:UnitMultiplier.G
-      T:
-        meaning: cim:UnitMultiplier.T
-      P:
-        meaning: cim:UnitMultiplier.P
-      E:
-        meaning: cim:UnitMultiplier.E
-      Z:
-        meaning: cim:UnitMultiplier.Z
-      Y:
-        meaning: cim:UnitMultiplier.Y
-    enum_uri: http://iec.ch/TC57/CIM100#UnitMultiplier
   PetersenCoilModeKind:
+    description: "The mode of operation for a Petersen coil."
+    annotations:
+      ea_guid: "EAID_D7A85068_34C3_4fcd_ABCF_8D0867FEC0FF"
+    enum_uri:  http://iec.ch/TC57/CIM100#PetersenCoilModeKind
     permissible_values:
-      fixed:
-        meaning: cim:PetersenCoilModeKind.fixed
-      manual:
-        meaning: cim:PetersenCoilModeKind.manual
       automaticPositioning:
-        meaning: cim:PetersenCoilModeKind.automaticPositioning
-    enum_uri: http://iec.ch/TC57/CIM100#PetersenCoilModeKind
+        meaning:  cim:PetersenCoilModeKind.automaticPositioning
+        description: "Automatic positioning."
+        annotations:
+          ea_guid: "EAID_0420A9CF_DFDA_4acc_B5D2_C297FAD7A7EE"
+      fixed:
+        meaning:  cim:PetersenCoilModeKind.fixed
+        description: "Fixed position."
+        annotations:
+          ea_guid: "EAID_7C2450DE_D888_4741_A3B2_6598BE34F25E"
+      manual:
+        meaning:  cim:PetersenCoilModeKind.manual
+        description: "Manual positioning."
+        annotations:
+          ea_guid: "EAID_279C3FB6_957B_4817_9ACE_1CCBE44C3D83"
   ShortCircuitRotorKind:
+    description: "Type of rotor, used by short circuit applications."
+    annotations:
+      ea_guid: "EAID_FD4BEA47_D945_4bc1_A574_5C0618B5C429"
+    enum_uri:  http://iec.ch/TC57/CIM100#ShortCircuitRotorKind
     permissible_values:
       salientPole1:
-        meaning: cim:ShortCircuitRotorKind.salientPole1
+        meaning:  cim:ShortCircuitRotorKind.salientPole1
+        description: "Salient pole 1 in IEC 60909."
+        annotations:
+          ea_guid: "EAID_C6224E17_3C55_41b4_96B0_A7D760836509"
       salientPole2:
-        meaning: cim:ShortCircuitRotorKind.salientPole2
+        meaning:  cim:ShortCircuitRotorKind.salientPole2
+        description: "Salient pole 2 in IEC 60909."
+        annotations:
+          ea_guid: "EAID_45389D96_7D96_435f_B054_391491734D26"
       turboSeries1:
-        meaning: cim:ShortCircuitRotorKind.turboSeries1
+        meaning:  cim:ShortCircuitRotorKind.turboSeries1
+        description: "Turbo Series 1 in IEC 60909."
+        annotations:
+          ea_guid: "EAID_C330D074_B02F_46e4_B49E_2F5AAF36FFE0"
       turboSeries2:
-        meaning: cim:ShortCircuitRotorKind.turboSeries2
-    enum_uri: http://iec.ch/TC57/CIM100#ShortCircuitRotorKind
+        meaning:  cim:ShortCircuitRotorKind.turboSeries2
+        description: "Turbo series 2 in IEC 60909."
+        annotations:
+          ea_guid: "EAID_F5BECE1F_74CA_4c01_8AD2_6093E28CC2AF"
+  UnitMultiplier:
+    description: "The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type.For example, if a unit symbol is m2Pers and the multiplier is k, then the value is k(m**2/s), and the multiplier applies to the entire final value, not to any individual part of the value. This can be conceptualized by substituting a derived unit symbol for the unit type. If one imagines that the symbol Þ represents the derived unit m2Pers, then applying the multiplier k can be conceptualized simply as kÞ.For example, the SI unit for mass is kg and not g.  If the unit symbol is defined as kg, then the multiplier is applied to kg as a whole and does not replace the k in front of the g. In this case, the multiplier of m would be used with the unit symbol of kg to represent one gram.  As a text string, this violates the instructions in IEC 80000-1. However, because the unit symbol in CIM is treated as a derived unit instead of as an SI unit, it makes more sense to conceptualize the kg as if it were replaced by one of the proposed replacements for the SI mass symbol. If one imagines that the kg were replaced by a symbol Þ, then it is easier to conceptualize the multiplier m as creating the proper unit mÞ, and not the forbidden unit mkg."
+    annotations:
+      ea_guid: "EAID_DC62CC93_2E3F_4b9c_9C81_C84C30A6C67D"
+    enum_uri:  http://iec.ch/TC57/CIM100#UnitMultiplier
+    permissible_values:
+      E:
+        meaning:  cim:UnitMultiplier.E
+        description: "Exa 10**18."
+        annotations:
+          ea_guid: "EAID_EADD578E_ADB6_4afc_989D_DCF868A74262"
+      G:
+        meaning:  cim:UnitMultiplier.G
+        description: "Giga 10**9."
+        annotations:
+          ea_guid: "EAID_351B5D79_6203_48e5_9D9E_ECD7FB7CA8A6"
+      M:
+        meaning:  cim:UnitMultiplier.M
+        description: "Mega 10**6."
+        annotations:
+          ea_guid: "EAID_F956FDD6_8C6E_427d_A51A_22A1D75BE1C3"
+      P:
+        meaning:  cim:UnitMultiplier.P
+        description: "Peta 10**15."
+        annotations:
+          ea_guid: "EAID_F9AB8FD6_E2CB_4696_BDCE_16836A065FD4"
+      T:
+        meaning:  cim:UnitMultiplier.T
+        description: "Tera 10**12."
+        annotations:
+          ea_guid: "EAID_F5185FB9_24E6_47c6_BB4D_259FDF678329"
+      Y:
+        meaning:  cim:UnitMultiplier.Y
+        description: "Yotta 10**24."
+        annotations:
+          ea_guid: "EAID_B128FAC5_FF4E_48ae_BE52_0FF516C25214"
+      Z:
+        meaning:  cim:UnitMultiplier.Z
+        description: "Zetta 10**21."
+        annotations:
+          ea_guid: "EAID_FCD1EF70_ACFA_4653_AEC4_086E460EA46C"
+      a:
+        meaning:  cim:UnitMultiplier.a
+        description: "Atto 10**-18."
+        annotations:
+          ea_guid: "EAID_BBFD0505_6323_496c_95F7_818D6498EA5A"
+      c:
+        meaning:  cim:UnitMultiplier.c
+        description: "Centi 10**-2."
+        annotations:
+          ea_guid: "EAID_1219082C_9AED_439c_B862_8CA874195BA0"
+      d:
+        meaning:  cim:UnitMultiplier.d
+        description: "Deci 10**-1."
+        annotations:
+          ea_guid: "EAID_4E630955_DF5D_403d_A377_7ED5FF85978D"
+      da:
+        meaning:  cim:UnitMultiplier.da
+        description: "Deca 10**1."
+        annotations:
+          ea_guid: "EAID_EF522AAA_193D_4781_BDBD_4817C84E8558"
+      f:
+        meaning:  cim:UnitMultiplier.f
+        description: "Femto 10**-15."
+        annotations:
+          ea_guid: "EAID_099282D3_03AC_4193_AB3D_71ABF7D63497"
+      h:
+        meaning:  cim:UnitMultiplier.h
+        description: "Hecto 10**2."
+        annotations:
+          ea_guid: "EAID_A5B3106F_3B4E_4e44_A883_09DAE8804156"
+      k:
+        meaning:  cim:UnitMultiplier.k
+        description: "Kilo 10**3."
+        annotations:
+          ea_guid: "EAID_C868627C_3B72_4bc8_879D_E177E9059A22"
+      m:
+        meaning:  cim:UnitMultiplier.m
+        description: "Milli 10**-3."
+        annotations:
+          ea_guid: "EAID_E7A60C22_3D12_49c5_8F18_870B1A39A1AA"
+      micro:
+        meaning:  cim:UnitMultiplier.micro
+        description: "Micro 10**-6."
+        annotations:
+          ea_guid: "EAID_FF8E9CD6_A459_47ab_A71E_E69857742CE1"
+      n:
+        meaning:  cim:UnitMultiplier.n
+        description: "Nano 10**-9."
+        annotations:
+          ea_guid: "EAID_EA61DA27_05DF_41c7_B459_F1194928062C"
+      none:
+        meaning:  cim:UnitMultiplier.none
+        description: "No multiplier or equivalently multiply by 1."
+        annotations:
+          ea_guid: "EAID_C352D73C_B9DC_4e7d_B1DB_5BE6D4BAE868"
+      p:
+        meaning:  cim:UnitMultiplier.p
+        description: "Pico 10**-12."
+        annotations:
+          ea_guid: "EAID_90F83546_DD55_4cf8_9E01_DD8F69D74A8D"
+      y:
+        meaning:  cim:UnitMultiplier.y
+        description: "Yocto 10**-24."
+        annotations:
+          ea_guid: "EAID_9AC37B70_6AC3_46ed_B408_8C4885FE483B"
+      z:
+        meaning:  cim:UnitMultiplier.z
+        description: "Zepto 10**-21."
+        annotations:
+          ea_guid: "EAID_78644DE9_99FB_4811_B5D9_B23A0DB2728D"
+  UnitSymbol:
+    description: "The derived units defined for usage in the CIM. In some cases, the derived unit is equal to an SI unit. Whenever possible, the standard derived symbol is used instead of the formula for the derived unit. For example, the unit symbol Farad is defined as F instead of CPerV. In cases where a standard symbol does not exist for a derived unit, the formula for the unit is used as the unit symbol. For example, density does not have a standard symbol and so it is represented as kgPerm3. With the exception of the kg, which is an SI unit, the unit symbols do not contain multipliers and therefore represent the base derived unit to which a multiplier can be applied as a whole.Every unit symbol is treated as an unparseable text as if it were a single-letter symbol. The meaning of each unit symbol is defined by the accompanying descriptive text and not by the text contents of the unit symbol.To allow the widest possible range of serializations without requiring special character handling, several substitutions are made which deviate from the format described in IEC 80000-1. The division symbol / is replaced by the letters Per. Exponents are written in plain text after the unit as m3 instead of being formatted as m with a superscript of 3  or introducing a symbol as in m^3. The degree symbol ° is replaced with the letters deg. Any clarification of the meaning for a substitution is included in the description for the unit symbol.Non-SI units are included in list of unit symbols to allow sources of data to be correctly labelled with their non-SI units (for example, a GPS sensor that is reporting numbers that represent feet instead of meters). This allows software to use the unit symbol information correctly convert and scale the raw data of those sources into SI-based units.The integer values are used for harmonization with IEC 61850."
+    annotations:
+      ea_guid: "EAID_80012160_A038_43b5_BA6F_9862E525518C"
+    enum_uri:  http://iec.ch/TC57/CIM100#UnitSymbol
+    permissible_values:
+      A:
+        meaning:  cim:UnitSymbol.A
+        description: "Current in amperes."
+        annotations:
+          ea_guid: "EAID_EA92BC2E_3B95_470e_A50B_8BB500136F86"
+      A2:
+        meaning:  cim:UnitSymbol.A2
+        description: "Amperes squared (A²)."
+        annotations:
+          ea_guid: "EAID_D45ED57B_D0FD_4496_A516_CD82E8DCD2C0"
+      A2h:
+        meaning:  cim:UnitSymbol.A2h
+        description: "Ampere-squared hour, ampere-squared hour."
+        annotations:
+          ea_guid: "EAID_0A2E81E6_2C43_43dd_A6CB_8915611FB6F2"
+      A2s:
+        meaning:  cim:UnitSymbol.A2s
+        description: "Ampere squared time in square amperes (A²s)."
+        annotations:
+          ea_guid: "EAID_856A3A12_D5A5_4d1c_AC5F_2C618DE8BDB7"
+      APerA:
+        meaning:  cim:UnitSymbol.APerA
+        description: "Current, ratio of amperages.   Note: Users may need to supply a prefix such as ‘m’ to show rates such as ‘mA/A’."
+        annotations:
+          ea_guid: "EAID_84D9395E_1931_48aa_974A_43B3C1895E8F"
+      APerm:
+        meaning:  cim:UnitSymbol.APerm
+        description: "A/m, magnetic field strength, amperes per metre."
+        annotations:
+          ea_guid: "EAID_27499686_8D79_40b7_9E0E_44D9212938E7"
+      Ah:
+        meaning:  cim:UnitSymbol.Ah
+        description: "Ampere-hours, ampere-hours."
+        annotations:
+          ea_guid: "EAID_4E2BC900_EA78_4b89_9479_A12680EC133B"
+      As:
+        meaning:  cim:UnitSymbol.As
+        description: "Ampere seconds (A·s)."
+        annotations:
+          ea_guid: "EAID_3FBD0254_1CEA_4fd9_9A11_EA68D8AD96D2"
+      Bq:
+        meaning:  cim:UnitSymbol.Bq
+        description: "Radioactivity in becquerels (1/s)."
+        annotations:
+          ea_guid: "EAID_6A58DADF_F9D2_4be4_BA67_51992495709D"
+      Btu:
+        meaning:  cim:UnitSymbol.Btu
+        description: "Energy, British Thermal Units."
+        annotations:
+          ea_guid: "EAID_2C7C1B15_F2F1_463e_926B_90C565D92696"
+      C:
+        meaning:  cim:UnitSymbol.C
+        description: "Electric charge in coulombs (A·s)."
+        annotations:
+          ea_guid: "EAID_EC257654_B700_4c74_A3E0_FA2B685C13D5"
+      CPerkg:
+        meaning:  cim:UnitSymbol.CPerkg
+        description: "Exposure (x rays), coulombs per kilogram."
+        annotations:
+          ea_guid: "EAID_16EEBE18_1F4A_433c_AEDB_8542AAC26A6A"
+      CPerm2:
+        meaning:  cim:UnitSymbol.CPerm2
+        description: "Surface charge density, coulombs per square metre."
+        annotations:
+          ea_guid: "EAID_78F3FB2B_9D65_4d98_BE54_D640D628ABB5"
+      CPerm3:
+        meaning:  cim:UnitSymbol.CPerm3
+        description: "Electric charge density, coulombs per cubic metre."
+        annotations:
+          ea_guid: "EAID_C372C81F_C15D_42a4_8CD7_42D8F243F69F"
+      F:
+        meaning:  cim:UnitSymbol.F
+        description: "Electric capacitance in farads (C/V)."
+        annotations:
+          ea_guid: "EAID_9D72A1D6_75D9_4e00_B3B4_42D7DD0990FE"
+      FPerm:
+        meaning:  cim:UnitSymbol.FPerm
+        description: "Permittivity, farads per metre."
+        annotations:
+          ea_guid: "EAID_EBCAD9B1_5855_460c_BE72_4577117C7A0B"
+      G:
+        meaning:  cim:UnitSymbol.G
+        description: "Magnetic flux density, gausses (1 G = 10-4 T)."
+        annotations:
+          ea_guid: "EAID_AD411764_B9AE_4720_B402_AE5C70F66A92"
+      Gy:
+        meaning:  cim:UnitSymbol.Gy
+        description: "Absorbed dose in grays (J/kg)."
+        annotations:
+          ea_guid: "EAID_60C8424D_7177_444c_BEF0_8E6AC1D1077B"
+      GyPers:
+        meaning:  cim:UnitSymbol.GyPers
+        description: "Absorbed dose rate, grays per second."
+        annotations:
+          ea_guid: "EAID_6C97FDC2_E63A_40ee_AF9E_361A9E4ADC3D"
+      H:
+        meaning:  cim:UnitSymbol.H
+        description: "Electric inductance in henrys (Wb/A)."
+        annotations:
+          ea_guid: "EAID_AE11FF61_9894_434b_AF7E_E30B3D6A4124"
+      HPerm:
+        meaning:  cim:UnitSymbol.HPerm
+        description: "Permeability, henrys per metre."
+        annotations:
+          ea_guid: "EAID_6CF0793D_A3E0_4f8f_863F_9C1032665065"
+      Hz:
+        meaning:  cim:UnitSymbol.Hz
+        description: "Frequency in hertz (1/s)."
+        annotations:
+          ea_guid: "EAID_8E14F483_DBE2_46c3_9308_1DF800CD2FF2"
+      HzPerHz:
+        meaning:  cim:UnitSymbol.HzPerHz
+        description: "Frequency, rate of frequency change.   Note: Users may need to supply a prefix such as ‘m’ to show rates such as ‘mHz/Hz’."
+        annotations:
+          ea_guid: "EAID_12B11EAF_4BB5_4d5c_A2BB_D78A02327104"
+      HzPers:
+        meaning:  cim:UnitSymbol.HzPers
+        description: "Rate of change of frequency in hertz per second."
+        annotations:
+          ea_guid: "EAID_98C8F3E1_139E_482e_8C78_EF21E8A15A38"
+      J:
+        meaning:  cim:UnitSymbol.J
+        description: "Energy in joules (N·m = C·V = W·s)."
+        annotations:
+          ea_guid: "EAID_97A3FB98_8A5D_4b95_8473_5D3EDE289822"
+      JPerK:
+        meaning:  cim:UnitSymbol.JPerK
+        description: "Heat capacity in joules/kelvin."
+        annotations:
+          ea_guid: "EAID_0A532BE2_CF36_4726_A14D_1EC97FD37B6D"
+      JPerkg:
+        meaning:  cim:UnitSymbol.JPerkg
+        description: "Specific energy, Joules / kg."
+        annotations:
+          ea_guid: "EAID_05214191_21C9_4b98_A8E5_CD63EAD7FB35"
+      JPerkgK:
+        meaning:  cim:UnitSymbol.JPerkgK
+        description: "Specific heat capacity, specific entropy, joules per kilogram Kelvin."
+        annotations:
+          ea_guid: "EAID_5C1D5E18_724F_4348_A871_610428006C41"
+      JPerm2:
+        meaning:  cim:UnitSymbol.JPerm2
+        description: "Insulation energy density, joules per square metre or watt second per square metre."
+        annotations:
+          ea_guid: "EAID_1484901D_B114_4df8_8FBD_892ED2DDC36D"
+      JPerm3:
+        meaning:  cim:UnitSymbol.JPerm3
+        description: "Energy density, joules per cubic metre."
+        annotations:
+          ea_guid: "EAID_643ABAE5_C491_445d_B0DA_FDD3381A7871"
+      JPermol:
+        meaning:  cim:UnitSymbol.JPermol
+        description: "Molar energy, joules per mole."
+        annotations:
+          ea_guid: "EAID_082C9B4F_A2B0_48b3_A976_4551C7B0B9D5"
+      JPermolK:
+        meaning:  cim:UnitSymbol.JPermolK
+        description: "Molar entropy, molar heat capacity, joules per mole kelvin."
+        annotations:
+          ea_guid: "EAID_C86FC880_4592_4126_ACD6_C0CFE6151C19"
+      JPers:
+        meaning:  cim:UnitSymbol.JPers
+        description: "Energy rate in joules per second (J/s)."
+        annotations:
+          ea_guid: "EAID_8D0EFD06_CE71_454a_AF72_A37FF1988C0E"
+      K:
+        meaning:  cim:UnitSymbol.K
+        description: "Temperature in kelvins."
+        annotations:
+          ea_guid: "EAID_1E8C279F_B121_451f_B8D7_7B9F1EF080DF"
+      KPers:
+        meaning:  cim:UnitSymbol.KPers
+        description: "Temperature change rate in kelvins per second."
+        annotations:
+          ea_guid: "EAID_4AA28097_6E2C_4e6f_A7DE_F0813968DFAE"
+      M:
+        meaning:  cim:UnitSymbol.M
+        description: "Length, nautical miles (1 M = 1852 m)."
+        annotations:
+          ea_guid: "EAID_95D59B4E_F7D2_4202_AEE3_BBE1602128E2"
+      Mx:
+        meaning:  cim:UnitSymbol.Mx
+        description: "Magnetic flux, maxwells (1 Mx = 10-8 Wb)."
+        annotations:
+          ea_guid: "EAID_9D86ACE7_4F18_419a_B862_85D2D7165A51"
+      N:
+        meaning:  cim:UnitSymbol.N
+        description: "Force in newtons (kg·m/s²)."
+        annotations:
+          ea_guid: "EAID_68AA121A_1847_446b_A6B2_F7180AC83772"
+      NPerm:
+        meaning:  cim:UnitSymbol.NPerm
+        description: "Surface tension, newton per metre."
+        annotations:
+          ea_guid: "EAID_05284484_23B5_4903_9FD7_2E7CF0E166B5"
+      Nm:
+        meaning:  cim:UnitSymbol.Nm
+        description: "Moment of force, newton metres."
+        annotations:
+          ea_guid: "EAID_62F46160_46EA_47c2_9E8D_DC44F5BCFEA7"
+      Oe:
+        meaning:  cim:UnitSymbol.Oe
+        description: "Magnetic field in oersteds, (1 Oe = (103/4p) A/m)."
+        annotations:
+          ea_guid: "EAID_79B7C736_028D_4eab_9A0D_DEE3E6A963F8"
+      Pa:
+        meaning:  cim:UnitSymbol.Pa
+        description: "Pressure in pascals (N/m²). Note: the absolute or relative measurement of pressure is implied with this entry. See below for more explicit forms."
+        annotations:
+          ea_guid: "EAID_BD782A7D_D539_4f4f_BAAF_44DFDC18CE40"
+      PaPers:
+        meaning:  cim:UnitSymbol.PaPers
+        description: "Pressure change rate in pascals per second."
+        annotations:
+          ea_guid: "EAID_468B93E2_D504_4668_B698_6C438CC555FF"
+      Pas:
+        meaning:  cim:UnitSymbol.Pas
+        description: "Dynamic viscosity, pascal seconds."
+        annotations:
+          ea_guid: "EAID_2B45021A_F7A2_4f33_B105_918CA01B627D"
+      Q:
+        meaning:  cim:UnitSymbol.Q
+        description: "Quantity power, Q."
+        annotations:
+          ea_guid: "EAID_67586835_9551_42fb_ABF8_3F4CFA5032F2"
+      Qh:
+        meaning:  cim:UnitSymbol.Qh
+        description: "Quantity energy, Qh."
+        annotations:
+          ea_guid: "EAID_8908E051_4BDB_42f6_A2FB_126358F6952F"
+      S:
+        meaning:  cim:UnitSymbol.S
+        description: "Conductance in siemens."
+        annotations:
+          ea_guid: "EAID_C593555B_266C_4ac6_8F80_E91F045DFA89"
+      SPerm:
+        meaning:  cim:UnitSymbol.SPerm
+        description: "Conductance per length (F/m)."
+        annotations:
+          ea_guid: "EAID_A1442E6B_3261_4ae2_B466_2788281713C6"
+      Sv:
+        meaning:  cim:UnitSymbol.Sv
+        description: "Dose equivalent in sieverts (J/kg)."
+        annotations:
+          ea_guid: "EAID_C408842C_136F_455f_B998_6A661EEA20AF"
+      T:
+        meaning:  cim:UnitSymbol.T
+        description: "Magnetic flux density in teslas (Wb/m2)."
+        annotations:
+          ea_guid: "EAID_12E9D418_34B0_4978_8012_CEBBB3154B37"
+      V:
+        meaning:  cim:UnitSymbol.V
+        description: "Electric potential in volts (W/A)."
+        annotations:
+          ea_guid: "EAID_0A273035_181C_482c_9526_6673DE4AF59F"
+      V2:
+        meaning:  cim:UnitSymbol.V2
+        description: "Volt squared (W²/A²)."
+        annotations:
+          ea_guid: "EAID_BADD342F_47DF_44a9_A9A2_C2923A48DBAB"
+      V2h:
+        meaning:  cim:UnitSymbol.V2h
+        description: "Volt-squared hour, volt-squared-hours."
+        annotations:
+          ea_guid: "EAID_AC926E85_C4E0_4512_84B1_8DFEC4D0C8E5"
+      VA:
+        meaning:  cim:UnitSymbol.VA
+        description: "Apparent power in volt amperes. See also real power and reactive power."
+        annotations:
+          ea_guid: "EAID_D3EB929D_C57F_40a8_86DC_2F5CAACB6A71"
+      VAh:
+        meaning:  cim:UnitSymbol.VAh
+        description: "Apparent energy in volt ampere hours."
+        annotations:
+          ea_guid: "EAID_B65C6290_E53E_4bee_B674_A2E166EB4D77"
+      VAr:
+        meaning:  cim:UnitSymbol.VAr
+        description: "Reactive power in volt amperes reactive. The “reactive” or “imaginary” component of electrical power (VIsin(phi)). (See also real power and apparent power).Note: Different meter designs use different methods to arrive at their results. Some meters may compute reactive power as an arithmetic value, while others compute the value vectorially. The data consumer should determine the method in use and the suitability of the measurement for the intended purpose."
+        annotations:
+          ea_guid: "EAID_F38DF57D_7E97_4af9_984E_40820470C5EC"
+      VArh:
+        meaning:  cim:UnitSymbol.VArh
+        description: "Reactive energy in volt ampere reactive hours."
+        annotations:
+          ea_guid: "EAID_DD5193A4_8564_4426_8FA1_98F3A50327FA"
+      VPerHz:
+        meaning:  cim:UnitSymbol.VPerHz
+        description: "Magnetic flux in volt per hertz."
+        annotations:
+          ea_guid: "EAID_18DE9C0C_CE23_4b20_8779_CEEB07E6BD9E"
+      VPerV:
+        meaning:  cim:UnitSymbol.VPerV
+        description: "Voltage, ratio of voltages.  Note: Users may need to supply a prefix such as ‘m’ to show rates such as ‘mV/V’."
+        annotations:
+          ea_guid: "EAID_E32A4356_EE83_4a56_A630_882387CC00C8"
+      VPerVA:
+        meaning:  cim:UnitSymbol.VPerVA
+        description: "Power factor, PF, the ratio of the active power to the apparent power.  Note: The sign convention used for power factor will differ between IEC meters and EEI (ANSI) meters. It is assumed that the data consumers understand the type of meter being used and agree on the sign convention in use at any given utility."
+        annotations:
+          ea_guid: "EAID_F5914562_B809_455b_98A8_CECAA59EE125"
+      VPerVAr:
+        meaning:  cim:UnitSymbol.VPerVAr
+        description: "Power factor, PF, the ratio of the active power to the apparent power. Note: The sign convention used for power factor will differ between IEC meters and EEI (ANSI) meters. It is assumed that the data consumers understand the type of meter being used and agree on the sign convention in use at any given utility."
+        annotations:
+          ea_guid: "EAID_F205CACD_712B_46f0_B7D7_170EEF3B59A3"
+      VPerm:
+        meaning:  cim:UnitSymbol.VPerm
+        description: "Electric field strength, volts per metre."
+        annotations:
+          ea_guid: "EAID_72E72CF2_2E55_4c96_B72F_D2D0C602ED65"
+      Vh:
+        meaning:  cim:UnitSymbol.Vh
+        description: "Volt-hour, Volt hours."
+        annotations:
+          ea_guid: "EAID_133A1DDB_6E5C_4edc_8788_0FEADD99F7AF"
+      Vs:
+        meaning:  cim:UnitSymbol.Vs
+        description: "Volt seconds (Ws/A)."
+        annotations:
+          ea_guid: "EAID_4ADBB794_4439_4590_B83E_30CC81BB588F"
+      W:
+        meaning:  cim:UnitSymbol.W
+        description: "Real power in watts (J/s). Electrical power may have real and reactive components. The real portion of electrical power (I&#178;R or VIcos(phi)), is expressed in Watts. See also apparent power and reactive power."
+        annotations:
+          ea_guid: "EAID_41B0F1BC_E69B_4ca1_A565_ECBC27B49095"
+      WPerA:
+        meaning:  cim:UnitSymbol.WPerA
+        description: "Active power per current flow, watts per Ampere."
+        annotations:
+          ea_guid: "EAID_BD554F27_BD42_42e8_A102_327C8B95F611"
+      WPerW:
+        meaning:  cim:UnitSymbol.WPerW
+        description: "Signal Strength, ratio of power.   Note: Users may need to supply a prefix such as ‘m’ to show rates such as ‘mW/W’."
+        annotations:
+          ea_guid: "EAID_07C055AF_FF95_4a33_AFA4_CC2E9E87038C"
+      WPerm2:
+        meaning:  cim:UnitSymbol.WPerm2
+        description: "Heat flux density, irradiance, watts per square metre."
+        annotations:
+          ea_guid: "EAID_74F16DEB_1187_4180_82E7_C9730606F991"
+      WPerm2sr:
+        meaning:  cim:UnitSymbol.WPerm2sr
+        description: "Radiance, watts per square metre steradian."
+        annotations:
+          ea_guid: "EAID_09253D8A_34A7_49be_88AF_87147A5EAB64"
+      WPermK:
+        meaning:  cim:UnitSymbol.WPermK
+        description: "Thermal conductivity in watt/metres kelvin."
+        annotations:
+          ea_guid: "EAID_6A7D3263_4D03_4d39_B90C_38C100BD95FF"
+      WPers:
+        meaning:  cim:UnitSymbol.WPers
+        description: "Ramp rate in watts per second."
+        annotations:
+          ea_guid: "EAID_35FB6E73_2730_4ae7_A67E_58DC67D68D70"
+      WPersr:
+        meaning:  cim:UnitSymbol.WPersr
+        description: "Radiant intensity, watts per steradian."
+        annotations:
+          ea_guid: "EAID_9A57C4F9_ECB2_4273_8741_9A36085DA221"
+      Wb:
+        meaning:  cim:UnitSymbol.Wb
+        description: "Magnetic flux in webers (V·s)."
+        annotations:
+          ea_guid: "EAID_6F7B9EE5_AFA0_4cbc_B2A9_E3942BD3772F"
+      Wh:
+        meaning:  cim:UnitSymbol.Wh
+        description: "Real energy in watt hours."
+        annotations:
+          ea_guid: "EAID_D0065D4C_31BE_42b1_9588_806157D3000D"
+      anglemin:
+        meaning:  cim:UnitSymbol.anglemin
+        description: "Plane angle, minutes."
+        annotations:
+          ea_guid: "EAID_79557E1F_CC74_431a_8A0D_6BD70094B0B2"
+      anglesec:
+        meaning:  cim:UnitSymbol.anglesec
+        description: "Plane angle, seconds."
+        annotations:
+          ea_guid: "EAID_9C734EB4_BFFF_482e_95B2_B7446E3D8FFB"
+      bar:
+        meaning:  cim:UnitSymbol.bar
+        description: "Pressure in bars, (1 bar = 100 kPa)."
+        annotations:
+          ea_guid: "EAID_9516CB35_2CC3_4b7a_8BBA_BB329514810B"
+      cd:
+        meaning:  cim:UnitSymbol.cd
+        description: "Luminous intensity in candelas."
+        annotations:
+          ea_guid: "EAID_E12E81A8_81B6_4286_B477_2A91F984C4FC"
+      charPers:
+        meaning:  cim:UnitSymbol.charPers
+        description: "Data rate (baud) in characters per second."
+        annotations:
+          ea_guid: "EAID_28E0BFBE_2F7A_43d1_BB99_DCCBF7ADC265"
+      character:
+        meaning:  cim:UnitSymbol.character
+        description: "Number of characters."
+        annotations:
+          ea_guid: "EAID_8187AD67_24E6_4cc1_931D_FC0964171586"
+      cosPhi:
+        meaning:  cim:UnitSymbol.cosPhi
+        description: "Power factor, dimensionless.Note 1: This definition of power factor only holds for balanced systems. See the alternative definition under code 153.Note 2 : Beware of differing sign conventions in use between the IEC and EEI. It is assumed that the data consumer understands the type of meter in use and the sign convention in use by the utility."
+        annotations:
+          ea_guid: "EAID_3FF3E24E_53F5_45ae_8408_47C453D360C2"
+      count:
+        meaning:  cim:UnitSymbol.count
+        description: "Amount of substance, Counter value."
+        annotations:
+          ea_guid: "EAID_45989859_38C4_4d11_A5CF_7DD5EFB0E7F7"
+      d:
+        meaning:  cim:UnitSymbol.d
+        description: "Time in days, day = 24 h = 86400 s."
+        annotations:
+          ea_guid: "EAID_5A45829C_D0A2_45cc_A862_689B13D34708"
+      dB:
+        meaning:  cim:UnitSymbol.dB
+        description: "Sound pressure level in decibels. Note:  multiplier “d” is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "EAID_5FEFCFB2_EFE9_4969_8832_5AB856D1D9BC"
+      dBm:
+        meaning:  cim:UnitSymbol.dBm
+        description: "Power level (logarithmic ratio of signal strength , Bel-mW), normalized to 1mW. Note:  multiplier “d” is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "EAID_D3D3EFF1_D398_4bbf_B71E_947636027C51"
+      deg:
+        meaning:  cim:UnitSymbol.deg
+        description: "Plane angle in degrees."
+        annotations:
+          ea_guid: "EAID_4FEE2708_57BD_4ab8_BF2C_504B62A5358F"
+      degC:
+        meaning:  cim:UnitSymbol.degC
+        description: "Relative temperature in degrees Celsius.In the SI unit system the symbol is °C. Electric charge is measured in coulomb that has the unit symbol C. To distinguish degree Celsius from coulomb the symbol used in the UML is degC. The reason for not using °C is that the special character ° is difficult to manage in software."
+        annotations:
+          ea_guid: "EAID_9266DB6A_744E_4939_896F_B84E928D14EE"
+      ft3:
+        meaning:  cim:UnitSymbol.ft3
+        description: "Volume, cubic feet."
+        annotations:
+          ea_guid: "EAID_CF1F601E_EF72_4b25_A464_82800437A9B1"
+      gPerg:
+        meaning:  cim:UnitSymbol.gPerg
+        description: "Concentration, The ratio of the mass of a solute divided by the mass of  the solution. Note: Users may need use a prefix such a ‘µ’ to express a quantity such as ‘µg/g’."
+        annotations:
+          ea_guid: "EAID_E7AD0FC3_F546_4d24_AB93_27B09C22F271"
+      gal:
+        meaning:  cim:UnitSymbol.gal
+        description: "Volume in gallons, US gallon (1 gal = 231 in3 = 128 fl ounce)."
+        annotations:
+          ea_guid: "EAID_A1611ECE_DA95_4e1c_A2AD_AF799F5994BB"
+      h:
+        meaning:  cim:UnitSymbol.h
+        description: "Time in hours, hour = 60 min = 3600 s."
+        annotations:
+          ea_guid: "EAID_38CFF289_C542_4313_987C_62BAAB914148"
+      ha:
+        meaning:  cim:UnitSymbol.ha
+        description: "Area, hectares."
+        annotations:
+          ea_guid: "EAID_A0047B54_799B_4a83_BC4B_B34DE2214F66"
+      kat:
+        meaning:  cim:UnitSymbol.kat
+        description: "Catalytic activity, katal = mol / s."
+        annotations:
+          ea_guid: "EAID_92141CD6_2C4A_4ecb_A300_08FC15945FFF"
+      katPerm3:
+        meaning:  cim:UnitSymbol.katPerm3
+        description: "Catalytic activity concentration, katals per cubic metre."
+        annotations:
+          ea_guid: "EAID_2AA4DD24_932C_4726_9E04_2A190E13D25D"
+      kg:
+        meaning:  cim:UnitSymbol.kg
+        description: "Mass in kilograms.  Note: multiplier “k” is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "EAID_E8CD3F4B_2301_4f19_BBDF_6D20CD945743"
+      kgPerJ:
+        meaning:  cim:UnitSymbol.kgPerJ
+        description: "Weight per energy in kilograms per joule (kg/J). Note: multiplier “k” is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "EAID_9740266F_DE31_4a0a_B60E_5B341A44FDB3"
+      kgPerm3:
+        meaning:  cim:UnitSymbol.kgPerm3
+        description: "Density in kilogram/cubic metres (kg/m³). Note: multiplier “k” is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "EAID_BDA99721_EF6C_465b_A531_083BB5A339E7"
+      kgm:
+        meaning:  cim:UnitSymbol.kgm
+        description: "Moment of mass in kilogram metres (kg·m) (first moment of mass). Note: multiplier “k” is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "EAID_7EF2DD04_E97D_43d0_8EF5_A0C71B65B30F"
+      kgm2:
+        meaning:  cim:UnitSymbol.kgm2
+        description: "Moment of mass in kilogram square metres (kg·m²) (Second moment of mass, commonly called the moment of inertia). Note: multiplier “k” is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "EAID_D18A5CA3_5F86_4f15_AF52_313ED1C0FCA9"
+      kn:
+        meaning:  cim:UnitSymbol.kn
+        description: "Speed, knots (1 kn = 1852/3600) m/s."
+        annotations:
+          ea_guid: "EAID_76B3AB3B_A772_48a3_87A9_CC2655C20055"
+      l:
+        meaning:  cim:UnitSymbol.l
+        description: "Volume in litres, litre = dm3 = m3/1000."
+        annotations:
+          ea_guid: "EAID_3D491A25_7CCF_4251_9579_D569948EE574"
+      lPerh:
+        meaning:  cim:UnitSymbol.lPerh
+        description: "Volumetric flow rate, litres per hour."
+        annotations:
+          ea_guid: "EAID_2611249E_07C4_481b_96AF_3912056F7A39"
+      lPerl:
+        meaning:  cim:UnitSymbol.lPerl
+        description: "Concentration, The ratio of the volume of a solute divided by the volume of  the solution. Note: Users may need use a prefix such a ‘µ’ to express a quantity such as ‘µL/L’."
+        annotations:
+          ea_guid: "EAID_3C51034A_1DF4_4f24_9021_DEFB86D27C69"
+      lPers:
+        meaning:  cim:UnitSymbol.lPers
+        description: "Volumetric flow rate in litres per second."
+        annotations:
+          ea_guid: "EAID_FEA615F0_27A6_43e5_AB75_C6C2954D09CC"
+      lm:
+        meaning:  cim:UnitSymbol.lm
+        description: "Luminous flux in lumens (cd·sr)."
+        annotations:
+          ea_guid: "EAID_593D68AB_754E_46e4_8BB0_56BE19944355"
+      lx:
+        meaning:  cim:UnitSymbol.lx
+        description: "Illuminance in lux (lm/m²)."
+        annotations:
+          ea_guid: "EAID_234076FB_B88A_4249_9CFF_8F30847685B6"
+      m:
+        meaning:  cim:UnitSymbol.m
+        description: "Length in metres."
+        annotations:
+          ea_guid: "EAID_5D4DDF01_7840_42a2_9106_C5CA5D41D1F2"
+      m2:
+        meaning:  cim:UnitSymbol.m2
+        description: "Area in square metres (m²)."
+        annotations:
+          ea_guid: "EAID_A675331A_7D99_4e64_910D_A537BB8CEAAA"
+      m2Pers:
+        meaning:  cim:UnitSymbol.m2Pers
+        description: "Viscosity in square metres / second (m²/s)."
+        annotations:
+          ea_guid: "EAID_4C077318_15E4_40e9_81AF_94A22098B3AA"
+      m3:
+        meaning:  cim:UnitSymbol.m3
+        description: "Volume in cubic metres (m³)."
+        annotations:
+          ea_guid: "EAID_ACC84E95_39F4_4acf_A99C_F0F50B37A605"
+      m3Compensated:
+        meaning:  cim:UnitSymbol.m3Compensated
+        description: "Volume, cubic metres, with the value compensated for weather effects."
+        annotations:
+          ea_guid: "EAID_232385E4_F5BB_4699_A93F_10C49C822329"
+      m3Perh:
+        meaning:  cim:UnitSymbol.m3Perh
+        description: "Volumetric flow rate, cubic metres per hour."
+        annotations:
+          ea_guid: "EAID_D3CF2309_7272_4d0c_9977_D83D3FDA4054"
+      m3Perkg:
+        meaning:  cim:UnitSymbol.m3Perkg
+        description: "Specific volume, cubic metres per kilogram, v."
+        annotations:
+          ea_guid: "EAID_0E1D3CF6_01AC_4cd4_BBCE_19D25E34BE91"
+      m3Pers:
+        meaning:  cim:UnitSymbol.m3Pers
+        description: "Volumetric flow rate in cubic metres per second (m³/s)."
+        annotations:
+          ea_guid: "EAID_49157E6B_5DF9_4c4a_91DF_A99100A9959A"
+      m3Uncompensated:
+        meaning:  cim:UnitSymbol.m3Uncompensated
+        description: "Volume, cubic metres, with the value uncompensated for weather effects."
+        annotations:
+          ea_guid: "EAID_EAA81876_9511_48ce_9CC1_8E744D558E43"
+      mPerm3:
+        meaning:  cim:UnitSymbol.mPerm3
+        description: "Fuel efficiency in metres per cubic metres (m/m³)."
+        annotations:
+          ea_guid: "EAID_B76349C8_69F4_433e_A6F4_9A709F4BAEE3"
+      mPers:
+        meaning:  cim:UnitSymbol.mPers
+        description: "Velocity in metres per second (m/s)."
+        annotations:
+          ea_guid: "EAID_AA6472CE_DFB5_446a_A9E7_52A5CE50CEF8"
+      mPers2:
+        meaning:  cim:UnitSymbol.mPers2
+        description: "Acceleration in metres per second squared (m/s²)."
+        annotations:
+          ea_guid: "EAID_57C47608_7060_4960_B368_B53B6FDE195C"
+      min:
+        meaning:  cim:UnitSymbol.min
+        description: "Time in minutes, minute  = 60 s."
+        annotations:
+          ea_guid: "EAID_5E4420E6_9C1E_4e9c_ABE3_CDDD28FEF17F"
+      mmHg:
+        meaning:  cim:UnitSymbol.mmHg
+        description: "Pressure, millimetres of mercury (1 mmHg is approximately 133.3 Pa)."
+        annotations:
+          ea_guid: "EAID_A3459B23_0BDB_4e8f_822B_1D0EDD223D18"
+      mol:
+        meaning:  cim:UnitSymbol.mol
+        description: "Amount of substance in moles."
+        annotations:
+          ea_guid: "EAID_AE67CF4C_C8D9_446d_AF20_8BFC19C17C18"
+      molPerkg:
+        meaning:  cim:UnitSymbol.molPerkg
+        description: "Concentration, Molality, the amount of solute in moles and the amount of solvent in kilograms."
+        annotations:
+          ea_guid: "EAID_6D617CFF_CBD4_4c43_B8DF_7356CB496160"
+      molPerm3:
+        meaning:  cim:UnitSymbol.molPerm3
+        description: "Concentration, The amount of substance concentration, (c), the amount of solvent in moles divided by the volume of solution in m³."
+        annotations:
+          ea_guid: "EAID_6E337AE9_1E58_41d7_A865_080C8E7E029B"
+      molPermol:
+        meaning:  cim:UnitSymbol.molPermol
+        description: "Concentration, Molar fraction, the ratio of the molar amount of a solute divided by the molar amount of the solution."
+        annotations:
+          ea_guid: "EAID_9723639D_4BA1_4756_952E_605DBFAF2057"
+      none:
+        meaning:  cim:UnitSymbol.none
+        description: "Dimension less quantity, e.g. count, per unit, etc."
+        annotations:
+          ea_guid: "EAID_F14E9D40_A805_4840_B04C_34CD7BD279CC"
+      ohm:
+        meaning:  cim:UnitSymbol.ohm
+        description: "Electric resistance in ohms (V/A)."
+        annotations:
+          ea_guid: "EAID_1DD847A9_4242_4c5d_98D6_8BF40A3F14C2"
+      ohmPerm:
+        meaning:  cim:UnitSymbol.ohmPerm
+        description: "Electric resistance per length in ohms per metre ((V/A)/m)."
+        annotations:
+          ea_guid: "EAID_2BDD18E5_7E62_4f66_AF25_21B7AB95AA3A"
+      ohmm:
+        meaning:  cim:UnitSymbol.ohmm
+        description: "Resistivity, ohm metres, (rho)."
+        annotations:
+          ea_guid: "EAID_D0950984_9A0E_482a_9DE1_16F420DAE9CC"
+      onePerHz:
+        meaning:  cim:UnitSymbol.onePerHz
+        description: "Reciprocal of frequency (1/Hz)."
+        annotations:
+          ea_guid: "EAID_46A68760_C92B_49b5_9BED_F01BFEDAD997"
+      onePerm:
+        meaning:  cim:UnitSymbol.onePerm
+        description: "Wavenumber, reciprocal metres,  (1/m)."
+        annotations:
+          ea_guid: "EAID_B8367965_284B_4e08_8567_055B00DAEDBA"
+      ppm:
+        meaning:  cim:UnitSymbol.ppm
+        description: "Concentration in parts per million."
+        annotations:
+          ea_guid: "EAID_EAC82D26_6F54_4556_90EE_430E28882551"
+      rad:
+        meaning:  cim:UnitSymbol.rad
+        description: "Plane angle in radians (m/m)."
+        annotations:
+          ea_guid: "EAID_90D4CFED_C041_47b2_9BD3_B4F34BA5FD95"
+      radPers:
+        meaning:  cim:UnitSymbol.radPers
+        description: "Angular velocity in radians per second (rad/s)."
+        annotations:
+          ea_guid: "EAID_D02F038B_E180_44e1_94C9_0EF927B2FF01"
+      radPers2:
+        meaning:  cim:UnitSymbol.radPers2
+        description: "Angular acceleration, radians per second squared."
+        annotations:
+          ea_guid: "EAID_2C2CD44E_2697_496e_8976_75216FBF43F4"
+      rev:
+        meaning:  cim:UnitSymbol.rev
+        description: "Amount of rotation, revolutions."
+        annotations:
+          ea_guid: "EAID_67CE50F0_C29B_444d_AC79_8A344CFCD3D8"
+      rotPers:
+        meaning:  cim:UnitSymbol.rotPers
+        description: "Rotations per second (1/s). See also Hz (1/s)."
+        annotations:
+          ea_guid: "EAID_B1F4EE35_083B_4d1f_A153_F7C65D67770D"
+      s:
+        meaning:  cim:UnitSymbol.s
+        description: "Time in seconds."
+        annotations:
+          ea_guid: "EAID_D53EB49C_18D1_430f_BBB5_C7ED93CCFC2B"
+      sPers:
+        meaning:  cim:UnitSymbol.sPers
+        description: "Time, Ratio of time.  Note: Users may need to supply a prefix such as ‘&#181;’ to show rates such as ‘&#181;s/s’."
+        annotations:
+          ea_guid: "EAID_6536A446_4A67_45c0_A68E_517D8F75A6CF"
+      sr:
+        meaning:  cim:UnitSymbol.sr
+        description: "Solid angle in steradians (m2/m2)."
+        annotations:
+          ea_guid: "EAID_EDB8BF68_BB72_4cac_9576_DCC78C57DBB1"
+      therm:
+        meaning:  cim:UnitSymbol.therm
+        description: "Energy, therms."
+        annotations:
+          ea_guid: "EAID_D9814FF0_29BF_4ccd_8F0F_0203764EDD8E"
+      tonne:
+        meaning:  cim:UnitSymbol.tonne
+        description: "Mass in tons, “tonne” or “metric  ton” (1000 kg = 1 Mg)."
+        annotations:
+          ea_guid: "EAID_13E05807_8D00_40c0_8826_9D508FD4E0DE"

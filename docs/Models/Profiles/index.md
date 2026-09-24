@@ -4,7 +4,7 @@ Common Information Model (CIM) profiles are standardized data models that define
 
 ## CGMES Profiles
 
-The CGMES (Common Grid Model Exchange Standard) LinkML schemas are sourced from [Netbeheer-Nederland/cgmes](https://github.com/Netbeheer-Nederland/cgmes) — ENTSO-E CGMES profiles represented as LinkML schemas.
+The CGMES (Common Grid Model Exchange Standard) LinkML schemas are sourced from [cimug-org/CGMES-CIM17](https://github.com/cimug-org/CGMES-CIM17/tree/master/CGMES-CIM17/Profiles) — ENTSO-E CGMES profiles represented as LinkML schemas.
 
 - [CoreEquipment](CoreEquipment/index.md)
 - [DiagramLayout](DiagramLayout/index.md)
