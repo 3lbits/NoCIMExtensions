@@ -5,6 +5,7 @@ set -e
 cgmes_profiles=(
   core_equipment
   diagram_layout
+  dynamics
   equipment_boundary
   geographical_location
   operation

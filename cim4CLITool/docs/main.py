@@ -63,6 +63,7 @@ class mkdocs:
     def mkdocs_create_profile_index():
         path = os.path.join("docs", "Models", "Profiles", globalDocName, "index.md")
         data = mkdocs.mkdocs_profile_index()
+        os.makedirs(os.path.dirname(path), exist_ok=True)
         TemplateClass.controller('ProfileOverview.md', data, path, write_file=True)
 
     def mkdocs_config_handler(config, nav_group=None):
@@ -113,6 +114,10 @@ class General():
         with open(yamlSchemaPath, "r", encoding="utf-8") as file:
             
             yamlDict = yaml.safe_load(file)
+
+            for section in ('classes', 'types', 'enums'):
+                if yamlDict.get(section) is None:
+                    yamlDict[section] = {}
 
             if 'classes' in yamlDict:
                 if 'Container' in yamlDict['classes']:
@@ -172,6 +177,11 @@ class General():
 
         mainUrl = f'/Models/Profiles/{globalDocName}/'
         mainPath = os.path.join("docs", "Models", "Profiles", globalDocName)
+        navigationSections = {
+            name: entries
+            for section in globalNavDict[globalDocName]
+            for name, entries in section.items()
+        }
 
         for _class in globalYamlDict['classes']:
 
@@ -181,11 +191,11 @@ class General():
             if abstract == True:
                 absoluteUrlPath = f'{mainUrl}AbstractClasses/{_class}/'
                 filePath = os.path.join(mainPath, "AbstractClasses" , f"{_class}.md")
-                globalNavDict[globalDocName][1]["Abstract Classes"].append({_class: f"Models/Profiles/{globalDocName}/AbstractClasses/{_class}.md"})
+                navigationSections["Abstract Classes"].append({_class: f"Models/Profiles/{globalDocName}/AbstractClasses/{_class}.md"})
             else:
                 absoluteUrlPath = f'{mainUrl}ConcreteClasses/{_class}/'
                 filePath = os.path.join(mainPath, "ConcreteClasses" , f"{_class}.md")
-                globalNavDict[globalDocName][2]["Concrete Classes"].append({_class: f"Models/Profiles/{globalDocName}/ConcreteClasses/{_class}.md"})
+                navigationSections["Concrete Classes"].append({_class: f"Models/Profiles/{globalDocName}/ConcreteClasses/{_class}.md"})
 
             classData = {
                 'type': 'class',
@@ -203,7 +213,7 @@ class General():
                 abstract = True
                 absoluteUrlPath = f'{mainUrl}Enumerations/{enumeration}/'
                 filePath = os.path.join(mainPath, "Enumerations" , f"{enumeration}.md")
-                globalNavDict[globalDocName][3]["Enumerations"].append({enumeration: f"Models/Profiles/{globalDocName}/Enumerations/{enumeration}.md"})
+                navigationSections["Enumerations"].append({enumeration: f"Models/Profiles/{globalDocName}/Enumerations/{enumeration}.md"})
 
 
                 enumerationData = {
@@ -222,7 +232,7 @@ class General():
                 abstract = True
                 absoluteUrlPath = f'{mainUrl}Types/{_type}/'
                 filePath = os.path.join(mainPath, "Types" , f"{_type}.md")
-                globalNavDict[globalDocName][4]["Types"].append({_type: f"Models/Profiles/{globalDocName}/Types/{_type}.md"})
+                navigationSections["Types"].append({_type: f"Models/Profiles/{globalDocName}/Types/{_type}.md"})
 
                 typeData = {
                     'type': 'type',

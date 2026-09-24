@@ -13,6 +13,7 @@ Profiles:
 - [AviationObstacle](Models/Profiles/AviationObstacle/index.md)
 - [CoreEquipment](Models/Profiles/CoreEquipment/index.md)
 - [DiagramLayout](Models/Profiles/DiagramLayout/index.md)
+- [Dynamics](Models/Profiles/Dynamics/index.md)
 - [EquipmentBoundary](Models/Profiles/EquipmentBoundary/index.md)
 - [GeographicalLocation](Models/Profiles/GeographicalLocation/index.md)
 - [GridCapacity](Models/Profiles/GridCapacity/index.md)

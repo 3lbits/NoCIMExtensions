@@ -1,25 +1,23 @@
-id: http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile
-name: SteadyStateHypothesisProfile
-description: This vocabulary is describing the steady state hypothesis profile from
-  IEC 61970-600-2.
-title: Steady State Hypothesis Vocabulary
+id: http://ucaiug.org/ns/CGMES/SteadyStateHypothesis-EU/3.0#
+name: SteadyStateHypothesis
+title: SteadyStateHypothesis Vocabulary
+annotations:
+  copyright: "Copyright 2026 UCAIug SPDX-License-Identifier: Apache-2.0"
 prefixes:
-  linkml: https://w3id.org/linkml/
-  cim: http://iec.ch/TC57/CIM100#
-  cims: http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#
-  dc: http://purl.org/dc/elements/1.1/
-  dcat: http://www.w3.org/ns/dcat#
-  dct: http://purl.org/dc/terms/
-  eu: http://iec.ch/TC57/CIM100-European#
-  owl: http://www.w3.org/2002/07/owl#
-  profcim: http://iec.ch/TC57/ns/CIM/prof-cim#
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
-  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  linkml: https://w3id.org/linkml/
   sh: http://www.w3.org/ns/shacl#
   skos: http://www.w3.org/2004/02/skos/core#
-  xsd: http://www.w3.org/2001/XMLSchema#
-  ssh: http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#
-  this: http://iec.ch/TC57/ns/CIM/SteadyStateHypothesis-EU#Package_SteadyStateHypothesisProfile
+  dc: http://purl.org/dc/elements/1.1/
+  profcim: http://iec.ch/TC57/ns/CIM/prof-cim#
+  owl: http://www.w3.org/2002/07/owl#
+  cim: http://iec.ch/TC57/CIM100#
+  cims: http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#
+  dct: http://purl.org/dc/terms/
+  this: http://ucaiug.org/ns/CGMES/SteadyStateHypothesis-EU/3.0#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  dcat: http://www.w3.org/ns/dcat#
+  eu: http://iec.ch/TC57/CIM100-European#
 imports:
 - linkml:types
 default_curi_maps:
@@ -28,1530 +26,2079 @@ default_range: string
 default_prefix: this
 classes:
   ACDCConverter:
-    class_uri: cim:ACDCConverter
+    description: "A unit with valves for three phases, together with unit control equipment, essential protective and switching devices, DC storage capacitors, phase reactors and auxiliaries, if any, used for conversion."
+    annotations:
+      ea_guid: "EAID_7BAF3CFD_55A3_4945_B51F_D3117CCB7F89"
+    is_a: ConductingEquipment
     abstract: true
-    attributes:
+    class_uri: cim:ACDCConverter
+    attributes: 
       p:
+        description: "Active power at the point of common coupling. Load sign convention is used, i.e. positive sign means flow out from a node.Starting value for a steady state solution in the case a simplified power flow model is used."
+        annotations:
+          ea_guid: "EAID_A2886699_3439_4510_98E7_990FB4691BF3"
         slot_uri: cim:ACDCConverter.p
         range: ActivePower
-        multivalued: false
-        required: true
-        description: 'Active power at the point of common coupling. Load sign convention
-          is used, i.e. positive sign means flow out from a node.
-
-          Starting value for a steady state solution in the case a simplified power
-          flow model is used.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       q:
+        description: "Reactive power at the point of common coupling. Load sign convention is used, i.e. positive sign means flow out from a node.Starting value for a steady state solution in the case a simplified power flow model is used."
+        annotations:
+          ea_guid: "EAID_3BADAA72_01DD_4d34_99E4_FF5E7E2DD77C"
         slot_uri: cim:ACDCConverter.q
         range: ReactivePower
-        multivalued: false
-        required: true
-        description: 'Reactive power at the point of common coupling. Load sign convention
-          is used, i.e. positive sign means flow out from a node.
-
-          Starting value for a steady state solution in the case a simplified power
-          flow model is used.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       targetPpcc:
+        description: "Real power injection target in AC grid, at point of common coupling.  Load sign convention is used, i.e. positive sign means flow out from a node."
+        annotations:
+          ea_guid: "EAID_517A2014_C002_4bcc_A490_1878A4D3DC40"
         slot_uri: cim:ACDCConverter.targetPpcc
         range: ActivePower
-        multivalued: false
-        required: false
-        description: Real power injection target in AC grid, at point of common coupling.  Load
-          sign convention is used, i.e. positive sign means flow out from a node.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       targetUdc:
+        description: "Target value for DC voltage magnitude. The attribute shall be a positive value."
+        annotations:
+          ea_guid: "EAID_393D548F_14FB_4ae1_9269_0B18F64E442D"
         slot_uri: cim:ACDCConverter.targetUdc
         range: Voltage
-        multivalued: false
-        required: false
-        description: Target value for DC voltage magnitude. The attribute shall be
-          a positive value.
-    is_a: ConductingEquipment
-    description: A unit with valves for three phases, together with unit control equipment,
-      essential protective and switching devices, DC storage capacitors, phase reactors
-      and auxiliaries, if any, used for conversion.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
   ACDCConverterDCTerminal:
-    class_uri: cim:ACDCConverterDCTerminal
+    description: "A DC electrical connection point at the AC/DC converter. The AC/DC converter is electrically connected also to the AC side. The AC connection is inherited from the AC conducting equipment in the same way as any other AC equipment. The AC/DC converter DC terminal is separate from generic DC terminal to restrict the connection with the AC side to AC/DC converter and so that no other DC conducting equipment can be connected to the AC side."
+    annotations:
+      ea_guid: "EAID_58B81D5E_10FF_4e21_A564_304AD5297BAE"
     is_a: DCBaseTerminal
-    description: A DC electrical connection point at the AC/DC converter. The AC/DC
-      converter is electrically connected also to the AC side. The AC connection is
-      inherited from the AC conducting equipment in the same way as any other AC equipment.
-      The AC/DC converter DC terminal is separate from generic DC terminal to restrict
-      the connection with the AC side to AC/DC converter and so that no other DC conducting
-      equipment can be connected to the AC side.
+    class_uri: cim:ACDCConverterDCTerminal
+    attributes: 
   ACDCTerminal:
-    class_uri: cim:ACDCTerminal
+    description: "An electrical connection point (AC or DC) to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes."
+    annotations:
+      ea_guid: "EAID_D37077B9_3B0C_4c16_8F5F_9A6F2C83A7F2"
+    is_a: IdentifiedObject
     abstract: true
-    attributes:
+    class_uri: cim:ACDCTerminal
+    attributes: 
       connected:
+        description: "The connected status is related to a bus-branch model and the topological node to terminal relation.  True implies the terminal is connected to the related topological node and false implies it is not.In a bus-branch model, the connected status is used to tell if equipment is disconnected without having to change the connectivity described by the topological node to terminal relation. A valid case is that conducting equipment can be connected in one end and open in the other. In particular for an AC line segment, where the reactive line charging can be significant, this is a relevant case."
+        annotations:
+          ea_guid: "EAID_C97C0B38_C62F_4f03_A3DE_A67F29A6C6DB"
         slot_uri: cim:ACDCTerminal.connected
         range: boolean
-        multivalued: false
-        required: true
-        description: "The connected status is related to a bus-branch model and the\
-          \ topological node to terminal relation.  True implies the terminal is connected\
-          \ to the related topological node and false implies it is not. \nIn a bus-branch\
-          \ model, the connected status is used to tell if equipment is disconnected\
-          \ without having to change the connectivity described by the topological\
-          \ node to terminal relation. A valid case is that conducting equipment can\
-          \ be connected in one end and open in the other. In particular for an AC\
-          \ line segment, where the reactive line charging can be significant, this\
-          \ is a relevant case."
-    is_a: IdentifiedObject
-    description: An electrical connection point (AC or DC) to a piece of conducting
-      equipment. Terminals are connected at physical connection points called connectivity
-      nodes.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   ActivePowerLimit:
+    description: "Limit on active power flow."
+    annotations:
+      ea_guid: "EAID_37990C74_B64A_4f62_B6ED_FD6133282C42"
+    is_a: OperationalLimit
     class_uri: cim:ActivePowerLimit
-    attributes:
+    attributes: 
       value:
+        description: "Value of active power limit. The attribute shall be a positive value or zero."
+        annotations:
+          ea_guid: "EAID_42566851_EDFE_4e41_B43F_685B06099B2D"
         slot_uri: cim:ActivePowerLimit.value
         range: ActivePower
-        multivalued: false
-        required: true
-        description: Value of active power limit. The attribute shall be a positive
-          value or zero.
-    is_a: OperationalLimit
-    description: Limit on active power flow.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   ApparentPowerLimit:
+    description: "Apparent power limit."
+    annotations:
+      ea_guid: "EAID_4A84BEAD_A18F_4474_B5D6_471216783A07"
+    is_a: OperationalLimit
     class_uri: cim:ApparentPowerLimit
-    attributes:
+    attributes: 
       value:
+        description: "The apparent power limit. The attribute shall be a positive value or zero."
+        annotations:
+          ea_guid: "EAID_B56E8750_1658_48df_A5ED_13F144E45F95"
         slot_uri: cim:ApparentPowerLimit.value
         range: ApparentPower
-        multivalued: false
-        required: true
-        description: The apparent power limit. The attribute shall be a positive value
-          or zero.
-    is_a: OperationalLimit
-    description: Apparent power limit.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   AsynchronousMachine:
-    class_uri: cim:AsynchronousMachine
-    attributes:
-      asynchronousMachineType:
-        slot_uri: cim:AsynchronousMachine.asynchronousMachineType
-        range: AsynchronousMachineKind
-        multivalued: false
-        required: true
-        description: Indicates the type of Asynchronous Machine (motor or generator).
+    description: "A rotating machine whose shaft rotates asynchronously with the electrical field.  Also known as an induction machine with no external connection to the rotor windings, e.g. squirrel-cage induction machine."
+    annotations:
+      ea_guid: "EAID_EC5FCEFF_1274_4771_9D92_C0FF7A100AB8"
     is_a: RotatingMachine
-    description: A rotating machine whose shaft rotates asynchronously with the electrical
-      field.  Also known as an induction machine with no external connection to the
-      rotor windings, e.g. squirrel-cage induction machine.
+    class_uri: cim:AsynchronousMachine
+    attributes: 
   BatteryUnit:
+    description: "An electrochemical energy storage device."
+    annotations:
+      ea_guid: "EAID_8DEBA1CF_D08F_4587_8EC0_237B5DDBBD5C"
+    is_a: PowerElectronicsUnit
     class_uri: cim:BatteryUnit
-    attributes:
-      batteryState:
-        slot_uri: cim:BatteryUnit.batteryState
-        range: BatteryStateKind
-        multivalued: false
-        required: true
-        description: The current state of the battery (charging, full, etc.).
+    attributes: 
       storedE:
+        description: "Amount of energy currently stored. The attribute shall be a positive value or zero and lower than BatteryUnit.ratedE."
+        annotations:
+          ea_guid: "EAID_A40F9768_CA75_4ded_AC08_E3FBA589CF1F"
         slot_uri: cim:BatteryUnit.storedE
         range: RealEnergy
-        multivalued: false
-        required: true
-        description: Amount of energy currently stored. The attribute shall be a positive
-          value or zero and lower than BatteryUnit.ratedE.
-    is_a: PowerElectronicsUnit
-    description: An electrochemical energy storage device.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   Breaker:
-    class_uri: cim:Breaker
+    description: "A mechanical switching device capable of making, carrying, and breaking currents under normal circuit conditions and also making, carrying for a specified time, and breaking currents under specified abnormal circuit conditions e.g.  those of short circuit."
+    annotations:
+      ea_guid: "EAID_380D92AA_1D80_4e84_A8EE_843DACEB59DD"
     is_a: ProtectedSwitch
-    description: A mechanical switching device capable of making, carrying, and breaking
-      currents under normal circuit conditions and also making, carrying for a specified
-      time, and breaking currents under specified abnormal circuit conditions e.g.  those
-      of short circuit.
+    class_uri: cim:Breaker
+    attributes: 
   ConductingEquipment:
-    class_uri: cim:ConductingEquipment
+    description: "The parts of the AC power system that are designed to carry current or that are conductively connected through terminals."
+    annotations:
+      ea_guid: "EAID_7C5F19FB_5253_430c_8E53_BDCF7EBCE4C1"
     is_a: Equipment
     abstract: true
-    description: The parts of the AC power system that are designed to carry current
-      or that are conductively connected through terminals.
+    class_uri: cim:ConductingEquipment
+    attributes: 
   ConformLoad:
-    class_uri: cim:ConformLoad
+    description: "ConformLoad represent loads that follow a daily load change pattern where the pattern can be used to scale the load with a system load."
+    annotations:
+      ea_guid: "EAID_B47EB000_9FCB_4543_B706_90486C3CBDD9"
     is_a: EnergyConsumer
-    description: ConformLoad represent loads that follow a daily load change pattern
-      where the pattern can be used to scale the load with a system load.
+    class_uri: cim:ConformLoad
+    attributes: 
   ControlArea:
+    description: "A control area is a grouping of generating units and/or loads and a cutset of tie lines (as terminals) which may be used for a variety of purposes including automatic generation control, power flow solution area interchange control specification, and input to load forecasting. All generation and load within the area defined by the terminals on the border are considered in the area interchange control. Note that any number of overlapping control area specifications can be superimposed on the physical model. The following general principles apply to ControlArea:1.  The control area orientation for net interchange is positive for an import, negative for an export.2.  The control area net interchange is determined by summing flows in Terminals. The Terminals are identified by creating a set of TieFlow objects associated with a ControlArea object. Each TieFlow object identifies one Terminal.3.  In a single network model, a tie between two control areas must be modelled in both control area specifications, such that the two representations of the tie flow sum to zero.4.  The normal orientation of Terminal flow is positive for flow into the conducting equipment that owns the Terminal. (i.e. flow from a bus into a device is positive.) However, the orientation of each flow in the control area specification must align with the control area convention, i.e. import is positive. If the orientation of the Terminal flow referenced by a TieFlow is positive into the control area, then this is confirmed by setting TieFlow.positiveFlowIn flag TRUE. If not, the orientation must be reversed by setting the TieFlow.positiveFlowIn flag FALSE."
+    annotations:
+      ea_guid: "EAID_EB35F9FE_F63C_47f6_B2E8_774B9B2735C8"
+    is_a: PowerSystemResource
     class_uri: cim:ControlArea
-    attributes:
+    attributes: 
       netInterchange:
+        description: "The specified positive net interchange into the control area, i.e. positive sign means flow into the area."
+        annotations:
+          ea_guid: "EAID_B02AFBB9_BD7F_45e4_B361_D0EDD5F7CB79"
         slot_uri: cim:ControlArea.netInterchange
         range: ActivePower
-        multivalued: false
-        required: true
-        description: The specified positive net interchange into the control area,
-          i.e. positive sign means flow into the area.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       pTolerance:
+        description: "Active power net interchange tolerance. The attribute shall be a positive value or zero."
+        annotations:
+          ea_guid: "EAID_1384C2B5_6BFF_49b9_A768_AE4D26733146"
         slot_uri: cim:ControlArea.pTolerance
         range: ActivePower
-        multivalued: false
-        required: false
-        description: Active power net interchange tolerance. The attribute shall be
-          a positive value or zero.
-    is_a: PowerSystemResource
-    description: 'A control area is a grouping of generating units and/or loads and
-      a cutset of tie lines (as terminals) which may be used for a variety of purposes
-      including automatic generation control, power flow solution area interchange
-      control specification, and input to load forecasting. All generation and load
-      within the area defined by the terminals on the border are considered in the
-      area interchange control. Note that any number of overlapping control area specifications
-      can be superimposed on the physical model. The following general principles
-      apply to ControlArea:
-
-      1.  The control area orientation for net interchange is positive for an import,
-      negative for an export.
-
-      2.  The control area net interchange is determined by summing flows in Terminals.
-      The Terminals are identified by creating a set of TieFlow objects associated
-      with a ControlArea object. Each TieFlow object identifies one Terminal.
-
-      3.  In a single network model, a tie between two control areas must be modelled
-      in both control area specifications, such that the two representations of the
-      tie flow sum to zero.
-
-      4.  The normal orientation of Terminal flow is positive for flow into the conducting
-      equipment that owns the Terminal. (i.e. flow from a bus into a device is positive.)
-      However, the orientation of each flow in the control area specification must
-      align with the control area convention, i.e. import is positive. If the orientation
-      of the Terminal flow referenced by a TieFlow is positive into the control area,
-      then this is confirmed by setting TieFlow.positiveFlowIn flag TRUE. If not,
-      the orientation must be reversed by setting the TieFlow.positiveFlowIn flag
-      FALSE.'
+        minimum_cardinality: 0
+        maximum_cardinality: 1
   CsConverter:
+    description: "DC side of the current source converter (CSC).The firing angle controls the dc voltage at the converter, both for rectifier and inverter. The difference between the dc voltages of the rectifier and inverter determines the dc current. The extinction angle is used to limit the dc voltage at the inverter, if needed, and is not used in active power control. The firing angle, transformer tap position and number of connected filters are the primary means to control a current source dc line. Higher level controls are built on top, e.g. dc voltage, dc current and active power. From a steady state perspective it is sufficient to specify the wanted active power transfer (ACDCConverter.targetPpcc) and the control functions will set the dc voltage, dc current, firing angle, transformer tap position and number of connected filters to meet this. Therefore attributes targetAlpha and targetGamma are not applicable in this case.The reactive power consumed by the converter is a function of the firing angle, transformer tap position and number of connected filter, which can be approximated with half of the active power. The losses is a function of the dc voltage and dc current.The attributes minAlpha and maxAlpha define the range of firing angles for rectifier operation between which no discrete tap changer action takes place. The range is typically 10-18 degrees.The attributes minGamma and maxGamma define the range of extinction angles for inverter operation between which no discrete tap changer action takes place. The range is typically 17-20 degrees."
+    annotations:
+      ea_guid: "EAID_A4B7CE00_5051_45cf_B107_CD62C2FF3B81"
+    is_a: ACDCConverter
     class_uri: cim:CsConverter
-    attributes:
-      operatingMode:
-        slot_uri: cim:CsConverter.operatingMode
-        range: CsOperatingModeKind
-        multivalued: false
-        required: true
-        description: "Indicates whether the DC pole is operating as an inverter or\
-          \ as a rectifier. It is converter\u2019s control variable used in power\
-          \ flow."
-      pPccControl:
-        slot_uri: cim:CsConverter.pPccControl
-        range: CsPpccControlKind
-        multivalued: false
-        required: true
-        description: Kind of active power control.
+    attributes: 
       targetAlpha:
+        description: "Target firing angle. It is converter’s control variable used in power flow. It is only applicable for rectifier if continuous tap changer control is used. Allowed values are within the range minAlpha&lt;=targetAlpha&lt;=maxAlpha. The attribute shall be a positive value."
+        annotations:
+          ea_guid: "EAID_C7DDA4DF_A9D8_4ed1_888D_EE60728AD998"
         slot_uri: cim:CsConverter.targetAlpha
         range: AngleDegrees
-        multivalued: false
-        required: false
-        description: "Target firing angle. It is converter\u2019s control variable\
-          \ used in power flow. It is only applicable for rectifier if continuous\
-          \ tap changer control is used. Allowed values are within the range minAlpha&lt;=targetAlpha&lt;=maxAlpha.\
-          \ The attribute shall be a positive value."
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       targetGamma:
+        description: "Target extinction angle. It is converter’s control variable used in power flow. It is only applicable for inverter if continuous tap changer control is used. Allowed values are within the range minGamma&lt;=targetGamma&lt;=maxGamma. The attribute shall be a positive value."
+        annotations:
+          ea_guid: "EAID_7EE02461_D04E_4c41_93DC_0D92F02D10EF"
         slot_uri: cim:CsConverter.targetGamma
         range: AngleDegrees
-        multivalued: false
-        required: false
-        description: "Target extinction angle. It is converter\u2019s control variable\
-          \ used in power flow. It is only applicable for inverter if continuous tap\
-          \ changer control is used. Allowed values are within the range minGamma&lt;=targetGamma&lt;=maxGamma.\
-          \ The attribute shall be a positive value."
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       targetIdc:
+        description: "DC current target value. It is converter’s control variable used in power flow. The attribute shall be a positive value."
+        annotations:
+          ea_guid: "EAID_994D8715_A3DE_4d81_A09A_F3B95325691F"
         slot_uri: cim:CsConverter.targetIdc
         range: CurrentFlow
-        multivalued: false
-        required: false
-        description: "DC current target value. It is converter\u2019s control variable\
-          \ used in power flow. The attribute shall be a positive value."
-    is_a: ACDCConverter
-    description: 'DC side of the current source converter (CSC).
-
-      The firing angle controls the dc voltage at the converter, both for rectifier
-      and inverter. The difference between the dc voltages of the rectifier and inverter
-      determines the dc current. The extinction angle is used to limit the dc voltage
-      at the inverter, if needed, and is not used in active power control. The firing
-      angle, transformer tap position and number of connected filters are the primary
-      means to control a current source dc line. Higher level controls are built on
-      top, e.g. dc voltage, dc current and active power. From a steady state perspective
-      it is sufficient to specify the wanted active power transfer (ACDCConverter.targetPpcc)
-      and the control functions will set the dc voltage, dc current, firing angle,
-      transformer tap position and number of connected filters to meet this. Therefore
-      attributes targetAlpha and targetGamma are not applicable in this case.
-
-      The reactive power consumed by the converter is a function of the firing angle,
-      transformer tap position and number of connected filter, which can be approximated
-      with half of the active power. The losses is a function of the dc voltage and
-      dc current.
-
-      The attributes minAlpha and maxAlpha define the range of firing angles for rectifier
-      operation between which no discrete tap changer action takes place. The range
-      is typically 10-18 degrees.
-
-      The attributes minGamma and maxGamma define the range of extinction angles for
-      inverter operation between which no discrete tap changer action takes place.
-      The range is typically 17-20 degrees.'
+        minimum_cardinality: 0
+        maximum_cardinality: 1
   CurrentLimit:
+    description: "Operational limit on current."
+    annotations:
+      ea_guid: "EAID_608E420F_FE83_4965_9ED8_F12FF4BCF787"
+    is_a: OperationalLimit
     class_uri: cim:CurrentLimit
-    attributes:
+    attributes: 
       value:
+        description: "Limit on current flow. The attribute shall be a positive value or zero."
+        annotations:
+          ea_guid: "EAID_22BAF153_4E49_4e43_9C3D_69D542FF6E89"
         slot_uri: cim:CurrentLimit.value
         range: CurrentFlow
-        multivalued: false
-        required: true
-        description: Limit on current flow. The attribute shall be a positive value
-          or zero.
-    is_a: OperationalLimit
-    description: Operational limit on current.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   DCBaseTerminal:
-    class_uri: cim:DCBaseTerminal
+    description: "An electrical connection point at a piece of DC conducting equipment. DC terminals are connected at one physical DC node that may have multiple DC terminals connected. A DC node is similar to an AC connectivity node. The model requires that DC connections are distinct from AC connections."
+    annotations:
+      ea_guid: "EAID_F76397E4_74A4_4178_9434_E33C9EBC5E7C"
     is_a: ACDCTerminal
     abstract: true
-    description: An electrical connection point at a piece of DC conducting equipment.
-      DC terminals are connected at one physical DC node that may have multiple DC
-      terminals connected. A DC node is similar to an AC connectivity node. The model
-      requires that DC connections are distinct from AC connections.
+    class_uri: cim:DCBaseTerminal
+    attributes: 
   DCTerminal:
-    class_uri: cim:DCTerminal
+    description: "An electrical connection point to generic DC conducting equipment."
+    annotations:
+      ea_guid: "EAID_6D3668E7_3378_46de_B0B6_9EB6724C8326"
     is_a: DCBaseTerminal
-    description: An electrical connection point to generic DC conducting equipment.
-  Disconnector:
-    class_uri: cim:Disconnector
-    is_a: Switch
-    description: A manually operated or motor operated mechanical switching device
-      used for changing the connections in a circuit, or for isolating a circuit or
-      equipment from a source of power. It is required to open or close circuits when
-      negligible current is broken or made.
+    class_uri: cim:DCTerminal
+    attributes: 
   DisconnectingCircuitBreaker:
-    class_uri: cim:DisconnectingCircuitBreaker
+    description: "A circuit breaking device including disconnecting function, eliminating the need for separate disconnectors."
+    annotations:
+      ea_guid: "EAID_E15222BE_C02A_4417_AED7_A395E55A943A"
     is_a: Breaker
-    description: A circuit breaking device including disconnecting function, eliminating
-      the need for separate disconnectors.
+    class_uri: cim:DisconnectingCircuitBreaker
+    attributes: 
+  Disconnector:
+    description: "A manually operated or motor operated mechanical switching device used for changing the connections in a circuit, or for isolating a circuit or equipment from a source of power. It is required to open or close circuits when negligible current is broken or made."
+    annotations:
+      ea_guid: "EAID_1B506DF7_CBD6_492a_8C9E_F6752F0F0185"
+    is_a: Switch
+    class_uri: cim:Disconnector
+    attributes: 
   EnergyConnection:
-    class_uri: cim:EnergyConnection
+    description: "A connection of energy generation or consumption on the power system model."
+    annotations:
+      ea_guid: "EAID_13966DE6_BE71_4f50_8051_2A082891138D"
     is_a: ConductingEquipment
     abstract: true
-    description: A connection of energy generation or consumption on the power system
-      model.
+    class_uri: cim:EnergyConnection
+    attributes: 
   EnergyConsumer:
+    description: "Generic user of energy - a  point of consumption on the power system model.EnergyConsumer.pfixed, .qfixed, .pfixedPct and .qfixedPct have meaning only if there is no LoadResponseCharacteristic associated with EnergyConsumer or if LoadResponseCharacteristic.exponentModel is set to False."
+    annotations:
+      ea_guid: "EAID_BCEC7EE8_7294_4b50_8216_0286C31A035C"
+    is_a: EnergyConnection
     class_uri: cim:EnergyConsumer
-    abstract: true
-    attributes:
+    attributes: 
       p:
+        description: "Active power of the load. Load sign convention is used, i.e. positive sign means flow out from a node.For voltage dependent loads the value is at rated voltage.Starting value for a steady state solution."
+        annotations:
+          ea_guid: "EAID_5F072D7C_989F_4221_92F2_238C409B4AC2"
         slot_uri: cim:EnergyConsumer.p
         range: ActivePower
-        multivalued: false
-        required: true
-        description: 'Active power of the load. Load sign convention is used, i.e.
-          positive sign means flow out from a node.
-
-          For voltage dependent loads the value is at rated voltage.
-
-          Starting value for a steady state solution.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       q:
+        description: "Reactive power of the load. Load sign convention is used, i.e. positive sign means flow out from a node.For voltage dependent loads the value is at rated voltage.Starting value for a steady state solution."
+        annotations:
+          ea_guid: "EAID_3F213833_3540_4d30_9F05_5A94C9AA1B79"
         slot_uri: cim:EnergyConsumer.q
         range: ReactivePower
-        multivalued: false
-        required: true
-        description: 'Reactive power of the load. Load sign convention is used, i.e.
-          positive sign means flow out from a node.
-
-          For voltage dependent loads the value is at rated voltage.
-
-          Starting value for a steady state solution.'
-    is_a: EnergyConnection
-    description: 'Generic user of energy - a  point of consumption on the power system
-      model.
-
-      EnergyConsumer.pfixed, .qfixed, .pfixedPct and .qfixedPct have meaning only
-      if there is no LoadResponseCharacteristic associated with EnergyConsumer or
-      if LoadResponseCharacteristic.exponentModel is set to False.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   EnergySource:
+    description: "A generic equivalent for an energy supplier on a transmission or distribution voltage level."
+    annotations:
+      ea_guid: "EAID_7174F78A_A2B7_457a_8EBC_4E9CBA6DA738"
+    is_a: EnergyConnection
     class_uri: cim:EnergySource
-    attributes:
+    attributes: 
       activePower:
+        description: "High voltage source active injection. Load sign convention is used, i.e. positive sign means flow out from a node.Starting value for steady state solutions."
+        annotations:
+          ea_guid: "EAID_5924942C_E957_4adf_B544_6038926E70E8"
         slot_uri: cim:EnergySource.activePower
         range: ActivePower
-        multivalued: false
-        required: true
-        description: 'High voltage source active injection. Load sign convention is
-          used, i.e. positive sign means flow out from a node.
-
-          Starting value for steady state solutions.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       reactivePower:
+        description: "High voltage source reactive injection. Load sign convention is used, i.e. positive sign means flow out from a node.Starting value for steady state solutions."
+        annotations:
+          ea_guid: "EAID_28125ED6_484D_4da2_A713_555556D025B4"
         slot_uri: cim:EnergySource.reactivePower
         range: ReactivePower
-        multivalued: false
-        required: true
-        description: 'High voltage source reactive injection. Load sign convention
-          is used, i.e. positive sign means flow out from a node.
-
-          Starting value for steady state solutions.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       voltageAngle:
+        description: "Phase angle of a-phase open circuit used when voltage characteristics need to be imposed at the node associated with the terminal of the energy source, such as when voltages and angles from the transmission level are used as input to the distribution network. The attribute shall be a positive value or zero."
+        annotations:
+          ea_guid: "EAID_445142BE_097F_4954_9E89_325CE9D4D70E"
         slot_uri: cim:EnergySource.voltageAngle
         range: AngleRadians
-        multivalued: false
-        required: false
-        description: Phase angle of a-phase open circuit used when voltage characteristics
-          need to be imposed at the node associated with the terminal of the energy
-          source, such as when voltages and angles from the transmission level are
-          used as input to the distribution network. The attribute shall be a positive
-          value or zero.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       voltageMagnitude:
+        description: "Phase-to-phase open circuit voltage magnitude used when voltage characteristics need to be imposed at the node associated with the terminal of the energy source, such as when voltages and angles from the transmission level are used as input to the distribution network. The attribute shall be a positive value or zero."
+        annotations:
+          ea_guid: "EAID_A7B0DCB7_7ADA_4e63_A635_CEDCC43343BE"
         slot_uri: cim:EnergySource.voltageMagnitude
         range: Voltage
-        multivalued: false
-        required: false
-        description: Phase-to-phase open circuit voltage magnitude used when voltage
-          characteristics need to be imposed at the node associated with the terminal
-          of the energy source, such as when voltages and angles from the transmission
-          level are used as input to the distribution network. The attribute shall
-          be a positive value or zero.
-    is_a: EnergyConnection
-    description: A generic equivalent for an energy supplier on a transmission or
-      distribution voltage level.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
   Equipment:
+    description: "The parts of a power system that are physical devices, electronic or mechanical."
+    annotations:
+      ea_guid: "EAID_F8DD8DAC_3545_4660_9CA5_794881CC6591"
+    is_a: PowerSystemResource
+    abstract: true
     class_uri: cim:Equipment
-    attributes:
+    attributes: 
       inService:
+        description: "Specifies the availability of the equipment. True means the equipment is available for topology processing, which determines if the equipment is energized or not. False means that the equipment is treated by network applications as if it is not in the model."
+        annotations:
+          ea_guid: "EAID_84B66A12_0723_4edf_BC0E_5CD2F4034CC3"
         slot_uri: cim:Equipment.inService
         range: boolean
-        multivalued: false
-        required: true
-        description: Specifies the availability of the equipment. True means the equipment
-          is available for topology processing, which determines if the equipment
-          is energized or not. False means that the equipment is treated by network
-          applications as if it is not in the model.
-    is_a: PowerSystemResource
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+  EquipmentContainer:
+    description: "A modelling construct to provide a root class for containing equipment."
+    annotations:
+      ea_guid: "EAID_F465B7B4_B488_46c5_8D05_8036F09A03A0"
     abstract: true
-    description: The parts of a power system that are physical devices, electronic
-      or mechanical.
+    class_uri: cim:EquipmentContainer
+    attributes: 
   EquivalentEquipment:
-    class_uri: cim:EquivalentEquipment
+    description: "The class represents equivalent objects that are the result of a network reduction. The class is the base for equivalent objects of different types."
+    annotations:
+      ea_guid: "EAID_966D682F_CD37_4038_9739_3EEC0E6CB044"
     is_a: ConductingEquipment
     abstract: true
-    description: The class represents equivalent objects that are the result of a
-      network reduction. The class is the base for equivalent objects of different
-      types.
+    class_uri: cim:EquivalentEquipment
+    attributes: 
   EquivalentInjection:
+    description: "This class represents equivalent injections (generation or load).  Voltage regulation is allowed only at the point of connection."
+    annotations:
+      ea_guid: "EAID_9749AD93_8F33_48c8_9291_02B9D671C172"
+    is_a: EquivalentEquipment
     class_uri: cim:EquivalentInjection
-    attributes:
-      regulationStatus:
-        slot_uri: cim:EquivalentInjection.regulationStatus
-        range: boolean
-        multivalued: false
-        required: false
-        description: Specifies the regulation status of the EquivalentInjection.  True
-          is regulating.  False is not regulating.
-      regulationTarget:
-        slot_uri: cim:EquivalentInjection.regulationTarget
-        range: Voltage
-        multivalued: false
-        required: false
-        description: The target voltage for voltage regulation. The attribute shall
-          be a positive value.
+    attributes: 
       p:
+        description: "Equivalent active power injection. Load sign convention is used, i.e. positive sign means flow out from a node.Starting value for steady state solutions."
+        annotations:
+          ea_guid: "EAID_794BBD16_A21F_4f57_BFF6_6413DF1DC6D5"
         slot_uri: cim:EquivalentInjection.p
         range: ActivePower
-        multivalued: false
-        required: true
-        description: 'Equivalent active power injection. Load sign convention is used,
-          i.e. positive sign means flow out from a node.
-
-          Starting value for steady state solutions.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       q:
+        description: "Equivalent reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.Starting value for steady state solutions."
+        annotations:
+          ea_guid: "EAID_CFD61B60_96D7_45db_83AD_D2441020B6F6"
         slot_uri: cim:EquivalentInjection.q
         range: ReactivePower
-        multivalued: false
-        required: true
-        description: 'Equivalent reactive power injection. Load sign convention is
-          used, i.e. positive sign means flow out from a node.
-
-          Starting value for steady state solutions.'
-    is_a: EquivalentEquipment
-    description: This class represents equivalent injections (generation or load).  Voltage
-      regulation is allowed only at the point of connection.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+      regulationStatus:
+        description: "Specifies the regulation status of the EquivalentInjection.  True is regulating.  False is not regulating."
+        annotations:
+          ea_guid: "EAID_79E03A9B_2B54_4de5_BAFE_20735F747738"
+        slot_uri: cim:EquivalentInjection.regulationStatus
+        range: boolean
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      regulationTarget:
+        description: "The target voltage for voltage regulation. The attribute shall be a positive value."
+        annotations:
+          ea_guid: "EAID_6BE562FD_1C81_4544_8594_DBA144DAB96E"
+        slot_uri: cim:EquivalentInjection.regulationTarget
+        range: Voltage
+        minimum_cardinality: 0
+        maximum_cardinality: 1
   ExternalNetworkInjection:
+    description: "This class represents the external network and it is used for IEC 60909 calculations."
+    annotations:
+      ea_guid: "EAID_B7E110A4_CE7A_4414_9477_4310D44B43D0"
+    is_a: RegulatingCondEq
     class_uri: cim:ExternalNetworkInjection
-    attributes:
-      referencePriority:
-        slot_uri: cim:ExternalNetworkInjection.referencePriority
-        range: integer
-        multivalued: false
-        required: true
-        description: Priority of unit for use as powerflow voltage phase angle reference
-          bus selection. 0 = don t care (default) 1 = highest priority. 2 is less
-          than 1 and so on.
+    attributes: 
       p:
+        description: "Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node.Starting value for steady state solutions."
+        annotations:
+          ea_guid: "EAID_AA86E221_E69B_41af_BB7C_A899574AC007"
         slot_uri: cim:ExternalNetworkInjection.p
         range: ActivePower
-        multivalued: false
-        required: true
-        description: 'Active power injection. Load sign convention is used, i.e. positive
-          sign means flow out from a node.
-
-          Starting value for steady state solutions.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       q:
+        description: "Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.Starting value for steady state solutions."
+        annotations:
+          ea_guid: "EAID_747953B0_23CB_4f85_B09F_C9828637BB1C"
         slot_uri: cim:ExternalNetworkInjection.q
         range: ReactivePower
-        multivalued: false
-        required: true
-        description: 'Reactive power injection. Load sign convention is used, i.e.
-          positive sign means flow out from a node.
-
-          Starting value for steady state solutions.'
-    is_a: RegulatingCondEq
-    description: This class represents the external network and it is used for IEC
-      60909 calculations.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+      referencePriority:
+        description: "Priority of unit for use as powerflow voltage phase angle reference bus selection. 0 = don t care (default) 1 = highest priority. 2 is less than 1 and so on."
+        annotations:
+          ea_guid: "EAID_FFD18DCF_6376_4723_B60B_AC8A81B4F137"
+        slot_uri: cim:ExternalNetworkInjection.referencePriority
+        range: integer
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   Fuse:
-    class_uri: cim:Fuse
+    description: "An overcurrent protective device with a circuit opening fusible part that is heated and severed by the passage of overcurrent through it. A fuse is considered a switching device because it breaks current."
+    annotations:
+      ea_guid: "EAID_48B8830C_2798_4c86_8B89_01449EA9D4F6"
     is_a: Switch
-    description: An overcurrent protective device with a circuit opening fusible part
-      that is heated and severed by the passage of overcurrent through it. A fuse
-      is considered a switching device because it breaks current.
+    class_uri: cim:Fuse
+    attributes: 
   GeneratingUnit:
+    description: "A single or set of synchronous machines for converting mechanical power into alternating-current power. For example, individual machines within a set may be defined for scheduling purposes while a single control signal is derived for the set. In this case there would be a GeneratingUnit for each member of the set and an additional GeneratingUnit corresponding to the set."
+    annotations:
+      ea_guid: "EAID_A4C4D1F8_0359_44b1_8F2A_521D3F9F3C28"
+    is_a: Equipment
     class_uri: cim:GeneratingUnit
-    attributes:
+    attributes: 
       normalPF:
+        description: "Generating unit economic participation factor.  The sum of the participation factors across generating units does not have to sum to one.  It is used for representing distributed slack participation factor. The attribute shall be a positive value or zero."
+        annotations:
+          ea_guid: "EAID_5C5B950D_8DCC_4ec0_A054_5B1A1F99B724"
         slot_uri: cim:GeneratingUnit.normalPF
         range: float
-        multivalued: false
-        required: true
-        description: Generating unit economic participation factor.  The sum of the
-          participation factors across generating units does not have to sum to one.  It
-          is used for representing distributed slack participation factor. The attribute
-          shall be a positive value or zero.
-    is_a: Equipment
-    description: A single or set of synchronous machines for converting mechanical
-      power into alternating-current power. For example, individual machines within
-      a set may be defined for scheduling purposes while a single control signal is
-      derived for the set. In this case there would be a GeneratingUnit for each member
-      of the set and an additional GeneratingUnit corresponding to the set.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   GroundDisconnector:
-    class_uri: cim:GroundDisconnector
+    description: "A manually operated or motor operated mechanical switching device used for isolating a circuit or equipment from ground."
+    annotations:
+      ea_guid: "EAID_39802A96_B06F_4dc2_B805_8DF16C5B398D"
     is_a: Switch
-    description: A manually operated or motor operated mechanical switching device
-      used for isolating a circuit or equipment from ground.
+    class_uri: cim:GroundDisconnector
+    attributes: 
   HydroGeneratingUnit:
-    class_uri: cim:HydroGeneratingUnit
+    description: "A generating unit whose prime mover is a hydraulic turbine (e.g., Francis, Pelton, Kaplan)."
+    annotations:
+      ea_guid: "EAID_2B8CC296_5CEF_4662_9FB2_48F968B7C3D9"
     is_a: GeneratingUnit
-    description: A generating unit whose prime mover is a hydraulic turbine (e.g.,
-      Francis, Pelton, Kaplan).
+    class_uri: cim:HydroGeneratingUnit
+    attributes: 
   IdentifiedObject:
-    class_uri: cim:IdentifiedObject
+    description: "This is a root class to provide common identification for all classes needing identification and naming attributes."
+    annotations:
+      ea_guid: "EAID_055C5806_E9D8_4a7a_9307_DAF7C31763C7"
     abstract: true
-    attributes:
+    class_uri: cim:IdentifiedObject
+    attributes: 
       mRID:
+        description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
+        annotations:
+          ea_guid: "EAID_C775F80A_A23D_4f38_AB9D_49D1FA882337"
         slot_uri: cim:IdentifiedObject.mRID
         range: string
-        multivalued: false
-        required: true
-        description: 'Master resource identifier issued by a model authority. The
-          mRID is unique within an exchange context. Global uniqueness is easily achieved
-          by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID
-          is strongly recommended.
-
-          For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID
-          is mapped to rdf:ID or rdf:about attributes that identify CIM object elements.'
-    description: This is a root class to provide common identification for all classes
-      needing identification and naming attributes.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   Jumper:
-    class_uri: cim:Jumper
+    description: "A short section of conductor with negligible impedance which can be manually removed and replaced if the circuit is de-energized. Note that zero-impedance branches can potentially be modelled by other equipment types."
+    annotations:
+      ea_guid: "EAID_1D1D3E1A_76FB_4219_90DD_F6AE687989FC"
     is_a: Switch
-    description: A short section of conductor with negligible impedance which can
-      be manually removed and replaced if the circuit is de-energized. Note that zero-impedance
-      branches can potentially be modelled by other equipment types.
+    class_uri: cim:Jumper
+    attributes: 
   LinearShuntCompensator:
+    description: "A linear shunt compensator has banks or sections with equal admittance values."
+    annotations:
+      ea_guid: "EAID_94E82A47_069F_4e2b_A4FA_8CFD5E140FD7"
+    is_a: ShuntCompensator
     class_uri: cim:LinearShuntCompensator
-    is_a: ShuntCompensator
-    description: A linear shunt compensator has banks or sections with equal admittance
-      values.
+    attributes: 
   LoadBreakSwitch:
-    class_uri: cim:LoadBreakSwitch
+    description: "A mechanical switching device capable of making, carrying, and breaking currents under normal operating conditions."
+    annotations:
+      ea_guid: "EAID_D64FF392_C9F8_4220_8861_1944D504F342"
     is_a: ProtectedSwitch
-    description: A mechanical switching device capable of making, carrying, and breaking
-      currents under normal operating conditions.
+    class_uri: cim:LoadBreakSwitch
+    attributes: 
   NonConformLoad:
-    class_uri: cim:NonConformLoad
+    description: "NonConformLoad represents loads that do not follow a daily load change pattern and whose changes are not correlated with the daily load change pattern."
+    annotations:
+      ea_guid: "EAID_E1506289_85CA_4e5b_BD89_6E483BCE1C0F"
     is_a: EnergyConsumer
-    description: NonConformLoad represents loads that do not follow a daily load change
-      pattern and whose changes are not correlated with the daily load change pattern.
+    class_uri: cim:NonConformLoad
+    attributes: 
   NonlinearShuntCompensator:
-    class_uri: cim:NonlinearShuntCompensator
+    description: "A non linear shunt compensator has bank or section admittance values that differ. The attributes g, b, g0 and b0 of the associated NonlinearShuntCompensatorPoint describe the total conductance and admittance of a NonlinearShuntCompensatorPoint at a section number specified by NonlinearShuntCompensatorPoint.sectionNumber."
+    annotations:
+      ea_guid: "EAID_111DB4FF_7967_4eb5_AABE_CDA0EA065CF8"
     is_a: ShuntCompensator
-    description: A non linear shunt compensator has bank or section admittance values
-      that differ. The attributes g, b, g0 and b0 of the associated NonlinearShuntCompensatorPoint
-      describe the total conductance and admittance of a NonlinearShuntCompensatorPoint
-      at a section number specified by NonlinearShuntCompensatorPoint.sectionNumber.
+    class_uri: cim:NonlinearShuntCompensator
+    attributes: 
   NuclearGeneratingUnit:
-    class_uri: cim:NuclearGeneratingUnit
+    description: "A nuclear generating unit."
+    annotations:
+      ea_guid: "EAID_76B2A63F_FF2A_44e9_8B22_4F676433E485"
     is_a: GeneratingUnit
-    description: A nuclear generating unit.
+    class_uri: cim:NuclearGeneratingUnit
+    attributes: 
   OperationalLimit:
-    class_uri: cim:OperationalLimit
+    description: "A value and normal value associated with a specific kind of limit.The sub class value and normalValue attributes vary inversely to the associated OperationalLimitType.acceptableDuration (acceptableDuration for short).If a particular piece of equipment has multiple operational limits of the same kind (apparent power, current, etc.), the limit with the greatest acceptableDuration shall have the smallest limit value and the limit with the smallest acceptableDuration shall have the largest limit value.  Note: A large current can only be allowed to flow through a piece of equipment for a short duration without causing damage, but a lesser current can be allowed to flow for a longer duration."
+    annotations:
+      ea_guid: "EAID_2E614D04_0107_4d78_B959_28ECD475219C"
     is_a: IdentifiedObject
     abstract: true
-    description: "A value and normal value associated with a specific kind of limit.\
-      \ \nThe sub class value and normalValue attributes vary inversely to the associated\
-      \ OperationalLimitType.acceptableDuration (acceptableDuration for short).  \n\
-      If a particular piece of equipment has multiple operational limits of the same\
-      \ kind (apparent power, current, etc.), the limit with the greatest acceptableDuration\
-      \ shall have the smallest limit value and the limit with the smallest acceptableDuration\
-      \ shall have the largest limit value.  Note: A large current can only be allowed\
-      \ to flow through a piece of equipment for a short duration without causing\
-      \ damage, but a lesser current can be allowed to flow for a longer duration."
+    class_uri: cim:OperationalLimit
+    attributes: 
   PhaseTapChanger:
-    class_uri: cim:PhaseTapChanger
+    description: "A transformer phase shifting tap model that controls the phase angle difference across the power transformer and potentially the active power flow through the power transformer.  This phase tap model may also impact the voltage magnitude."
+    annotations:
+      ea_guid: "EAID_7CEA69EF_C8A8_4f3d_99B2_9F934CC95BF4"
     is_a: TapChanger
     abstract: true
-    description: A transformer phase shifting tap model that controls the phase angle
-      difference across the power transformer and potentially the active power flow
-      through the power transformer.  This phase tap model may also impact the voltage
-      magnitude.
+    class_uri: cim:PhaseTapChanger
+    attributes: 
   PhaseTapChangerAsymmetrical:
-    class_uri: cim:PhaseTapChangerAsymmetrical
+    description: "Describes the tap model for an asymmetrical phase shifting transformer in which the difference voltage vector adds to the in-phase winding. The out-of-phase winding is the transformer end where the tap changer is located.  The angle between the in-phase and out-of-phase windings is named the winding connection angle. The phase shift depends on both the difference voltage magnitude and the winding connection angle."
+    annotations:
+      ea_guid: "EAID_4161A809_7542_4c92_A7D0_99AE5682E89C"
     is_a: PhaseTapChangerNonLinear
-    description: Describes the tap model for an asymmetrical phase shifting transformer
-      in which the difference voltage vector adds to the in-phase winding. The out-of-phase
-      winding is the transformer end where the tap changer is located.  The angle
-      between the in-phase and out-of-phase windings is named the winding connection
-      angle. The phase shift depends on both the difference voltage magnitude and
-      the winding connection angle.
+    class_uri: cim:PhaseTapChangerAsymmetrical
+    attributes: 
   PhaseTapChangerLinear:
-    class_uri: cim:PhaseTapChangerLinear
+    description: "Describes a tap changer with a linear relation between the tap step and the phase angle difference across the transformer. This is a mathematical model that is an approximation of a real phase tap changer.The phase angle is computed as stepPhaseShiftIncrement times the tap position.The voltage magnitude of both sides is the same."
+    annotations:
+      ea_guid: "EAID_BFC68185_DEEC_4665_B2E9_64EC73F18241"
     is_a: PhaseTapChanger
-    description: 'Describes a tap changer with a linear relation between the tap step
-      and the phase angle difference across the transformer. This is a mathematical
-      model that is an approximation of a real phase tap changer.
-
-      The phase angle is computed as stepPhaseShiftIncrement times the tap position.
-
-      The voltage magnitude of both sides is the same.'
+    class_uri: cim:PhaseTapChangerLinear
+    attributes: 
   PhaseTapChangerNonLinear:
-    class_uri: cim:PhaseTapChangerNonLinear
+    description: "The non-linear phase tap changer describes the non-linear behaviour of a phase tap changer. This is a base class for the symmetrical and asymmetrical phase tap changer models. The details of these models can be found in IEC 61970-301."
+    annotations:
+      ea_guid: "EAID_5B26C38F_A09B_439c_B5E2_A9F4ED801883"
     is_a: PhaseTapChanger
     abstract: true
-    description: The non-linear phase tap changer describes the non-linear behaviour
-      of a phase tap changer. This is a base class for the symmetrical and asymmetrical
-      phase tap changer models. The details of these models can be found in IEC 61970-301.
+    class_uri: cim:PhaseTapChangerNonLinear
+    attributes: 
   PhaseTapChangerSymmetrical:
-    class_uri: cim:PhaseTapChangerSymmetrical
+    description: "Describes a symmetrical phase shifting transformer tap model in which the voltage magnitude of both sides is the same. The difference voltage magnitude is the base in an equal-sided triangle where the sides corresponds to the primary and secondary voltages. The phase angle difference corresponds to the top angle and can be expressed as twice the arctangent of half the total difference voltage."
+    annotations:
+      ea_guid: "EAID_4841E53F_1B5B_487b_8F43_2ABA7B1FC93D"
     is_a: PhaseTapChangerNonLinear
-    description: Describes a symmetrical phase shifting transformer tap model in which
-      the voltage magnitude of both sides is the same. The difference voltage magnitude
-      is the base in an equal-sided triangle where the sides corresponds to the primary
-      and secondary voltages. The phase angle difference corresponds to the top angle
-      and can be expressed as twice the arctangent of half the total difference voltage.
+    class_uri: cim:PhaseTapChangerSymmetrical
+    attributes: 
   PhaseTapChangerTabular:
-    class_uri: cim:PhaseTapChangerTabular
+    description: "Describes a tap changer with a table defining the relation between the tap step and the phase angle difference across the transformer."
+    annotations:
+      ea_guid: "EAID_27778291_3EC1_429b_AD1C_2E9841406540"
     is_a: PhaseTapChanger
-    description: Describes a tap changer with a table defining the relation between
-      the tap step and the phase angle difference across the transformer.
+    class_uri: cim:PhaseTapChangerTabular
+    attributes: 
   PowerElectronicsConnection:
+    description: "A connection to the AC network for energy production or consumption that uses power electronics rather than rotating machines."
+    annotations:
+      ea_guid: "EAID_AEF4A2AB_D126_4311_B299_CAB7D826A16E"
+    is_a: RegulatingCondEq
     class_uri: cim:PowerElectronicsConnection
-    attributes:
+    attributes: 
       p:
+        description: "Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node.Starting value for a steady state solution."
+        annotations:
+          ea_guid: "EAID_E50A8D52_31FA_46ce_A1A7_1A680426BCE0"
         slot_uri: cim:PowerElectronicsConnection.p
         range: ActivePower
-        multivalued: false
-        required: true
-        description: 'Active power injection. Load sign convention is used, i.e. positive
-          sign means flow out from a node.
-
-          Starting value for a steady state solution.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       q:
+        description: "Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.Starting value for a steady state solution."
+        annotations:
+          ea_guid: "EAID_653A93F9_690F_4825_8C09_B75BC246100B"
         slot_uri: cim:PowerElectronicsConnection.q
         range: ReactivePower
-        multivalued: false
-        required: true
-        description: 'Reactive power injection. Load sign convention is used, i.e.
-          positive sign means flow out from a node.
-
-          Starting value for a steady state solution.'
-    is_a: RegulatingCondEq
-    description: A connection to the AC network for energy production or consumption
-      that uses power electronics rather than rotating machines.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   PowerElectronicsUnit:
-    class_uri: cim:PowerElectronicsUnit
+    description: "A generating unit or battery or aggregation that connects to the AC network using power electronics rather than rotating machines."
+    annotations:
+      ea_guid: "EAID_EC401F21_E818_46dc_88CE_2CFD1E60B76C"
     is_a: Equipment
     abstract: true
-    description: A generating unit or battery or aggregation that connects to the
-      AC network using power electronics rather than rotating machines.
+    class_uri: cim:PowerElectronicsUnit
+    attributes: 
   PowerSystemResource:
-    class_uri: cim:PowerSystemResource
+    description: "A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated."
+    annotations:
+      ea_guid: "EAID_0340C084_3759_40cc_AAF2_386101DE842F"
     is_a: IdentifiedObject
     abstract: true
-    description: A power system resource (PSR) can be an item of equipment such as
-      a switch, an equipment container containing many individual items of equipment
-      such as a substation, or an organisational entity such as sub-control area.
-      Power system resources can have measurements associated.
+    class_uri: cim:PowerSystemResource
+    attributes: 
   ProtectedSwitch:
-    class_uri: cim:ProtectedSwitch
+    description: "A ProtectedSwitch is a switching device that can be operated by ProtectionEquipment."
+    annotations:
+      ea_guid: "EAID_BADE2A18_37F4_49bf_87BC_A087E4D2E4F7"
     is_a: Switch
     abstract: true
-    description: A ProtectedSwitch is a switching device that can be operated by ProtectionEquipment.
+    class_uri: cim:ProtectedSwitch
+    attributes: 
   RatioTapChanger:
-    class_uri: cim:RatioTapChanger
+    description: "A tap changer that changes the voltage ratio impacting the voltage magnitude but not the phase angle across the transformer.Angle sign convention (general): Positive value indicates a positive phase shift from the winding where the tap is located to the other winding (for a two-winding transformer)."
+    annotations:
+      ea_guid: "EAID_09909286_00A6_451c_B420_2E52ABEB2667"
     is_a: TapChanger
-    description: 'A tap changer that changes the voltage ratio impacting the voltage
-      magnitude but not the phase angle across the transformer.
-
-
-      Angle sign convention (general): Positive value indicates a positive phase shift
-      from the winding where the tap is located to the other winding (for a two-winding
-      transformer).'
+    class_uri: cim:RatioTapChanger
+    attributes: 
   RegulatingCondEq:
+    description: "A type of conducting equipment that can regulate a quantity (i.e. voltage or flow) at a specific point in the network."
+    annotations:
+      ea_guid: "EAID_598D5E45_FF89_4074_B3C1_3F40425EE8D6"
+    is_a: EnergyConnection
     class_uri: cim:RegulatingCondEq
-    attributes:
+    attributes: 
       controlEnabled:
+        description: "Specifies the regulation status of the equipment.  True is regulating, false is not regulating."
+        annotations:
+          ea_guid: "EAID_59FD3220_4AC6_4fe5_ADDE_2317ACD8F701"
         slot_uri: cim:RegulatingCondEq.controlEnabled
         range: boolean
-        multivalued: false
-        required: true
-        description: Specifies the regulation status of the equipment.  True is regulating,
-          false is not regulating.
-    is_a: EnergyConnection
-    abstract: true
-    description: A type of conducting equipment that can regulate a quantity (i.e.
-      voltage or flow) at a specific point in the network.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   RegulatingControl:
+    description: "Specifies a set of equipment that works together to control a power system quantity such as voltage or flow.Remote bus voltage control is possible by specifying the controlled terminal located at some place remote from the controlling equipment.The specified terminal shall be associated with the connectivity node of the controlled point.  The most specific subtype of RegulatingControl shall be used in case such equipment participate in the control, e.g. TapChangerControl for tap changers.For flow control, load sign convention is used, i.e. positive sign means flow out from a TopologicalNode (bus) into the conducting equipment.The attribute minAllowedTargetValue and maxAllowedTargetValue are required in the following cases:- For a power generating module operated in power factor control mode to specify maximum and minimum power factor values;- Whenever it is necessary to have an off center target voltage for the tap changer regulator. For instance, due to long cables to off shore wind farms and the need to have a simpler setup at the off shore transformer platform, the voltage is controlled from the land at the connection point for the off shore wind farm. Since there usually is a voltage rise along the cable, there is typical and overvoltage of up 3-4 kV compared to the on shore station. Thus in normal operation the tap changer on the on shore station is operated with a target set point, which is in the lower parts of the dead band.The attributes minAllowedTargetValue and maxAllowedTargetValue are not related to the attribute targetDeadband and thus they are not treated as an alternative of the targetDeadband. They are needed due to limitations in the local substation controller. The attribute targetDeadband is used to prevent the power flow from move the tap position in circles (hunting) that is to be used regardless of the attributes minAllowedTargetValue and maxAllowedTargetValue."
+    annotations:
+      ea_guid: "EAID_8C28B28D_4735_4033_9F33_7D86F6819922"
+    is_a: PowerSystemResource
     class_uri: cim:RegulatingControl
-    attributes:
+    attributes: 
       discrete:
+        description: "The regulation is performed in a discrete mode. This applies to equipment with discrete controls, e.g. tap changers and shunt compensators."
+        annotations:
+          ea_guid: "EAID_402FA12A_ED05_4ef2_812F_3C26BB27936D"
         slot_uri: cim:RegulatingControl.discrete
         range: boolean
-        multivalued: false
-        required: true
-        description: The regulation is performed in a discrete mode. This applies
-          to equipment with discrete controls, e.g. tap changers and shunt compensators.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       enabled:
+        description: "The flag tells if regulation is enabled."
+        annotations:
+          ea_guid: "EAID_BB18638D_6DC9_43a9_8631_380ED5BF18B6"
         slot_uri: cim:RegulatingControl.enabled
         range: boolean
-        multivalued: false
-        required: true
-        description: The flag tells if regulation is enabled.
-      targetDeadband:
-        slot_uri: cim:RegulatingControl.targetDeadband
-        range: float
-        multivalued: false
-        required: false
-        description: 'This is a deadband used with discrete control to avoid excessive
-          update of controls like tap changers and shunt compensator banks while regulating.  The
-          units of those appropriate for the mode. The attribute shall be a positive
-          value or zero. If RegulatingControl.discrete is set to "false", the RegulatingControl.targetDeadband
-          is to be ignored.
-
-          Note that for instance, if the targetValue is 100 kV and the targetDeadband
-          is 2 kV the range is from 99 to 101 kV.'
-      targetValue:
-        slot_uri: cim:RegulatingControl.targetValue
-        range: float
-        multivalued: false
-        required: true
-        description: The target value specified for case input.   This value can be
-          used for the target value without the use of schedules. The value has the
-          units appropriate to the mode attribute.
-      targetValueUnitMultiplier:
-        slot_uri: cim:RegulatingControl.targetValueUnitMultiplier
-        range: UnitMultiplier
-        multivalued: false
-        required: true
-        description: Specify the multiplier for used for the targetValue.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       maxAllowedTargetValue:
+        description: "Maximum allowed target value (RegulatingControl.targetValue)."
+        annotations:
+          ea_guid: "EAID_2417F359_3B33_4d71_B942_17654980DAEB"
         slot_uri: cim:RegulatingControl.maxAllowedTargetValue
         range: float
-        multivalued: false
-        required: false
-        description: Maximum allowed target value (RegulatingControl.targetValue).
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       minAllowedTargetValue:
+        description: "Minimum allowed target value (RegulatingControl.targetValue)."
+        annotations:
+          ea_guid: "EAID_B5AC0B65_B094_4d23_AB5D_FA9F1CF06D2D"
         slot_uri: cim:RegulatingControl.minAllowedTargetValue
         range: float
-        multivalued: false
-        required: false
-        description: Minimum allowed target value (RegulatingControl.targetValue).
-    is_a: PowerSystemResource
-    description: "Specifies a set of equipment that works together to control a power\
-      \ system quantity such as voltage or flow. \nRemote bus voltage control is possible\
-      \ by specifying the controlled terminal located at some place remote from the\
-      \ controlling equipment.\nThe specified terminal shall be associated with the\
-      \ connectivity node of the controlled point.  The most specific subtype of RegulatingControl\
-      \ shall be used in case such equipment participate in the control, e.g. TapChangerControl\
-      \ for tap changers.\nFor flow control, load sign convention is used, i.e. positive\
-      \ sign means flow out from a TopologicalNode (bus) into the conducting equipment.\n\
-      The attribute minAllowedTargetValue and maxAllowedTargetValue are required in\
-      \ the following cases:\n- For a power generating module operated in power factor\
-      \ control mode to specify maximum and minimum power factor values;\n- Whenever\
-      \ it is necessary to have an off center target voltage for the tap changer regulator.\
-      \ For instance, due to long cables to off shore wind farms and the need to have\
-      \ a simpler setup at the off shore transformer platform, the voltage is controlled\
-      \ from the land at the connection point for the off shore wind farm. Since there\
-      \ usually is a voltage rise along the cable, there is typical and overvoltage\
-      \ of up 3-4 kV compared to the on shore station. Thus in normal operation the\
-      \ tap changer on the on shore station is operated with a target set point, which\
-      \ is in the lower parts of the dead band.\nThe attributes minAllowedTargetValue\
-      \ and maxAllowedTargetValue are not related to the attribute targetDeadband\
-      \ and thus they are not treated as an alternative of the targetDeadband. They\
-      \ are needed due to limitations in the local substation controller. The attribute\
-      \ targetDeadband is used to prevent the power flow from move the tap position\
-      \ in circles (hunting) that is to be used regardless of the attributes minAllowedTargetValue\
-      \ and maxAllowedTargetValue."
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      targetDeadband:
+        description: "This is a deadband used with discrete control to avoid excessive update of controls like tap changers and shunt compensator banks while regulating.  The units of those appropriate for the mode. The attribute shall be a positive value or zero. If RegulatingControl.discrete is set to false, the RegulatingControl.targetDeadband is to be ignored.Note that for instance, if the targetValue is 100 kV and the targetDeadband is 2 kV the range is from 99 to 101 kV."
+        annotations:
+          ea_guid: "EAID_646962B2_3D10_4e78_AA89_12D0A41BB43B"
+        slot_uri: cim:RegulatingControl.targetDeadband
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      targetValue:
+        description: "The target value specified for case input.   This value can be used for the target value without the use of schedules. The value has the units appropriate to the mode attribute."
+        annotations:
+          ea_guid: "EAID_9827F679_5CE0_4b9e_A7B4_219CE46E466E"
+        slot_uri: cim:RegulatingControl.targetValue
+        range: float
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   RotatingMachine:
-    class_uri: cim:RotatingMachine
+    description: "A rotating machine which may be used as a generator or motor."
+    annotations:
+      ea_guid: "EAID_8ADF23B6_43B5_436b_91CE_E22D54B323B8"
+    is_a: RegulatingCondEq
     abstract: true
-    attributes:
+    class_uri: cim:RotatingMachine
+    attributes: 
       p:
+        description: "Active power injection. Load sign convention is used, i.e. positive sign means flow out from a node.Starting value for a steady state solution."
+        annotations:
+          ea_guid: "EAID_792C720E_AF6B_47ed_84D7_C08A882047CD"
         slot_uri: cim:RotatingMachine.p
         range: ActivePower
-        multivalued: false
-        required: true
-        description: 'Active power injection. Load sign convention is used, i.e. positive
-          sign means flow out from a node.
-
-          Starting value for a steady state solution.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       q:
+        description: "Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.Starting value for a steady state solution."
+        annotations:
+          ea_guid: "EAID_9444CBB2_5BC1_46df_B4EA_356639D6F3F9"
         slot_uri: cim:RotatingMachine.q
         range: ReactivePower
-        multivalued: false
-        required: true
-        description: 'Reactive power injection. Load sign convention is used, i.e.
-          positive sign means flow out from a node.
-
-          Starting value for a steady state solution.'
-    is_a: RegulatingCondEq
-    description: A rotating machine which may be used as a generator or motor.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   ShuntCompensator:
-    class_uri: cim:ShuntCompensator
+    description: "A shunt capacitor or reactor or switchable bank of shunt capacitors or reactors. A section of a shunt compensator is an individual capacitor or reactor. A negative value for bPerSection indicates that the compensator is a reactor. ShuntCompensator is a single terminal device.  Ground is implied."
+    annotations:
+      ea_guid: "EAID_92B30569_5ED0_4fc0_B796_984D9BF75453"
+    is_a: RegulatingCondEq
     abstract: true
-    attributes:
+    class_uri: cim:ShuntCompensator
+    attributes: 
       sections:
+        description: "Shunt compensator sections in use. Starting value for steady state solution. The attribute shall be a positive value or zero. Non integer values are allowed to support continuous variables. The reasons for continuous value are to support study cases where no discrete shunt compensators has yet been designed, a solutions where a narrow voltage band force the sections to oscillate or accommodate for a continuous solution as input.For LinearShuntConpensator the value shall be between zero and ShuntCompensator.maximumSections. At value zero the shunt compensator conductance and admittance is zero. Linear interpolation of conductance and admittance between the previous and next integer section is applied in case of non-integer values.For NonlinearShuntCompensator-s shall only be set to one of the NonlinearShuntCompenstorPoint.sectionNumber. There is no interpolation between NonlinearShuntCompenstorPoint-s."
+        annotations:
+          ea_guid: "EAID_092847A7_BC7D_4682_BA72_84E03733C148"
         slot_uri: cim:ShuntCompensator.sections
         range: float
-        multivalued: false
-        required: true
-        description: "Shunt compensator sections in use. Starting value for steady\
-          \ state solution. The attribute shall be a positive value or zero. Non integer\
-          \ values are allowed to support continuous variables. The reasons for continuous\
-          \ value are to support study cases where no discrete shunt compensators\
-          \ has yet been designed, a solutions where a narrow voltage band force the\
-          \ sections to oscillate or accommodate for a continuous solution as input.\
-          \ \nFor LinearShuntConpensator the value shall be between zero and ShuntCompensator.maximumSections.\
-          \ At value zero the shunt compensator conductance and admittance is zero.\
-          \ Linear interpolation of conductance and admittance between the previous\
-          \ and next integer section is applied in case of non-integer values.\nFor\
-          \ NonlinearShuntCompensator-s shall only be set to one of the NonlinearShuntCompenstorPoint.sectionNumber.\
-          \ There is no interpolation between NonlinearShuntCompenstorPoint-s."
-    is_a: RegulatingCondEq
-    description: A shunt capacitor or reactor or switchable bank of shunt capacitors
-      or reactors. A section of a shunt compensator is an individual capacitor or
-      reactor. A negative value for bPerSection indicates that the compensator is
-      a reactor. ShuntCompensator is a single terminal device.  Ground is implied.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   SolarGeneratingUnit:
-    class_uri: cim:SolarGeneratingUnit
+    description: "A solar thermal generating unit, connected to the grid by means of a rotating machine.  This class does not represent photovoltaic (PV) generation."
+    annotations:
+      ea_guid: "EAID_C5A085AB_DDD3_41b0_91DE_9071B466AE9A"
     is_a: GeneratingUnit
-    description: A solar thermal generating unit, connected to the grid by means of
-      a rotating machine.  This class does not represent photovoltaic (PV) generation.
+    class_uri: cim:SolarGeneratingUnit
+    attributes: 
   StaticVarCompensator:
+    description: "A facility for providing variable and controllable shunt reactive power. The SVC typically consists of a stepdown transformer, filter, thyristor-controlled reactor, and thyristor-switched capacitor arms.The SVC may operate in fixed MVar output mode or in voltage control mode. When in voltage control mode, the output of the SVC will be proportional to the deviation of voltage at the controlled bus from the voltage setpoint.  The SVC characteristic slope defines the proportion.  If the voltage at the controlled bus is equal to the voltage setpoint, the SVC MVar output is zero."
+    annotations:
+      ea_guid: "EAID_B540EF99_8CE4_4da6_9E4D_D22E867F8BAE"
+    is_a: RegulatingCondEq
     class_uri: cim:StaticVarCompensator
-    attributes:
+    attributes: 
       q:
+        description: "Reactive power injection. Load sign convention is used, i.e. positive sign means flow out from a node.Starting value for a steady state solution."
+        annotations:
+          ea_guid: "EAID_EAA3BC8D_A193_4c4e_BE22_F45A9C2A491C"
         slot_uri: cim:StaticVarCompensator.q
         range: ReactivePower
-        multivalued: false
-        required: true
-        description: 'Reactive power injection. Load sign convention is used, i.e.
-          positive sign means flow out from a node.
-
-          Starting value for a steady state solution.'
-    is_a: RegulatingCondEq
-    description: 'A facility for providing variable and controllable shunt reactive
-      power. The SVC typically consists of a stepdown transformer, filter, thyristor-controlled
-      reactor, and thyristor-switched capacitor arms.
-
-
-      The SVC may operate in fixed MVar output mode or in voltage control mode. When
-      in voltage control mode, the output of the SVC will be proportional to the deviation
-      of voltage at the controlled bus from the voltage setpoint.  The SVC characteristic
-      slope defines the proportion.  If the voltage at the controlled bus is equal
-      to the voltage setpoint, the SVC MVar output is zero.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   StationSupply:
-    class_uri: cim:StationSupply
+    description: "Station supply with load derived from the station output."
+    annotations:
+      ea_guid: "EAID_67147C58_10F8_4463_93B7_7905358489FD"
     is_a: EnergyConsumer
-    description: Station supply with load derived from the station output.
+    class_uri: cim:StationSupply
+    attributes: 
   Switch:
+    description: "A generic device designed to close, or open, or both, one or more electric circuits.  All switches are two terminal devices including grounding switches. The ACDCTerminal.connected at the two sides of the switch shall not be considered for assessing switch connectivity, i.e. only Switch.open, .normalOpen and .locked are relevant."
+    annotations:
+      ea_guid: "EAID_ACE2DDBB_536E_489a_A3A8_22589256302D"
+    is_a: ConductingEquipment
     class_uri: cim:Switch
-    attributes:
-      open:
-        slot_uri: cim:Switch.open
-        range: boolean
-        multivalued: false
-        required: true
-        description: The attribute tells if the switch is considered open when used
-          as input to topology processing.
+    attributes: 
       locked:
+        description: "If true, the switch is locked. The resulting switch state is a combination of locked and Switch.open attributes as follows:<ul>	<li>locked=true and Switch.open=true. The resulting state is open and locked;</li>	<li>locked=false and Switch.open=true. The resulting state is open;</li>	<li>locked=false and Switch.open=false. The resulting state is closed.</li></ul>"
+        annotations:
+          ea_guid: "EAID_D72B9A82_CD67_425e_AF36_802920CFAF3F"
         slot_uri: cim:Switch.locked
         range: boolean
-        multivalued: false
-        required: true
-        description: "If true, the switch is locked. The resulting switch state is\
-          \ a combination of locked and Switch.open attributes as follows:\n<ul>\n\
-          \t<li>locked=true and Switch.open=true. The resulting state is open and\
-          \ locked;</li>\n\t<li>locked=false and Switch.open=true. The resulting state\
-          \ is open;</li>\n\t<li>locked=false and Switch.open=false. The resulting\
-          \ state is closed.</li>\n</ul>"
-    is_a: ConductingEquipment
-    description: A generic device designed to close, or open, or both, one or more
-      electric circuits.  All switches are two terminal devices including grounding
-      switches. The ACDCTerminal.connected at the two sides of the switch shall not
-      be considered for assessing switch connectivity, i.e. only Switch.open, .normalOpen
-      and .locked are relevant.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+      open:
+        description: "The attribute tells if the switch is considered open when used as input to topology processing."
+        annotations:
+          ea_guid: "EAID_7FC100AA_9641_4d45_AC84_8B90D9FC4D3F"
+        slot_uri: cim:Switch.open
+        range: boolean
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   SynchronousMachine:
+    description: "An electromechanical device that operates with shaft rotating synchronously with the network. It is a single machine operating either as a generator or synchronous condenser or pump."
+    annotations:
+      ea_guid: "EAID_7862E21E_F054_4a33_949F_04B8B4690D49"
+    is_a: RotatingMachine
     class_uri: cim:SynchronousMachine
-    attributes:
-      operatingMode:
-        slot_uri: cim:SynchronousMachine.operatingMode
-        range: SynchronousMachineOperatingMode
-        multivalued: false
-        required: true
-        description: Current mode of operation.
+    attributes: 
       referencePriority:
+        description: "Priority of unit for use as powerflow voltage phase angle reference bus selection. 0 = don t care (default) 1 = highest priority. 2 is less than 1 and so on."
+        annotations:
+          ea_guid: "EAID_9B59DCCE_EF9D_498c_90AC_A8582AB555DC"
         slot_uri: cim:SynchronousMachine.referencePriority
         range: integer
-        multivalued: false
-        required: true
-        description: Priority of unit for use as powerflow voltage phase angle reference
-          bus selection. 0 = don t care (default) 1 = highest priority. 2 is less
-          than 1 and so on.
-    is_a: RotatingMachine
-    description: An electromechanical device that operates with shaft rotating synchronously
-      with the network. It is a single machine operating either as a generator or
-      synchronous condenser or pump.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   TapChanger:
-    class_uri: cim:TapChanger
+    description: "Mechanism for changing transformer winding tap positions."
+    annotations:
+      ea_guid: "EAID_F43099C0_90EA_47f1_B038_EDE831744C07"
+    is_a: PowerSystemResource
     abstract: true
-    attributes:
+    class_uri: cim:TapChanger
+    attributes: 
       controlEnabled:
+        description: "Specifies the regulation status of the equipment.  True is regulating, false is not regulating."
+        annotations:
+          ea_guid: "EAID_1BF7B544_61DC_4fd7_9325_E938A8C364C7"
         slot_uri: cim:TapChanger.controlEnabled
         range: boolean
-        multivalued: false
-        required: true
-        description: Specifies the regulation status of the equipment.  True is regulating,
-          false is not regulating.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       step:
+        description: "Tap changer position.Starting step for a steady state solution. Non integer values are allowed to support continuous tap variables. The reasons for continuous value are to support study cases where no discrete tap changer has yet been designed, a solution where a narrow voltage band forces the tap step to oscillate or to accommodate for a continuous solution as input.The attribute shall be equal to or greater than lowStep and equal to or less than highStep."
+        annotations:
+          ea_guid: "EAID_2FA251C7_BB3A_4cf7_9BC7_316171AED7CB"
         slot_uri: cim:TapChanger.step
         range: float
-        multivalued: false
-        required: true
-        description: 'Tap changer position.
-
-          Starting step for a steady state solution. Non integer values are allowed
-          to support continuous tap variables. The reasons for continuous value are
-          to support study cases where no discrete tap changer has yet been designed,
-          a solution where a narrow voltage band forces the tap step to oscillate
-          or to accommodate for a continuous solution as input.
-
-          The attribute shall be equal to or greater than lowStep and equal to or
-          less than highStep.'
-    is_a: PowerSystemResource
-    description: Mechanism for changing transformer winding tap positions.
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   TapChangerControl:
-    class_uri: cim:TapChangerControl
+    description: "Describes behaviour specific to tap changers, e.g. how the voltage at the end of a line varies with the load level and compensation of the voltage drop by tap adjustment."
+    annotations:
+      ea_guid: "EAID_32D5C39A_ABB5_4ac8_8B3F_FBDC00DB19BB"
     is_a: RegulatingControl
-    description: Describes behaviour specific to tap changers, e.g. how the voltage
-      at the end of a line varies with the load level and compensation of the voltage
-      drop by tap adjustment.
+    class_uri: cim:TapChangerControl
+    attributes: 
   Terminal:
-    class_uri: cim:Terminal
+    description: "An AC electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes."
+    annotations:
+      ea_guid: "EAID_1A0F8321_5E77_4d68_BE29_B36FA31549DC"
     is_a: ACDCTerminal
-    description: An AC electrical connection point to a piece of conducting equipment.
-      Terminals are connected at physical connection points called connectivity nodes.
+    class_uri: cim:Terminal
+    attributes: 
   ThermalGeneratingUnit:
-    class_uri: cim:ThermalGeneratingUnit
+    description: "A generating unit whose prime mover could be a steam turbine, combustion turbine, or diesel engine."
+    annotations:
+      ea_guid: "EAID_74F16962_C880_450f_8B4F_0CFBD6BEF79A"
     is_a: GeneratingUnit
-    description: A generating unit whose prime mover could be a steam turbine, combustion
-      turbine, or diesel engine.
+    class_uri: cim:ThermalGeneratingUnit
+    attributes: 
   VoltageLimit:
+    description: "Operational limit applied to voltage.The use of operational VoltageLimit is preferred instead of limits defined at VoltageLevel. The operational VoltageLimits are used, if present."
+    annotations:
+      ea_guid: "EAID_9D49B294_C5CA_4145_BE42_437419517604"
+    is_a: OperationalLimit
     class_uri: cim:VoltageLimit
-    attributes:
+    attributes: 
       value:
+        description: "Limit on voltage. High or low limit nature of the limit depends upon the properties of the operational limit type. The attribute shall be a positive value or zero."
+        annotations:
+          ea_guid: "EAID_8FB525FF_AD28_448b_A341_12A345E4F498"
         slot_uri: cim:VoltageLimit.value
         range: Voltage
-        multivalued: false
-        required: true
-        description: Limit on voltage. High or low limit nature of the limit depends
-          upon the properties of the operational limit type. The attribute shall be
-          a positive value or zero.
-    is_a: OperationalLimit
-    description: 'Operational limit applied to voltage.
-
-      The use of operational VoltageLimit is preferred instead of limits defined at
-      VoltageLevel. The operational VoltageLimits are used, if present.'
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   VsConverter:
+    description: "DC side of the voltage source converter (VSC)."
+    annotations:
+      ea_guid: "EAID_D3B18BC2_AB54_475c_A731_6EBA3D738BF7"
+    is_a: ACDCConverter
     class_uri: cim:VsConverter
-    attributes:
+    attributes: 
       droop:
+        description: "Droop constant. The pu value is obtained as D [kV/MW] x Sb / Ubdc. The attribute shall be a positive value."
+        annotations:
+          ea_guid: "EAID_09DF9A01_EFD3_483a_B7A2_00A69CFEBCD4"
         slot_uri: cim:VsConverter.droop
         range: PU
-        multivalued: false
-        required: false
-        description: Droop constant. The pu value is obtained as D [kV/MW] x Sb /
-          Ubdc. The attribute shall be a positive value.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       droopCompensation:
+        description: "Compensation constant. Used to compensate for voltage drop when controlling voltage at a distant bus. The attribute shall be a positive value."
+        annotations:
+          ea_guid: "EAID_0C9168D8_85A0_4744_8BE8_15988CAD1B4E"
         slot_uri: cim:VsConverter.droopCompensation
         range: Resistance
-        multivalued: false
-        required: false
-        description: Compensation constant. Used to compensate for voltage drop when
-          controlling voltage at a distant bus. The attribute shall be a positive
-          value.
-      pPccControl:
-        slot_uri: cim:VsConverter.pPccControl
-        range: VsPpccControlKind
-        multivalued: false
-        required: true
-        description: Kind of control of real power and/or DC voltage.
-      qPccControl:
-        slot_uri: cim:VsConverter.qPccControl
-        range: VsQpccControlKind
-        multivalued: false
-        required: true
-        description: Kind of reactive power control.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       qShare:
+        description: "Reactive power sharing factor among parallel converters on Uac control. The attribute shall be a positive value or zero."
+        annotations:
+          ea_guid: "EAID_23E9AEE5_97B8_4a61_95F2_E91D567FAB7A"
         slot_uri: cim:VsConverter.qShare
         range: PerCent
-        multivalued: false
-        required: false
-        description: Reactive power sharing factor among parallel converters on Uac
-          control. The attribute shall be a positive value or zero.
-      targetQpcc:
-        slot_uri: cim:VsConverter.targetQpcc
-        range: ReactivePower
-        multivalued: false
-        required: false
-        description: Reactive power injection target in AC grid, at point of common
-          coupling.  Load sign convention is used, i.e. positive sign means flow out
-          from a node.
-      targetUpcc:
-        slot_uri: cim:VsConverter.targetUpcc
-        range: Voltage
-        multivalued: false
-        required: false
-        description: Voltage target in AC grid, at point of common coupling. The attribute
-          shall be a positive value.
-      targetPowerFactorPcc:
-        slot_uri: cim:VsConverter.targetPowerFactorPcc
-        range: float
-        multivalued: false
-        required: false
-        description: Power factor target at the AC side, at point of common coupling.
-          The attribute shall be a positive value.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       targetPhasePcc:
+        description: "Phase target at AC side, at point of common coupling. The attribute shall be a positive value."
+        annotations:
+          ea_guid: "EAID_B2315AB9_3665_4aed_BF4E_409B8B241E41"
         slot_uri: cim:VsConverter.targetPhasePcc
         range: AngleDegrees
-        multivalued: false
-        required: false
-        description: Phase target at AC side, at point of common coupling. The attribute
-          shall be a positive value.
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      targetPowerFactorPcc:
+        description: "Power factor target at the AC side, at point of common coupling. The attribute shall be a positive value."
+        annotations:
+          ea_guid: "EAID_7BC0C6D9_916B_48a4_90E7_5579B10150E1"
+        slot_uri: cim:VsConverter.targetPowerFactorPcc
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       targetPWMfactor:
+        description: "Magnitude of pulse-modulation factor. The attribute shall be a positive value."
+        annotations:
+          ea_guid: "EAID_AAF5738F_29D9_4895_A411_B84AACBD8D17"
         slot_uri: cim:VsConverter.targetPWMfactor
         range: float
-        multivalued: false
-        required: false
-        description: Magnitude of pulse-modulation factor. The attribute shall be
-          a positive value.
-    is_a: ACDCConverter
-    description: DC side of the voltage source converter (VSC).
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      targetQpcc:
+        description: "Reactive power injection target in AC grid, at point of common coupling.  Load sign convention is used, i.e. positive sign means flow out from a node."
+        annotations:
+          ea_guid: "EAID_B7B87909_9557_4459_98B0_380ED4A93C30"
+        slot_uri: cim:VsConverter.targetQpcc
+        range: ReactivePower
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      targetUpcc:
+        description: "Voltage target in AC grid, at point of common coupling. The attribute shall be a positive value."
+        annotations:
+          ea_guid: "EAID_90F337A1_08D6_4eed_8416_47EC2B390E2D"
+        slot_uri: cim:VsConverter.targetUpcc
+        range: Voltage
+        minimum_cardinality: 0
+        maximum_cardinality: 1
   WindGeneratingUnit:
-    class_uri: cim:WindGeneratingUnit
+    description: "A wind driven generating unit, connected to the grid by means of a rotating machine.  May be used to represent a single turbine or an aggregation."
+    annotations:
+      ea_guid: "EAID_7B2E09D8_C9AD_4228_B014_0AA2DE3D4BDE"
     is_a: GeneratingUnit
-    description: A wind driven generating unit, connected to the grid by means of
-      a rotating machine.  May be used to represent a single turbine or an aggregation.
-
+    class_uri: cim:WindGeneratingUnit
+    attributes: 
+      value:
+        annotations:
+          ea_guid: "EAID_133597D7_9050_4335_B968_86AF7E16558C"
+        slot_uri: cim:ActivePower.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_8C467CE2_6EA5_4aed_810B_32597261DB61"
+        slot_uri: cim:AngleDegrees.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_08CB4299_C5CB_4f08_810B_C8DD2ADB26DA"
+        slot_uri: cim:AngleRadians.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_FEE24CD4_5876_4e4c_B179_AEAA3E11B738"
+        slot_uri: cim:ApparentPower.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_83BDDC04_3689_432d_BF6E_0712C32CE504"
+        slot_uri: cim:CurrentFlow.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_9E5F92B8_7F02_49bd_BC52_81240FB30E84"
+        slot_uri: cim:PU.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        description: "Normally 0 to 100 on a defined base."
+        annotations:
+          ea_guid: "EAID_3F3F1095_2284_438d_89FF_699BCA187532"
+        slot_uri: cim:PerCent.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_4AEEBF1D_260E_4615_95F2_8219EA8B0AC9"
+        slot_uri: cim:ReactivePower.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_2E378A28_DBB2_43ee_8264_7E45516E19A6"
+        slot_uri: cim:RealEnergy.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_CFCFA1A2_5401_4f99_81B4_5B5441697F60"
+        slot_uri: cim:Resistance.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_C86122FF_94E1_4244_975A_BA865D8135BC"
+        slot_uri: cim:Voltage.value
+        range: float
+        minimum_cardinality: 0
+        maximum_cardinality: 1
 types:
-
   ActivePower:
     uri: xsd:float
     base: float
     description: "Product of RMS value of the voltage and the RMS value of the in-phase component of the current."
     annotations:
+      ea_guid: "EAID_E52EDC2D_8972_42c7_A7EB_D8C017E138A4"
       cim_data_type: true
       uri: cim:ActivePower
-
   AngleDegrees:
     uri: xsd:float
     base: float
     description: "Measurement of angle in degrees."
     annotations:
+      ea_guid: "EAID_A633BDC9_A238_4f69_AF1B_FF8A5C2FFCC8"
       cim_data_type: true
       uri: cim:AngleDegrees
-
   AngleRadians:
     uri: xsd:float
     base: float
     description: "Phase angle in radians."
     annotations:
+      ea_guid: "EAID_E491E83D_03A0_4cad_86D4_30A09EF320F3"
       cim_data_type: true
       uri: cim:AngleRadians
-
   ApparentPower:
     uri: xsd:float
     base: float
     description: "Product of the RMS value of the voltage and the RMS value of the current."
     annotations:
+      ea_guid: "EAID_95576B4A_D9AC_49fc_82ED_CB6DB2CE8584"
       cim_data_type: true
       uri: cim:ApparentPower
-
   CurrentFlow:
     uri: xsd:float
     base: float
     description: "Electrical current with sign convention: positive flow is out of the conducting equipment into the connectivity node. Can be both AC and DC."
     annotations:
+      ea_guid: "EAID_DC3FD69C_E9B2_440d_A113_BE84B71BA691"
       cim_data_type: true
       uri: cim:CurrentFlow
-
   PU:
     uri: xsd:float
     base: float
     description: "Per Unit - a positive or negative value referred to a defined base. Values typically range from -10 to +10."
     annotations:
+      ea_guid: "EAID_B47F1EC8_BE4F_47df_9ACA_3F12A128BF85"
       cim_data_type: true
       uri: cim:PU
-
   PerCent:
     uri: xsd:float
     base: float
     description: "Percentage on a defined base.   For example, specify as 100 to indicate at the defined base."
     annotations:
+      ea_guid: "EAID_8345A4E0_E4BB_45d6_894B_983BB43C4B4F"
       cim_data_type: true
       uri: cim:PerCent
-
   ReactivePower:
     uri: xsd:float
     base: float
     description: "Product of RMS value of the voltage and the RMS value of the quadrature component of the current."
     annotations:
+      ea_guid: "EAID_C15CB4E4_4430_43ea_AF69_BC3250B1F4A3"
       cim_data_type: true
       uri: cim:ReactivePower
-
   RealEnergy:
     uri: xsd:float
     base: float
     description: "Real electrical energy."
     annotations:
+      ea_guid: "EAID_FD0D7251_962F_4c57_ACFB_C1F578AB6361"
       cim_data_type: true
       uri: cim:RealEnergy
-
   Resistance:
     uri: xsd:float
     base: float
     description: "Resistance (real part of impedance)."
     annotations:
+      ea_guid: "EAID_EDB281E6_BBB4_438d_953B_7D746CAF55B5"
       cim_data_type: true
       uri: cim:Resistance
-
   Voltage:
     uri: xsd:float
     base: float
     description: "Electrical voltage, can be both AC and DC."
     annotations:
+      ea_guid: "EAID_233C330A_11B8_4705_879C_5497380F1D82"
       cim_data_type: true
       uri: cim:Voltage
-
 enums:
-  UnitMultiplier:
-    permissible_values:
-      y:
-        meaning: cim:UnitMultiplier.y
-      z:
-        meaning: cim:UnitMultiplier.z
-      a:
-        meaning: cim:UnitMultiplier.a
-      f:
-        meaning: cim:UnitMultiplier.f
-      p:
-        meaning: cim:UnitMultiplier.p
-      n:
-        meaning: cim:UnitMultiplier.n
-      micro:
-        meaning: cim:UnitMultiplier.micro
-      m:
-        meaning: cim:UnitMultiplier.m
-      c:
-        meaning: cim:UnitMultiplier.c
-      d:
-        meaning: cim:UnitMultiplier.d
-      none:
-        meaning: cim:UnitMultiplier.none
-      da:
-        meaning: cim:UnitMultiplier.da
-      h:
-        meaning: cim:UnitMultiplier.h
-      k:
-        meaning: cim:UnitMultiplier.k
-      M:
-        meaning: cim:UnitMultiplier.M
-      G:
-        meaning: cim:UnitMultiplier.G
-      T:
-        meaning: cim:UnitMultiplier.T
-      P:
-        meaning: cim:UnitMultiplier.P
-      E:
-        meaning: cim:UnitMultiplier.E
-      Z:
-        meaning: cim:UnitMultiplier.Z
-      Y:
-        meaning: cim:UnitMultiplier.Y
-    enum_uri: http://iec.ch/TC57/CIM100#UnitMultiplier
-  UnitSymbol:
-    permissible_values:
-      none:
-        meaning: cim:UnitSymbol.none
-      m:
-        meaning: cim:UnitSymbol.m
-      kg:
-        meaning: cim:UnitSymbol.kg
-      s:
-        meaning: cim:UnitSymbol.s
-      A:
-        meaning: cim:UnitSymbol.A
-      K:
-        meaning: cim:UnitSymbol.K
-      mol:
-        meaning: cim:UnitSymbol.mol
-      cd:
-        meaning: cim:UnitSymbol.cd
-      deg:
-        meaning: cim:UnitSymbol.deg
-      rad:
-        meaning: cim:UnitSymbol.rad
-      sr:
-        meaning: cim:UnitSymbol.sr
-      Gy:
-        meaning: cim:UnitSymbol.Gy
-      Bq:
-        meaning: cim:UnitSymbol.Bq
-      degC:
-        meaning: cim:UnitSymbol.degC
-      Sv:
-        meaning: cim:UnitSymbol.Sv
-      F:
-        meaning: cim:UnitSymbol.F
-      C:
-        meaning: cim:UnitSymbol.C
-      S:
-        meaning: cim:UnitSymbol.S
-      H:
-        meaning: cim:UnitSymbol.H
-      V:
-        meaning: cim:UnitSymbol.V
-      ohm:
-        meaning: cim:UnitSymbol.ohm
-      J:
-        meaning: cim:UnitSymbol.J
-      N:
-        meaning: cim:UnitSymbol.N
-      Hz:
-        meaning: cim:UnitSymbol.Hz
-      lx:
-        meaning: cim:UnitSymbol.lx
-      lm:
-        meaning: cim:UnitSymbol.lm
-      Wb:
-        meaning: cim:UnitSymbol.Wb
-      T:
-        meaning: cim:UnitSymbol.T
-      W:
-        meaning: cim:UnitSymbol.W
-      Pa:
-        meaning: cim:UnitSymbol.Pa
-      m2:
-        meaning: cim:UnitSymbol.m2
-      m3:
-        meaning: cim:UnitSymbol.m3
-      mPers:
-        meaning: cim:UnitSymbol.mPers
-      mPers2:
-        meaning: cim:UnitSymbol.mPers2
-      m3Pers:
-        meaning: cim:UnitSymbol.m3Pers
-      mPerm3:
-        meaning: cim:UnitSymbol.mPerm3
-      kgm:
-        meaning: cim:UnitSymbol.kgm
-      kgPerm3:
-        meaning: cim:UnitSymbol.kgPerm3
-      m2Pers:
-        meaning: cim:UnitSymbol.m2Pers
-      WPermK:
-        meaning: cim:UnitSymbol.WPermK
-      JPerK:
-        meaning: cim:UnitSymbol.JPerK
-      ppm:
-        meaning: cim:UnitSymbol.ppm
-      rotPers:
-        meaning: cim:UnitSymbol.rotPers
-      radPers:
-        meaning: cim:UnitSymbol.radPers
-      WPerm2:
-        meaning: cim:UnitSymbol.WPerm2
-      JPerm2:
-        meaning: cim:UnitSymbol.JPerm2
-      SPerm:
-        meaning: cim:UnitSymbol.SPerm
-      KPers:
-        meaning: cim:UnitSymbol.KPers
-      PaPers:
-        meaning: cim:UnitSymbol.PaPers
-      JPerkgK:
-        meaning: cim:UnitSymbol.JPerkgK
-      VA:
-        meaning: cim:UnitSymbol.VA
-      VAr:
-        meaning: cim:UnitSymbol.VAr
-      cosPhi:
-        meaning: cim:UnitSymbol.cosPhi
-      Vs:
-        meaning: cim:UnitSymbol.Vs
-      V2:
-        meaning: cim:UnitSymbol.V2
-      As:
-        meaning: cim:UnitSymbol.As
-      A2:
-        meaning: cim:UnitSymbol.A2
-      A2s:
-        meaning: cim:UnitSymbol.A2s
-      VAh:
-        meaning: cim:UnitSymbol.VAh
-      Wh:
-        meaning: cim:UnitSymbol.Wh
-      VArh:
-        meaning: cim:UnitSymbol.VArh
-      VPerHz:
-        meaning: cim:UnitSymbol.VPerHz
-      HzPers:
-        meaning: cim:UnitSymbol.HzPers
-      character:
-        meaning: cim:UnitSymbol.character
-      charPers:
-        meaning: cim:UnitSymbol.charPers
-      kgm2:
-        meaning: cim:UnitSymbol.kgm2
-      dB:
-        meaning: cim:UnitSymbol.dB
-      WPers:
-        meaning: cim:UnitSymbol.WPers
-      lPers:
-        meaning: cim:UnitSymbol.lPers
-      dBm:
-        meaning: cim:UnitSymbol.dBm
-      h:
-        meaning: cim:UnitSymbol.h
-      min:
-        meaning: cim:UnitSymbol.min
-      Q:
-        meaning: cim:UnitSymbol.Q
-      Qh:
-        meaning: cim:UnitSymbol.Qh
-      ohmm:
-        meaning: cim:UnitSymbol.ohmm
-      APerm:
-        meaning: cim:UnitSymbol.APerm
-      V2h:
-        meaning: cim:UnitSymbol.V2h
-      A2h:
-        meaning: cim:UnitSymbol.A2h
-      Ah:
-        meaning: cim:UnitSymbol.Ah
-      count:
-        meaning: cim:UnitSymbol.count
-      ft3:
-        meaning: cim:UnitSymbol.ft3
-      m3Perh:
-        meaning: cim:UnitSymbol.m3Perh
-      gal:
-        meaning: cim:UnitSymbol.gal
-      Btu:
-        meaning: cim:UnitSymbol.Btu
-      l:
-        meaning: cim:UnitSymbol.l
-      lPerh:
-        meaning: cim:UnitSymbol.lPerh
-      lPerl:
-        meaning: cim:UnitSymbol.lPerl
-      gPerg:
-        meaning: cim:UnitSymbol.gPerg
-      molPerm3:
-        meaning: cim:UnitSymbol.molPerm3
-      molPermol:
-        meaning: cim:UnitSymbol.molPermol
-      molPerkg:
-        meaning: cim:UnitSymbol.molPerkg
-      sPers:
-        meaning: cim:UnitSymbol.sPers
-      HzPerHz:
-        meaning: cim:UnitSymbol.HzPerHz
-      VPerV:
-        meaning: cim:UnitSymbol.VPerV
-      APerA:
-        meaning: cim:UnitSymbol.APerA
-      VPerVA:
-        meaning: cim:UnitSymbol.VPerVA
-      rev:
-        meaning: cim:UnitSymbol.rev
-      kat:
-        meaning: cim:UnitSymbol.kat
-      JPerkg:
-        meaning: cim:UnitSymbol.JPerkg
-      m3Uncompensated:
-        meaning: cim:UnitSymbol.m3Uncompensated
-      m3Compensated:
-        meaning: cim:UnitSymbol.m3Compensated
-      WPerW:
-        meaning: cim:UnitSymbol.WPerW
-      therm:
-        meaning: cim:UnitSymbol.therm
-      onePerm:
-        meaning: cim:UnitSymbol.onePerm
-      m3Perkg:
-        meaning: cim:UnitSymbol.m3Perkg
-      Pas:
-        meaning: cim:UnitSymbol.Pas
-      Nm:
-        meaning: cim:UnitSymbol.Nm
-      NPerm:
-        meaning: cim:UnitSymbol.NPerm
-      radPers2:
-        meaning: cim:UnitSymbol.radPers2
-      JPerm3:
-        meaning: cim:UnitSymbol.JPerm3
-      VPerm:
-        meaning: cim:UnitSymbol.VPerm
-      CPerm3:
-        meaning: cim:UnitSymbol.CPerm3
-      CPerm2:
-        meaning: cim:UnitSymbol.CPerm2
-      FPerm:
-        meaning: cim:UnitSymbol.FPerm
-      HPerm:
-        meaning: cim:UnitSymbol.HPerm
-      JPermol:
-        meaning: cim:UnitSymbol.JPermol
-      JPermolK:
-        meaning: cim:UnitSymbol.JPermolK
-      CPerkg:
-        meaning: cim:UnitSymbol.CPerkg
-      GyPers:
-        meaning: cim:UnitSymbol.GyPers
-      WPersr:
-        meaning: cim:UnitSymbol.WPersr
-      WPerm2sr:
-        meaning: cim:UnitSymbol.WPerm2sr
-      katPerm3:
-        meaning: cim:UnitSymbol.katPerm3
-      d:
-        meaning: cim:UnitSymbol.d
-      anglemin:
-        meaning: cim:UnitSymbol.anglemin
-      anglesec:
-        meaning: cim:UnitSymbol.anglesec
-      ha:
-        meaning: cim:UnitSymbol.ha
-      tonne:
-        meaning: cim:UnitSymbol.tonne
-      bar:
-        meaning: cim:UnitSymbol.bar
-      mmHg:
-        meaning: cim:UnitSymbol.mmHg
-      M:
-        meaning: cim:UnitSymbol.M
-      kn:
-        meaning: cim:UnitSymbol.kn
-      Mx:
-        meaning: cim:UnitSymbol.Mx
-      G:
-        meaning: cim:UnitSymbol.G
-      Oe:
-        meaning: cim:UnitSymbol.Oe
-      Vh:
-        meaning: cim:UnitSymbol.Vh
-      WPerA:
-        meaning: cim:UnitSymbol.WPerA
-      onePerHz:
-        meaning: cim:UnitSymbol.onePerHz
-      VPerVAr:
-        meaning: cim:UnitSymbol.VPerVAr
-      ohmPerm:
-        meaning: cim:UnitSymbol.ohmPerm
-      kgPerJ:
-        meaning: cim:UnitSymbol.kgPerJ
-      JPers:
-        meaning: cim:UnitSymbol.JPers
-    enum_uri: http://iec.ch/TC57/CIM100#UnitSymbol
   AsynchronousMachineKind:
+    description: "Kind of Asynchronous Machine."
+    annotations:
+      ea_guid: "EAID_03C06AF1_0AFA_4b28_8911_9258B630BBA4"
+    enum_uri:  http://iec.ch/TC57/CIM100#AsynchronousMachineKind
     permissible_values:
       generator:
-        meaning: cim:AsynchronousMachineKind.generator
+        meaning:  cim:AsynchronousMachineKind.generator
+        description: "The Asynchronous Machine is a generator."
+        annotations:
+          ea_guid: "EAID_E653D495_7583_4d27_A25F_AADBBA7D9B8D"
       motor:
-        meaning: cim:AsynchronousMachineKind.motor
-    enum_uri: http://iec.ch/TC57/CIM100#AsynchronousMachineKind
+        meaning:  cim:AsynchronousMachineKind.motor
+        description: "The Asynchronous Machine is a motor."
+        annotations:
+          ea_guid: "EAID_E6162696_2DA3_413f_AA16_9713D25F040B"
   BatteryStateKind:
+    description: "The state of the battery unit."
+    annotations:
+      ea_guid: "EAID_A7535AFF_0EA1_4791_B2C9_D5D366BB427A"
+    enum_uri:  http://iec.ch/TC57/CIM100#BatteryStateKind
     permissible_values:
-      discharging:
-        meaning: cim:BatteryStateKind.discharging
-      full:
-        meaning: cim:BatteryStateKind.full
-      waiting:
-        meaning: cim:BatteryStateKind.waiting
       charging:
-        meaning: cim:BatteryStateKind.charging
+        meaning:  cim:BatteryStateKind.charging
+        description: "Stored energy is increasing."
+        annotations:
+          ea_guid: "EAID_19F34FA8_CFB2_4bbc_8B63_905A12841965"
+      discharging:
+        meaning:  cim:BatteryStateKind.discharging
+        description: "Stored energy is decreasing."
+        annotations:
+          ea_guid: "EAID_5CD0E68E_41E4_40c8_85CD_498A0BBA1B48"
       empty:
-        meaning: cim:BatteryStateKind.empty
-    enum_uri: http://iec.ch/TC57/CIM100#BatteryStateKind
+        meaning:  cim:BatteryStateKind.empty
+        description: "Unable to discharge, and not charging."
+        annotations:
+          ea_guid: "EAID_4B8424DA_BED2_454e_BC4A_DAFC677E11B5"
+      full:
+        meaning:  cim:BatteryStateKind.full
+        description: "Unable to charge, and not discharging."
+        annotations:
+          ea_guid: "EAID_9AA779C1_DB12_475b_AB95_2028A9EF2645"
+      waiting:
+        meaning:  cim:BatteryStateKind.waiting
+        description: "Neither charging nor discharging, but able to do so."
+        annotations:
+          ea_guid: "EAID_79E0E262_7061_4525_B997_D9234C824409"
   CsOperatingModeKind:
+    description: "Operating mode for HVDC line operating as Current Source Converter."
+    annotations:
+      ea_guid: "EAID_2B29A5B8_7C9E_458b_A8D7_897FE0BF52C8"
+    enum_uri:  http://iec.ch/TC57/CIM100#CsOperatingModeKind
     permissible_values:
       inverter:
-        meaning: cim:CsOperatingModeKind.inverter
+        meaning:  cim:CsOperatingModeKind.inverter
+        description: "Operating as inverter, which is the power receiving end."
+        annotations:
+          ea_guid: "EAID_4468886F_11CB_49aa_9074_C1F8DF9567DC"
       rectifier:
-        meaning: cim:CsOperatingModeKind.rectifier
-    enum_uri: http://iec.ch/TC57/CIM100#CsOperatingModeKind
+        meaning:  cim:CsOperatingModeKind.rectifier
+        description: "Operating as rectifier, which is the power sending end."
+        annotations:
+          ea_guid: "EAID_E887FDBD_34CA_4523_A6FE_9DFFE716287E"
   CsPpccControlKind:
+    description: "Active power control modes for HVDC line operating as Current Source Converter."
+    annotations:
+      ea_guid: "EAID_C5B4CF4C_2315_467f_9238_26B1ED7BAEBB"
+    enum_uri:  http://iec.ch/TC57/CIM100#CsPpccControlKind
     permissible_values:
       activePower:
-        meaning: cim:CsPpccControlKind.activePower
-      dcVoltage:
-        meaning: cim:CsPpccControlKind.dcVoltage
+        meaning:  cim:CsPpccControlKind.activePower
+        description: "Control is active power control at AC side, at point of common coupling. Target is provided by ACDCConverter.targetPpcc."
+        annotations:
+          ea_guid: "EAID_C8635C3D_D432_4f8f_BF38_470EFEF07A78"
       dcCurrent:
-        meaning: cim:CsPpccControlKind.dcCurrent
-    enum_uri: http://iec.ch/TC57/CIM100#CsPpccControlKind
+        meaning:  cim:CsPpccControlKind.dcCurrent
+        description: "Control is DC current  with target value provided by CsConverter.targetIdc."
+        annotations:
+          ea_guid: "EAID_0EF84B22_6683_4531_9627_F98AF4E25A21"
+      dcVoltage:
+        meaning:  cim:CsPpccControlKind.dcVoltage
+        description: "Control is DC voltage  with target value provided by ACDCConverter.targetUdc."
+        annotations:
+          ea_guid: "EAID_1E4AB43E_B899_4f70_B996_A90291CB1003"
   SynchronousMachineOperatingMode:
+    description: "Synchronous machine operating mode."
+    annotations:
+      ea_guid: "EAID_2A28E29E_8761_4008_AAD2_FDA8D5889F29"
+    enum_uri:  http://iec.ch/TC57/CIM100#SynchronousMachineOperatingMode
     permissible_values:
-      generator:
-        meaning: cim:SynchronousMachineOperatingMode.generator
       condenser:
-        meaning: cim:SynchronousMachineOperatingMode.condenser
+        meaning:  cim:SynchronousMachineOperatingMode.condenser
+        description: "Operating as condenser."
+        annotations:
+          ea_guid: "EAID_4138AC1B_4414_4b66_BFA5_953427ABCA45"
+      generator:
+        meaning:  cim:SynchronousMachineOperatingMode.generator
+        description: "Operating as generator."
+        annotations:
+          ea_guid: "EAID_BC2CBA19_B1E8_498a_A688_965827939158"
       motor:
-        meaning: cim:SynchronousMachineOperatingMode.motor
-    enum_uri: http://iec.ch/TC57/CIM100#SynchronousMachineOperatingMode
+        meaning:  cim:SynchronousMachineOperatingMode.motor
+        description: "Operating as motor."
+        annotations:
+          ea_guid: "EAID_C66DF514_4509_4123_B2FB_C834F58BDAE3"
+  UnitMultiplier:
+    description: "The unit multipliers defined for the CIM.  When applied to unit symbols, the unit symbol is treated as a derived unit. Regardless of the contents of the unit symbol text, the unit symbol shall be treated as if it were a single-character unit symbol. Unit symbols should not contain multipliers, and it should be left to the multiplier to define the multiple for an entire data type.For example, if a unit symbol is m2Pers and the multiplier is k, then the value is k(m**2/s), and the multiplier applies to the entire final value, not to any individual part of the value. This can be conceptualized by substituting a derived unit symbol for the unit type. If one imagines that the symbol Þ represents the derived unit m2Pers, then applying the multiplier k can be conceptualized simply as kÞ.For example, the SI unit for mass is kg and not g.  If the unit symbol is defined as kg, then the multiplier is applied to kg as a whole and does not replace the k in front of the g. In this case, the multiplier of m would be used with the unit symbol of kg to represent one gram.  As a text string, this violates the instructions in IEC 80000-1. However, because the unit symbol in CIM is treated as a derived unit instead of as an SI unit, it makes more sense to conceptualize the kg as if it were replaced by one of the proposed replacements for the SI mass symbol. If one imagines that the kg were replaced by a symbol Þ, then it is easier to conceptualize the multiplier m as creating the proper unit mÞ, and not the forbidden unit mkg."
+    annotations:
+      ea_guid: "EAID_DC62CC93_2E3F_4b9c_9C81_C84C30A6C67D"
+    enum_uri:  http://iec.ch/TC57/CIM100#UnitMultiplier
+    permissible_values:
+      E:
+        meaning:  cim:UnitMultiplier.E
+        description: "Exa 10**18."
+        annotations:
+          ea_guid: "EAID_EADD578E_ADB6_4afc_989D_DCF868A74262"
+      G:
+        meaning:  cim:UnitMultiplier.G
+        description: "Giga 10**9."
+        annotations:
+          ea_guid: "EAID_351B5D79_6203_48e5_9D9E_ECD7FB7CA8A6"
+      M:
+        meaning:  cim:UnitMultiplier.M
+        description: "Mega 10**6."
+        annotations:
+          ea_guid: "EAID_F956FDD6_8C6E_427d_A51A_22A1D75BE1C3"
+      P:
+        meaning:  cim:UnitMultiplier.P
+        description: "Peta 10**15."
+        annotations:
+          ea_guid: "EAID_F9AB8FD6_E2CB_4696_BDCE_16836A065FD4"
+      T:
+        meaning:  cim:UnitMultiplier.T
+        description: "Tera 10**12."
+        annotations:
+          ea_guid: "EAID_F5185FB9_24E6_47c6_BB4D_259FDF678329"
+      Y:
+        meaning:  cim:UnitMultiplier.Y
+        description: "Yotta 10**24."
+        annotations:
+          ea_guid: "EAID_B128FAC5_FF4E_48ae_BE52_0FF516C25214"
+      Z:
+        meaning:  cim:UnitMultiplier.Z
+        description: "Zetta 10**21."
+        annotations:
+          ea_guid: "EAID_FCD1EF70_ACFA_4653_AEC4_086E460EA46C"
+      a:
+        meaning:  cim:UnitMultiplier.a
+        description: "Atto 10**-18."
+        annotations:
+          ea_guid: "EAID_BBFD0505_6323_496c_95F7_818D6498EA5A"
+      c:
+        meaning:  cim:UnitMultiplier.c
+        description: "Centi 10**-2."
+        annotations:
+          ea_guid: "EAID_1219082C_9AED_439c_B862_8CA874195BA0"
+      d:
+        meaning:  cim:UnitMultiplier.d
+        description: "Deci 10**-1."
+        annotations:
+          ea_guid: "EAID_4E630955_DF5D_403d_A377_7ED5FF85978D"
+      da:
+        meaning:  cim:UnitMultiplier.da
+        description: "Deca 10**1."
+        annotations:
+          ea_guid: "EAID_EF522AAA_193D_4781_BDBD_4817C84E8558"
+      f:
+        meaning:  cim:UnitMultiplier.f
+        description: "Femto 10**-15."
+        annotations:
+          ea_guid: "EAID_099282D3_03AC_4193_AB3D_71ABF7D63497"
+      h:
+        meaning:  cim:UnitMultiplier.h
+        description: "Hecto 10**2."
+        annotations:
+          ea_guid: "EAID_A5B3106F_3B4E_4e44_A883_09DAE8804156"
+      k:
+        meaning:  cim:UnitMultiplier.k
+        description: "Kilo 10**3."
+        annotations:
+          ea_guid: "EAID_C868627C_3B72_4bc8_879D_E177E9059A22"
+      m:
+        meaning:  cim:UnitMultiplier.m
+        description: "Milli 10**-3."
+        annotations:
+          ea_guid: "EAID_E7A60C22_3D12_49c5_8F18_870B1A39A1AA"
+      micro:
+        meaning:  cim:UnitMultiplier.micro
+        description: "Micro 10**-6."
+        annotations:
+          ea_guid: "EAID_FF8E9CD6_A459_47ab_A71E_E69857742CE1"
+      n:
+        meaning:  cim:UnitMultiplier.n
+        description: "Nano 10**-9."
+        annotations:
+          ea_guid: "EAID_EA61DA27_05DF_41c7_B459_F1194928062C"
+      none:
+        meaning:  cim:UnitMultiplier.none
+        description: "No multiplier or equivalently multiply by 1."
+        annotations:
+          ea_guid: "EAID_C352D73C_B9DC_4e7d_B1DB_5BE6D4BAE868"
+      p:
+        meaning:  cim:UnitMultiplier.p
+        description: "Pico 10**-12."
+        annotations:
+          ea_guid: "EAID_90F83546_DD55_4cf8_9E01_DD8F69D74A8D"
+      y:
+        meaning:  cim:UnitMultiplier.y
+        description: "Yocto 10**-24."
+        annotations:
+          ea_guid: "EAID_9AC37B70_6AC3_46ed_B408_8C4885FE483B"
+      z:
+        meaning:  cim:UnitMultiplier.z
+        description: "Zepto 10**-21."
+        annotations:
+          ea_guid: "EAID_78644DE9_99FB_4811_B5D9_B23A0DB2728D"
+  UnitSymbol:
+    description: "The derived units defined for usage in the CIM. In some cases, the derived unit is equal to an SI unit. Whenever possible, the standard derived symbol is used instead of the formula for the derived unit. For example, the unit symbol Farad is defined as F instead of CPerV. In cases where a standard symbol does not exist for a derived unit, the formula for the unit is used as the unit symbol. For example, density does not have a standard symbol and so it is represented as kgPerm3. With the exception of the kg, which is an SI unit, the unit symbols do not contain multipliers and therefore represent the base derived unit to which a multiplier can be applied as a whole.Every unit symbol is treated as an unparseable text as if it were a single-letter symbol. The meaning of each unit symbol is defined by the accompanying descriptive text and not by the text contents of the unit symbol.To allow the widest possible range of serializations without requiring special character handling, several substitutions are made which deviate from the format described in IEC 80000-1. The division symbol / is replaced by the letters Per. Exponents are written in plain text after the unit as m3 instead of being formatted as m with a superscript of 3  or introducing a symbol as in m^3. The degree symbol ° is replaced with the letters deg. Any clarification of the meaning for a substitution is included in the description for the unit symbol.Non-SI units are included in list of unit symbols to allow sources of data to be correctly labelled with their non-SI units (for example, a GPS sensor that is reporting numbers that represent feet instead of meters). This allows software to use the unit symbol information correctly convert and scale the raw data of those sources into SI-based units.The integer values are used for harmonization with IEC 61850."
+    annotations:
+      ea_guid: "EAID_80012160_A038_43b5_BA6F_9862E525518C"
+    enum_uri:  http://iec.ch/TC57/CIM100#UnitSymbol
+    permissible_values:
+      A:
+        meaning:  cim:UnitSymbol.A
+        description: "Current in amperes."
+        annotations:
+          ea_guid: "EAID_EA92BC2E_3B95_470e_A50B_8BB500136F86"
+      A2:
+        meaning:  cim:UnitSymbol.A2
+        description: "Amperes squared (A²)."
+        annotations:
+          ea_guid: "EAID_D45ED57B_D0FD_4496_A516_CD82E8DCD2C0"
+      A2h:
+        meaning:  cim:UnitSymbol.A2h
+        description: "Ampere-squared hour, ampere-squared hour."
+        annotations:
+          ea_guid: "EAID_0A2E81E6_2C43_43dd_A6CB_8915611FB6F2"
+      A2s:
+        meaning:  cim:UnitSymbol.A2s
+        description: "Ampere squared time in square amperes (A²s)."
+        annotations:
+          ea_guid: "EAID_856A3A12_D5A5_4d1c_AC5F_2C618DE8BDB7"
+      APerA:
+        meaning:  cim:UnitSymbol.APerA
+        description: "Current, ratio of amperages.   Note: Users may need to supply a prefix such as ‘m’ to show rates such as ‘mA/A’."
+        annotations:
+          ea_guid: "EAID_84D9395E_1931_48aa_974A_43B3C1895E8F"
+      APerm:
+        meaning:  cim:UnitSymbol.APerm
+        description: "A/m, magnetic field strength, amperes per metre."
+        annotations:
+          ea_guid: "EAID_27499686_8D79_40b7_9E0E_44D9212938E7"
+      Ah:
+        meaning:  cim:UnitSymbol.Ah
+        description: "Ampere-hours, ampere-hours."
+        annotations:
+          ea_guid: "EAID_4E2BC900_EA78_4b89_9479_A12680EC133B"
+      As:
+        meaning:  cim:UnitSymbol.As
+        description: "Ampere seconds (A·s)."
+        annotations:
+          ea_guid: "EAID_3FBD0254_1CEA_4fd9_9A11_EA68D8AD96D2"
+      Bq:
+        meaning:  cim:UnitSymbol.Bq
+        description: "Radioactivity in becquerels (1/s)."
+        annotations:
+          ea_guid: "EAID_6A58DADF_F9D2_4be4_BA67_51992495709D"
+      Btu:
+        meaning:  cim:UnitSymbol.Btu
+        description: "Energy, British Thermal Units."
+        annotations:
+          ea_guid: "EAID_2C7C1B15_F2F1_463e_926B_90C565D92696"
+      C:
+        meaning:  cim:UnitSymbol.C
+        description: "Electric charge in coulombs (A·s)."
+        annotations:
+          ea_guid: "EAID_EC257654_B700_4c74_A3E0_FA2B685C13D5"
+      CPerkg:
+        meaning:  cim:UnitSymbol.CPerkg
+        description: "Exposure (x rays), coulombs per kilogram."
+        annotations:
+          ea_guid: "EAID_16EEBE18_1F4A_433c_AEDB_8542AAC26A6A"
+      CPerm2:
+        meaning:  cim:UnitSymbol.CPerm2
+        description: "Surface charge density, coulombs per square metre."
+        annotations:
+          ea_guid: "EAID_78F3FB2B_9D65_4d98_BE54_D640D628ABB5"
+      CPerm3:
+        meaning:  cim:UnitSymbol.CPerm3
+        description: "Electric charge density, coulombs per cubic metre."
+        annotations:
+          ea_guid: "EAID_C372C81F_C15D_42a4_8CD7_42D8F243F69F"
+      F:
+        meaning:  cim:UnitSymbol.F
+        description: "Electric capacitance in farads (C/V)."
+        annotations:
+          ea_guid: "EAID_9D72A1D6_75D9_4e00_B3B4_42D7DD0990FE"
+      FPerm:
+        meaning:  cim:UnitSymbol.FPerm
+        description: "Permittivity, farads per metre."
+        annotations:
+          ea_guid: "EAID_EBCAD9B1_5855_460c_BE72_4577117C7A0B"
+      G:
+        meaning:  cim:UnitSymbol.G
+        description: "Magnetic flux density, gausses (1 G = 10-4 T)."
+        annotations:
+          ea_guid: "EAID_AD411764_B9AE_4720_B402_AE5C70F66A92"
+      Gy:
+        meaning:  cim:UnitSymbol.Gy
+        description: "Absorbed dose in grays (J/kg)."
+        annotations:
+          ea_guid: "EAID_60C8424D_7177_444c_BEF0_8E6AC1D1077B"
+      GyPers:
+        meaning:  cim:UnitSymbol.GyPers
+        description: "Absorbed dose rate, grays per second."
+        annotations:
+          ea_guid: "EAID_6C97FDC2_E63A_40ee_AF9E_361A9E4ADC3D"
+      H:
+        meaning:  cim:UnitSymbol.H
+        description: "Electric inductance in henrys (Wb/A)."
+        annotations:
+          ea_guid: "EAID_AE11FF61_9894_434b_AF7E_E30B3D6A4124"
+      HPerm:
+        meaning:  cim:UnitSymbol.HPerm
+        description: "Permeability, henrys per metre."
+        annotations:
+          ea_guid: "EAID_6CF0793D_A3E0_4f8f_863F_9C1032665065"
+      Hz:
+        meaning:  cim:UnitSymbol.Hz
+        description: "Frequency in hertz (1/s)."
+        annotations:
+          ea_guid: "EAID_8E14F483_DBE2_46c3_9308_1DF800CD2FF2"
+      HzPerHz:
+        meaning:  cim:UnitSymbol.HzPerHz
+        description: "Frequency, rate of frequency change.   Note: Users may need to supply a prefix such as ‘m’ to show rates such as ‘mHz/Hz’."
+        annotations:
+          ea_guid: "EAID_12B11EAF_4BB5_4d5c_A2BB_D78A02327104"
+      HzPers:
+        meaning:  cim:UnitSymbol.HzPers
+        description: "Rate of change of frequency in hertz per second."
+        annotations:
+          ea_guid: "EAID_98C8F3E1_139E_482e_8C78_EF21E8A15A38"
+      J:
+        meaning:  cim:UnitSymbol.J
+        description: "Energy in joules (N·m = C·V = W·s)."
+        annotations:
+          ea_guid: "EAID_97A3FB98_8A5D_4b95_8473_5D3EDE289822"
+      JPerK:
+        meaning:  cim:UnitSymbol.JPerK
+        description: "Heat capacity in joules/kelvin."
+        annotations:
+          ea_guid: "EAID_0A532BE2_CF36_4726_A14D_1EC97FD37B6D"
+      JPerkg:
+        meaning:  cim:UnitSymbol.JPerkg
+        description: "Specific energy, Joules / kg."
+        annotations:
+          ea_guid: "EAID_05214191_21C9_4b98_A8E5_CD63EAD7FB35"
+      JPerkgK:
+        meaning:  cim:UnitSymbol.JPerkgK
+        description: "Specific heat capacity, specific entropy, joules per kilogram Kelvin."
+        annotations:
+          ea_guid: "EAID_5C1D5E18_724F_4348_A871_610428006C41"
+      JPerm2:
+        meaning:  cim:UnitSymbol.JPerm2
+        description: "Insulation energy density, joules per square metre or watt second per square metre."
+        annotations:
+          ea_guid: "EAID_1484901D_B114_4df8_8FBD_892ED2DDC36D"
+      JPerm3:
+        meaning:  cim:UnitSymbol.JPerm3
+        description: "Energy density, joules per cubic metre."
+        annotations:
+          ea_guid: "EAID_643ABAE5_C491_445d_B0DA_FDD3381A7871"
+      JPermol:
+        meaning:  cim:UnitSymbol.JPermol
+        description: "Molar energy, joules per mole."
+        annotations:
+          ea_guid: "EAID_082C9B4F_A2B0_48b3_A976_4551C7B0B9D5"
+      JPermolK:
+        meaning:  cim:UnitSymbol.JPermolK
+        description: "Molar entropy, molar heat capacity, joules per mole kelvin."
+        annotations:
+          ea_guid: "EAID_C86FC880_4592_4126_ACD6_C0CFE6151C19"
+      JPers:
+        meaning:  cim:UnitSymbol.JPers
+        description: "Energy rate in joules per second (J/s)."
+        annotations:
+          ea_guid: "EAID_8D0EFD06_CE71_454a_AF72_A37FF1988C0E"
+      K:
+        meaning:  cim:UnitSymbol.K
+        description: "Temperature in kelvins."
+        annotations:
+          ea_guid: "EAID_1E8C279F_B121_451f_B8D7_7B9F1EF080DF"
+      KPers:
+        meaning:  cim:UnitSymbol.KPers
+        description: "Temperature change rate in kelvins per second."
+        annotations:
+          ea_guid: "EAID_4AA28097_6E2C_4e6f_A7DE_F0813968DFAE"
+      M:
+        meaning:  cim:UnitSymbol.M
+        description: "Length, nautical miles (1 M = 1852 m)."
+        annotations:
+          ea_guid: "EAID_95D59B4E_F7D2_4202_AEE3_BBE1602128E2"
+      Mx:
+        meaning:  cim:UnitSymbol.Mx
+        description: "Magnetic flux, maxwells (1 Mx = 10-8 Wb)."
+        annotations:
+          ea_guid: "EAID_9D86ACE7_4F18_419a_B862_85D2D7165A51"
+      N:
+        meaning:  cim:UnitSymbol.N
+        description: "Force in newtons (kg·m/s²)."
+        annotations:
+          ea_guid: "EAID_68AA121A_1847_446b_A6B2_F7180AC83772"
+      NPerm:
+        meaning:  cim:UnitSymbol.NPerm
+        description: "Surface tension, newton per metre."
+        annotations:
+          ea_guid: "EAID_05284484_23B5_4903_9FD7_2E7CF0E166B5"
+      Nm:
+        meaning:  cim:UnitSymbol.Nm
+        description: "Moment of force, newton metres."
+        annotations:
+          ea_guid: "EAID_62F46160_46EA_47c2_9E8D_DC44F5BCFEA7"
+      Oe:
+        meaning:  cim:UnitSymbol.Oe
+        description: "Magnetic field in oersteds, (1 Oe = (103/4p) A/m)."
+        annotations:
+          ea_guid: "EAID_79B7C736_028D_4eab_9A0D_DEE3E6A963F8"
+      Pa:
+        meaning:  cim:UnitSymbol.Pa
+        description: "Pressure in pascals (N/m²). Note: the absolute or relative measurement of pressure is implied with this entry. See below for more explicit forms."
+        annotations:
+          ea_guid: "EAID_BD782A7D_D539_4f4f_BAAF_44DFDC18CE40"
+      PaPers:
+        meaning:  cim:UnitSymbol.PaPers
+        description: "Pressure change rate in pascals per second."
+        annotations:
+          ea_guid: "EAID_468B93E2_D504_4668_B698_6C438CC555FF"
+      Pas:
+        meaning:  cim:UnitSymbol.Pas
+        description: "Dynamic viscosity, pascal seconds."
+        annotations:
+          ea_guid: "EAID_2B45021A_F7A2_4f33_B105_918CA01B627D"
+      Q:
+        meaning:  cim:UnitSymbol.Q
+        description: "Quantity power, Q."
+        annotations:
+          ea_guid: "EAID_67586835_9551_42fb_ABF8_3F4CFA5032F2"
+      Qh:
+        meaning:  cim:UnitSymbol.Qh
+        description: "Quantity energy, Qh."
+        annotations:
+          ea_guid: "EAID_8908E051_4BDB_42f6_A2FB_126358F6952F"
+      S:
+        meaning:  cim:UnitSymbol.S
+        description: "Conductance in siemens."
+        annotations:
+          ea_guid: "EAID_C593555B_266C_4ac6_8F80_E91F045DFA89"
+      SPerm:
+        meaning:  cim:UnitSymbol.SPerm
+        description: "Conductance per length (F/m)."
+        annotations:
+          ea_guid: "EAID_A1442E6B_3261_4ae2_B466_2788281713C6"
+      Sv:
+        meaning:  cim:UnitSymbol.Sv
+        description: "Dose equivalent in sieverts (J/kg)."
+        annotations:
+          ea_guid: "EAID_C408842C_136F_455f_B998_6A661EEA20AF"
+      T:
+        meaning:  cim:UnitSymbol.T
+        description: "Magnetic flux density in teslas (Wb/m2)."
+        annotations:
+          ea_guid: "EAID_12E9D418_34B0_4978_8012_CEBBB3154B37"
+      V:
+        meaning:  cim:UnitSymbol.V
+        description: "Electric potential in volts (W/A)."
+        annotations:
+          ea_guid: "EAID_0A273035_181C_482c_9526_6673DE4AF59F"
+      V2:
+        meaning:  cim:UnitSymbol.V2
+        description: "Volt squared (W²/A²)."
+        annotations:
+          ea_guid: "EAID_BADD342F_47DF_44a9_A9A2_C2923A48DBAB"
+      V2h:
+        meaning:  cim:UnitSymbol.V2h
+        description: "Volt-squared hour, volt-squared-hours."
+        annotations:
+          ea_guid: "EAID_AC926E85_C4E0_4512_84B1_8DFEC4D0C8E5"
+      VA:
+        meaning:  cim:UnitSymbol.VA
+        description: "Apparent power in volt amperes. See also real power and reactive power."
+        annotations:
+          ea_guid: "EAID_D3EB929D_C57F_40a8_86DC_2F5CAACB6A71"
+      VAh:
+        meaning:  cim:UnitSymbol.VAh
+        description: "Apparent energy in volt ampere hours."
+        annotations:
+          ea_guid: "EAID_B65C6290_E53E_4bee_B674_A2E166EB4D77"
+      VAr:
+        meaning:  cim:UnitSymbol.VAr
+        description: "Reactive power in volt amperes reactive. The “reactive” or “imaginary” component of electrical power (VIsin(phi)). (See also real power and apparent power).Note: Different meter designs use different methods to arrive at their results. Some meters may compute reactive power as an arithmetic value, while others compute the value vectorially. The data consumer should determine the method in use and the suitability of the measurement for the intended purpose."
+        annotations:
+          ea_guid: "EAID_F38DF57D_7E97_4af9_984E_40820470C5EC"
+      VArh:
+        meaning:  cim:UnitSymbol.VArh
+        description: "Reactive energy in volt ampere reactive hours."
+        annotations:
+          ea_guid: "EAID_DD5193A4_8564_4426_8FA1_98F3A50327FA"
+      VPerHz:
+        meaning:  cim:UnitSymbol.VPerHz
+        description: "Magnetic flux in volt per hertz."
+        annotations:
+          ea_guid: "EAID_18DE9C0C_CE23_4b20_8779_CEEB07E6BD9E"
+      VPerV:
+        meaning:  cim:UnitSymbol.VPerV
+        description: "Voltage, ratio of voltages.  Note: Users may need to supply a prefix such as ‘m’ to show rates such as ‘mV/V’."
+        annotations:
+          ea_guid: "EAID_E32A4356_EE83_4a56_A630_882387CC00C8"
+      VPerVA:
+        meaning:  cim:UnitSymbol.VPerVA
+        description: "Power factor, PF, the ratio of the active power to the apparent power.  Note: The sign convention used for power factor will differ between IEC meters and EEI (ANSI) meters. It is assumed that the data consumers understand the type of meter being used and agree on the sign convention in use at any given utility."
+        annotations:
+          ea_guid: "EAID_F5914562_B809_455b_98A8_CECAA59EE125"
+      VPerVAr:
+        meaning:  cim:UnitSymbol.VPerVAr
+        description: "Power factor, PF, the ratio of the active power to the apparent power. Note: The sign convention used for power factor will differ between IEC meters and EEI (ANSI) meters. It is assumed that the data consumers understand the type of meter being used and agree on the sign convention in use at any given utility."
+        annotations:
+          ea_guid: "EAID_F205CACD_712B_46f0_B7D7_170EEF3B59A3"
+      VPerm:
+        meaning:  cim:UnitSymbol.VPerm
+        description: "Electric field strength, volts per metre."
+        annotations:
+          ea_guid: "EAID_72E72CF2_2E55_4c96_B72F_D2D0C602ED65"
+      Vh:
+        meaning:  cim:UnitSymbol.Vh
+        description: "Volt-hour, Volt hours."
+        annotations:
+          ea_guid: "EAID_133A1DDB_6E5C_4edc_8788_0FEADD99F7AF"
+      Vs:
+        meaning:  cim:UnitSymbol.Vs
+        description: "Volt seconds (Ws/A)."
+        annotations:
+          ea_guid: "EAID_4ADBB794_4439_4590_B83E_30CC81BB588F"
+      W:
+        meaning:  cim:UnitSymbol.W
+        description: "Real power in watts (J/s). Electrical power may have real and reactive components. The real portion of electrical power (I&#178;R or VIcos(phi)), is expressed in Watts. See also apparent power and reactive power."
+        annotations:
+          ea_guid: "EAID_41B0F1BC_E69B_4ca1_A565_ECBC27B49095"
+      WPerA:
+        meaning:  cim:UnitSymbol.WPerA
+        description: "Active power per current flow, watts per Ampere."
+        annotations:
+          ea_guid: "EAID_BD554F27_BD42_42e8_A102_327C8B95F611"
+      WPerW:
+        meaning:  cim:UnitSymbol.WPerW
+        description: "Signal Strength, ratio of power.   Note: Users may need to supply a prefix such as ‘m’ to show rates such as ‘mW/W’."
+        annotations:
+          ea_guid: "EAID_07C055AF_FF95_4a33_AFA4_CC2E9E87038C"
+      WPerm2:
+        meaning:  cim:UnitSymbol.WPerm2
+        description: "Heat flux density, irradiance, watts per square metre."
+        annotations:
+          ea_guid: "EAID_74F16DEB_1187_4180_82E7_C9730606F991"
+      WPerm2sr:
+        meaning:  cim:UnitSymbol.WPerm2sr
+        description: "Radiance, watts per square metre steradian."
+        annotations:
+          ea_guid: "EAID_09253D8A_34A7_49be_88AF_87147A5EAB64"
+      WPermK:
+        meaning:  cim:UnitSymbol.WPermK
+        description: "Thermal conductivity in watt/metres kelvin."
+        annotations:
+          ea_guid: "EAID_6A7D3263_4D03_4d39_B90C_38C100BD95FF"
+      WPers:
+        meaning:  cim:UnitSymbol.WPers
+        description: "Ramp rate in watts per second."
+        annotations:
+          ea_guid: "EAID_35FB6E73_2730_4ae7_A67E_58DC67D68D70"
+      WPersr:
+        meaning:  cim:UnitSymbol.WPersr
+        description: "Radiant intensity, watts per steradian."
+        annotations:
+          ea_guid: "EAID_9A57C4F9_ECB2_4273_8741_9A36085DA221"
+      Wb:
+        meaning:  cim:UnitSymbol.Wb
+        description: "Magnetic flux in webers (V·s)."
+        annotations:
+          ea_guid: "EAID_6F7B9EE5_AFA0_4cbc_B2A9_E3942BD3772F"
+      Wh:
+        meaning:  cim:UnitSymbol.Wh
+        description: "Real energy in watt hours."
+        annotations:
+          ea_guid: "EAID_D0065D4C_31BE_42b1_9588_806157D3000D"
+      anglemin:
+        meaning:  cim:UnitSymbol.anglemin
+        description: "Plane angle, minutes."
+        annotations:
+          ea_guid: "EAID_79557E1F_CC74_431a_8A0D_6BD70094B0B2"
+      anglesec:
+        meaning:  cim:UnitSymbol.anglesec
+        description: "Plane angle, seconds."
+        annotations:
+          ea_guid: "EAID_9C734EB4_BFFF_482e_95B2_B7446E3D8FFB"
+      bar:
+        meaning:  cim:UnitSymbol.bar
+        description: "Pressure in bars, (1 bar = 100 kPa)."
+        annotations:
+          ea_guid: "EAID_9516CB35_2CC3_4b7a_8BBA_BB329514810B"
+      cd:
+        meaning:  cim:UnitSymbol.cd
+        description: "Luminous intensity in candelas."
+        annotations:
+          ea_guid: "EAID_E12E81A8_81B6_4286_B477_2A91F984C4FC"
+      charPers:
+        meaning:  cim:UnitSymbol.charPers
+        description: "Data rate (baud) in characters per second."
+        annotations:
+          ea_guid: "EAID_28E0BFBE_2F7A_43d1_BB99_DCCBF7ADC265"
+      character:
+        meaning:  cim:UnitSymbol.character
+        description: "Number of characters."
+        annotations:
+          ea_guid: "EAID_8187AD67_24E6_4cc1_931D_FC0964171586"
+      cosPhi:
+        meaning:  cim:UnitSymbol.cosPhi
+        description: "Power factor, dimensionless.Note 1: This definition of power factor only holds for balanced systems. See the alternative definition under code 153.Note 2 : Beware of differing sign conventions in use between the IEC and EEI. It is assumed that the data consumer understands the type of meter in use and the sign convention in use by the utility."
+        annotations:
+          ea_guid: "EAID_3FF3E24E_53F5_45ae_8408_47C453D360C2"
+      count:
+        meaning:  cim:UnitSymbol.count
+        description: "Amount of substance, Counter value."
+        annotations:
+          ea_guid: "EAID_45989859_38C4_4d11_A5CF_7DD5EFB0E7F7"
+      d:
+        meaning:  cim:UnitSymbol.d
+        description: "Time in days, day = 24 h = 86400 s."
+        annotations:
+          ea_guid: "EAID_5A45829C_D0A2_45cc_A862_689B13D34708"
+      dB:
+        meaning:  cim:UnitSymbol.dB
+        description: "Sound pressure level in decibels. Note:  multiplier “d” is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "EAID_5FEFCFB2_EFE9_4969_8832_5AB856D1D9BC"
+      dBm:
+        meaning:  cim:UnitSymbol.dBm
+        description: "Power level (logarithmic ratio of signal strength , Bel-mW), normalized to 1mW. Note:  multiplier “d” is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "EAID_D3D3EFF1_D398_4bbf_B71E_947636027C51"
+      deg:
+        meaning:  cim:UnitSymbol.deg
+        description: "Plane angle in degrees."
+        annotations:
+          ea_guid: "EAID_4FEE2708_57BD_4ab8_BF2C_504B62A5358F"
+      degC:
+        meaning:  cim:UnitSymbol.degC
+        description: "Relative temperature in degrees Celsius.In the SI unit system the symbol is °C. Electric charge is measured in coulomb that has the unit symbol C. To distinguish degree Celsius from coulomb the symbol used in the UML is degC. The reason for not using °C is that the special character ° is difficult to manage in software."
+        annotations:
+          ea_guid: "EAID_9266DB6A_744E_4939_896F_B84E928D14EE"
+      ft3:
+        meaning:  cim:UnitSymbol.ft3
+        description: "Volume, cubic feet."
+        annotations:
+          ea_guid: "EAID_CF1F601E_EF72_4b25_A464_82800437A9B1"
+      gPerg:
+        meaning:  cim:UnitSymbol.gPerg
+        description: "Concentration, The ratio of the mass of a solute divided by the mass of  the solution. Note: Users may need use a prefix such a ‘µ’ to express a quantity such as ‘µg/g’."
+        annotations:
+          ea_guid: "EAID_E7AD0FC3_F546_4d24_AB93_27B09C22F271"
+      gal:
+        meaning:  cim:UnitSymbol.gal
+        description: "Volume in gallons, US gallon (1 gal = 231 in3 = 128 fl ounce)."
+        annotations:
+          ea_guid: "EAID_A1611ECE_DA95_4e1c_A2AD_AF799F5994BB"
+      h:
+        meaning:  cim:UnitSymbol.h
+        description: "Time in hours, hour = 60 min = 3600 s."
+        annotations:
+          ea_guid: "EAID_38CFF289_C542_4313_987C_62BAAB914148"
+      ha:
+        meaning:  cim:UnitSymbol.ha
+        description: "Area, hectares."
+        annotations:
+          ea_guid: "EAID_A0047B54_799B_4a83_BC4B_B34DE2214F66"
+      kat:
+        meaning:  cim:UnitSymbol.kat
+        description: "Catalytic activity, katal = mol / s."
+        annotations:
+          ea_guid: "EAID_92141CD6_2C4A_4ecb_A300_08FC15945FFF"
+      katPerm3:
+        meaning:  cim:UnitSymbol.katPerm3
+        description: "Catalytic activity concentration, katals per cubic metre."
+        annotations:
+          ea_guid: "EAID_2AA4DD24_932C_4726_9E04_2A190E13D25D"
+      kg:
+        meaning:  cim:UnitSymbol.kg
+        description: "Mass in kilograms.  Note: multiplier “k” is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "EAID_E8CD3F4B_2301_4f19_BBDF_6D20CD945743"
+      kgPerJ:
+        meaning:  cim:UnitSymbol.kgPerJ
+        description: "Weight per energy in kilograms per joule (kg/J). Note: multiplier “k” is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "EAID_9740266F_DE31_4a0a_B60E_5B341A44FDB3"
+      kgPerm3:
+        meaning:  cim:UnitSymbol.kgPerm3
+        description: "Density in kilogram/cubic metres (kg/m³). Note: multiplier “k” is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "EAID_BDA99721_EF6C_465b_A531_083BB5A339E7"
+      kgm:
+        meaning:  cim:UnitSymbol.kgm
+        description: "Moment of mass in kilogram metres (kg·m) (first moment of mass). Note: multiplier “k” is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "EAID_7EF2DD04_E97D_43d0_8EF5_A0C71B65B30F"
+      kgm2:
+        meaning:  cim:UnitSymbol.kgm2
+        description: "Moment of mass in kilogram square metres (kg·m²) (Second moment of mass, commonly called the moment of inertia). Note: multiplier “k” is included in this unit symbol for compatibility with IEC 61850-7-3."
+        annotations:
+          ea_guid: "EAID_D18A5CA3_5F86_4f15_AF52_313ED1C0FCA9"
+      kn:
+        meaning:  cim:UnitSymbol.kn
+        description: "Speed, knots (1 kn = 1852/3600) m/s."
+        annotations:
+          ea_guid: "EAID_76B3AB3B_A772_48a3_87A9_CC2655C20055"
+      l:
+        meaning:  cim:UnitSymbol.l
+        description: "Volume in litres, litre = dm3 = m3/1000."
+        annotations:
+          ea_guid: "EAID_3D491A25_7CCF_4251_9579_D569948EE574"
+      lPerh:
+        meaning:  cim:UnitSymbol.lPerh
+        description: "Volumetric flow rate, litres per hour."
+        annotations:
+          ea_guid: "EAID_2611249E_07C4_481b_96AF_3912056F7A39"
+      lPerl:
+        meaning:  cim:UnitSymbol.lPerl
+        description: "Concentration, The ratio of the volume of a solute divided by the volume of  the solution. Note: Users may need use a prefix such a ‘µ’ to express a quantity such as ‘µL/L’."
+        annotations:
+          ea_guid: "EAID_3C51034A_1DF4_4f24_9021_DEFB86D27C69"
+      lPers:
+        meaning:  cim:UnitSymbol.lPers
+        description: "Volumetric flow rate in litres per second."
+        annotations:
+          ea_guid: "EAID_FEA615F0_27A6_43e5_AB75_C6C2954D09CC"
+      lm:
+        meaning:  cim:UnitSymbol.lm
+        description: "Luminous flux in lumens (cd·sr)."
+        annotations:
+          ea_guid: "EAID_593D68AB_754E_46e4_8BB0_56BE19944355"
+      lx:
+        meaning:  cim:UnitSymbol.lx
+        description: "Illuminance in lux (lm/m²)."
+        annotations:
+          ea_guid: "EAID_234076FB_B88A_4249_9CFF_8F30847685B6"
+      m:
+        meaning:  cim:UnitSymbol.m
+        description: "Length in metres."
+        annotations:
+          ea_guid: "EAID_5D4DDF01_7840_42a2_9106_C5CA5D41D1F2"
+      m2:
+        meaning:  cim:UnitSymbol.m2
+        description: "Area in square metres (m²)."
+        annotations:
+          ea_guid: "EAID_A675331A_7D99_4e64_910D_A537BB8CEAAA"
+      m2Pers:
+        meaning:  cim:UnitSymbol.m2Pers
+        description: "Viscosity in square metres / second (m²/s)."
+        annotations:
+          ea_guid: "EAID_4C077318_15E4_40e9_81AF_94A22098B3AA"
+      m3:
+        meaning:  cim:UnitSymbol.m3
+        description: "Volume in cubic metres (m³)."
+        annotations:
+          ea_guid: "EAID_ACC84E95_39F4_4acf_A99C_F0F50B37A605"
+      m3Compensated:
+        meaning:  cim:UnitSymbol.m3Compensated
+        description: "Volume, cubic metres, with the value compensated for weather effects."
+        annotations:
+          ea_guid: "EAID_232385E4_F5BB_4699_A93F_10C49C822329"
+      m3Perh:
+        meaning:  cim:UnitSymbol.m3Perh
+        description: "Volumetric flow rate, cubic metres per hour."
+        annotations:
+          ea_guid: "EAID_D3CF2309_7272_4d0c_9977_D83D3FDA4054"
+      m3Perkg:
+        meaning:  cim:UnitSymbol.m3Perkg
+        description: "Specific volume, cubic metres per kilogram, v."
+        annotations:
+          ea_guid: "EAID_0E1D3CF6_01AC_4cd4_BBCE_19D25E34BE91"
+      m3Pers:
+        meaning:  cim:UnitSymbol.m3Pers
+        description: "Volumetric flow rate in cubic metres per second (m³/s)."
+        annotations:
+          ea_guid: "EAID_49157E6B_5DF9_4c4a_91DF_A99100A9959A"
+      m3Uncompensated:
+        meaning:  cim:UnitSymbol.m3Uncompensated
+        description: "Volume, cubic metres, with the value uncompensated for weather effects."
+        annotations:
+          ea_guid: "EAID_EAA81876_9511_48ce_9CC1_8E744D558E43"
+      mPerm3:
+        meaning:  cim:UnitSymbol.mPerm3
+        description: "Fuel efficiency in metres per cubic metres (m/m³)."
+        annotations:
+          ea_guid: "EAID_B76349C8_69F4_433e_A6F4_9A709F4BAEE3"
+      mPers:
+        meaning:  cim:UnitSymbol.mPers
+        description: "Velocity in metres per second (m/s)."
+        annotations:
+          ea_guid: "EAID_AA6472CE_DFB5_446a_A9E7_52A5CE50CEF8"
+      mPers2:
+        meaning:  cim:UnitSymbol.mPers2
+        description: "Acceleration in metres per second squared (m/s²)."
+        annotations:
+          ea_guid: "EAID_57C47608_7060_4960_B368_B53B6FDE195C"
+      min:
+        meaning:  cim:UnitSymbol.min
+        description: "Time in minutes, minute  = 60 s."
+        annotations:
+          ea_guid: "EAID_5E4420E6_9C1E_4e9c_ABE3_CDDD28FEF17F"
+      mmHg:
+        meaning:  cim:UnitSymbol.mmHg
+        description: "Pressure, millimetres of mercury (1 mmHg is approximately 133.3 Pa)."
+        annotations:
+          ea_guid: "EAID_A3459B23_0BDB_4e8f_822B_1D0EDD223D18"
+      mol:
+        meaning:  cim:UnitSymbol.mol
+        description: "Amount of substance in moles."
+        annotations:
+          ea_guid: "EAID_AE67CF4C_C8D9_446d_AF20_8BFC19C17C18"
+      molPerkg:
+        meaning:  cim:UnitSymbol.molPerkg
+        description: "Concentration, Molality, the amount of solute in moles and the amount of solvent in kilograms."
+        annotations:
+          ea_guid: "EAID_6D617CFF_CBD4_4c43_B8DF_7356CB496160"
+      molPerm3:
+        meaning:  cim:UnitSymbol.molPerm3
+        description: "Concentration, The amount of substance concentration, (c), the amount of solvent in moles divided by the volume of solution in m³."
+        annotations:
+          ea_guid: "EAID_6E337AE9_1E58_41d7_A865_080C8E7E029B"
+      molPermol:
+        meaning:  cim:UnitSymbol.molPermol
+        description: "Concentration, Molar fraction, the ratio of the molar amount of a solute divided by the molar amount of the solution."
+        annotations:
+          ea_guid: "EAID_9723639D_4BA1_4756_952E_605DBFAF2057"
+      none:
+        meaning:  cim:UnitSymbol.none
+        description: "Dimension less quantity, e.g. count, per unit, etc."
+        annotations:
+          ea_guid: "EAID_F14E9D40_A805_4840_B04C_34CD7BD279CC"
+      ohm:
+        meaning:  cim:UnitSymbol.ohm
+        description: "Electric resistance in ohms (V/A)."
+        annotations:
+          ea_guid: "EAID_1DD847A9_4242_4c5d_98D6_8BF40A3F14C2"
+      ohmPerm:
+        meaning:  cim:UnitSymbol.ohmPerm
+        description: "Electric resistance per length in ohms per metre ((V/A)/m)."
+        annotations:
+          ea_guid: "EAID_2BDD18E5_7E62_4f66_AF25_21B7AB95AA3A"
+      ohmm:
+        meaning:  cim:UnitSymbol.ohmm
+        description: "Resistivity, ohm metres, (rho)."
+        annotations:
+          ea_guid: "EAID_D0950984_9A0E_482a_9DE1_16F420DAE9CC"
+      onePerHz:
+        meaning:  cim:UnitSymbol.onePerHz
+        description: "Reciprocal of frequency (1/Hz)."
+        annotations:
+          ea_guid: "EAID_46A68760_C92B_49b5_9BED_F01BFEDAD997"
+      onePerm:
+        meaning:  cim:UnitSymbol.onePerm
+        description: "Wavenumber, reciprocal metres,  (1/m)."
+        annotations:
+          ea_guid: "EAID_B8367965_284B_4e08_8567_055B00DAEDBA"
+      ppm:
+        meaning:  cim:UnitSymbol.ppm
+        description: "Concentration in parts per million."
+        annotations:
+          ea_guid: "EAID_EAC82D26_6F54_4556_90EE_430E28882551"
+      rad:
+        meaning:  cim:UnitSymbol.rad
+        description: "Plane angle in radians (m/m)."
+        annotations:
+          ea_guid: "EAID_90D4CFED_C041_47b2_9BD3_B4F34BA5FD95"
+      radPers:
+        meaning:  cim:UnitSymbol.radPers
+        description: "Angular velocity in radians per second (rad/s)."
+        annotations:
+          ea_guid: "EAID_D02F038B_E180_44e1_94C9_0EF927B2FF01"
+      radPers2:
+        meaning:  cim:UnitSymbol.radPers2
+        description: "Angular acceleration, radians per second squared."
+        annotations:
+          ea_guid: "EAID_2C2CD44E_2697_496e_8976_75216FBF43F4"
+      rev:
+        meaning:  cim:UnitSymbol.rev
+        description: "Amount of rotation, revolutions."
+        annotations:
+          ea_guid: "EAID_67CE50F0_C29B_444d_AC79_8A344CFCD3D8"
+      rotPers:
+        meaning:  cim:UnitSymbol.rotPers
+        description: "Rotations per second (1/s). See also Hz (1/s)."
+        annotations:
+          ea_guid: "EAID_B1F4EE35_083B_4d1f_A153_F7C65D67770D"
+      s:
+        meaning:  cim:UnitSymbol.s
+        description: "Time in seconds."
+        annotations:
+          ea_guid: "EAID_D53EB49C_18D1_430f_BBB5_C7ED93CCFC2B"
+      sPers:
+        meaning:  cim:UnitSymbol.sPers
+        description: "Time, Ratio of time.  Note: Users may need to supply a prefix such as ‘&#181;’ to show rates such as ‘&#181;s/s’."
+        annotations:
+          ea_guid: "EAID_6536A446_4A67_45c0_A68E_517D8F75A6CF"
+      sr:
+        meaning:  cim:UnitSymbol.sr
+        description: "Solid angle in steradians (m2/m2)."
+        annotations:
+          ea_guid: "EAID_EDB8BF68_BB72_4cac_9576_DCC78C57DBB1"
+      therm:
+        meaning:  cim:UnitSymbol.therm
+        description: "Energy, therms."
+        annotations:
+          ea_guid: "EAID_D9814FF0_29BF_4ccd_8F0F_0203764EDD8E"
+      tonne:
+        meaning:  cim:UnitSymbol.tonne
+        description: "Mass in tons, “tonne” or “metric  ton” (1000 kg = 1 Mg)."
+        annotations:
+          ea_guid: "EAID_13E05807_8D00_40c0_8826_9D508FD4E0DE"
   VsPpccControlKind:
+    description: "Types applicable to the control of real power and/or DC voltage by voltage source converter."
+    annotations:
+      ea_guid: "EAID_AE461FFC_B580_42ce_8520_39C15BCA721F"
+    enum_uri:  http://iec.ch/TC57/CIM100#VsPpccControlKind
     permissible_values:
       pPcc:
-        meaning: cim:VsPpccControlKind.pPcc
-      udc:
-        meaning: cim:VsPpccControlKind.udc
+        meaning:  cim:VsPpccControlKind.pPcc
+        description: "Control is real power at point of common coupling. The target value is provided by ACDCConverter.targetPpcc."
+        annotations:
+          ea_guid: "EAID_1B0F9D15_341D_482a_92CA_2F87FD68CFD2"
       pPccAndUdcDroop:
-        meaning: cim:VsPpccControlKind.pPccAndUdcDroop
-      pPccAndUdcDroopWithCompensation:
-        meaning: cim:VsPpccControlKind.pPccAndUdcDroopWithCompensation
+        meaning:  cim:VsPpccControlKind.pPccAndUdcDroop
+        description: "Control is active power at point of common coupling and local DC voltage, with the droop. Target values are provided by ACDCConverter.targetPpcc, ACDCConverter.targetUdc and VsConverter.droop."
+        annotations:
+          ea_guid: "EAID_1FAEF8C2_B58F_4a82_B07C_AF01ED672BB4"
       pPccAndUdcDroopPilot:
-        meaning: cim:VsPpccControlKind.pPccAndUdcDroopPilot
+        meaning:  cim:VsPpccControlKind.pPccAndUdcDroopPilot
+        description: "Control is active power at point of common coupling and the pilot DC voltage, with the droop. The mode is used for Multi Terminal High Voltage DC (MTDC) systems where multiple HVDC Substations are connected to the HVDC transmission lines. The pilot voltage is then used to coordinate the control the DC voltage across the HVDC substations. Targets are provided by ACDCConverter.targetPpcc, ACDCConverter.targetUdc and  VsConverter.droop."
+        annotations:
+          ea_guid: "EAID_026AFB0C_5BA9_42fd_AC2D_C825D86EFA8E"
+      pPccAndUdcDroopWithCompensation:
+        meaning:  cim:VsPpccControlKind.pPccAndUdcDroopWithCompensation
+        description: "Control is active power at point of common coupling and compensated DC voltage, with the droop. Compensation factor is the resistance, as an approximation of the DC voltage of a common (real or virtual) node in the DC network. Targets are provided by ACDCConverter.targetPpcc, ACDCConverter.targetUdc, VsConverter.droop and VsConverter.droopCompensation."
+        annotations:
+          ea_guid: "EAID_5433041C_16FD_4f7e_BF43_1289EA1FC438"
       phasePcc:
-        meaning: cim:VsPpccControlKind.phasePcc
-    enum_uri: http://iec.ch/TC57/CIM100#VsPpccControlKind
+        meaning:  cim:VsPpccControlKind.phasePcc
+        description: "Control is phase at point of common coupling. Target is provided by VsConverter.targetPhasePcc."
+        annotations:
+          ea_guid: "EAID_EC265815_0658_4950_BF62_F505124EFCFD"
+      udc:
+        meaning:  cim:VsPpccControlKind.udc
+        description: "Control is DC voltage  with target value provided by ACDCConverter.targetUdc."
+        annotations:
+          ea_guid: "EAID_DA24FCF6_C1CE_42c3_8138_A3788B84DA92"
   VsQpccControlKind:
+    description: "Kind of reactive power control at point of common coupling for a voltage source converter."
+    annotations:
+      ea_guid: "EAID_082505D6_AAE1_42a4_9E62_70710BAF79D6"
+    enum_uri:  http://iec.ch/TC57/CIM100#VsQpccControlKind
     permissible_values:
-      reactivePcc:
-        meaning: cim:VsQpccControlKind.reactivePcc
-      voltagePcc:
-        meaning: cim:VsQpccControlKind.voltagePcc
       powerFactorPcc:
-        meaning: cim:VsQpccControlKind.powerFactorPcc
+        meaning:  cim:VsQpccControlKind.powerFactorPcc
+        description: "Control is power factor at point of common coupling. Target is provided by VsConverter.targetPowerFactorPcc."
+        annotations:
+          ea_guid: "EAID_845E8692_0146_4b18_BBD0_8E17B26F5D9C"
       pulseWidthModulation:
-        meaning: cim:VsQpccControlKind.pulseWidthModulation
-    enum_uri: http://iec.ch/TC57/CIM100#VsQpccControlKind
+        meaning:  cim:VsQpccControlKind.pulseWidthModulation
+        description: "No explicit control. Pulse-modulation factor is directly set in magnitude (VsConverter.targetPWMfactor) and phase (VsConverter.targetPhasePcc)."
+        annotations:
+          ea_guid: "EAID_9B3E5597_1865_4cac_9211_2C407D533F36"
+      reactivePcc:
+        meaning:  cim:VsQpccControlKind.reactivePcc
+        description: "Control is reactive power at point of common coupling. Target is provided by VsConverter.targetQpcc."
+        annotations:
+          ea_guid: "EAID_5E2A3C32_97E0_4c8e_AD27_9EA00490046B"
+      voltagePcc:
+        meaning:  cim:VsQpccControlKind.voltagePcc
+        description: "Control is voltage at point of common coupling. Target is provided by VsConverter.targetUpcc."
+        annotations:
+          ea_guid: "EAID_14625573_690D_425b_AA5B_9510C347DDD9"

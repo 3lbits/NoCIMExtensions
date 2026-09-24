@@ -1,199 +1,407 @@
-id: "https://ap-no.cim4.eu/BoundaryModel/1.0"
-name: "Telemark-120 Boundary Model"
-title: "Telemark-120 Boundary Model Vocabulary"
-comments: "This profile represents the boundary model of the power system and their hierarchical relationships."
-#  dcterms:
-#    title: "Telemark-120_BM"
-#    description: "Telemark-120 Boundary Model"
-#    publisher: "ElBits AS"
-#    rights: "© 2026 Copyright"
-#    rightsHolder: "ElBits AS"
-#    license: "CC BY-NC-SA 4.0"
-#    accessRights: "PUBLIC"
-#    isVersionOf: "https://digin.no/baseprofile/DIGIN10-30-HV1-MV1_BM"
-#    spatial: "https://diginenergi.no/DIGIN10/HV1-MV1"
-#  dcat:
-#    keyword: "BM"
+id: http://ucaiug.org/ns/CGMES/EquipmentBoundary-EU/3.0#
+name: EquipmentBoundary
+title: EquipmentBoundary Vocabulary
+annotations:
+  copyright: "Copyright 2026 UCAIug SPDX-License-Identifier: Apache-2.0"
 prefixes:
   rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
   linkml: https://w3id.org/linkml/
-  cim: https://cim.ucaiug.io/ns#
-  this: https://ap-no.cim4.eu/AviationObstacle/1.0#
-  dcterms: http://purl.org/dc/terms/
+  sh: http://www.w3.org/ns/shacl#
+  skos: http://www.w3.org/2004/02/skos/core#
+  dc: http://purl.org/dc/elements/1.1/
+  profcim: http://iec.ch/TC57/ns/CIM/prof-cim#
+  owl: http://www.w3.org/2002/07/owl#
+  cim: http://iec.ch/TC57/CIM100#
+  cims: http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#
+  dct: http://purl.org/dc/terms/
+  this: http://ucaiug.org/ns/CGMES/EquipmentBoundary-EU/3.0#
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
   dcat: http://www.w3.org/ns/dcat#
-  prov: http://www.w3.org/ns/prov#
-  xsd: http://www.w3.org/2001/XMLSchema#
-  eu: https://cim.ucaiug.io/ns/eu#
-  nc-no: http://cim4.eu/ns/nc-no#
-  geo: http://www.opengis.net/ont/geosparql#
-
+  eu: http://iec.ch/TC57/CIM100-European#
 imports:
 - linkml:types
 default_curi_maps:
 - semweb_context
 default_range: string
 default_prefix: this
-
 classes:
-
+  ACDCTerminal:
+    description: "An electrical connection point (AC or DC) to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes."
+    annotations:
+      ea_guid: "EAID_D37077B9_3B0C_4c16_8F5F_9A6F2C83A7F2"
+    is_a: IdentifiedObject
+    abstract: true
+    class_uri: cim:ACDCTerminal
+    attributes: 
+  BaseVoltage:
+    description: "Defines a system base voltage which is referenced."
+    annotations:
+      ea_guid: "EAID_2E70DC9D_AEAE_46cc_B20A_C20A636AE9B0"
+    is_a: IdentifiedObject
+    class_uri: cim:BaseVoltage
+    attributes: 
+      nominalVoltage:
+        description: "The power system resource's base voltage.  Shall be a positive value and not zero."
+        annotations:
+          ea_guid: "EAID_D37DA22A_916B_4a33_88AB_B77C229DB882"
+        slot_uri: cim:BaseVoltage.nominalVoltage
+        range: Voltage
+        minimum_cardinality: 1
+        maximum_cardinality: 1
   Bay:
     description: "A collection of power system resources (within a given substation) including conducting equipment, protection relays, measurements, and telemetry.  A bay typically represents a physical grouping related to modularization of equipment."
+    annotations:
+      ea_guid: "EAID_45910062_D4E8_40ee_99EB_FEC14DD9FAB0"
     is_a: EquipmentContainer
     class_uri: cim:Bay
-    attributes:
+    attributes: 
       VoltageLevel:
         description: "The voltage level containing this bay."
+        annotations:
+          ea_guid: "EAID_5E328091_5BC1_4fa8_9BA3_F087A215492A-B"
         slot_uri: cim:Bay.VoltageLevel
         range: VoltageLevel
-        minimum_cardinality: 0
+        minimum_cardinality: 1
         maximum_cardinality: 1
-
   BoundaryPoint:
-    description: "Represents a boundary point in the power system."
+    description: "Designates a connection point at which one or more model authority sets shall connect to. The location of the connection point as well as other properties are agreed between organisations responsible for the interconnection, hence all attributes of the class represent this agreement.  It is primarily used in a boundary model authority set which can contain one or many BoundaryPoint-s among other Equipment-s and their connections."
+    annotations:
+      ea_guid: "EAID_22106B32_87E4_4296_B0FC_1F9DB3D9D70A"
     is_a: PowerSystemResource
     class_uri: eu:BoundaryPoint
     attributes: 
+      fromEndIsoCode:
+        description: "The ISO code of the region which the From side of the Boundary point belongs to or it is connected to.The ISO code is a two-character country code as defined by ISO 3166 (http://www.iso.org/iso/country_codes). The length of the string is 2 characters maximum."
+        annotations:
+          ea_guid: "EAID_B7DFE484_9B8A_4c77_B2B0_EEF4265F9B11"
+        slot_uri: eu:BoundaryPoint.fromEndIsoCode
+        range: string
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+      fromEndName:
+        description: "A human readable name with length of the string 64 characters maximum. It covers the following two cases:-if the Boundary point is placed on a tie-line, it is the name (IdentifiedObject.name) of the substation at which the From side of the tie-line is connected to.-if the Boundary point is placed in a substation, it is the name (IdentifiedObject.name) of the element (e.g. PowerTransformer, ACLineSegment, Switch, etc.) at which the From side of the Boundary point is connected to."
+        annotations:
+          ea_guid: "EAID_5F2ABC4F_6D2C_49ff_889F_AC18B465D7E4"
+        slot_uri: eu:BoundaryPoint.fromEndName
+        range: string
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+      fromEndNameTso:
+        description: "Identifies the name of the transmission system operator, distribution system operator or other entity at which the From side of the interconnection is connected to. The length of the string is 64 characters maximum."
+        annotations:
+          ea_guid: "EAID_E5DFE017_D1EE_42aa_8725_49B48644C516"
+        slot_uri: eu:BoundaryPoint.fromEndNameTso
+        range: string
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       isDirectCurrent:
-        description: "Indicates whether the terminal is direct current."
+        description: "If true, this boundary point is a point of common coupling (PCC) of a direct current (DC) interconnection, otherwise the interconnection is AC (default)."
+        annotations:
+          ea_guid: "EAID_B2A04A08_0DA8_4b71_94B1_B9106005E85C"
         slot_uri: eu:BoundaryPoint.isDirectCurrent
         range: boolean
         minimum_cardinality: 0
         maximum_cardinality: 1
-      fromEndIsoCode:
-        description: "ISO code representing the starting point of the boundary."
-        slot_uri: eu:BoundaryPoint.fromEndIsoCode
-        range: string
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-      fromEndName:
-        description: "Name representing the starting point of the boundary."
-        slot_uri: eu:BoundaryPoint.fromEndName
-        range: string
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-      fromEndNameTso:
-        description: "Name of the Transmission System Operator (TSO) at the starting point of the boundary."
-        slot_uri: eu:BoundaryPoint.fromEndNameTso
-        range: string
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-      toEndIsoCode:
-        description: "ISO code representing the ending point of the boundary."
-        slot_uri: eu:BoundaryPoint.toEndIsoCode
-        range: string
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-      toEndName:
-        description: "Name representing the ending point of the boundary."
-        slot_uri: eu:BoundaryPoint.toEndName
-        range: string
-        minimum_cardinality: 0
-        maximum_cardinality: 1
-      toEndNameTso:
-        description: "Name of the Transmission System Operator (TSO) at the ending point of the boundary."
-        slot_uri: eu:BoundaryPoint.toEndNameTso
-        range: string
-        minimum_cardinality: 0
-        maximum_cardinality: 1
       isExcludedFromAreaInterchange:
-        description: "Indicates whether the boundary point is excluded from area interchange calculations."
+        description: "If true, this boundary point is on the interconnection that is excluded from control area interchange calculation and consequently has no related tie flows. Otherwise, the interconnection is included in control area interchange and a TieFlow is required at all sides of the boundary point (default)."
+        annotations:
+          ea_guid: "EAID_72BE2719_DA75_412c_8ECF_752D5A3E83FA"
         slot_uri: eu:BoundaryPoint.isExcludedFromAreaInterchange
         range: boolean
         minimum_cardinality: 0
         maximum_cardinality: 1
+      toEndIsoCode:
+        description: "The ISO code of the region which the To side of the Boundary point belongs to or is connected to.The ISO code is a two-character country code as defined by ISO 3166 (http://www.iso.org/iso/country_codes). The length of the string is 2 characters maximum."
+        annotations:
+          ea_guid: "EAID_F16EEBFD_4F96_4303_9C89_5FE3CE0FE0C0"
+        slot_uri: eu:BoundaryPoint.toEndIsoCode
+        range: string
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+      toEndName:
+        description: "A human readable name with length of the string 64 characters maximum. It covers the following two cases:-if the Boundary point is placed on a tie-line, it is the name (IdentifiedObject.name) of the substation at which the To side of the tie-line is connected to.-if the Boundary point is placed in a substation, it is the name (IdentifiedObject.name) of the element (e.g. PowerTransformer, ACLineSegment, Switch, etc.) at which the To side of the Boundary point is connected to."
+        annotations:
+          ea_guid: "EAID_7BE8125A_5A51_4c99_B7E7_2443BA3A987F"
+        slot_uri: eu:BoundaryPoint.toEndName
+        range: string
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+      toEndNameTso:
+        description: "Identifies the name of the transmission system operator, distribution system operator or other entity at which the To side of the interconnection is connected to. The length of the string is 64 characters maximum."
+        annotations:
+          ea_guid: "EAID_7281E249_6563_449d_AA46_A73DAE9C74E1"
+        slot_uri: eu:BoundaryPoint.toEndNameTso
+        range: string
+        minimum_cardinality: 1
+        maximum_cardinality: 1
       ConnectivityNode:
-        description: "Represents the connectivity node associated with the boundary point."
+        description: "The connectivity node that is designated as a boundary point."
+        annotations:
+          ea_guid: "EAID_E6A839F4_AB99_4bd7_A40B_BC2C396EFBF7-A"
         slot_uri: eu:BoundaryPoint.ConnectivityNode
         range: ConnectivityNode
-        minimum_cardinality: 0
+        minimum_cardinality: 1
         maximum_cardinality: 1
-
+  ConductingEquipment:
+    description: "The parts of the AC power system that are designed to carry current or that are conductively connected through terminals."
+    annotations:
+      ea_guid: "EAID_7C5F19FB_5253_430c_8E53_BDCF7EBCE4C1"
+    is_a: Equipment
+    abstract: true
+    class_uri: cim:ConductingEquipment
+    attributes: 
   ConnectivityNode:
     description: "Connectivity nodes are points where terminals of AC conducting equipment are connected together with zero impedance."
-    comments: "- By convention, ConnectivityNodes may only be placed within VoltageLevels or Lines."
+    annotations:
+      ea_guid: "EAID_8BCACC36_B2DD_4c2a_A2AE_CFDF43731FC2"
     is_a: IdentifiedObject
     class_uri: cim:ConnectivityNode
     attributes: 
       ConnectivityNodeContainer:
         description: "Container of this connectivity node."
+        annotations:
+          ea_guid: "EAID_08EEABA6_269C_44a7_8F82_7BBEFE71ADD6-A"
         slot_uri: cim:ConnectivityNode.ConnectivityNodeContainer
         range: ConnectivityNodeContainer
-        minimum_cardinality: 0
+        minimum_cardinality: 1
         maximum_cardinality: 1
-
   ConnectivityNodeContainer:
     description: "A base class for all objects that may contain connectivity nodes or topological nodes."
+    annotations:
+      ea_guid: "EAID_B985C03E_46A3_4aec_B5B6_FDD983EBE621"
     is_a: PowerSystemResource
     abstract: true
     class_uri: cim:ConnectivityNodeContainer
-    attributes:
-
+    attributes: 
+  Connector:
+    description: "A conductor, or group of conductors, with negligible impedance, that serve to connect other conducting equipment within a single substation and are modelled with a single logical terminal."
+    annotations:
+      ea_guid: "EAID_E33769DD_F111_4793_AF11_B4AFE5FDE50F"
+    is_a: ConductingEquipment
+    abstract: true
+    class_uri: cim:Connector
+    attributes: 
+  EnergySchedulingType:
+    description: "Used to define the type of generation for scheduling purposes."
+    annotations:
+      ea_guid: "EAID_8FD4114B_3942_4e7c_8E33_9600BA19CF38"
+    is_a: IdentifiedObject
+    class_uri: cim:EnergySchedulingType
+    attributes: 
+  Equipment:
+    description: "The parts of a power system that are physical devices, electronic or mechanical."
+    annotations:
+      ea_guid: "EAID_F8DD8DAC_3545_4660_9CA5_794881CC6591"
+    is_a: PowerSystemResource
+    abstract: true
+    class_uri: cim:Equipment
+    attributes: 
+      EquipmentContainer:
+        description: "Container of this equipment."
+        annotations:
+          ea_guid: "EAID_68BA73EF_8533_48ba_964A_DE0F722292D2-B"
+        slot_uri: cim:Equipment.EquipmentContainer
+        range: EquipmentContainer
+        minimum_cardinality: 0
+        maximum_cardinality: 1
   EquipmentContainer:
     description: "A modelling construct to provide a root class for containing equipment."
+    annotations:
+      ea_guid: "EAID_F465B7B4_B488_46c5_8D05_8036F09A03A0"
     is_a: ConnectivityNodeContainer
     abstract: true
     class_uri: cim:EquipmentContainer
-    attributes:
-
+    attributes: 
+  GeographicalRegion:
+    description: "A geographical region of a power system network model."
+    annotations:
+      ea_guid: "EAID_F935232D_65FF_4720_BAFB_50639B7CA0AB"
+    is_a: IdentifiedObject
+    class_uri: cim:GeographicalRegion
+    attributes: 
   IdentifiedObject:
     description: "This is a root class to provide common identification for all classes needing identification and naming attributes."
-    comments: "The attribute IdentifiedObject.mRID is exchanged as rdf:ID."
+    annotations:
+      ea_guid: "EAID_055C5806_E9D8_4a7a_9307_DAF7C31763C7"
     abstract: true
     class_uri: cim:IdentifiedObject
     attributes: 
       mRID:
         description: "Master resource identifier issued by a model authority. The mRID is unique within an exchange context. Global uniqueness is easily achieved by using a UUID, as specified in RFC 4122, for the mRID. The use of UUID is strongly recommended.For CIMXML data files in RDF syntax conforming to IEC 61970-552, the mRID is mapped to rdf:ID or rdf:about attributes that identify CIM object elements."
+        annotations:
+          ea_guid: "EAID_C775F80A_A23D_4f38_AB9D_49D1FA882337"
         slot_uri: cim:IdentifiedObject.mRID
+        range: string
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+      description:
+        description: "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."
+        annotations:
+          ea_guid: "EAID_13104BE9_CB1E_4dde_9A52_D7EE95DF7B65"
+        slot_uri: cim:IdentifiedObject.description
         range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
-        # identifier: True # Can not use. Will fail with LinkML
-      description:
-        description: "The description is a free human readable text describing or naming the object. It may be non unique and may not correlate to a naming hierarchy."
-        slot_uri: cim:IdentifiedObject.description
+      energyIdentCodeEic:
+        description: "The attribute is used for an exchange of the EIC code (Energy identification Code). The length of the string is 16 characters as defined by the EIC code. For details on EIC scheme please refer to ENTSO-E web site."
+        annotations:
+          ea_guid: "EAID_1D8E1417_DB69_48e1_894E_45D2FCA2C06F"
+        slot_uri: eu:IdentifiedObject.energyIdentCodeEic
         range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
       name:
         description: "The name is any free human readable and possibly non unique text naming the object."
+        annotations:
+          ea_guid: "EAID_870F033B_EDA6_4a32_A5AD_47DCBBFE2997"
         slot_uri: cim:IdentifiedObject.name
+        range: string
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+      shortName:
+        description: "The attribute is used for an exchange of a human readable short name with length of the string 12 characters maximum."
+        annotations:
+          ea_guid: "EAID_2ADE284C_35EB_4009_AA99_98FCD8A47CD5"
+        slot_uri: eu:IdentifiedObject.shortName
         range: string
         minimum_cardinality: 0
         maximum_cardinality: 1
-
-  PowerSystemResource:
-    description: "A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated."
-    is_a: IdentifiedObject
-    abstract: true
-    class_uri: cim:PowerSystemResource
-    attributes:
-
-  Substation:
-    description: "A collection of equipment for purposes other than generation or utilization, through which electric energy in bulk is passed for the purposes of switching or modifying its characteristics."
+  Junction:
+    description: "A point where one or more conducting equipments are connected with zero resistance."
+    annotations:
+      ea_guid: "EAID_BE90EE60_8212_44ec_9F4D_775719E80216"
+    is_a: Connector
+    class_uri: cim:Junction
+    attributes: 
+  Line:
+    description: "Contains equipment beyond a substation belonging to a power transmission line."
+    annotations:
+      ea_guid: "EAID_43D9D2B8_DA1E_45c4_B99D_EC28FCAB742B"
     is_a: EquipmentContainer
-    class_uri: cim:Substation
-    attributes:
+    class_uri: cim:Line
+    attributes: 
       Region:
-        description: "The SubGeographicalRegion containing the substation."
-        slot_uri: cim:Substation.Region
+        description: "The sub-geographical region of the line."
+        annotations:
+          ea_guid: "EAID_BAB73169_D3BE_43c3_A58B_F1B87EAA1239-B"
+        slot_uri: cim:Line.Region
         range: SubGeographicalRegion
         minimum_cardinality: 0
         maximum_cardinality: 1
-
+  PowerSystemResource:
+    description: "A power system resource (PSR) can be an item of equipment such as a switch, an equipment container containing many individual items of equipment such as a substation, or an organisational entity such as sub-control area. Power system resources can have measurements associated."
+    annotations:
+      ea_guid: "EAID_0340C084_3759_40cc_AAF2_386101DE842F"
+    is_a: IdentifiedObject
+    abstract: true
+    class_uri: cim:PowerSystemResource
+    attributes: 
+  SubGeographicalRegion:
+    description: "A subset of a geographical region of a power system network model."
+    annotations:
+      ea_guid: "EAID_D3CE44CA_5AED_484b_92A3_89F156425204"
+    is_a: IdentifiedObject
+    class_uri: cim:SubGeographicalRegion
+    attributes: 
+      Region:
+        description: "The geographical region which this sub-geographical region is within."
+        annotations:
+          ea_guid: "EAID_023E20DF_DF02_4ffb_A047_E5BBDB18AB59-B"
+        slot_uri: cim:SubGeographicalRegion.Region
+        range: GeographicalRegion
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+  Substation:
+    description: "A collection of equipment for purposes other than generation or utilization, through which electric energy in bulk is passed for the purposes of switching or modifying its characteristics."
+    annotations:
+      ea_guid: "EAID_D8A14AC5_D17B_4d42_8F12_1B674E5D12D7"
+    is_a: EquipmentContainer
+    class_uri: cim:Substation
+    attributes: 
+      Region:
+        description: "The SubGeographicalRegion containing the substation."
+        annotations:
+          ea_guid: "EAID_66E7D72B_2889_483c_80A2_2E51B283F2B1-B"
+        slot_uri: cim:Substation.Region
+        range: SubGeographicalRegion
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+  Terminal:
+    description: "An AC electrical connection point to a piece of conducting equipment. Terminals are connected at physical connection points called connectivity nodes."
+    annotations:
+      ea_guid: "EAID_1A0F8321_5E77_4d68_BE29_B36FA31549DC"
+    is_a: ACDCTerminal
+    class_uri: cim:Terminal
+    attributes: 
+      ConductingEquipment:
+        description: "The conducting equipment of the terminal.  Conducting equipment have  terminals that may be connected to other conducting equipment terminals via connectivity nodes or topological nodes."
+        annotations:
+          ea_guid: "EAID_5FEF5186_7804_4dad_8E18_8C5DB7FCE6B2-A"
+        slot_uri: cim:Terminal.ConductingEquipment
+        range: ConductingEquipment
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+      ConnectivityNode:
+        description: "The connectivity node to which this terminal connects with zero impedance."
+        annotations:
+          ea_guid: "EAID_C7E01609_F4E6_4a6e_8ACF_BDD413E62DE3-A"
+        slot_uri: cim:Terminal.ConnectivityNode
+        range: ConnectivityNode
+        minimum_cardinality: 0
+        maximum_cardinality: 1
   VoltageLevel:
     description: "A collection of equipment at one common system voltage forming a switchgear. The equipment typically consists of breakers, busbars, instrumentation, control, regulation and protection devices as well as assemblies of all these."
+    annotations:
+      ea_guid: "EAID_B147BAEA_7339_406b_A8C3_47F85EA0E82A"
     is_a: EquipmentContainer
     class_uri: cim:VoltageLevel
-    attributes:
+    attributes: 
+      highVoltageLimit:
+        description: "The bus bar's high voltage limit.The limit applies to all equipment and nodes contained in a given VoltageLevel. It is not required that it is exchanged in pair with lowVoltageLimit. It is preferable to use operational VoltageLimit, which prevails, if present."
+        annotations:
+          ea_guid: "EAID_D1BAD493_B22A_497f_B6A6_CDFDF46EA012"
+        slot_uri: cim:VoltageLevel.highVoltageLimit
+        range: Voltage
+        minimum_cardinality: 0
+        maximum_cardinality: 1
+      lowVoltageLimit:
+        description: "The bus bar's low voltage limit.The limit applies to all equipment and nodes contained in a given VoltageLevel. It is not required that it is exchanged in pair with highVoltageLimit. It is preferable to use operational VoltageLimit, which prevails, if present."
+        annotations:
+          ea_guid: "EAID_EB17FEAC_CDBA_4bbd_B45E_86D3EA333C08"
+        slot_uri: cim:VoltageLevel.lowVoltageLimit
+        range: Voltage
+        minimum_cardinality: 0
+        maximum_cardinality: 1
       BaseVoltage:
-        description: "Base voltage of this conducting equipment.  Use only when there is no voltage level container used and only one base voltage applies.  For example, not used for transformers."
+        description: "The base voltage used for all equipment within the voltage level."
+        annotations:
+          ea_guid: "EAID_F610FDC8_D98D_4367_99A9_E9CA1C8A8CC5-A"
         slot_uri: cim:VoltageLevel.BaseVoltage
         range: BaseVoltage
-        minimum_cardinality: 0
+        minimum_cardinality: 1
         maximum_cardinality: 1
       Substation:
         description: "The substation of the voltage level."
+        annotations:
+          ea_guid: "EAID_0E9E9E28_C575_47c5_BF01_7F4EB8B36D16-B"
         slot_uri: cim:VoltageLevel.Substation
         range: Substation
+        minimum_cardinality: 1
+        maximum_cardinality: 1
+      value:
+        annotations:
+          ea_guid: "EAID_C86122FF_94E1_4244_975A_BA865D8135BC"
+        slot_uri: cim:Voltage.value
+        range: float
         minimum_cardinality: 0
         maximum_cardinality: 1
+types:
+  Voltage:
+    uri: xsd:float
+    base: float
+    description: "Electrical voltage, can be both AC and DC."
+    annotations:
+      ea_guid: "EAID_233C330A_11B8_4705_879C_5497380F1D82"
+      cim_data_type: true
+      uri: cim:Voltage
+enums:
