@@ -8,7 +8,6 @@ The CGMES (Common Grid Model Exchange Standard) LinkML schemas are sourced from 
 
 - [CoreEquipment](CoreEquipment/index.md)
 - [DiagramLayout](DiagramLayout/index.md)
-- [Dynamics](Dynamics/index.md)
 - [EquipmentBoundary](EquipmentBoundary/index.md)
 - [GeographicalLocation](GeographicalLocation/index.md)
 - [Operation](Operation/index.md)
