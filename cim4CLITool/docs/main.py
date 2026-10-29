@@ -7,6 +7,19 @@ from cim4CLITool.docs.mermaid_renderer import prepare_mermaid_file, render_all_s
 def relativeMarkdownPath(targetPath, sourcePath):
     return os.path.relpath(targetPath, os.path.dirname(sourcePath)).replace(os.sep, '/')
 
+def getAttributeMultiplicity(attribute):
+    minimum = attribute.get("minimum_cardinality", 1 if attribute.get("required", False) else 0)
+    maximum = attribute.get("maximum_cardinality", "*" if attribute.get("multivalued", False) else 1)
+    return minimum, maximum
+
+def getMermaidMultiplicity(attribute):
+    minimum, maximum = getAttributeMultiplicity(attribute)
+    if minimum == 1 and maximum == 1:
+        return "1"
+    if minimum == 0 and maximum == "*":
+        return "*"
+    return f"{minimum}..{maximum}"
+
 class mkdocs:
 
     def mkdocs_profile_index():
@@ -641,6 +654,7 @@ class CreateMermaid():
                     continue
 
                 _range = classes[_class]["attributes"][attribute]["range"]
+                multiplicity = getMermaidMultiplicity(classes[_class]["attributes"][attribute])
 
                 if _range in classes:
                     mermaidStyleClassToRange = CreateMermaid().mermaidStyles(_range, "relationship")
@@ -649,7 +663,7 @@ class CreateMermaid():
                     # relationshipURI = globalYamlDict['classes'][_class]['attributes'][attribute]["slot_uri"]
                     # nonPrefixRelationShipURI = relationshipURI.split(":")[1] if ":" in relationshipURI else relationshipURI
 
-                    relationshipString += f"""        {_class} --> {_range} : {_class}.{attribute}
+                    relationshipString += f"""        {_class} --> "{multiplicity}" {_range} : {_class}.{attribute}
 
         {_range}
             click {_range} href "{globalLookUpDataDict[_range]["absoluteUrlPath"]}"
@@ -663,7 +677,7 @@ class CreateMermaid():
                     # print(_class, _range)
                     globalErrorSet.add(f"WARNING: {_range} is referred to, but not defined in the schema. Please verify its inclusion or correct the reference.")
 
-                    relationshipString += f"""        {_class} --> {_range} : {_class}.{attribute}
+                    relationshipString += f"""        {_class} --> "{multiplicity}" {_range} : {_class}.{attribute}
 
         {_range} : Not defined in profile
 
@@ -683,11 +697,12 @@ class CreateMermaid():
                     continue
 
                 _range = classes[_class]["attributes"][attribute]["range"]
+                multiplicity = getMermaidMultiplicity(classes[_class]["attributes"][attribute])
 
                 if _range in inheritanceList:
                     mermaidStyleRangeToClass = CreateMermaid().mermaidStyles(_class, "relationship")
                     relationshipString += f"""
-        {_class} --> {_range} : {_class}.{attribute}
+        {_class} --> "{multiplicity}" {_range} : {_class}.{attribute}
 
         {_class}
             click {_class} href "{globalLookUpDataDict[_class]["absoluteUrlPath"]}"
@@ -907,14 +922,11 @@ class CreateMarkdownFile():
                     nonPrefix = slot_uri.split(":")[1] if slot_uri != 'No URI available' else 'No URI available'
                     url = ClassData().getURL(prefix)
                     _URI = f'[{slot_uri}]({url}{nonPrefix})' if slot_uri != 'No URI available' else 'No URI available'
-                    required = attr.get("required", False)
-                    multivalued = attr.get("multivalued", False)
                     has_explicit = "minimum_cardinality" in attr or "maximum_cardinality" in attr
                     has_derived = "required" in attr or "multivalued" in attr
                     if has_explicit and has_derived:
                         print(f"\033[93mWARNING: '{attribute}' in '{key}' has both explicit cardinality and required/multivalued — explicit values take precedence\033[0m")
-                    minimum_cardinality = attr.get("minimum_cardinality", 1 if required else 0)
-                    maximum_cardinality = attr.get("maximum_cardinality", "*" if multivalued else 1)
+                    minimum_cardinality, maximum_cardinality = getAttributeMultiplicity(attr)
 
                     rangeList = []
 
@@ -941,13 +953,12 @@ class CreateMarkdownFile():
 
                     _range = ' or '.join(rangeList)
 
-                    cardinality = f'{minimum_cardinality}..{maximum_cardinality}'
-                    cardinality_and_range = f'''{cardinality} {_range}'''
+                    multiplicity = f'{minimum_cardinality}..{maximum_cardinality}'
                     description = CreateMarkdownFile().formatMarkdownTableCell(
                         attr.get("description", 'No description available')
                     )
                     inheritance = key if key != globalClass else 'direct'
-                    tableAttribiuteString += f'| {name} | {_URI} | {cardinality_and_range} | {inheritance} | {description} |\n'
+                    tableAttribiuteString += f'| {name} | {_URI} | {multiplicity} | {_range} | {inheritance} | {description} |\n'
 
         return tableAttribiuteString
 
@@ -1174,8 +1185,8 @@ class CreateMarkdownFile():
             file.write(f'{classDataDict["inheritanceString"]}\n')
             file.write(f'## Attributes\n')
             file.write(f'<div class="attribute-table" markdown>\n\n')
-            file.write(f'| Name | URI | Cardinality and Range | Inheritance | Description |\n')
-            file.write(f'| ---  | --- | --- | --- | --- |\n')
+            file.write(f'| Name | URI | Multiplicity | Range | Inheritance | Description |\n')
+            file.write(f'| ---  | --- | --- | --- | --- | --- |\n')
             file.write(f'{classDataDict["tableString"]}\n</div>\n')
             file.write(f'{classDataDict["formatExamplesString"]}\n') if classDataDict.get("formatExamplesString") else None
             file.write(f'## Schema Source\n')
@@ -1247,4 +1258,3 @@ class CreateMdController():
 if __name__ == "__main__":
     schemaName = "telemark-120_boundary_model"
     CreateMdController().main(schemaName, 'elbits')
-
