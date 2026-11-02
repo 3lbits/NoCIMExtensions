@@ -105,6 +105,17 @@ Regenerate all configured profiles with:
 bash generate_all_profiles.sh
 ```
 
+#### Build Site Artifact for Deployment
+
+After documentation changes are merged to `main`, build an artifact for deployment:
+
+1. In GitHub, open **Actions** and select **Build static site artifact**.
+2. Select **Run workflow** and choose the `main` branch.
+3. After the run succeeds, download the `cim4no-static-site-<run-number>-<commit-sha>` artifact from the workflow run. Artifacts are retained for 90 days.
+4. In the `cim4no` repository, manually run its deployment workflow using this artifact.
+
+The build workflow generates all profile documentation, builds the MkDocs site, and uploads the `site/` output. It does not deploy the site or commit generated files to this repository.
+
 #### SVG Diagram Pre-rendering
 
 By default, class diagrams are embedded as Mermaid code blocks and rendered client-side in the browser. With the `--svg` flag, diagrams are pre-rendered to SVG files at build time. This eliminates the flash of raw Mermaid code on page load and improves performance.
