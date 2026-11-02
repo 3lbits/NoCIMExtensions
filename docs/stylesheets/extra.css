@@ -33,8 +33,8 @@
   min-width: 64rem;
 }
 
-.attribute-table th:nth-child(5),
-.attribute-table td:nth-child(5) {
+.attribute-table th:nth-child(6),
+.attribute-table td:nth-child(6) {
   min-width: 24rem;
 }
 
