@@ -1,0 +1,60 @@
+name: Build static site artifact
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # pin@v7.0.1
+        with:
+          persist-credentials: false
+
+      - name: Require main branch
+        run: |
+          if [ "$GITHUB_REF" != "refs/heads/main" ]; then
+            echo "::error::Run this workflow from the main branch."
+            exit 1
+          fi
+
+      - name: Set up Python
+        uses: actions/setup-python@6d4fd22b20465ccc0f7354476588e8df7c9ca0e0 # pin@v7.1.0
+        with:
+          python-version: "3.12"
+
+      - name: Set up Node.js
+        uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # pin@v7.1.0
+        with:
+          node-version: "22"
+
+      - name: Install Python dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -e .
+
+      - name: Install Node.js dependencies
+        run: npm install --no-package-lock --no-audit --no-fund
+
+      - name: Generate all profile documentation
+        run: bash generate_all_profiles.sh
+
+      - name: Build static site
+        run: mkdocs build
+
+      - name: Verify build output
+        run: test -s site/index.html
+
+      - name: Upload static site artifact
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # pin@v7.0.2
+        with:
+          name: cim4no-static-site-${{ github.run_number }}-${{ github.sha }}
+          path: site/
+          if-no-files-found: error
+          retention-days: 90
