@@ -778,7 +778,7 @@ class CreateMermaid():
         relationshipString = CreateMermaid().createMermaidRelationshipString(inheritanceList) if CreateMermaid().createMermaidRelationshipString(inheritanceList) != None else ""
         enumString = CreateMermaid().createMermaidEnumString(inheritanceList) if CreateMermaid().createMermaidEnumString(inheritanceList) != None else ""
         attributeString = CreateMermaid().createMermaidAttributeString(inheritanceDict[globalClass]) if CreateMermaid().createMermaidAttributeString(inheritanceDict[globalClass]) != None else ""
-        themeString = "%%{init: {'theme':'base','themeVariables': {'lineColor': '#FF0000'},'class': {'hideEmptyMembersBox': true}}}%%" # For controlling the line head fill color
+        themeString = "%%{init: {'theme':'base','htmlLabels': false,'themeVariables': {'lineColor': '#FF0000'},'class': {'hideEmptyMembersBox': true}}}%%" # For controlling the line head fill color
         mermaidStyleThisClass = CreateMermaid().mermaidStyles(globalClass, "thisClass")
         mermaidString = f'''
 ```mermaid
