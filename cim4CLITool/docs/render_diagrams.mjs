@@ -22,7 +22,7 @@ const page = await browser.newPage();
 // Load mermaid from CDN once
 await page.setContent(`<!DOCTYPE html><html><body>
   <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-  <script>mermaid.initialize({ startOnLoad: false, theme: 'base', themeVariables: { lineColor: '#FF0000' } });</script>
+  <script>mermaid.initialize({ startOnLoad: false, theme: 'base', htmlLabels: false, themeVariables: { lineColor: '#FF0000' } });</script>
 </body></html>`);
 await page.waitForFunction(() => typeof mermaid !== "undefined");
 
